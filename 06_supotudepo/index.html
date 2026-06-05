@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スポーツデポ 新大阪店 | ランニングシューズ無料診断LP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-gray-900 antialiased selection:bg-red-500 selection:text-white">
+
+    <div class="max-w-5xl mx-auto bg-white min-h-screen shadow-2xl overflow-hidden flex flex-col justify-between my-0 md:my-6 md:rounded-2xl">
+
+        <!-- 1. FV -->
+        <header class="relative bg-slate-950 text-white pt-10 pb-10 px-6 md:px-12 border-b-4 border-red-600">
+            <div class="text-center md:text-left mb-6">
+                <div class="inline-flex items-center gap-1.5 bg-red-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider animate-pulse">
+                    <i class="fa-solid fa-fire"></i> スポーツデポ 新大阪店 限定企画
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-7 text-center md:text-left">
+                    <h1 class="text-2xl md:text-4xl font-black leading-tight tracking-tight mb-6">
+                        もうシューズ選びで悩まない！<br>
+                        あなたに最適な<br>
+                        <span class="text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded inline-block mt-1">「ランニングシューズ診断」</span>を<br>
+                        今だけ無料プレゼント！
+                    </h1>
+                    <p class="hidden md:block text-slate-400 text-sm leading-relaxed mb-6">
+                        プロのスタッフがあなたの走りのクセ、足の形を正確に分析。ケガを防止し、走るパフォーマンスを最大化する最高の一足に出会えます。
+                    </p>
+                </div>
+                
+                <!-- FV画像：final-img.png に差し替え -->
+                <div class="md:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 group">
+                        <img src="./final-img.png" 
+                             alt="ランニングシューズ" 
+                             class="w-full h-64 md:h-72 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=final-img.png+Not+Found'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-3 left-3 right-3 text-left">
+                            <span class="bg-slate-900/80 backdrop-blur-sm text-white text-[10px] px-2 py-1 rounded">※画像はイメージです</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. CTA（1回目） -->
+        <section class="bg-red-50 py-10 px-6 md:px-12 border-b border-red-100 text-center">
+            <div class="max-w-2xl mx-auto">
+                <p class="text-red-600 font-extrabold text-lg md:text-xl leading-relaxed mb-2">
+                    ＼ 公式Instagramから今すぐ受け取れます！ ／
+                </p>
+                <p class="text-xs md:text-sm text-gray-500 mb-6">
+                    以下のボタンからフォロー＆DMで簡単無料診断！
+                </p>
+                <a href="https://www.instagram.com/sportsdepo_official/" 
+                   target="_blank"
+                   class="inline-flex items-center justify-center gap-3 w-full md:w-auto md:px-12 bg-gradient-to-r from-red-600 to-orange-500 text-white font-bold text-lg py-4.5 px-8 rounded-full shadow-[0_8px_20px_rgba(239,68,68,0.35)] hover:from-red-500 hover:to-orange-400 transition-all duration-300 active:scale-95 transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-instagram text-2xl"></i>
+                    今すぐ無料で受け取る！
+                </a>
+                <p class="text-[10px] text-gray-400 mt-3">※クリックすると公式Instagramへ移動します</p>
+            </div>
+        </section>
+
+        <!-- 3. 動画エリア -->
+        <section class="py-10 px-6 md:px-12 bg-white text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-xs font-extrabold tracking-wider text-red-600 uppercase mb-1">MOVIE PLAYBACK</h2>
+                <h3 class="text-xl font-bold text-slate-800 mb-6">動画でわかる！失敗しないシューズ選び</h3>
+                
+                <div id="video-container" class="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950 shadow-lg group cursor-pointer">
+                    <!-- 動画サムネイル：hero-img.png に差し替え -->
+                    <img id="video-thumbnail" 
+                         src="./hero-img.png" 
+                         alt="ランニング動画" 
+                         class="w-full h-full object-cover opacity-60 group-hover:scale-103 transition-all duration-500"
+                         onerror="this.src='https://placehold.co/1200x675/1e293b/ffffff?text=hero-img.png+Not+Found'">
+                    
+                    <div id="video-overlay" class="absolute inset-0 flex flex-col justify-center items-center text-white transition-opacity duration-300">
+                        <div class="w-20 h-20 rounded-full bg-red-600/95 flex items-center justify-center shadow-2xl group-hover:bg-red-500 transition-colors duration-200 group-hover:scale-110 transform duration-300">
+                            <i class="fa-solid fa-play text-3xl text-white ml-1.5"></i>
+                        </div>
+                        <span class="mt-4 text-xs font-semibold bg-slate-900/80 backdrop-blur-sm px-4 py-1.5 rounded-full">解説動画を再生（1〜3分）</span>
+                    </div>
+
+                    <div id="pseudo-player" class="absolute inset-0 hidden bg-slate-950 flex-col justify-between p-4">
+                        <div class="flex items-center justify-between text-white text-xs bg-black/40 p-2 rounded">
+                            <span class="font-medium"><i class="fa-solid fa-lock mr-1.5"></i> デモ動画：失敗しないシューズ選びの基礎</span>
+                            <button onclick="stopDemoVideo(event)" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+                        </div>
+                        <div class="flex flex-col items-center justify-center text-white flex-grow">
+                            <i class="fa-solid fa-circle-notch animate-spin text-4xl text-red-600 mb-3"></i>
+                            <p class="text-sm font-semibold">動画ロード中...</p>
+                            <p class="text-[11px] text-slate-400 mt-1">※本番環境ではここに実際の解説動画（YouTube/Vimeo等）が埋め込まれます</p>
+                        </div>
+                        <div class="w-full bg-slate-800 h-1 rounded-full overflow-hidden">
+                            <div class="bg-red-600 h-full w-1/3 animate-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-xs md:text-sm text-gray-500 mt-4 leading-relaxed max-w-lg mx-auto">
+                    「新大阪店限定の診断フローや、専門スタッフならではのアプローチのメリットを動画でコンパクトに紹介しています！」
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. 自己紹介 -->
+        <section class="py-12 px-6 md:px-12 bg-slate-50 border-y border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-xs font-extrabold tracking-wider text-red-600 uppercase text-center mb-1">ABOUT US & REVIEWS</h2>
+                <h3 class="text-xl font-bold text-slate-800 text-center mb-8">信頼と実績 of 「アルペン」ブランド</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-shop text-red-600"></i> スポーツデポ 新大阪店
+                            </h4>
+                            <p class="text-xs md:text-sm text-gray-600 leading-relaxed mb-6">
+                                はじめまして、スポーツデポ 新大阪店です！私たちは、<strong>全国規模の店舗網とECサイトを組み合わせた販売チャネル、自社ブランド製品の開発力</strong>、そししてスポーツ用品の専門性と幅広い品揃えを強みとしています。
+                            </p>
+                        </div>
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-xl">
+                            <p class="text-xs text-red-800 leading-relaxed font-semibold italic">
+                                「丁寧なご説明、皆様にまた行きたいと思わせるような素晴らしいお店を目指しています」
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <p class="text-xs font-bold text-gray-500 px-1">＼ お客様から届いたリアルなクチコミ ／</p>
+                        
+                        <div class="bg-yellow-50/70 border border-yellow-200/80 p-5 rounded-2xl shadow-sm">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-yellow-500 text-sm font-bold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </span>
+                                <span class="text-[10px] text-gray-400">購入商品：スノーブーツ</span>
+                            </div>
+                            <p class="text-xs text-gray-700 leading-relaxed">
+                                スノーブーツを買いに来ました。サイトウさんという綺麗な女性に丁寧に色々ご説明していただきました。おかげさまでいいブーツを買えました。このブーツがボロボロになるまでたくさん使っていきます。また行きたいと思わせるような素晴らしいお店です。
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-100/80 border border-slate-200/50 p-5 rounded-2xl shadow-sm">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-yellow-500 text-sm font-bold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="text-gray-300"><i class="fa-solid fa-star"></i></span>
+                                </span>
+                                <span class="text-[10px] text-gray-400 font-medium">いつもご利用のユーザー様</span>
+                            </div>
+                            <p class="text-xs text-gray-700 leading-relaxed">
+                                いつも使わせていただいてます。今度ここで自転車を買おうと思ってましたが来年の１月末で取り扱い終了とのことで少し残念です。（※自転車取扱は終了しますが、他製品の品揃えはさらに充実しております！）
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 悩み言語化 -->
+        <section class="py-12 px-6 md:px-12 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-xs font-extrabold tracking-wider text-red-600 uppercase text-center mb-1">PROBLEM & SOLUTION</h2>
+                <h3 class="text-xl font-bold text-slate-800 text-center mb-8">このようなお悩みありませんか？</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-5 space-y-4">
+                        <div class="flex items-start gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                            <span class="text-red-500 mt-0.5"><i class="fa-solid fa-circle-xmark text-lg"></i></span>
+                            <p class="text-xs md:text-sm text-gray-700 font-medium leading-relaxed">自分に本当に合うシューズがわからず、走ると足が痛くなる...</p>
+                        </div>
+                        <div class="flex items-start gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                            <span class="text-red-500 mt-0.5"><i class="fa-solid fa-circle-xmark text-lg"></i></span>
+                            <p class="text-xs md:text-sm text-gray-700 font-medium leading-relaxed">ネットの評価だけで買って、サイズやフィット感で後悔したくない</p>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-2 text-center py-2 md:py-0">
+                        <i class="fa-solid fa-chevron-down md:hidden text-gray-300 text-2xl animate-bounce"></i>
+                        <i class="hidden md:inline-block fa-solid fa-chevron-right text-gray-300 text-2xl animate-pulse"></i>
+                    </div>
+
+                    <div class="md:col-span-5">
+                        <div class="bg-gradient-to-br from-red-600 to-orange-500 text-white p-6 rounded-2xl text-center shadow-md">
+                            <span class="inline-block bg-white text-red-600 text-[10px] font-extrabold px-3 py-1 rounded-full mb-3 shadow-sm">解決方法</span>
+                            <h4 class="text-base md:text-lg font-black mb-3">プロの無料診断で一発解決！</h4>
+                            <p class="text-xs md:text-sm text-red-50 leading-relaxed">
+                                専門知識を持つスタッフが、あなたの足の形や走り方のクセをしっかり分析。ピッタリのイチオシ「ランニングシューズ」をご提案します！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 特典 -->
+        <section class="py-10 px-6 md:px-12 bg-yellow-400/10 border-y-2 border-dashed border-yellow-400 text-center">
+            <div class="max-w-2xl mx-auto">
+                <span class="bg-yellow-400 text-slate-950 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider mb-3 inline-block">SPECIAL GIFT</span>
+                <h3 class="text-xl font-black text-slate-900 mb-3">
+                    さらに今なら！<br class="md:hidden">診断完了で「特別割引クーポン」進呈
+                </h3>
+                <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                    店頭で使えるお得なクーポンをプレゼント中。登録・診断完了後にすぐご利用いただけます！
+                </p>
+            </div>
+        </section>
+
+        <!-- 7. CTA（2回目） -->
+        <section class="bg-slate-950 text-white py-12 px-6 md:px-12 text-center">
+            <div class="max-w-2xl mx-auto">
+                <p class="text-yellow-400 font-bold text-sm md:text-base mb-2">＼ 最適な一足で、走る楽しさを今すぐ手に入れよう ／</p>
+                <h3 class="text-lg md:text-xl font-bold text-white mb-6">お気軽にお問い合わせください</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="https://store.alpen-group.jp/Form/Inquiry/InquiryInput.aspx" 
+                       target="_blank"
+                       class="inline-flex items-center justify-center gap-2.5 w-full bg-white text-slate-950 font-bold text-sm md:text-base py-4 px-6 rounded-full shadow-lg hover:bg-gray-100 transition-colors duration-200 active:scale-95">
+                        <i class="fa-solid fa-envelope text-red-600"></i>
+                        フォームから申し込む
+                    </a>
+                    <a href="https://www.instagram.com/sportsdepo_official/" 
+                       target="_blank"
+                       class="inline-flex items-center justify-center gap-2.5 w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold text-sm md:text-base py-4 px-6 rounded-full shadow-md hover:opacity-90 transition-opacity duration-200 active:scale-95">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagramで最新情報をチェック
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="bg-slate-900 text-slate-400 text-xs py-10 px-6 md:px-12 border-t border-slate-800">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 flex items-center gap-1.5">
+                        <i class="fa-solid fa-location-dot text-red-500"></i> 店舗情報（アクセス）
+                    </h4>
+                    <table class="w-full text-left">
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <th class="py-2.5 font-semibold text-slate-300 w-1/3">店名</th>
+                                <td class="py-2.5 text-slate-400">スポーツデポ 新大阪店</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2.5 font-semibold text-slate-300">住所</th>
+                                <td class="py-2.5 text-slate-400">大阪府大阪市淀川区西宮原２丁目２−１７</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2.5 font-semibold text-slate-300">電話番号</th>
+                                <td class="py-2.5 text-slate-400"><a href="tel:0663990771" class="text-blue-400 hover:underline">06-6399-0771</a></td>
+                            </tr>
+                            <tr>
+                                <th class="py-2.5 font-semibold text-slate-300">公式サイト</th>
+                                <td class="py-2.5"><a href="https://store.alpen-group.jp/Form/RealShop/ShopDetail.aspx?rsid=7572" target="_blank" class="text-blue-400 hover:underline flex items-center gap-1">公式HPを表示 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 flex items-center gap-1.5">
+                        <i class="fa-solid fa-building text-slate-400"></i> 運営会社概要
+                    </h4>
+                    <table class="w-full text-left">
+                        <tbody class="divide-y divide-slate-800">
+                            <tr>
+                                <th class="py-2.5 font-semibold text-slate-300 w-1/3">会社名</th>
+                                <td class="py-2.5 text-slate-400">株式会社アルペン</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2.5 font-semibold text-slate-300">代表者名</th>
+                                <td class="py-2.5 text-slate-400">水野 敦之</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p class="text-center text-[10px] text-slate-600 border-t border-slate-800/80 pt-6">
+                &copy; 2026 Alpen Co., Ltd. All Rights Reserved.
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        const videoContainer = document.getElementById('video-container');
+        const videoOverlay = document.getElementById('video-overlay');
+        const pseudoPlayer = document.getElementById('pseudo-player');
+        const videoThumbnail = document.getElementById('video-thumbnail');
+
+        videoContainer.addEventListener('click', () => {
+            if (pseudoPlayer.classList.contains('hidden')) {
+                pseudoPlayer.classList.remove('hidden');
+                videoOverlay.classList.add('opacity-0');
+                videoThumbnail.classList.add('blur-sm');
+            }
+        });
+
+        function stopDemoVideo(event) {
+            event.stopPropagation();
+            pseudoPlayer.classList.add('hidden');
+            videoOverlay.classList.remove('opacity-0');
+            videoThumbnail.classList.remove('blur-sm');
+        }
+    </script>
+</body>
+</html>
