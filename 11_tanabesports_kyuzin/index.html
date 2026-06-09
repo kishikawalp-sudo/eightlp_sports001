@@ -1,1 +1,966 @@
-<html><head><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">ol{margin:0;padding:0}table td,table th{padding:0}.c1{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}.c0{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c3{background-color:#ffffff;max-width:451.4pt;padding:72pt 72pt 72pt 72pt}.c2{height:11pt}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}</style></head><body class="c3 doc-content"><p class="c0"><span class="c1">&lt;!DOCTYPE html&gt;</span></p><p class="c0"><span class="c1">&lt;html lang=&quot;ja&quot;&gt;</span></p><p class="c0"><span class="c1">&lt;head&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;meta charset=&quot;UTF-8&quot; /&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;title&gt;&#27714;&#20154;&#21215;&#38598; | TANABE SPORTS&lt;/title&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap&quot; rel=&quot;stylesheet&quot; /&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;style&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; :root {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; --navy: &nbsp; #0A1628;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; --blue: &nbsp; #1E5FA8;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; --blue-light: #2E7BC4;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; --snow: &nbsp; #E8F4FF;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; --white: &nbsp;#FFFFFF;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; --orange: #F5A623;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; --orange-dark: #D4891A;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; --green: &nbsp;#2D8B4E;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; --gray: &nbsp; #6B7280;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; --bg-light: #F0F6FF;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; html { scroll-behavior: smooth; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; body {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-family: &#39;Noto Sans JP&#39;, sans-serif;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; background: var(--white);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; color: var(--navy);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; line-height: 1.7;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; /* &#9472;&#9472;&#9472; HERO / FV &#9472;&#9472;&#9472; */</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .fv {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; position: relative;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; min-height: 100svh;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; background: linear-gradient(160deg, #0A1628 0%, #1a3560 55%, #1E5FA8 100%);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; flex-direction: column;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; align-items: center;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; justify-content: center;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; text-align: center;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; padding: 80px 24px 60px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; overflow: hidden;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .fv::before {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; content: &#39;&#39;;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; position: absolute;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; inset: 0;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; background-image:</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; radial-gradient(circle, rgba(255,255,255,0.18) 1px, transparent 1px),</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; background-size: 60px 60px, 30px 30px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; background-position: 0 0, 15px 15px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; pointer-events: none;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .fv-mountain {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; position: absolute;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; bottom: 0;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; left: 0;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; width: 100%;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; opacity: 0.15;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .fv-badge {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; display: inline-block;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; background: var(--orange);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; color: var(--white);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-size: 0.75rem;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-weight: 700;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; letter-spacing: 0.08em;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; padding: 6px 18px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; border-radius: 100px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; margin-bottom: 20px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .fv-eyebrow {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; color: rgba(232,244,255,0.75);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-size: 0.9rem;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-weight: 500;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; letter-spacing: 0.15em;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; margin-bottom: 16px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .fv-title {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; color: var(--white);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-size: clamp(2rem, 7vw, 3.6rem);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-weight: 900;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; line-height: 1.2;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; letter-spacing: -0.01em;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; margin-bottom: 24px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .fv-title em {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-style: normal;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; color: var(--orange);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .fv-sub {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; color: var(--snow);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-size: clamp(0.9rem, 2.5vw, 1.1rem);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; max-width: 480px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; margin: 0 auto 36px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; opacity: 0.9;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .fv-image-wrap {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; width: min(340px, 85vw);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; aspect-ratio: 4/3;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; background: rgba(255,255,255,0.08);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; border: 2px dashed rgba(255,255,255,0.3);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; border-radius: 16px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; flex-direction: column;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; align-items: center;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; justify-content: center;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; margin: 0 auto 40px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; color: rgba(255,255,255,0.5);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-size: 0.85rem;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; gap: 8px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .fv-image-wrap img {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; width: 100%;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; height: 100%;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; object-fit: cover;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; border-radius: 14px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .btn-cta {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; display: inline-block;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; background: linear-gradient(135deg, var(--orange) 0%, #e8920f 100%);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; color: var(--white);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-size: 1.1rem;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-weight: 700;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; padding: 18px 48px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; border-radius: 8px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; text-decoration: none;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; box-shadow: 0 6px 24px rgba(245,166,35,0.45);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; transition: transform 0.15s, box-shadow 0.15s;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; letter-spacing: 0.04em;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .btn-cta:hover {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; transform: translateY(-2px);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; box-shadow: 0 10px 32px rgba(245,166,35,0.55);</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .btn-cta-sub {</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; display: block;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-size: 0.72rem;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; font-weight: 400;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; opacity: 0.85;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; margin-top: 4px;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; section { padding: 72px 24px; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .container { max-width: 760px; margin: 0 auto; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .section-label { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); background: rgba(30,95,168,0.1); padding: 4px 12px; border-radius: 100px; margin-bottom: 12px; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .section-title { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 900; line-height: 1.3; margin-bottom: 16px; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .section-title span { color: var(--blue); }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .cta-section { background: var(--navy); text-align: center; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .cta-section .section-label { color: var(--orange); background: rgba(245,166,35,0.15); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .cta-section .section-title { color: var(--white); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .cta-section .section-title span { color: var(--orange); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .cta-lead { color: var(--snow); font-size: 1rem; margin-bottom: 32px; opacity: 0.85; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .salary-highlight { display: inline-block; background: var(--orange); color: var(--white); font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 900; padding: 12px 32px; border-radius: 8px; margin-bottom: 28px; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .video-section { background: var(--bg-light); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden; margin-top: 32px; cursor: pointer; box-shadow: 0 8px 32px rgba(10,22,40,0.18); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .video-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .video-thumb-wrap:hover img { transform: scale(1.03); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .video-play-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: rgba(10,22,40,0.35); transition: background 0.2s; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .play-btn { width: 72px; height: 72px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(245,166,35,0.5); transition: transform 0.2s; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .play-label { color: var(--white); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .about-section { background: var(--white); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; @media (max-width: 560px) { .about-grid { grid-template-columns: 1fr; } }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .about-card { background: var(--bg-light); border-radius: 12px; padding: 24px; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .rep-wrap { display: flex; gap: 24px; align-items: center; margin-top: 32px; flex-wrap: wrap; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .rep-img-box { width: 120px; height: 120px; border-radius: 50%; background: #d1dff0; border: 3px dashed var(--blue-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .rep-img-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .pain-section { background: var(--bg-light); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .pain-box { background: rgba(30,95,168,0.07); border-left: 4px solid var(--blue); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 12px; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .solution-box { background: var(--navy); color: var(--white); border-radius: 16px; padding: 32px; text-align: center; margin-top: 12px; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .solution-box h3 { color: var(--orange); margin-bottom: 12px; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .benefits-section { background: var(--white); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .benefit-card { background: linear-gradient(135deg, var(--navy) 0%, #1a3560 100%); color: var(--white); border-radius: 14px; padding: 24px 20px; text-align: center; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .reviews-section { background: var(--bg-light); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .review-card { background: var(--white); border-radius: 14px; padding: 24px; margin-bottom: 16px; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .job-section { background: var(--white); }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .job-table { width: 100%; border-collapse: collapse; margin-top: 28px; font-size: 0.9rem; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .job-table th, .job-table td { padding: 14px 16px; border-bottom: 1px solid #E5EDF8; vertical-align: top; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .job-table th { background: var(--bg-light); color: var(--blue); width: 30%; }</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&nbsp; &nbsp; .final-cta { background: linear-gradient(160deg, #0A1628 0%, #1E5FA8 100%); text-align: center; padding: 72px 24px; }</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; footer { background: var(--navy); color: rgba(232,244,255,0.6); text-align: center; padding: 40px 24px; font-size: 0.8rem; }</span></p><p class="c0"><span class="c1">&nbsp; &lt;/style&gt;</span></p><p class="c0"><span class="c1">&lt;/head&gt;</span></p><p class="c0"><span class="c1">&lt;body&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&lt;section class=&quot;fv&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;svg class=&quot;fv-mountain&quot; viewBox=&quot;0 0 1440 200&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; preserveAspectRatio=&quot;none&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;polygon points=&quot;0,200 200,60 380,140 600,20 820,120 1000,40 1200,100 1440,30 1440,200&quot; fill=&quot;white&quot;/&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;/svg&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;div class=&quot;fv-badge&quot;&gt;&#127935; 2025-2026 &#12471;&#12540;&#12474;&#12531; &#27714;&#20154;&#21215;&#38598;&#20013;&lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;h1 class=&quot;fv-title&quot;&gt;&#12473;&#12461;&#12540;&#12364;&#22909;&#12365;&#12394;&lt;em&gt;&#12354;&#12394;&#12383;&lt;/em&gt;&#12408;&#12290;&lt;br&gt;&#12473;&#12461;&#12540;&#23554;&#38272;&#24215;&#12391;&#12289;&lt;em&gt;&#20685;&#12365;&#12414;&#12379;&#12435;&#12363;&#65311;&lt;/em&gt;&lt;/h1&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;div class=&quot;fv-image-wrap&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;img src=&quot;images/fv.jpg&quot; alt=&quot;TANABE SPORTS &#24215;&#20869;&#12539;&#12473;&#12461;&#12540;&#29992;&#21697;&#12452;&#12513;&#12540;&#12472;&quot; /&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;a href=&quot;https://www.tanabesports.jp/corporate/recruit.html&quot; class=&quot;btn-cta&quot;&gt;&#27714;&#20154;&#35443;&#32048;&#12539;&#24540;&#21215;&#12399;&#12371;&#12385;&#12425;&lt;/a&gt;</span></p><p class="c0"><span class="c1">&lt;/section&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&lt;section class=&quot;cta-section&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;div class=&quot;container&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;h2 class=&quot;section-title&quot;&gt;&#20170;&#12377;&#12368;&lt;span&gt;&#24540;&#21215;&lt;/span&gt;&#12391;&#12365;&#12414;&#12377;&lt;/h2&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;div class=&quot;salary-highlight&quot;&gt;&#26178;&#32102; 1,500&#20870;&#12316;&lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c1">&lt;/section&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&lt;section class=&quot;video-section&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;div class=&quot;container&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;a class=&quot;video-thumb-wrap&quot; href=&quot;https://www.tanabesports.jp/&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &lt;img src=&quot;images/video_thumb.png&quot; alt=&quot;TANABE SPORTS &#32057;&#20171;&#21205;&#30011;&quot; /&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;video-play-overlay&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;play-btn&quot;&gt;&#9654;&lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;play-label&quot;&gt;&#21205;&#30011;&#12434;&#35211;&#12427;&lt;/span&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;/a&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c1">&lt;/section&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&lt;section class=&quot;about-section&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;div class=&quot;container&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;div class=&quot;rep-wrap&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;rep-img-box&quot;&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;img src=&quot;images/rep.jpg&quot; alt=&quot;&#20195;&#34920; &#30000;&#37001;&#23472;&#33267;&quot; /&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &nbsp; &lt;div&gt;&lt;h3&gt;&#20195;&#34920;&#21462;&#32224;&#24441; &#30000;&#37001; &#23472;&#33267;&lt;/h3&gt;&lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c1">&lt;/section&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&lt;footer&gt;</span></p><p class="c0"><span class="c1">&nbsp; &lt;p&gt;&copy; &#26666;&#24335;&#20250;&#31038;&#12479;&#12490;&#12505;&#12473;&#12509;&#12540;&#12484; All rights reserved.&lt;/p&gt;</span></p><p class="c0"><span class="c1">&lt;/footer&gt;</span></p><p class="c0 c2"><span class="c1"></span></p><p class="c0"><span class="c1">&lt;/body&gt;</span></p><p class="c0"><span class="c1">&lt;/html&gt;</span></p><p class="c0 c2"><span class="c1"></span></p></body></html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>求人募集 | TANABE SPORTS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0A1628;
+      --blue:   #1E5FA8;
+      --blue-light: #2E7BC4;
+      --snow:   #E8F4FF;
+      --white:  #FFFFFF;
+      --orange: #F5A623;
+      --orange-dark: #D4891A;
+      --green:  #2D8B4E;
+      --gray:   #6B7280;
+      --bg-light: #F0F6FF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--white);
+      color: var(--navy);
+      line-height: 1.7;
+    }
+
+    /* ─── HERO / FV ─── */
+    .fv {
+      position: relative;
+      min-height: 100svh;
+      background: linear-gradient(160deg, #0A1628 0%, #1a3560 55%, #1E5FA8 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px 60px;
+      overflow: hidden;
+    }
+
+    /* 雪のドット背景 */
+    .fv::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.18) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px);
+      background-size: 60px 60px, 30px 30px;
+      background-position: 0 0, 15px 15px;
+      pointer-events: none;
+    }
+
+    /* 山シルエット */
+    .fv-mountain {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0.15;
+    }
+
+    .fv-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .fv-eyebrow {
+      color: rgba(232,244,255,0.75);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+    }
+
+    .fv-title {
+      color: var(--white);
+      font-size: clamp(2rem, 7vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+
+    .fv-title em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .fv-sub {
+      color: var(--snow);
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      max-width: 480px;
+      margin: 0 auto 36px;
+      opacity: 0.9;
+    }
+
+    /* FV 画像プレースホルダー */
+    .fv-image-wrap {
+      width: min(340px, 85vw);
+      aspect-ratio: 4/3;
+      background: rgba(255,255,255,0.08);
+      border: 2px dashed rgba(255,255,255,0.3);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 40px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+      gap: 8px;
+    }
+
+    .fv-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 14px;
+      display: none; /* 画像挿入後は display:block に変更 */
+    }
+
+    .placeholder-icon { font-size: 2.5rem; }
+
+    /* ─── CTA BUTTON ─── */
+    .btn-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--orange) 0%, #e8920f 100%);
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 18px 48px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(245,166,35,0.45);
+      transition: transform 0.15s, box-shadow 0.15s;
+      letter-spacing: 0.04em;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(245,166,35,0.55);
+    }
+
+    .btn-cta-sub {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 72px 24px; }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(30,95,168,0.1);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .section-title span { color: var(--blue); }
+
+    /* ─── CTA SECTION ─── */
+    .cta-section {
+      background: var(--navy);
+      text-align: center;
+    }
+
+    .cta-section .section-label { color: var(--orange); background: rgba(245,166,35,0.15); }
+    .cta-section .section-title { color: var(--white); }
+    .cta-section .section-title span { color: var(--orange); }
+
+    .cta-lead {
+      color: var(--snow);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      opacity: 0.85;
+    }
+
+    .salary-highlight {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 900;
+      padding: 12px 32px;
+      border-radius: 8px;
+      margin-bottom: 28px;
+    }
+
+    /* ─── VIDEO SECTION ─── */
+    .video-section { background: var(--bg-light); }
+
+    .video-thumb-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 32px;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(10,22,40,0.18);
+    }
+
+    /* サムネイル画像（差し込み後は img を表示） */
+    .video-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .video-thumb-wrap:hover img { transform: scale(1.03); }
+
+    /* 画像未設定時のフォールバック背景 */
+    .video-thumb-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0d2247 0%, #1E5FA8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      /* サムネイル画像を設定したら display:none にしてください */
+    }
+
+    /* 再生ボタンオーバーレイ */
+    .video-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: rgba(10,22,40,0.35);
+      transition: background 0.2s;
+    }
+
+    .video-thumb-wrap:hover .video-play-overlay { background: rgba(10,22,40,0.22); }
+
+    .play-btn {
+      width: 72px;
+      height: 72px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(245,166,35,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .video-thumb-wrap:hover .play-btn {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(245,166,35,0.65);
+    }
+
+    .play-btn svg { margin-left: 5px; }
+
+    .play-label {
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    }
+
+    /* ─── ABOUT SECTION ─── */
+    .about-section { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 560px) { .about-grid { grid-template-columns: 1fr; } }
+
+    .about-card {
+      background: var(--bg-light);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .about-card-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .about-card-title { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--blue); }
+    .about-card-text { font-size: 0.88rem; color: #374151; }
+
+    /* 代表者画像プレースホルダー */
+    .rep-wrap {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .rep-img-box {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #d1dff0;
+      border: 3px dashed var(--blue-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--blue);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-align: center;
+      gap: 4px;
+    }
+
+    .rep-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: none;
+    }
+
+    .rep-info h3 { font-weight: 900; font-size: 1.1rem; margin-bottom: 4px; }
+    .rep-info p  { font-size: 0.88rem; color: #374151; }
+
+    /* ─── PAIN / SOLUTION ─── */
+    .pain-section { background: var(--bg-light); }
+
+    .pain-box {
+      background: rgba(30,95,168,0.07);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .pain-box::before { content: '💭 '; }
+
+    .arrow-down {
+      text-align: center;
+      font-size: 2rem;
+      margin: 20px 0;
+      color: var(--blue);
+    }
+
+    .solution-box {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .solution-box h3 {
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: var(--orange);
+    }
+
+    .solution-box p { font-size: 0.93rem; opacity: 0.9; }
+
+    /* ─── BENEFITS ─── */
+    .benefits-section { background: var(--white); }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .benefit-card {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3560 100%);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .benefit-card .icon { font-size: 2rem; margin-bottom: 10px; }
+    .benefit-card .title { font-size: 0.85rem; font-weight: 700; color: var(--orange); margin-bottom: 6px; }
+    .benefit-card .desc  { font-size: 0.8rem; opacity: 0.85; line-height: 1.5; }
+
+    /* ─── REVIEWS ─── */
+    .reviews-section { background: var(--bg-light); }
+
+    .review-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 12px rgba(10,22,40,0.07);
+    }
+
+    .stars { color: #F5C518; font-size: 1.1rem; margin-bottom: 10px; }
+    .review-text { font-size: 0.9rem; color: #374151; line-height: 1.8; }
+
+    /* ─── JOB DETAILS ─── */
+    .job-section { background: var(--white); }
+
+    .job-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 28px;
+      font-size: 0.9rem;
+    }
+
+    .job-table th, .job-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #E5EDF8;
+      vertical-align: top;
+    }
+
+    .job-table th {
+      background: var(--bg-light);
+      color: var(--blue);
+      font-weight: 700;
+      width: 30%;
+      white-space: nowrap;
+    }
+
+    /* ─── FINAL CTA ─── */
+    .final-cta {
+      background: linear-gradient(160deg, #0A1628 0%, #1E5FA8 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .final-cta .container { position: relative; }
+
+    .final-cta .section-title { color: var(--white); }
+    .final-cta .section-title span { color: var(--orange); }
+
+    .final-cta .cta-lead { color: var(--snow); font-size: 0.95rem; margin-bottom: 32px; }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--snow);
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 12px 32px;
+      border-radius: 8px;
+      border: 1.5px solid rgba(232,244,255,0.4);
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy);
+      color: rgba(232,244,255,0.6);
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 0.8rem;
+    }
+
+    footer a { color: rgba(232,244,255,0.8); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    .footer-logo {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+
+    /* ─── INFO BAR ─── */
+    .info-bar {
+      background: var(--blue);
+      color: var(--white);
+      text-align: center;
+      padding: 14px 24px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .info-bar a { color: var(--orange); font-weight: 700; text-decoration: none; }
+
+    /* ─── DIVIDER ─── */
+    .divider-arrow {
+      text-align: center;
+      padding: 12px 0;
+      background: inherit;
+    }
+
+    /* ─── UTIL ─── */
+    .text-center { text-align: center; }
+    .mt-8  { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mt-24 { margin-top: 24px; }
+    .mt-32 { margin-top: 32px; }
+
+    /* fade-in */
+    @media (prefers-reduced-motion: no-preference) {
+      .fadein {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fadein.visible { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     FV エリア
+══════════════════════════════════ -->
+<section class="fv">
+  <!-- 山シルエット -->
+  <svg class="fv-mountain" viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <polygon points="0,200 200,60 380,140 600,20 820,120 1000,40 1200,100 1440,30 1440,200" fill="white"/>
+  </svg>
+
+  <div class="fv-badge">🎿 2025-2026 シーズン 求人募集中</div>
+  <p class="fv-eyebrow">TANABE SPORTS / 大阪・松屋町</p>
+
+  <h1 class="fv-title">
+    スキーが好きな<em>あなた</em>へ。<br>
+    スキー専門店で、<em>働きませんか？</em>
+  </h1>
+
+  <p class="fv-sub">
+    未経験・学歴不問。スキーを愛するスタッフと一緒に、<br>最高の冬をつくりましょう。
+  </p>
+
+  <!-- ★ FV画像
+       差し込み方：images/fv.jpg など任意のファイル名で同フォルダに置き、
+       下記 src を "images/fv.jpg" のように書き換えてください。
+       画像を設定したら style="display:none" を削除し、
+       プレースホルダーの span 2行を削除してください。
+  ★ -->
+  <div class="fv-image-wrap" id="fv-img-wrap">
+    <img id="fv-img" src="images/fv.jpg" alt="TANABE SPORTS 店内・スキー用品イメージ" />
+  </div>
+
+  <a href="https://www.tanabesports.jp/corporate/recruit.html" class="btn-cta" target="_blank" rel="noopener">
+    求人詳細・応募はこちら
+    <span class="btn-cta-sub">公式サイトの採用ページへ</span>
+  </a>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA ① 
+══════════════════════════════════ -->
+<section class="cta-section">
+  <div class="container text-center fadein">
+    <span class="section-label">APPLY NOW</span>
+    <h2 class="section-title">今すぐ<span>応募</span>できます</h2>
+    <p class="cta-lead">
+      シーズンアルバイト募集中。<br>
+      地方からの方には寮も完備しています！
+    </p>
+    <div class="salary-highlight">時給 1,500円〜</div><br>
+    <a href="https://www.tanabesports.jp/corporate/recruit.html" class="btn-cta" target="_blank" rel="noopener">
+      応募フォームはこちら
+      <span class="btn-cta-sub">TANABE SPORTS 採用ページへ</span>
+    </a>
+    <p class="mt-16" style="color:rgba(232,244,255,0.55); font-size:0.8rem;">
+      📞 お電話でのお問い合わせ：<a href="tel:0667633901" style="color:var(--orange);">06-6763-3901</a>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     動画セクション
+══════════════════════════════════ -->
+<section class="video-section">
+  <div class="container fadein">
+    <span class="section-label">ABOUT US</span>
+    <h2 class="section-title">TANABE SPORTSの<span>魅力</span>を動画でご紹介</h2>
+    <p>スキーへの情熱と、お客様への丁寧な接客。私たちが大切にしていることを、動画でお伝えします。</p>
+
+    <!-- ★ 動画サムネイル
+         差し込み方：
+         1. images/video_thumb.jpg など任意のファイル名で同フォルダに置く
+         2. <img id="video-thumb"> の src を "images/video_thumb.jpg" に書き換え、
+            style="display:none" を削除する
+         3. .video-thumb-bg の div を display:none にする
+         クリック先URLは <a href="..."> を書き換えてください
+    ★ -->
+    <a class="video-thumb-wrap" id="video-thumb-link"
+       href="https://www.tanabesports.jp/" target="_blank" rel="noopener"
+       aria-label="TANABE SPORTS 紹介動画を見る">
+
+      <!-- サムネイル画像 -->
+      <img id="video-thumb" src="images/video_thumb.png" alt="TANABE SPORTS 紹介動画サムネイル" />
+
+      <!-- 再生ボタンオーバーレイ（常時表示） -->
+      <div class="video-play-overlay">
+        <div class="play-btn">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="8,4 24,14 8,24" fill="white"/>
+          </svg>
+        </div>
+        <span class="play-label">動画を見る</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     自己紹介（会社・代表者）
+══════════════════════════════════ -->
+<section class="about-section">
+  <div class="container fadein">
+    <span class="section-label">ABOUT</span>
+    <h2 class="section-title">はじめまして、<span>TANABE SPORTS</span>です</h2>
+    <p>大阪・松屋町に店を構えるスキー専門店。長年にわたり、スキーを愛するお客様の一人ひとりに向き合い続けてきました。</p>
+
+    <!-- 代表者 -->
+    <div class="rep-wrap mt-32">
+      <!-- ★ 代表者写真
+           差し込み方：images/rep.jpg など任意のファイル名で同フォルダに置き、
+           src を "images/rep.jpg" に書き換えてください。
+           画像を設定したら style="display:none" を削除し、
+           プレースホルダーの span 2行を削除してください。
+      ★ -->
+      <div class="rep-img-box" id="rep-img-box">
+        <img id="rep-img" src="images/rep.jpg" alt="代表 田邉宰至" />
+      </div>
+      <div class="rep-info">
+        <h3>代表取締役　田邉 宰至</h3>
+        <p>株式会社タナベスポーツ</p>
+        <p class="mt-8" style="font-size:0.85rem; color: var(--gray);">
+          「スキーが好き」という純粋な気持ちを大切に。<br>
+          スタッフもお客様も、スキーを通じて笑顔になれる場所でありたいと思っています。
+        </p>
+      </div>
+    </div>
+
+    <!-- 強み3つ -->
+    <div class="about-grid mt-32">
+      <div class="about-card">
+        <div class="about-card-icon">🎿</div>
+        <div class="about-card-title">深い専門知識</div>
+        <div class="about-card-text">長年の経験と実績に裏打ちされたスキー用品の深い知識で、お客様に最適な提案ができます。</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🤝</div>
+        <div class="about-card-title">丁寧な接客</div>
+        <div class="about-card-text">一人ひとりのニーズをしっかりと聞き、その方に合った商品を丁寧にご提案します。</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🛒</div>
+        <div class="about-card-title">実店舗 × EC の連携</div>
+        <div class="about-card-text">自社ECサイトと実店舗を連携させた効果的な販売戦略で、お客様の購買体験を支えます。</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🏪</div>
+        <div class="about-card-title">豊富な品揃え</div>
+        <div class="about-card-text">ウェア・板・ブーツ・グローブなど、スキーに必要なものが一通り揃う専門店です。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     悩み言語化 → 解決策提示
+══════════════════════════════════ -->
+<section class="pain-section">
+  <div class="container fadein">
+    <span class="section-label">FOR YOU</span>
+    <h2 class="section-title">こんな<span>お悩み</span>はありませんか？</h2>
+    <p class="mt-16" style="font-size:0.9rem; color:var(--gray);">当店のアルバイトを検討されている方へ</p>
+
+    <div class="mt-24">
+      <div class="pain-box">冬の期間だけ、しっかり稼ぎたい…</div>
+      <div class="pain-box">スキーが好きだけど、知識がなくて不安…</div>
+      <div class="pain-box">地方在住で大阪に出てきたいけど、住む場所が心配…</div>
+      <div class="pain-box">アルバイトって長く続けられるか不安…</div>
+    </div>
+
+    <div class="arrow-down">↓</div>
+
+    <div class="solution-box">
+      <h3>TANABE SPORTSなら、全部解決できます！</h3>
+      <p>
+        シーズン限定で集中して稼げる・未経験から先輩が丁寧に教える・<br>
+        地方からの方には寮（家電・Wi-Fi完備・光熱費不要）を用意・<br>
+        2年目からは時給1,800円にアップ！長く働けます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     特典・福利厚生
+══════════════════════════════════ -->
+<section class="benefits-section">
+  <div class="container fadein">
+    <span class="section-label">BENEFITS</span>
+    <h2 class="section-title">うれしい<span>待遇・特典</span>が盛りだくさん</h2>
+
+    <div class="benefits-grid mt-32">
+      <div class="benefit-card">
+        <div class="icon">🏠</div>
+        <div class="title">寮完備（光熱費不要）</div>
+        <div class="desc">TV・洗濯機・家電・Wi-Fi完備のワンルーム。光熱費は会社負担！</div>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">💰</div>
+        <div class="title">２年目 時給 1,800円</div>
+        <div class="desc">1年目1,500円→2年目1,800円。頑張りがしっかり給与に反映されます。</div>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">🚃</div>
+        <div class="title">交通費 全額支給</div>
+        <div class="desc">通勤にかかる交通費は全額サポート。</div>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">👕</div>
+        <div class="title">制服貸与あり</div>
+        <div class="desc">ポロシャツ・トレーナーを支給。下は動きやすい服装でOK！</div>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">🎿</div>
+        <div class="title">社員割引（10%以上）</div>
+        <div class="desc">スキー好きに嬉しい！スキー用品がお得に買えます。</div>
+      </div>
+      <div class="benefit-card">
+        <div class="icon">💅</div>
+        <div class="title">身だしなみ自由</div>
+        <div class="desc">髪型・髪色自由、髭OK、ネイルOK、ピアスOK。あなたらしく働けます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     口コミ（社会的証明）
+══════════════════════════════════ -->
+<section class="reviews-section">
+  <div class="container fadein">
+    <span class="section-label">REVIEWS</span>
+    <h2 class="section-title">お客様から<span>愛される</span>お店です</h2>
+    <p class="mt-16" style="font-size:0.9rem; color:var(--gray);">一緒に、こんな接客ができる店を作りましょう。</p>
+
+    <div class="mt-32">
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p class="review-text">
+          こちらでウェア、スキー、グローブなど買いましたが、親切ですし、品揃えも豊富なのでお勧め出来ます。
+        </p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          夫婦でフリースタイルのスキー板と靴を買いました。とても丁寧に対応していただけて嬉しかったです。
+          前日に他店でフリースタイルをバカにしたような扱いをされ、とても悲しい思いをしたのですが、
+          こちらでは経験年数やスキル、やりたいことをしっかりと聞いてから接客対応していただけました。
+          どの店員さんもスキーが大好きな気持ちが伝わってきましたし、フリースタイルのスキーに対しても
+          偏見のない対応に、とても気持ちよくお買い物できました。スキー用品は次からここでしか買えないと思いました！ 😊
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     求人詳細
+══════════════════════════════════ -->
+<section class="job-section">
+  <div class="container fadein">
+    <span class="section-label">JOB DETAILS</span>
+    <h2 class="section-title">募集要項<span>詳細</span></h2>
+
+    <table class="job-table mt-24">
+      <tr>
+        <th>職種</th>
+        <td>シーズン店舗販売スタッフ【アルバイト】</td>
+      </tr>
+      <tr>
+        <th>仕事内容</th>
+        <td>
+          ブーツ売り場での販売・接客補助<br>
+          商品補充・品出し・値付け・売り場整理<br>
+          最初は社員のフォロー中心→徐々にブーツ接客へ
+        </td>
+      </tr>
+      <tr>
+        <th>給与</th>
+        <td>
+          時給 <strong>1,500円〜</strong>（1年目）<br>
+          2年目は <strong>1,800円</strong> にアップ！<br>
+          試用期間1ヶ月・時給変更なし<br>
+          <span style="font-size:0.82rem; color:var(--gray);">
+            ※月収例：時給1,500円×8h×20日＝240,000円
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <th>期間</th>
+        <td>10月〜3月末の間で3ヶ月以上</td>
+      </tr>
+      <tr>
+        <th>勤務時間</th>
+        <td>
+          【オフシーズン 4〜10月】<br>
+          平日 13:00〜19:00 ／ 土 11:00〜19:00 ／ 日祝 11:00〜18:00<br><br>
+          【シーズン 11〜1月】<br>
+          平日 13:00〜21:00 ／ 土 11:00〜21:00 ／ 日祝 11:00〜19:00<br><br>
+          【シーズン 2〜3月】<br>
+          平日 13:00〜20:00 ／ 土 11:00〜20:00 ／ 日祝 11:00〜19:00
+        </td>
+      </tr>
+      <tr>
+        <th>勤務地</th>
+        <td>大阪市中央区松屋町住吉5-4 タナベスポーツ本店（5階）</td>
+      </tr>
+      <tr>
+        <th>応募資格</th>
+        <td>
+          学歴不問・未経験歓迎！スキーの知識は不要です。<br>
+          明るく元気に接客できる方大歓迎。<br>
+          スキーやスポーツが好きな方、アットホームな職場で働きたい方、特に大歓迎！
+        </td>
+      </tr>
+      <tr>
+        <th>待遇・福利厚生</th>
+        <td>
+          交通費全額支給／制服貸与／社員割引（10%以上）<br>
+          シーズンスタッフ向け寮あり（家電・Wi-Fi完備・光熱費不要）<br>
+          髪型・髪色・ネイル・ピアス・髭 自由
+        </td>
+      </tr>
+      <tr>
+        <th>定休日</th>
+        <td>8月は月〜木 定休（シーズンにより異なります）</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     最終 CTA
+══════════════════════════════════ -->
+<section class="final-cta">
+  <div class="container fadein text-center">
+    <span class="section-label" style="color:var(--orange); background:rgba(245,166,35,0.15);">APPLY NOW</span>
+    <h2 class="section-title">
+      スキーが好きなら、<br><span>ここで働こう。</span>
+    </h2>
+    <p class="cta-lead">
+      今すぐ応募、またはお気軽にお問い合わせください。<br>
+      以下のフォームから今すぐ受け取れます！
+    </p>
+    <div class="cta-buttons">
+      <a href="https://www.tanabesports.jp/corporate/recruit.html" class="btn-cta" target="_blank" rel="noopener">
+        求人詳細・応募はこちら
+        <span class="btn-cta-sub">TANABE SPORTS 採用ページへ</span>
+      </a>
+      <a href="https://www.tanabesports.jp/inquiry/" class="btn-secondary" target="_blank" rel="noopener">
+        お問い合わせフォーム
+      </a>
+    </div>
+    <p class="mt-24" style="color:rgba(232,244,255,0.55); font-size:0.8rem;">
+      📞 <a href="tel:0667633901" style="color:var(--orange);">06-6763-3901</a>　
+      🌐 <a href="https://www.tanabesports.jp/" style="color:var(--snow);">tanabesports.jp</a>　
+      🐦 <a href="https://x.com/tanabesports" style="color:var(--snow);">@tanabesports</a>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     フッター
+══════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">TANABE SPORTS</div>
+  <p>大阪府大阪市中央区松屋町住吉５−４ タナベスポーツ 5階</p>
+  <div class="footer-links">
+    <a href="https://www.tanabesports.jp/" target="_blank" rel="noopener">公式HP</a>
+    <a href="https://www.tanabesports.jp/corporate/recruit.html" target="_blank" rel="noopener">採用情報</a>
+    <a href="https://www.tanabesports.jp/inquiry/" target="_blank" rel="noopener">お問い合わせ</a>
+    <a href="https://x.com/tanabesports" target="_blank" rel="noopener">X (Twitter)</a>
+  </div>
+  <p style="margin-top:12px;">© 株式会社タナベスポーツ All rights reserved.</p>
+</footer>
+
+<script>
+  // フェードインアニメーション
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fadein').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
