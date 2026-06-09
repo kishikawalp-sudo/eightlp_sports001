@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>猪飼弓具店｜本物の弓具と、弓道の道。</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700;900&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho+B1:wght@400;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== DESIGN TOKENS ===== */
+    :root {
+      --black:        #0e0c0a;
+      --deep:         #1a1610;
+      --ink:          #2b2519;
+      --gold:         #c9a84c;
+      --gold-light:   #e8c97a;
+      --gold-dim:     #7a5f2a;
+      --washi:        #f5f0e8;
+      --washi-dark:   #ece4d4;
+      --cream:        #faf7f2;
+      --text-dark:    #1a1610;
+      --text-mid:     #4a3f2f;
+      --text-light:   #8a7a62;
+      --ff-display:   'Shippori Mincho B1', 'Noto Serif JP', serif;
+      --ff-body:      'Noto Serif JP', serif;
+      --ff-ui:        'Noto Sans JP', sans-serif;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--washi);
+      color: var(--text-dark);
+      font-family: var(--ff-body);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== WASHI TEXTURE OVERLAY ===== */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===== GOLD DIVIDER ===== */
+    .kamon-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .kamon-divider::before,
+    .kamon-divider::after {
+      content: '';
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+    .kamon-divider::after {
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    .kamon-divider span {
+      color: var(--gold);
+      font-size: 1.1rem;
+      letter-spacing: 0.3em;
+    }
+
+    /* ===== SECTION BASE ===== */
+    section { position: relative; z-index: 1; }
+
+    /* ===========================
+       01. FV エリア
+    =========================== */
+    #fv {
+      min-height: 100vh;
+      background: var(--deep);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    #fv::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.45' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    /* 縦の金ライン（署名要素） */
+    #fv::after {
+      content: '猪 飼 弓 具 店';
+      position: absolute;
+      right: 3vw;
+      top: 50%;
+      transform: translateY(-50%);
+      writing-mode: vertical-rl;
+      font-family: var(--ff-display);
+      font-size: clamp(0.6rem, 1vw, 0.9rem);
+      letter-spacing: 0.6em;
+      color: var(--gold-dim);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .fv-text {
+      padding: clamp(3rem, 8vw, 7rem) clamp(2rem, 6vw, 6rem);
+      position: relative;
+      z-index: 2;
+    }
+    .fv-eyebrow {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.65rem, 1.2vw, 0.8rem);
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .fv-eyebrow::before {
+      content: '';
+      width: 2rem;
+      height: 1px;
+      background: var(--gold);
+    }
+    .fv-headline {
+      font-family: var(--ff-display);
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--washi);
+      margin-bottom: 0.4rem;
+    }
+    .fv-headline em {
+      font-style: normal;
+      color: var(--gold);
+      display: block;
+    }
+    .fv-sub {
+      font-family: var(--ff-body);
+      font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+      color: rgba(245,240,232,0.65);
+      margin-top: 1.4rem;
+      line-height: 1.9;
+      max-width: 360px;
+    }
+    .fv-cta-wrap {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9em 2.2em;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      font-family: var(--ff-ui);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      border-radius: 2px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-gold:hover { opacity: 0.9; transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9em 2.2em;
+      border: 1px solid var(--gold-dim);
+      color: var(--gold-light);
+      font-family: var(--ff-ui);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .fv-image {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .fv-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.75;
+      filter: sepia(20%) contrast(1.05);
+    }
+    .fv-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--deep) 0%, transparent 40%);
+    }
+
+    /* ===========================
+       02. CTA ① 
+    =========================== */
+    #cta1 {
+      background: var(--ink);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--gold-dim);
+      border-bottom: 1px solid var(--gold-dim);
+    }
+    .cta-label {
+      font-family: var(--ff-ui);
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .cta-headline {
+      font-family: var(--ff-display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--washi);
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .cta-sub {
+      color: rgba(245,240,232,0.55);
+      font-size: 0.88rem;
+      margin-bottom: 2rem;
+      font-family: var(--ff-ui);
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ===========================
+       03. 動画
+    =========================== */
+    #video-section {
+      background: var(--cream);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .section-eyebrow {
+      font-family: var(--ff-ui);
+      font-size: 0.72rem;
+      letter-spacing: 0.45em;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+    .section-title span { color: var(--gold); }
+    .section-desc {
+      font-family: var(--ff-ui);
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+    }
+    .video-frame {
+      max-width: 760px;
+      margin: 0 auto;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    }
+    .video-frame iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+      border: none;
+    }
+
+    /* ===========================
+       04. 自己紹介
+    =========================== */
+    #about {
+      background: var(--washi-dark);
+      padding: 5rem 2rem;
+    }
+    .about-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-image {
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+      overflow: hidden;
+      box-shadow: 6px 6px 0 var(--gold-dim);
+    }
+    .about-image img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      filter: sepia(15%);
+    }
+    .about-image-placeholder {
+      width: 100%;
+      height: 420px;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-dim);
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+    }
+    .about-text .section-eyebrow { text-align: left; }
+    .about-text .section-title { text-align: left; font-size: clamp(1.4rem, 2.5vw, 2rem); }
+    .about-name {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 0.8rem 0 1rem;
+    }
+    .about-name span {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      font-family: var(--ff-ui);
+      font-weight: 400;
+      margin-left: 0.6rem;
+    }
+    .about-body {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 2;
+      margin-bottom: 1.5rem;
+    }
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tag {
+      padding: 0.3em 1em;
+      border: 1px solid var(--gold-dim);
+      font-family: var(--ff-ui);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--gold-dim);
+      border-radius: 1px;
+    }
+
+    /* ===========================
+       05. 悩み言語化 → 解決策
+    =========================== */
+    #pain {
+      background: var(--deep);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .pain-headline {
+      font-family: var(--ff-display);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--washi);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .pain-headline em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .pain-grid {
+      max-width: 860px;
+      margin: 2.5rem auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+    .pain-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 2px;
+      padding: 1.8rem 1.4rem;
+      text-align: left;
+      position: relative;
+    }
+    .pain-card::before {
+      content: attr(data-num);
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-family: var(--ff-display);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: rgba(201,168,76,0.1);
+      line-height: 1;
+    }
+    .pain-card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .pain-card-text {
+      font-size: 0.88rem;
+      color: rgba(245,240,232,0.75);
+      line-height: 1.8;
+    }
+    .pain-arrow {
+      color: var(--gold);
+      font-size: 2rem;
+      margin: 2rem 0 1rem;
+    }
+    .solution-box {
+      max-width: 680px;
+      margin: 0 auto;
+      border: 1px solid var(--gold-dim);
+      padding: 2.5rem 3rem;
+      position: relative;
+    }
+    .solution-box::before {
+      content: '解　決';
+      position: absolute;
+      top: -0.7rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--deep);
+      padding: 0 1rem;
+      font-family: var(--ff-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.5em;
+      color: var(--gold);
+    }
+    .solution-text {
+      font-family: var(--ff-display);
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: var(--washi);
+      line-height: 1.9;
+    }
+    .solution-text strong { color: var(--gold); }
+
+    /* ===========================
+       06. 特典
+    =========================== */
+    #tokuten {
+      background: var(--cream);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .tokuten-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .tokuten-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--black);
+      font-family: var(--ff-ui);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      padding: 0.35em 1.4em;
+      border-radius: 1px;
+      margin-bottom: 1rem;
+    }
+    .tokuten-list {
+      margin: 2rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      text-align: left;
+    }
+    .tokuten-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.4rem 1.6rem;
+      background: #fff;
+      border: 1px solid var(--washi-dark);
+      border-radius: 2px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .tokuten-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .tokuten-item-title {
+      font-family: var(--ff-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.3rem;
+    }
+    .tokuten-item-desc {
+      font-family: var(--ff-ui);
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .tokuten-note {
+      font-family: var(--ff-ui);
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 1rem;
+    }
+    .highlight-gold {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ===========================
+       07. CTA ②
+    =========================== */
+    #cta2 {
+      background: var(--ink);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta2::before {
+      content: '弓';
+      position: absolute;
+      font-family: var(--ff-display);
+      font-size: 28vw;
+      font-weight: 900;
+      color: rgba(201,168,76,0.03);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      pointer-events: none;
+      line-height: 1;
+    }
+    .cta2-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta2-headline {
+      font-family: var(--ff-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--washi);
+      line-height: 1.5;
+      margin-bottom: 0.6rem;
+    }
+    .cta2-headline span { color: var(--gold); }
+    .cta2-sub {
+      font-family: var(--ff-ui);
+      font-size: 0.88rem;
+      color: rgba(245,240,232,0.55);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    .cta-info-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+    .cta-info-item {
+      font-family: var(--ff-ui);
+      font-size: 0.78rem;
+      color: rgba(245,240,232,0.45);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .cta-info-item::before {
+      content: '◈';
+      color: var(--gold-dim);
+      font-size: 0.65rem;
+    }
+
+    /* ===========================
+       クチコミ
+    =========================== */
+    #review {
+      background: var(--washi);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .review-card {
+      max-width: 620px;
+      margin: 0 auto;
+      border: 1px solid var(--washi-dark);
+      padding: 2rem 2.5rem;
+      background: #fff;
+      border-radius: 2px;
+      text-align: left;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      position: relative;
+    }
+    .review-card::before {
+      content: '❝';
+      font-size: 3rem;
+      color: rgba(201,168,76,0.2);
+      position: absolute;
+      top: 0.5rem;
+      left: 1.5rem;
+      line-height: 1;
+    }
+    .review-stars {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      padding-top: 0.5rem;
+    }
+    .review-text {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 2;
+      margin-bottom: 1rem;
+    }
+    .review-author {
+      font-family: var(--ff-ui);
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    /* ===========================
+       フッター
+    =========================== */
+    footer {
+      background: var(--black);
+      color: rgba(245,240,232,0.4);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-family: var(--ff-ui);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+    footer a { color: var(--gold-dim); transition: color 0.2s; }
+    footer a:hover { color: var(--gold); }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+    .footer-sns {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-sns a {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .footer-sns a:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+
+    /* ===========================
+       レスポンシブ
+    =========================== */
+    @media (max-width: 768px) {
+      #fv { grid-template-columns: 1fr; min-height: auto; }
+      .fv-text { padding: 4rem 1.5rem 2rem; }
+      .fv-image { height: 50vw; min-height: 220px; }
+      #fv::after { display: none; }
+      .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .tokuten-list { grid-template-columns: 1fr; }
+      .solution-box { padding: 2rem 1.5rem; }
+    }
+
+    /* ===========================
+       フェードイン
+    =========================== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== 01. FVエリア ===== -->
+<section id="fv">
+  <div class="fv-text fade-in">
+    <p class="fv-eyebrow">IKAI KYUGU — Since Osaka</p>
+    <h1 class="fv-headline">
+      弓道に、<br>
+      <em>本物を。</em>
+    </h1>
+    <p class="fv-sub">
+      矢・かけ・袴・弓——<br>
+      初段を目指す部活生から、<br>
+      段位取得を重ねる上級者まで。<br>
+      猪飼弓具店が、あなたの弓道を支えます。
+    </p>
+    <div class="fv-cta-wrap">
+      <a href="https://inquiry-ikai.kyugu.shop/" class="btn-gold" target="_blank">
+        無料で相談する
+      </a>
+      <a href="https://ikai-kyugu.jp/" class="btn-outline" target="_blank">
+        商品をみる
+      </a>
+    </div>
+  </div>
+
+  <div class="fv-image">
+    <!-- 画像パス例: images/fv_main.jpg -->
+    <img src="images/fv_main.jpg" alt="弓具イメージ"
+         onerror="this.style.display='none'; this.parentNode.style.background='#1a1610';" />
+    <div class="fv-image-overlay"></div>
+  </div>
+</section>
+
+<!-- ===== 02. CTA ① ===== -->
+<section id="cta1">
+  <p class="cta-label">CONTACT &amp; SHOP</p>
+  <h2 class="cta-headline fade-in">まずは無料で、弓具を相談してみませんか？</h2>
+  <p class="cta-sub fade-in">メール・お問い合わせフォームにてご相談受付中。お気軽にどうぞ。</p>
+  <div class="cta-buttons fade-in">
+    <a href="https://inquiry-ikai.kyugu.shop/" class="btn-gold" target="_blank">
+      問い合わせフォームへ
+    </a>
+    <a href="https://ikai-kyugu.jp/" class="btn-outline" target="_blank">
+      公式サイトをみる
+    </a>
+  </div>
+</section>
+
+<!-- ===== 03. 動画 ===== -->
+<section id="video-section">
+  <p class="section-eyebrow fade-in">INTRODUCTION VIDEO</p>
+  <h2 class="section-title fade-in">猪飼弓具店の<span>弓具の世界</span>を、動画でご覧ください</h2>
+  <p class="section-desc fade-in">製造から販売まで手がける専門店ならではの知識と技術を、代表・猪飼英樹が直接ご紹介します。</p>
+  <div class="video-frame fade-in">
+    <!-- YouTube埋め込み：YouTubeチャンネルの動画IDに差し替えてください -->
+    <iframe
+      src="https://www.youtube.com/embed?listType=user_uploads&list=ikai_hideki"
+      title="猪飼弓具店 YouTube"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<!-- ===== 04. 自己紹介 ===== -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-image fade-in">
+      <!-- 画像パス例: images/hideki_portrait.jpg -->
+      <img src="images/hideki_portrait.jpg" alt="代表 猪飼英樹"
+           onerror="this.outerHTML='<div class=\'about-image-placeholder\'>猪飼 英樹</div>';" />
+    </div>
+    <div class="about-text fade-in">
+      <p class="section-eyebrow">ABOUT</p>
+      <h2 class="section-title">はじめまして、<br><span style="color:var(--gold);">猪飼弓具店</span>です</h2>
+      <p class="about-name">猪飼 英樹 <span>代表</span></p>
+      <p class="about-body">
+        大阪・淀川区に本店を構え、福岡にも店舗を持つ弓道専門店です。
+        弓具の販売にとどまらず、<strong>自社製造</strong>にも取り組み、品質と信頼を積み重ねてきました。<br><br>
+        部活で弓道を始めたばかりの学生から、段位取得を目指す上級者まで、
+        一人ひとりに合った弓具選びをサポートします。
+        Instagram・YouTubeでも弓道情報を日々発信中です。
+      </p>
+      <div class="about-tags">
+        <span class="tag">大阪・福岡に店舗</span>
+        <span class="tag">弓具の自社製造</span>
+        <span class="tag">初心者〜上級者対応</span>
+        <span class="tag">SNS情報発信</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05. 悩み言語化 → 解決策 ===== -->
+<section id="pain">
+  <p class="section-eyebrow fade-in" style="color:var(--gold);">STUDENT'S VOICE</p>
+  <h2 class="pain-headline fade-in">弓道部員が<em>よく抱える悩み</em>、<br>猪飼弓具店が解決します。</h2>
+
+  <div class="pain-grid fade-in">
+    <div class="pain-card" data-num="01">
+      <div class="pain-card-icon">🏹</div>
+      <p class="pain-card-text"><strong style="color:var(--washi);">何を買えばいいか分からない</strong><br>初めての弓具選び。矢やかけの種類が多すぎて、どれが自分に合うか見当もつかない。</p>
+    </div>
+    <div class="pain-card" data-num="02">
+      <div class="pain-card-icon">💬</div>
+      <p class="pain-card-text"><strong style="color:var(--washi);">顧問や先輩に聞きにくい</strong><br>弓具のことを気軽に相談できる大人が周りにいない。専門的なアドバイスが欲しい。</p>
+    </div>
+    <div class="pain-card" data-num="03">
+      <div class="pain-card-icon">💰</div>
+      <p class="pain-card-text"><strong style="color:var(--washi);">予算内でいい弓具を選びたい</strong><br>部活生にとって弓具は大きな出費。予算に合わせた最適な選択肢を知りたい。</p>
+    </div>
+  </div>
+
+  <div class="pain-arrow fade-in">↓</div>
+
+  <div class="solution-box fade-in">
+    <p class="solution-text">
+      <strong>猪飼弓具店</strong>なら、経験豊富なスタッフが<strong>初心者の疑問にも丁寧に対応</strong>。<br>
+      予算・体格・レベルに合わせて、<strong>最適な弓具をご提案</strong>します。<br>
+      問い合わせフォーム・SNSからも気軽にご相談ください。
+    </p>
+  </div>
+</section>
+
+<!-- ===== クチコミ ===== -->
+<section id="review">
+  <p class="section-eyebrow fade-in">REVIEW</p>
+  <h2 class="section-title fade-in" style="margin-bottom:2rem;">お客様の声</h2>
+  <div class="review-card fade-in">
+    <div class="review-stars">★★★★★</div>
+    <p class="review-text">
+      有名で希少な弓具店。東淀川高校の弓道部に所属していた頃にお世話になりました。
+      矢、矢筒、かけ、袴などを購入しました。丁寧にご対応いただき、納得のいく弓具を揃えることができました。
+    </p>
+    <p class="review-author">— Googleクチコミより</p>
+  </div>
+</section>
+
+<!-- ===== 06. 特典 ===== -->
+<section id="tokuten">
+  <div class="tokuten-inner">
+    <span class="tokuten-badge fade-in">SPECIAL BENEFITS</span>
+    <h2 class="section-title fade-in" style="margin-top:0.5rem;">
+      今すぐ相談すると、<span class="highlight-gold">さらにお得に</span>。
+    </h2>
+    <p class="section-desc fade-in">問い合わせ・ご来店のお客様には、以下の特典をご用意しています。</p>
+
+    <div class="tokuten-list fade-in">
+      <div class="tokuten-item">
+        <div class="tokuten-icon">🎯</div>
+        <div>
+          <p class="tokuten-item-title">弓具選びの個別相談</p>
+          <p class="tokuten-item-desc">体格・段位・予算に合わせた弓具をスタッフが直接ご提案。初心者も安心してご相談ください。</p>
+        </div>
+      </div>
+      <div class="tokuten-item">
+        <div class="tokuten-icon">📦</div>
+        <div>
+          <p class="tokuten-item-title">セット購入でお得に揃える</p>
+          <p class="tokuten-item-desc">矢・かけ・袴などをまとめてご購入の場合、お得なセット提案あり（詳細はお問い合わせください）。</p>
+        </div>
+      </div>
+      <div class="tokuten-item">
+        <div class="tokuten-icon">🎓</div>
+        <div>
+          <p class="tokuten-item-title">学生・部活生サポート</p>
+          <p class="tokuten-item-desc">弓道部への一括納品や、部活・学校向けのまとめ注文にも対応しています。</p>
+        </div>
+      </div>
+      <div class="tokuten-item">
+        <div class="tokuten-icon">📱</div>
+        <div>
+          <p class="tokuten-item-title">SNS・YouTubeで弓道情報発信中</p>
+          <p class="tokuten-item-desc">Instagramでは日々の弓具情報を、YouTubeでは解説動画を公開。フォローして最新情報をチェック。</p>
+        </div>
+      </div>
+    </div>
+    <p class="tokuten-note fade-in">※特典内容は変更になる場合があります。詳細はお問い合わせください。</p>
+  </div>
+</section>
+
+<!-- ===== 07. CTA ② ===== -->
+<section id="cta2">
+  <div class="cta2-inner">
+    <p class="cta-label fade-in">CONTACT</p>
+    <h2 class="cta2-headline fade-in">
+      弓道の道を、<br><span>本物の弓具</span>と歩もう。
+    </h2>
+    <p class="cta2-sub fade-in">
+      フォームからのお問い合わせ、またはInstagramのDMでも受け付けています。<br>
+      初めての方もお気軽にどうぞ。
+    </p>
+    <div class="cta-buttons fade-in">
+      <a href="https://inquiry-ikai.kyugu.shop/" class="btn-gold" target="_blank">
+        問い合わせフォームへ
+      </a>
+      <a href="https://www.instagram.com/ikai_hideki/" class="btn-outline" target="_blank">
+        Instagramをみる
+      </a>
+    </div>
+    <div class="cta-info-row fade-in">
+      <span class="cta-info-item">定休日：水曜・盆・年末年始</span>
+      <span class="cta-info-item">TEL：06-6301-2019</span>
+      <span class="cta-info-item">大阪市淀川区木川西２丁目２−４</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer>
+  <div class="footer-sns">
+    <a href="https://www.instagram.com/ikai_hideki/" target="_blank" title="Instagram">📷</a>
+    <a href="https://www.youtube.com/@ikai_hideki" target="_blank" title="YouTube">▶</a>
+    <a href="https://ikai-kyugu.jp/" target="_blank" title="公式サイト">🌐</a>
+  </div>
+  <div class="footer-links">
+    <a href="https://ikai-kyugu.jp/" target="_blank">公式サイト</a>
+    <a href="https://inquiry-ikai.kyugu.shop/" target="_blank">お問い合わせ</a>
+    <a href="tel:0663012019">06-6301-2019</a>
+  </div>
+  <p>© 有限会社 猪飼弓具店 All Rights Reserved.</p>
+</footer>
+
+<!-- ===== JS: フェードイン ===== -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
