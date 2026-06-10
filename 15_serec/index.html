@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>セレクション大阪BIGSTEP店 | アメリカ4大スポーツグッズ専門店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #0a0e1a;
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== COLOR TOKENS ===== */
+    :root {
+      --navy:    #0a0e1a;
+      --navy2:   #111827;
+      --gold:    #C9A84C;
+      --gold-lt: #e8c96e;
+      --white:   #f8f8f8;
+      --red:     #C8102E;
+      --muted:   #8a9ab5;
+      --border:  rgba(201,168,76,0.25);
+    }
+
+    /* ===== UTILITY ===== */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    .gold { color: var(--gold); }
+    .gold-lt { color: var(--gold-lt); }
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,14,26,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .header-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 900; letter-spacing: 0.05em;
+      color: var(--white);
+    }
+    .header-logo span { color: var(--gold); }
+    .header-cta {
+      background: var(--red);
+      color: #fff;
+      font-size: 13px; font-weight: 700;
+      padding: 8px 18px; border-radius: 3px;
+      letter-spacing: 0.05em;
+      transition: background 0.2s;
+    }
+    .header-cta:hover { background: #e01530; }
+
+    /* ===== FV AREA ===== */
+    .fv {
+      padding-top: 64px;
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .fv-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(145deg, #0a0e1a 40%, #0d1a2e 100%);
+    }
+    .fv-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    }
+    .fv-content {
+      position: relative; z-index: 1;
+      padding: 60px 20px 40px;
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+    }
+    .fv-text {}
+    .fv-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+    }
+    .fv-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 7vw, 64px);
+      font-weight: 900; line-height: 1.05;
+      color: var(--white); text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .fv-headline em { color: var(--gold); font-style: normal; display: block; }
+    .fv-sub {
+      font-size: 15px; line-height: 1.8; color: #b0bdd4;
+      margin-bottom: 32px;
+    }
+    .fv-leagues {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px;
+    }
+    .league-badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+      padding: 5px 12px; border: 1px solid var(--gold);
+      color: var(--gold); border-radius: 2px;
+      animation: fadeInUp 0.5s ease both;
+    }
+    .league-badge:nth-child(1) { animation-delay: 0.1s; }
+    .league-badge:nth-child(2) { animation-delay: 0.2s; }
+    .league-badge:nth-child(3) { animation-delay: 0.3s; }
+    .league-badge:nth-child(4) { animation-delay: 0.4s; }
+    .fv-cta-group { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--red);
+      color: #fff; font-size: 15px; font-weight: 700;
+      padding: 14px 28px; border-radius: 3px;
+      letter-spacing: 0.05em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #e01530; transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold); font-size: 14px; font-weight: 700;
+      padding: 13px 22px; border-radius: 3px;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: rgba(201,168,76,0.1); }
+    .fv-image {
+      position: relative;
+    }
+    .fv-image-frame {
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: #111827;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .fv-image-frame img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 10px; color: var(--muted); font-size: 13px; text-align: center;
+    }
+    .img-placeholder-icon { font-size: 40px; opacity: 0.4; }
+    .fv-badge-overlay {
+      position: absolute; top: -12px; right: -12px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; font-weight: 900; letter-spacing: 0.1em;
+      padding: 8px 14px; border-radius: 2px;
+      text-transform: uppercase; line-height: 1.3; text-align: center;
+    }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 80px 0; }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 900; text-transform: uppercase;
+      color: var(--white); line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .section-title span { color: var(--gold); }
+    .section-body { font-size: 15px; line-height: 1.9; color: #b0bdd4; }
+    .divider {
+      width: 48px; height: 3px;
+      background: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    /* ===== CTA BLOCK ===== */
+    .cta-block {
+      background: linear-gradient(135deg, #0d1a2e 0%, #0a0e1a 100%);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 40px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-block::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-lt), var(--gold));
+    }
+    .cta-block-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 26px; font-weight: 900;
+      color: var(--white); margin-bottom: 10px;
+    }
+    .cta-block-sub { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+    .cta-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== VIDEO SECTION ===== */
+    .video-section { background: var(--navy2); }
+    .video-wrapper {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background: #060a14;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .video-inner {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; flex-direction: column; color: var(--muted);
+    }
+    .play-btn {
+      width: 70px; height: 70px; border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; color: var(--gold);
+      cursor: pointer; transition: background 0.2s;
+    }
+    .play-btn:hover { background: rgba(201,168,76,0.15); }
+    .video-caption { font-size: 14px; }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-section {}
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+    }
+    .about-image-frame {
+      border: 1px solid var(--border); border-radius: 4px;
+      overflow: hidden; aspect-ratio: 1/1;
+      background: #111827;
+    }
+    .about-image-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .stat-row {
+      display: flex; gap: 24px; margin-top: 28px;
+    }
+    .stat-item { }
+    .stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px; font-weight: 900; color: var(--gold); line-height: 1;
+    }
+    .stat-desc { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    /* ===== PAIN SECTION ===== */
+    .pain-section { background: var(--navy2); }
+    .pain-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 36px;
+    }
+    .pain-card {
+      border: 1px solid rgba(200,16,46,0.3);
+      border-left: 3px solid var(--red);
+      border-radius: 4px; padding: 20px;
+      background: rgba(200,16,46,0.05);
+    }
+    .pain-card-q {
+      font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 8px;
+    }
+    .pain-card-a {
+      font-size: 13px; color: #7a8ba0;
+    }
+    .solution-banner {
+      margin-top: 36px;
+      background: linear-gradient(135deg, #0d1a2e, #0a0e1a);
+      border: 1px solid var(--border);
+      border-radius: 6px; padding: 32px 36px;
+      display: flex; align-items: center; gap: 24px;
+    }
+    .solution-arrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px; font-weight: 900; color: var(--gold); flex-shrink: 0;
+    }
+    .solution-text h3 {
+      font-size: 18px; font-weight: 900; color: var(--white); margin-bottom: 8px;
+    }
+    .solution-text p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* ===== PRODUCTS SECTION ===== */
+    .products-section {}
+    .league-tabs {
+      display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap;
+    }
+    .league-tab {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px; font-weight: 700; letter-spacing: 0.1em;
+      padding: 8px 18px; border: 1px solid var(--border);
+      border-radius: 2px; color: var(--muted); cursor: pointer;
+      transition: all 0.2s;
+    }
+    .league-tab.active, .league-tab:hover {
+      border-color: var(--gold); color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+    .product-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .product-card {
+      border: 1px solid var(--border); border-radius: 4px;
+      overflow: hidden; background: var(--navy2);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .product-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .product-img {
+      aspect-ratio: 3/4; background: #111827;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 12px;
+    }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; }
+    .product-info { padding: 12px; }
+    .product-league {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 4px;
+    }
+    .product-name { font-size: 13px; font-weight: 700; color: var(--white); }
+    .brand-strip {
+      margin-top: 36px;
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    }
+    .brand-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; letter-spacing: 0.08em; font-weight: 700;
+      padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px; color: #8a9ab5;
+    }
+    .brand-strip-label { font-size: 12px; color: var(--muted); margin-right: 4px; }
+
+    /* ===== REVIEWS SECTION ===== */
+    .reviews-section { background: var(--navy2); }
+    .reviews-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px;
+    }
+    .review-card {
+      border: 1px solid var(--border); border-radius: 6px;
+      padding: 24px; background: var(--navy);
+      position: relative;
+    }
+    .review-stars { color: var(--gold); font-size: 18px; margin-bottom: 12px; }
+    .review-text { font-size: 14px; line-height: 1.8; color: #b0bdd4; }
+    .review-footer {
+      margin-top: 16px; font-size: 12px; color: var(--muted);
+    }
+    .review-quote {
+      position: absolute; top: 20px; right: 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px; line-height: 1; color: rgba(201,168,76,0.12);
+      font-weight: 900;
+    }
+
+    /* ===== BENEFITS / SPECIAL ===== */
+    .benefits-section {}
+    .benefits-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px;
+    }
+    .benefit-card {
+      border-top: 3px solid var(--gold);
+      padding: 24px; background: var(--navy2);
+      border-radius: 0 0 4px 4px;
+    }
+    .benefit-icon { font-size: 32px; margin-bottom: 14px; }
+    .benefit-title { font-size: 15px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
+    .benefit-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      background: linear-gradient(135deg, #0d1a2e 0%, #0a0e1a 100%);
+      border-top: 1px solid var(--border);
+      text-align: center; padding: 100px 20px;
+      position: relative; overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(201,168,76,0.06), transparent);
+    }
+    .final-cta-content { position: relative; z-index: 1; }
+    .final-cta h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(32px, 6vw, 56px);
+      font-weight: 900; text-transform: uppercase;
+      color: var(--white); margin-bottom: 16px; line-height: 1.1;
+    }
+    .final-cta h2 span { color: var(--gold); }
+    .final-cta p { font-size: 15px; color: var(--muted); margin-bottom: 36px; }
+    .final-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== INFO / MAP ===== */
+    .info-section { padding: 60px 0; }
+    .info-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+    }
+    .info-table { width: 100%; }
+    .info-row {
+      display: flex; gap: 12px;
+      padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 14px;
+    }
+    .info-key { color: var(--gold); font-weight: 700; min-width: 90px; flex-shrink: 0; }
+    .info-val { color: #b0bdd4; line-height: 1.6; }
+    .info-val a { color: var(--gold-lt); text-decoration: underline; }
+    .map-embed {
+      border: 1px solid var(--border); border-radius: 4px; overflow: hidden; height: 280px;
+    }
+    .map-embed iframe { width: 100%; height: 100%; border: none; }
+    .sns-row {
+      display: flex; gap: 12px; margin-top: 20px;
+    }
+    .sns-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border: 1px solid var(--border);
+      border-radius: 3px; font-size: 13px; font-weight: 700;
+      color: var(--muted); transition: all 0.2s;
+    }
+    .sns-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #050810;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 30px 20px; text-align: center;
+      font-size: 12px; color: #4a5568;
+    }
+    footer a { color: #4a5568; }
+    footer a:hover { color: var(--gold); }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .fv-content { grid-template-columns: 1fr; }
+      .fv-image { display: none; }
+      .about-grid, .reviews-grid, .pain-grid, .info-grid { grid-template-columns: 1fr; }
+      .benefits-grid, .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .solution-banner { flex-direction: column; text-align: center; }
+      .cta-block { padding: 28px 20px; }
+      header { padding: 10px 16px; }
+      .header-logo { font-size: 16px; }
+    }
+    @media (max-width: 420px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { transition: none; }
+      .league-badge { animation: none; opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-logo">SELECTION <span>OSAKA</span></div>
+    <a href="https://www.selection-store.com/f/contact?__ara=eNqrVirNTFGyUsrxMEpy9TB0KnYrL_FKd4o0Cw_Lyg0oSQwtcC03Tg31VtJRKk4tLgarNUkzNDJJSTY1MrZMNklMS040NTJPS01MNjW1NEkyT7OINzQ3NTM0N7AwNwBqKwBbkFeak1MLADm7IO4&_gl=1*8ah355*_ga*MTkzMjY3NDkwMy4xNzU2MTcwODcx*_ga_VGPE8D2JBF*czE3NTYxNzA4NzAkbzEkZzEkdDE3NTYxNzA5ODAkajYwJGwwJGgw" class="header-cta" target="_blank">お問い合わせ</a>
+  </header>
+
+  <!-- ===== FV AREA ===== -->
+  <section class="fv">
+    <div class="fv-bg"></div>
+    <div class="fv-content">
+      <div class="fv-text">
+        <p class="fv-eyebrow">大阪・アメ村 BIG STEP 2F</p>
+        <h1 class="fv-headline">
+          AMERICA'S<br>BIG 4 SPORTS
+          <em>全部揃う。</em>
+        </h1>
+        <p class="fv-sub">
+          NFL・NBA・MLB・NHL ― アメリカ4大メジャースポーツの<br>
+          公式グッズが大阪で最大級の品揃え。<br>
+          本物のファンが、本物のグッズを見つける場所。
+        </p>
+        <div class="fv-leagues">
+          <span class="league-badge">NFL</span>
+          <span class="league-badge">NBA</span>
+          <span class="league-badge">MLB</span>
+          <span class="league-badge">NHL</span>
+        </div>
+        <div class="fv-cta-group">
+          <a href="https://www.selection-store.com/f/contact?__ara=eNqrVirNTFGyUsrxMEpy9TB0KnYrL_FKd4o0Cw_Lyg0oSQwtcC03Tg31VtJRKk4tLgarNUkzNDJJSTY1MrZMNklMS040NTJPS01MNjW1NEkyT7OINzQ3NTM0N7AwNwBqKwBbkFeak1MLADm7IO4&_gl=1*8ah355*_ga*MTkzMjY3NDkwMy4xNzU2MTcwODcx*_ga_VGPE8D2JBF*czE3NTYxNzA4NzAkbzEkZzEkdDE3NTYxNzA5ODAkajYwJGwwJGgw" class="btn-primary" target="_blank">今すぐ問い合わせる</a>
+          <a href="https://www.selection-j.com/shop/shoppage/osaka" class="btn-outline" target="_blank">公式サイトへ</a>
+        </div>
+      </div>
+      <div class="fv-image">
+        <div class="fv-image-frame">
+          <!-- 推奨画像: 店舗外観またはメイン商品画像 (例: store_front.jpg) -->
+          <img src="images/fv_main.jpg" alt="セレクション大阪BIGSTEP店 店舗イメージ"
+               onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🏈</div><span>images/fv_main.jpg</span></div>'" />
+        </div>
+        <div class="fv-badge-overlay">OSAKA<br>BIG STEP 2F</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA 1 ===== -->
+  <section style="padding: 60px 0; background: var(--navy2);">
+    <div class="container">
+      <div class="cta-block fade-in">
+        <p class="section-label">ACCESS &amp; CONTACT</p>
+        <p class="cta-block-title">在庫確認・取り寄せはお気軽に</p>
+        <p class="cta-block-sub">お探しのチーム・プレイヤーのグッズがあるかどうか、まずはご連絡ください。</p>
+        <div class="cta-links">
+          <a href="https://www.selection-store.com/f/contact?__ara=eNqrVirNTFGyUsrxMEpy9TB0KnYrL_FKd4o0Cw_Lyg0oSQwtcC03Tg31VtJRKk4tLgarNUkzNDJJSTY1MrZMNklMS040NTJPS01MNjW1NEkyT7OINzQ3NTM0N7AwNwBqKwBbkFeak1MLADm7IO4&_gl=1*8ah355*_ga*MTkzMjY3NDkwMy4xNzU2MTcwODcx*_ga_VGPE8D2JBF*czE3NTYxNzA4NzAkbzEkZzEkdDE3NTYxNzA5ODAkajYwJGwwJGgw" class="btn-primary" target="_blank">📩 問い合わせフォーム</a>
+          <a href="tel:06-4708-3300" class="btn-outline">📞 06-4708-3300</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VIDEO ===== -->
+  <section class="video-section">
+    <div class="container">
+      <p class="section-label fade-in">OFFICIAL YOUTUBE</p>
+      <h2 class="section-title fade-in">店舗の魅力を<span>動画</span>でチェック</h2>
+      <p class="section-body fade-in" style="margin-bottom: 28px;">スポーツグッズの最新入荷情報や、豊富な在庫の様子はYouTubeでご確認いただけます。</p>
+      <div class="video-wrapper fade-in">
+        <!-- YouTubeチャンネルのURLを埋め込みに変更するか、動画IDを指定してください -->
+        <!-- 例: src="https://www.youtube.com/embed/動画ID" -->
+        <div class="video-inner">
+          <a href="https://www.youtube.com/@selectionshinjuku" target="_blank" class="play-btn">▶</a>
+          <p class="video-caption">YouTubeチャンネルで最新情報を発信中</p>
+          <p style="font-size:12px;color:#4a5568;">▲ クリックしてYouTubeチャンネルへ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <p class="section-label fade-in">ABOUT US</p>
+          <div class="divider fade-in"></div>
+          <h2 class="section-title fade-in">はじめまして、<br><span>セレクション</span>です</h2>
+          <p class="section-body fade-in">
+            株式会社セレクション・インターナショナルが運営する「セレクション大阪BIGSTEP店」は、大阪・アメ村のシンボル、ビッグステップ2階に位置するアメリカンスポーツグッズの専門店です。
+          </p>
+          <p class="section-body fade-in" style="margin-top:14px;">
+            NFL・NBA・MLB・NHLの4大メジャースポーツをはじめ、プロ野球グッズや国内外トップブランドのスポーツアイテムを、西日本最大級の規模で取り揃えています。ファンが一歩入ると時間を忘れてしまうほどの品揃えが、当店最大の強みです。
+          </p>
+          <div class="stat-row fade-in">
+            <div class="stat-item">
+              <div class="stat-num">4</div>
+              <div class="stat-desc">大メジャースポーツ<br>すべて取り扱い</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">★4.5</div>
+              <div class="stat-desc">Googleクチコミ<br>高評価</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">365</div>
+              <div class="stat-desc">日営業<br>（年末年始除く）</div>
+            </div>
+          </div>
+        </div>
+        <div class="fade-in">
+          <div class="about-image-frame">
+            <!-- 推奨画像: 店内の様子 (例: store_inside.jpg) -->
+            <img src="images/about_store.jpg" alt="セレクション大阪BIGSTEP店 店内"
+                 onerror="this.style.display='none';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.innerHTML='<div style=\'text-align:center;color:#4a5568;font-size:13px;\'>🏪<br>images/about_store.jpg</div>'" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAIN → SOLUTION ===== -->
+  <section class="pain-section">
+    <div class="container">
+      <p class="section-label fade-in">FOR TRUE FANS</p>
+      <h2 class="section-title fade-in">こんな<span>お悩み</span>、ありませんか？</h2>
+      <div class="pain-grid fade-in">
+        <div class="pain-card">
+          <p class="pain-card-q">😔 推しチームのユニフォームが国内で見つからない…</p>
+          <p class="pain-card-a">海外サイトで買うと偽物リスクや関税が心配</p>
+        </div>
+        <div class="pain-card">
+          <p class="pain-card-q">😔 NHLグッズを置いてる店が近くにない</p>
+          <p class="pain-card-a">NHL・NFLは特に国内での取り扱いが少ない</p>
+        </div>
+        <div class="pain-card">
+          <p class="pain-card-q">😔 スポーツブランドの本物が欲しいけど選び方がわからない</p>
+          <p class="pain-card-a">MITCHELL&amp;NESSやSTALL&amp;DEANなど選択肢が多くて迷う</p>
+        </div>
+        <div class="pain-card">
+          <p class="pain-card-q">😔 ギフト用に贈るグッズを選びたいが種類が少ない</p>
+          <p class="pain-card-a">プレゼントにふさわしい上質なグッズが欲しい</p>
+        </div>
+      </div>
+      <div class="solution-banner fade-in">
+        <div class="solution-arrow">→</div>
+        <div class="solution-text">
+          <h3>セレクション大阪BIGSTEP店なら、すべて解決できます</h3>
+          <p>NFL・NBA・MLB・NHL、プロ野球まで。AND1・ジョーダン・NIKE・ADIDAS・NEWERA・MITCHELL&amp;NESS・STALL&amp;DEANなどの人気ブランドが一堂に揃う大阪唯一の専門店です。実物を見て、触れて、選べる体験をぜひ。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="products-section">
+    <div class="container">
+      <p class="section-label fade-in">LINEUP</p>
+      <h2 class="section-title fade-in"><span>取扱商品</span>ラインナップ</h2>
+      <p class="section-body fade-in" style="margin-bottom: 28px;">
+        アメリカ4大スポーツのユニフォーム・キャップ・アクセサリーから、国内プロ野球グッズまで幅広く取り揃えています。
+      </p>
+      <div class="league-tabs fade-in">
+        <span class="league-tab active">ALL</span>
+        <span class="league-tab">NFL</span>
+        <span class="league-tab">NBA</span>
+        <span class="league-tab">MLB</span>
+        <span class="league-tab">NHL</span>
+        <span class="league-tab">プロ野球</span>
+      </div>
+      <div class="product-grid fade-in">
+        <!-- 商品1 -->
+        <div class="product-card">
+          <div class="product-img">
+            <!-- 推奨画像: NFLジャージ (例: product_nfl_jersey.jpg) -->
+            <img src="images/product_nfl_jersey.jpg" alt="NFLジャージ"
+                 onerror="this.parentElement.innerHTML='<div style=\'text-align:center;color:#4a5568;font-size:12px;\'>🏈<br>product_nfl_jersey.jpg</div>'" />
+          </div>
+          <div class="product-info">
+            <p class="product-league">NFL</p>
+            <p class="product-name">NFLチームジャージ各種</p>
+          </div>
+        </div>
+        <!-- 商品2 -->
+        <div class="product-card">
+          <div class="product-img">
+            <!-- 推奨画像: NBAユニフォーム (例: product_nba_uniform.jpg) -->
+            <img src="images/product_nba_uniform.jpg" alt="NBAユニフォーム"
+                 onerror="this.parentElement.innerHTML='<div style=\'text-align:center;color:#4a5568;font-size:12px;\'>🏀<br>product_nba_uniform.jpg</div>'" />
+          </div>
+          <div class="product-info">
+            <p class="product-league">NBA</p>
+            <p class="product-name">NBAチームユニフォーム</p>
+          </div>
+        </div>
+        <!-- 商品3 -->
+        <div class="product-card">
+          <div class="product-img">
+            <!-- 推奨画像: MLBキャップ (例: product_mlb_cap.jpg) -->
+            <img src="images/product_mlb_cap.jpg" alt="MLBキャップ"
+                 onerror="this.parentElement.innerHTML='<div style=\'text-align:center;color:#4a5568;font-size:12px;\'>⚾<br>product_mlb_cap.jpg</div>'" />
+          </div>
+          <div class="product-info">
+            <p class="product-league">MLB</p>
+            <p class="product-name">MLB NEWERAキャップ</p>
+          </div>
+        </div>
+        <!-- 商品4 -->
+        <div class="product-card">
+          <div class="product-img">
+            <!-- 推奨画像: NHLグッズ (例: product_nhl_goods.jpg) -->
+            <img src="images/product_nhl_goods.jpg" alt="NHLグッズ"
+                 onerror="this.parentElement.innerHTML='<div style=\'text-align:center;color:#4a5568;font-size:12px;\'>🏒<br>product_nhl_goods.jpg</div>'" />
+          </div>
+          <div class="product-info">
+            <p class="product-league">NHL</p>
+            <p class="product-name">NHLグッズ各種</p>
+          </div>
+        </div>
+        <!-- 商品5 -->
+        <div class="product-card">
+          <div class="product-img">
+            <!-- 推奨画像: プロ野球グッズ (例: product_baseball_tigers.jpg) -->
+            <img src="images/product_baseball_tigers.jpg" alt="プロ野球グッズ"
+                 onerror="this.parentElement.innerHTML='<div style=\'text-align:center;color:#4a5568;font-size:12px;\'>⚾<br>product_baseball_tigers.jpg</div>'" />
+          </div>
+          <div class="product-info">
+            <p class="product-league">プロ野球</p>
+            <p class="product-name">阪神タイガースグッズ</p>
+          </div>
+        </div>
+        <!-- 商品6 -->
+        <div class="product-card">
+          <div class="product-img">
+            <!-- 推奨画像: ブランドアイテム (例: product_brand_items.jpg) -->
+            <img src="images/product_brand_items.jpg" alt="スポーツブランドアイテム"
+                 onerror="this.parentElement.innerHTML='<div style=\'text-align:center;color:#4a5568;font-size:12px;\'>👟<br>product_brand_items.jpg</div>'" />
+          </div>
+          <div class="product-info">
+            <p class="product-league">BRAND</p>
+            <p class="product-name">スポーツブランドアイテム</p>
+          </div>
+        </div>
+      </div>
+      <div class="brand-strip fade-in">
+        <span class="brand-strip-label">取扱ブランド：</span>
+        <span class="brand-tag">AND1</span>
+        <span class="brand-tag">JORDAN BRAND</span>
+        <span class="brand-tag">NIKE</span>
+        <span class="brand-tag">ADIDAS</span>
+        <span class="brand-tag">NEW ERA</span>
+        <span class="brand-tag">MITCHELL&amp;NESS</span>
+        <span class="brand-tag">STALL&amp;DEAN</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews-section">
+    <div class="container">
+      <p class="section-label fade-in">CUSTOMER REVIEWS</p>
+      <h2 class="section-title fade-in">来店された方の<span>声</span></h2>
+      <div class="reviews-grid">
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★☆</div>
+          <p class="review-text">アメ村ビッグステップの2階にあります。アメリカ３大スポーツNFL、NBA、MLBのグッズが豊富に揃ってます。ブルズやレイカーズのユニフォームを見るとテンションが上がります。スラムダンク世代ですが、また再ブームが来て嬉しいです。</p>
+          <div class="review-footer">Googleクチコミ より</div>
+          <div class="review-quote">"</div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">店舗はメッチャ広く、MLB・NFL・NBA・NHLのグッズが豊富にあって驚きました！阪神タイガースのグッズも充実。NFLのジャージが沢山あって、好きなチームを探すのが楽しくて時間があっという間に過ぎてしまいました。他の店舗とは違い海外スポーツのグッズが大量にあるので大好きです！</p>
+          <div class="review-footer">Googleクチコミ より</div>
+          <div class="review-quote">"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFITS ===== -->
+  <section class="benefits-section">
+    <div class="container">
+      <p class="section-label fade-in">WHY SELECTION</p>
+      <h2 class="section-title fade-in">選ばれる<span>3つの理由</span></h2>
+      <div class="benefits-grid">
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">🏆</div>
+          <h3 class="benefit-title">4大スポーツが全部揃う</h3>
+          <p class="benefit-desc">NFL・NBA・MLB・NHLのアメリカ4大メジャースポーツを一店舗でカバー。大阪では最大級の品揃えです。</p>
+        </div>
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">🛍️</div>
+          <h3 class="benefit-title">本物ブランドの正規品</h3>
+          <p class="benefit-desc">AND1・ジョーダン・NIKE・ADIDAS・NEW ERA・MITCHELL&amp;NESSなど、信頼できるブランドの正規グッズのみを取り扱い。</p>
+        </div>
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">📍</div>
+          <h3 class="benefit-title">アクセス抜群のアメ村</h3>
+          <p class="benefit-desc">大阪・心斎橋のシンボル「アメリカ村ビッグステップ」2階。年中無休（年末年始除く）で気軽に来店できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final-cta">
+    <div class="final-cta-content">
+      <p class="section-label" style="text-align:center; margin-bottom: 16px;">COME VISIT US</p>
+      <h2>さらに今なら<span>スタッフに直接</span><br>在庫確認できます</h2>
+      <p>お探しのグッズ・チーム・ブランドがあれば、お気軽にお問い合わせください。<br>取り寄せ対応も承っております。</p>
+      <div class="final-cta-btns">
+        <a href="https://www.selection-store.com/f/contact?__ara=eNqrVirNTFGyUsrxMEpy9TB0KnYrL_FKd4o0Cw_Lyg0oSQwtcC03Tg31VtJRKk4tLgarNUkzNDJJSTY1MrZMNklMS040NTJPS01MNjW1NEkyT7OINzQ3NTM0N7AwNwBqKwBbkFeak1MLADm7IO4&_gl=1*8ah355*_ga*MTkzMjY3NDkwMy4xNzU2MTcwODcx*_ga_VGPE8D2JBF*czE3NTYxNzA4NzAkbzEkZzEkdDE3NTYxNzA5ODAkajYwJGwwJGgw" class="btn-primary" target="_blank">📩 問い合わせフォームへ</a>
+        <a href="tel:06-4708-3300" class="btn-outline">📞 電話で問い合わせる</a>
+        <a href="https://www.selection-j.com/shop/shoppage/osaka" class="btn-outline" target="_blank">🌐 公式HPへ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORE INFO ===== -->
+  <section class="info-section" style="background: var(--navy2);">
+    <div class="container">
+      <p class="section-label fade-in">STORE INFO</p>
+      <h2 class="section-title fade-in"><span>店舗</span>情報</h2>
+      <div class="info-grid" style="margin-top: 28px;">
+        <div>
+          <div class="info-table fade-in">
+            <div class="info-row">
+              <span class="info-key">店舗名</span>
+              <span class="info-val">セレクション大阪BIGSTEP店</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">運営会社</span>
+              <span class="info-val">株式会社セレクション・インターナショナル<br>代表取締役：大道 貴哉</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">住所</span>
+              <span class="info-val">大阪府大阪市中央区西心斎橋１丁目６−１４<br>BIG STEP 2F</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">電話</span>
+              <span class="info-val"><a href="tel:06-4708-3300">06-4708-3300</a></span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">定休日</span>
+              <span class="info-val">年中無休（年末年始をのぞく）</span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">公式HP</span>
+              <span class="info-val"><a href="https://www.selection-j.com/shop/shoppage/osaka" target="_blank">selection-j.com</a></span>
+            </div>
+          </div>
+          <div class="sns-row fade-in">
+            <a href="https://x.com/sele_osaka" class="sns-btn" target="_blank">𝕏 Twitter / X</a>
+            <a href="https://www.youtube.com/@selectionshinjuku" class="sns-btn" target="_blank">▶ YouTube</a>
+          </div>
+        </div>
+        <div class="fade-in">
+          <div class="map-embed">
+            <iframe
+              src="https://maps.google.com/maps?q=大阪府大阪市中央区西心斎橋1-6-14+BIG+STEP+2F&output=embed&z=16"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="セレクション大阪BIGSTEP店 地図">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 株式会社セレクション・インターナショナル　|　<a href="https://www.selection-j.com/shop/shoppage/osaka" target="_blank">公式HP</a>　|　<a href="https://www.selection-store.com/f/contact?__ara=eNqrVirNTFGyUsrxMEpy9TB0KnYrL_FKd4o0Cw_Lyg0oSQwtcC03Tg31VtJRKk4tLgarNUkzNDJJSTY1MrZMNklMS040NTJPS01MNjW1NEkyT7OINzQ3NTM0N7AwNwBqKwBbkFeak1MLADm7IO4&_gl=1*8ah355*_ga*MTkzMjY3NDkwMy4xNzU2MTcwODcx*_ga_VGPE8D2JBF*czE3NTYxNzA4NzAkbzEkZzEkdDE3NTYxNzA5ODAkajYwJGwwJGgw" target="_blank">お問い合わせ</a></p>
+  </footer>
+
+  <!-- ===== SCROLL ANIMATION ===== -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
