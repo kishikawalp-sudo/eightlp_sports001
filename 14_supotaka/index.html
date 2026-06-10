@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>大阪・心斎橋 スポタカ｜野球用品専門コーナー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+JP:wght@400;600;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:   #0A0A0A;
+      --cream:   #F5F0E8;
+      --red:     #C8102E;
+      --green:   #1A5C2A;
+      --gold:    #D4AF37;
+      --gray:    #2A2A2A;
+      --gray-lt: #444;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-ja:      'Noto Serif JP', serif;
+      --font-util:    'Inter', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: var(--font-ja);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== UTILITY ===== */
+    .label-tag {
+      display: inline-block;
+      font-family: var(--font-util);
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .25rem .7rem;
+      border: 1px solid currentColor;
+    }
+    .section-eyebrow {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      letter-spacing: .25em;
+      color: var(--gold);
+    }
+    .red-line {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--red);
+      margin: 1rem 0 1.5rem;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .8rem 2rem;
+      background: rgba(10,10,10,.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200,16,46,.3);
+    }
+    .header-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: .1em;
+      color: var(--cream);
+    }
+    .header-logo span { color: var(--red); }
+    .header-cta-btn {
+      font-family: var(--font-util);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      padding: .55rem 1.4rem;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .header-cta-btn:hover { background: #a00d24; }
+
+    /* ===== FV — SCOREBOARD STYLE ===== */
+    #fv {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7rem 2rem 4rem;
+      overflow: hidden;
+    }
+    .fv-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--black);
+    }
+    .fv-bg img {
+      opacity: .35;
+    }
+    .fv-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,10,10,.7) 40%, rgba(26,92,42,.25) 100%);
+    }
+    .fv-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* スコアボード */
+    .scoreboard {
+      display: grid;
+      grid-template-columns: auto repeat(3,1fr);
+      border: 1px solid rgba(212,175,55,.4);
+      font-family: var(--font-display);
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+    .scoreboard-cell {
+      padding: .4rem .8rem;
+      font-size: .85rem;
+      letter-spacing: .1em;
+      border-right: 1px solid rgba(212,175,55,.2);
+      border-bottom: 1px solid rgba(212,175,55,.2);
+      color: var(--gold);
+    }
+    .scoreboard-cell:last-child { border-right: none; }
+    .scoreboard-cell.highlight { color: var(--cream); background: rgba(200,16,46,.2); }
+    .scoreboard-cell.label { color: rgba(245,240,232,.4); font-size: .7rem; }
+
+    .fv-main-headline {
+      font-family: var(--font-ja);
+      font-weight: 900;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+    .fv-main-headline em {
+      font-style: normal;
+      color: var(--red);
+    }
+    .fv-sub {
+      font-size: clamp(.9rem, 2vw, 1.1rem);
+      color: rgba(245,240,232,.75);
+      margin-bottom: 2.5rem;
+      max-width: 540px;
+      font-weight: 400;
+    }
+    .fv-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--font-ja);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2.2rem;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: #a00d24; transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: transparent;
+      color: var(--cream);
+      font-family: var(--font-ja);
+      font-weight: 600;
+      font-size: .9rem;
+      padding: .9rem 1.8rem;
+      border: 1px solid rgba(245,240,232,.4);
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .fv-badge {
+      position: absolute;
+      right: 2rem;
+      bottom: 3rem;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: var(--green);
+      border: 2px solid var(--gold);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 2;
+    }
+    .fv-badge .num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .fv-badge .txt {
+      font-size: .55rem;
+      letter-spacing: .05em;
+      color: var(--cream);
+      margin-top: .2rem;
+    }
+
+    /* ===== CTA SECTION (1回目) ===== */
+    #cta-1 {
+      background: var(--gray);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 3px solid var(--red);
+    }
+    #cta-1 p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      margin-bottom: 1.5rem;
+    }
+    #cta-1 .cta-note {
+      font-family: var(--font-util);
+      font-size: .78rem;
+      color: rgba(245,240,232,.5);
+      margin-top: .8rem;
+    }
+    .cta-info-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      font-family: var(--font-util);
+      font-size: .8rem;
+      color: rgba(245,240,232,.6);
+    }
+    .cta-info-row span { display: flex; align-items: center; gap: .4rem; }
+    .cta-info-row strong { color: var(--gold); }
+
+    /* ===== VIDEO THUMBNAIL SECTION ===== */
+    #video {
+      padding: 5rem 2rem;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .video-thumb-link {
+      display: block;
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,.2);
+      cursor: pointer;
+    }
+    .video-thumb-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease, filter .4s ease;
+      filter: brightness(.85);
+    }
+    .video-thumb-link:hover img {
+      transform: scale(1.04);
+      filter: brightness(.65);
+    }
+    .video-play-btn {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(200,16,46,.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s, transform .2s;
+      pointer-events: none;
+    }
+    .video-thumb-link:hover .video-play-btn {
+      background: var(--red);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    .video-play-btn svg {
+      width: 28px; height: 28px;
+      fill: #fff;
+      margin-left: 4px; /* 三角形の視覚的センタリング */
+    }
+    .video-label {
+      position: absolute;
+      bottom: 1rem; left: 1rem;
+      background: rgba(10,10,10,.75);
+      backdrop-filter: blur(4px);
+      padding: .35rem .8rem;
+      font-family: var(--font-util);
+      font-size: .72rem;
+      letter-spacing: .08em;
+      color: var(--cream);
+      border-left: 2px solid var(--red);
+    }
+    .video-caption {
+      margin-top: 1.2rem;
+      font-size: .85rem;
+      color: rgba(245,240,232,.55);
+      text-align: center;
+    }
+
+    /* ===== ABOUT (自己紹介) ===== */
+    #about {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-img-wrap {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      position: relative;
+    }
+    .about-img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border: 2px solid var(--gold);
+      transform: translate(8px, 8px);
+      z-index: -1;
+    }
+    .about-text h2 {
+      font-weight: 900;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    .about-text h2 em { font-style: normal; color: var(--gold); }
+    .about-text p {
+      font-size: .95rem;
+      color: rgba(245,240,232,.8);
+      margin-bottom: 1rem;
+    }
+    .about-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(245,240,232,.12);
+    }
+    .stat-item .num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-item .unit { font-size: .7rem; color: var(--gold); }
+    .stat-item .desc { font-size: .75rem; color: rgba(245,240,232,.5); margin-top: .2rem; }
+
+    /* ===== PAIN & SOLUTION ===== */
+    #solution {
+      background: linear-gradient(180deg, var(--black) 0%, #0e1a10 50%, var(--black) 100%);
+      padding: 5rem 2rem;
+    }
+    .solution-inner { max-width: 860px; margin: 0 auto; }
+    .pain-list {
+      list-style: none;
+      margin: 2rem 0 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+    }
+    .pain-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: rgba(200,16,46,.07);
+      border-left: 3px solid var(--red);
+      font-size: .95rem;
+    }
+    .pain-list li::before {
+      content: '✕';
+      color: var(--red);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .arrow-divider {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--green);
+      margin: 1rem 0;
+    }
+    .solution-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+    }
+    .solution-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: rgba(26,92,42,.12);
+      border-left: 3px solid var(--green);
+      font-size: .95rem;
+    }
+    .solution-list li::before {
+      content: '✓';
+      color: #4caf50;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ===== FEATURES (特典) ===== */
+    #features {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .feature-card {
+      background: var(--gray);
+      border: 1px solid rgba(212,175,55,.15);
+      padding: 2rem 1.5rem;
+      transition: border-color .2s, transform .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+    .feature-card:hover { border-color: rgba(212,175,55,.4); transform: translateY(-4px); }
+    .feature-card:hover::before { transform: scaleX(1); }
+    .feature-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: .6rem;
+    }
+    .feature-card p {
+      font-size: .85rem;
+      color: rgba(245,240,232,.65);
+    }
+
+    /* ===== GALLERY ===== */
+    #gallery {
+      padding: 5rem 2rem;
+      background: var(--gray);
+    }
+    .gallery-inner { max-width: 1000px; margin: 0 auto; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 260px 260px;
+      gap: .8rem;
+      margin-top: 2rem;
+    }
+    .gallery-item { overflow: hidden; background: var(--black); }
+    .gallery-item.main { grid-row: span 2; }
+    .gallery-item img {
+      transition: transform .4s;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    /* ===== REVIEW ===== */
+    #review {
+      padding: 5rem 2rem;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .stars {
+      color: var(--gold);
+      font-size: 1.5rem;
+      letter-spacing: .15em;
+      margin: 1rem 0;
+    }
+    blockquote {
+      font-size: clamp(.9rem, 2vw, 1.05rem);
+      color: rgba(245,240,232,.85);
+      line-height: 1.9;
+      border-left: none;
+      font-style: normal;
+      position: relative;
+      padding: 2rem 2.5rem;
+      background: var(--gray);
+    }
+    blockquote::before, blockquote::after {
+      font-family: Georgia, serif;
+      font-size: 4rem;
+      color: var(--red);
+      position: absolute;
+      line-height: 1;
+      opacity: .5;
+    }
+    blockquote::before { content: '"'; top: 0; left: .5rem; }
+    blockquote::after  { content: '"'; bottom: -1.5rem; right: .5rem; }
+    .review-source {
+      font-family: var(--font-util);
+      font-size: .78rem;
+      color: rgba(245,240,232,.4);
+      margin-top: 1rem;
+    }
+
+    /* ===== CTA (2回目) ===== */
+    #cta-2 {
+      background: linear-gradient(135deg, #0e1a10 0%, var(--black) 60%);
+      border-top: 1px solid rgba(212,175,55,.25);
+      border-bottom: 1px solid rgba(212,175,55,.25);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    #cta-2 h2 {
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    #cta-2 h2 em { font-style: normal; color: var(--red); }
+    #cta-2 .cta-sub {
+      font-size: clamp(.9rem, 2vw, 1.1rem);
+      color: rgba(245,240,232,.65);
+      margin-bottom: 2.5rem;
+    }
+    .cta-box {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      background: rgba(245,240,232,.04);
+      border: 1px solid rgba(212,175,55,.3);
+      padding: 2.5rem 3rem;
+      max-width: 480px;
+      width: 100%;
+    }
+    .contact-options {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      width: 100%;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .7rem;
+      padding: .9rem 1.5rem;
+      font-family: var(--font-ja);
+      font-weight: 700;
+      font-size: .95rem;
+      border: 1px solid;
+      transition: background .2s, color .2s;
+      cursor: pointer;
+    }
+    .contact-link.tel {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+    .contact-link.tel:hover { background: #a00d24; }
+    .contact-link.form {
+      border-color: rgba(245,240,232,.3);
+      color: var(--cream);
+    }
+    .contact-link.form:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-link.insta {
+      border-color: rgba(245,240,232,.3);
+      color: var(--cream);
+    }
+    .contact-link.insta:hover { border-color: #c13584; color: #c13584; }
+
+    /* ===== ACCESS ===== */
+    #access {
+      padding: 5rem 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    .info-table { width: 100%; border-collapse: collapse; }
+    .info-table th, .info-table td {
+      padding: .75rem 0;
+      border-bottom: 1px solid rgba(245,240,232,.08);
+      text-align: left;
+      font-size: .88rem;
+      vertical-align: top;
+    }
+    .info-table th {
+      color: var(--gold);
+      font-weight: 600;
+      width: 6rem;
+      flex-shrink: 0;
+    }
+    .map-frame {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border: 1px solid rgba(212,175,55,.2);
+    }
+    .map-frame iframe { width: 100%; height: 100%; border: none; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #050505;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(245,240,232,.06);
+    }
+    footer .logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: .1em;
+      margin-bottom: .5rem;
+    }
+    footer .logo span { color: var(--red); }
+    footer .copy {
+      font-family: var(--font-util);
+      font-size: .72rem;
+      color: rgba(245,240,232,.3);
+      margin-top: .5rem;
+    }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+      font-family: var(--font-util);
+      font-size: .78rem;
+      color: rgba(245,240,232,.45);
+    }
+    footer .footer-links a:hover { color: var(--gold); }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-wrap { aspect-ratio: 16/9; }
+      .features-grid { grid-template-columns: 1fr; }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .gallery-item.main { grid-row: span 1; }
+      .access-grid { grid-template-columns: 1fr; }
+      .cta-box { padding: 2rem 1.5rem; }
+      .scoreboard { font-size: .72rem; }
+      .fv-badge { width: 80px; height: 80px; }
+      .fv-badge .num { font-size: 1.4rem; }
+      header { padding: .7rem 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .gallery-item img { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-logo">SPO<span>TAKA</span></div>
+    <a href="tel:0664847190" class="header-cta-btn">📞 今すぐ問い合わせ</a>
+  </header>
+
+  <!-- ========== FV ========== -->
+  <section id="fv">
+    <div class="fv-bg">
+      <!-- 推奨: 1920×1080px の店内/野球コーナー全景写真 -->
+      <img src="images/fv_hero.jpg" alt="スポタカ野球コーナー" />
+    </div>
+
+    <div class="fv-inner">
+      <!-- スコアボード風バッジ -->
+      <div class="scoreboard">
+        <div class="scoreboard-cell label">SINCE</div>
+        <div class="scoreboard-cell label">OSAKA</div>
+        <div class="scoreboard-cell label">BASE</div>
+        <div class="scoreboard-cell label">FLOOR</div>
+        <div class="scoreboard-cell highlight">1922</div>
+        <div class="scoreboard-cell highlight">NAMBA</div>
+        <div class="scoreboard-cell highlight">BASEBALL</div>
+        <div class="scoreboard-cell highlight">B1F</div>
+      </div>
+
+      <p class="section-eyebrow">OSAKA SHINSAIBASHI · SPORTS EQUIPMENT</p>
+
+      <h1 class="fv-main-headline">
+        大阪で<em>野球</em>を、<br>もっと本気で楽しむ。
+      </h1>
+      <p class="fv-sub">
+        創業100年超の老舗が贈る、バット・グローブ・ウェアまで。<br>
+        スタッフの確かな目利きと、ストリートカルチャーが交差するスポタカの野球コーナーへ。
+      </p>
+
+      <div class="fv-cta-group">
+        <a href="tel:0664847190" class="btn-primary">📞 電話で問い合わせる</a>
+        <a href="https://www.spotaka.shop/" target="_blank" rel="noopener" class="btn-secondary">公式サイトを見る →</a>
+      </div>
+    </div>
+
+    <div class="fv-badge">
+      <span class="num">1922</span>
+      <span class="txt">年創業<br>大阪老舗</span>
+    </div>
+  </section>
+
+  <!-- ========== CTA 1 ========== -->
+  <section id="cta-1">
+    <p class="reveal">野球用品のご相談・在庫確認は、今すぐ気軽にどうぞ。</p>
+    <div class="cta-info-row reveal">
+      <span>📍 <strong>心斎橋 BIGSTEP B1F</strong></span>
+      <span>📞 <strong>06-6484-7190</strong></span>
+      <span>🗓 <strong>不定休</strong></span>
+    </div>
+    <a href="tel:0664847190" class="btn-primary reveal" style="font-size:1.1rem; padding:1.1rem 2.8rem;">
+      今すぐ電話する
+    </a>
+    <p class="cta-note reveal">お問い合わせフォーム・インスタDMでもご相談受付中</p>
+  </section>
+
+  <!-- ========== VIDEO ========== -->
+  <section id="video">
+    <div class="reveal">
+      <p class="section-eyebrow">STORE VIDEO</p>
+      <span class="red-line"></span>
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem); font-weight:900; margin-bottom:1.5rem;">
+        スポタカの魅力を、まずは動画で。
+      </h2>
+    </div>
+    <!-- クリックでYouTubeチャンネルへ遷移 -->
+    <!-- 推奨: 1280×720px の動画サムネイル画像 -->
+    <a href="https://www.youtube.com/channel/UCD1BXPvE5P6izRFRu92nBzA"
+       target="_blank" rel="noopener"
+       class="video-thumb-link reveal"
+       aria-label="スポタカ公式YouTubeチャンネルを見る">
+      <img src="images/video_thumbnail.jpg" alt="スポタカ公式YouTube サムネイル" />
+      <div class="video-play-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </div>
+      <span class="video-label">▶ YouTube で視聴する</span>
+    </a>
+    <p class="video-caption reveal">スポタカ公式YouTube — 商品紹介・店舗情報を随時更新中</p>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <!-- 推奨: 800×1000px 代表者または店内スタッフの写真 -->
+        <img src="images/about_staff.jpg" alt="代表・高橋勇多" />
+      </div>
+      <div class="about-text reveal">
+        <p class="section-eyebrow">ABOUT US</p>
+        <span class="red-line"></span>
+        <h2>
+          はじめまして、<br><em>スポタカ</em>です。
+        </h2>
+        <p>
+          1922年（大正11年）、大阪・なんばで「高橋運動具店」として産声を上げたスポタカ。
+          初代・高橋勝雄が刻んだ「Something New」の精神は、100年を超えた今も変わりません。
+        </p>
+        <p>
+          野球はもちろん、サーフィン・スケートボード・eスポーツまで。
+          現代表の高橋勇多が率いる私たちは、スポーツを通じた新しい体験・文化を大阪から発信し続けています。
+        </p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="num">100<span class="unit">年超</span></div>
+            <div class="desc">創業からの実績</div>
+          </div>
+          <div class="stat-item">
+            <div class="num">★★★★★</div>
+            <div class="desc">お客様の声</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAIN & SOLUTION ========== -->
+  <section id="solution">
+    <div class="solution-inner">
+      <div class="reveal">
+        <p class="section-eyebrow">YOUR PAIN</p>
+        <span class="red-line"></span>
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem); font-weight:900; margin-bottom:.5rem;">
+          こんなお悩み、ありませんか？
+        </h2>
+      </div>
+      <ul class="pain-list reveal">
+        <li>野球用品の専門知識がなく、何を選べばいいかわからない</li>
+        <li>大型チェーンでは画一的な商品しかなく、個性が出せない</li>
+        <li>ネット購入では試着・フィット感が確かめられず不安</li>
+        <li>子どもに初めてグローブを買いたいが、サイズ感がつかめない</li>
+      </ul>
+
+      <div class="arrow-divider reveal">↓</div>
+
+      <div class="reveal">
+        <p class="section-eyebrow">OUR SOLUTION</p>
+        <span class="red-line"></span>
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem); font-weight:900; margin-bottom:.5rem;">
+          スポタカなら、解決できます。
+        </h2>
+      </div>
+      <ul class="solution-list reveal">
+        <li>100年超の目利きをもつスタッフが、あなたのプレースタイルに合った一本をご提案</li>
+        <li>ストリートカルチャーの感性が宿るセレクト。他では出会えないアイテムも多数</li>
+        <li>実際に手に取り、グリップ感・重さを確かめてから購入できる安心感</li>
+        <li>初心者・子ども連れのご家族にも丁寧にご対応。「野球がわからない」でも大丈夫</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES (特典) ========== -->
+  <section id="features">
+    <div class="reveal">
+      <p class="section-eyebrow">WHY SPOTAKA</p>
+      <span class="red-line"></span>
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem); font-weight:900; margin-bottom:.5rem;">
+        スポタカを選ぶ理由
+      </h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">⚾</div>
+        <h3>野球に特化した豊富な品揃え</h3>
+        <p>バット・グローブ・スパイク・ユニフォームから消耗品まで。プロ仕様からジュニア向けまで幅広く取り揃え。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🏆</div>
+        <h3>創業100年超の信頼と実績</h3>
+        <p>1922年創業。大阪スポーツ界を支え続けた老舗だからこその圧倒的な知識と信頼。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🎨</div>
+        <h3>オシャレな空間で楽しい買い物体験</h3>
+        <p>野球ショップとは思えないセンスのある店内。香水・メンズコスメも扱うライフスタイル提案型店舗。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🛹</div>
+        <h3>アクションスポーツとの融合カルチャー</h3>
+        <p>サーフ・スケート・eスポーツまで。独自の「Something New」精神がスポーツ体験を拡張します。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🤝</div>
+        <h3>気さくなスタッフによる丁寧な接客</h3>
+        <p>野球に詳しくない方も大歓迎。ご家族連れも安心してお越しいただけるフレンドリーな空間。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📍</div>
+        <h3>心斎橋・BIGSTEPに好アクセス</h3>
+        <p>大阪中心部・心斎橋BIGSTEPのB1F。ショッピングのついでにも立ち寄りやすい好立地。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section id="gallery">
+    <div class="gallery-inner">
+      <div class="reveal">
+        <p class="section-eyebrow">GALLERY</p>
+        <span class="red-line"></span>
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem); font-weight:900; margin-bottom:.5rem;">
+          店内の様子
+        </h2>
+      </div>
+      <div class="gallery-grid reveal">
+        <!-- 推奨: 各画像サイズは下記コメント参照 -->
+        <!-- main: 800×1040px 店内全景・野球コーナー -->
+        <div class="gallery-item main">
+          <img src="images/gallery_main.jpg" alt="スポタカ店内全景" />
+        </div>
+        <!-- sub: 各400×260px -->
+        <div class="gallery-item">
+          <img src="images/gallery_bat.jpg" alt="バットコーナー" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery_glove.jpg" alt="グローブコーナー" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery_mat.jpg" alt="緑のオリジナルマット" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery_exterior.jpg" alt="店舗外観" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEW ========== -->
+  <section id="review">
+    <div class="reveal">
+      <p class="section-eyebrow">CUSTOMER VOICE</p>
+      <span class="red-line"></span>
+      <div class="stars">★★★★★</div>
+    </div>
+    <blockquote class="reveal">
+      旦那の野球用品購入に付いて行きましたが、野球ショップとは思えないくらいオシャレなお店でびっくりしました！
+      香水やメンズの化粧水の販売もあって、見ていて楽しいショップでした。
+      スタッフさんは気さくな方ばかりで、野球があまりわからない私のことも気にかけてくださり、映えスポットで写真も撮ってくださいました。
+      緑のオリジナルのマットが見ていてすごくおもしろかったです！旦那もまた行きたいと言っていました！
+    </blockquote>
+    <p class="review-source reveal">— Googleクチコミ ★★★★★</p>
+  </section>
+
+  <!-- ========== CTA 2 ========== -->
+  <section id="cta-2">
+    <h2 class="reveal">
+      あなたの<em>野球</em>を、<br>もっと本気にする一歩。
+    </h2>
+    <p class="cta-sub reveal">今すぐスポタカにご相談ください。</p>
+    <div style="display:flex; justify-content:center;">
+      <div class="cta-box reveal">
+        <div class="contact-options">
+          <a href="tel:0664847190" class="contact-link tel">
+            📞 06-6484-7190（電話でのお問い合わせ）
+          </a>
+          <a href="https://www.spotaka.shop/f/contact" target="_blank" rel="noopener" class="contact-link form">
+            ✉ お問い合わせフォームはこちら
+          </a>
+          <a href="https://www.instagram.com/spotaka1922/" target="_blank" rel="noopener" class="contact-link insta">
+            📸 Instagram でDM・最新情報をチェック
+          </a>
+        </div>
+        <p style="font-family:var(--font-util); font-size:.75rem; color:rgba(245,240,232,.35); text-align:center; margin-top:.5rem;">
+          📍 大阪府大阪市中央区西心斎橋1-6-14 BIGSTEP B1F｜定休日：不定休
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACCESS ========== -->
+  <section id="access">
+    <div class="reveal">
+      <p class="section-eyebrow">ACCESS</p>
+      <span class="red-line"></span>
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem); font-weight:900; margin-bottom:.5rem;">
+        店舗情報
+      </h2>
+    </div>
+    <div class="access-grid">
+      <div class="reveal">
+        <table class="info-table">
+          <tr>
+            <th>店名</th>
+            <td>大阪・心斎橋 スポタカ</td>
+          </tr>
+          <tr>
+            <th>運営</th>
+            <td>株式会社スポーツタカハシ</td>
+          </tr>
+          <tr>
+            <th>代表</th>
+            <td>高橋 勇多</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>大阪府大阪市中央区西心斎橋1-6-14<br>BIGSTEP B1F</td>
+          </tr>
+          <tr>
+            <th>電話</th>
+            <td><a href="tel:0664847190" style="color:var(--gold);">06-6484-7190</a></td>
+          </tr>
+          <tr>
+            <th>定休日</th>
+            <td>不定休</td>
+          </tr>
+          <tr>
+            <th>公式HP</th>
+            <td><a href="https://www.spotaka.shop/" target="_blank" rel="noopener" style="color:var(--gold);">www.spotaka.shop</a></td>
+          </tr>
+          <tr>
+            <th>メール</th>
+            <td><a href="mailto:customer@spotaka.com" style="color:var(--gold);">customer@spotaka.com</a></td>
+          </tr>
+        </table>
+      </div>
+      <div class="map-frame reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.027!2d135.499!3d34.671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6e2c22af3a9%3A0x5c7c5e5c5e5c5e5c!2z44K544Od44K_44Kr5aSn5b-1!5e0!3m2!1sja!2sjp!4v1620000000000!5m2!1sja!2sjp"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="スポタカ 地図">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="logo">SPO<span>TAKA</span></div>
+    <div class="footer-links">
+      <a href="https://www.spotaka.shop/" target="_blank" rel="noopener">公式サイト</a>
+      <a href="https://www.spotaka.shop/f/contact" target="_blank" rel="noopener">お問い合わせ</a>
+      <a href="https://www.instagram.com/spotaka1922/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCD1BXPvE5P6izRFRu92nBzA" target="_blank" rel="noopener">YouTube</a>
+    </div>
+    <p class="copy">© 株式会社スポーツタカハシ（スポタカ） All Rights Reserved.</p>
+  </footer>
+
+  <!-- ===== SCROLL REVEAL SCRIPT ===== -->
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
