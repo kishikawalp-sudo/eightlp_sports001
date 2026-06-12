@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サントースポーツ本店 - 大阪西区の地域密着スポーツ専門店</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-blue-900 text-white p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">サントースポーツ 本店</h1>
+            <a href="tel:06-6581-4147" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-bold">
+                電話: 06-6581-4147
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-4xl p-4">
+
+        <section id="fv" class="mb-12">
+            <div class="rounded-2xl overflow-hidden shadow-lg mb-6">
+                <!-- パスを ./images/ に修正しました -->
+                <img src="./images/fv_main.jpg" alt="サントースポーツメインビジュアル" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/800x400/blue/white?text=Main+Image'">
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">プロも納得の野球用品・チームユニフォームなら、<br>サントースポーツ本店へ！</h2>
+            <p class="text-center text-lg text-gray-600 mb-6">大阪市西区で愛されて創業。あなたのスポーツライフを全力でサポートします。</p>
+        </section>
+
+        <section id="cta1" class="bg-blue-100 p-8 rounded-2xl mb-12 text-center border-2 border-blue-200">
+            <h3 class="text-2xl font-bold mb-4 text-blue-900">今すぐご相談ください！</h3>
+            <p class="mb-6">チームユニフォームオーダー、用具選び、在庫確認など、お気軽にお問い合わせください。</p>
+            <a href="tel:06-6581-4147" class="inline-block bg-blue-900 text-white py-4 px-8 rounded-full text-xl font-bold hover:bg-blue-800 transition">
+                06-6581-4147 に電話する
+            </a>
+        </section>
+
+        <section id="video" class="mb-12">
+            <h3 class="text-2xl font-bold mb-6">店舗紹介動画</h3>
+            <div class="aspect-video bg-gray-300 rounded-xl overflow-hidden flex items-center justify-center">
+                <!-- パスを ./images/ に修正しました -->
+                <img src="./images/store_video_thumb.jpg" alt="動画サムネイル" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x450/gray/white?text=Video+Thumbnail'">
+            </div>
+            <p class="mt-4 text-center text-gray-600">地域密着だからできる、親身なアドバイスと豊富な品揃えを動画でご紹介。</p>
+        </section>
+
+        <section id="about" class="mb-12 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <h3 class="text-2xl font-bold mb-6 text-center">信頼の実績・地域のお客様の声</h3>
+            <div class="space-y-6">
+                <div class="border-l-4 border-yellow-400 pl-4 italic">
+                    <p class="text-gray-700">「タバコ購入でお世話になっています。とても親切な印象で、常連の顔もきちんと覚えてくださり、カートン買いにはオマケも頂けて、とても素敵なお店です！」</p>
+                    <span class="block text-sm font-bold mt-2 text-gray-500">★★★★★ お客様より</span>
+                </div>
+                <div class="border-l-4 border-yellow-400 pl-4 italic">
+                    <p class="text-gray-700">「大阪市西区界隈の制服、水着、体操服が揃い、他にスポーツウェア、用具が揃う。おじさんが親切。」</p>
+                    <span class="block text-sm font-bold mt-2 text-gray-500">★★★★ お客様より</span>
+                </div>
+            </div>
+            <p class="mt-6 text-center">株式会社サントーは、創業以来、お客様一人ひとりに寄り添ったサービスを心がけています。</p>
+        </section>
+
+        <section id="problem-solution" class="mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-center">こんなお悩みはありませんか？</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-100 p-6 rounded-xl">
+                    <h4 class="font-bold text-lg mb-2">チームユニフォームを頼みたい</h4>
+                    <p>デザインから素材選びまで、専門知識がないと不安ですよね。</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-xl">
+                    <h4 class="font-bold text-lg mb-2">自分に合う用具がわからない</h4>
+                    <p>野球用品やスポーツシューズ、何を選べばいいか迷ってしまいます。</p>
+                </div>
+            </div>
+            <div class="mt-8 p-6 bg-blue-900 text-white rounded-xl text-center">
+                <h4 class="text-xl font-bold mb-4">サントースポーツなら解決できます！</h4>
+                <p>メーカー野球用品からスポーツ全般のオーダーまで、豊富な知識であなたに最適な提案をします。</p>
+            </div>
+        </section>
+
+        <section id="bonus" class="mb-12 bg-yellow-50 p-8 rounded-2xl border-2 border-yellow-200 text-center">
+            <h3 class="text-2xl font-bold text-yellow-800 mb-4">【ご来店特典】</h3>
+            <p class="text-lg">ご来店時に「ホームページを見た」とお声がけください！<br>素敵なご提案やサービスがあるかも……？</p>
+        </section>
+
+        <section id="cta2" class="mb-12 text-center">
+            <h3 class="text-2xl font-bold mb-6">まずは店舗へお越しください</h3>
+            <a href="mailto:santosp@castle.ocn.ne.jp" class="inline-block bg-green-600 text-white py-4 px-8 rounded-full text-xl font-bold hover:bg-green-700 transition mb-6">
+                メールで問い合わせる
+            </a>
+            <div class="text-gray-600">
+                <p class="font-bold">サントースポーツ 本店</p>
+                <p>住所：大阪府大阪市西区新町２丁目１７−１５ サントービル</p>
+                <p>定休日：木曜日・祝日</p>
+                <p class="mt-2 text-sm">※クレジットカード払いは手数料がかかる場合がございます。あらかじめご了承ください。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white p-8 text-center text-sm">
+        <p>&copy; 株式会社サントー All rights reserved.</p>
+        <a href="https://3100sp.jimdofree.com/" class="underline mt-2 inline-block">公式ウェブサイトはこちら</a>
+    </footer>
+
+</body>
+</html>
