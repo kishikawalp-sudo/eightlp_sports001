@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>求人募集｜M･U SPORTS OAPプラザ店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #C4547A;
+      --green-dark: #8B2252;
+      --green-light:#E8849E;
+      --gold:       #F0A0BB;
+      --gold-light: #FAD4E3;
+      --cream:      #FFF5F8;
+      --paper:      #FCE8EF;
+      --charcoal:   #2C2C2C;
+      --gray:       #6B6B6B;
+      --white:      #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    /* ===== TYPOGRAPHY ===== */
+    .serif { font-family: 'Noto Serif JP', serif; }
+
+    h1, h2, h3 { font-family: 'Noto Serif JP', serif; line-height: 1.4; }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    section { padding: 72px 0; }
+
+    /* ===== SECTION LABEL ===== */
+    .sec-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    /* ===== GOLD RULE ===== */
+    .gold-rule {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin: 16px 0 32px;
+    }
+    .gold-rule.center { margin: 16px auto 32px; }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--green-dark);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-logo {
+      font-family: 'Noto Serif JP', serif;
+      color: var(--white);
+      font-size: 15px;
+      letter-spacing: 0.08em;
+    }
+    .header-logo span { color: var(--gold); }
+    .header-tel {
+      color: var(--gold-light);
+      font-size: 13px;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== FV ===== */
+    #fv {
+      position: relative;
+      height: 92vh;
+      min-height: 560px;
+      display: flex;
+      align-items: flex-end;
+      padding: 0;
+      overflow: hidden;
+    }
+    .fv-img {
+      position: absolute;
+      inset: 0;
+    }
+    .fv-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    /* gradient overlay */
+    .fv-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(139,34,82,0.18) 0%,
+        rgba(139,34,82,0.72) 60%,
+        rgba(139,34,82,0.90) 100%
+      );
+    }
+    .fv-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 48px 40px 64px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .fv-eyebrow {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      padding: 5px 14px;
+      margin-bottom: 22px;
+    }
+    .fv-title {
+      font-size: clamp(30px, 5vw, 52px);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 18px;
+    }
+    .fv-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .fv-sub {
+      color: var(--gold-light);
+      font-size: 15px;
+      margin-bottom: 36px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+    .fv-cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 16px 36px;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #e0bc6a; transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid var(--white);
+      color: var(--white);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 14px 32px;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+    /* ===== CTA STRIP (上部) ===== */
+    #cta-top {
+      background: var(--green);
+      padding: 48px 0;
+    }
+    .cta-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+    .cta-headline {
+      font-family: 'Noto Serif JP', serif;
+      color: var(--white);
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 600;
+    }
+    .cta-headline span { color: var(--gold); }
+    .cta-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .btn-gold-lg {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: 17px;
+      padding: 18px 44px;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-gold-lg:hover { background: #e0bc6a; transform: translateY(-2px); }
+    .cta-note { color: var(--gold-light); font-size: 13px; }
+
+    /* ===== VIDEO / INTRO ===== */
+    #intro {
+      background: var(--paper);
+      padding: 72px 0;
+    }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .intro-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+    .intro-text .sec-label { display: block; }
+    .intro-title {
+      font-size: clamp(20px, 3vw, 30px);
+      color: var(--green-dark);
+      margin-bottom: 16px;
+    }
+    .intro-body { color: var(--gray); font-size: 14.5px; line-height: 1.9; }
+
+    /* ===== ABOUT (自己紹介) ===== */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .about-img {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+    .about-text { }
+    .about-title {
+      font-size: clamp(20px, 3vw, 28px);
+      color: var(--green-dark);
+      margin-bottom: 16px;
+    }
+    .about-body { color: var(--gray); font-size: 14.5px; line-height: 1.9; margin-bottom: 20px; }
+
+    /* ===== PAIN → SOLUTION ===== */
+    #pain {
+      background: var(--green-dark);
+      color: var(--white);
+      text-align: center;
+    }
+    .pain-title {
+      font-size: clamp(20px, 3.5vw, 32px);
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .pain-title em { color: var(--gold); font-style: normal; }
+    .pain-lead { color: var(--gold-light); font-size: 15px; margin-bottom: 48px; }
+    .pain-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .pain-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(240,160,187,0.3);
+      padding: 28px 20px;
+      text-align: left;
+    }
+    .pain-card-q {
+      font-size: 22px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .pain-card p { font-size: 14px; color: var(--gold-light); line-height: 1.8; }
+    .arrow-down { font-size: 36px; color: var(--gold); margin: 0 auto 32px; display: block; text-align: center; }
+    .solution-box {
+      background: var(--gold);
+      color: var(--green-dark);
+      padding: 32px 40px;
+      max-width: 600px;
+      margin: 0 auto;
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(16px, 2.5vw, 22px);
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* ===== JOBS ===== */
+    #jobs { background: var(--paper); }
+    .jobs-header { text-align: center; margin-bottom: 56px; }
+    .jobs-header h2 { font-size: clamp(22px, 3.5vw, 34px); color: var(--green-dark); }
+
+    .job-block {
+      background: var(--white);
+      border-left: 4px solid var(--gold);
+      padding: 40px 40px;
+      margin-bottom: 32px;
+    }
+    .job-tag {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      padding: 4px 14px;
+      margin-bottom: 16px;
+    }
+    .job-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(18px, 2.5vw, 24px);
+      color: var(--green-dark);
+      margin-bottom: 20px;
+    }
+    .job-desc { color: var(--gray); font-size: 14.5px; line-height: 1.95; margin-bottom: 24px; }
+    .job-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .job-table tr { border-bottom: 1px solid var(--paper); }
+    .job-table th {
+      width: 130px;
+      text-align: left;
+      padding: 10px 0;
+      color: var(--green-dark);
+      font-weight: 700;
+      vertical-align: top;
+    }
+    .job-table td { padding: 10px 0 10px 16px; color: var(--gray); line-height: 1.8; }
+
+    /* required / welcome */
+    .req-list { list-style: none; padding: 0; }
+    .req-list li {
+      padding: 6px 0 6px 22px;
+      position: relative;
+      font-size: 14px;
+      color: var(--gray);
+    }
+    .req-list li::before {
+      content: '◎';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 13px;
+    }
+
+    /* ===== BONUS (特典) ===== */
+    #bonus {
+      background: var(--cream);
+      text-align: center;
+    }
+    .bonus-title {
+      font-size: clamp(20px, 3vw, 30px);
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+    .bonus-sub { color: var(--gray); font-size: 14px; margin-bottom: 48px; }
+    .bonus-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .bonus-card {
+      background: var(--white);
+      border-top: 3px solid var(--gold);
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .bonus-card-icon { font-size: 32px; margin-bottom: 12px; }
+    .bonus-card h3 {
+      font-size: 15px;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+    .bonus-card p { font-size: 13px; color: var(--gray); line-height: 1.7; }
+
+    /* ===== CTA BOTTOM ===== */
+    #cta-bottom {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta-bottom-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(22px, 3.5vw, 36px);
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .cta-bottom-title span { color: var(--gold); }
+    .cta-bottom-sub { color: var(--gold-light); font-size: 14px; margin-bottom: 40px; }
+    .cta-bottom-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+    .tel-block {
+      color: var(--gold-light);
+      font-size: 14px;
+      line-height: 2;
+    }
+    .tel-block a {
+      display: inline-block;
+      color: var(--white);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      font-family: 'Noto Serif JP', serif;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 680px) {
+      section { padding: 52px 0; }
+      .fv-content { padding: 36px 24px 52px; }
+      .intro-grid,
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img { aspect-ratio: 16/9; }
+      .pain-cards,
+      .bonus-cards { grid-template-columns: 1fr; }
+      .job-block { padding: 28px 20px; }
+      .job-table th { width: 100px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-logo serif">M･U <span>SPORTS</span> OAPプラザ店</div>
+  <a href="tel:0648019005" class="header-tel">☎ 06-4801-9005</a>
+</header>
+
+<!-- ===== FV ===== -->
+<section id="fv">
+  <div class="fv-img">
+    <img src="images/fv_hero.jpg" alt="M･U SPORTS 女性向けゴルフウェア" />
+  </div>
+  <div class="fv-overlay"></div>
+  <div class="fv-content container">
+    <span class="fv-eyebrow">STAFF RECRUIT 2025</span>
+    <h1 class="fv-title">
+      ゴルフが好きな方、<br>
+      <em>一緒に働きませんか。</em>
+    </h1>
+    <p class="fv-sub">女性向けゴルフウェア・ゴルフ用品ブランド<br>M･U SPORTS で、営業スタッフを募集中です。</p>
+    <div class="fv-cta-group">
+      <a href="https://mu-sports-onlineshop.com/blogs/news/%E3%82%B9%E3%82%BF%E3%83%83%E3%83%95%E5%8B%9F%E9%9B%86-%E3%82%B4%E3%83%AB%E3%83%95%E3%82%A6%E3%82%A7%E3%82%A2-%E3%82%B4%E3%83%AB%E3%83%95%E7%94%A8%E5%93%81%E3%81%AE%E5%96%B6%E6%A5%AD%E6%AD%A3%E7%A4%BE%E5%93%A1-%E5%96%B6%E6%A5%AD%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88%E3%82%92%E5%8B%9F%E9%9B%86%E3%81%97%E3%81%BE%E3%81%99" target="_blank" class="btn-primary">求人詳細を見る</a>
+      <a href="#cta-bottom" class="btn-outline">お問い合わせ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA TOP ===== -->
+<section id="cta-top">
+  <div class="container">
+    <div class="cta-inner">
+      <p class="cta-headline">
+        <span>ゴルフ×ファッション</span>のプロとして、<br>
+        あなたのキャリアをここで築いてください。
+      </p>
+      <div class="cta-buttons">
+        <a href="https://mu-sports-onlineshop.com/blogs/news/%E3%82%B9%E3%82%BF%E3%83%83%E3%83%95%E5%8B%9F%E9%9B%86-%E3%82%B4%E3%83%AB%E3%83%95%E3%82%A6%E3%82%A7%E3%82%A2-%E3%82%B4%E3%83%AB%E3%83%95%E7%94%A8%E5%93%81%E3%81%AE%E5%96%B6%E6%A5%AD%E6%AD%A3%E7%A4%BE%E5%93%A1-%E5%96%B6%E6%A5%AD%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88%E3%82%92%E5%8B%9F%E9%9B%86%E3%81%97%E3%81%BE%E3%81%99" target="_blank" class="btn-gold-lg">今すぐ応募する</a>
+      </div>
+      <p class="cta-note">▼ 以下のフォームまたはお電話からもご応募いただけます</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTRO (ブランド紹介) ===== -->
+<section id="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-img">
+        <img src="images/brand_image.jpg" alt="M･U SPORTS ブランドイメージ" />
+      </div>
+      <div class="intro-text">
+        <span class="sec-label">About M･U SPORTS</span>
+        <div class="gold-rule"></div>
+        <h2 class="intro-title">女性ゴルファーに<br>選ばれ続けるブランド</h2>
+        <p class="intro-body">
+          M･U SPORTSは、上品なデザインと機能性を兼ね備えた女性向けゴルフウェア・ゴルフ用品を展開するブランドです。<br><br>
+          百貨店・量販店・ゴルフ場など全国の販路で支持され、SNSでの発信や展示会・POP UPイベントを通じてファンとの接点を広げています。<br><br>
+          「好きを仕事に」できる環境で、一緒にブランドを成長させていきましょう。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT (会社・採用担当紹介) ===== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="sec-label">Message from Recruiter</span>
+        <div class="gold-rule"></div>
+        <h2 class="about-title">採用担当より</h2>
+        <p class="about-body">
+          はじめまして、株式会社ツー・アンド・ワン 採用担当の森岡と申します。<br><br>
+          私たちは、ゴルフとファッションが好きなスタッフが集まるチームです。<br>
+          アパレル業界でのご経験を活かしながら、ゴルフという新しいフィールドに挑戦したい方を歓迎しています。<br><br>
+          「数字を見ながら、お客様を喜ばせる仕事がしたい」そんな想いをお持ちの方、ぜひご応募ください。
+        </p>
+        <p style="font-size:13px; color:var(--gray);">株式会社ツー・アンド・ワン　採用担当 <strong style="color:var(--green-dark)">森岡</strong></p>
+      </div>
+      <div class="about-img">
+        <img src="images/store_interior.jpg" alt="M･U SPORTS 店舗内装" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAIN → SOLUTION ===== -->
+<section id="pain">
+  <div class="container">
+    <p class="sec-label" style="color:var(--gold);display:block;text-align:center;">For You</p>
+    <div class="gold-rule center"></div>
+    <h2 class="pain-title">こんなお悩みはありませんか？</h2>
+    <p class="pain-lead">アパレル業界で働く方の「あるある」な悩み</p>
+    <div class="pain-cards">
+      <div class="pain-card">
+        <p class="pain-card-q">😔</p>
+        <p>ファッションは好きだけど、今の職場では成長の限界を感じている</p>
+      </div>
+      <div class="pain-card">
+        <p class="pain-card-q">😔</p>
+        <p>数字やPL管理など、もっと経営に近い仕事にチャレンジしたい</p>
+      </div>
+      <div class="pain-card">
+        <p class="pain-card-q">😔</p>
+        <p>ゴルフやスポーツが好きで、趣味を仕事にしたいと思っている</p>
+      </div>
+    </div>
+    <span class="arrow-down">↓</span>
+    <div class="solution-box">
+      M･U SPORTSなら、ゴルフ×ファッション×ビジネスの<br>
+      すべてを仕事にできます。
+    </div>
+  </div>
+</section>
+
+<!-- ===== JOBS ===== -->
+<section id="jobs">
+  <div class="container">
+    <div class="jobs-header">
+      <span class="sec-label">Open Positions</span>
+      <div class="gold-rule center"></div>
+      <h2>募集職種</h2>
+    </div>
+
+    <!-- 営業正社員 -->
+    <div class="job-block">
+      <span class="job-tag">正社員</span>
+      <h3 class="job-title">営業正社員</h3>
+      <p class="job-desc">
+        東京本社営業部にて、直営店・卸店舗それぞれの販売管理をお任せします。<br>
+        百貨店・量販店・ゴルフ場への自社製品の提案販売、年２回の展示会・POP UP開催による新規店舗開拓、既存店舗の売上管理・店舗PL管理・スタッフマネジメントなど、多岐にわたる業務に携わっていただきます。<br>
+        EC販売のご経験がある方も大歓迎です。
+      </p>
+
+      <p style="font-weight:700;font-size:14px;color:var(--green-dark);margin-bottom:12px;">必須条件</p>
+      <ul class="req-list" style="margin-bottom:20px;">
+        <li>アパレル業界での経験のある方</li>
+        <li>Word / Excel スキルのある方</li>
+        <li>普通自動車免許所持の方</li>
+      </ul>
+
+      <p style="font-weight:700;font-size:14px;color:var(--green-dark);margin-bottom:12px;">歓迎条件</p>
+      <ul class="req-list" style="margin-bottom:28px;">
+        <li>数値を意識して働くことが得意な方</li>
+        <li>SNS等を使った販売促進に詳しい方</li>
+      </ul>
+
+      <table class="job-table">
+        <tr><th>勤務地</th><td>東京都江東区新砂1-13-6 ４階</td></tr>
+        <tr><th>勤務時間</th><td>9:00 〜 18:00</td></tr>
+        <tr><th>試用期間</th><td>3か月</td></tr>
+        <tr><th>給与</th><td>想定年俸 <strong>450万円〜</strong>（前職ご経験考慮）</td></tr>
+        <tr><th>福利厚生</th><td>健康保険 / 厚生年金 / 雇用保険 / 労災保険<br>週休２日制 / 交通費支給 / 社員割引</td></tr>
+      </table>
+    </div>
+
+    <!-- 営業アシスタント -->
+    <div class="job-block">
+      <span class="job-tag">正社員 / アルバイト可</span>
+      <h3 class="job-title">営業アシスタント</h3>
+      <p class="job-desc">
+        自社直営店舗・卸店舗への出荷指示業務・売上入力業務・在庫管理など、営業社員とコンビで業務していただきます。<br>
+        ECサイトへの販売対応など、パソコンスキルのある方は大歓迎です。<br>
+        勤務時間等はご相談に応じます。お気軽にお問い合わせください。
+      </p>
+
+      <table class="job-table">
+        <tr><th>給与（正社員）</th><td>想定年俸 <strong>300万円〜</strong></td></tr>
+        <tr><th>給与（アルバイト）</th><td>時給 <strong>1,300円〜</strong></td></tr>
+        <tr><th>勤務時間</th><td>相談可</td></tr>
+        <tr><th>お問い合わせ</th><td>☎ 03-5635-6661（採用担当：森岡）</td></tr>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== BONUS (特典) ===== -->
+<section id="bonus">
+  <div class="container">
+    <span class="sec-label">Benefits</span>
+    <div class="gold-rule center"></div>
+    <h2 class="bonus-title">M･U SPORTSで働く魅力</h2>
+    <p class="bonus-sub">入社後もしっかりサポートします</p>
+    <div class="bonus-cards">
+      <div class="bonus-card">
+        <div class="bonus-card-icon">🏌️‍♀️</div>
+        <h3>好きを仕事に</h3>
+        <p>ゴルフ・ファッション好きが集まるチームで、毎日ワクワクできる環境です</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-card-icon">👗</div>
+        <h3>社員割引あり</h3>
+        <p>M･U SPORTSの商品を社員割引価格でご購入いただけます</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-card-icon">📈</div>
+        <h3>経営に近い仕事</h3>
+        <p>店舗PL管理・スタッフマネジメントなど、ビジネスを深く学べます</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BOTTOM ===== -->
+<section id="cta-bottom">
+  <div class="container">
+    <h2 class="cta-bottom-title">
+      ゴルフ×ファッションで、<br>
+      <span>あなたのキャリアを輝かせよう。</span>
+    </h2>
+    <p class="cta-bottom-sub">以下のボタンまたはお電話よりご応募・お問い合わせください</p>
+    <div class="cta-bottom-buttons">
+      <a href="https://mu-sports-onlineshop.com/blogs/news/%E3%82%B9%E3%82%BF%E3%83%83%E3%83%95%E5%8B%9F%E9%9B%86-%E3%82%B4%E3%83%AB%E3%83%95%E3%82%A6%E3%82%A7%E3%82%A2-%E3%82%B4%E3%83%AB%E3%83%95%E7%94%A8%E5%93%81%E3%81%AE%E5%96%B6%E6%A5%AD%E6%AD%A3%E7%A4%BE%E5%93%A1-%E5%96%B6%E6%A5%AD%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88%E3%82%92%E5%8B%9F%E9%9B%86%E3%81%97%E3%81%BE%E3%81%99" target="_blank" class="btn-gold-lg">求人ページで応募する</a>
+    </div>
+    <div class="tel-block">
+      <p>OAPプラザ店へのお問い合わせ</p>
+      <a href="tel:0648019005">06-4801-9005</a><br>
+      <p style="margin-top:12px;">採用担当直通（東京本社）</p>
+      <a href="tel:0356356661">03-5635-6661</a><br>
+      <p style="margin-top:8px;font-size:12px;">担当：森岡</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 株式会社ツー・アンド・ワン　M･U SPORTS OAPプラザ店</p>
+  <p style="margin-top:6px;">〒東京都江東区新砂1-13-6 4階　TEL: 03-5635-6661</p>
+</footer>
+
+</body>
+</html>
