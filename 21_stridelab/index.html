@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STRIDE LAB 大阪 | ランニング専門店</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --night: #0D1B2A;
+      --lane: #1A2E42;
+      --offwhite: #F5F0E8;
+      --sprint: #FF4E00;
+      --mint: #C8E6C9;
+      --gray: #8A9BB0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--night);
+      color: var(--offwhite);
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(13,27,42,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,78,0,0.15);
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      color: var(--offwhite);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--sprint); }
+
+    nav { display: flex; gap: 32px; align-items: center; }
+    nav a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--sprint); }
+
+    .nav-cta {
+      background: var(--sprint);
+      color: var(--offwhite) !important;
+      padding: 10px 22px;
+      font-size: 0.82rem !important;
+      letter-spacing: 0.1em;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #e04400 !important; color: var(--offwhite) !important; }
+
+    /* ========== HERO ========== */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 8vw;
+      overflow: hidden;
+    }
+
+    /* 靴底トレイル背景アニメーション（シグネチャー） */
+    .trail-canvas {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    .trail-canvas svg {
+      position: absolute;
+      bottom: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      animation: trailRise 18s linear infinite;
+    }
+
+    @keyframes trailRise {
+      0%   { transform: translateX(-50%) translateY(0); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateX(-50%) translateY(-110vh); opacity: 0; }
+    }
+
+    .hero-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sprint);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--sprint);
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 10vw, 9rem);
+      line-height: 0.92;
+      letter-spacing: 0.04em;
+      color: var(--offwhite);
+      margin-bottom: 28px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--sprint);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+      color: var(--gray);
+      max-width: 480px;
+      line-height: 1.9;
+      margin-bottom: 40px;
+    }
+
+    .hero-sub strong { color: var(--offwhite); font-weight: 500; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--sprint);
+      color: var(--offwhite);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 16px 42px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #e04400; transform: translateY(-2px); }
+
+    .btn-secondary {
+      display: inline-block;
+      border: 1px solid var(--gray);
+      color: var(--offwhite);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 16px 42px;
+      text-decoration: none;
+      margin-left: 16px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--offwhite); color: var(--offwhite); }
+
+    .hero-img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 45%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.55;
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 25%, black 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 25%, black 100%);
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 48px;
+      right: 8vw;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(26,46,66,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,78,0,0.3);
+      padding: 14px 22px;
+    }
+
+    .hero-badge-stars { color: var(--sprint); font-size: 0.9rem; letter-spacing: 2px; }
+    .hero-badge-text { font-size: 0.78rem; color: var(--gray); }
+    .hero-badge-text strong { display: block; color: var(--offwhite); font-size: 0.85rem; }
+
+    /* ========== SECTION BASE ========== */
+    section { padding: 100px 8vw; }
+
+    .section-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--sprint);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--sprint);
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--offwhite);
+      margin-bottom: 48px;
+    }
+
+    /* ========== PRODUCT (イチオシ) ========== */
+    #product {
+      background: var(--lane);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #product::before {
+      content: 'RUNNING';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14rem;
+      color: rgba(255,78,0,0.04);
+      line-height: 1;
+      pointer-events: none;
+      letter-spacing: 0.05em;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .product-img-wrap {
+      position: relative;
+    }
+
+    .product-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 2px solid var(--sprint);
+      transform: translate(12px, 12px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .product-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-tag {
+      display: inline-block;
+      background: var(--sprint);
+      color: var(--offwhite);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      margin-bottom: 18px;
+    }
+
+    .product-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      letter-spacing: 0.06em;
+      line-height: 1.05;
+      color: var(--offwhite);
+      margin-bottom: 20px;
+    }
+
+    .product-desc {
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+
+    .product-features {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+
+    .product-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--offwhite);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .product-features li::before {
+      content: '→';
+      color: var(--sprint);
+      font-family: 'Oswald', sans-serif;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ========== REVIEW ========== */
+    #review { background: var(--night); }
+
+    .review-card {
+      background: var(--lane);
+      border-left: 3px solid var(--sprint);
+      padding: 36px 40px;
+      max-width: 780px;
+      position: relative;
+    }
+
+    .review-stars {
+      color: var(--sprint);
+      font-size: 1.1rem;
+      letter-spacing: 4px;
+      margin-bottom: 18px;
+    }
+
+    .review-text {
+      font-size: 1rem;
+      line-height: 2;
+      color: var(--offwhite);
+      position: relative;
+    }
+
+    .review-text::before {
+      content: '"';
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 6rem;
+      color: rgba(255,78,0,0.12);
+      position: absolute;
+      top: -20px;
+      left: -16px;
+      line-height: 1;
+    }
+
+    .review-highlight {
+      color: var(--mint);
+      font-weight: 500;
+    }
+
+    .review-author {
+      margin-top: 22px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+
+    /* ========== STRENGTH ========== */
+    #strength { background: var(--lane); }
+
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 0;
+    }
+
+    .strength-card {
+      background: rgba(13,27,42,0.6);
+      padding: 44px 36px;
+      border-top: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .strength-card:hover { border-color: var(--sprint); }
+
+    .strength-icon {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .strength-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      color: var(--offwhite);
+      margin-bottom: 12px;
+    }
+
+    .strength-card p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.85;
+    }
+
+    /* ========== STORY ========== */
+    #story { background: var(--night); }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .story-body {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 2;
+      white-space: pre-line;
+    }
+
+    .story-body strong {
+      color: var(--offwhite);
+      font-weight: 500;
+    }
+
+    .story-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      filter: grayscale(40%);
+    }
+
+    .story-rep {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .story-rep-info { font-size: 0.85rem; }
+    .story-rep-info strong { display: block; color: var(--offwhite); font-size: 0.95rem; }
+    .story-rep-info span { color: var(--gray); font-size: 0.78rem; letter-spacing: 0.08em; }
+
+    /* ========== SNS / LINKS ========== */
+    #links { background: var(--lane); }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .link-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(13,27,42,0.5);
+      padding: 30px 28px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .link-card:hover {
+      border-color: var(--sprint);
+      background: rgba(13,27,42,0.85);
+    }
+
+    .link-card-icon { font-size: 1.6rem; }
+    .link-card-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .link-card-name {
+      font-size: 0.95rem;
+      color: var(--offwhite);
+      font-weight: 500;
+    }
+    .link-card-arrow {
+      margin-top: auto;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      color: var(--sprint);
+      letter-spacing: 0.14em;
+    }
+
+    /* ========== ACCESS ========== */
+    #access { background: var(--night); }
+
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .access-map {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border: none;
+      filter: grayscale(60%) invert(20%);
+    }
+
+    .info-list { list-style: none; }
+    .info-list li {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.9rem;
+      align-items: start;
+    }
+
+    .info-list dt {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sprint);
+      padding-top: 2px;
+    }
+
+    .info-list dd { color: var(--offwhite); }
+    .info-list dd a { color: var(--offwhite); text-decoration: none; }
+    .info-list dd a:hover { color: var(--sprint); }
+
+    .info-holiday {
+      display: inline-block;
+      background: rgba(255,78,0,0.15);
+      color: var(--sprint);
+      font-size: 0.78rem;
+      padding: 3px 10px;
+      margin-left: 6px;
+    }
+
+    /* ========== CTA FOOTER ========== */
+    #cta {
+      background: var(--sprint);
+      padding: 80px 8vw;
+      text-align: center;
+    }
+
+    #cta .section-eyebrow { justify-content: center; color: rgba(245,240,232,0.7); }
+    #cta .section-eyebrow::before { background: rgba(245,240,232,0.4); }
+
+    #cta .section-title { color: var(--offwhite); text-align: center; margin-bottom: 24px; }
+
+    #cta p { color: rgba(245,240,232,0.8); font-size: 0.95rem; margin-bottom: 36px; }
+
+    .btn-white {
+      display: inline-block;
+      background: var(--offwhite);
+      color: var(--sprint);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 16px 48px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-white:hover { background: #ede8df; }
+
+    footer {
+      background: var(--night);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.12em;
+      color: var(--offwhite);
+    }
+    .footer-logo span { color: var(--sprint); }
+
+    footer small {
+      font-size: 0.72rem;
+      color: var(--gray);
+      letter-spacing: 0.06em;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      header { padding: 16px 24px; }
+      nav { gap: 16px; }
+      nav a { font-size: 0.75rem; }
+      section { padding: 72px 6vw; }
+
+      .product-grid,
+      .story-grid,
+      .access-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      .strength-grid { grid-template-columns: 1fr; gap: 2px; }
+      .links-grid { grid-template-columns: 1fr 1fr; }
+      .hero-img { width: 100%; opacity: 0.25; }
+      #product::before { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .links-grid { grid-template-columns: 1fr; }
+      nav .btn-secondary { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .trail-canvas svg { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">STRIDE<span>LAB</span> 大阪</a>
+    <nav>
+      <a href="#product">おすすめ</a>
+      <a href="#strength">特長</a>
+      <a href="#story">ストーリー</a>
+      <a href="#access">アクセス</a>
+      <a href="https://stridelab.jp/contact/" target="_blank" class="nav-cta btn-primary">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <!-- 靴底トレイル（シグネチャーアニメーション） -->
+    <div class="trail-canvas" aria-hidden="true">
+      <svg viewBox="0 0 1200 2400" xmlns="http://www.w3.org/2000/svg" fill="var(--offwhite)">
+        <!-- 繰り返し靴底シルエット（簡略化楕円パターン） -->
+        <g transform="translate(200,100)">
+          <ellipse cx="0" cy="0" rx="28" ry="44" transform="rotate(-8)"/>
+          <ellipse cx="0" cy="110" rx="22" ry="36" transform="rotate(8)"/>
+        </g>
+        <g transform="translate(600,300)">
+          <ellipse cx="0" cy="0" rx="28" ry="44" transform="rotate(-8)"/>
+          <ellipse cx="0" cy="110" rx="22" ry="36" transform="rotate(8)"/>
+        </g>
+        <g transform="translate(900,180)">
+          <ellipse cx="0" cy="0" rx="28" ry="44" transform="rotate(-8)"/>
+          <ellipse cx="0" cy="110" rx="22" ry="36" transform="rotate(8)"/>
+        </g>
+        <g transform="translate(350,500)">
+          <ellipse cx="0" cy="0" rx="28" ry="44" transform="rotate(-8)"/>
+          <ellipse cx="0" cy="110" rx="22" ry="36" transform="rotate(8)"/>
+        </g>
+        <g transform="translate(750,650)">
+          <ellipse cx="0" cy="0" rx="28" ry="44" transform="rotate(-8)"/>
+          <ellipse cx="0" cy="110" rx="22" ry="36" transform="rotate(8)"/>
+        </g>
+        <g transform="translate(100,800)">
+          <ellipse cx="0" cy="0" rx="28" ry="44" transform="rotate(-8)"/>
+          <ellipse cx="0" cy="110" rx="22" ry="36" transform="rotate(8)"/>
+        </g>
+        <g transform="translate(500,950)">
+          <ellipse cx="0" cy="0" rx="28" ry="44" transform="rotate(-8)"/>
+          <ellipse cx="0" cy="110" rx="22" ry="36" transform="rotate(8)"/>
+        </g>
+        <g transform="translate(950,1100)">
+          <ellipse cx="0" cy="0" rx="28" ry="44" transform="rotate(-8)"/>
+          <ellipse cx="0" cy="110" rx="22" ry="36" transform="rotate(8)"/>
+        </g>
+        <g transform="translate(250,1250)">
+          <ellipse cx="0" cy="0" rx="28" ry="44" transform="rotate(-8)"/>
+          <ellipse cx="0" cy="110" rx="22" ry="36" transform="rotate(8)"/>
+        </g>
+        <g transform="translate(700,1400)">
+          <ellipse cx="0" cy="0" rx="28" ry="44" transform="rotate(-8)"/>
+          <ellipse cx="0" cy="110" rx="22" ry="36" transform="rotate(8)"/>
+        </g>
+      </svg>
+    </div>
+
+    <img
+      src="images/hero_main.jpg"
+      alt="STRIDE LAB 大阪 店舗・ランナーイメージ"
+      class="hero-img"
+    />
+
+    <p class="hero-eyebrow">Osaka Running Specialty Store</p>
+    <h1 class="hero-title">
+      あなたの<br />
+      <em>一歩</em>を<br />
+      変える靴がある
+    </h1>
+    <p class="hero-sub">
+      初心者から上級者まで、<strong>足に合った一足</strong>を専門スタッフが丁寧にご提案。<br />
+      ランニング・ウォーキング・トレイルまで、大阪から「走る文化」を広げます。
+    </p>
+    <div>
+      <a href="https://stridelab.jp/contact/" target="_blank" class="btn-primary">無料相談はこちら</a>
+      <a href="#product" class="btn-secondary">おすすめ商品を見る</a>
+    </div>
+
+    <div class="hero-badge">
+      <div>
+        <div class="hero-badge-stars">★★★★★</div>
+        <div class="hero-badge-text">
+          <strong>Googleクチコミ 5.0</strong>
+          実際に購入したお客様の声
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT（イチオシ） -->
+  <section id="product">
+    <div class="product-grid">
+      <div class="product-img-wrap">
+        <img
+          src="images/product_shoes.jpg"
+          alt="ALTRA アルトラ ランニングシューズ"
+          class="product-img"
+        />
+      </div>
+      <div>
+        <span class="product-tag">Staff's Pick No.1</span>
+        <h2 class="product-name">
+          足本来の力を<br />引き出すシューズ
+        </h2>
+        <p class="product-desc">
+          STRIDE LABがもっとも自信を持っておすすめするのが、<br />
+          ゼロドロップ設計のランニングシューズです。<br />
+          100kmウォーキングを完歩したお客様の声が証明するように、<br />
+          長距離でも足のトラブルを最小限に抑えます。
+        </p>
+        <ul class="product-features">
+          <li>ゼロドロップ設計でかかとへの衝撃を自然に分散</li>
+          <li>ワイドトゥボックスで指先を自由に動かせる</li>
+          <li>初心者から完走経験者まで幅広くフィット</li>
+          <li>専門スタッフが足型・歩行を分析して最適な一足をご提案</li>
+          <li>お試し試着・フィッティング無料（要相談）</li>
+        </ul>
+        <a href="https://stridelab.jp/osaka/" target="_blank" class="btn-primary">店舗で試し履きする</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW -->
+  <section id="review">
+    <p class="section-eyebrow">Voice</p>
+    <h2 class="section-title">お客様の声</h2>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">
+        スポーツしなさげな私にはちょっと入りづらい店舗がまえでしたが、<br />
+        気さくな店員さんからいろいろ教えてもらえたので行ってよかったなぁと。<br /><br />
+        他のメーカーの靴も見に行ってみようかと言ったら、全然どうぞ〜みたいな感じでした（笑）<br /><br />
+        <span class="review-highlight">100キロウォーキング用、結局パラダイム7を購入。初挑戦で完歩できました。</span><br />
+        心配していた足の肉刺などにはならず、アルトラの靴にしてよかった。
+      </p>
+      <p class="review-author">— Google Maps レビュー / ランニング初心者 K.M. 様</p>
+    </div>
+  </section>
+
+  <!-- STRENGTH -->
+  <section id="strength">
+    <p class="section-eyebrow">Why STRIDE LAB</p>
+    <h2 class="section-title">選ばれる3つの理由</h2>
+    <div class="strength-grid">
+      <div class="strength-card">
+        <span class="strength-icon">👟</span>
+        <h3>足型・歩行分析</h3>
+        <p>専門スタッフが一人ひとりの足の形状と歩き方を丁寧にチェック。あなたにとって本当に合った一足をご提案します。</p>
+      </div>
+      <div class="strength-card">
+        <span class="strength-icon">🏃</span>
+        <h3>初心者大歓迎</h3>
+        <p>「スポーツしてないし…」という方こそ大歓迎。気さくなスタッフが知識ゼロから丁寧にサポートします。他店比較も歓迎です。</p>
+      </div>
+      <div class="strength-card">
+        <span class="strength-icon">🌍</span>
+        <h3>コミュニティ＆イベント</h3>
+        <p>ランニング初心者から上級者まで楽しめるイベントを定期開催。走ることが「生活の一部」になるきっかけをつくります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="story-grid">
+      <div>
+        <p class="section-eyebrow">Our Mission</p>
+        <h2 class="section-title">走ることを、<br />文化にする</h2>
+        <p class="story-body">アメリカでは「ランニング専門店」が地域のスポーツ相談所として800店舗以上存在し、健康増進に貢献しています。
+
+<strong>STRIDE LABは日本でも同じ文化を根付かせるため、大阪から動き出しました。</strong>
+
+子供から高齢者まで、すべての人が健康でいられる街。
+その実現のために、私たちは今日も走り続けます。</p>
+        <div class="story-rep">
+          <div>
+            <img
+              src="images/rep_portrait.jpg"
+              alt="代表 福地玲"
+              style="width:56px;height:56px;object-fit:cover;border-radius:50%;border:2px solid var(--sprint);"
+            />
+          </div>
+          <div class="story-rep-info">
+            <strong>福地　玲</strong>
+            <span>代表 / 株式会社ストライド</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img
+          src="images/story_running.jpg"
+          alt="ランニングコミュニティイメージ"
+          class="story-img"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section id="links">
+    <p class="section-eyebrow">Connect</p>
+    <h2 class="section-title">もっと知る</h2>
+    <div class="links-grid">
+      <a href="https://stridelab.jp/osaka/" target="_blank" class="link-card">
+        <span class="link-card-icon">🌐</span>
+        <span class="link-card-label">Official Website</span>
+        <span class="link-card-name">STRIDE LAB 大阪 公式HP</span>
+        <span class="link-card-arrow">Visit →</span>
+      </a>
+      <a href="https://www.instagram.com/stridelab_official/?hl=ja" target="_blank" class="link-card">
+        <span class="link-card-icon">📸</span>
+        <span class="link-card-label">Instagram</span>
+        <span class="link-card-name">@stridelab_official</span>
+        <span class="link-card-arrow">Follow →</span>
+      </a>
+      <a href="https://www.youtube.com/c/STRIDELAB" target="_blank" class="link-card">
+        <span class="link-card-icon">▶️</span>
+        <span class="link-card-label">YouTube</span>
+        <span class="link-card-name">STRIDE LAB チャンネル</span>
+        <span class="link-card-arrow">Watch →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section id="access">
+    <p class="section-eyebrow">Visit Us</p>
+    <h2 class="section-title">店舗情報</h2>
+    <div class="access-grid">
+      <iframe
+        class="access-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.0!2d135.5115!3d34.6939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e71d782c8f1d%3A0x7ae12c1d8bef4a4!2z5aSn6Ziq5bqX5aSn6Ziq5biC5YyX5Yy65pmC5ぶ5ZKM77yU5LiB55uu77yT4oiS77yR!5e0!3m2!1sja!2sjp!4v1699000000000"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="STRIDE LAB 大阪 地図"
+      ></iframe>
+      <div>
+        <dl class="info-list">
+          <li>
+            <dt>店舗名</dt>
+            <dd>STRIDE LAB 大阪</dd>
+          </li>
+          <li>
+            <dt>住所</dt>
+            <dd>〒530-0047<br />大阪府大阪市北区西天満4丁目3−1<br />トモエマリオンビル 1F</dd>
+          </li>
+          <li>
+            <dt>電話</dt>
+            <dd><a href="tel:06-4301-5296">06-4301-5296</a></dd>
+          </li>
+          <li>
+            <dt>定休日</dt>
+            <dd>
+              月曜日<span class="info-holiday">定休</span>
+              木曜日<span class="info-holiday">定休</span>
+            </dd>
+          </li>
+          <li>
+            <dt>運営会社</dt>
+            <dd>株式会社ストライド</dd>
+          </li>
+          <li>
+            <dt>公式サイト</dt>
+            <dd><a href="https://stridelab.jp/osaka/" target="_blank">stridelab.jp/osaka/</a></dd>
+          </li>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <p class="section-eyebrow">Contact</p>
+    <h2 class="section-title">まずは相談してみませんか？</h2>
+    <p>足のお悩み、シューズ選びのご相談、イベントへの参加など、<br />お気軽にお問い合わせください。</p>
+    <a href="https://stridelab.jp/contact/" target="_blank" class="btn-white">お問い合わせフォームへ</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">STRIDE<span>LAB</span> 大阪</div>
+    <small>© 株式会社ストライド. All rights reserved.</small>
+  </footer>
+
+</body>
+</html>
