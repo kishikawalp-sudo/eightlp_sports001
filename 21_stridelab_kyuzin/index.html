@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>採用情報 | STRIDE LAB（株式会社ストライド）パートナー・セールス募集</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --night:   #0D1B2A;
+      --lane:    #1A2E42;
+      --white:   #F5F0E8;
+      --sprint:  #FF4E00;
+      --forest:  #2C4A2E;
+      --gray:    #8A9BB0;
+      --border:  rgba(255,255,255,0.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--night);
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      background: rgba(13,27,42,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,78,0,0.15);
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .logo em { font-style: normal; color: var(--sprint); }
+
+    .header-tag {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gray);
+      border: 1px solid rgba(255,78,0,0.3);
+      padding: 5px 14px;
+    }
+
+    .header-apply {
+      background: var(--sprint);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .header-apply:hover { background: #e04400; }
+
+    /* ========== HERO ========== */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 8vw 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        rgba(13,27,42,0.96) 0%,
+        rgba(13,27,42,0.75) 55%,
+        rgba(13,27,42,0.4) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-img-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+      filter: grayscale(20%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sprint);
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--sprint);
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.4rem, 8vw, 7.6rem);
+      line-height: 0.93;
+      letter-spacing: 0.03em;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+
+    .hero-title .accent { color: var(--sprint); }
+
+    .hero-lead {
+      font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+      color: rgba(245,240,232,0.72);
+      max-width: 520px;
+      line-height: 2;
+      margin-bottom: 48px;
+    }
+    .hero-lead strong { color: var(--white); font-weight: 500; }
+
+    /* カウントアップ（シグネチャー） */
+    .hero-counter {
+      display: flex;
+      gap: 48px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .counter-item { text-align: left; }
+
+    .counter-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 1;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .counter-num .unit {
+      font-size: 0.38em;
+      color: var(--sprint);
+      vertical-align: baseline;
+      margin-left: 2px;
+    }
+
+    .counter-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    .counter-divider {
+      width: 1px;
+      height: 60px;
+      background: var(--border);
+      align-self: center;
+    }
+
+    .btn-apply {
+      display: inline-block;
+      background: var(--sprint);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 18px 52px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      margin-right: 16px;
+    }
+    .btn-apply:hover { background: #e04400; transform: translateY(-2px); }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid rgba(245,240,232,0.3);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--white); }
+
+    /* scroll hint */
+    .scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      left: 8vw;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .scroll-hint::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: var(--gray);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.3; transform: scaleY(1); }
+      50%      { opacity: 1;   transform: scaleY(1.3); }
+    }
+
+    /* ========== SECTION BASE ========== */
+    .sec {
+      padding: 100px 8vw;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sprint);
+      margin-bottom: 14px;
+    }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--sprint);
+    }
+
+    .sec-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 52px;
+    }
+
+    /* ========== MESSAGE ========== */
+    #message { background: var(--lane); }
+
+    .message-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .message-body {
+      font-size: 0.95rem;
+      color: rgba(245,240,232,0.75);
+      line-height: 2.1;
+    }
+    .message-body strong { color: var(--white); font-weight: 600; }
+    .message-body p + p { margin-top: 20px; }
+
+    .message-quote {
+      border-left: 3px solid var(--sprint);
+      padding: 20px 28px;
+      background: rgba(13,27,42,0.5);
+      margin-top: 32px;
+      font-size: 0.93rem;
+      color: var(--white);
+      line-height: 1.9;
+      font-style: italic;
+    }
+
+    .team-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      position: relative;
+    }
+
+    .team-img-wrap {
+      position: relative;
+    }
+    .team-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 2px solid var(--sprint);
+      transform: translate(10px, 10px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .team-img { position: relative; z-index: 1; }
+
+    /* ========== WORK ========== */
+    #work { background: var(--night); }
+
+    .work-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .work-item {
+      background: var(--lane);
+      padding: 36px 40px;
+      border-top: 2px solid transparent;
+      transition: border-color 0.25s;
+    }
+    .work-item:hover { border-color: var(--sprint); }
+
+    .work-item-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .work-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: rgba(255,78,0,0.12);
+      border: 1px solid rgba(255,78,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .work-item h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      line-height: 1.4;
+      padding-top: 4px;
+    }
+
+    .work-item p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.9;
+    }
+
+    /* ========== BRANDS ========== */
+    #brands { background: var(--lane); }
+
+    .brands-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .brands-img {
+      width: 100%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+      filter: grayscale(15%);
+    }
+
+    .brands-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .brand-tag {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border: 1px solid rgba(255,78,0,0.35);
+      color: var(--white);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .brand-tag:hover {
+      background: rgba(255,78,0,0.12);
+      border-color: var(--sprint);
+    }
+    .brand-tag.featured {
+      background: var(--sprint);
+      border-color: var(--sprint);
+      color: var(--white);
+    }
+
+    .brands-note {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.9;
+    }
+    .brands-note strong { color: var(--white); font-weight: 500; }
+
+    /* ========== MINDSET ========== */
+    #mindset { background: var(--night); }
+
+    .mindset-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+
+    .mindset-card {
+      background: var(--lane);
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mindset-card::before {
+      content: attr(data-char);
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 7rem;
+      color: rgba(255,78,0,0.05);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .mindset-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.07em;
+      color: var(--white);
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .mindset-card h3::before {
+      content: '→';
+      color: var(--sprint);
+      margin-right: 8px;
+    }
+
+    .mindset-card p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.9;
+      position: relative;
+    }
+
+    /* ========== CONDITIONS ========== */
+    #conditions { background: var(--lane); }
+
+    .cond-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .cond-block h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sprint);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,78,0,0.2);
+    }
+
+    .cond-table { width: 100%; border-collapse: collapse; }
+
+    .cond-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cond-table td {
+      padding: 14px 0;
+      font-size: 0.88rem;
+      vertical-align: top;
+    }
+
+    .cond-table td:first-child {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--gray);
+      width: 100px;
+      padding-right: 16px;
+      padding-top: 16px;
+    }
+
+    .cond-table td:last-child { color: var(--white); line-height: 1.85; }
+
+    .salary-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--sprint);
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+    }
+    .salary-num small {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.75rem;
+      color: var(--gray);
+      font-weight: 400;
+      margin-left: 4px;
+    }
+
+    .benefit-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .benefit-list li {
+      background: rgba(44,74,46,0.35);
+      border: 1px solid rgba(44,74,46,0.6);
+      font-size: 0.8rem;
+      color: rgba(245,240,232,0.85);
+      padding: 5px 12px;
+    }
+
+    .access-info {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 2;
+    }
+    .access-info strong { color: var(--white); display: block; font-size: 0.95rem; margin-bottom: 6px; }
+
+    /* ========== REQUIREMENTS ========== */
+    #requirements { background: var(--night); }
+
+    .req-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .req-block {
+      padding: 36px 40px;
+      border: 1px solid var(--border);
+    }
+
+    .req-block.must { border-top: 3px solid var(--sprint); }
+    .req-block.want { border-top: 3px solid var(--forest); }
+
+    .req-block-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .req-badge {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+    }
+    .req-badge.must { background: var(--sprint); color: var(--white); }
+    .req-badge.want { background: var(--forest); color: var(--white); }
+
+    .req-block h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.88rem;
+      color: var(--white);
+      letter-spacing: 0.06em;
+    }
+
+    .req-items {
+      list-style: none;
+    }
+    .req-items li {
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: rgba(245,240,232,0.8);
+      line-height: 1.7;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .req-items li::before {
+      content: '✓';
+      color: var(--sprint);
+      flex-shrink: 0;
+      font-family: 'Oswald', sans-serif;
+      margin-top: 1px;
+    }
+    .req-block.want .req-items li::before { color: #5a9e5e; }
+
+    /* ========== CTA FOOTER ========== */
+    #cta-bottom {
+      background: var(--sprint);
+      padding: 96px 8vw;
+      text-align: center;
+    }
+
+    .cta-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.65);
+      margin-bottom: 14px;
+    }
+    .cta-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: rgba(245,240,232,0.4);
+    }
+
+    .cta-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+
+    .cta-sub {
+      font-size: 0.95rem;
+      color: rgba(245,240,232,0.78);
+      line-height: 1.9;
+      margin-bottom: 40px;
+    }
+
+    .btn-white-lg {
+      display: inline-block;
+      background: var(--white);
+      color: var(--sprint);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 20px 60px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-white-lg:hover { background: #ede8df; transform: translateY(-2px); }
+
+    .cta-note {
+      margin-top: 18px;
+      font-size: 0.78rem;
+      color: rgba(245,240,232,0.5);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--night);
+      border-top: 1px solid var(--border);
+      padding: 28px 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.12em;
+      color: var(--white);
+    }
+    .footer-logo em { font-style: normal; color: var(--sprint); }
+
+    footer nav { display: flex; gap: 28px; flex-wrap: wrap; }
+    footer nav a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+      text-decoration: none;
+    }
+    footer nav a:hover { color: var(--sprint); }
+
+    footer small {
+      font-size: 0.7rem;
+      color: var(--gray);
+    }
+
+    /* ========== SCROLL REVEAL ========== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 960px) {
+      header { padding: 14px 24px; }
+      .header-tag { display: none; }
+      .sec { padding: 72px 6vw; }
+
+      .message-grid,
+      .brands-grid,
+      .cond-grid,
+      .req-cols { grid-template-columns: 1fr; gap: 36px; }
+
+      .work-list,
+      .mindset-grid { grid-template-columns: 1fr; }
+      .hero-counter { gap: 24px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title { font-size: 3rem; }
+      .btn-apply, .btn-outline { display: block; text-align: center; margin: 0 0 12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .scroll-hint::before { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="https://stridelab.jp/osaka/" target="_blank" class="logo">STRIDE<em>LAB</em></a>
+    <span class="header-tag">Recruit 2025</span>
+    <a href="#cta-bottom" class="header-apply">今すぐ応募する</a>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <img
+      src="images/team_field.jpg"
+      alt="STRIDELABチームがフィールドで活動するイメージ"
+      class="hero-img-bg"
+    />
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Partner Sales Recruit</p>
+
+      <h1 class="hero-title">
+        あなたの<br />
+        <span class="accent">情熱が、</span><br />
+        誰かの一歩になる
+      </h1>
+
+      <p class="hero-lead">
+        全国の専門店と<strong>「共に走る」</strong>パートナー・セールスを募集します。<br />
+        売ることより、<strong>お店が輝くこと</strong>に喜びを感じるあなたへ。
+      </p>
+
+      <!-- カウントアップ（シグネチャー） -->
+      <div class="hero-counter">
+        <div class="counter-item">
+          <div class="counter-num" id="cnt-brand">0<span class="unit">ブランド</span></div>
+          <div class="counter-label">主要取扱ブランド数</div>
+        </div>
+        <div class="counter-divider"></div>
+        <div class="counter-item">
+          <div class="counter-num" id="cnt-sal">25<span class="unit">万〜</span></div>
+          <div class="counter-label">月給（万円）</div>
+        </div>
+        <div class="counter-divider"></div>
+        <div class="counter-item">
+          <div class="counter-num" id="cnt-flex">0<span class="unit">h</span></div>
+          <div class="counter-label">月間労働時間（フレックス）</div>
+        </div>
+      </div>
+
+      <div>
+        <a href="#cta-bottom" class="btn-apply">応募する</a>
+        <a href="#work" class="btn-outline">仕事内容を見る</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section id="message" class="sec">
+    <div class="message-grid">
+      <div class="reveal">
+        <p class="eyebrow">From CEO</p>
+        <h2 class="sec-title">一軒のお店を、<br />本気で変えにいく</h2>
+        <div class="message-body">
+          <p>私たちは、この業界を愛しています。だからこそ、関わる全ての人が誇りを持って働き続けられる、<strong>健全で熱量の高いマーケット</strong>を維持したい。</p>
+          <p>「今のやり方を大切にしながらも、もっとお店やユーザーがハッピーになれる方法があるはずだ」という探求心を持つ方。ストライドというプラットフォームを使い、<strong>あなたの情熱で、一軒のお店、一人の登山者、一人のランナーの未来を明るく照らしてみませんか。</strong></p>
+        </div>
+        <blockquote class="message-quote">
+          無理な押し込みや安売りに頼ることはありません。お店が適正な利益を得て、長く愛され続けること。そのための「一歩先を行く伴走者」であることを私たちは目指しています。
+        </blockquote>
+      </div>
+      <div class="team-img-wrap reveal">
+        <img
+          src="images/team_field.jpg"
+          alt="STRIDELABチームイメージ"
+          class="team-img"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="sec">
+    <p class="eyebrow reveal">What You Do</p>
+    <h2 class="sec-title reveal">仕事の内容</h2>
+    <div class="work-list">
+      <div class="work-item reveal">
+        <div class="work-item-head">
+          <div class="work-icon">🗺️</div>
+          <h3>オーダーメイド型提案</h3>
+        </div>
+        <p>担当専門店の店舗・スタッフ・地域特性・顧客層を多角的にリサーチ。お店の個性を最大化させるMDや販売戦略を構築・提案します。</p>
+      </div>
+      <div class="work-item reveal">
+        <div class="work-item-head">
+          <div class="work-icon">🤝</div>
+          <h3>市場分析とパートナーシップ</h3>
+        </div>
+        <p>自社ブランドを熟知するのはもちろん、競合製品も深く理解。客観的な視点で店主様の意思決定を支える「信頼されるパートナー」を目指します。</p>
+      </div>
+      <div class="work-item reveal">
+        <div class="work-item-head">
+          <div class="work-icon">💡</div>
+          <h3>潜在的な魅力の掘り起こし</h3>
+        </div>
+        <p>現場に通い、対話を重ねる中で、お客様自身も気づいていない「新しい見せ方」や「潜在的なニーズ」を提案。お店の可能性を共に拓きます。</p>
+      </div>
+      <div class="work-item reveal">
+        <div class="work-item-head">
+          <div class="work-icon">📦</div>
+          <h3>セルスルーの徹底サポート</h3>
+        </div>
+        <p>製品を届けて完了ではありません。勉強会・VMD提案・イベント企画まで。製品がエンドユーザーの手に渡る瞬間まで現場と共に汗を流します。</p>
+      </div>
+      <div class="work-item reveal" style="grid-column: 1 / -1;">
+        <div class="work-item-head">
+          <div class="work-icon">💻</div>
+          <h3>DXによる人間味の最大化</h3>
+        </div>
+        <p>Notion・AI・Google Workspaceをフル活用し、事務作業を徹底的に効率化。生み出した時間で、より深くお客様と向き合い、対話することに注力します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section id="brands" class="sec">
+    <div class="brands-grid">
+      <div class="reveal">
+        <p class="eyebrow">Brands</p>
+        <h2 class="sec-title">世界が認めた<br />ブランドを届ける</h2>
+        <div class="brands-list">
+          <span class="brand-tag featured">ALTRA</span>
+          <span class="brand-tag">Notace</span>
+          <span class="brand-tag">NEMO Equipment</span>
+          <span class="brand-tag">Teton Bros.</span>
+          <span class="brand-tag">Luna Sandals</span>
+          <span class="brand-tag">LEMS</span>
+          <span class="brand-tag featured">COROS</span>
+          <span class="brand-tag">Ultimate Direction</span>
+          <span class="brand-tag">ibex</span>
+          <span class="brand-tag">SunGod</span>
+          <span class="brand-tag">BIG SKY</span>
+          <span class="brand-tag">VFuel</span>
+        </div>
+        <p class="brands-note">
+          これらのブランドの哲学を理解し、その価値を広めることに情熱を注げる方を募集します。<br />
+          <strong>製品を「売る」のではなく、ブランドの物語を「届ける」仕事です。</strong>
+        </p>
+      </div>
+      <div class="reveal">
+        <img
+          src="images/brands_lineup.jpg"
+          alt="STRIDE LAB取扱ブランドのシューズ・ギア"
+          class="brands-img"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- MINDSET -->
+  <section id="mindset" class="sec">
+    <p class="eyebrow reveal">Mindset</p>
+    <h2 class="sec-title reveal">求める人物像</h2>
+    <div class="mindset-grid">
+      <div class="mindset-card reveal" data-char="A">
+        <h3>「顧客の成功」を我が事とできる</h3>
+        <p>自分の数字のためではなく、「担当したお店が活気づき、店主様と喜びを分かち合うこと」に真のやりがいを感じられる方。</p>
+      </div>
+      <div class="mindset-card reveal" data-char="B">
+        <h3>対等なパートナーとしての芯の強さ</h3>
+        <p>専門店様に寄り添い伴走しながらも、お互いの成功のために必要なら、プロとして対等な立場で議論できる芯の強さを求めます。</p>
+      </div>
+      <div class="mindset-card reveal" data-char="C">
+        <h3>自走する行動力と柔軟性</h3>
+        <p>言われたことだけでなく、自ら考え実践する人物を評価。考えすぎて動かないよりも、動きながら軌道修正していく行動力を大切にします。</p>
+      </div>
+      <div class="mindset-card reveal" data-char="D">
+        <h3>チームを育てる共有文化</h3>
+        <p>個人の成果を抱え込まず、成功も失敗もオープンに共有することでチームをより良くしていこうというオープンなマインドを求めます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUIREMENTS -->
+  <section id="requirements" class="sec">
+    <p class="eyebrow reveal">Requirements</p>
+    <h2 class="sec-title reveal">採用要件</h2>
+    <div class="req-cols">
+      <div class="req-block must reveal">
+        <div class="req-block-head">
+          <span class="req-badge must">Must</span>
+          <h3>必須条件</h3>
+        </div>
+        <ul class="req-items">
+          <li>法人営業、またはアウトドア/スポーツショップでの勤務経験</li>
+          <li>アウトドア・ランニングを個人的に心から楽しみ、実体験としてギアの価値を理解している方</li>
+          <li>チームでの情報共有（成功・失敗の両面）を大切にし、共に成長しようとするオープンなマインド</li>
+          <li>高卒以上・パソコン操作ができる方</li>
+        </ul>
+      </div>
+      <div class="req-block want reveal">
+        <div class="req-block-head">
+          <span class="req-badge want">Welcome</span>
+          <h3>歓迎条件</h3>
+        </div>
+        <ul class="req-items">
+          <li>高機能商材における、課題解決型（ソリューション型）営業の実績</li>
+          <li>Notion・AI・CRM等のITツールを使いこなし、業務を自ら効率化できるリテラシー</li>
+          <li>継続的に学ぶ意欲と、変化を楽しめるマインドセット</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDITIONS -->
+  <section id="conditions" class="sec">
+    <p class="eyebrow reveal">Conditions</p>
+    <h2 class="sec-title reveal">待遇・勤務条件</h2>
+    <div class="cond-grid">
+      <div class="cond-block reveal">
+        <h3>給与 / 勤務</h3>
+        <table class="cond-table">
+          <tr>
+            <td>月給</td>
+            <td>
+              <div class="salary-num">25<small>万円</small> 〜 40<small>万円</small></div>
+              <small style="color:var(--gray);font-size:0.78rem;">固定残業代含む（25時間分）・超過分別途支給</small>
+            </td>
+          </tr>
+          <tr>
+            <td>勤務形態</td>
+            <td>フレックスタイム制<br />コアタイム 10:00〜17:00<br />総労働時間 160時間/月</td>
+          </tr>
+          <tr>
+            <td>休日</td>
+            <td>完全週休2日制・育休あり<br />年末年始休暇・慶弔休暇</td>
+          </tr>
+          <tr>
+            <td>試用期間</td>
+            <td>6ヶ月（条件同一）</td>
+          </tr>
+          <tr>
+            <td>評価</td>
+            <td>人事評価制度あり（年1回考課）</td>
+          </tr>
+        </table>
+      </div>
+      <div class="cond-block reveal">
+        <h3>福利厚生 / アクセス</h3>
+        <table class="cond-table">
+          <tr>
+            <td>社会保険</td>
+            <td>健康・厚生年金・雇用・労災</td>
+          </tr>
+          <tr>
+            <td>福利厚生</td>
+            <td>
+              <ul class="benefit-list">
+                <li>交通費全額支給</li>
+                <li>スタッフ割引</li>
+                <li>退職金制度</li>
+                <li>服装・髪型自由</li>
+                <li>ひげ・ネイル・ピアスOK</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>勤務地</td>
+            <td>
+              <div class="access-info">
+                <strong>株式会社ストライド 東京本社</strong>
+                東京都中央区日本橋堀留町1−2−1 2F<br />
+                小伝馬町駅 徒歩6分<br />
+                人形町駅・新日本橋駅 徒歩7分
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta-bottom">
+    <p class="cta-eyebrow">Apply Now</p>
+    <h2 class="cta-title">さあ、共に走ろう</h2>
+    <p class="cta-sub">
+      あなたの情熱と経験を、全国の専門店のために使いませんか。<br />
+      まずはお気軽にお問い合わせください。
+    </p>
+    <a href="https://stridelab.jp/contact/" target="_blank" class="btn-white-lg">応募フォームへ進む</a>
+    <p class="cta-note">※ 応募後、担当者より3営業日以内にご連絡いたします</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">STRIDE<em>LAB</em> Recruit</div>
+    <nav>
+      <a href="https://stridelab.jp/osaka/" target="_blank">店舗サイト</a>
+      <a href="https://www.instagram.com/stridelab_official/" target="_blank">Instagram</a>
+      <a href="https://stridelab.jp/contact/" target="_blank">お問い合わせ</a>
+    </nav>
+    <small>© 株式会社ストライド. All rights reserved.</small>
+  </footer>
+
+  <!-- JS: カウントアップ & スクロールリビール -->
+  <script>
+    // カウントアップアニメーション
+    function animateCount(el, target, duration, suffix) {
+      const start = performance.now();
+      const from = 0;
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(from + (target - from) * ease);
+        el.firstChild.textContent = current;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    // IntersectionObserver でヒーローが見えたらカウント開始
+    const heroObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          // ブランド数
+          const brandEl = document.getElementById('cnt-brand');
+          animateCount(brandEl, 12, 1200);
+          // フレックス時間
+          const flexEl = document.getElementById('cnt-flex');
+          animateCount(flexEl, 160, 1400);
+          heroObs.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    heroObs.observe(document.getElementById('hero'));
+
+    // スクロールリビール
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('in'), i * 60);
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => revealObs.observe(el));
+  </script>
+
+</body>
+</html>
