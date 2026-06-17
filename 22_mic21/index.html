@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mic21 大阪梅田店｜日本最大級のマリンスポーツ用品店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #0A1628;
+      color: #FFFFFF;
+      overflow-x: hidden;
+    }
+
+    /* ===== VARIABLES ===== */
+    :root {
+      --navy:   #0A1628;
+      --navy2:  #0E1F3D;
+      --cyan:   #00C9E4;
+      --cyan2:  #00A8C0;
+      --coral:  #FF6B35;
+      --sand:   #F5EDD8;
+      --white:  #FFFFFF;
+      --gray:   #8A9BB0;
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      background: rgba(10, 22, 40, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,201,228,0.15);
+    }
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.08em;
+      color: var(--cyan);
+    }
+    .logo span { color: var(--white); }
+    nav { display: flex; gap: 32px; align-items: center; }
+    nav a {
+      color: var(--sand);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      opacity: 0.8;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    nav a:hover { opacity: 1; color: var(--cyan); }
+    .nav-cta {
+      background: var(--coral);
+      color: var(--white) !important;
+      opacity: 1 !important;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #e5541f !important; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 120px 10% 80px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0A1628 0%, #0d2a4a 50%, #0a3a5c 100%);
+    }
+    /* 波紋アニメーション - シグネチャー要素 */
+    .ripple-container {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(0,201,228,0.15);
+      animation: ripple-expand 8s ease-out infinite;
+    }
+    .ripple:nth-child(1) { width: 300px; height: 300px; bottom: -50px; right: 10%; animation-delay: 0s; }
+    .ripple:nth-child(2) { width: 550px; height: 550px; bottom: -150px; right: 5%; animation-delay: 1.5s; }
+    .ripple:nth-child(3) { width: 800px; height: 800px; bottom: -280px; right: 0%; animation-delay: 3s; }
+    .ripple:nth-child(4) { width: 1100px; height: 1100px; bottom: -420px; right: -5%; animation-delay: 4.5s; }
+    @keyframes ripple-expand {
+      0%   { opacity: 0.6; transform: scale(0.7); }
+      100% { opacity: 0;   transform: scale(1.2); }
+    }
+    /* 海中光の差し込み */
+    .light-ray {
+      position: absolute;
+      top: 0; right: 15%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,201,228,0.25) 0%, transparent 100%);
+      transform: rotate(15deg) scaleX(80);
+      transform-origin: top center;
+      opacity: 0.3;
+    }
+
+    /* 写真エリア */
+    .hero-image-wrap {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 50%;
+      overflow: hidden;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .hero-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #0A1628 0%, rgba(10,22,40,0.3) 60%, transparent 100%);
+      z-index: 1;
+    }
+
+    /* テキスト */
+    .hero-content { position: relative; z-index: 2; max-width: 560px; }
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--cyan);
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      line-height: 1.0;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .hero-title .accent { color: var(--cyan); }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 700;
+      color: var(--sand);
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+    }
+    .hero-desc {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: rgba(245,237,216,0.75);
+      margin-bottom: 40px;
+      max-width: 420px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--coral);
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 36px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #e5541f; transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block;
+      border: 1.5px solid var(--cyan);
+      color: var(--cyan);
+      text-decoration: none;
+      padding: 16px 36px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover { background: rgba(0,201,228,0.1); transform: translateY(-2px); }
+
+    /* ===== STATS ===== */
+    .stats {
+      background: var(--navy2);
+      border-top: 1px solid rgba(0,201,228,0.2);
+      border-bottom: 1px solid rgba(0,201,228,0.2);
+      padding: 60px 10%;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+      border-right: 1px solid rgba(0,201,228,0.1);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 4vw, 4rem);
+      color: var(--cyan);
+      line-height: 1;
+      display: block;
+    }
+    .stat-unit {
+      font-size: 1rem;
+      color: var(--sand);
+      font-weight: 700;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin-top: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 100px 10%; }
+    .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--cyan);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      letter-spacing: 0.05em;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .section-lead {
+      font-size: 0.9rem;
+      color: rgba(245,237,216,0.7);
+      line-height: 1.9;
+      max-width: 560px;
+    }
+
+    /* ===== MARINE SPORTS SERVICES ===== */
+    .services { background: var(--navy); }
+    .services-header { margin-bottom: 60px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--navy2);
+      border: 1px solid rgba(0,201,228,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--cyan);
+    }
+    .service-card.featured {
+      grid-column: span 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .service-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .service-card.featured .service-img {
+      height: 100%;
+      min-height: 280px;
+    }
+    .service-body { padding: 28px; }
+    .service-tag {
+      display: inline-block;
+      background: rgba(0,201,228,0.12);
+      color: var(--cyan);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+    }
+    .service-card.featured .service-tag {
+      background: var(--coral);
+      color: var(--white);
+    }
+    .service-name {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .service-card.featured .service-name {
+      font-size: 1.5rem;
+    }
+    .service-desc {
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+    .service-list {
+      list-style: none;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .service-list li {
+      font-size: 0.82rem;
+      color: rgba(245,237,216,0.8);
+      padding-left: 16px;
+      position: relative;
+    }
+    .service-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery { background: var(--navy2); padding: 80px 10%; }
+    .gallery-grid {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 280px;
+      gap: 12px;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 6px;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    /* ===== REVIEW ===== */
+    .review { background: var(--navy); }
+    .review-card {
+      background: var(--navy2);
+      border: 1px solid rgba(0,201,228,0.15);
+      border-left: 4px solid var(--cyan);
+      border-radius: 8px;
+      padding: 48px;
+      margin-top: 48px;
+      position: relative;
+    }
+    .review-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px; left: 40px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 6rem;
+      color: rgba(0,201,228,0.12);
+      line-height: 1;
+    }
+    .stars { font-size: 1.3rem; color: #FFD700; margin-bottom: 20px; }
+    .review-text {
+      font-size: 0.9rem;
+      line-height: 2;
+      color: rgba(245,237,216,0.85);
+      max-width: 800px;
+    }
+    .review-author {
+      margin-top: 28px;
+      font-size: 0.8rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    /* ===== INFO ===== */
+    .info { background: var(--navy2); }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      margin-top: 48px;
+      align-items: start;
+    }
+    .info-table { width: 100%; border-collapse: collapse; }
+    .info-table tr { border-bottom: 1px solid rgba(0,201,228,0.08); }
+    .info-table th {
+      width: 120px;
+      text-align: left;
+      padding: 16px 0;
+      font-size: 0.78rem;
+      color: var(--cyan);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      vertical-align: top;
+    }
+    .info-table td {
+      padding: 16px 0 16px 16px;
+      font-size: 0.85rem;
+      color: rgba(245,237,216,0.8);
+      line-height: 1.7;
+    }
+    .info-table a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+    .info-table a:hover { text-decoration: underline; }
+    .sns-links { display: flex; gap: 16px; margin-top: 8px; flex-wrap: wrap; }
+    .sns-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0,201,228,0.1);
+      border: 1px solid rgba(0,201,228,0.25);
+      color: var(--cyan);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .sns-link:hover { background: rgba(0,201,228,0.2); }
+    .map-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(0,201,228,0.15);
+    }
+    .map-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 320px;
+      border: none;
+      filter: grayscale(30%) invert(10%);
+    }
+    .map-address {
+      background: var(--navy);
+      padding: 16px 20px;
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      background: linear-gradient(135deg, #0a2a4a 0%, #0a3a5c 100%);
+      text-align: center;
+      padding: 100px 10%;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(0,201,228,0.08) 0%, transparent 70%);
+    }
+    .cta-section .section-title { margin: 0 auto 16px; }
+    .cta-section .section-lead { margin: 0 auto 48px; text-align: center; }
+    .cta-actions { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .btn-large {
+      display: inline-block;
+      padding: 20px 48px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: transform 0.15s, background 0.2s;
+    }
+    .btn-large:hover { transform: translateY(-3px); }
+    .btn-coral { background: var(--coral); color: var(--white); }
+    .btn-coral:hover { background: #e5541f; }
+    .btn-glass {
+      background: rgba(255,255,255,0.06);
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.25);
+    }
+    .btn-glass:hover { background: rgba(255,255,255,0.12); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #040c18;
+      padding: 48px 10% 32px;
+      border-top: 1px solid rgba(0,201,228,0.12);
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      gap: 40px;
+    }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--cyan);
+      letter-spacing: 0.08em;
+    }
+    .footer-logo span { color: var(--white); }
+    .footer-tagline {
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin-top: 6px;
+      letter-spacing: 0.05em;
+    }
+    .footer-links { display: flex; gap: 32px; }
+    .footer-col h4 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .footer-col a {
+      display: block;
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--sand); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+      color: var(--gray);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      header { padding: 14px 24px; }
+      nav { gap: 16px; }
+      .hero { padding: 100px 6% 60px; }
+      .hero-image-wrap { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+      .service-card.featured .service-img { min-height: 200px; height: 200px; }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .gallery-item { height: 220px; }
+      .info-grid { grid-template-columns: 1fr; gap: 40px; }
+      section, .cta-section { padding: 72px 6%; }
+      .footer-top { flex-direction: column; }
+      .footer-links { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+    @media (max-width: 560px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .hero-actions { flex-direction: column; }
+      .cta-actions { flex-direction: column; align-items: center; }
+      nav { display: none; }
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .ripple, .hero-image-wrap img { animation: none; transition: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">mic<span>21</span></div>
+    <nav>
+      <a href="#services">商品・サービス</a>
+      <a href="#review">口コミ</a>
+      <a href="#info">店舗情報</a>
+      <a href="https://www.mic21.com/inquiry/" target="_blank" rel="noopener" class="nav-cta">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="ヒーロー">
+    <div class="hero-bg"></div>
+    <div class="ripple-container" aria-hidden="true">
+      <div class="ripple"></div>
+      <div class="ripple"></div>
+      <div class="ripple"></div>
+      <div class="ripple"></div>
+    </div>
+    <div class="light-ray" aria-hidden="true"></div>
+
+    <!-- メイン画像 -->
+    <div class="hero-image-wrap">
+      <img src="images/hero_marine.jpg" alt="マリンスポーツを楽しむ様子">
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">OSAKA UMEDA STORE — SINCE 1999</p>
+      <h1 class="hero-title">SEA IS<br><span class="accent">YOUR STAGE.</span></h1>
+      <p class="hero-sub">日本最大級のマリンスポーツ専門店</p>
+      <p class="hero-desc">ダイビング器材からシュノーケル、SUP、ウェイクボードまで。<br>海の楽しさを全力でサポートするのが、私たちmic21です。</p>
+      <div class="hero-actions">
+        <a href="https://www.mic21.com/inquiry/" target="_blank" rel="noopener" class="btn-primary">まずは相談する</a>
+        <a href="http://www.mic21.com/shop/show/shop/7.html" target="_blank" rel="noopener" class="btn-outline">店舗詳細を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats reveal">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">37<span class="stat-unit">万人</span></span>
+        <p class="stat-label">累計会員登録数</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">15<span class="stat-unit">拠点</span></span>
+        <p class="stat-label">国内店舗・施設数</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">25<span class="stat-unit">年</span></span>
+        <p class="stat-label">業界での実績</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">365<span class="stat-unit">日</span></span>
+        <p class="stat-label">年中無休で営業中</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARINE SPORTS SERVICES -->
+  <section class="services" id="services">
+    <div class="services-header reveal">
+      <p class="section-eyebrow">PRODUCTS &amp; SERVICES</p>
+      <h2 class="section-title">マリンスポーツの全部が、ここにある。</h2>
+      <p class="section-lead">ダイビング器材の販売からライセンス取得、宿泊プランまで。海にまつわるすべての体験を一手にサポートします。</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- FEATURED -->
+      <div class="service-card featured reveal">
+        <img src="images/diving_gear.jpg" alt="ダイビング器材" class="service-img">
+        <div class="service-body">
+          <span class="service-tag">★ イチオシ</span>
+          <h3 class="service-name">マリンスポーツ用品<br>豊富な品揃え</h3>
+          <p class="service-desc">スキューバダイビング・シュノーケル・SUPなど、あらゆる海のアクティビティに対応した器材を取り揃えています。初心者から上級者まで、専門スタッフが最適な一品をご提案します。</p>
+          <ul class="service-list">
+            <li>国内最大級の在庫数 — マスク・フィン・BCD・レギュレーター等を常備</li>
+            <li>器材のオーバーホール・修理サービスにも対応</li>
+            <li>中古器材の下取り・販売で、初めての方も始めやすい</li>
+            <li>オンラインショップとの連携で取り寄せも迅速対応</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3 cards -->
+      <div class="service-card reveal">
+        <img src="images/snorkel_family.jpg" alt="家族でシュノーケリング" class="service-img">
+        <div class="service-body">
+          <span class="service-tag">FAMILY PLAN</span>
+          <h3 class="service-name">家族で楽しむ<br>海遊び宿泊プラン</h3>
+          <p class="service-desc">プライベートビーチでのシュノーケリング・SUP・カヌー・体験ダイビングが全部セット。食事込みで格安に楽しめる人気プランです。</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-body" style="padding-top: 36px;">
+          <span class="service-tag">LICENSE</span>
+          <h3 class="service-name">ダイビング<br>ライセンス取得</h3>
+          <p class="service-desc">完全初心者でも安心の講習プランをご用意。体験ダイビングからPADIオープンウォーターまで段階的にサポートします。</p>
+          <ul class="service-list">
+            <li>体験ダイビングコース</li>
+            <li>オープンウォーターダイバー</li>
+            <li>アドバンスド〜インストラクターまで</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-body" style="padding-top: 36px;">
+          <span class="service-tag">TOUR</span>
+          <h3 class="service-name">ダイビング<br>ツアー企画</h3>
+          <p class="service-desc">国内リゾートから海外まで、mic21スタッフが同行・企画するダイビングツアーを開催。仲間と一緒に海外の海を満喫しましょう。</p>
+          <ul class="service-list">
+            <li>国内：沖縄・串本・伊豆など</li>
+            <li>海外：モルディブ・パラオ・フィリピンなど</li>
+            <li>フォトアルバムで旅の記録を共有</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <div class="gallery reveal">
+    <p class="section-eyebrow">GALLERY</p>
+    <h2 class="section-title">海の記憶をともに。</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/hero_marine.jpg" alt="マリンアクティビティ">
+      </div>
+      <div class="gallery-item">
+        <img src="images/snorkel_family.jpg" alt="シュノーケリング">
+      </div>
+      <div class="gallery-item">
+        <img src="images/diving_gear.jpg" alt="ダイビング器材">
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEW -->
+  <section class="review" id="review">
+    <div class="reveal">
+      <p class="section-eyebrow">CUSTOMER VOICE</p>
+      <h2 class="section-title">お客様の声</h2>
+    </div>
+    <div class="review-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">
+        シュノーケリングの道具を購入するのにもう10年ほどお世話になってます。今年はじめて家族で泊まれるプランを企画してくれて参加させてもらいました！目の前のプライベートビーチでシュノーケリング、SAP、カヌー、体験ダイビングなど全部がセットになってて、食事も全て込み価格だったので凄く格安で利用させて頂きました！他の利用者さんともキャンプファイヤーしたり一緒にご飯食べたりして合宿みたいな気分で楽しかったです。息子と旦那が体験ダイビングしてめっちゃ良かったみたいなのでライセンス取りたいって言ってました。そのときはまたお世話になりますね！
+      </p>
+      <p class="review-author">— Google口コミ ★5 ／ 10年以上のご愛顧のお客様</p>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="info" id="info">
+    <div class="reveal">
+      <p class="section-eyebrow">STORE INFORMATION</p>
+      <h2 class="section-title">大阪梅田店　店舗情報</h2>
+    </div>
+    <div class="info-grid reveal">
+      <div>
+        <table class="info-table">
+          <tr>
+            <th>店名</th>
+            <td>mic21 大阪梅田店</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>〒530-0027<br>大阪府大阪市北区堂山町３−３</td>
+          </tr>
+          <tr>
+            <th>電話</th>
+            <td><a href="tel:0663630613">06-6363-0613</a></td>
+          </tr>
+          <tr>
+            <th>メール</th>
+            <td><a href="mailto:info@mic21.com">info@mic21.com</a></td>
+          </tr>
+          <tr>
+            <th>定休日</th>
+            <td>年中無休</td>
+          </tr>
+          <tr>
+            <th>運営会社</th>
+            <td>mic21株式会社<br>代表者：平山　衛耀</td>
+          </tr>
+          <tr>
+            <th>公式HP</th>
+            <td><a href="http://www.mic21.com/shop/show/shop/7.html" target="_blank" rel="noopener">www.mic21.com</a></td>
+          </tr>
+          <tr>
+            <th>SNS</th>
+            <td>
+              <div class="sns-links">
+                <a href="https://x.com/mic21_cs/" target="_blank" rel="noopener" class="sns-link">𝕏 Twitter</a>
+                <a href="https://www.youtube.com/channel/UChWIXGTER4Li-b5JcmL0j_g" target="_blank" rel="noopener" class="sns-link">▶ YouTube</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <div class="map-wrap">
+          <iframe
+            title="mic21 大阪梅田店 地図"
+            src="https://www.google.com/maps?q=大阪府大阪市北区堂山町3-3&output=embed"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+          <div class="map-address">📍 大阪府大阪市北区堂山町３−３（最寄り：梅田駅徒歩圏内）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <p class="section-eyebrow reveal">CONTACT US</p>
+    <h2 class="section-title reveal">まず、海の話をしよう。</h2>
+    <p class="section-lead reveal">初心者の方もベテランも、どんなご相談でもお気軽に。<br>mic21のスタッフが、あなたの海ライフを全力でサポートします。</p>
+    <div class="cta-actions reveal">
+      <a href="https://www.mic21.com/inquiry/" target="_blank" rel="noopener" class="btn-large btn-coral">お問い合わせフォーム</a>
+      <a href="tel:0663630613" class="btn-large btn-glass">📞 06-6363-0613</a>
+      <a href="http://www.mic21.com/shop/show/shop/7.html" target="_blank" rel="noopener" class="btn-large btn-glass">店舗詳細を見る</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">mic<span>21</span></div>
+        <p class="footer-tagline">日本最大級のマリンスポーツ専門店</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>サービス</h4>
+          <a href="https://ec.mic21.com/" target="_blank" rel="noopener">オンラインショップ</a>
+          <a href="https://www.mic21.com/school/" target="_blank" rel="noopener">ダイビングスクール</a>
+          <a href="https://tour.book.ntmg.com/top" target="_blank" rel="noopener">ツアー</a>
+        </div>
+        <div class="footer-col">
+          <h4>会社情報</h4>
+          <a href="https://www.mic21.com/etc/company.php" target="_blank" rel="noopener">会社案内</a>
+          <a href="https://www.mic21.com/recruit/" target="_blank" rel="noopener">採用情報</a>
+          <a href="https://www.mic21.com/etc/privacy.php" target="_blank" rel="noopener">プライバシーポリシー</a>
+        </div>
+        <div class="footer-col">
+          <h4>お問い合わせ</h4>
+          <a href="https://www.mic21.com/inquiry/" target="_blank" rel="noopener">お問い合わせフォーム</a>
+          <a href="tel:0663630613">06-6363-0613</a>
+          <a href="mailto:info@mic21.com">info@mic21.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 1999–2024 mic21株式会社 All Rights Reserved.</span>
+      <span>大阪府大阪市北区堂山町３−３</span>
+    </div>
+  </footer>
+
+  <!-- SCROLL REVEAL SCRIPT -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
