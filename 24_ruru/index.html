@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ルルレモン ルクア大阪店 - あなたの可能性を解き放つ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <header class="relative h-[60vh] flex items-center justify-center text-white overflow-hidden">
+        <!-- 指定されたパスの画像を参照（画像名は指定に基づいてhero_image.jpgを想定） -->
+        <img src="./images/hero_image.jpg" 
+             onerror="this.src='https://placehold.co/1200x800/e5e7eb/6b7280?text=lululemon+hero'"
+             class="absolute w-full h-full object-cover brightness-50" alt="ルルレモン店舗イメージ">
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">ルルレモン ルクア大阪店</h1>
+            <p class="text-xl md:text-2xl font-light">未来のリーダーを育てる、ヨガ・ランニングウェアの聖地</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">イチオシ：機能とスタイルの融合</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <!-- 指定されたパスの画像を参照（画像名は指定に基づいてproduct_focus.jpgを想定） -->
+                <img src="./images/product_focus.jpg" 
+                     onerror="this.src='https://placehold.co/600x400/f3f4f6/333?text=yoga+running+wear'"
+                     class="rounded-2xl shadow-lg" alt="ヨガ・ランニングウェア">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">動き続けるあなたへ</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        ルルレモンのヨガ・ランニングウェアは、ただのウェアではありません。
+                        高い伸縮性と通気性を持ち、あなたのどんな動きにもフィットします。
+                        自分自身の成長を感じるための、最高のパートナーです。
+                    </p>
+                    <a href="https://www.lululemon.co.jp/ja-jp/stores?storeId=49123" 
+                       class="inline-block bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition">詳しく見る</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20 bg-gray-50 p-8 rounded-3xl">
+            <h2 class="text-3xl font-bold mb-10 text-center">お客様の声</h2>
+            <div class="space-y-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <p class="text-yellow-500 mb-2">★★★★★</p>
+                    <p class="text-gray-700 italic">"スタジオがオープンした時から、スタッフさんのウェアや備品でずっとお世話になってます！明るく気さくにお話ししてくださるスタッフばかりで、訪れる時間そのものが楽しい空間です☺️"</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <p class="text-yellow-500 mb-2">★★★★☆</p>
+                    <p class="text-gray-700 italic">"入店してすぐにスタッフの方がフレンドリーに話しかけてくれ、雰囲気はよかったです。自分では選ばなさそうなデザインのトップスも、着てみたら素敵で即購入しました！"</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-xl font-bold mb-4">ルルレモン ルクア大阪店</h3>
+                <p class="mb-2">住所：大阪府大阪市北区梅田3丁目1-3 ルクア大阪 2F</p>
+                <p class="mb-2">電話：<a href="tel:0647966806" class="hover:text-blue-400">06-4796-6806</a></p>
+                <p class="mb-2">定休日：ビル準拠</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">お問い合わせ・SNS</h3>
+                <div class="space-y-2">
+                    <a href="https://www.lululemon.co.jp/ja-jp/contact-us/contact-us.html" class="block hover:text-blue-400">お問い合わせフォーム</a>
+                    <a href="https://www.instagram.com/lululemonjp/?hl=ja" class="block hover:text-blue-400">Instagram</a>
+                    <a href="https://www.youtube.com/user/lululemon" class="block hover:text-blue-400">Youtube</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12 text-gray-500 text-sm">
+            &copy; lululemon athletica JP 合同会社
+        </div>
+    </footer>
+</body>
+</html>
