@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>サンワスポーツ | 大阪松屋町のスキー専門店</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #0A1628;
+      color: #FFFFFF;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ===== VARIABLES ===== */
+    :root {
+      --navy:    #0A1628;
+      --blue:    #4A9FD4;
+      --ice:     #C8E6F5;
+      --snow:    #E8F4FD;
+      --white:   #FFFFFF;
+      --gold:    #D4A843;
+      --section-pad: clamp(60px, 10vw, 120px) clamp(20px, 5vw, 80px);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px clamp(20px, 5vw, 60px);
+      background: rgba(10, 22, 40, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(74, 159, 212, 0.2);
+    }
+    .logo-wrap { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-ja {
+      font-size: clamp(14px, 2.5vw, 18px);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--white);
+    }
+    .logo-en {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(10px, 1.5vw, 12px);
+      letter-spacing: 0.3em;
+      color: var(--blue);
+    }
+    nav { display: flex; gap: clamp(16px, 3vw, 36px); }
+    nav a {
+      color: var(--ice);
+      text-decoration: none;
+      font-size: clamp(11px, 1.5vw, 13px);
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--blue); }
+    .header-cta {
+      background: var(--blue);
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: clamp(11px, 1.5vw, 13px);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .header-cta:hover { background: #3585b8; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: brightness(0.55);
+    }
+    /* 斜めの雪面カットライン — シグネチャー要素 */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 120px;
+      background: var(--navy);
+      clip-path: polygon(0 60%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: clamp(100px, 15vw, 160px) clamp(24px, 8vw, 120px) clamp(100px, 12vw, 160px);
+      max-width: 860px;
+    }
+    .hero-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(11px, 1.5vw, 13px);
+      letter-spacing: 0.4em;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-size: clamp(36px, 7vw, 88px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .hero-title span { color: var(--blue); }
+    .hero-sub {
+      font-size: clamp(14px, 2vw, 18px);
+      color: var(--ice);
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      padding: clamp(12px, 2vw, 16px) clamp(28px, 4vw, 48px);
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: clamp(13px, 1.5vw, 15px);
+      letter-spacing: 0.08em;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #3585b8; transform: translateY(-2px); }
+    .btn-ghost {
+      border: 1px solid rgba(200,230,245,0.4);
+      color: var(--ice);
+      padding: clamp(12px, 2vw, 16px) clamp(28px, 4vw, 48px);
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: clamp(13px, 1.5vw, 15px);
+      letter-spacing: 0.08em;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* ===== STATS BAR ===== */
+    .stats {
+      background: rgba(74, 159, 212, 0.08);
+      border-top: 1px solid rgba(74, 159, 212, 0.2);
+      border-bottom: 1px solid rgba(74, 159, 212, 0.2);
+      padding: 36px clamp(24px, 8vw, 120px);
+      display: flex;
+      gap: clamp(24px, 6vw, 80px);
+      flex-wrap: wrap;
+    }
+    .stat { display: flex; flex-direction: column; }
+    .stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: clamp(11px, 1.3vw, 13px);
+      color: var(--ice);
+      letter-spacing: 0.15em;
+      margin-top: 6px;
+    }
+
+    /* ===== FEATURED PRODUCT ===== */
+    .featured {
+      padding: var(--section-pad);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .featured { grid-template-columns: 1fr; }
+    }
+    .featured-img-wrap {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .featured-img-wrap::before {
+      content: 'イチオシ';
+      position: absolute;
+      top: 20px; left: 20px;
+      z-index: 2;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      padding: 6px 14px;
+      border-radius: 1px;
+    }
+    .featured-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .featured-img-wrap:hover .featured-img { transform: scale(1.03); }
+    .featured-text {}
+    .section-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4.5vw, 52px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .section-body {
+      font-size: clamp(14px, 1.5vw, 16px);
+      color: var(--ice);
+      margin-bottom: 32px;
+      line-height: 1.85;
+    }
+    .feature-list {
+      list-style: none;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: clamp(13px, 1.4vw, 15px);
+      color: var(--ice);
+    }
+    .feature-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px; height: 6px;
+      margin-top: 8px;
+      background: var(--blue);
+      border-radius: 50%;
+    }
+
+    /* ===== STORY ===== */
+    .story {
+      background: rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(74,159,212,0.1);
+      border-bottom: 1px solid rgba(74,159,212,0.1);
+      padding: var(--section-pad);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .story { grid-template-columns: 1fr; }
+      .story-img-wrap { order: -1; }
+    }
+    .story-img-wrap {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .story-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+    .story-year {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(10,22,40,0.9));
+      padding: 40px 24px 24px;
+    }
+    .story-year-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1;
+      opacity: 0.7;
+    }
+    .story-year-label {
+      font-size: 12px;
+      color: var(--ice);
+      letter-spacing: 0.2em;
+    }
+    .quote {
+      border-left: 3px solid var(--blue);
+      padding-left: 20px;
+      margin: 28px 0;
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--ice);
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews { padding: var(--section-pad); }
+    .reviews-header { text-align: center; margin-bottom: clamp(40px, 6vw, 64px); }
+    .stars { color: var(--gold); font-size: 24px; letter-spacing: 4px; margin-bottom: 12px; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(74,159,212,0.15);
+      border-radius: 4px;
+      padding: clamp(24px, 3vw, 36px);
+    }
+    .review-stars { color: var(--gold); font-size: 16px; letter-spacing: 3px; margin-bottom: 16px; }
+    .review-body {
+      font-size: clamp(13px, 1.4vw, 15px);
+      color: var(--ice);
+      line-height: 1.85;
+    }
+
+    /* ===== INFO ===== */
+    .info { padding: var(--section-pad); }
+    .info-header { text-align: center; margin-bottom: clamp(40px, 6vw, 64px); }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 48px;
+    }
+    .info-item { display: flex; flex-direction: column; gap: 6px; }
+    .info-label {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--blue);
+      font-family: 'Oswald', sans-serif;
+    }
+    .info-value {
+      font-size: clamp(14px, 1.5vw, 15px);
+      color: var(--white);
+    }
+    .info-value a { color: var(--blue); text-decoration: none; }
+    .info-value a:hover { text-decoration: underline; }
+    .info-cta { text-align: center; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(74,159,212,0.1);
+      padding: 32px clamp(24px, 8vw, 120px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo { font-size: 13px; color: var(--ice); }
+    .footer-copy { font-size: 11px; color: rgba(200,230,245,0.5); letter-spacing: 0.05em; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: rgba(200,230,245,0.5); text-decoration: none; font-size: 12px; }
+    .footer-links a:hover { color: var(--blue); }
+
+    /* ===== MOBILE NAV HIDE ===== */
+    @media (max-width: 600px) {
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-wrap">
+      <span class="logo-ja">サンワスポーツ</span>
+      <span class="logo-en">WEBSPORTS</span>
+    </div>
+    <nav>
+      <a href="#featured">スキー用品</a>
+      <a href="#story">ストーリー</a>
+      <a href="#reviews">クチコミ</a>
+      <a href="#info">店舗情報</a>
+    </nav>
+    <a href="https://www.websports.jp/contact.html" class="header-cta" target="_blank">お問い合わせ</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="images/ski_main.jpg" alt="ゲレンデを滑るスキーヤー" class="hero-img" />
+    <div class="hero-content">
+      <p class="hero-eyebrow">Osaka Matsuyamachi — Since 1975</p>
+      <h1 class="hero-title">
+        あなたの<span>一本</span>に、<br>45年の経験を。
+      </h1>
+      <p class="hero-sub">
+        大阪・松屋町のスキー専門店。技術と足型に合った用具を、熟練スタッフが丁寧にご提案します。
+      </p>
+      <div class="hero-btns">
+        <a href="#featured" class="btn-primary">スキー用品を見る</a>
+        <a href="http://www.websports.jp/" class="btn-ghost" target="_blank">ウェブショップへ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num">45+</span>
+      <span class="stat-label">年の実績</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">★ 4.5</span>
+      <span class="stat-label">顧客評価</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">1975</span>
+      <span class="stat-label">創業年</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">ONE&nbsp;OF&nbsp;A&nbsp;KIND</span>
+      <span class="stat-label">オンリーワンショップ</span>
+    </div>
+  </div>
+
+  <!-- FEATURED PRODUCT -->
+  <section class="featured" id="featured">
+    <div class="featured-img-wrap">
+      <img src="images/ski_boots.jpg" alt="スキー用品・ブーツ" class="featured-img" />
+    </div>
+    <div class="featured-text">
+      <p class="section-eyebrow">FEATURED ITEM</p>
+      <h2 class="section-title">あなたの足型と<br>技術に合った<br>スキー用品</h2>
+      <p class="section-body">
+        サンワスポーツでは「無理にレベルに合わない用具は販売しない」という信念のもと、お客様一人ひとりの足型・滑走スタイルに最適な用具をご提案。スキーは長く使うほど愛着が増すもの。だからこそ、最初の選択が大切です。
+      </p>
+      <ul class="feature-list">
+        <li>スキー板・ビンディング・ポールの総合コーディネート</li>
+        <li>フリーライドスピリッツあふれるブランドを毎年厳選展開</li>
+        <li>ベテランスタッフが実体験をもとに丁寧にご説明</li>
+        <li>メンテナンス・ワックスなどアフターケアも充実</li>
+        <li>オンラインショップ（WEBSPORTS）でも購入可能</li>
+      </ul>
+      <a href="http://www.websports.jp/" class="btn-primary" target="_blank">商品ラインナップを見る</a>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="story-text">
+      <p class="section-eyebrow">OUR STORY</p>
+      <h2 class="section-title">スキーを、<br>まじめに<br>考えてきた。</h2>
+      <blockquote class="quote">
+        「スノースポーツが好きな素敵なお客様と出会い、好きなスタッフに恵まれた。それが私たちの45年です。」
+      </blockquote>
+      <p class="section-body">
+        代表・山崎紀明がこの松屋町で店をオープンしたのは1975年。大阪の下町に生まれ育った彼は、スキーショップが６軒軒を連ねていた街で、お客様に快適な用具を届けることをテーマに走り続けてきました。<br><br>
+        目指すのは「スキーヤーのための情報と価値が詰まったオンリーワンショップ」。リアル店舗とウェブの両方で、全国のスキーヤーを支え続けています。
+      </p>
+      <a href="https://www.websports.jp/contact.html" class="btn-ghost" target="_blank">山崎に相談する</a>
+    </div>
+    <div class="story-img-wrap">
+      <img src="images/shop_interior.jpg" alt="サンワスポーツ店内" class="story-img" />
+      <div class="story-year">
+        <div class="story-year-num">1975</div>
+        <div class="story-year-label">ESTABLISHED</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="reviews-header">
+      <div class="stars">★★★★★</div>
+      <p class="section-eyebrow" style="text-align:center;">CUSTOMER REVIEWS</p>
+      <h2 class="section-title" style="text-align:center;">お客様の声</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <p class="review-body">
+          通院帰りにワックスを買いに寄りました。他の店では在庫なしや説明なしだったのに、ここでは液体ワックスもあり、店員さんが実体験をもとに丁寧に説明してくれました。対応が嬉しかったです。
+        </p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-body">
+          隣の店が定休日でサンワスポーツへ。小ぢんまりしていますが品揃えが自分好み！製品の説明も親切丁寧で、気に入った道具もしっかり値引きしてもらいました。久しぶりに良いお店を見つけました。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="info" id="info">
+    <div class="info-header">
+      <p class="section-eyebrow" style="text-align:center;">SHOP INFORMATION</p>
+      <h2 class="section-title" style="text-align:center;">店舗情報</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-item">
+        <span class="info-label">SHOP NAME</span>
+        <span class="info-value">サンワスポーツ / WEBSPORTS</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">ADDRESS</span>
+        <span class="info-value">大阪府大阪市中央区<br>松屋町住吉５−６</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">PHONE</span>
+        <span class="info-value"><a href="tel:0667621458">06-6762-1458</a></span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">CLOSED</span>
+        <span class="info-value">水曜定休</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">WEBSITE</span>
+        <span class="info-value"><a href="http://www.websports.jp/" target="_blank">www.websports.jp</a></span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">SNS</span>
+        <span class="info-value">
+          <a href="https://www.facebook.com/websportsjp?ref=embed_page" target="_blank">Facebook</a>
+        </span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">COMPANY</span>
+        <span class="info-value">サンプラス株式会社</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">REPRESENTATIVE</span>
+        <span class="info-value">山崎 紀明</span>
+      </div>
+    </div>
+    <div class="info-cta">
+      <a href="https://www.websports.jp/contact.html" class="btn-primary" target="_blank" style="margin-right:16px;">お問い合わせ</a>
+      <a href="http://www.websports.jp/" class="btn-ghost" target="_blank">ウェブショップへ</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">サンワスポーツ｜サンプラス株式会社</div>
+    <div class="footer-links">
+      <a href="https://www.websports.jp/contact.html" target="_blank">お問い合わせ</a>
+      <a href="https://www.facebook.com/websportsjp?ref=embed_page" target="_blank">Facebook</a>
+      <a href="http://www.websports.jp/" target="_blank">WEBSPORTS</a>
+    </div>
+    <span class="footer-copy">© 2025 SUNPLUS Co., Ltd. All rights reserved.</span>
+  </footer>
+
+</body>
+</html>
