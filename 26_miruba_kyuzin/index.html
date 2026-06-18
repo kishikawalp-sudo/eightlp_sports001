@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>スタッフ募集 | MILBA（ミルバ） バレエ・ダンス専門店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #FFF8F0;
+      color: #2A1A3E;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== TOKENS ===== */
+    :root {
+      --deep:     #2A1A3E;
+      --lavender: #C4A4D4;
+      --pale:     #E8D5F0;
+      --bg:       #FFF8F0;
+      --gold:     #C8860A;
+      --gold-lt:  #F0A500;
+      --white:    #FFFFFF;
+      --serif:    'Shippori Mincho', serif;
+      --sans:     'Noto Sans JP', sans-serif;
+      --radius:   14px;
+      --shadow:   0 8px 32px rgba(42,26,62,0.10);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,248,240,0.93);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--pale);
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+    }
+    .logo {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--deep);
+    }
+    .logo span { color: #9B59B6; }
+    .header-cta {
+      background: var(--gold);
+      color: var(--white);
+      padding: 9px 22px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .header-cta:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+    /* ===== HERO — DIAGONAL SPLIT ===== */
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 62px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* diagonal overlay */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 52%;
+      width: 120px;
+      background: var(--bg);
+      transform: skewX(-5deg);
+      z-index: 2;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 5vw 60px 5vw;
+      position: relative;
+      z-index: 3;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.22;
+      color: var(--deep);
+      margin-bottom: 22px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: #9B59B6;
+    }
+    .hero-sub {
+      font-size: clamp(0.87rem, 1.6vw, 1rem);
+      color: var(--deep);
+      opacity: 0.68;
+      font-weight: 300;
+      max-width: 30em;
+      margin-bottom: 36px;
+    }
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      padding: 15px 36px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      box-shadow: 0 6px 24px rgba(200,134,10,0.30);
+      transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+      align-self: flex-start;
+    }
+    .btn-gold:hover {
+      background: var(--gold-lt);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(200,134,10,0.38);
+    }
+    .hero-right {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    /* dark tint on hero image */
+    .hero-right::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(42,26,62,0.25) 0%, transparent 60%);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero::after { display: none; }
+      .hero-right {
+        height: 52vw;
+        min-height: 220px;
+        order: -1;
+      }
+      .hero-left { padding: 40px 6vw 48px; }
+      .btn-gold { align-self: center; }
+      .hero h1 { text-align: center; }
+      .hero-eyebrow, .hero-sub { text-align: center; }
+    }
+
+    /* ===== APPEAL STRIP ===== */
+    .strip {
+      background: var(--deep);
+      color: var(--white);
+      padding: 18px 5vw;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+    }
+    .strip-item::before {
+      content: '◆';
+      color: var(--gold-lt);
+      font-size: 0.55rem;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    .sec { padding: 80px 5vw; }
+    .sec-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .sec-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--deep);
+      margin-bottom: 32px;
+    }
+
+    /* ===== APPEAL ===== */
+    .appeal { background: var(--white); }
+    .appeal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+    .appeal-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--lavender);
+      transition: transform 0.25s;
+    }
+    .appeal-card:hover { transform: translateY(-4px); }
+    .appeal-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+    .appeal-card h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 8px;
+    }
+    .appeal-card p {
+      font-size: 0.86rem;
+      color: var(--deep);
+      opacity: 0.68;
+      font-weight: 300;
+    }
+
+    /* ===== JOB DETAIL ===== */
+    .job-detail { background: var(--pale); }
+    .job-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .job-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 80px;
+    }
+    .job-img img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+    .job-table { width: 100%; border-collapse: collapse; }
+    .job-table tr { border-bottom: 1px solid rgba(42,26,62,0.10); }
+    .job-table tr:last-child { border-bottom: none; }
+    .job-table th {
+      width: 110px;
+      padding: 18px 16px 18px 0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      text-align: left;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    .job-table td {
+      padding: 18px 0 18px 12px;
+      font-size: 0.90rem;
+      color: var(--deep);
+      font-weight: 400;
+      line-height: 1.7;
+      vertical-align: top;
+    }
+    @media (max-width: 768px) {
+      .job-inner { grid-template-columns: 1fr; gap: 32px; }
+      .job-img { position: static; }
+      .job-img img { aspect-ratio: 16/9; }
+    }
+
+    /* ===== LOCATIONS ===== */
+    .locations { background: var(--white); }
+    .loc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+    .loc-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--lavender);
+    }
+    .loc-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 10px;
+    }
+    .loc-addr {
+      font-size: 0.83rem;
+      color: var(--deep);
+      opacity: 0.72;
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .loc-tel {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+    .loc-tel a { color: inherit; }
+
+    /* ===== HOW TO APPLY ===== */
+    .apply { background: var(--pale); }
+    .apply-steps {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+    .apply-step {
+      flex: 1;
+      min-width: 200px;
+      background: var(--white);
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .apply-step:not(:last-child)::after {
+      content: '›';
+      position: absolute;
+      right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.6rem;
+      color: var(--lavender);
+      z-index: 2;
+    }
+    .apply-step:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .apply-step:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--deep);
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 auto 14px;
+    }
+    .apply-step h3 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 8px;
+    }
+    .apply-step p {
+      font-size: 0.83rem;
+      color: var(--deep);
+      opacity: 0.65;
+      font-weight: 300;
+    }
+    @media (max-width: 640px) {
+      .apply-step { border-radius: 0 !important; }
+      .apply-steps { flex-direction: column; gap: 2px; }
+      .apply-step:not(:last-child)::after {
+        content: '↓';
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: -18px;
+        transform: translateX(-50%);
+      }
+      .apply-step:first-child { border-radius: var(--radius) var(--radius) 0 0 !important; }
+      .apply-step:last-child  { border-radius: 0 0 var(--radius) var(--radius) !important; }
+    }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: var(--deep);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 5vw;
+    }
+    .cta-banner h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .cta-banner p {
+      font-size: 0.94rem;
+      opacity: 0.68;
+      font-weight: 300;
+      margin-bottom: 36px;
+    }
+    .cta-tel-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .cta-tel-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(196,164,212,0.4);
+      border-radius: var(--radius);
+      padding: 16px 24px;
+      text-align: left;
+      min-width: 220px;
+    }
+    .cta-tel-card .store { font-size: 0.72rem; letter-spacing: 0.14em; color: var(--lavender); margin-bottom: 6px; }
+    .cta-tel-card .tel {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--white);
+    }
+    .cta-tel-card .tel a { color: inherit; }
+    .cta-note {
+      font-size: 0.78rem;
+      opacity: 0.5;
+      margin-top: 18px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1A0F2A;
+      color: rgba(255,255,255,0.5);
+      padding: 36px 5vw;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--white);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+    footer p { font-size: 0.78rem; line-height: 2; }
+    footer a { color: var(--lavender); }
+
+    /* ===== FADE IN ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">MIL<span>BA</span> <span style="font-size:0.65rem;font-family:'Noto Sans JP',sans-serif;font-weight:400;letter-spacing:0.08em;opacity:0.7;vertical-align:middle;">スタッフ募集</span></div>
+    <a href="#cta" class="header-cta">今すぐ応募する</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Staff Recruiting — Ballet &amp; Dance Specialty Store</p>
+      <h1>好きを、<br>仕事にする。<br><em>ミルバで働く。</em></h1>
+      <p class="hero-sub">バレエ・ダンスが好き、シューズやウェアに詳しくなりたい。そんな気持ちがあれば、未経験でも大歓迎。全国4店舗でともに働く仲間を募集しています。</p>
+      <a href="#cta" class="btn-gold">応募・お問い合わせはこちら</a>
+    </div>
+    <div class="hero-right">
+      <img src="images/hero_recruit.jpg" alt="バレエダンス専門店ミルバのスタッフ" />
+    </div>
+  </section>
+
+  <!-- APPEAL STRIP -->
+  <div class="strip">
+    <div class="strip-item">週休2日制</div>
+    <div class="strip-item">各種社会保険完備</div>
+    <div class="strip-item">勤務時間・曜日相談OK</div>
+    <div class="strip-item">バレエ好き歓迎</div>
+    <div class="strip-item">全国4店舗展開</div>
+  </div>
+
+  <!-- APPEAL CARDS -->
+  <section class="appeal sec" id="appeal">
+    <p class="sec-label">Why work at MILBA?</p>
+    <h2 class="sec-title">ミルバで働く魅力</h2>
+    <div class="appeal-grid fade-in">
+      <div class="appeal-card">
+        <div class="appeal-icon">🩰</div>
+        <h3>好きなものに囲まれて働ける</h3>
+        <p>バレエシューズ・ウェア・小物など、ダンスを愛する人のためのアイテムが職場を満たしています。好奇心がそのまま専門知識になります。</p>
+      </div>
+      <div class="appeal-card">
+        <div class="appeal-icon">🗓️</div>
+        <h3>柔軟な勤務スタイル</h3>
+        <p>1日の勤務時間も出勤できる曜日も、話し合って決めます。学業・習い事・育児など、自分のペースに合わせて働けます。</p>
+      </div>
+      <div class="appeal-card">
+        <div class="appeal-icon">🛡️</div>
+        <h3>充実した福利厚生</h3>
+        <p>各種社会保険完備・週休2日制・年末年始休暇あり。長く安心して働ける環境を整えています。</p>
+      </div>
+      <div class="appeal-card">
+        <div class="appeal-icon">🗾</div>
+        <h3>全国4店舗で活躍できる</h3>
+        <p>大阪・新宿・横浜・札幌の4拠点展開。各店舗でキャリアアップの機会があります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOB DETAIL -->
+  <section class="job-detail sec" id="detail">
+    <div class="job-inner">
+      <div class="job-img fade-in">
+        <img src="images/store_interior.jpg" alt="ミルバ店舗内装" />
+      </div>
+      <div class="fade-in">
+        <p class="sec-label">Job Description</p>
+        <h2 class="sec-title">募集要項</h2>
+        <table class="job-table">
+          <tr>
+            <th>職種</th>
+            <td>バレエ・ダンス用品販売スタッフ</td>
+          </tr>
+          <tr>
+            <th>勤務時間</th>
+            <td>10:00 AM ～ 7:00 PM<br><span style="font-size:0.82rem;opacity:0.65;">1日の勤務時間・勤務曜日は応相談</span></td>
+          </tr>
+          <tr>
+            <th>休日休暇</th>
+            <td>週休2日制<br>年末年始休暇</td>
+          </tr>
+          <tr>
+            <th>福利厚生</th>
+            <td>各種社会保険完備<br>（健康保険・厚生年金・雇用保険・労災保険）</td>
+          </tr>
+          <tr>
+            <th>応募方法</th>
+            <td>まず電話にて面接日をご予約ください。<br>後日、履歴書をお持参いただきます。</td>
+          </tr>
+          <tr>
+            <th>歓迎スキル</th>
+            <td>バレエ・ダンス経験者（未経験でも歓迎）<br>接客・販売経験者</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section class="locations sec" id="locations">
+    <p class="sec-label">Shop Locations</p>
+    <h2 class="sec-title">勤務地（全4店舗）</h2>
+    <div class="loc-grid fade-in">
+      <div class="loc-card">
+        <p class="loc-name">🏙️ 大阪店</p>
+        <p class="loc-addr">大阪市北区芝田 1-4-8<br>北阪急ビル 6F</p>
+        <p class="loc-tel"><a href="tel:0663744880">06-6374-4880</a></p>
+      </div>
+      <div class="loc-card">
+        <p class="loc-name">🗼 新宿店</p>
+        <p class="loc-addr">新宿区西新宿 1-5-11<br>新宿三葉ビル 8F</p>
+        <p class="loc-tel"><a href="tel:0353269281">03-5326-9281</a></p>
+      </div>
+      <div class="loc-card">
+        <p class="loc-name">⚓ 横浜店</p>
+        <p class="loc-addr">横浜市西区北幸 2-1-22<br>ナガオカビル 4F</p>
+        <p class="loc-tel"><a href="tel:0453174911">045-317-4911</a></p>
+      </div>
+      <div class="loc-card">
+        <p class="loc-name">⛄ 札幌時計台店</p>
+        <p class="loc-addr">札幌市中央区北1条西 2-1<br>札幌時計台ビル 7F</p>
+        <p class="loc-tel"><a href="tel:0112237789">011-223-7789</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO APPLY -->
+  <section class="apply sec">
+    <p class="sec-label">How to Apply</p>
+    <h2 class="sec-title" style="text-align:center; margin-bottom:36px;">応募の流れ</h2>
+    <div class="apply-steps fade-in" style="box-shadow:var(--shadow); border-radius:var(--radius); overflow:hidden;">
+      <div class="apply-step">
+        <div class="step-num">1</div>
+        <h3>お電話</h3>
+        <p>各店舗へ直接お電話いただき、面接日時をご予約ください。</p>
+      </div>
+      <div class="apply-step">
+        <div class="step-num">2</div>
+        <h3>面接日の予約</h3>
+        <p>ご都合のよい日程をスタッフと調整します。</p>
+      </div>
+      <div class="apply-step">
+        <div class="step-num">3</div>
+        <h3>履歴書を持参</h3>
+        <p>面接当日に履歴書（写真貼付）をお持ちください。</p>
+      </div>
+      <div class="apply-step">
+        <div class="step-num">4</div>
+        <h3>採用決定</h3>
+        <p>結果は面接後にご連絡いたします。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" id="cta">
+    <h2>一歩踏み出す準備はできていますか？</h2>
+    <p>まずはお気軽に、お近くの店舗へお電話ください。</p>
+    <div class="cta-tel-group">
+      <div class="cta-tel-card">
+        <p class="store">大阪店</p>
+        <p class="tel"><a href="tel:0663744880">06-6374-4880</a></p>
+      </div>
+      <div class="cta-tel-card">
+        <p class="store">新宿店</p>
+        <p class="tel"><a href="tel:0353269281">03-5326-9281</a></p>
+      </div>
+      <div class="cta-tel-card">
+        <p class="store">横浜店</p>
+        <p class="tel"><a href="tel:0453174911">045-317-4911</a></p>
+      </div>
+      <div class="cta-tel-card">
+        <p class="store">札幌時計台店</p>
+        <p class="tel"><a href="tel:0112237789">011-223-7789</a></p>
+      </div>
+    </div>
+    <p class="cta-note">受付時間：10:00〜19:00（日曜定休）</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">MILBA</div>
+    <p>株式会社 ミルバ　代表者：金川 裕美</p>
+    <p>大阪・新宿・横浜・札幌　全国4店舗展開</p>
+    <p style="margin-top:12px;">&copy; 株式会社 ミルバ. All Rights Reserved.</p>
+  </footer>
+
+  <!-- SCROLL ANIMATION -->
+  <script>
+    const targets = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.10 });
+    targets.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
