@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MILBA（ミルバ） | バレエ・ダンス専門店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #F7F4F9;
+      color: #2A1A3E;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== TOKENS ===== */
+    :root {
+      --deep: #2A1A3E;
+      --lavender: #C4A4D4;
+      --pale: #E8D5F0;
+      --bg: #F7F4F9;
+      --white: #FFFFFF;
+      --accent: #9B59B6;
+      --serif: 'Shippori Mincho', serif;
+      --sans: 'Noto Sans JP', sans-serif;
+      --radius: 16px;
+      --shadow: 0 8px 32px rgba(42,26,62,0.10);
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(247,244,249,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--pale);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--deep);
+    }
+    .logo span { color: var(--accent); }
+    nav { display: flex; gap: 24px; }
+    nav a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--deep);
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 1; }
+    @media (max-width: 600px) {
+      nav { display: none; }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 100px 5vw 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-circle {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(520px, 80vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid var(--lavender);
+      box-shadow: 0 24px 80px rgba(155,89,182,0.18);
+    }
+    .hero-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--deep);
+      max-width: 10em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-sub {
+      margin-top: 24px;
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: var(--deep);
+      opacity: 0.7;
+      max-width: 36em;
+      font-weight: 300;
+    }
+    .hero-cta {
+      margin-top: 36px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--deep);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: background 0.25s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+    .btn-outline {
+      border: 1.5px solid var(--deep);
+      color: var(--deep);
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: background 0.25s, color 0.25s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover {
+      background: var(--deep);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    @media (max-width: 768px) {
+      .hero-circle {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin: 40px auto 0;
+        width: 86vw;
+      }
+      .hero {
+        align-items: center;
+        text-align: center;
+        padding-bottom: 40px;
+      }
+      .hero-cta { justify-content: center; }
+    }
+
+    /* ===== FEATURE STRIP ===== */
+    .strip {
+      background: var(--deep);
+      color: var(--white);
+      padding: 18px 5vw;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.83rem;
+      letter-spacing: 0.06em;
+      opacity: 0.92;
+    }
+    .strip-item::before {
+      content: '◆';
+      color: var(--lavender);
+      font-size: 0.55rem;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section { padding: 80px 5vw; }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--deep);
+      margin-bottom: 20px;
+    }
+    .section-desc {
+      font-size: 0.95rem;
+      color: var(--deep);
+      opacity: 0.72;
+      max-width: 44em;
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+
+    /* ===== PRODUCTS ===== */
+    .products { background: var(--white); }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.28s, box-shadow 0.28s;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 48px rgba(42,26,62,0.15);
+    }
+    .product-card-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+    .product-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .product-card:hover .product-card-img img { transform: scale(1.04); }
+    .product-card-body { padding: 22px 20px 24px; }
+    .product-card-tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .product-card-name {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 8px;
+    }
+    .product-card-desc {
+      font-size: 0.84rem;
+      color: var(--deep);
+      opacity: 0.65;
+      font-weight: 300;
+    }
+
+    /* ===== FEATURE ===== */
+    .feature { background: var(--pale); }
+    .feature-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .feature-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .feature-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+    }
+    .feature-list { list-style: none; padding: 0; }
+    .feature-list li {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 22px;
+      font-size: 0.93rem;
+    }
+    .feature-list li::before {
+      content: '✦';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .feature-list strong {
+      display: block;
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    @media (max-width: 768px) {
+      .feature-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    /* ===== REVIEW ===== */
+    .review { background: var(--white); }
+    .review-card {
+      background: var(--bg);
+      border-left: 4px solid var(--lavender);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 32px 36px;
+      max-width: 720px;
+      margin: 0 auto;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .stars { color: #F1C40F; font-size: 1.25rem; letter-spacing: 3px; margin-bottom: 16px; }
+    .review-text {
+      font-size: 0.96rem;
+      line-height: 1.9;
+      color: var(--deep);
+      font-weight: 300;
+    }
+    .review-author {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+    }
+
+    /* ===== INFO ===== */
+    .info { background: var(--pale); }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 0;
+    }
+    .info-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+    }
+    .info-card-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .info-card-value {
+      font-size: 0.92rem;
+      color: var(--deep);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .info-card-value a {
+      color: var(--accent);
+      word-break: break-all;
+      transition: opacity 0.2s;
+    }
+    .info-card-value a:hover { opacity: 0.75; }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: var(--deep);
+      color: var(--white);
+      text-align: center;
+      padding: 72px 5vw;
+    }
+    .cta-banner h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .cta-banner p {
+      font-size: 0.95rem;
+      opacity: 0.7;
+      font-weight: 300;
+      margin-bottom: 36px;
+    }
+    .btn-light {
+      background: var(--white);
+      color: var(--deep);
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      transition: background 0.25s, color 0.25s, transform 0.2s;
+    }
+    .btn-light:hover {
+      background: var(--lavender);
+      color: var(--deep);
+      transform: translateY(-2px);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1A0F2A;
+      color: rgba(255,255,255,0.55);
+      padding: 36px 5vw;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      color: var(--white);
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    footer p { font-size: 0.8rem; line-height: 1.9; }
+    footer a { color: var(--lavender); }
+    footer a:hover { opacity: 0.8; }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 16px 0 20px;
+    }
+    .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--lavender); }
+
+    /* ===== SCROLL FADE IN ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">MIL<span>BA</span></div>
+    <nav>
+      <a href="#products">商品</a>
+      <a href="#feature">特長</a>
+      <a href="#review">口コミ</a>
+      <a href="#info">店舗情報</a>
+      <a href="http://www.milba.com/otoiawase.html" target="_blank" rel="noopener">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Ballet &amp; Dance Specialty Store — 大阪・梅田</p>
+    <h1>踊る人の<br>すべてに、<br><em>本物を。</em></h1>
+    <p class="hero-sub">バレエシューズ、トゥシューズ、ダンスウェア——。<br>熟練スタッフが一人ひとりの足型・踊りのスタイルに合わせて、最適な一足をご提案します。</p>
+    <div class="hero-cta">
+      <a href="#products" class="btn-primary">商品を見る</a>
+      <a href="http://www.milba.com/index.html" class="btn-outline" target="_blank" rel="noopener">公式サイトへ</a>
+    </div>
+    <div class="hero-circle fade-in">
+      <img src="images/hero_ballet.jpg" alt="バレエシューズイメージ" />
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="strip-item">バレエ用品専門</div>
+    <div class="strip-item">ダンスウェア充実</div>
+    <div class="strip-item">会員サイズ管理サービス</div>
+    <div class="strip-item">丁寧なフィッティング対応</div>
+    <div class="strip-item">大阪・梅田 北阪急ビル6F</div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <p class="section-label">Our Products</p>
+    <h2 class="section-title">バレエ・ダンス用品を<br>一店で揃える</h2>
+    <p class="section-desc">プロから初心者まで。シューズ・ウェア・小物まで幅広くご用意しています。</p>
+    <div class="product-grid fade-in">
+      <div class="product-card">
+        <div class="product-card-img">
+          <img src="images/product_shoes.jpg" alt="バレエシューズ・トゥシューズ" />
+        </div>
+        <div class="product-card-body">
+          <p class="product-card-tag">Shoes</p>
+          <p class="product-card-name">バレエシューズ ／ トゥシューズ</p>
+          <p class="product-card-desc">足型に合わせた丁寧なフィッティング。豊富なブランドから最適な一足をご提案します。</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">
+          <img src="images/product_wear.jpg" alt="ダンスウェア・レオタード" />
+        </div>
+        <div class="product-card-body">
+          <p class="product-card-tag">Wear</p>
+          <p class="product-card-name">ダンスウェア ／ レオタード</p>
+          <p class="product-card-desc">動きやすさと美しさを兼ね備えたウェアを多数ラインアップ。サイズ相談も歓迎です。</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">
+          <img src="images/product_goods.jpg" alt="バレエ小物・アクセサリー" />
+        </div>
+        <div class="product-card-body">
+          <p class="product-card-tag">Accessories</p>
+          <p class="product-card-name">小物 ／ アクセサリー</p>
+          <p class="product-card-desc">バッグ・タイツ・ヘアアクセサリーなど、レッスンに必要なアイテムが揃います。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE -->
+  <section class="feature" id="feature">
+    <div class="feature-inner">
+      <div class="feature-img fade-in">
+        <img src="images/hero_ballet.jpg" alt="店舗でのフィッティングの様子" />
+      </div>
+      <div class="fade-in">
+        <p class="section-label">Why MILBA</p>
+        <h2 class="section-title">ミルバが選ばれる<br>３つの理由</h2>
+        <ul class="feature-list">
+          <li>
+            <div>
+              <strong>会員サイズ管理で安心のフィッティング</strong>
+              会員登録でシューズのサイズ履歴を管理。ブランドによるサイズ差もスタッフが把握し、最適なサイズをご案内します。
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>プロフェッショナルな接客</strong>
+              「バレエショップ＝怖い」は昔の話。丁寧で親しみやすいスタッフが、初心者から上級者まで幅広く対応します。
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>バレエ・ダンス用品の専門知識</strong>
+              バレエ・ジャズ・ヒップホップなど多様なジャンルに精通したスタッフが在籍。目的に合った商品をご提案します。
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW -->
+  <section class="review" id="review">
+    <p class="section-label">Customer Review</p>
+    <h2 class="section-title" style="text-align:center; margin-bottom:36px;">お客様の声</h2>
+    <div class="review-card fade-in">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">店員さんが丁寧です。会員になっていたのでシューズのサイズの履歴をみてくれたりサイズで悩んでいたら、物によって多少大きさ違うからと、同じサイズのものを出してきてくれました。むかーしはバレエショップの店員さんって少し怖いイメージでしたが、とても親切でした。</p>
+      <p class="review-author">— お客様レビューより（Google口コミ）</p>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="info" id="info">
+    <p class="section-label">Shop Info</p>
+    <h2 class="section-title">店舗情報</h2>
+    <div class="info-grid fade-in">
+      <div class="info-card">
+        <p class="info-card-label">店名</p>
+        <p class="info-card-value">ミルバ（MILBA）</p>
+      </div>
+      <div class="info-card">
+        <p class="info-card-label">住所</p>
+        <p class="info-card-value">大阪府大阪市北区芝田１丁目４−８<br>北阪急ビル 6階</p>
+      </div>
+      <div class="info-card">
+        <p class="info-card-label">電話番号</p>
+        <p class="info-card-value"><a href="tel:0663744880">06-6374-4880</a></p>
+      </div>
+      <div class="info-card">
+        <p class="info-card-label">定休日</p>
+        <p class="info-card-value">日曜日</p>
+      </div>
+      <div class="info-card">
+        <p class="info-card-label">公式サイト</p>
+        <p class="info-card-value"><a href="http://www.milba.com/index.html" target="_blank" rel="noopener">www.milba.com</a></p>
+      </div>
+      <div class="info-card">
+        <p class="info-card-label">Instagram</p>
+        <p class="info-card-value"><a href="https://www.instagram.com/milba.dance/" target="_blank" rel="noopener">@milba.dance</a></p>
+      </div>
+      <div class="info-card">
+        <p class="info-card-label">運営会社</p>
+        <p class="info-card-value">株式会社 ミルバ<br>代表者：金川 裕美</p>
+      </div>
+      <div class="info-card">
+        <p class="info-card-label">お問い合わせ</p>
+        <p class="info-card-value"><a href="http://www.milba.com/otoiawase.html" target="_blank" rel="noopener">お問い合わせフォームへ</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2>あなたの踊りに、ぴったりの一足を。</h2>
+    <p>大阪・梅田のバレエ・ダンス専門店「ミルバ」へ、ぜひお越しください。</p>
+    <a href="http://www.milba.com/otoiawase.html" class="btn-light" target="_blank" rel="noopener">お問い合わせ・ご来店予約</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">MILBA</div>
+    <div class="footer-links">
+      <a href="http://www.milba.com/index.html" target="_blank" rel="noopener">公式サイト</a>
+      <a href="https://www.instagram.com/milba.dance/" target="_blank" rel="noopener">Instagram</a>
+      <a href="http://www.milba.com/otoiawase.html" target="_blank" rel="noopener">お問い合わせ</a>
+    </div>
+    <p>大阪府大阪市北区芝田１丁目４−８ 北阪急ビル 6階　／　TEL: 06-6374-4880　／　定休日: 日曜日</p>
+    <p style="margin-top:12px;">&copy; 株式会社 ミルバ. All Rights Reserved.</p>
+  </footer>
+
+  <!-- SCROLL ANIMATION -->
+  <script>
+    const targets = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    targets.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
