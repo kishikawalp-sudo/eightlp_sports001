@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>oxtos（オクトス）大阪長堀橋店 | アウトドア用品・登山専門店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0B1F3A;
+      --cream:  #F0EDE6;
+      --orange: #D4781A;
+      --green:  #2C7A4B;
+      --sky:    #8FA8C0;
+      --white:  #FFFFFF;
+      --gray:   #5A6472;
+
+      --serif: 'Noto Serif JP', serif;
+      --sans:  'Noto Sans JP', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* ─── Global Section Spacing ─── */
+    .section {
+      padding: 80px 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.25;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--gray);
+    }
+
+    /* ─── HEADER ─── */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 28px;
+      background: rgba(11, 31, 58, 0.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    .logo span { color: var(--orange); }
+
+    .header-cta {
+      display: inline-block;
+      padding: 8px 18px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: background 0.2s;
+    }
+
+    .header-cta:hover { background: #b8610e; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      opacity: 0.45;
+    }
+
+    /* 山稜線SVGオーバーレイ */
+    .hero-ridge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(11,31,58,0.15) 0%,
+        rgba(11,31,58,0.55) 60%,
+        rgba(11,31,58,0.85) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      padding: 0 24px;
+      animation: fadeUp 1s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 7vw, 4.8rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      color: rgba(240,237,230,0.85);
+      line-height: 1.75;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: #b8610e; transform: translateY(-2px); }
+
+    .btn-ghost {
+      display: inline-block;
+      padding: 14px 32px;
+      border: 2px solid rgba(240,237,230,0.5);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ─── PICKUP (イチオシ商品) ─── */
+    #pickup {
+      background: var(--navy);
+      padding: 0;
+    }
+
+    .pickup-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+    }
+
+    .pickup-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 520px;
+    }
+
+    .pickup-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .pickup-img-wrap:hover img { transform: scale(1.04); }
+
+    .pickup-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 3px;
+    }
+
+    .pickup-text {
+      padding: 56px 48px;
+    }
+
+    .pickup-text .section-label { color: var(--sky); }
+
+    .pickup-text .section-title {
+      color: var(--white);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    }
+
+    .pickup-text .section-body { color: rgba(240,237,230,0.75); }
+
+    .pickup-features {
+      margin: 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .pickup-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--cream);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .pickup-feature::before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--orange);
+      border-radius: 50%;
+      margin-top: 7px;
+    }
+
+    .pickup-text .btn-primary { margin-top: 8px; }
+
+    /* ─── STRENGTH ─── */
+    #strength {
+      background: var(--cream);
+    }
+
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .strength-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 32px 28px;
+      border-top: 4px solid var(--green);
+      box-shadow: 0 2px 16px rgba(11,31,58,0.07);
+    }
+
+    .strength-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .strength-card h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+
+    .strength-card p {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--gray);
+    }
+
+    /* ─── PHOTO STRIP ─── */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s;
+    }
+
+    .photo-strip img:hover { opacity: 0.85; }
+
+    /* ─── REVIEWS ─── */
+    #reviews {
+      background: var(--navy);
+    }
+
+    #reviews .section-title { color: var(--white); }
+    #reviews .section-label { color: var(--sky); }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .review-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 28px 24px;
+    }
+
+    .review-stars {
+      color: #F5C842;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .review-text {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: rgba(240,237,230,0.8);
+    }
+
+    .review-author {
+      margin-top: 16px;
+      font-size: 0.75rem;
+      color: var(--sky);
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── INFO ─── */
+    #info {
+      background: var(--cream);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 40px;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid rgba(11,31,58,0.1);
+    }
+
+    .info-table td {
+      padding: 13px 4px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      vertical-align: top;
+    }
+
+    .info-table td:first-child {
+      color: var(--gray);
+      width: 90px;
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      padding-top: 15px;
+    }
+
+    .info-table a {
+      color: var(--green);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .info-table a:hover { text-decoration: underline; }
+
+    .social-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border: 2px solid var(--navy);
+      color: var(--navy);
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 5px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .social-btn:hover {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .map-embed {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(11,31,58,0.1);
+      height: 320px;
+    }
+
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ─── CTA BANNER ─── */
+    .cta-banner {
+      background: var(--green);
+      padding: 64px 24px;
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--white);
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+
+    .cta-banner p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+      line-height: 1.75;
+    }
+
+    .cta-banner-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-white {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--white);
+      color: var(--green);
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: transform 0.15s;
+    }
+
+    .btn-white:hover { transform: translateY(-2px); }
+
+    .btn-outline-white {
+      display: inline-block;
+      padding: 14px 32px;
+      border: 2px solid var(--white);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-outline-white:hover { background: rgba(255,255,255,0.15); }
+
+    /* ─── FOOTER ─── */
+    .site-footer {
+      background: var(--navy);
+      color: rgba(240,237,230,0.55);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.78rem;
+      line-height: 1.8;
+    }
+
+    .site-footer a {
+      color: var(--sky);
+      text-decoration: none;
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .pickup-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .pickup-img-wrap { height: 260px; }
+
+      .pickup-text { padding: 36px 24px; }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .photo-strip { height: 180px; }
+
+      .site-header { padding: 14px 18px; }
+
+      .hero-actions { flex-direction: column; align-items: center; }
+
+      .btn-primary, .btn-ghost { width: 220px; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .hero-content, .pickup-img-wrap img { transition: none; animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <header class="site-header">
+    <a href="#" class="logo">oxtos<span>.</span></a>
+    <a href="https://oxtos.co.jp/contact/" target="_blank" class="header-cta">お問い合わせ</a>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <img
+      class="hero-bg"
+      src="images/hero_mountain.jpg"
+      alt="山岳風景"
+    />
+    <div class="hero-overlay"></div>
+
+    <!-- 山稜線シルエット -->
+    <svg class="hero-ridge" viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,160 L0,100 L120,60 L240,90 L360,30 L500,80 L620,10 L740,65 L860,35 L980,70 L1100,20 L1220,75 L1340,45 L1440,80 L1440,160 Z"
+            fill="rgba(11,31,58,0.7)" />
+    </svg>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">大阪 長堀橋 ／ アウトドア専門店</p>
+      <h1 class="hero-title">
+        山を、もっと<br /><em>深く</em>楽しむ。
+      </h1>
+      <p class="hero-sub">
+        本格登山用品からアウトドアギアまで、<br />
+        専門知識を持つスタッフが一人ひとりに寄り添ったご提案を。
+      </p>
+      <div class="hero-actions">
+        <a href="#pickup" class="btn-primary">イチオシ商品を見る</a>
+        <a href="#info" class="btn-ghost">店舗情報</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PICKUP ─── -->
+  <section id="pickup">
+    <div class="pickup-inner">
+      <div class="pickup-img-wrap">
+        <img src="images/outdoor_gear.jpg" alt="アウトドア用品コレクション" />
+        <span class="pickup-badge">BEST SELECTION</span>
+      </div>
+      <div class="pickup-text reveal">
+        <p class="section-label">イチオシ商品・サービス</p>
+        <h2 class="section-title">プロが選ぶ<br />アウトドア用品</h2>
+        <p class="section-body">
+          oxtosが厳選したアウトドア用品は、実際のフィールドで使い込まれた信頼の一品ばかり。
+          スポルティバをはじめ、国内外のトップブランドを豊富に取り揃えています。
+        </p>
+        <ul class="pickup-features">
+          <li class="pickup-feature">登山靴・トレッキングシューズの圧倒的な品揃え（試し履きOK）</li>
+          <li class="pickup-feature">スタッフによる丁寧なフィッティングと用途別アドバイス</li>
+          <li class="pickup-feature">テント・ザック・ウェアなど幅広いアウトドア用品を在庫</li>
+          <li class="pickup-feature">オリジナルブランド製品も多数展開。ユーザー目線の品質</li>
+        </ul>
+        <a href="https://oxtos.co.jp/" target="_blank" class="btn-primary">オンラインストアを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PHOTO STRIP ─── -->
+  <div class="photo-strip">
+    <img src="images/store_interior.jpg" alt="店内の様子" />
+    <img src="images/outdoor_gear.jpg" alt="登山用品" />
+    <img src="images/hero_mountain.jpg" alt="登山シーン" />
+  </div>
+
+  <!-- ─── STRENGTH ─── -->
+  <section id="strength">
+    <div class="section reveal">
+      <p class="section-label">なぜoxtosが選ばれるのか</p>
+      <h2 class="section-title">oxtos 3つの強み</h2>
+      <div class="strength-grid">
+        <div class="strength-card">
+          <div class="strength-icon">🏔️</div>
+          <h3>専門知識と親身なサポート</h3>
+          <p>登山全般の深い知識を持つスタッフが常駐。初心者から上級者まで、それぞれのレベルとフィールドに合わせたアドバイスを提供します。</p>
+        </div>
+        <div class="strength-card">
+          <div class="strength-icon">👟</div>
+          <h3>国内最大級の試し履き体験</h3>
+          <p>スポルティバをはじめとするトップブランドの登山靴を豊富に在庫。実際に足を入れて比較検討できる環境は他では体験できません。</p>
+        </div>
+        <div class="strength-card">
+          <div class="strength-icon">🏭</div>
+          <h3>自社開発のオリジナル製品</h3>
+          <p>石川県に本社を置くアウトドアメーカーとして、ユーザーダイレクトの発想で生まれた高品質なオリジナル製品を展開しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── REVIEWS ─── -->
+  <section id="reviews">
+    <div class="section reveal">
+      <p class="section-label">お客様の声</p>
+      <h2 class="section-title">実際に訪れた方からの声</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★☆</div>
+          <p class="review-text">
+            登山全般の知識が豊富で、店員さんも優しく教えてくれてアフターケアもしっかりしています。
+            混雑時は少し待つこともありますが、基本的にとても良いお店です。
+          </p>
+          <p class="review-author">— Googleクチコミ</p>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            スポルティバの登山靴をこれだけ比較して試せるお店は他にありません。
+            靴のメリット・デメリットも丁寧にアドバイスいただき、納得の買い物ができました。ポイントカードもおすすめです！
+          </p>
+          <p class="review-author">— Googleクチコミ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STORE INFO ─── -->
+  <section id="info">
+    <div class="section reveal">
+      <p class="section-label">店舗情報</p>
+      <h2 class="section-title">oxtos 大阪長堀橋店</h2>
+      <div class="info-grid">
+        <table class="info-table">
+          <tr>
+            <td>住所</td>
+            <td>大阪府大阪市中央区島之内1丁目19−21<br />大和長堀ビル 1F</td>
+          </tr>
+          <tr>
+            <td>電話</td>
+            <td><a href="tel:0649632394">06-4963-2394</a></td>
+          </tr>
+          <tr>
+            <td>定休日</td>
+            <td>火曜日・年末年始</td>
+          </tr>
+          <tr>
+            <td>運営</td>
+            <td>株式会社 オクトス</td>
+          </tr>
+          <tr>
+            <td>公式HP</td>
+            <td><a href="https://oxtos.co.jp/" target="_blank">https://oxtos.co.jp/</a></td>
+          </tr>
+          <tr>
+            <td>問合せ</td>
+            <td><a href="https://oxtos.co.jp/contact/" target="_blank">お問い合わせフォーム</a></td>
+          </tr>
+        </table>
+
+        <div>
+          <div class="social-links">
+            <a href="https://www.instagram.com/oxtos_osaka/" target="_blank" class="social-btn">
+              📸 Instagram
+            </a>
+            <a href="https://www.youtube.com/channel/UCsaui_hCpsZeyivIoUDTOWQ" target="_blank" class="social-btn">
+              ▶ YouTube
+            </a>
+          </div>
+          <div style="margin-top: 28px;">
+            <div class="map-embed">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.2!2d135.5047!3d34.6741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e76b8e6b5555%3A0x1234!2z44CSNTQwLTAwMjMg5aSn6Ziq5bqc5aSn6Ziq5biC5Lit5aSu5Yy65bO254OE5YaF5YaF6aCF77yR5LiB55uu77yR77yZ4oiS77yS77yR!5e0!3m2!1sja!2sjp!4v1234567890"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="oxtos大阪長堀橋店 地図">
+              </iframe>
+            </div>
+            <p style="font-size:0.78rem; color:var(--gray); margin-top:8px;">※大通りから一本入った場所です。近隣のコインパーキングをご利用ください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ─── -->
+  <div class="cta-banner reveal">
+    <h2>山へ行く前に、まずは oxtos へ。</h2>
+    <p>スタッフが丁寧にご案内します。お気軽にご来店ください。<br />オンラインからのお問い合わせも受け付けています。</p>
+    <div class="cta-banner-actions">
+      <a href="https://oxtos.co.jp/contact/" target="_blank" class="btn-white">問い合わせフォーム</a>
+      <a href="tel:0649632394" class="btn-outline-white">☎ 06-4963-2394</a>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="site-footer">
+    <p>© 株式会社オクトス　oxtos 大阪長堀橋店</p>
+    <p style="margin-top:6px;">
+      〒542-0083 大阪府大阪市中央区島之内1丁目19−21　大和長堀ビル 1F　
+      ／　<a href="https://oxtos.co.jp/" target="_blank">公式サイト</a>
+    </p>
+  </footer>
+
+  <!-- ─── SCROLL REVEAL SCRIPT ─── -->
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
