@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アウトドアライフ グリーンハウス青森店 | アウトドア・登山用品</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #F5F0E8;
+      color: #1A2E1A;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --forest:    #1A2E1A;
+      --moss:      #4A7C59;
+      --earth:     #C8A96E;
+      --birch:     #F5F0E8;
+      --sunset:    #E8340A;
+      --light-moss: #EAF2EC;
+      --border:    rgba(74,124,89,0.25);
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26,46,26,0.92);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+    }
+    .logo {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 0.04em;
+    }
+    .logo span {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: var(--earth);
+      letter-spacing: 0.08em;
+    }
+    .header-cta {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-sm {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-sm:hover { opacity: 0.8; }
+    .btn-outline {
+      border: 1px solid var(--earth);
+      color: var(--earth);
+    }
+    .btn-solid {
+      background: var(--sunset);
+      color: #fff;
+      border: 1px solid var(--sunset);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      padding: 0;
+    }
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    /* 山シルエット SVG オーバーレイ */
+    .hero-mountain {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(26,46,26,0.25) 0%,
+        rgba(26,46,26,0.15) 40%,
+        rgba(26,46,26,0.75) 80%,
+        rgba(26,46,26,0.92) 100%
+      );
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 110px 28px 60px;
+      color: #fff;
+    }
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--earth);
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px; height: 1px;
+      background: var(--earth);
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 8vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--earth);
+      display: block;
+    }
+    .hero-sub {
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.85);
+      max-width: 480px;
+      margin-bottom: 32px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-hero {
+      display: inline-block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: transform 0.18s, opacity 0.18s;
+    }
+    .btn-hero:hover { transform: translateY(-2px); opacity: 0.88; }
+    .btn-primary {
+      background: var(--sunset);
+      color: #fff;
+    }
+    .btn-secondary {
+      border: 1.5px solid rgba(255,255,255,0.6);
+      color: #fff;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 24px;
+      right: 28px;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.5));
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.15); }
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section { padding: 72px 0; }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label::after {
+      content: '';
+      display: block;
+      flex: 1;
+      max-width: 48px;
+      height: 1px;
+      background: var(--moss);
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+      color: var(--forest);
+    }
+    .section-lead {
+      font-size: 0.92rem;
+      color: #4a5c4a;
+      max-width: 540px;
+      line-height: 1.9;
+    }
+
+    /* ===== FEATURED PRODUCTS ===== */
+    .featured { background: var(--forest); color: #fff; }
+    .featured .section-label { color: var(--earth); }
+    .featured .section-label::after { background: var(--earth); }
+    .featured .section-title { color: #fff; }
+    .featured .section-lead { color: rgba(255,255,255,0.7); max-width: 600px; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .product-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.22s, border-color 0.22s;
+    }
+    .product-card:first-child {
+      grid-column: 1 / -1;
+    }
+    .product-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--earth);
+    }
+    .product-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .product-card:first-child .product-img {
+      aspect-ratio: 21/9;
+    }
+    .product-info {
+      padding: 18px 20px 22px;
+    }
+    .product-tag {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--earth);
+      margin-bottom: 6px;
+    }
+    .product-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .product-desc {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+    .badge-recommend {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--sunset);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ===== STRENGTHS ===== */
+    .strengths { background: var(--light-moss); }
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .strength-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 28px 24px;
+      border-left: 3px solid var(--moss);
+      position: relative;
+    }
+    .strength-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .strength-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+    .strength-text {
+      font-size: 0.82rem;
+      color: #5a6a5a;
+      line-height: 1.8;
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews { background: #fff; }
+    .reviews-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .review-card {
+      background: var(--birch);
+      border-radius: 8px;
+      padding: 24px;
+      position: relative;
+    }
+    .review-card::before {
+      content: '"';
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-size: 5rem;
+      color: var(--border);
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .stars {
+      color: #F5A623;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .review-text {
+      font-size: 0.86rem;
+      color: #3a4a3a;
+      line-height: 1.85;
+    }
+
+    /* ===== ABOUT / STORY ===== */
+    .about { background: var(--forest); color: #fff; }
+    .about .section-label { color: var(--earth); }
+    .about .section-label::after { background: var(--earth); }
+    .about .section-title { color: #fff; }
+    .about-body {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 2;
+      margin-top: 28px;
+      border-left: 2px solid var(--earth);
+      padding-left: 20px;
+    }
+    .about-year {
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-weight: 900;
+      color: rgba(200,169,110,0.15);
+      line-height: 1;
+      margin-bottom: -10px;
+    }
+
+    /* ===== SHOP INFO ===== */
+    .shopinfo { background: var(--birch); }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 32px;
+      font-size: 0.86rem;
+    }
+    .info-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .info-table th {
+      width: 110px;
+      padding: 14px 0;
+      font-weight: 700;
+      color: var(--moss);
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    .info-table td {
+      padding: 14px 10px;
+      color: #2a3a2a;
+      word-break: break-word;
+    }
+    .info-table td a {
+      color: var(--moss);
+      text-decoration: none;
+    }
+    .info-table td a:hover { text-decoration: underline; }
+
+    /* ===== SNS ===== */
+    .sns { background: var(--light-moss); }
+    .sns-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .sns-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--forest);
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: 1px solid var(--border);
+      transition: border-color 0.18s, transform 0.18s;
+    }
+    .sns-link:hover {
+      border-color: var(--moss);
+      transform: translateX(4px);
+    }
+    .sns-icon {
+      font-size: 1.5rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light-moss);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .sns-desc {
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: #7a8a7a;
+      margin-top: 2px;
+    }
+
+    /* ===== CTA FOOTER ===== */
+    .cta-section {
+      background: var(--sunset);
+      padding: 64px 0;
+      text-align: center;
+    }
+    .cta-section .section-title {
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .btn-white {
+      background: #fff;
+      color: var(--sunset);
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: transform 0.18s;
+      display: inline-block;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+    .btn-white-outline {
+      border: 1.5px solid rgba(255,255,255,0.7);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: background 0.18s;
+      display: inline-block;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+    .btn-white-outline:hover { background: rgba(255,255,255,0.1); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0e1e0e;
+      padding: 36px 24px;
+      text-align: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.72rem;
+      line-height: 2;
+    }
+    footer a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--earth); }
+    .footer-logo {
+      color: rgba(255,255,255,0.7);
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 10px;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider-mountain {
+      width: 100%;
+      display: block;
+      line-height: 0;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 600px) {
+      .products-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .strengths-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .sns-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    @media (min-width: 768px) {
+      .hero-content { padding: 120px 48px 80px; }
+      .strengths-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .info-table th { width: 140px; }
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      アウトドアライフ グリーンハウス
+      <span>OUTDOOR LIFE GREENHOUSE AOMORI</span>
+    </div>
+    <div class="header-cta">
+      <a href="tel:0177521004" class="btn-sm btn-outline">📞 電話</a>
+      <a href="https://www.ys-greenh.com/blog/grennhouse-contact/" target="_blank" class="btn-sm btn-solid">お問い合わせ</a>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <img
+      class="hero-image"
+      src="images/hero_outdoor.jpg"
+      alt="青森の大自然でのアウトドア"
+    >
+    <div class="hero-overlay"></div>
+
+    <!-- 山シルエット SVG -->
+    <svg class="hero-mountain" viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,160 L0,100 L120,50 L240,90 L360,30 L500,80 L620,20 L760,70 L880,10 L1020,60 L1140,20 L1280,55 L1440,30 L1440,160 Z" fill="#1A2E1A" opacity="0.85"/>
+      <path d="M0,160 L0,120 L160,80 L300,110 L440,65 L580,100 L700,55 L840,95 L960,45 L1100,85 L1220,50 L1360,80 L1440,60 L1440,160 Z" fill="#1A2E1A"/>
+    </svg>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Outdoor Life Greenhouse — Aomori</p>
+      <h1 class="hero-title">
+        自然と向き合う、<br>
+        <em>本物の装備を。</em>
+      </h1>
+      <p class="hero-sub">
+        アウトドア用品・登山用品を豊富に揃える青森のアウトドア専門店。
+        大自然に挑む一歩を、最高の道具とともに。
+      </p>
+      <div class="hero-btns">
+        <a href="#featured" class="btn-hero btn-primary">イチオシ商品を見る</a>
+        <a href="#shopinfo" class="btn-hero btn-secondary">店舗情報</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      scroll
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PRODUCTS ===== -->
+  <section class="featured" id="featured">
+    <div class="container">
+      <p class="section-label">Our Specialty</p>
+      <h2 class="section-title">イチオシ商品・サービス</h2>
+      <p class="section-lead">
+        アウトドア・登山用品はもちろん、季節のアパレルまで。
+        グリーンハウスが厳選したメジャーブランドが揃い、あなたの冒険を全力サポートします。
+      </p>
+
+      <div class="products-grid">
+        <!-- メイン商品カード -->
+        <div class="product-card">
+          <span class="badge-recommend">★ BEST PICK</span>
+          <img
+            class="product-img"
+            src="images/outdoor_gear.jpg"
+            alt="アウトドア・登山用品"
+          >
+          <div class="product-info">
+            <p class="product-tag">Outdoor &amp; Climbing Gear</p>
+            <h3 class="product-name">アウトドア・登山用品</h3>
+            <p class="product-desc">
+              テント、バックパック、シューズ、クッカーまで。
+              国内外の信頼ブランドを豊富にラインナップ。
+              スタッフが実体験をもとにご提案します。
+            </p>
+          </div>
+        </div>
+
+        <!-- サブカード１ -->
+        <div class="product-card">
+          <img
+            class="product-img"
+            src="images/apparel.jpg"
+            alt="アウトドアアパレル"
+          >
+          <div class="product-info">
+            <p class="product-tag">Outdoor Apparel</p>
+            <h3 class="product-name">季節のアウトドアウェア</h3>
+            <p class="product-desc">
+              機能性とデザインを兼ね備えたジャケット・ウェアを多数展示。見るだけでワクワクするラインナップ。
+            </p>
+          </div>
+        </div>
+
+        <!-- サブカード２ -->
+        <div class="product-card">
+          <div class="product-info">
+            <p class="product-tag">Members Benefit</p>
+            <h3 class="product-name">会員・LINE限定クーポン</h3>
+            <p class="product-desc">
+              会員登録・LINE登録でお得なクーポンや割引情報を定期配信。
+              セールも随時開催中！お気に入りをお得にゲットしよう。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <svg class="divider-mountain" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,0 L0,60 L1440,60 L1440,0 L1200,40 L960,10 L720,45 L480,8 L240,38 L0,0 Z" fill="#1A2E1A"/>
+  </svg>
+
+  <!-- ===== STRENGTHS ===== -->
+  <section class="strengths">
+    <div class="container">
+      <p class="section-label">Why Choose Us</p>
+      <h2 class="section-title">グリーンハウスが<br>選ばれる理由</h2>
+
+      <div class="strengths-grid">
+        <div class="strength-item">
+          <div class="strength-icon">🏔️</div>
+          <h3 class="strength-title">メジャーブランドを豊富に展開</h3>
+          <p class="strength-text">アウトドア好きが喜ぶ国内外の主要ブランドをまとめて体験・比較できます。</p>
+        </div>
+        <div class="strength-item">
+          <div class="strength-icon">🎫</div>
+          <h3 class="strength-title">会員限定のお得な特典</h3>
+          <p class="strength-text">LINE・会員登録で定期的にクーポン・セール情報をお届け。リピーターに嬉しい価格で。</p>
+        </div>
+        <div class="strength-item">
+          <div class="strength-icon">🗓️</div>
+          <h3 class="strength-title">年中無休で営業中</h3>
+          <p class="strength-text">準備もアフターも、いつでも立ち寄れる安心の年中無休営業。急な用品の補充にも対応。</p>
+        </div>
+        <div class="strength-item">
+          <div class="strength-icon">🤝</div>
+          <h3 class="strength-title">おもてなしの心</h3>
+          <p class="strength-text">「思いやりとおもてなしの心」を企業文化の核に。スタッフが丁寧にサポートします。</p>
+        </div>
+        <div class="strength-item">
+          <div class="strength-icon">🌿</div>
+          <h3 class="strength-title">創業1947年の信頼と安定</h3>
+          <p class="strength-text">ワイエス株式会社の安定した基盤のもと、長年培ったホスピタリティを提供します。</p>
+        </div>
+        <div class="strength-item">
+          <div class="strength-icon">📍</div>
+          <h3 class="strength-title">アクセス抜群のショッピングモール内</h3>
+          <p class="strength-text">ドリームタウン ALi 1Fに位置し、ショッピングのついでにも気軽に立ち寄れます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <p class="section-label">Customer Voice</p>
+      <h2 class="section-title">お客様の声</h2>
+
+      <div class="reviews-list">
+        <div class="review-card">
+          <div class="stars">★★★★☆</div>
+          <p class="review-text">
+            キャンプ用品はもちろんですが、季節もののジャケットなど、見てるだけでワクワクする商品がいっぱい揃ってる、楽しいお店です。ライン登録、会員登録すれば定期的にクーポン発行や割引情報などが飛んでくるのでついつい購入してしまいます。春が待ち遠しくなるお店ですね。
+          </p>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            メジャーどころのアウトドアブランドのアパレルとアウトドア用品が沢山あって、アウトドア好きには楽しいお店です。セールもよくやっていてお得に買えます。個人的要望としては、ステッカー大好きなので種類をもっと増やして欲しい。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about">
+    <div class="container">
+      <p class="section-label">Our Story</p>
+      <div class="about-year">1947</div>
+      <h2 class="section-title">創業者ストーリー</h2>
+      <p class="about-body">
+        1947年に創業した弊社は、「人に喜ばれてこそ会社は発展する」の社是の精神のもと、多くの人に喜ばれる食とホスピタリティの事業を創造してまいりました。現在では国内外に約2,700店の運営先を持ち、「食を通した健康貢献企業」としてグローバルな成長を目指しています。
+        グリーンハウス事業部は、その精神を受け継ぎ、アウトドアという「健康的な生活文化」を青森から広げていきます。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SHOP INFO ===== -->
+  <section class="shopinfo" id="shopinfo">
+    <div class="container">
+      <p class="section-label">Shop Info</p>
+      <h2 class="section-title">店舗情報</h2>
+
+      <table class="info-table">
+        <tr>
+          <th>店名</th>
+          <td>アウトドアライフ グリーンハウス青森店</td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>青森県青森市浜田３丁目１−１−１<br>ドリームタウン ＡＬｉ 1F</td>
+        </tr>
+        <tr>
+          <th>電話</th>
+          <td><a href="tel:0177521004">0177-521-004</a></td>
+        </tr>
+        <tr>
+          <th>定休日</th>
+          <td>年中無休</td>
+        </tr>
+        <tr>
+          <th>メール</th>
+          <td><a href="mailto:info@ys-greenh.com">info@ys-greenh.com</a></td>
+        </tr>
+        <tr>
+          <th>公式サイト</th>
+          <td><a href="https://www.ys-greenh.com/" target="_blank">https://www.ys-greenh.com/</a></td>
+        </tr>
+        <tr>
+          <th>運営会社</th>
+          <td>ワイエス株式会社 グリーンハウス事業部</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== SNS ===== -->
+  <section class="sns">
+    <div class="container">
+      <p class="section-label">Follow Us</p>
+      <h2 class="section-title">SNS・動画で<br>最新情報をチェック</h2>
+
+      <div class="sns-links">
+        <a href="https://www.instagram.com/greenh_aomori/?hl=en" target="_blank" class="sns-link">
+          <div class="sns-icon">📸</div>
+          <div>
+            <div>Instagram</div>
+            <div class="sns-desc">@greenh_aomori — 最新商品・コーデを発信中</div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/@outdoorlifegreenhouse" target="_blank" class="sns-link">
+          <div class="sns-icon">▶️</div>
+          <div>
+            <div>YouTube</div>
+            <div class="sns-desc">アウトドアライフ グリーンハウス公式チャンネル</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="section-title">あなたの次の冒険を、<br>一緒に準備しよう。</h2>
+      <p>ご来店・お問い合わせをお気軽にどうぞ。<br>スタッフが最適な装備をご提案します。</p>
+      <div class="cta-buttons">
+        <a href="https://www.ys-greenh.com/blog/grennhouse-contact/" target="_blank" class="btn-white">お問い合わせフォーム</a>
+        <a href="tel:0177521004" class="btn-white-outline">📞 0177-521-004</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-logo">アウトドアライフ グリーンハウス青森店</div>
+    <p>〒青森県青森市浜田３丁目１−１−１ ドリームタウン ＡＬｉ 1F</p>
+    <p>
+      <a href="https://www.ys-greenh.com/" target="_blank">公式サイト</a> ／
+      <a href="mailto:info@ys-greenh.com">info@ys-greenh.com</a>
+    </p>
+    <p style="margin-top:14px;">© ワイエス株式会社 グリーンハウス事業部</p>
+  </footer>
+
+</body>
+</html>
