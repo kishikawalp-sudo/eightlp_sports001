@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>サンスポーツ | ラケット専門店（大阪・池田）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.7;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== COLOR TOKENS ===== */
+    :root {
+      --navy:   #0D2240;
+      --green:  #2E7D32;
+      --gold:   #E8B84B;
+      --off:    #F5F5F0;
+      --white:  #FFFFFF;
+      --text:   #1a1a1a;
+      --muted:  #555;
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+    .logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      letter-spacing: .08em;
+    }
+    .logo span { color: var(--gold); }
+    nav a {
+      color: rgba(255,255,255,.8);
+      font-size: .82rem;
+      margin-left: 20px;
+      letter-spacing: .06em;
+      transition: color .2s;
+    }
+    nav a:hover { color: var(--gold); }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--navy);
+      padding-top: 60px;
+    }
+    /* ガット（ストリング）パターン背景 SVG */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg,   rgba(255,255,255,.06) 0px, rgba(255,255,255,.06) 1px, transparent 1px, transparent 28px),
+        repeating-linear-gradient(90deg,  rgba(255,255,255,.06) 0px, rgba(255,255,255,.06) 1px, transparent 1px, transparent 28px);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-text {}
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      font-size: .72rem;
+      letter-spacing: .14em;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-lead {
+      color: rgba(255,255,255,.75);
+      font-size: .95rem;
+      margin-bottom: 36px;
+      max-width: 440px;
+    }
+    .btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      font-size: .9rem;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 4px;
+      letter-spacing: .06em;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: #1B5E20; transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.45);
+      color: var(--white);
+      font-size: .9rem;
+      padding: 14px 32px;
+      border-radius: 4px;
+      letter-spacing: .06em;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-image {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+      aspect-ratio: 4/3;
+    }
+    .hero-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section { padding: 88px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      font-size: .72rem;
+      letter-spacing: .2em;
+      color: var(--green);
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: var(--navy);
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .section-lead {
+      color: var(--muted);
+      font-size: .95rem;
+      max-width: 560px;
+      margin-bottom: 48px;
+    }
+
+    /* ===== FEATURE（イチオシ：ラケット専門） ===== */
+    .feature { background: var(--off); }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .feature-image {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,.12);
+      aspect-ratio: 4/3;
+    }
+    .feature-image img { width: 100%; height: 100%; object-fit: cover; }
+    .feature-items { display: flex; flex-direction: column; gap: 28px; }
+    .feature-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .feature-icon {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feature-icon svg { width: 24px; height: 24px; fill: var(--gold); }
+    .feature-item-body h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .feature-item-body p { font-size: .88rem; color: var(--muted); }
+
+    /* ===== SERVICE BAND ===== */
+    .service-band {
+      background: var(--green);
+      padding: 48px 24px;
+    }
+    .service-band .section-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .service-band-text h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.3rem, 2.8vw, 1.9rem);
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .service-band-text p { color: rgba(255,255,255,.8); font-size: .9rem; }
+    .service-band .btn-primary {
+      background: var(--white);
+      color: var(--green);
+      white-space: nowrap;
+    }
+    .service-band .btn-primary:hover { background: var(--off); }
+
+    /* ===== REVIEWS ===== */
+    .reviews { background: var(--white); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .review-card {
+      background: var(--off);
+      border-radius: 8px;
+      padding: 28px 24px;
+      border-left: 4px solid var(--green);
+      position: relative;
+    }
+    .stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 12px; }
+    .review-text { font-size: .88rem; color: var(--muted); line-height: 1.75; }
+
+    /* ===== SHOP INFO ===== */
+    .shopinfo { background: var(--navy); }
+    .shopinfo .section-title { color: var(--white); }
+    .shopinfo .section-label { color: var(--gold); }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .info-table { width: 100%; border-collapse: collapse; }
+    .info-table tr { border-bottom: 1px solid rgba(255,255,255,.1); }
+    .info-table td { padding: 14px 0; font-size: .9rem; }
+    .info-table td:first-child {
+      color: rgba(255,255,255,.5);
+      width: 90px;
+      font-size: .8rem;
+      letter-spacing: .06em;
+    }
+    .info-table td:last-child { color: rgba(255,255,255,.88); }
+    .info-table a { color: var(--gold); }
+    .info-table a:hover { text-decoration: underline; }
+    .map-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      height: 280px;
+    }
+    .map-wrap iframe { width: 100%; height: 100%; border: 0; filter: brightness(.9); }
+
+    /* ===== CTA FINAL ===== */
+    .cta-final {
+      background: var(--off);
+      text-align: center;
+      padding: 88px 24px;
+    }
+    .cta-final .section-title { color: var(--navy); }
+    .cta-final .section-lead { margin: 0 auto 40px; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-navy {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      font-size: .9rem;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 4px;
+      letter-spacing: .06em;
+      transition: background .2s, transform .15s;
+    }
+    .btn-navy:hover { background: #162f58; transform: translateY(-2px); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #080e1a;
+      color: rgba(255,255,255,.4);
+      text-align: center;
+      font-size: .78rem;
+      padding: 28px 24px;
+      letter-spacing: .06em;
+    }
+    footer a { color: rgba(255,255,255,.5); }
+    footer a:hover { color: var(--gold); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      section { padding: 64px 20px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+      .hero-image { order: -1; max-height: 260px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .feature-image { order: -1; max-height: 240px; }
+      .info-grid { grid-template-columns: 1fr; }
+      nav { display: none; }
+      .hero-title { font-size: 1.9rem; }
+    }
+    @media (max-width: 480px) {
+      .btn-group { flex-direction: column; align-items: flex-start; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">SUN<span>★</span>SPORTS</div>
+    <nav>
+      <a href="#feature">専門サービス</a>
+      <a href="#reviews">お客様の声</a>
+      <a href="#shopinfo">店舗情報</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="hero-eyebrow">大阪・池田のラケット専門店</span>
+        <h1 class="hero-title">
+          あなたのラケットに、<br>
+          <em>最高の一張り</em>を。
+        </h1>
+        <p class="hero-lead">
+          ガット張替えから新品ラケット選びまで、豊富な知識と丁寧な接客で
+          スポーツライフをサポートします。工賃1,180円〜の安心価格。
+        </p>
+        <div class="btn-group">
+          <a href="#feature" class="btn-primary">専門サービスを見る</a>
+          <a href="https://www.sun-sports.com/msgform" class="btn-outline" target="_blank" rel="noopener">お問い合わせ</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/hero_racket.jpg" alt="サンスポーツ店内のラケット" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURE（イチオシ） ===== -->
+  <section class="feature" id="feature">
+    <div class="section-inner">
+      <span class="section-label">Our Specialty</span>
+      <h2 class="section-title">ラケット用品の<br>プロフェッショナル</h2>
+      <p class="section-lead">
+        テニス・バドミントン・スカッシュ…あらゆるラケットスポーツの用品を
+        専門スタッフが丁寧にご提案。まずはお気軽にご相談ください。
+      </p>
+      <div class="feature-grid">
+        <div class="feature-image">
+          <img src="images/stringing_service.jpg" alt="ガット張替えサービスの様子" />
+        </div>
+        <div class="feature-items">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <!-- ラケットアイコン -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26C17.81 13.47 19 11.38 19 9c0-3.87-3.13-7-7-7zm-1 15v1H9v-1h2zm4 1h-2v-1h2v1zm0-3H9v-1.08c.32.05.66.08 1 .08h4c.34 0 .68-.03 1-.08V15z"/>
+              </svg>
+            </div>
+            <div class="feature-item-body">
+              <h3>ガット張替えサービス</h3>
+              <p>工賃1,180円〜。お手持ちのラケットに合ったガットを専門スタッフが選定。古いラケットも蘇ります。</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <div class="feature-item-body">
+              <h3>ラケット新品・中古販売</h3>
+              <p>お客様の目的・レベル・予算に合ったラケットを丁寧にご説明。量販店と変わらぬ価格＋アフターケア付き。</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 6h-2.18c.07-.44.18-.88.18-1.35C18 2.99 16.66 2 15 2c-1.2 0-2.16.6-2.84 1.5L12 4.54l-.16-.04C11.16 3.6 10.2 3 9 3 7.34 3 6 3.99 6 5.65c0 .47.11.91.18 1.35H4C2.9 7 2 7.9 2 9v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2z"/>
+              </svg>
+            </div>
+            <div class="feature-item-body">
+              <h3>ウェア・用品も充実</h3>
+              <p>UVカットフェイスカバーなど機能性アイテムも多数。通販でのご購入も可能です。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE BAND ===== -->
+  <div class="service-band">
+    <div class="section-inner">
+      <div class="service-band-text">
+        <h2>まずはお気軽にご相談ください</h2>
+        <p>「古いラケットで大丈夫？」「初めてのラケット選び」—どんな疑問もお答えします。</p>
+      </div>
+      <a href="tel:072-762-2129" class="btn-primary">☎ 072-762-2129</a>
+    </div>
+  </div>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews" id="reviews">
+    <div class="section-inner">
+      <span class="section-label">Customer Reviews</span>
+      <h2 class="section-title">お客様の声</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★☆</div>
+          <p class="review-text">
+            古いラケットのガット張替えに行きました。「まだ使えるし、ガットを張り替えるだけでも違って来ると思いますよ」と丁寧にアドバイスいただき、工賃1,180円でしていただきました。説明が親切で値段も手頃、また行きたいと思います。
+          </p>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            30年程前からのお付き合い。昔買ったウェアが今も傷まずに実家にあります。先日はUVカットのフェイスカバーを通販で購入。テニスラケットも2回目の購入で、こちらの条件に合うものを丁寧に説明していただき、納得のお買い物ができました。
+          </p>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            某スポーツ量販店との価格差はほとんどなく、小売店ならではのアフターケアが受けられるのが嬉しいです。お店の方の温かい接客にいつも癒されています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHOP INFO ===== -->
+  <section class="shopinfo" id="shopinfo">
+    <div class="section-inner">
+      <span class="section-label">Shop Info</span>
+      <h2 class="section-title">店舗情報</h2>
+      <div class="info-grid">
+        <table class="info-table">
+          <tr>
+            <td>店名</td>
+            <td>サンスポーツ</td>
+          </tr>
+          <tr>
+            <td>会社名</td>
+            <td>サンスポーツ株式会社</td>
+          </tr>
+          <tr>
+            <td>住所</td>
+            <td>大阪府池田市石橋２丁目２−５</td>
+          </tr>
+          <tr>
+            <td>電話</td>
+            <td><a href="tel:072-762-2129">072-762-2129</a></td>
+          </tr>
+          <tr>
+            <td>定休日</td>
+            <td>水曜日・毎月最終火曜日<br><span style="font-size:.8rem;opacity:.7">（祝祭日を除く）</span></td>
+          </tr>
+          <tr>
+            <td>メール</td>
+            <td><a href="mailto:shop@sun-sports.com">shop@sun-sports.com</a></td>
+          </tr>
+          <tr>
+            <td>Web</td>
+            <td><a href="https://www.sun-sports.com/" target="_blank" rel="noopener">www.sun-sports.com</a></td>
+          </tr>
+          <tr>
+            <td>Instagram</td>
+            <td><a href="https://www.instagram.com/sunsports2129/" target="_blank" rel="noopener">@sunsports2129</a></td>
+          </tr>
+        </table>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3277.5!2d135.4145!3d34.8317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f6a7f3b6a9b7%3A0x0!2z5aSn6Ziq5bGx5aSn5biC55Ge5qmL77yS5LiB55uu77yS4oiS77yV!5e0!3m2!1sja!2sjp!4v1"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="サンスポーツ 地図">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-final" id="contact">
+    <div class="section-inner">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">お問い合わせ・ご相談</h2>
+      <p class="section-lead">
+        ガット張替えのご予約、商品のご相談など、お気軽にどうぞ。<br>
+        メール・お問い合わせフォームからもご連絡いただけます。
+      </p>
+      <div class="cta-buttons">
+        <a href="https://www.sun-sports.com/msgform" class="btn-primary" target="_blank" rel="noopener">お問い合わせフォーム</a>
+        <a href="mailto:shop@sun-sports.com" class="btn-navy">メールで問い合わせ</a>
+        <a href="tel:072-762-2129" class="btn-navy">☎ 072-762-2129</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>
+      © 2025 サンスポーツ株式会社 ／
+      <a href="https://www.sun-sports.com/" target="_blank" rel="noopener">www.sun-sports.com</a> ／
+      <a href="https://www.instagram.com/sunsports2129/" target="_blank" rel="noopener">Instagram</a>
+    </p>
+  </footer>
+
+</body>
+</html>
