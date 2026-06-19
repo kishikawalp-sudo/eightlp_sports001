@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スタッフ募集 | アウトドアライフ グリーンハウス青森店</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #F5F0E8;
+      color: #1A2E1A;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ===== VARIABLES ===== */
+    :root {
+      --forest:  #1A2E1A;
+      --moss:    #4A7C59;
+      --sun:     #FFC94A;
+      --sunset:  #E8340A;
+      --birch:   #F5F0E8;
+      --white:   #ffffff;
+      --light:   #EAF2EC;
+      --muted:   #5a6a5a;
+      --border:  rgba(74,124,89,0.2);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26,46,26,0.94);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 22px;
+    }
+    .logo {
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 0.03em;
+    }
+    .logo-sub {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 400;
+      color: var(--sun);
+      letter-spacing: 0.1em;
+    }
+    .header-badge {
+      background: var(--sunset);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 3px;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(26,46,26,0.55) 0%,
+        rgba(26,46,26,0.30) 45%,
+        rgba(26,46,26,0.82) 100%
+      );
+      z-index: 1;
+    }
+    /* 波形ディバイダー */
+    .hero-wave {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 2;
+      line-height: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 110px 26px 68px;
+      color: #fff;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--sun);
+      color: var(--forest);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 2px;
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 9vw, 4.8rem);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+    .hero-title .accent {
+      color: var(--sun);
+    }
+    .hero-copy {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.9;
+      max-width: 460px;
+      margin-bottom: 32px;
+    }
+    .hero-apply-btn {
+      display: inline-block;
+      background: var(--sunset);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 900;
+      padding: 17px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      box-shadow: 0 6px 24px rgba(232,52,10,0.4);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .hero-apply-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(232,52,10,0.5);
+    }
+
+    /* ===== CONDITIONS HIGHLIGHT BAR ===== */
+    .conditions-bar {
+      background: var(--sun);
+      padding: 0;
+    }
+    .conditions-inner {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .cond-item {
+      padding: 22px 20px;
+      border-right: 1px solid rgba(26,46,26,0.12);
+      border-bottom: 1px solid rgba(26,46,26,0.12);
+      text-align: center;
+    }
+    .cond-item:nth-child(2n) { border-right: none; }
+    .cond-item:nth-last-child(-n+2) { border-bottom: none; }
+    .cond-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(26,46,26,0.55);
+      margin-bottom: 4px;
+    }
+    .cond-value {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--forest);
+      line-height: 1.3;
+    }
+    .cond-value .unit {
+      font-size: 0.7rem;
+      font-weight: 400;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    .sec { padding: 72px 0; }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .sec-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--moss);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .sec-label::after {
+      content: '';
+      flex: 1;
+      max-width: 44px;
+      height: 1px;
+      background: var(--moss);
+    }
+    .sec-title {
+      font-size: clamp(1.55rem, 5vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--forest);
+      margin-bottom: 10px;
+    }
+    .sec-lead {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 520px;
+    }
+
+    /* ===== JOB CONTENT ===== */
+    .job-content { background: var(--white); }
+    .job-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .job-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background: var(--birch);
+      border-radius: 8px;
+      padding: 22px 20px;
+      border-left: 3px solid var(--moss);
+    }
+    .job-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .job-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 5px;
+    }
+    .job-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ===== SCENE IMAGE ===== */
+    .scene-image-wrap {
+      margin-top: 36px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+    .scene-img {
+      width: 100%;
+      aspect-ratio: 16/7;
+      object-fit: cover;
+      display: block;
+    }
+    .scene-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(26,46,26,0.75), transparent);
+      color: #fff;
+      font-size: 0.78rem;
+      padding: 24px 18px 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    /* ===== BENEFITS ===== */
+    .benefits { background: var(--light); }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .benefit-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 22px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--sun);
+    }
+    .benefit-icon {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .benefit-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 6px;
+    }
+    .benefit-text {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ===== REQUIREMENTS TABLE ===== */
+    .requirements { background: var(--white); }
+    .req-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 36px;
+      font-size: 0.86rem;
+    }
+    .req-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .req-table th {
+      width: 120px;
+      padding: 15px 0;
+      font-weight: 700;
+      color: var(--moss);
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    .req-table td {
+      padding: 15px 10px;
+      color: #2a3a2a;
+      line-height: 1.75;
+    }
+    .tag-check {
+      display: inline-block;
+      background: var(--light);
+      color: var(--moss);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      margin: 2px 3px 2px 0;
+    }
+    .tag-required {
+      background: #fff0f0;
+      color: var(--sunset);
+      border-color: rgba(232,52,10,0.2);
+    }
+
+    /* ===== PHOTO STRIP ===== */
+    .photo-strip {
+      background: var(--forest);
+      padding: 0;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .photo-strip-img {
+      width: 100%;
+      aspect-ratio: 21/6;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      opacity: 0.75;
+    }
+
+    /* ===== ACCESS ===== */
+    .access { background: var(--birch); }
+    .access-box {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 28px 24px;
+      margin-top: 32px;
+      border: 1px solid var(--border);
+    }
+    .access-address {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 10px;
+    }
+    .access-route {
+      font-size: 0.84rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .access-route::before {
+      content: '🚗';
+    }
+    .map-placeholder {
+      background: var(--light);
+      border-radius: 6px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--moss);
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px dashed var(--border);
+      gap: 8px;
+    }
+
+    /* ===== CTA ===== */
+    .cta-sec {
+      background: var(--forest);
+      padding: 72px 0;
+      text-align: center;
+    }
+    .cta-sec .sec-label { color: var(--sun); justify-content: center; }
+    .cta-sec .sec-label::after { display: none; }
+    .cta-sec .sec-title { color: #fff; margin: 10px 0 14px; }
+    .cta-copy {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.9;
+      margin-bottom: 36px;
+    }
+    .cta-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 10px;
+      padding: 32px 24px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .apply-btn {
+      display: block;
+      width: 100%;
+      background: var(--sunset);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 900;
+      padding: 18px;
+      border-radius: 5px;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      box-shadow: 0 6px 22px rgba(232,52,10,0.35);
+      transition: transform 0.18s, box-shadow 0.18s;
+      margin-bottom: 12px;
+    }
+    .apply-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(232,52,10,0.45);
+    }
+    .tel-link {
+      display: block;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.82rem;
+      text-decoration: none;
+      margin-top: 14px;
+      letter-spacing: 0.04em;
+      transition: color 0.15s;
+    }
+    .tel-link:hover { color: var(--sun); }
+    .tel-num {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .cta-note {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 18px;
+      line-height: 1.8;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0e1e0e;
+      padding: 32px 24px;
+      text-align: center;
+      color: rgba(255,255,255,0.38);
+      font-size: 0.7rem;
+      line-height: 2;
+    }
+    .footer-logo {
+      color: rgba(255,255,255,0.65);
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+    footer a { color: rgba(255,255,255,0.38); text-decoration: none; }
+    footer a:hover { color: var(--sun); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 560px) {
+      .conditions-inner { grid-template-columns: repeat(4, 1fr); }
+      .cond-item { border-bottom: none; }
+      .cond-item:nth-child(2n) { border-right: 1px solid rgba(26,46,26,0.12); }
+      .cond-item:last-child { border-right: none; }
+      .job-cards { grid-template-columns: 1fr 1fr; }
+      .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 768px) {
+      .hero-content { padding: 120px 48px 80px; }
+      .req-table th { width: 148px; }
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      グリーンハウス青森店
+      <span class="logo-sub">Outdoor Life Greenhouse — Staff Wanted</span>
+    </div>
+    <div class="header-badge">スタッフ募集中</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img
+      class="hero-img"
+      src="images/hero_staff.jpg"
+      alt="グリーンハウスで働くスタッフ"
+    >
+    <div class="hero-overlay"></div>
+
+    <!-- 波形ディバイダー -->
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,72 L0,36 Q180,0 360,36 Q540,72 720,36 Q900,0 1080,36 Q1260,72 1440,40 L1440,72 Z" fill="#FFC94A"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">Now Hiring</span>
+      <h1 class="hero-title">
+        好きを、<br>
+        <span class="accent">仕事にしよう。</span>
+      </h1>
+      <p class="hero-copy">
+        アウトドアが好き、接客が好き——そんなあなたにぴったりの職場です。<br>
+        青森のアウトドア専門店で、お客様の"最高の一日"をサポートしませんか？
+      </p>
+      <a href="#apply" class="hero-apply-btn">▶ 今すぐ応募する</a>
+    </div>
+  </section>
+
+  <!-- CONDITIONS HIGHLIGHT BAR -->
+  <div class="conditions-bar">
+    <div class="conditions-inner">
+      <div class="cond-item">
+        <div class="cond-label">給与</div>
+        <div class="cond-value">時給 1,030<span class="unit">円〜</span></div>
+      </div>
+      <div class="cond-item">
+        <div class="cond-label">シフト</div>
+        <div class="cond-value">8<span class="unit">時間程度 / 月単位</span></div>
+      </div>
+      <div class="cond-item">
+        <div class="cond-label">雇用形態</div>
+        <div class="cond-value">契約社員</div>
+      </div>
+      <div class="cond-item">
+        <div class="cond-label">勤務期間</div>
+        <div class="cond-value">長期</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOB CONTENT -->
+  <section class="sec job-content" id="job">
+    <div class="container">
+      <p class="sec-label">Job Description</p>
+      <h2 class="sec-title">仕事内容</h2>
+      <p class="sec-lead">アウトドアの楽しさをお客様と一緒に感じながら、毎日ワクワクできる仕事です。</p>
+
+      <div class="job-cards">
+        <div class="job-card">
+          <div class="job-icon">🙋</div>
+          <div>
+            <p class="job-title">接客・スタイリング提案</p>
+            <p class="job-desc">お客様のニーズを聞きながら、最適なアウトドアギアやウェアをご提案。あなたの知識と笑顔が頼りです。</p>
+          </div>
+        </div>
+        <div class="job-card">
+          <div class="job-icon">🛍️</div>
+          <div>
+            <p class="job-title">売り場づくり</p>
+            <p class="job-desc">魅力的なディスプレイで、商品の良さを最大限に引き出す売り場を一緒に作りましょう。</p>
+          </div>
+        </div>
+        <div class="job-card">
+          <div class="job-icon">📦</div>
+          <div>
+            <p class="job-title">品出し・商品検品</p>
+            <p class="job-desc">入荷した商品の検品・陳列など、お店を支えるバックヤード業務もお任せします。</p>
+          </div>
+        </div>
+        <div class="job-card">
+          <div class="job-icon">🏷️</div>
+          <div>
+            <p class="job-title">その他店舗運営サポート</p>
+            <p class="job-desc">レジ対応やセール準備など、店舗をスムーズに動かすためのサポート全般をお願いします。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- シーン画像 -->
+      <div class="scene-image-wrap">
+        <img
+          class="scene-img"
+          src="images/store_scene.jpg"
+          alt="グリーンハウス店内の雰囲気"
+        >
+        <div class="scene-caption">アウトドア好きが集まる、楽しい職場です</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="sec benefits" id="benefits">
+    <div class="container">
+      <p class="sec-label">Working Environment</p>
+      <h2 class="sec-title">働きやすい<br>環境・待遇</h2>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <span class="benefit-icon">💰</span>
+          <p class="benefit-title">昇給あり</p>
+          <p class="benefit-text">時給1,030円スタート。頑張りをしっかり評価して昇給します。</p>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🗓️</span>
+          <p class="benefit-title">月単位のシフト制</p>
+          <p class="benefit-text">1ヶ月単位でシフトを提出。プライベートとの両立がしやすい環境です。</p>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🚌</span>
+          <p class="benefit-title">交通費支給</p>
+          <p class="benefit-text">規定内で交通費を全額支給。通勤の心配なく働けます。</p>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🏥</span>
+          <p class="benefit-title">社会保険完備</p>
+          <p class="benefit-text">社会保険・雇用保険加入あり。安心して長く働ける環境を整えています。</p>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">📅</span>
+          <p class="benefit-title">給与支払いが明確</p>
+          <p class="benefit-text">15日締め・25日払いでサイクルが分かりやすく、生活設計がしやすい。</p>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🌿</span>
+          <p class="benefit-title">好きなブランドに囲まれる</p>
+          <p class="benefit-text">アウトドアのメジャーブランドが揃う店内。趣味と仕事が重なる喜びを毎日感じられます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO STRIP -->
+  <div class="photo-strip">
+    <img
+      class="photo-strip-img"
+      src="images/outdoor_aomori.jpg"
+      alt="青森の大自然"
+    >
+  </div>
+
+  <!-- REQUIREMENTS TABLE -->
+  <section class="sec requirements" id="requirements">
+    <div class="container">
+      <p class="sec-label">Requirements</p>
+      <h2 class="sec-title">募集要項</h2>
+
+      <table class="req-table">
+        <tr>
+          <th>店舗名</th>
+          <td>グリーンハウス青森店</td>
+        </tr>
+        <tr>
+          <th>職種</th>
+          <td>店舗運営スタッフ</td>
+        </tr>
+        <tr>
+          <th>募集人数</th>
+          <td>1名</td>
+        </tr>
+        <tr>
+          <th>給与</th>
+          <td>
+            時給 <strong>1,030円〜</strong><br>
+            <span style="font-size:0.8rem;color:#5a6a5a;">※昇給あり　※15日締・25日払い</span>
+          </td>
+        </tr>
+        <tr>
+          <th>勤務時間</th>
+          <td>9:30〜20:15のうち8時間程度（シフト制：1ヶ月単位）</td>
+        </tr>
+        <tr>
+          <th>勤務期間</th>
+          <td>長期</td>
+        </tr>
+        <tr>
+          <th>雇用形態</th>
+          <td>契約社員</td>
+        </tr>
+        <tr>
+          <th>勤務地</th>
+          <td>青森県青森市</td>
+        </tr>
+        <tr>
+          <th>待遇</th>
+          <td>
+            <span class="tag-check">社会保険あり</span>
+            <span class="tag-check">雇用保険あり</span>
+            <span class="tag-check">交通費支給（規定）</span>
+          </td>
+        </tr>
+        <tr>
+          <th>必要資格</th>
+          <td>
+            <span class="tag-required">普通自動車免許</span>
+          </td>
+        </tr>
+        <tr>
+          <th>歓迎条件</th>
+          <td>
+            <span class="tag-check">販売経験者（採用面で優遇）</span>
+            <span class="tag-check">土日勤務が可能な方</span>
+            <span class="tag-check">接客が好きな方</span>
+          </td>
+        </tr>
+        <tr>
+          <th>仕事内容</th>
+          <td>接客・スタイリング提案、売り場づくり、品出し・商品検品など</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="sec access" id="access">
+    <div class="container">
+      <p class="sec-label">Access</p>
+      <h2 class="sec-title">アクセス</h2>
+
+      <div class="access-box">
+        <p class="access-address">📍 〒030-0843 青森県青森市浜田3丁目1-1<br>ドリームタウン アリー 1F</p>
+        <p class="access-route">JR青森駅から車で約15分</p>
+        <div class="map-placeholder">
+          🗺 ここに地図を埋め込む（Google Maps埋め込みコードを追加）
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / APPLY -->
+  <section class="cta-sec" id="apply">
+    <div class="container">
+      <p class="sec-label">Apply Now</p>
+      <h2 class="sec-title">応募はこちらから</h2>
+      <p class="cta-copy">
+        お気軽にどうぞ。面接日時はご都合に合わせて調整します。<br>
+        「アウトドアが好き」という気持ちが一番の武器です。
+      </p>
+
+      <div class="cta-card">
+        <a href="https://www.ys-greenh.com/blog/grennhouse-contact/" target="_blank" class="apply-btn">
+          📩 応募フォームから応募する
+        </a>
+        <a href="mailto:info@ys-greenh.com" class="apply-btn" style="background:#4A7C59; box-shadow: 0 6px 22px rgba(74,124,89,0.35);">
+          ✉️ メールで問い合わせる
+        </a>
+        <a href="tel:0177521004" class="tel-link">
+          お電話でのお問い合わせ<br>
+          <span class="tel-num">📞 0177-521-004</span>
+        </a>
+        <p class="cta-note">
+          ※ お問い合わせはお気軽に。<br>
+          ※ 応募情報は採用目的以外には使用しません。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">アウトドアライフ グリーンハウス青森店</div>
+    <p>〒030-0843 青森県青森市浜田3丁目1-1 ドリームタウン アリー 1F</p>
+    <p>
+      <a href="https://www.ys-greenh.com/" target="_blank">公式サイト</a> ／
+      <a href="mailto:info@ys-greenh.com">info@ys-greenh.com</a>
+    </p>
+    <p style="margin-top:12px;">© ワイエス株式会社 グリーンハウス事業部</p>
+  </footer>
+
+</body>
+</html>
