@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>松田スポーツ｜クロスカントリー用品・スキーワックスのプロフェッショナル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+        body { font-family: 'Noto Sans+JP', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-800">松田スポーツ</h1>
+            <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">お問い合わせ</a>
+        </nav>
+    </header>
+
+    <section class="relative h-[60vh] flex items-center justify-center text-white text-center overflow-hidden">
+        <img src="./images/hero.jpg" alt="松田スポーツの風景" class="absolute inset-0 w-full h-full object-cover" onerror="this.src='https://placehold.co/1200x800/1e3a8a/ffffff?text=Matsuda+Sports'">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative z-10 px-4">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4">プロの視点で選ぶ<br>最高のパフォーマンスを。</h2>
+            <p class="text-lg md:text-2xl">クロスカントリー用品・スキーワックスの専門店</p>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto px-4 py-12">
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-center mb-10 border-b-4 border-blue-600 inline-block mx-auto block pb-2">イチオシの製品・サービス</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <img src="./images/product1.jpg" alt="クロスカントリー用品" class="w-full h-64 object-cover rounded-lg mb-4" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=XC+Gear'">
+                    <h4 class="text-xl font-bold mb-2">クロスカントリー用品</h4>
+                    <p class="text-gray-600">初心者からアスリートまで。雪を知り尽くしたスタッフが厳選したクロスカントリー用品をご提案します。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <img src="./images/product2.jpg" alt="スキーワックス" class="w-full h-64 object-cover rounded-lg mb-4" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Ski+Wax'">
+                    <h4 class="text-xl font-bold mb-2">スキーワックス</h4>
+                    <p class="text-gray-600">滑りの質を劇的に変えるワックスをご用意。あなたの滑りに合わせた最適な選択をお手伝いします。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-blue-50 p-8 rounded-2xl mb-16">
+            <h3 class="text-2xl font-bold mb-6 text-center">お客様の声</h3>
+            <div class="flex justify-center mb-4 text-yellow-500 text-2xl">★★★★★</div>
+            <p class="text-gray-700 italic text-center max-w-2xl mx-auto">
+                「子供が小学校で使うスキー一式を購入しました。アルペンスキー一式はワンシーズンレンタルできるとのことだったので、必要になったらまたお世話になるかと思います。」
+            </p>
+        </section>
+
+        <section id="contact" class="grid md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold mb-6">店舗情報</h3>
+                <ul class="space-y-4">
+                    <li><strong>住所:</strong> 青森県南津軽郡大鰐町大鰐大鰐９２−６</li>
+                    <li><strong>定休日:</strong> 年中無休（※大会やイベント開催時にお休みすることがあります）</li>
+                    <li><strong>代表者:</strong> 松田 秀樹</li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <a href="https://www.nordic-support.jp/%E5%BA%97%E8%88%97%E6%A1%88%E5%86%85/%E3%81%8A%E5%95%8F%E5%90%88%E3%82%8F%E3%81%9B/" class="block w-full bg-blue-600 text-white text-center py-4 rounded-lg font-bold hover:bg-blue-700">問い合わせフォームへ</a>
+                <a href="mailto:matsuda.sports@gmail.com" class="block w-full border-2 border-blue-600 text-blue-600 text-center py-4 rounded-lg font-bold hover:bg-blue-50">メールで問い合わせる</a>
+                <a href="https://www.facebook.com/sharer.php?u=https://www.nordic-support.jp/&t=%E3%83%8E%E3%83%AB%E3%83%87%E3%82%A3%E3%83%83%E3%82%AF%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88" target="_blank" class="block w-full bg-gray-800 text-white text-center py-4 rounded-lg font-bold hover:bg-black">Facebookでシェア</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 text-center mt-12">
+        <p>&copy; 2026 松田スポーツ All Rights Reserved.</p>
+        <a href="https://www.nordic-support.jp/" class="text-blue-300 underline mt-2 inline-block">公式ホームページはこちら</a>
+    </footer>
+
+</body>
+</html>
