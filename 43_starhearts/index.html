@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STARHEARTS | 青森で楽しむスノーボードレッスン＆ショップ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hover-lift { transition: transform 0.2s ease-in-out; }
+        .hover-lift:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+        <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">STARHEARTS</h1>
+            <a href="https://starhearts.jp/inquiry/anotherinquiry.html" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">予約・問い合わせ</a>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section class="relative h-[60vh] flex items-center justify-center text-white overflow-hidden">
+            <img src="images/hero.jpg" alt="スノーボード風景" class="absolute inset-0 w-full h-full object-cover" onerror="this.src='https://placehold.co/1200x800/1e40af/ffffff?text=Snowboard+Hero'">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="relative z-10 text-center px-6">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-4">青森で最高の<br>スノーボード体験を</h2>
+                <p class="text-lg md:text-xl mb-8">初心者から上級者まで、丁寧に楽しくサポートします</p>
+                <a href="#lessons" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-slate-100 transition">レッスン詳細を見る</a>
+            </div>
+        </section>
+
+        <section id="lessons" class="max-w-4xl mx-auto px-6 py-16">
+            <h3 class="text-3xl font-bold text-center mb-12">イチオシのサービス</h3>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <img src="images/lesson.jpg" alt="レッスン風景" class="rounded-2xl shadow-lg" onerror="this.src='https://placehold.co/600x400/cbd5e1/ffffff?text=Lesson+Image'">
+                <div>
+                    <h4 class="text-2xl font-bold mb-4">スノーボードレッスン</h4>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        STARHEARTSでは、経験豊富なインストラクターがあなたのレベルに合わせて丁寧に指導します。「スノーボードを始めてみたい」「もっと上手くなりたい」そんな皆様を全力でサポート。青森の雪山を一緒に楽しみましょう！
+                    </p>
+                    <a href="https://starhearts.jp/" class="text-blue-600 font-bold hover:underline">公式ホームページへ →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-blue-50 py-16">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <h3 class="text-3xl font-bold mb-8">お客様の声</h3>
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-blue-500">
+                    <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
+                    <p class="text-lg italic mb-6">"分かりやすく丁寧に楽しくスノーボードを教えてくれますよ☺️"</p>
+                    <p class="font-bold">- STARHEARTSのお客様</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-6 py-16">
+            <h3 class="text-3xl font-bold text-center mb-12">店舗情報</h3>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <dl class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <dt class="font-bold text-slate-500">店名</dt>
+                        <dd class="mb-4 text-xl">STARHEARTS（スターハーツ）</dd>
+                        <dt class="font-bold text-slate-500">住所</dt>
+                        <dd class="mb-4">青森県青森市赤坂2-1-22</dd>
+                        <dt class="font-bold text-slate-500">電話番号</dt>
+                        <dd class="mb-4"><a href="tel:0177436535" class="text-blue-600 font-bold">017-743-6535</a></dd>
+                    </div>
+                    <div>
+                        <dt class="font-bold text-slate-500">代表者</dt>
+                        <dd class="mb-4">工藤 賀津夫</dd>
+                        <dt class="font-bold text-slate-500">運営</dt>
+                        <dd class="mb-4">ハートエンジニアオフィス株式会社</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.instagram.com/starhearts1946/" class="hover:text-blue-400">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCiEMKRKuI_jttwVz1MRFX3g" class="hover:text-red-400">YouTube</a>
+            </div>
+            <p class="text-slate-400 text-sm">© STARHEARTS All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
