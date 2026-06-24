@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ブルーモリス｜100年の技、八甲田の雪。</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── リセット & 基盤 ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy:      #0A1628;
+      --blue:      #1A3A5C;
+      --mid-blue:  #2A5280;
+      --gold:      #C8A96E;
+      --gold-lt:   #E0C896;
+      --snow:      #E8F0F7;
+      --ice:       #D4E8F0;
+      --white:     #FAFCFF;
+      --text-dark: #0D1B2A;
+      --text-mid:  #3A5068;
+      --ff-serif:  'Noto Serif JP', serif;
+      --ff-sans:   'Noto Sans JP', sans-serif;
+    }
+
+    body {
+      font-family: var(--ff-sans);
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* ─── ユーティリティ ─── */
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      font-family: var(--ff-sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 12px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 2px;
+      font-family: var(--ff-sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border: 2px solid var(--gold);
+    }
+    .btn-primary:hover { background: var(--gold-lt); border-color: var(--gold-lt); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+    }
+    .btn-outline:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+
+    /* ─── ナビゲーション ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10, 22, 40, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(200,169,110,0.2);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: var(--ff-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      color: var(--ice);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      font-size: 0.82rem;
+      padding: 9px 22px;
+    }
+    /* ─── ハンバーガー ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--ice);
+      transition: all 0.3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none;
+      background: var(--navy);
+      border-top: 1px solid rgba(200,169,110,0.2);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; padding: 16px 24px 24px; }
+    .mobile-menu ul li { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .mobile-menu ul a {
+      display: block;
+      padding: 14px 0;
+      color: var(--ice);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+    }
+    .mobile-menu ul a:hover { color: var(--gold); }
+
+    /* ─── ヒーロー ─── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      background: var(--navy);
+      overflow: hidden;
+    }
+    /* 雪の結晶SVGパターン背景 */
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg stroke='%231A3A5C' stroke-width='0.8' fill='none' opacity='0.6'%3E%3Cline x1='30' y1='5' x2='30' y2='55'/%3E%3Cline x1='5' y1='30' x2='55' y2='30'/%3E%3Cline x1='13' y1='13' x2='47' y2='47'/%3E%3Cline x1='47' y1='13' x2='13' y2='47'/%3E%3Ccircle cx='30' cy='30' r='4' stroke='%232A5280'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 60px 60px;
+      opacity: 0.5;
+    }
+    /* 斜め仕切りライン（スキー板モチーフ） */
+    .hero-ski-lines {
+      position: absolute;
+      right: -60px;
+      top: 0;
+      bottom: 0;
+      width: 380px;
+      display: flex;
+      gap: 28px;
+      transform: skewX(-8deg);
+    }
+    .hero-ski-lines .ski-line {
+      width: 4px;
+      background: linear-gradient(to bottom, transparent, rgba(200,169,110,0.15), rgba(200,169,110,0.35), rgba(200,169,110,0.15), transparent);
+    }
+    .hero-ski-lines .ski-line:nth-child(2) { width: 2px; opacity: 0.6; margin-top: 40px; }
+    .hero-ski-lines .ski-line:nth-child(3) { width: 3px; opacity: 0.4; }
+    /* メイン画像エリア */
+    .hero-image-wrap {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 55%;
+      overflow: hidden;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.45;
+    }
+    .hero-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--navy) 0%, rgba(10,22,40,0.6) 50%, rgba(10,22,40,0.2) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 560px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-h1 {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--gold);
+      display: block;
+      font-size: 0.65em;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--ice);
+      line-height: 1.9;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .hero-since {
+      font-size: 0.75rem;
+      color: rgba(212,232,240,0.6);
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── 口コミバー ─── */
+    .review-bar {
+      background: var(--gold);
+      padding: 14px 0;
+    }
+    .review-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .review-stars { font-size: 1.1rem; letter-spacing: 4px; color: var(--navy); }
+    .review-text {
+      font-size: 0.88rem;
+      color: var(--navy);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* ─── 強み ─── */
+    .strengths { padding: 96px 0; background: var(--white); }
+    .strengths-header { text-align: center; margin-bottom: 64px; }
+    .strengths-header h2 {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .strengths-header p { color: var(--text-mid); font-size: 0.95rem; max-width: 560px; margin: 0 auto; }
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+    .strength-card {
+      border: 1px solid var(--ice);
+      border-top: 3px solid var(--gold);
+      padding: 36px 28px;
+      border-radius: 2px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .strength-card:hover { box-shadow: 0 12px 40px rgba(26,58,92,0.1); transform: translateY(-4px); }
+    .strength-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .strength-card h3 {
+      font-family: var(--ff-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .strength-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.8; }
+
+    /* ─── 商品セクション（イチオシ） ─── */
+    .products { padding: 96px 0; background: var(--navy); position: relative; overflow: hidden; }
+    .products::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    .products-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg stroke='%231A3A5C' stroke-width='0.8' fill='none' opacity='0.4'%3E%3Cline x1='30' y1='5' x2='30' y2='55'/%3E%3Cline x1='5' y1='30' x2='55' y2='30'/%3E%3Ccircle cx='30' cy='30' r='4' stroke='%232A5280'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 60px 60px;
+      opacity: 0.3;
+    }
+    .products-header { text-align: center; margin-bottom: 64px; position: relative; z-index: 1; }
+    .products-header h2 {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .products-header p { color: var(--ice); font-size: 0.95rem; opacity: 0.8; max-width: 560px; margin: 0 auto; }
+    /* フィーチャーカード（スキー） */
+    .product-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid rgba(200,169,110,0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 1;
+    }
+    .product-feature-img {
+      position: relative;
+      min-height: 420px;
+    }
+    .product-feature-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .product-feature-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,58,92,0.3), transparent);
+    }
+    .product-feature-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      padding: 6px 14px;
+      border-radius: 1px;
+    }
+    .product-feature-body {
+      background: rgba(26,58,92,0.8);
+      padding: 52px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .product-feature-body h3 {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .product-feature-body .product-sub {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .product-feature-body p {
+      font-size: 0.9rem;
+      color: var(--ice);
+      line-height: 1.9;
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+    /* スノーボードカード */
+    .product-secondary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .product-card {
+      border: 1px solid rgba(200,169,110,0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .product-card-img { position: relative; height: 240px; overflow: hidden; }
+    .product-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .product-card:hover .product-card-img img { transform: scale(1.05); }
+    .product-card-body { padding: 24px 24px 28px; background: rgba(26,58,92,0.8); }
+    .product-card-body h4 {
+      font-family: var(--ff-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .product-card-body p { font-size: 0.85rem; color: var(--ice); line-height: 1.75; font-weight: 300; }
+
+    /* ─── ストーリー ─── */
+    .story { padding: 96px 0; background: var(--snow); }
+    .story-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .story-body {}
+    .story-body h2 {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+    .story-body p {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.95;
+      margin-bottom: 20px;
+    }
+    .story-year {
+      font-family: var(--ff-serif);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .story-year-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      color: var(--text-mid);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      display: block;
+    }
+    .story-img {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 20px 20px 0 var(--gold);
+    }
+    .story-img img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+    .story-img-caption {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      background: rgba(10,22,40,0.8);
+      color: var(--ice);
+      font-size: 0.78rem;
+      padding: 10px 14px;
+      border-radius: 2px;
+      border-left: 2px solid var(--gold);
+    }
+
+    /* ─── 口コミ ─── */
+    .review { padding: 80px 0; background: var(--white); }
+    .review-header { text-align: center; margin-bottom: 48px; }
+    .review-header h2 {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .review-card-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: var(--snow);
+      border: 1px solid var(--ice);
+      border-left: 4px solid var(--gold);
+      border-radius: 4px;
+      padding: 40px 44px;
+    }
+    .review-card-stars { font-size: 1.3rem; letter-spacing: 6px; color: var(--gold); margin-bottom: 16px; }
+    .review-card-text {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 2;
+      font-family: var(--ff-serif);
+    }
+    .review-card-author {
+      margin-top: 24px;
+      font-size: 0.78rem;
+      color: var(--text-dark);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── CTA ─── */
+    .cta-section {
+      padding: 96px 0;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg stroke='%232A5280' stroke-width='0.8' fill='none' opacity='0.4'%3E%3Cline x1='30' y1='5' x2='30' y2='55'/%3E%3Cline x1='5' y1='30' x2='55' y2='30'/%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 60px 60px;
+    }
+    .cta-section .container { position: relative; z-index: 1; }
+    .cta-section h2 {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .cta-section p { color: var(--ice); font-size: 0.95rem; margin-bottom: 44px; opacity: 0.85; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 48px; }
+    .cta-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+    .cta-contact-item { display: flex; align-items: center; gap: 10px; color: var(--ice); font-size: 0.875rem; text-decoration: none; }
+    .cta-contact-item:hover { color: var(--gold); }
+    .cta-contact-item .icon { font-size: 1.1rem; }
+
+    /* ─── SNS ─── */
+    .sns-bar {
+      background: var(--gold);
+      padding: 14px 0;
+    }
+    .sns-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .sns-label { font-size: 0.78rem; font-weight: 700; color: var(--navy); letter-spacing: 0.15em; text-transform: uppercase; }
+    .sns-link {
+      font-size: 0.84rem;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.2s;
+    }
+    .sns-link:hover { opacity: 0.7; }
+
+    /* ─── フッター ─── */
+    footer {
+      background: #060e1a;
+      padding: 56px 0 32px;
+      color: rgba(212,232,240,0.6);
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand {}
+    .footer-logo {
+      font-family: var(--ff-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-brand p { font-size: 0.82rem; line-height: 1.85; }
+    .footer-col h4 {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { color: rgba(212,232,240,0.6); font-size: 0.83rem; text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--gold); }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin-bottom: 24px; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.78rem;
+    }
+    .footer-bottom a { color: rgba(212,232,240,0.5); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--gold); }
+
+    /* ─── レスポンシブ ─── */
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-image-wrap { width: 100%; opacity: 0.25; }
+      .hero-image-wrap::before { background: linear-gradient(to right, var(--navy) 30%, rgba(10,22,40,0.9) 100%); }
+      .product-feature { grid-template-columns: 1fr; }
+      .product-feature-img { min-height: 260px; }
+      .product-feature-body { padding: 32px 28px; }
+      .story-inner { grid-template-columns: 1fr; }
+      .story-img { box-shadow: 10px 10px 0 var(--gold); order: -1; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 600px) {
+      .product-secondary { grid-template-columns: 1fr; }
+      .review-card { padding: 28px 24px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .hero-ski-lines { display: none; }
+      .hero-h1 { font-size: 2.2rem; }
+    }
+
+    /* ─── スクロールフェードイン ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">Blue<span>Moris</span></a>
+      <ul class="nav-links">
+        <li><a href="#strengths">強み</a></li>
+        <li><a href="#products">商品</a></li>
+        <li><a href="#story">ストーリー</a></li>
+        <li><a href="#review">口コミ</a></li>
+      </ul>
+      <a href="https://bluemoris.com/contact" target="_blank" class="btn btn-outline nav-cta">お問い合わせ</a>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#strengths" class="mobile-link">強み</a></li>
+        <li><a href="#products" class="mobile-link">商品</a></li>
+        <li><a href="#story" class="mobile-link">ストーリー</a></li>
+        <li><a href="#review" class="mobile-link">口コミ</a></li>
+        <li><a href="https://bluemoris.com/contact" target="_blank">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-ski-lines">
+      <div class="ski-line"></div>
+      <div class="ski-line"></div>
+      <div class="ski-line"></div>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="images/hero_main.jpg" alt="八甲田の雪山とスキーヤー" />
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-eyebrow">Since 1923 ・ 青森県平内町</span>
+        <h1 class="hero-h1">
+          100年の技が、<br />雪山を変える。
+          <em>Blue Moris</em>
+        </h1>
+        <p class="hero-sub">
+          大正12年創業、八甲田山を故郷に持つ日本のスキーメーカー。<br />
+          職人の手が生み出す一枚が、あなたの滑りを次の次元へ。
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">イチオシ商品を見る</a>
+          <a href="https://bluemoris.com/" target="_blank" class="btn btn-outline">公式サイトへ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口コミバー -->
+  <div class="review-bar">
+    <div class="container review-inner">
+      <span class="review-stars">★★★★★</span>
+      <p class="review-text">「スキー板の生まれ故郷が見れて、とても嬉しかった」 ― お客様の声</p>
+    </div>
+  </div>
+
+  <!-- 強み -->
+  <section class="strengths" id="strengths">
+    <div class="container">
+      <div class="strengths-header fade-up">
+        <span class="section-label">Why Blue Moris</span>
+        <h2>老舗100年メーカーだからできる、<br />揺るぎない品質</h2>
+        <p>創業以来、東北の雪と向き合い続けてきた職人技。それが私たちの最大の強みです。</p>
+      </div>
+      <div class="strengths-grid">
+        <div class="strength-card fade-up">
+          <span class="strength-icon">🎿</span>
+          <h3>100年超の製造技術</h3>
+          <p>1923年の創業から積み上げてきた技術ノウハウ。八甲田山の雪質に最適化されたスキー板製造の知見が、すべての製品に宿っています。</p>
+        </div>
+        <div class="strength-card fade-up">
+          <span class="strength-icon">🇯🇵</span>
+          <h3>メイド・イン・ジャパン</h3>
+          <p>青森県の自社工場で一枚一枚丁寧に製造。国内生産だからこそ実現できる品質管理と、細部へのこだわりを大切にしています。</p>
+        </div>
+        <div class="strength-card fade-up">
+          <span class="strength-icon">⚙️</span>
+          <h3>多品種・小ロット対応</h3>
+          <p>大量生産にはできない多品種・小ロット生産が可能。ユーザーの多様なニーズに応える柔軟な製造体制を整えています。</p>
+        </div>
+        <div class="strength-card fade-up">
+          <span class="strength-icon">🏔️</span>
+          <h3>4-Ride 旅行業との連携</h3>
+          <p>2018年から旅行業「4-Ride」を展開。スキー・スノーボードツアーを通じて、ゲレンデと商品の両方で最高の体験を提供します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 商品（イチオシ） -->
+  <section class="products" id="products">
+    <div class="products-bg-pattern"></div>
+    <div class="container">
+      <div class="products-header fade-up">
+        <span class="section-label">Our Products</span>
+        <h2>八甲田が育てた、<br />一枚との出会い。</h2>
+        <p>自由な発想と和柄のデザイン。日本の雪山に最適なスキー・スノーボードをご用意しています。</p>
+      </div>
+
+      <!-- フィーチャー：スキー -->
+      <div class="product-feature fade-up">
+        <div class="product-feature-img">
+          <span class="product-feature-badge">★ BEST SELLER</span>
+          <img src="images/ski_main.jpg" alt="ブルーモリス スキー板" />
+        </div>
+        <div class="product-feature-body">
+          <p class="product-sub">Ski</p>
+          <h3>ブルーモリス<br />スキー</h3>
+          <p>
+            八甲田山の雪質から生まれたスキー板。和柄デザインが施された唯一無二の一枚は、国内外のスキーヤーに長く愛されてきました。東北の粉雪から日本各地の圧雪バーン、あらゆるフィールドで確かな滑りを実感してください。
+          </p>
+          <a href="https://bluemoris.com/" target="_blank" class="btn btn-primary">詳細・購入はこちら</a>
+        </div>
+      </div>
+
+      <!-- スノーボード -->
+      <div class="product-secondary fade-up">
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/snowboard_main.jpg" alt="ブルーモリス スノーボード" />
+          </div>
+          <div class="product-card-body">
+            <h4>スノーボード</h4>
+            <p>和の美意識と最新技術が融合。パウダーから整備バーンまで、オールラウンドに対応するブルーモリスのスノーボードです。</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card-img" style="background: linear-gradient(135deg, var(--blue), var(--navy)); display:flex; align-items:center; justify-content:center;">
+            <div style="text-align:center; color:var(--white);">
+              <div style="font-size:3rem; margin-bottom:12px;">🏔️</div>
+              <div style="font-family:var(--ff-serif); font-size:1.1rem; font-weight:600; margin-bottom:8px;">4-Ride ツアー</div>
+              <div style="font-size:0.82rem; color:var(--ice); opacity:0.8; padding: 0 24px;">スキー・スノーボードの旅行パッケージ</div>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <h4>4-Ride スノーツアー</h4>
+            <p>八甲田・東北の名山をガイドとともに滑る。2018年から展開する旅行業「4-Ride」で、忘れられない雪山体験を。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ストーリー -->
+  <section class="story" id="story">
+    <div class="container">
+      <div class="story-inner">
+        <div class="story-body fade-up">
+          <span class="section-label">Our Story</span>
+          <div class="story-year">1923</div>
+          <span class="story-year-label">大正12年 青森県で創業</span>
+          <h2>八甲田山の麓から、<br />100年のスキー製造。</h2>
+          <p>
+            大正12年（1923年）、青森県で生まれたブルーモリス。東北の厳しい冬と豊かな雪に向き合い続け、100年以上にわたってスキーづくりのノウハウを蓄積してきました。
+          </p>
+          <p>
+            八甲田山をホームフィールドに、日本の雪山に最適なスキー板の開発・製造に注力。自由な発想と和柄のデザインが特徴の製品は、全国のスキーファンから深く愛されています。
+          </p>
+          <p>
+            今も代表・工藤 廣のもと、職人の技と情熱が一枚一枚の板に宿っています。
+          </p>
+          <a href="https://bluemoris.com/" target="_blank" class="btn btn-outline" style="color: var(--navy); border-color: var(--navy);">ブランドの歴史を見る</a>
+        </div>
+        <div class="story-img fade-up">
+          <img src="images/factory_story.jpg" alt="ブルーモリスの工場と職人" />
+          <div class="story-img-caption">青森県東津軽郡平内町 ─ 株式会社ブルーモリス</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口コミ -->
+  <section class="review" id="review">
+    <div class="container">
+      <div class="review-header fade-up">
+        <span class="section-label">Customer Review</span>
+        <h2>お客様の声</h2>
+      </div>
+      <div class="review-card-wrap fade-up">
+        <div class="review-card">
+          <div class="review-card-stars">★★★★★</div>
+          <p class="review-card-text">
+            「青森旅行に来た際に偶然に見つけて写真をパチリっ！！八甲田の板を愛用していた私。東京で入手するのが大変だったので、ここで働いていたお二人とつながりが出来ました。残念ながらお二人とも他界されてしまいましたが、今でも1本だけは未使用のまま八甲田の板を残して保管しております。私のスキー板の生まれ故郷が見れて、とても嬉しかったです。」
+          </p>
+          <p class="review-card-author">— Googleマップ 口コミより ／ ⭐ 5.0</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <span class="section-label" style="color:var(--gold-lt);">Contact</span>
+      <h2 class="fade-up">まず、お気軽にご相談ください。</h2>
+      <p class="fade-up">スキー・スノーボードの選び方から、ツアーの相談まで。ブルーモリスのスタッフが丁寧にお応えします。</p>
+      <div class="cta-buttons fade-up">
+        <a href="https://bluemoris.com/contact" target="_blank" class="btn btn-primary">お問い合わせフォーム</a>
+        <a href="https://bluemoris.com/" target="_blank" class="btn btn-outline">公式サイトを見る</a>
+      </div>
+      <div class="cta-contacts fade-up">
+        <a href="tel:017-755-2251" class="cta-contact-item">
+          <span class="icon">📞</span> 017-755-2251
+        </a>
+        <a href="mailto:bluemoris@gmail.com" class="cta-contact-item">
+          <span class="icon">✉️</span> bluemoris@gmail.com
+        </a>
+        <a href="https://www.instagram.com/bluemoris.snow/" target="_blank" class="cta-contact-item">
+          <span class="icon">📷</span> Instagram
+        </a>
+        <a href="https://www.youtube.com/@4-ride" target="_blank" class="cta-contact-item">
+          <span class="icon">▶️</span> YouTube
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SNSバー -->
+  <div class="sns-bar">
+    <div class="container sns-inner">
+      <span class="sns-label">Follow Us</span>
+      <a href="https://www.instagram.com/bluemoris.snow/" target="_blank" class="sns-link">📷 @bluemoris.snow</a>
+      <a href="https://www.youtube.com/@4-ride" target="_blank" class="sns-link">▶️ YouTube 4-Ride</a>
+      <a href="https://bluemoris.com/" target="_blank" class="sns-link">🌐 bluemoris.com</a>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">Blue<span>Moris</span></span>
+          <p>株式会社ブルーモリス<br />〒039-3321 青森県東津軽郡平内町藤沢竹達16<br />TEL: 017-755-2251<br />代表者: 工藤 廣</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="https://bluemoris.com/" target="_blank">スキー</a></li>
+            <li><a href="https://bluemoris.com/" target="_blank">スノーボード</a></li>
+            <li><a href="https://www.youtube.com/@4-ride" target="_blank">4-Ride ツアー</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="https://bluemoris.com/" target="_blank">公式サイト</a></li>
+            <li><a href="https://bluemoris.com/contact" target="_blank">お問い合わせ</a></li>
+            <li><a href="https://www.instagram.com/bluemoris.snow/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@4-ride" target="_blank">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom">
+        <span>© 2024 株式会社ブルーモリス. All rights reserved.</span>
+        <a href="https://bluemoris.com/" target="_blank">bluemoris.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ハンバーガーメニュー
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // スクロールフェードイン
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
