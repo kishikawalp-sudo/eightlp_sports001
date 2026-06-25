@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>アウトドアショップ ヤマゴヤ | 秋田のアウトドアセレクトショップ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #FAF8F4;
+      color: #1A1A1A;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ===== COLOR TOKENS ===== */
+    :root {
+      --forest:   #2D4A3E;
+      --forest-light: #3D6357;
+      --cream:    #FAF8F4;
+      --beige:    #F2EDE4;
+      --orange:   #C4622D;
+      --charcoal: #1A1A1A;
+      --muted:    #6B6559;
+      --border:   #DDD8CE;
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(45, 74, 62, 0.96);
+      backdrop-filter: blur(6px);
+      padding: 0 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: #FAF8F4;
+      letter-spacing: .06em;
+      text-decoration: none;
+    }
+    .logo span { color: var(--orange); }
+    nav { display: flex; gap: 1.6rem; }
+    nav a {
+      color: rgba(250,248,244,.8);
+      text-decoration: none;
+      font-size: .78rem;
+      letter-spacing: .08em;
+      font-weight: 400;
+      transition: color .2s;
+    }
+    nav a:hover { color: #fff; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(20,35,28,.15) 0%,
+        rgba(20,35,28,.55) 55%,
+        rgba(10,20,16,.82) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 7vw 8vh;
+      max-width: 760px;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: .7rem;
+      letter-spacing: .22em;
+      color: var(--orange);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 1.4rem;
+      font-weight: 900;
+    }
+    .hero h1 em {
+      color: var(--orange);
+      font-style: normal;
+    }
+    .hero-sub {
+      font-size: clamp(.88rem, 2vw, 1.05rem);
+      color: rgba(250,248,244,.85);
+      max-width: 480px;
+      margin-bottom: 2.4rem;
+      line-height: 1.8;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      padding: .85rem 2.2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: .88rem;
+      letter-spacing: .1em;
+      font-weight: 500;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: #b0561f; transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-block;
+      color: rgba(250,248,244,.85);
+      padding: .85rem 1.6rem;
+      border: 1px solid rgba(250,248,244,.4);
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: .88rem;
+      letter-spacing: .1em;
+      font-weight: 400;
+      margin-left: 1rem;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-ghost:hover { border-color: #fff; color: #fff; }
+
+    /* ===== MOUNTAIN DIVIDER SVG ===== */
+    .mountain-divider {
+      display: block;
+      width: 100%;
+      margin-bottom: -2px;
+    }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 6rem 7vw; }
+    .section-label {
+      font-size: .68rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 500;
+      margin-bottom: .8rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ===== FEATURE (ITEM PITCH) ===== */
+    #feature {
+      background: var(--forest);
+      color: var(--cream);
+      padding-top: 0;
+    }
+    #feature .section-label { color: #8FC4A8; }
+    #feature .section-title { color: #fff; }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 3.5rem;
+    }
+    .feature-img-wrap {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+    .feature-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s ease;
+    }
+    .feature-img-wrap:hover img { transform: scale(1.03); }
+    .feature-badge {
+      position: absolute;
+      top: 1.2rem; left: 1.2rem;
+      background: var(--orange);
+      color: #fff;
+      font-size: .65rem;
+      letter-spacing: .16em;
+      padding: .35rem .8rem;
+      font-weight: 500;
+    }
+    .feature-text {}
+    .feature-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.18;
+      margin-bottom: 1.2rem;
+    }
+    .feature-text p {
+      color: rgba(250,248,244,.78);
+      margin-bottom: 1.2rem;
+      font-size: .94rem;
+      line-height: 1.9;
+    }
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      border: 1px solid rgba(250,248,244,.3);
+      color: rgba(250,248,244,.7);
+      font-size: .7rem;
+      padding: .3rem .8rem;
+      border-radius: 1px;
+      letter-spacing: .1em;
+    }
+
+    /* ===== STRENGTH ===== */
+    #strength {
+      background: var(--beige);
+    }
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .strength-card {
+      background: var(--cream);
+      padding: 2rem 1.6rem;
+      border-top: 3px solid var(--forest);
+    }
+    .strength-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .strength-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: .6rem;
+      font-weight: 700;
+    }
+    .strength-card p {
+      font-size: .86rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ===== GALLERY ===== */
+    #gallery {
+      background: var(--cream);
+      padding-bottom: 4rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .gallery-grid img {
+      width: 100%; 
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      border-radius: 2px;
+      transition: opacity .25s;
+    }
+    .gallery-grid img:hover { opacity: .88; }
+
+    /* ===== REVIEWS ===== */
+    #reviews {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+    #reviews .section-title { color: #fff; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .review-card {
+      border-left: 3px solid var(--orange);
+      padding: 1.8rem 2rem;
+      background: rgba(255,255,255,.05);
+    }
+    .stars {
+      color: #F5C842;
+      font-size: 1rem;
+      margin-bottom: .8rem;
+      letter-spacing: .1em;
+    }
+    .review-card p {
+      font-size: .9rem;
+      line-height: 1.9;
+      color: rgba(250,248,244,.8);
+    }
+
+    /* ===== ACCESS / CONTACT ===== */
+    #access {
+      background: var(--beige);
+    }
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+    .info-table { width: 100%; border-collapse: collapse; }
+    .info-table tr { border-bottom: 1px solid var(--border); }
+    .info-table td {
+      padding: .9rem 0;
+      font-size: .9rem;
+    }
+    .info-table td:first-child {
+      font-weight: 500;
+      color: var(--forest);
+      min-width: 90px;
+      font-size: .82rem;
+      letter-spacing: .06em;
+    }
+    .info-table a { color: var(--forest); }
+    .contact-area {}
+    .contact-area h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .contact-area p {
+      font-size: .9rem;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+      line-height: 1.8;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      text-decoration: none;
+      color: var(--charcoal);
+      font-size: .9rem;
+      padding: .9rem 1.2rem;
+      background: var(--cream);
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      transition: border-color .2s, background .2s;
+    }
+    .contact-link:hover {
+      border-color: var(--forest);
+      background: #edf2ef;
+    }
+    .contact-link-icon { font-size: 1.1rem; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--forest);
+      color: rgba(250,248,244,.65);
+      text-align: center;
+      padding: 3rem 7vw;
+      font-size: .8rem;
+      line-height: 2;
+    }
+    footer a { color: rgba(250,248,244,.65); }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: .8rem;
+      display: block;
+    }
+    .footer-logo span { color: var(--orange); }
+
+    /* ===== PENDLETON ACCENT (signature element) ===== */
+    .pendleton-stripe {
+      height: 6px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--orange)   0px,
+        var(--orange)   18px,
+        var(--forest)   18px,
+        var(--forest)   26px,
+        #8FC4A8         26px,
+        #8FC4A8         34px,
+        var(--forest)   34px,
+        var(--forest)   42px,
+        var(--orange)   42px,
+        var(--orange)   60px,
+        var(--cream)    60px,
+        var(--cream)    66px
+      );
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      section { padding: 4rem 5vw; }
+      nav { display: none; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .feature-img-wrap { aspect-ratio: 3/2; }
+      .strength-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .access-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .gallery-grid { grid-template-columns: repeat(2,1fr); }
+      .btn-ghost { display: none; }
+      .hero-content { padding-bottom: 10vh; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">Outdoor Shop <span>YAMAGOYA</span></a>
+    <nav>
+      <a href="#feature">イチオシ商品</a>
+      <a href="#strength">特徴</a>
+      <a href="#reviews">クチコミ</a>
+      <a href="#access">アクセス</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <img
+      class="hero-img"
+      src="images/hero.jpg"
+      alt="アウトドアショップ ヤマゴヤ 店舗外観"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Outdoor Shop · Akita</span>
+      <h1>山と暮らしを、<br /><em>もっと深く。</em></h1>
+      <p class="hero-sub">
+        秋田・ヤマキウ南倉庫に佇む小さなセレクトショップ。<br />
+        大手では見つからない、アウトドアフリークのための本物の道具が揃います。
+      </p>
+      <a href="#feature" class="btn-primary">イチオシ商品を見る</a>
+      <a href="#access" class="btn-ghost">アクセス</a>
+    </div>
+  </section>
+
+  <!-- MOUNTAIN DIVIDER -->
+  <svg class="mountain-divider" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <polygon points="0,60 360,8 720,40 1080,4 1440,34 1440,60" fill="#2D4A3E"/>
+  </svg>
+
+  <!-- PENDLETON STRIPE -->
+  <div class="pendleton-stripe"></div>
+
+  <!-- FEATURE - ITEM PITCH -->
+  <section id="feature">
+    <span class="section-label">Outdoor Goods — イチオシ</span>
+    <h2 class="section-title">通販でしか手に入らなかった<br />本物のアウトドア用品が、ここに。</h2>
+    <div class="feature-grid">
+      <div class="feature-img-wrap">
+        <img src="images/goods.jpg" alt="ヤマゴヤのアウトドア用品" loading="lazy" />
+        <span class="feature-badge">PICK UP</span>
+      </div>
+      <div class="feature-text">
+        <h3>アウトドアフリークが<br />唸る品揃え</h3>
+        <p>
+          ヤマゴヤが選ぶのは、大手量販店ではまず目にしない、知る人ぞ知るブランドや道具たち。
+          PENDLETON をはじめとするライフスタイル系から、フィールドで実際に使い込んだ
+          スタッフが選び抜いたギアまで、「痒いところに手が届く」一品が揃います。
+        </p>
+        <p>
+          通販でしか入手できなかったアイテムも、店頭で実際に手に取って確かめられるのが
+          ヤマゴヤならではの醍醐味。気さくなスタッフが、フィールドに合った使い方や
+          コーディネートをアドバイスします。
+        </p>
+        <div class="feature-tags">
+          <span class="tag">ウェア・アパレル</span>
+          <span class="tag">キャンプギア</span>
+          <span class="tag">バックパック</span>
+          <span class="tag">PENDLETON</span>
+          <span class="tag">セレクト雑貨</span>
+        </div>
+        <a href="http://yamagoya.ocnk.net/" target="_blank" rel="noopener" class="btn-primary">
+          オンラインショップへ
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTH -->
+  <section id="strength">
+    <span class="section-label">Why Yamagoya</span>
+    <h2 class="section-title">ヤマゴヤが選ばれる理由</h2>
+    <div class="strength-grid">
+      <div class="strength-card">
+        <div class="strength-icon">🎒</div>
+        <h4>マニアも満足のセレクト</h4>
+        <p>スタッフ自身がアウトドアフリーク。フィールドで実証済みのアイテムだけを厳選してお届けします。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">🤝</div>
+        <h4>気さくな接客・顧客第一主義</h4>
+        <p>創業以来培ってきた顧客第一主義。お客様のニーズを丁寧に聞き取り、最適な一品をご提案します。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">🏔️</div>
+        <h4>倉庫の中の隠れ家空間</h4>
+        <p>ヤマキウ南倉庫の中に佇む、ちょっと特別な場所。訪れるだけで気分が上がるショップです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <span class="section-label">Gallery</span>
+    <h2 class="section-title">店内の雰囲気</h2>
+    <div class="gallery-grid">
+      <img src="images/shop.jpg"  alt="ヤマゴヤ店内" loading="lazy" />
+      <img src="images/goods.jpg" alt="アウトドア用品" loading="lazy" />
+      <img src="images/hero.jpg"  alt="ヤマゴヤ外観" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <span class="section-label">Reviews — クチコミ</span>
+    <h2 class="section-title">お客様の声</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p>小さなお店ではありますが、オシャレな感じがありました。ペンドルトン推しかな？</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>ヤマキウ南倉庫の中にあるアウトドアショップ。品揃えは大手で売られているものはほとんどありませんが、アウトドアフリークが好む痒いところに手が届くようなグッズが手に入る。通販でしか手に入らないものが手に取れます。店員さんは気さくで優しくいろんな情報をくれます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESS & CONTACT -->
+  <section id="access">
+    <span class="section-label">Access &amp; Contact</span>
+    <h2 class="section-title">アクセス・お問い合わせ</h2>
+    <div class="access-grid">
+
+      <div>
+        <table class="info-table">
+          <tr>
+            <td>店名</td>
+            <td>アウトドアショップ ヤマゴヤ</td>
+          </tr>
+          <tr>
+            <td>住所</td>
+            <td>秋田県秋田市南通亀の町４−１５<br />ヤマキウ南倉庫 1階</td>
+          </tr>
+          <tr>
+            <td>電話</td>
+            <td><a href="tel:0188385502">018-838-5502</a></td>
+          </tr>
+          <tr>
+            <td>定休日</td>
+            <td>火曜日</td>
+          </tr>
+          <tr>
+            <td>運営会社</td>
+            <td>株式会社 古休</td>
+          </tr>
+          <tr>
+            <td>代表者</td>
+            <td>髙野 幹子</td>
+          </tr>
+          <tr>
+            <td>Web</td>
+            <td><a href="http://yamagoya.ocnk.net/" target="_blank" rel="noopener">yamagoya.ocnk.net</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="contact-area">
+        <h3>お気軽にご連絡ください</h3>
+        <p>商品のご質問、在庫確認など、何でもお問い合わせください。<br />スタッフが丁寧にご対応します。</p>
+        <div class="contact-links">
+          <a href="https://yamagoya.ocnk.net/contact" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">✉️</span>
+            お問い合わせフォーム
+          </a>
+          <a href="mailto:yamagoya920@outlook.jp" class="contact-link">
+            <span class="contact-link-icon">📧</span>
+            yamagoya920@outlook.jp
+          </a>
+          <a href="tel:0188385502" class="contact-link">
+            <span class="contact-link-icon">📞</span>
+            018-838-5502
+          </a>
+          <a href="https://www.instagram.com/outdoor_shop_yamagoya/?hl=ja" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">📸</span>
+            Instagram @outdoor_shop_yamagoya
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Outdoor Shop <span>YAMAGOYA</span></span>
+    <p>秋田県秋田市南通亀の町４−１５ ヤマキウ南倉庫 1階</p>
+    <p>定休日：火曜日 ／ TEL: <a href="tel:0188385502">018-838-5502</a></p>
+    <p style="margin-top:1rem;">© 株式会社 古休 All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
