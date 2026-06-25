@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アキタアルペンスポーツ | 野球グローブ専門ページ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0d1b2a;
+      --navy2:  #162336;
+      --amber:  #c8860a;
+      --amber-light: #e8a020;
+      --cream:  #f5f0e8;
+      --white:  #ffffff;
+      --gray:   #8a8a8a;
+      --radius: 4px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* ────────────── HEADER ────────────── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13, 27, 42, 0.96);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 60px;
+    }
+
+    .header-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: .12em;
+      color: var(--amber-light);
+      text-decoration: none;
+    }
+    .header-logo span {
+      color: var(--white);
+      font-size: 0.75rem;
+      font-family: 'Noto Sans JP', sans-serif;
+      display: block;
+      letter-spacing: .08em;
+      line-height: 1;
+    }
+
+    .header-cta {
+      background: var(--amber);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 9px 18px;
+      border-radius: var(--radius);
+      letter-spacing: .05em;
+      white-space: nowrap;
+      transition: background .2s;
+    }
+    .header-cta:hover { background: var(--amber-light); }
+
+    /* ────────────── HERO ────────────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/glove1.jpg') center/cover no-repeat;
+      opacity: 0.38;
+    }
+
+    /* 斜めカット帯 – シグネチャ要素 */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: -5%;
+      width: 110%;
+      height: 120px;
+      background: var(--cream);
+      transform: skewY(-3deg);
+      transform-origin: bottom left;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      padding: 120px 6vw 160px;
+      max-width: 780px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      letter-spacing: .25em;
+      color: var(--amber-light);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 8vw, 5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--amber-light);
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+      color: rgba(255,255,255,0.82);
+      line-height: 1.8;
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 34px;
+      border-radius: var(--radius);
+      letter-spacing: .06em;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: var(--amber-light); transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      letter-spacing: .06em;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline:hover { border-color: var(--amber-light); background: rgba(200,134,10,0.15); }
+
+    /* ────────────── FEATURE STRIP ────────────── */
+    .strip {
+      background: var(--amber);
+      color: var(--white);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+    }
+    .strip-item {
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: .04em;
+      border-right: 1px solid rgba(255,255,255,0.3);
+    }
+    .strip-item:last-child { border-right: none; }
+    .strip-icon { font-size: 1.3rem; }
+
+    /* ────────────── SECTION BASE ────────────── */
+    section { padding: 80px 6vw; }
+
+    .sec-eyebrow {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: .2em;
+      color: var(--amber);
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .sec-title {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.25;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .sec-body {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: #333;
+      max-width: 640px;
+    }
+
+    /* ────────────── GLOVE SHOWCASE ────────────── */
+    .showcase {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .showcase .sec-title { color: var(--white); }
+    .showcase .sec-body { color: rgba(255,255,255,0.78); }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 50px;
+      align-items: center;
+    }
+
+    .showcase-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 3px solid var(--amber);
+    }
+
+    .showcase-points {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .point {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .point-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      color: var(--amber);
+      line-height: 1;
+      min-width: 48px;
+    }
+    .point-text h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--white);
+    }
+    .point-text p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.75;
+    }
+
+    /* ────────────── SHOP PHOTO ────────────── */
+    .shop-section {
+      background: var(--cream);
+    }
+
+    .shop-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .shop-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 12px 40px rgba(13,27,42,0.18);
+    }
+
+    .shop-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .info-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(13,27,42,0.1);
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--amber);
+      text-transform: uppercase;
+      min-width: 72px;
+      padding-top: 2px;
+    }
+    .info-val {
+      font-size: 0.95rem;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+    .info-val a {
+      color: var(--amber);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .info-val a:hover { text-decoration: underline; }
+
+    /* ────────────── STRENGTH ────────────── */
+    .strength {
+      background: var(--navy2);
+      color: var(--white);
+    }
+    .strength .sec-title { color: var(--white); }
+
+    .strength-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+
+    .s-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(200,134,10,0.3);
+      border-radius: 6px;
+      padding: 30px 24px;
+    }
+    .s-card-icon { font-size: 2rem; margin-bottom: 14px; }
+    .s-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--amber-light);
+      margin-bottom: 10px;
+    }
+    .s-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+    }
+
+    /* ────────────── CTA BANNER ────────────── */
+    .cta-banner {
+      background: var(--amber);
+      text-align: center;
+      padding: 70px 6vw;
+    }
+    .cta-banner h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,0.88);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      letter-spacing: .05em;
+      transition: transform .15s;
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    .btn-dark {
+      background: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      letter-spacing: .05em;
+      transition: background .2s;
+    }
+    .btn-dark:hover { background: #0d1b2a; }
+
+    /* ────────────── FOOTER ────────────── */
+    footer {
+      background: #07111c;
+      color: rgba(255,255,255,0.5);
+      padding: 40px 6vw;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      color: var(--amber-light);
+      letter-spacing: .12em;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--amber-light); }
+    .footer-copy {
+      font-size: 0.78rem;
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      margin-top: 10px;
+    }
+
+    /* ────────────── RESPONSIVE ────────────── */
+    @media (max-width: 768px) {
+      header { padding: 0 4vw; }
+
+      .strip-item { padding: 14px 18px; font-size: 0.82rem; }
+
+      .showcase-grid,
+      .shop-layout,
+      .strength-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase-grid { gap: 28px; }
+      .shop-layout { gap: 28px; }
+      .strength-cards { gap: 18px; }
+
+      section { padding: 60px 5vw; }
+
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-btns { flex-direction: column; }
+      .cta-btns { flex-direction: column; align-items: center; }
+      .hero::after { height: 70px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════ HEADER ════════ -->
+<header>
+  <a class="header-logo" href="#">
+    AKITA ALPEN SPORTS
+    <span>アキタアルペンスポーツ</span>
+  </a>
+  <a class="header-cta" href="http://alpinesp.s70.xrea.com/shop/form.php" target="_blank" rel="noopener">
+    お問い合わせ
+  </a>
+</header>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">BASEBALL GLOVE SPECIALIST</p>
+    <h1 class="hero-title">
+      あなたの手に<br>
+      <em>最高の一枚</em>を。
+    </h1>
+    <p class="hero-sub">
+      秋田の地で長年スポーツ用品を届けてきたアキタアルペンスポーツ。
+      豊富な品揃えと、スタッフによる丁寧なフィッティングで、
+      あなたのプレースタイルに合ったグローブをご提案します。
+    </p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="http://alpinesp.s70.xrea.com/shop/" target="_blank" rel="noopener">
+        オンラインショップへ
+      </a>
+      <a class="btn-outline" href="http://alpinesp.s70.xrea.com/shop/form.php" target="_blank" rel="noopener">
+        グローブ相談をする
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ STRIP ════════ -->
+<div class="strip">
+  <div class="strip-item"><span class="strip-icon">🏆</span>地元密着40年以上の実績</div>
+  <div class="strip-item"><span class="strip-icon">🧤</span>豊富なグローブラインナップ</div>
+  <div class="strip-item"><span class="strip-icon">✂️</span>型付け・メンテも対応</div>
+  <div class="strip-item"><span class="strip-icon">📍</span>秋田県湯沢市</div>
+</div>
+
+<!-- ════════ GLOVE SHOWCASE ════════ -->
+<section class="showcase">
+  <p class="sec-eyebrow">OUR SPECIALTY</p>
+  <h2 class="sec-title">野球グローブ、<br>どこよりも真剣に選びます。</h2>
+  <p class="sec-body">
+    グローブ選びは、ポジション・手の大きさ・プレースタイルによって大きく異なります。
+    アキタアルペンスポーツでは、スタッフが一人ひとりのニーズをヒアリングし、
+    最適な一品をご提案。少年野球からプロ仕様まで幅広くラインナップしています。
+  </p>
+
+  <div class="showcase-grid">
+    <img class="showcase-img" src="images/glove2.jpg" alt="野球グローブ 各種ラインナップ">
+    <div class="showcase-points">
+      <div class="point">
+        <span class="point-num">01</span>
+        <div class="point-text">
+          <h3>幅広いブランドを在庫</h3>
+          <p>久保田スラッガー、ローリングス、ミズノ、ゼットなど主要ブランドを豊富に取り揃え。展示品を実際に手にはめてお確かめいただけます。</p>
+        </div>
+      </div>
+      <div class="point">
+        <span class="point-num">02</span>
+        <div class="point-text">
+          <h3>型付けサービス</h3>
+          <p>購入後すぐに使えるよう、スタッフによる型付けを承っています。ポジションに合わせた開き具合に仕上げます。</p>
+        </div>
+      </div>
+      <div class="point">
+        <span class="point-num">03</span>
+        <div class="point-text">
+          <h3>リペア・メンテナンス</h3>
+          <p>ヒモ交換・オイルアップ・クリーニングなどのアフターケアも対応。大切なグローブを長く使い続けるサポートをします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SHOP INFO ════════ -->
+<section class="shop-section">
+  <p class="sec-eyebrow">SHOP INFO</p>
+  <h2 class="sec-title">店舗のご案内</h2>
+  <p class="sec-body">お気軽にご来店ください。スタッフ一同、皆様のご来店をお待ちしております。</p>
+
+  <div class="shop-layout">
+    <img class="shop-img" src="images/shop.jpg" alt="アキタアルペンスポーツ 店舗外観">
+    <div class="shop-info-list">
+      <div class="info-row">
+        <span class="info-label">店名</span>
+        <span class="info-val">アキタアルペンスポーツ</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">住所</span>
+        <span class="info-val">秋田県湯沢市杉沢戸石崎37-3</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">電話</span>
+        <span class="info-val"><a href="tel:018-372-0468">018-372-0468</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">定休日</span>
+        <span class="info-val">水曜定休</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Web</span>
+        <span class="info-val">
+          <a href="http://alpinesp.s70.xrea.com/shop/" target="_blank" rel="noopener">公式ウェブサイト</a>
+        </span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">SNS</span>
+        <span class="info-val">
+          <a href="https://www.instagram.com/aaspyuzawadome/" target="_blank" rel="noopener">Instagram @aaspyuzawadome</a>
+        </span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">代表者</span>
+        <span class="info-val">菊地 徹</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ STRENGTH ════════ -->
+<section class="strength">
+  <p class="sec-eyebrow">OUR STRENGTH</p>
+  <h2 class="sec-title">アキタアルペンスポーツが<br>選ばれる理由</h2>
+
+  <div class="strength-cards">
+    <div class="s-card">
+      <div class="s-card-icon">🏪</div>
+      <h3>圧倒的な品揃え</h3>
+      <p>全国約400店舗を展開するグループのスケールを活かし、地方でも都市部に負けない豊富なラインナップを実現しています。</p>
+    </div>
+    <div class="s-card">
+      <div class="s-card-icon">💰</div>
+      <h3>高品質・リーズナブル</h3>
+      <p>プライベートブランド（PB）製品をはじめ、高機能でコストパフォーマンスに優れた商品を多数取り扱い。お財布に優しい提案が可能です。</p>
+    </div>
+    <div class="s-card">
+      <div class="s-card-icon">🤝</div>
+      <p style="margin-top:4px"></p>
+      <h3>地元に根ざした対応力</h3>
+      <p>秋田・湯沢の地域スポーツを長年支えてきた実績。少年野球チームから社会人まで、地元プレーヤーのニーズをよく知っています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CTA BANNER ════════ -->
+<section class="cta-banner">
+  <h2>あなたに合ったグローブを<br>一緒に見つけましょう。</h2>
+  <p>サイズ・ポジション・予算、何でもお気軽にご相談ください。<br>
+  オンラインフォームでも、お電話でも承っております。</p>
+  <div class="cta-btns">
+    <a class="btn-white" href="http://alpinesp.s70.xrea.com/shop/form.php" target="_blank" rel="noopener">
+      📩 問い合わせフォーム
+    </a>
+    <a class="btn-dark" href="tel:018-372-0468">
+      📞 018-372-0468
+    </a>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="footer-brand">AKITA ALPEN SPORTS</div>
+  <nav class="footer-links">
+    <a href="http://alpinesp.s70.xrea.com/shop/" target="_blank" rel="noopener">公式サイト</a>
+    <a href="http://alpinesp.s70.xrea.com/shop/form.php" target="_blank" rel="noopener">お問い合わせ</a>
+    <a href="https://www.instagram.com/aaspyuzawadome/" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+  <p class="footer-copy">© 2024 株式会社アキタアルペンスポーツ. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
