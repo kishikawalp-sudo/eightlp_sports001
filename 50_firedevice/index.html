@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ファイヤーデバイス | 薪ストーブ専門店 秋田</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-deep:    #1A1008;
+      --bg-mid:     #2D1F0E;
+      --bg-light:   #3D2A14;
+      --flame:      #FF6B1A;
+      --amber:      #C8854A;
+      --gold:       #E8A83A;
+      --cream:      #F5ECD7;
+      --cream-dim:  #C9B99A;
+      --white:      #FFFFFF;
+      --font-serif: 'Shippori Mincho', serif;
+      --font-sans:  'Noto Sans JP', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      background: rgba(26, 16, 8, 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200, 133, 74, 0.25);
+    }
+
+    .header-logo {
+      font-family: var(--font-serif);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+
+    .header-logo span {
+      display: block;
+      font-size: 0.65rem;
+      font-family: var(--font-sans);
+      font-weight: 400;
+      color: var(--amber);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .header-cta {
+      display: inline-block;
+      padding: 8px 18px;
+      background: var(--flame);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .header-cta:hover { background: #e05a10; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100svh;
+      padding-top: 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.45;
+    }
+
+    /* 炎のグラデーションオーバーレイ */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 50% 80%, rgba(255,107,26,0.35) 0%, transparent 70%),
+        linear-gradient(to top, rgba(26,16,8,0.95) 0%, rgba(26,16,8,0.4) 50%, rgba(26,16,8,0.7) 100%);
+      z-index: 1;
+    }
+
+    /* 揺らめく炎パーティクル */
+    .flame-wrap {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 280px;
+      height: 200px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .flame {
+      position: absolute;
+      bottom: 0;
+      border-radius: 50% 50% 20% 20%;
+      transform-origin: center bottom;
+      opacity: 0.7;
+      animation: flicker linear infinite;
+    }
+
+    .flame:nth-child(1) {
+      left: 50%; transform: translateX(-50%);
+      width: 80px; height: 140px;
+      background: radial-gradient(ellipse at 50% 100%, #FF6B1A 0%, #FF4500 40%, rgba(255,69,0,0) 100%);
+      animation-duration: 2.2s;
+    }
+    .flame:nth-child(2) {
+      left: 42%; transform: translateX(-50%);
+      width: 55px; height: 100px;
+      background: radial-gradient(ellipse at 50% 100%, #FFB347 0%, #FF6B1A 50%, rgba(255,107,26,0) 100%);
+      animation-duration: 1.8s;
+      animation-delay: -0.4s;
+    }
+    .flame:nth-child(3) {
+      left: 60%; transform: translateX(-50%);
+      width: 50px; height: 90px;
+      background: radial-gradient(ellipse at 50% 100%, #FFD700 0%, #FFA500 50%, rgba(255,165,0,0) 100%);
+      animation-duration: 2.5s;
+      animation-delay: -1s;
+    }
+
+    @keyframes flicker {
+      0%   { transform: translateX(-50%) scaleX(1)   scaleY(1)    rotate(-1deg); opacity: 0.7; }
+      20%  { transform: translateX(-50%) scaleX(0.9) scaleY(1.05) rotate(1deg);  opacity: 0.75; }
+      40%  { transform: translateX(-50%) scaleX(1.05) scaleY(0.95) rotate(-2deg); opacity: 0.65; }
+      60%  { transform: translateX(-50%) scaleX(0.95) scaleY(1.08) rotate(1.5deg); opacity: 0.8; }
+      80%  { transform: translateX(-50%) scaleX(1.02) scaleY(1)   rotate(-1deg); opacity: 0.7; }
+      100% { transform: translateX(-50%) scaleX(1)   scaleY(1)    rotate(-1deg); opacity: 0.7; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 24px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--amber);
+      border: 1px solid rgba(200, 133, 74, 0.5);
+      padding: 5px 14px;
+      margin-bottom: 28px;
+      border-radius: 1px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-weight: 800;
+      font-size: clamp(2.4rem, 9vw, 4rem);
+      line-height: 1.15;
+      color: var(--cream);
+      margin-bottom: 8px;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.8);
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--flame);
+    }
+
+    .hero-sub {
+      font-size: 0.85rem;
+      color: var(--cream-dim);
+      margin-bottom: 36px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--flame);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      border-radius: 2px;
+      box-shadow: 0 4px 32px rgba(255,107,26,0.5);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(255,107,26,0.65);
+    }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 80px 24px; }
+
+    .section-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-weight: 800;
+      font-size: clamp(1.6rem, 6vw, 2.4rem);
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--flame);
+      margin-bottom: 28px;
+    }
+
+    /* ===== PRODUCT (MAIN FOCUS) ===== */
+    .product-section {
+      background: var(--bg-mid);
+    }
+
+    .product-hero-img {
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 32px;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+    }
+
+    .product-tag {
+      display: inline-block;
+      background: var(--flame);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 4px 12px;
+      border-radius: 1px;
+      margin-bottom: 16px;
+    }
+
+    .product-lead {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: clamp(1.3rem, 5vw, 1.9rem);
+      color: var(--cream);
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+
+    .product-body {
+      font-size: 0.9rem;
+      color: var(--cream-dim);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .product-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .product-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(200,133,74,0.15);
+      font-size: 0.88rem;
+      color: var(--cream);
+    }
+
+    .product-features li::before {
+      content: '';
+      flex-shrink: 0;
+      margin-top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--flame);
+      box-shadow: 0 0 8px rgba(255,107,26,0.7);
+    }
+
+    /* ===== SHOP INFO IMAGE ===== */
+    .shop-img-wrap {
+      width: 100%;
+      margin-bottom: 32px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .shop-img-wrap img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .shop-img-wrap:hover img { transform: scale(1.02); }
+
+    /* ===== REVIEWS ===== */
+    .reviews-section {
+      background: var(--bg-deep);
+    }
+
+    .review-card {
+      background: var(--bg-mid);
+      border: 1px solid rgba(200,133,74,0.18);
+      border-radius: 4px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .review-text {
+      font-size: 0.875rem;
+      color: var(--cream-dim);
+      line-height: 1.85;
+    }
+
+    /* ===== SHOP INFO ===== */
+    .info-section {
+      background: var(--bg-mid);
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin-bottom: 32px;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid rgba(200,133,74,0.12);
+    }
+
+    .info-table th {
+      width: 90px;
+      padding: 16px 12px 16px 0;
+      color: var(--amber);
+      font-weight: 500;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    .info-table td {
+      padding: 16px 0;
+      color: var(--cream);
+      vertical-align: top;
+      line-height: 1.7;
+    }
+
+    .info-table a {
+      color: var(--amber);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .info-table a:hover { color: var(--flame); }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--bg-mid) 0%, #1e0d04 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 300px;
+      background: radial-gradient(ellipse at center, rgba(255,107,26,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-section .section-inner { position: relative; z-index: 1; }
+
+    .cta-title {
+      font-family: var(--font-serif);
+      font-weight: 800;
+      font-size: clamp(1.5rem, 6vw, 2.2rem);
+      color: var(--cream);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    .cta-sub {
+      font-size: 0.88rem;
+      color: var(--cream-dim);
+      margin-bottom: 36px;
+    }
+
+    .cta-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 16px 40px;
+      background: var(--flame);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      border-radius: 2px;
+      box-shadow: 0 4px 32px rgba(255,107,26,0.45);
+      transition: transform 0.15s, box-shadow 0.15s;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(255,107,26,0.6);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 14px 40px;
+      background: transparent;
+      color: var(--amber);
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      border: 1px solid var(--amber);
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+
+    .btn-secondary:hover {
+      background: var(--amber);
+      color: var(--bg-deep);
+    }
+
+    .cta-tel {
+      margin-top: 28px;
+      font-size: 0.8rem;
+      color: var(--cream-dim);
+    }
+
+    .cta-tel a {
+      display: inline-block;
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--cream);
+      text-decoration: none;
+      margin-top: 4px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--bg-deep);
+      border-top: 1px solid rgba(200,133,74,0.15);
+      text-align: center;
+      padding: 32px 24px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+
+    .footer-sub {
+      font-size: 0.7rem;
+      color: var(--cream-dim);
+      letter-spacing: 0.12em;
+      margin-bottom: 20px;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .footer-nav a {
+      color: var(--cream-dim);
+      text-decoration: none;
+      font-size: 0.75rem;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: var(--amber); }
+
+    .footer-copy {
+      font-size: 0.68rem;
+      color: rgba(200,185,154,0.5);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 600px) {
+      .cta-btn-group {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .btn-primary, .btn-secondary {
+        width: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flame { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-logo">
+      ファイヤーデバイス
+      <span>Fire Device — Akita</span>
+    </div>
+    <a class="header-cta" href="https://fire-device.jp/inquiry/" target="_blank" rel="noopener">お問い合わせ</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="images/hero_stove.jpg" alt="薪ストーブと炎">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="flame-wrap" aria-hidden="true">
+      <div class="flame"></div>
+      <div class="flame"></div>
+      <div class="flame"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">秋田のアウトドア専門店</p>
+      <h1 class="hero-title">
+        炎のある暮らしを、<br><em>あなたの手に。</em>
+      </h1>
+      <p class="hero-sub">薪ストーブ・アウトドアグッズ専門店 ／ 秋田市</p>
+      <a class="hero-btn" href="#product">イチオシ商品を見る</a>
+    </div>
+  </section>
+
+  <!-- PRODUCT SECTION (薪ストーブ) -->
+  <section class="product-section" id="product">
+    <div class="section-inner">
+      <p class="section-label">Featured Product</p>
+      <h2 class="section-title">イチオシ商品</h2>
+      <div class="divider"></div>
+
+      <img
+        class="product-hero-img"
+        src="images/wood_stove.jpg"
+        alt="薪ストーブ"
+      >
+
+      <span class="product-tag">No.1 おすすめ</span>
+      <p class="product-lead">
+        薪ストーブ——<br>
+        本物の炎が、空間を変える。
+      </p>
+      <p class="product-body">
+        ファイヤーデバイスが最も情熱を注ぐのが、薪ストーブです。
+        電気やガスでは決して出せない、薪が燃える本物の炎と遠赤外線の温もり。
+        単なる暖房器具を超え、家族が自然と集まる「場」をつくります。
+        初めての方でも安心して選べるよう、オーナーが一台一台、
+        生活スタイルやお部屋の条件に合わせて丁寧にご提案します。
+      </p>
+
+      <ul class="product-features">
+        <li>電気・ガスにない「遠赤外線」の芯から温まる暖かさ</li>
+        <li>炎の揺らぎがつくる、唯一無二のインテリア空間</li>
+        <li>停電時も使える、防災面での高い信頼性</li>
+        <li>薪の調達・設置・メンテナンスまで一括サポート</li>
+        <li>初めての方向けの丁寧なヒアリング・選定</li>
+      </ul>
+
+      <a class="btn-primary" href="https://fire-device.jp/" target="_blank" rel="noopener">
+        公式サイトで詳しく見る
+      </a>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews-section">
+    <div class="section-inner">
+      <p class="section-label">Customer Reviews</p>
+      <h2 class="section-title">お客様の声</h2>
+      <div class="divider"></div>
+
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p class="review-text">
+          店舗の入口はいつも通り過ぎてしまっていました。通りからの入口の間口は狭いので注意が必要です。小さな店舗内は、アウトドアグッズで溢れています。「え！こんなもの！」「コレコレ！」といった掘り出し物も見つかります。オーナーの方も優しさが溢れる方でした。秋田を去る記念にオピネル♯8 コロマラを買って、パラコードに変更しました。カーボンとステンレス両方の取り扱いあり！
+        </p>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          最近キャンプを始めた弟にプレゼントを買いにお邪魔しました。プレゼント好適品がたくさんあります。お店の方のおすすめでオピネルにしました。とても喜ばれました！
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP IMAGE + INFO -->
+  <section class="info-section">
+    <div class="section-inner">
+      <p class="section-label">Shop Information</p>
+      <h2 class="section-title">店舗情報</h2>
+      <div class="divider"></div>
+
+      <div class="shop-img-wrap">
+        <img src="images/shop_exterior.jpg" alt="ファイヤーデバイス 外観">
+      </div>
+
+      <table class="info-table">
+        <tr>
+          <th>店名</th>
+          <td>ファイヤーデバイス（Fire Device）</td>
+        </tr>
+        <tr>
+          <th>会社名</th>
+          <td>合同会社薪林舎</td>
+        </tr>
+        <tr>
+          <th>代表者</th>
+          <td>麻木 聡</td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>〒010-0000<br>秋田県秋田市飯島堀川39−1</td>
+        </tr>
+        <tr>
+          <th>電話</th>
+          <td><a href="tel:018-847-3773">018-847-3773</a></td>
+        </tr>
+        <tr>
+          <th>公式HP</th>
+          <td><a href="https://fire-device.jp/" target="_blank" rel="noopener">https://fire-device.jp/</a></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <p class="section-label">Contact</p>
+      <h2 class="cta-title">薪ストーブのこと、<br>まずはご相談ください。</h2>
+      <p class="cta-sub">選び方・設置・メンテナンス、どんな疑問もお気軽にどうぞ。</p>
+      <div class="cta-btn-group">
+        <a class="btn-primary" href="https://fire-device.jp/inquiry/" target="_blank" rel="noopener">
+          お問い合わせフォーム
+        </a>
+        <a class="btn-secondary" href="https://fire-device.jp/" target="_blank" rel="noopener">
+          公式サイトへ
+        </a>
+      </div>
+      <div class="cta-tel">
+        お電話でのご相談
+        <a href="tel:018-847-3773">018-847-3773</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">ファイヤーデバイス</div>
+    <p class="footer-sub">Fire Device — 秋田県秋田市飯島堀川39−1</p>
+    <nav class="footer-nav">
+      <a href="https://fire-device.jp/" target="_blank" rel="noopener">公式サイト</a>
+      <a href="https://fire-device.jp/inquiry/" target="_blank" rel="noopener">お問い合わせ</a>
+      <a href="tel:018-847-3773">電話: 018-847-3773</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 合同会社薪林舎 / Fire Device. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
