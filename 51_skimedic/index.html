@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKI MEDIC SUGAWARA | スキーメディックスガワラ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --snow: #F0F4F8;
+      --deep-navy: #1A2B4A;
+      --sky-blue: #2E6DB4;
+      --ice-blue: #7AAFD4;
+      --white: #FFFFFF;
+      --text-muted: #5a6a80;
+      --border: #d0dce8;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: var(--white);
+      color: var(--deep-navy);
+      overflow-x: hidden;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(26, 43, 74, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+
+    .header-logo span {
+      display: block;
+      font-size: 0.65rem;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      color: var(--ice-blue);
+      letter-spacing: 0.12em;
+    }
+
+    .header-cta {
+      background: var(--sky-blue);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .header-cta:hover {
+      background: #1f5494;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      background: var(--deep-navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      padding-top: 64px;
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(26,43,74,0.3) 0%,
+        rgba(26,43,74,0.85) 70%,
+        rgba(26,43,74,0.98) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 24px 0 24px;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      color: var(--ice-blue);
+      text-transform: uppercase;
+      border-left: 2px solid var(--sky-blue);
+      padding-left: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 8vw, 3.2rem);
+      color: var(--white);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--ice-blue);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 3vw, 1rem);
+      color: rgba(255,255,255,0.75);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .hero-review {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(122,175,212,0.25);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 28px;
+    }
+
+    .review-stars {
+      font-size: 1rem;
+      color: #F0C040;
+      flex-shrink: 0;
+      letter-spacing: 1px;
+    }
+
+    .review-text {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .hero-btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-bottom: 40px;
+    }
+
+    .btn-primary {
+      background: var(--sky-blue);
+      color: var(--white);
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.15s;
+      flex: 1;
+      text-align: center;
+      min-width: 140px;
+    }
+
+    .btn-primary:hover {
+      background: #1f5494;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(255,255,255,0.35);
+      transition: border-color 0.2s, background 0.2s;
+      flex: 1;
+      text-align: center;
+      min-width: 140px;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--ice-blue);
+      background: rgba(122,175,212,0.1);
+    }
+
+    /* Slope divider — signature element */
+    .slope-divider {
+      position: relative;
+      height: 60px;
+      background: var(--deep-navy);
+      overflow: hidden;
+    }
+
+    .slope-divider::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -5%;
+      width: 110%;
+      height: 100%;
+      background: var(--snow);
+      clip-path: polygon(0 60%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    /* ========== PRODUCT SECTION ========== */
+    .section-products {
+      background: var(--snow);
+      padding: 60px 24px 72px;
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sky-blue);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 900;
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      color: var(--deep-navy);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 40px;
+      max-width: 560px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(26,43,74,0.08);
+      margin-bottom: 24px;
+    }
+
+    .product-card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-card-body {
+      padding: 20px;
+    }
+
+    .product-tag {
+      display: inline-block;
+      background: rgba(46,109,180,0.1);
+      color: var(--sky-blue);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .product-card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--deep-navy);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .product-card-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    /* Feature list */
+    .feature-list {
+      list-style: none;
+      margin: 20px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.83rem;
+      color: var(--deep-navy);
+      line-height: 1.6;
+    }
+
+    .feature-list li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sky-blue);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    /* ========== CTA BAND ========== */
+    .cta-band {
+      background: var(--deep-navy);
+      padding: 52px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: -5%;
+      width: 110%;
+      height: 80px;
+      background: var(--snow);
+      clip-path: polygon(0 0, 100% 60%, 100% 0);
+    }
+
+    .cta-band-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      color: var(--ice-blue);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .cta-band-title {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 900;
+      font-size: clamp(1.4rem, 5vw, 2rem);
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .cta-band-sub {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .cta-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .cta-btn-group a {
+      width: 100%;
+      max-width: 320px;
+      padding: 15px 24px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: transform 0.15s, opacity 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .cta-btn-group a:hover {
+      transform: translateY(-1px);
+      opacity: 0.9;
+    }
+
+    .cta-form {
+      background: var(--sky-blue);
+      color: var(--white);
+    }
+
+    .cta-phone {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
+    .cta-ig {
+      background: transparent;
+      color: var(--ice-blue);
+      border: 1px solid rgba(122,175,212,0.4);
+      font-size: 0.8rem;
+    }
+
+    /* ========== SHOP INFO ========== */
+    .section-info {
+      background: var(--snow);
+      padding: 60px 24px;
+    }
+
+    .info-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 28px 22px;
+      box-shadow: 0 2px 12px rgba(26,43,74,0.07);
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .info-table th {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--sky-blue);
+      letter-spacing: 0.08em;
+      text-align: left;
+      padding: 14px 12px 14px 0;
+      width: 80px;
+      vertical-align: top;
+    }
+
+    .info-table td {
+      font-size: 0.83rem;
+      color: var(--deep-navy);
+      padding: 14px 0;
+      line-height: 1.7;
+      vertical-align: top;
+    }
+
+    .info-table td a {
+      color: var(--sky-blue);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .info-table td a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--deep-navy);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .footer-sub {
+      font-size: 0.7rem;
+      color: var(--ice-blue);
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--ice-blue);
+    }
+
+    .footer-copy {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.06em;
+    }
+
+    /* ========== UTILS ========== */
+    .divider-snow {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--ice-blue), transparent);
+      margin: 0 auto 36px;
+      width: 60px;
+    }
+
+    @media (min-width: 640px) {
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .product-card {
+        margin-bottom: 0;
+      }
+
+      .cta-btn-group {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .cta-btn-group a {
+        width: auto;
+        max-width: none;
+        flex: 1;
+        min-width: 180px;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .hero-content {
+        max-width: 680px;
+        margin: 0 auto;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      .section-products,
+      .section-info,
+      .cta-band {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      .inner {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-logo">
+      SKI MEDIC SUGAWARA
+      <span>スキーメディックスガワラ</span>
+    </div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdINEdjQChlB6t01GAC009hsjF2P88AFpYu9VzABPBkiAqbtA/viewform" class="header-cta" target="_blank" rel="noopener">お問い合わせ</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img
+      src="images/hero.jpg"
+      alt="スキーメディックスガワラ 店内・スキー用品"
+      class="hero-img"
+    >
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Ski Specialist — Akita</p>
+      <h1 class="hero-title">
+        スキーのことなら<br><em>信頼できる専門店</em>へ。
+      </h1>
+      <p class="hero-subtitle">
+        用具選びからチューンナップまで、<br>
+        あなたの雪上パフォーマンスを、プロが丁寧にサポートします。
+      </p>
+      <div class="hero-review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">「以前務めていらっしゃった所から引き続きお世話になっています。<br>スキーに関して信頼できるお店です。」</p>
+      </div>
+      <div class="hero-btn-group">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdINEdjQChlB6t01GAC009hsjF2P88AFpYu9VzABPBkiAqbtA/viewform" class="btn-primary" target="_blank" rel="noopener">📋 お問い合わせ</a>
+        <a href="https://sm-sugawara.com/" class="btn-secondary" target="_blank" rel="noopener">公式サイトを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLOPE DIVIDER -->
+  <div class="slope-divider"></div>
+
+  <!-- PRODUCTS -->
+  <section class="section-products">
+    <div class="inner">
+      <p class="section-label">Featured Products &amp; Services</p>
+      <h2 class="section-title">スキー用品、<br>すべて揃います。</h2>
+      <p class="section-desc">
+        板・ブーツ・ビンディング・ウェアなど、スキーに必要なすべてのアイテムを取り揃え。
+        ご予算やレベルに合わせた丁寧なフィッティング・ご提案が、私たちの強みです。
+      </p>
+      <div class="product-grid">
+        <!-- カード1 -->
+        <div class="product-card">
+          <img
+            src="images/skis.jpg"
+            alt="スキー板・ビンディング"
+            class="product-card-img"
+          >
+          <div class="product-card-body">
+            <span class="product-tag">SKI GEAR</span>
+            <h3 class="product-card-title">板・ビンディング選びから<br>フィッティングまで</h3>
+            <p class="product-card-text">
+              初心者からレーシング志向の方まで、目的に合った板・ビンディングをご提案。試着・調整も丁寧に対応します。
+            </p>
+            <ul class="feature-list">
+              <li>各メーカーの最新モデルを取り扱い</li>
+              <li>レベル・スタイルに合わせた提案</li>
+              <li>ビンディングセッティング・調整</li>
+            </ul>
+          </div>
+        </div>
+        <!-- カード2 -->
+        <div class="product-card">
+          <img
+            src="images/boots.jpg"
+            alt="スキーブーツ・ウェア"
+            class="product-card-img"
+          >
+          <div class="product-card-body">
+            <span class="product-tag">BOOTS &amp; WEAR</span>
+            <h3 class="product-card-title">ブーツ・ウェア・<br>小物もお任せを</h3>
+            <p class="product-card-text">
+              足のフィット感が滑りの全てを決めるブーツ選びを、専門家が丁寧にサポート。機能性ウェアや小物も充実。
+            </p>
+            <ul class="feature-list">
+              <li>足型に合ったブーツフィッティング</li>
+              <li>機能性ウェア・グローブ・ゴーグル</li>
+              <li>チューンナップ・メンテナンス相談</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="inner">
+      <p class="cta-band-label">Contact &amp; SNS</p>
+      <h2 class="cta-band-title">まずはお気軽に<br>ご相談ください。</h2>
+      <p class="cta-band-sub">
+        用具選び・メンテナンス・シーズン準備など、<br>
+        どんな小さなご質問でもお待ちしています。
+      </p>
+      <div class="cta-btn-group">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdINEdjQChlB6t01GAC009hsjF2P88AFpYu9VzABPBkiAqbtA/viewform" class="cta-form" target="_blank" rel="noopener">
+          📋 問い合わせフォーム
+        </a>
+        <a href="tel:018-853-9928" class="cta-phone">
+          📞 018-853-9928
+        </a>
+        <a href="https://www.instagram.com/skimedicsugawara/" class="cta-ig" target="_blank" rel="noopener">
+          📸 Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOP INFO -->
+  <section class="section-info">
+    <div class="inner">
+      <p class="section-label">Shop Information</p>
+      <h2 class="section-title">店舗情報</h2>
+      <div class="divider-snow"></div>
+      <div class="info-card">
+        <table class="info-table">
+          <tr>
+            <th>店名</th>
+            <td>SKI MEDIC SUGAWARA<br>（スキーメディックスガワラ）</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>秋田県秋田市泉中央２丁目１４−６<br>ノーベル 泉 102</td>
+          </tr>
+          <tr>
+            <th>電話</th>
+            <td><a href="tel:018-853-9928">018-853-9928</a></td>
+          </tr>
+          <tr>
+            <th>定休日</th>
+            <td>不定休</td>
+          </tr>
+          <tr>
+            <th>運営</th>
+            <td>合同会社Sugawara</td>
+          </tr>
+          <tr>
+            <th>公式HP</th>
+            <td><a href="https://sm-sugawara.com/" target="_blank" rel="noopener">https://sm-sugawara.com/</a></td>
+          </tr>
+          <tr>
+            <th>Instagram</th>
+            <td><a href="https://www.instagram.com/skimedicsugawara/" target="_blank" rel="noopener">@skimedicsugawara</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-logo">SKI MEDIC SUGAWARA</p>
+    <p class="footer-sub">スキーメディックスガワラ</p>
+    <div class="footer-links">
+      <a href="https://sm-sugawara.com/" target="_blank" rel="noopener">公式サイト</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdINEdjQChlB6t01GAC009hsjF2P88AFpYu9VzABPBkiAqbtA/viewform" target="_blank" rel="noopener">お問い合わせ</a>
+      <a href="https://www.instagram.com/skimedicsugawara/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <p class="footer-copy">© 合同会社Sugawara. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
