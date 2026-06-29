@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climb（クライム）｜アウトドア・キャンプのセレクトショップ｜秋田県大仙市</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --forest:    #1E3A2F;
+      --forest-mid:#2C5240;
+      --fire:      #D4622A;
+      --fire-light:#E8835A;
+      --cream:     #F5F0E8;
+      --beige:     #C8B89A;
+      --charcoal:  #2A2A2A;
+      --white:     #FFFFFF;
+      --font-min:  'Shippori Mincho', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    /* ===================== HEADER ===================== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(30, 58, 47, 0.96);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 60px;
+    }
+
+    .header-logo {
+      font-family: var(--font-min);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--cream);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    .header-logo span {
+      font-size: 0.75rem;
+      font-weight: 400;
+      font-family: var(--font-sans);
+      color: var(--beige);
+      display: block;
+      letter-spacing: 0.04em;
+      margin-top: -2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.6rem;
+    }
+
+    nav a {
+      color: var(--beige);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--fire-light); }
+
+    .header-cta {
+      background: var(--fire);
+      color: var(--white) !important;
+      padding: 6px 14px;
+      border-radius: 3px;
+      font-weight: 500;
+      transition: background 0.2s !important;
+    }
+
+    .header-cta:hover { background: var(--fire-light) !important; }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      margin-top: 60px;
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image-col {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.82);
+    }
+
+    .hero-text-col {
+      background: var(--forest);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6% 8%;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--fire-light);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-tagline-jp {
+      font-family: var(--font-min);
+      font-size: clamp(1rem, 2.4vw, 1.25rem);
+      font-weight: 400;
+      color: var(--beige);
+      line-height: 2;
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-min);
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--fire-light);
+    }
+
+    .hero-desc {
+      font-size: 0.9rem;
+      color: var(--beige);
+      line-height: 1.9;
+      margin-bottom: 2.4rem;
+      max-width: 360px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--fire);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      border-radius: 3px;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--fire-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--beige);
+      color: var(--beige);
+      text-decoration: none;
+      padding: 13px 24px;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      border-radius: 3px;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      color: var(--white);
+    }
+
+    /* ===================== DIVIDER ===================== */
+    .campfire-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      padding: 2.5rem 0;
+    }
+
+    .campfire-divider::before,
+    .campfire-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--beige);
+      opacity: 0.4;
+    }
+
+    .campfire-icon {
+      font-size: 1.5rem;
+    }
+
+    /* ===================== SECTION BASE ===================== */
+    section { padding: 72px 5%; }
+
+    .section-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      color: var(--fire);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: var(--font-min);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: var(--forest);
+      line-height: 1.3;
+      margin-bottom: 1.6rem;
+    }
+
+    /* ===================== FEATURE PRODUCT ===================== */
+    .feature {
+      background: var(--white);
+    }
+
+    .feature-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .feature-img-wrap {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .feature-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .feature-img-wrap:hover img { transform: scale(1.03); }
+
+    .feature-badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: var(--fire);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+
+    .feature-text { }
+
+    .product-name {
+      font-family: var(--font-min);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--forest);
+      margin-bottom: 0.4rem;
+    }
+
+    .product-sub {
+      font-size: 0.8rem;
+      color: var(--beige);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    .product-desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.95;
+      margin-bottom: 2rem;
+    }
+
+    .product-points {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .product-points li {
+      font-size: 0.88rem;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #444;
+    }
+
+    .product-points li::before {
+      content: '▸';
+      color: var(--fire);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ===================== PHILOSOPHY ===================== */
+    .philosophy {
+      background: var(--forest);
+      color: var(--cream);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philosophy::before {
+      content: '野遊び';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-min);
+      font-size: clamp(8rem, 20vw, 16rem);
+      font-weight: 800;
+      color: rgba(255,255,255,0.04);
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .philosophy-inner {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .philosophy .section-eyebrow { color: var(--fire-light); }
+
+    .philosophy .section-title { color: var(--white); }
+
+    .philosophy-quote {
+      font-family: var(--font-min);
+      font-size: clamp(1rem, 2.6vw, 1.4rem);
+      font-weight: 600;
+      color: var(--fire-light);
+      line-height: 2;
+      margin-bottom: 1.8rem;
+      padding: 1.4rem;
+      border-left: 3px solid var(--fire);
+      text-align: left;
+    }
+
+    .philosophy-body {
+      font-size: 0.93rem;
+      color: var(--beige);
+      line-height: 2;
+    }
+
+    /* ===================== REVIEWS ===================== */
+    .reviews {
+      background: var(--cream);
+    }
+
+    .reviews-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 2.4rem;
+    }
+
+    .review-card {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 28px;
+      border-top: 3px solid var(--fire);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .stars {
+      color: var(--fire);
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 2px;
+    }
+
+    .review-text {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.9;
+    }
+
+    /* ===================== GALLERY ===================== */
+    .gallery {
+      background: var(--forest-mid);
+      padding: 60px 5%;
+    }
+
+    .gallery-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .gallery .section-eyebrow { color: var(--fire-light); }
+    .gallery .section-title { color: var(--white); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: 3px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .gallery-item:hover img { transform: scale(1.06); }
+
+    /* ===================== SHOP INFO ===================== */
+    .shopinfo {
+      background: var(--white);
+    }
+
+    .shopinfo-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid #eee;
+    }
+
+    .info-table th {
+      font-weight: 500;
+      color: var(--forest);
+      padding: 12px 0;
+      width: 88px;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    .info-table td {
+      padding: 12px 0 12px 12px;
+      color: #555;
+      vertical-align: top;
+    }
+
+    .info-table td a {
+      color: var(--fire);
+      text-decoration: none;
+    }
+
+    .info-table td a:hover { text-decoration: underline; }
+
+    .map-placeholder {
+      background: #e8e4db;
+      border-radius: 4px;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 0.85rem;
+      margin-top: 1.6rem;
+      overflow: hidden;
+    }
+
+    .map-placeholder iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .sns-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .sns-badge {
+      background: var(--forest);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.75rem;
+      padding: 5px 14px;
+      border-radius: 30px;
+      letter-spacing: 0.06em;
+      transition: background 0.2s;
+    }
+
+    .sns-badge:hover { background: var(--fire); }
+
+    /* ===================== CTA ===================== */
+    .cta-section {
+      background: var(--fire);
+      text-align: center;
+      padding: 80px 5%;
+    }
+
+    .cta-section .section-title {
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.93rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--fire);
+      text-decoration: none;
+      padding: 14px 32px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      border-radius: 3px;
+      transition: transform 0.15s, box-shadow 0.15s;
+      display: inline-block;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .btn-ghost {
+      border: 2px solid rgba(255,255,255,0.6);
+      color: var(--white);
+      text-decoration: none;
+      padding: 13px 28px;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      border-radius: 3px;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--charcoal);
+      color: #888;
+      padding: 40px 5% 28px;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-min);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--cream);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-tagline {
+      font-size: 0.72rem;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: #555;
+      text-align: right;
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 768px) {
+      header { padding: 0 4%; }
+      nav { display: none; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-image-col {
+        height: 52vw;
+        min-height: 200px;
+      }
+
+      .hero-text-col {
+        padding: 8% 6%;
+      }
+
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-outline { text-align: center; }
+
+      .feature-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .feature-img-wrap { aspect-ratio: 3/2; }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .shopinfo-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-copy { text-align: left; }
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 52px 4%; }
+
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .cta-btns { flex-direction: column; align-items: center; }
+
+      .btn-white, .btn-ghost { width: 100%; max-width: 320px; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <a class="header-logo" href="#">
+      Climb（クライム）
+      <span>秋田県大仙市 ／ アウトドア・キャンプのセレクトショップ</span>
+    </a>
+    <nav>
+      <a href="#feature">商品</a>
+      <a href="#philosophy">想い</a>
+      <a href="#reviews">口コミ</a>
+      <a href="#shopinfo">店舗情報</a>
+      <a href="https://climb-akita.stores.jp/inquiry/" target="_blank" class="header-cta">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-image-col">
+      <img src="images/hero.jpg" alt="Climbの店内・アウトドア用品">
+    </div>
+    <div class="hero-text-col">
+      <p class="hero-eyebrow">Outdoor &amp; Camp Select Shop / Daisen, Akita</p>
+      <p class="hero-tagline-jp">野遊びは想像力。<br>想像力それは人生を創造する力。</p>
+      <h1 class="hero-title">自然と暮らす、<br><em>道具</em>を選ぶ。</h1>
+      <p class="hero-desc">
+        スノーピークをはじめとした一流ブランドのアウトドア用品を
+        丁寧にセレクト。大人も子どもも楽しめる「野遊び」のある暮らしを
+        秋田・大仙市からご提案します。
+      </p>
+      <div class="hero-btns">
+        <a href="#feature" class="btn-primary">イチオシ商品を見る</a>
+        <a href="https://climb-akita.com/" target="_blank" class="btn-outline">公式サイト</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURE PRODUCT ========== -->
+  <section class="feature" id="feature">
+    <div class="feature-inner">
+      <div class="feature-img-wrap">
+        <img src="images/product.jpg" alt="スノーピーク 焚き火台 アウトドア用品">
+        <span class="feature-badge">STAFF PICK</span>
+      </div>
+      <div class="feature-text">
+        <p class="section-eyebrow">Outdoor Goods</p>
+        <h2 class="section-title" style="color:var(--forest);">本物のアウトドア用品を<br>あなたの手に。</h2>
+        <p class="product-sub">Snow Peak &amp; Select Brands</p>
+        <p class="product-desc">
+          スノーピークを中心に、品質・デザイン・機能性にこだわった
+          アウトドア用品を厳選。テント、タープ、クッカー、ランタン、
+          そして焚き火まわりのギアまで、フィールドで活躍する道具が揃っています。
+        </p>
+        <ul class="product-points">
+          <li>スノーピーク正規取扱店</li>
+          <li>焚き火台・BBQグリル・テント・寝袋など豊富なラインアップ</li>
+          <li>ギフトにも対応。セレクトショップならではの品揃え</li>
+          <li>店長が親身にアドバイス。初心者から上級者まで安心</li>
+          <li>オンラインストアでも購入可能</li>
+        </ul>
+        <a href="https://climb-akita.com/" target="_blank" class="btn-primary">商品をチェックする</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PHILOSOPHY ========== -->
+  <section class="philosophy" id="philosophy">
+    <div class="philosophy-inner">
+      <p class="section-eyebrow">Our Philosophy</p>
+      <h2 class="section-title">Climb がめざすもの</h2>
+      <blockquote class="philosophy-quote">
+        「野遊びは想像力。想像力それは人生を創造する力」
+      </blockquote>
+      <p class="philosophy-body">
+        Climb（クライム）は秋田県大仙市にあるキャンプとギフトのセレクトショップです。<br>
+        大人も子どもも楽しめる自然・デザイン・遊び心のある商品をセレクトし、
+        お客様と一緒に楽しい人生を創造していきたいと考えています。<br><br>
+        様々な「野遊び」の提案も行っています。
+        秋田にお越しの際は、ぜひ店舗にもお立ち寄りください。
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery">
+    <div class="gallery-inner">
+      <p class="section-eyebrow">Gallery</p>
+      <h2 class="section-title">店舗・商品ギャラリー</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/gallery1.jpg" alt="店舗外観"></div>
+        <div class="gallery-item"><img src="images/product.jpg" alt="アウトドア用品"></div>
+        <div class="gallery-item"><img src="images/hero.jpg" alt="キャンプギア"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEWS ========== -->
+  <section class="reviews" id="reviews">
+    <div class="reviews-inner">
+      <p class="section-eyebrow">Customer Reviews</p>
+      <h2 class="section-title">お客様の声</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★☆</div>
+          <p class="review-text">好きな人にはトコトンおすすめ！アウトドア好きなら一度は訪れてほしいお店です。</p>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">スノーピークを中心としたアウトドアショップで、先日「焚き火台Ｍ」だけ欲しくて伺ったところ、まさにビンゴな品揃えでありがたかったです。店長さんがフレンドリーで、またおじゃましたいと思います。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SHOP INFO ========== -->
+  <section class="shopinfo" id="shopinfo">
+    <div class="shopinfo-inner">
+      <div>
+        <p class="section-eyebrow">Shop Information</p>
+        <h2 class="section-title">店舗情報</h2>
+        <table class="info-table">
+          <tr>
+            <th>店舗名</th>
+            <td>Climb（クライム）</td>
+          </tr>
+          <tr>
+            <th>運営会社</th>
+            <td>株式会社トータルジムキ</td>
+          </tr>
+          <tr>
+            <th>代表者</th>
+            <td>伊藤 淳</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>〒014-0065<br>秋田県大仙市福田町７−２５</td>
+          </tr>
+          <tr>
+            <th>電話</th>
+            <td><a href="tel:018-766-2161">018-766-2161</a></td>
+          </tr>
+          <tr>
+            <th>定休日</th>
+            <td>木曜日・祝日</td>
+          </tr>
+          <tr>
+            <th>メール</th>
+            <td><a href="mailto:info@climb-akita.com">info@climb-akita.com</a></td>
+          </tr>
+          <tr>
+            <th>ウェブ</th>
+            <td><a href="https://climb-akita.com/" target="_blank">climb-akita.com</a></td>
+          </tr>
+          <tr>
+            <th>SNS</th>
+            <td>
+              <div class="sns-row">
+                <a href="https://www.facebook.com/Climbakita/" target="_blank" class="sns-badge">Facebook</a>
+                <a href="https://climb-akita.stores.jp/inquiry/" target="_blank" class="sns-badge">お問い合わせ</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <div class="map-placeholder">
+          <iframe
+            src="https://www.google.com/maps?q=秋田県大仙市福田町7-25&output=embed"
+            title="Climb 地図"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <h2 class="section-title">お気軽にご相談ください</h2>
+    <p>商品のこと、アウトドアの始め方、ギフト選びまで。<br>フレンドリーな店長が丁寧にご案内します。</p>
+    <div class="cta-btns">
+      <a href="https://climb-akita.stores.jp/inquiry/" target="_blank" class="btn-white">お問い合わせフォーム</a>
+      <a href="tel:018-766-2161" class="btn-ghost">☎ 018-766-2161</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Climb（クライム）</div>
+        <div class="footer-tagline">秋田県大仙市福田町７−２５　／　定休日：木曜日・祝日</div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2024 株式会社トータルジムキ<br>All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
