@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHOWA（ショウワ）｜秋田市の自転車専門店 ロードバイク取扱店</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0e2238;
+    --navy-deep: #081320;
+    --orange: #ff6a1a;
+    --orange-soft: #ffb088;
+    --cream: #f5f1e8;
+    --steel: #8a97a6;
+    --line: rgba(255,255,255,0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Noto Sans JP", sans-serif;
+    background: var(--cream);
+    color: var(--navy-deep);
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: "Noto Serif JP", serif;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ===== ヘッダー ===== */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(8, 19, 32, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .logo span {
+    font-size: 0.62rem;
+    color: var(--orange-soft);
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .header-cta {
+    background: var(--orange);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 9px 16px;
+    border-radius: 4px;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+  }
+
+  /* ===== ヒーロー ===== */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 70%, #14304d 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 0 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(115deg, transparent 0 64px, var(--line) 64px 65px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    color: var(--orange-soft);
+    margin-bottom: 22px;
+    font-weight: 700;
+  }
+
+  .hero-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--orange);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 7vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--orange);
+    display: block;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-top: 8px;
+  }
+
+  .hero-lead {
+    color: #cdd6e0;
+    font-size: 0.96rem;
+    max-width: 480px;
+    margin-bottom: 38px;
+  }
+
+  .hero-img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    border: 1px solid var(--line);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+  }
+
+  .hero-stat {
+    flex: 1;
+    padding-right: 16px;
+  }
+
+  .hero-stat .num {
+    font-family: "Noto Serif JP", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--orange-soft);
+    display: block;
+  }
+
+  .hero-stat .label {
+    font-size: 0.68rem;
+    color: var(--steel);
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== セクション共通 ===== */
+  section {
+    padding: 70px 0;
+  }
+
+  .section-head {
+    margin-bottom: 40px;
+  }
+
+  .section-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: var(--orange);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
+    color: var(--navy-deep);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  /* ===== イチオシ：ロードバイク ===== */
+  .feature {
+    background: var(--navy-deep);
+    color: #fff;
+    position: relative;
+  }
+
+  .feature::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--orange), transparent);
+  }
+
+  .feature .section-head h2 { color: #fff; }
+
+  .feature-img {
+    border-radius: 6px;
+    margin-bottom: 36px;
+    border: 1px solid var(--line);
+  }
+
+  .feature-copy {
+    font-size: 1rem;
+    color: #d7dee6;
+    margin-bottom: 36px;
+    max-width: 560px;
+  }
+
+  .spec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 36px;
+  }
+
+  .spec-item {
+    background: var(--navy-deep);
+    padding: 20px 18px;
+  }
+
+  .spec-item .spec-label {
+    font-size: 0.68rem;
+    color: var(--orange-soft);
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .spec-item .spec-val {
+    font-size: 0.92rem;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  .feature-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--orange);
+    color: #fff;
+    font-weight: 700;
+    padding: 16px 30px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+  }
+
+  .feature-cta::after {
+    content: "→";
+  }
+
+  /* ===== お客様の声 ===== */
+  .voice-card {
+    background: #fff;
+    border: 1px solid #e3ddcc;
+    border-left: 4px solid var(--orange);
+    border-radius: 4px;
+    padding: 28px 26px;
+    margin-bottom: 20px;
+  }
+
+  .voice-stars {
+    color: var(--orange);
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+
+  .voice-card p {
+    font-size: 0.9rem;
+    color: #3a3530;
+  }
+
+  /* ===== 店舗情報 ===== */
+  .shop {
+    background: #ece6d6;
+  }
+
+  .shop-img {
+    border-radius: 6px;
+    margin-bottom: 36px;
+  }
+
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .info-table tr {
+    border-bottom: 1px solid #e3ddcc;
+  }
+
+  .info-table tr:last-child { border-bottom: none; }
+
+  .info-table th {
+    text-align: left;
+    font-size: 0.78rem;
+    color: var(--orange);
+    font-weight: 700;
+    padding: 16px 18px;
+    width: 30%;
+    letter-spacing: 0.04em;
+    vertical-align: top;
+  }
+
+  .info-table td {
+    padding: 16px 18px 16px 0;
+    font-size: 0.88rem;
+    color: var(--navy-deep);
+    word-break: break-word;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+    color: #fff;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    color: #cdd6e0;
+    margin-bottom: 36px;
+    font-size: 0.92rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .btn {
+    display: block;
+    padding: 17px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+  }
+
+  .btn-primary {
+    background: var(--orange);
+    color: #fff;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: #fff;
+  }
+
+  /* ===== フッター ===== */
+  footer {
+    background: var(--navy-deep);
+    color: var(--steel);
+    text-align: center;
+    padding: 36px 24px;
+    font-size: 0.78rem;
+    border-top: 1px solid var(--line);
+  }
+
+  footer .foot-logo {
+    color: #fff;
+    font-family: "Noto Serif JP", serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+
+  /* ===== レスポンシブ：PC以上で少し余裕を持たせる ===== */
+  @media (min-width: 640px) {
+    .hero-stats { padding-top: 26px; }
+    .spec-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 420px) {
+    .hero h1 { font-size: 1.85rem; }
+    .info-table th, .info-table td { padding: 14px 12px; font-size: 0.82rem; }
+    .spec-item { padding: 16px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">SHOWA<span>BICYCLE SHOP</span></div>
+    <a href="tel:0188332817" class="header-cta">電話で相談</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">秋田市 手形山中町</span>
+    <h1>初めてのロードバイクも、<br>ここなら安心して選べる。<em>SHOWA</em></h1>
+    <img src="images/hero-roadbike.jpg" alt="SHOWA店内に並ぶロードバイク" class="hero-img">
+    <p class="hero-lead">小物パーツの品揃えと、初心者にも分かりやすい丁寧な説明に定評のある秋田市の自転車専門店。パンクしにくい走り方まで教えてくれると評判です。</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">★4.5</span><span class="label">お客様の声 平均評価</span></div>
+      <div class="hero-stat"><span class="num">秋田市</span><span class="label">手形山中町に店舗</span></div>
+      <div class="hero-stat"><span class="num">創業</span><span class="label">地域密着の自転車専門店</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">ICHIOSHI ITEM</span>
+      <h2>イチオシは、ロードバイク。<br>不安を自信に変える一台選び。</h2>
+    </div>
+
+    <img src="images/roadbike-feature.jpg" alt="SHOWAで取り扱うロードバイク" class="feature-img">
+
+    <p class="feature-copy">
+      「ロードは初めてで不安だった」というお客様にも、構造や乗り方を一つひとつ丁寧に説明。購入時には説明資料やDVDも付属し、自宅でじっくり復習しながら大切に乗り続けられます。パンクしにくい走り方のコツまで教えてもらえるので、長距離にも安心して挑戦できます。
+    </p>
+
+    <div class="spec-grid">
+      <div class="spec-item">
+        <span class="spec-label">対象</span>
+        <span class="spec-val">他の自転車経験者～ロード初心者まで</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">サポート</span>
+        <span class="spec-val">購入時に説明資料・DVDをお渡し</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">乗り方指導</span>
+        <span class="spec-val">パンクしにくい走行のコツも伝授</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">乗り心地</span>
+        <span class="spec-val">GW50km走行でも軽くて快適との声</span>
+      </div>
+    </div>
+
+    <a href="tel:0188332817" class="feature-cta">ロードバイクの相談をする</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">VOICE</span>
+      <h2>お客様の声</h2>
+    </div>
+
+    <div class="voice-card">
+      <div class="voice-stars">★★★★☆</div>
+      <p>小物類の品揃いが素晴らしく良いです。例えばコラムスペーサーだけでも沢山の種類があります。車体もそれなりに揃っています。ただ駐輪スペースが設置されていないのが気になる点。入り口付近の壁際に1台分でもサイクルラックがあると助かります。</p>
+    </div>
+
+    <div class="voice-card">
+      <div class="voice-stars">★★★★★</div>
+      <p>先日ロードバイクを購入しました。別の種類の自転車には乗っていましたがロードは初心者で不安でしたが、丁寧に説明してくださったので概ね理解できました。説明資料やDVDもいただき、お手入れしながら大切に乗っていこうと思います。パンクしない走り方も教えてもらえたので安心。早速GWに50km走りましたが、軽くて快適でした。初心者でも安心して購入できると思います。</p>
+    </div>
+  </div>
+</section>
+
+<section class="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">SHOP INFO</span>
+      <h2>店舗情報</h2>
+    </div>
+
+    <img src="images/shop-front.jpg" alt="SHOWA店舗外観" class="shop-img">
+
+    <table class="info-table">
+      <tr><th>店名</th><td>SHOWA（ショウワ）</td></tr>
+      <tr><th>代表者</th><td>松田　順悦</td></tr>
+      <tr><th>住所</th><td>秋田県秋田市手形山中町１１−７</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0188332817">018-833-2817</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:showa-05@cna.ne.jp">showa-05@cna.ne.jp</a></td></tr>
+      <tr><th>ホームページ</th><td><a href="https://showa-akita.com/" target="_blank" rel="noopener">showa-akita.com</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.facebook.com/bikeshopshowa?ref=aymt_homepage_panel" target="_blank" rel="noopener">Facebookページ</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrap">
+    <h2>ロードバイクのこと、<br>まずは気軽に聞いてみませんか。</h2>
+    <p>初心者の方も大歓迎。お電話・お問い合わせフォームからどうぞ。</p>
+    <div class="cta-buttons">
+      <a href="tel:0188332817" class="btn btn-primary">018-833-2817 に電話する</a>
+      <a href="https://showa-akita.com/contactus" target="_blank" rel="noopener" class="btn btn-outline">お問い合わせフォームへ</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">SHOWA</div>
+  <div>秋田県秋田市手形山中町１１−７｜018-833-2817</div>
+</footer>
+
+</body>
+</html>
