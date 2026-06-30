@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エムズゴルフ工房｜秋田市のゴルフ用品専門店</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --fairway-dark:#1b3a2b;
+    --fairway:#2f5d3f;
+    --fairway-light:#4f7a5b;
+    --green-accent:#8fae3e;
+    --cream:#f7f3e8;
+    --gold:#c9a14a;
+    --gold-light:#e3c878;
+    --text-dark:#22291f;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Noto Sans JP",sans-serif;
+    color:var(--text-dark);
+    background:var(--cream);
+    line-height:1.8;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  .en-accent{font-family:"Cormorant Garamond",serif;}
+
+  /* ===== Header ===== */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:1000;
+    background:rgba(27,58,43,0.95);
+    backdrop-filter:blur(4px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 16px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+  }
+  .header-shopname{
+    color:var(--cream);
+    font-family:"Noto Serif JP",serif;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:0.04em;
+  }
+  .header-shopname span{
+    display:block;
+    font-family:"Cormorant Garamond",serif;
+    font-size:11px;
+    color:var(--gold-light);
+    letter-spacing:0.15em;
+    font-weight:500;
+  }
+  .header-tel{
+    background:var(--gold);
+    color:var(--fairway-dark);
+    font-weight:700;
+    font-size:13px;
+    padding:9px 14px;
+    border-radius:30px;
+    text-decoration:none;
+    white-space:nowrap;
+    box-shadow:0 3px 8px rgba(0,0,0,0.25);
+  }
+  .header-tel small{display:block;font-size:9px;font-weight:500;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    margin-top:54px;
+    height:88vh;
+    min-height:480px;
+    background:linear-gradient(180deg, rgba(27,58,43,0.35), rgba(20,40,28,0.75)), url('images/hero_golf.jpg') center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:0 20px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:-2px;left:0;right:0;
+    height:60px;
+    background:var(--cream);
+    clip-path:polygon(0% 100%, 100% 100%, 100% 30%, 80% 60%, 60% 25%, 40% 55%, 20% 20%, 0% 50%);
+  }
+  .hero-eyebrow{
+    color:var(--gold-light);
+    font-family:"Cormorant Garamond",serif;
+    font-size:15px;
+    letter-spacing:0.25em;
+    margin-bottom:14px;
+    font-weight:600;
+  }
+  .hero-title{
+    color:var(--white);
+    font-family:"Noto Serif JP",serif;
+    font-weight:900;
+    font-size:clamp(28px,8vw,46px);
+    line-height:1.4;
+    text-shadow:0 3px 14px rgba(0,0,0,0.5);
+    margin-bottom:18px;
+  }
+  .hero-title em{
+    display:block;
+    color:var(--gold-light);
+    font-style:normal;
+    font-size:0.62em;
+    letter-spacing:0.06em;
+    margin-top:6px;
+  }
+  .hero-sub{
+    color:var(--cream);
+    font-size:14px;
+    margin-bottom:30px;
+    max-width:320px;
+  }
+  .hero-btns{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    width:100%;
+    max-width:300px;
+    z-index:2;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:var(--fairway-dark);
+    font-weight:700;
+    font-size:16px;
+    padding:16px;
+    border-radius:8px;
+    text-decoration:none;
+    box-shadow:0 6px 16px rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.4);
+  }
+  .btn-secondary{
+    background:rgba(255,255,255,0.12);
+    color:var(--white);
+    font-weight:700;
+    font-size:15px;
+    padding:14px;
+    border-radius:8px;
+    text-decoration:none;
+    border:1.5px solid rgba(255,255,255,0.6);
+  }
+
+  /* ===== Section common ===== */
+  section{padding:56px 20px;}
+  .section-title{
+    text-align:center;
+    font-family:"Noto Serif JP",serif;
+    font-weight:700;
+    font-size:24px;
+    color:var(--fairway-dark);
+    margin-bottom:8px;
+  }
+  .section-title-en{
+    text-align:center;
+    font-family:"Cormorant Garamond",serif;
+    color:var(--gold);
+    letter-spacing:0.2em;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:36px;
+  }
+
+  /* ===== Featured product ===== */
+  .featured{
+    background:var(--fairway-dark);
+    position:relative;
+  }
+  .featured .section-title{color:var(--cream);}
+  .featured-card{
+    background:var(--cream);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,0.4);
+    border:1px solid var(--gold);
+  }
+  .featured-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--fairway-dark);
+    font-weight:700;
+    font-size:12px;
+    padding:5px 14px;
+    border-radius:20px;
+    margin:18px 0 10px 18px;
+    letter-spacing:0.05em;
+  }
+  .featured-body{padding:0 18px 22px;}
+  .featured-body h3{
+    font-family:"Noto Serif JP",serif;
+    font-size:20px;
+    color:var(--fairway-dark);
+    margin-bottom:10px;
+    line-height:1.5;
+  }
+  .featured-body p{font-size:14px;color:#333;margin-bottom:18px;}
+  .featured-points{
+    list-style:none;
+    margin-bottom:20px;
+  }
+  .featured-points li{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    font-size:13.5px;
+    margin-bottom:10px;
+    color:var(--text-dark);
+  }
+  .featured-points li::before{
+    content:"⛳";
+    flex-shrink:0;
+  }
+  .featured-cta{
+    display:block;
+    text-align:center;
+    background:var(--fairway);
+    color:var(--white);
+    font-weight:700;
+    padding:14px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:15px;
+  }
+
+  /* ===== Strengths ===== */
+  .strengths{background:var(--cream);}
+  .strength-grid{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    background:var(--white);
+    border-left:5px solid var(--green-accent);
+    border-radius:10px;
+    padding:18px 16px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  }
+  .strength-item h4{
+    font-family:"Noto Serif JP",serif;
+    color:var(--fairway-dark);
+    font-size:16px;
+    margin-bottom:6px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .strength-item h4 .num{
+    background:var(--fairway);
+    color:var(--white);
+    font-family:"Cormorant Garamond",serif;
+    font-weight:700;
+    width:26px;height:26px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;
+    flex-shrink:0;
+  }
+  .strength-item p{font-size:13.5px;color:#444;}
+
+  /* ===== Review ===== */
+  .review{
+    background:linear-gradient(135deg,var(--fairway),var(--fairway-dark));
+    color:var(--cream);
+  }
+  .review .section-title{color:var(--cream);}
+  .review-card{
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:12px;
+    padding:24px 18px;
+    position:relative;
+  }
+  .review-stars{
+    color:var(--gold-light);
+    font-size:20px;
+    letter-spacing:3px;
+    margin-bottom:14px;
+    text-align:center;
+  }
+  .review-text{
+    font-size:14px;
+    line-height:2;
+    text-align:left;
+  }
+  .review-text::before{content:"“";font-size:24px;color:var(--gold-light);}
+  .review-text::after{content:"”";font-size:24px;color:var(--gold-light);}
+
+  /* ===== Gallery image ===== */
+  .gallery{
+    background:var(--cream);
+    text-align:center;
+  }
+  .gallery img{
+    border-radius:12px;
+    box-shadow:0 8px 22px rgba(0,0,0,0.15);
+    margin-bottom:14px;
+  }
+  .gallery p{font-size:13px;color:#555;}
+
+  /* ===== Shop info ===== */
+  .shopinfo{background:var(--white);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.07);
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:13px 12px;
+    border-bottom:1px solid #e3ddc8;
+    vertical-align:top;
+  }
+  .info-table th{
+    background:var(--fairway-dark);
+    color:var(--gold-light);
+    font-weight:700;
+    width:30%;
+    white-space:nowrap;
+  }
+  .info-table td{background:var(--white);}
+  .info-table a{color:var(--fairway);font-weight:700;text-decoration:none;}
+  .map-frame{
+    margin-top:18px;
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid #ddd;
+  }
+  .map-frame iframe{width:100%;height:220px;border:0;display:block;}
+
+  /* ===== Final CTA ===== */
+  .final-cta{
+    background:var(--fairway-dark);
+    text-align:center;
+    position:relative;
+  }
+  .final-cta::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;height:40px;
+    background:var(--white);
+    clip-path:polygon(0 0,100% 0,100% 0,50% 100%,0 0);
+    opacity:0.04;
+  }
+  .final-cta h2{
+    font-family:"Noto Serif JP",serif;
+    color:var(--cream);
+    font-size:22px;
+    margin-bottom:10px;
+    line-height:1.6;
+  }
+  .final-cta p{
+    color:#cfd8c9;
+    font-size:13.5px;
+    margin-bottom:26px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    max-width:300px;
+    margin:0 auto;
+  }
+  .cta-buttons a{
+    padding:16px;
+    border-radius:8px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:16px;
+  }
+  .cta-call{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--fairway-dark);box-shadow:0 6px 18px rgba(0,0,0,0.3);}
+  .cta-form{background:transparent;border:1.5px solid var(--gold-light);color:var(--gold-light);}
+  .cta-sns{background:transparent;border:1.5px solid #cfd8c9;color:#cfd8c9;}
+
+  /* ===== Footer ===== */
+  footer{
+    background:#101f17;
+    color:#9fae97;
+    text-align:center;
+    padding:28px 20px;
+    font-size:12px;
+  }
+  footer .fname{
+    color:var(--gold-light);
+    font-family:"Noto Serif JP",serif;
+    font-size:14px;
+    margin-bottom:6px;
+  }
+  footer a{color:#9fae97;}
+
+  /* ===== Fixed bottom bar (mobile CTA) ===== */
+  .fixed-bar{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:999;
+    display:flex;
+    box-shadow:0 -3px 14px rgba(0,0,0,0.25);
+  }
+  .fixed-bar a{
+    flex:1;
+    text-align:center;
+    padding:13px 6px;
+    font-weight:700;
+    font-size:13.5px;
+    text-decoration:none;
+  }
+  .fixed-bar .fb-call{background:var(--gold);color:var(--fairway-dark);}
+  .fixed-bar .fb-form{background:var(--fairway);color:var(--white);}
+
+  body{padding-bottom:56px;}
+
+  @media (min-width:600px){
+    .hero-title{font-size:42px;}
+    .featured-card img{height:300px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-shopname">
+    エムズゴルフ工房
+    <span>EMU'S GOLF KOBO</span>
+  </div>
+  <a href="tel:0188459444" class="header-tel">📞 電話する<small>018-845-9444</small></a>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">SINCE GOLF MEETS CRAFTSMANSHIP</div>
+  <h1 class="hero-title">あなたのスイングに、<br>最高の一本を。
+    <em>秋田市のゴルフ用品専門店</em>
+  </h1>
+  <p class="hero-sub">クラブ選びから発送まで、安心・丁寧・スピーディー。<br>エムズゴルフ工房がしっかりサポートします。</p>
+  <div class="hero-btns">
+    <a href="tel:0188459444" class="btn-primary">📞 今すぐ電話で相談する</a>
+    <a href="https://www.amz-golf.com/contact/" class="btn-secondary">お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<section class="featured">
+  <h2 class="section-title">イチオシ商品</h2>
+  <p class="section-title-en">RECOMMENDED ITEM</p>
+  <div class="featured-card">
+    <img src="images/featured_product.jpg" alt="エムズゴルフ工房のイチオシゴルフ用品">
+    <span class="featured-badge">店主イチオシ</span>
+    <div class="featured-body">
+      <h3>こだわりのゴルフ用品を<br>豊富にラインナップ</h3>
+      <p>クラブ・ボール・グローブなど、初心者からベテランまで満足いただけるゴルフ用品を取り揃えています。一本一本、お客様のプレースタイルに合わせてご提案いたします。</p>
+      <ul class="featured-points">
+        <li>豊富な品揃えで自分にぴったりの一本が見つかる</li>
+        <li>専門知識を持ったスタッフが丁寧にご案内</li>
+        <li>注文後の発送がスピーディーで安心</li>
+      </ul>
+      <a href="https://www.amz-golf.com/" class="featured-cta">商品ラインナップを見る</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">選ばれる理由</h2>
+  <p class="section-title-en">WHY CHOOSE US</p>
+  <div class="strength-grid">
+    <div class="strength-item">
+      <h4><span class="num">01</span>安心のサポート体制</h4>
+      <p>お支払い方法のご連絡から発送まで、お客様に寄り添った丁寧な対応を心がけています。</p>
+    </div>
+    <div class="strength-item">
+      <h4><span class="num">02</span>スピーディーな発送</h4>
+      <p>ご注文いただいてから商品が手元に届くまで、スムーズかつ迅速にお届けします。</p>
+    </div>
+    <div class="strength-item">
+      <h4><span class="num">03</span>豊富な品揃え</h4>
+      <p>クラブからグローブまで、幅広いゴルフ用品の中からお好みの商品をお選びいただけます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="review">
+  <h2 class="section-title">お客様の声</h2>
+  <p class="section-title-en">CUSTOMER REVIEW</p>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p class="review-text">注文時の支払い方法の連絡、注文後の発送と全くストレスなく、また、商品の発送までも早く、商品を見つけ欲しいと思ってから手元に届くまでが本当にスムーズでした。ありがとうございました。</p>
+  </div>
+</section>
+
+<section class="gallery">
+  <h2 class="section-title">店舗紹介</h2>
+  <p class="section-title-en">OUR SHOP</p>
+  <img src="images/shop_interior.jpg" alt="エムズゴルフ工房 店内の様子">
+  <p>豊富なゴルフ用品が並ぶ店内で、お気に入りの一本をじっくりお選びいただけます。</p>
+</section>
+
+<section class="shopinfo">
+  <h2 class="section-title">店舗情報</h2>
+  <p class="section-title-en">SHOP INFORMATION</p>
+  <table class="info-table">
+    <tr><th>店名</th><td>エムズゴルフ工房</td></tr>
+    <tr><th>会社名</th><td>エムズゴルフ工房株式会社</td></tr>
+    <tr><th>代表者</th><td>松田久美子</td></tr>
+    <tr><th>住所</th><td>秋田県秋田市将軍野桂町３１−１</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0188459444">018-845-9444</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:amzgolf@ae.auone-net.jp">amzgolf@ae.auone-net.jp</a></td></tr>
+    <tr><th>ホームページ</th><td><a href="https://www.amz-golf.com/" target="_blank" rel="noopener">www.amz-golf.com</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://www.amz-golf.com/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+    <tr><th>Instagram</th><td><a href="https://www.instagram.com/momokosm9731/" target="_blank" rel="noopener">@momokosm9731</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://www.google.com/maps?q=秋田県秋田市将軍野桂町31-1&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>あなたにぴったりの一本を、<br>エムズゴルフ工房で。</h2>
+  <p>お電話・お問い合わせフォーム・SNSにて、お気軽にご相談ください。</p>
+  <div class="cta-buttons">
+    <a href="tel:0188459444" class="cta-call">📞 018-845-9444 に電話する</a>
+    <a href="https://www.amz-golf.com/contact/" class="cta-form">お問い合わせフォーム</a>
+    <a href="https://www.instagram.com/momokosm9731/" class="cta-sns">Instagramをフォロー</a>
+  </div>
+</section>
+
+<footer>
+  <div class="fname">エムズゴルフ工房株式会社</div>
+  <p>秋田県秋田市将軍野桂町３１−１ ｜ TEL: 018-845-9444</p>
+  <p><a href="https://www.amz-golf.com/" target="_blank" rel="noopener">www.amz-golf.com</a></p>
+  <p style="margin-top:10px;">© エムズゴルフ工房株式会社</p>
+</footer>
+
+<div class="fixed-bar">
+  <a href="tel:0188459444" class="fb-call">📞 電話で相談</a>
+  <a href="https://www.amz-golf.com/contact/" class="fb-form">お問い合わせ</a>
+</div>
+
+</body>
+</html>
