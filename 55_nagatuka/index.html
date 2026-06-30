@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永澤弓具｜秋田県五城目町の弓道具専門店</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sumi:#221f1a;
+    --sumi-deep:#15130f;
+    --washi:#f3ecdd;
+    --washi-light:#faf6ec;
+    --vermillion:#b5402c;
+    --vermillion-deep:#8e2f1f;
+    --gold:#a9823f;
+    --line:#d8cbac;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    color:var(--sumi);
+    background:var(--washi-light);
+    line-height:1.8;
+    -webkit-text-size-adjust:100%;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .mincho{font-family:'Shippori Mincho',serif;}
+
+  /* ===== header ===== */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--sumi);
+    color:var(--washi);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 10px rgba(0,0,0,.25);
+  }
+  header .shopname{
+    font-family:'Shippori Mincho',serif;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:.05em;
+  }
+  header .shopname span{display:block;font-size:9px;letter-spacing:.2em;color:var(--gold);font-family:'Noto Sans JP',sans-serif;}
+  .header-tel{
+    background:var(--vermillion);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    white-space:nowrap;
+  }
+  .header-tel small{display:block;font-size:9px;font-weight:400;opacity:.85;}
+
+  /* ===== hero ===== */
+  .hero{
+    position:relative;
+    background:var(--sumi-deep);
+    color:var(--washi);
+    text-align:center;
+    padding:54px 18px 64px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:50%;left:50%;
+    width:560px;height:560px;
+    border-radius:50%;
+    border:2px solid rgba(181,64,44,.35);
+    transform:translate(-50%,-50%);
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    top:50%;left:50%;
+    width:380px;height:380px;
+    border-radius:50%;
+    border:2px solid rgba(169,130,63,.3);
+    transform:translate(-50%,-50%);
+  }
+  .hero .mato{
+    position:absolute;
+    top:50%;left:50%;
+    width:200px;height:200px;
+    border-radius:50%;
+    background:repeating-radial-gradient(circle, rgba(243,236,221,.06) 0 18px, transparent 18px 36px);
+    transform:translate(-50%,-50%);
+  }
+  .hero-inner{position:relative;z-index:2;}
+  .hero .eyebrow{
+    font-size:11px;
+    letter-spacing:.35em;
+    color:var(--gold);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:'Shippori Mincho',serif;
+    font-size:30px;
+    font-weight:800;
+    line-height:1.6;
+    margin-bottom:10px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--vermillion);
+    background:linear-gradient(transparent 60%, rgba(181,64,44,.25) 60%);
+  }
+  .hero p.lead{
+    font-size:13px;
+    color:#d9cfb6;
+    margin-bottom:30px;
+    letter-spacing:.04em;
+  }
+  .hero-img{
+    width:100%;
+    max-width:340px;
+    margin:0 auto 26px;
+    border:1px solid rgba(243,236,221,.25);
+    padding:8px;
+  }
+  .hero-img img{width:100%;}
+  .hero-btns{display:flex;flex-direction:column;gap:12px;max-width:300px;margin:0 auto;}
+  .btn{
+    display:block;
+    padding:15px 20px;
+    border-radius:4px;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.05em;
+    text-align:center;
+  }
+  .btn-primary{background:var(--vermillion);color:#fff;box-shadow:0 6px 16px rgba(181,64,44,.4);}
+  .btn-outline{border:1px solid rgba(243,236,221,.5);color:var(--washi);}
+
+  /* ===== section common ===== */
+  section{padding:54px 18px;}
+  .section-head{text-align:center;margin-bottom:36px;}
+  .section-head .en{
+    font-size:11px;
+    letter-spacing:.3em;
+    color:var(--vermillion);
+    display:block;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-family:'Shippori Mincho',serif;
+    font-size:23px;
+    font-weight:700;
+    color:var(--sumi);
+    position:relative;
+    display:inline-block;
+    padding-bottom:14px;
+  }
+  .section-head h2::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    width:46px;height:3px;
+    background:var(--vermillion);
+  }
+
+  /* ===== featured product ===== */
+  .featured{
+    background:var(--sumi);
+    color:var(--washi);
+  }
+  .featured .section-head h2{color:var(--washi);}
+  .product-card{
+    background:var(--washi-light);
+    color:var(--sumi);
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 14px 30px rgba(0,0,0,.35);
+  }
+  .product-card .tag{
+    position:absolute;
+    background:var(--vermillion);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    padding:6px 14px;
+    border-radius:0 0 6px 0;
+    letter-spacing:.1em;
+  }
+  .product-card .img-wrap{position:relative;}
+  .product-card img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+  .product-card .body{padding:22px 20px 26px;}
+  .product-card h3{
+    font-family:'Shippori Mincho',serif;
+    font-size:19px;
+    margin-bottom:10px;
+    color:var(--vermillion-deep);
+  }
+  .product-card p{font-size:13.5px;color:#4a443a;margin-bottom:18px;}
+  .feature-list{list-style:none;margin-bottom:20px;}
+  .feature-list li{
+    display:flex;
+    gap:10px;
+    font-size:13px;
+    padding:9px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .feature-list li:last-child{border-bottom:none;}
+  .feature-list li::before{
+    content:"弓";
+    flex-shrink:0;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--vermillion);
+    color:#fff;
+    font-size:11px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Shippori Mincho',serif;
+  }
+
+  /* ===== strengths ===== */
+  .strengths{background:var(--washi);}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .strength-item:last-child{border-bottom:none;}
+  .strength-num{
+    font-family:'Shippori Mincho',serif;
+    font-size:26px;
+    color:var(--vermillion);
+    font-weight:600;
+    line-height:1;
+    flex-shrink:0;
+  }
+  .strength-item h3{
+    font-size:15px;
+    margin-bottom:6px;
+    font-weight:700;
+  }
+  .strength-item p{font-size:13px;color:#4a443a;}
+
+  .town-img{margin-top:30px;border-radius:6px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.12);}
+  .town-img img{width:100%;aspect-ratio:16/10;object-fit:cover;}
+  .town-cap{font-size:11.5px;color:#8a8068;text-align:center;margin-top:8px;letter-spacing:.03em;}
+
+  /* ===== review ===== */
+  .review-sec{background:var(--sumi-deep);color:var(--washi);}
+  .review-sec .section-head h2{color:var(--washi);}
+  .review-card{
+    background:rgba(243,236,221,.06);
+    border:1px solid rgba(243,236,221,.18);
+    border-radius:6px;
+    padding:24px 20px;
+  }
+  .stars{color:var(--gold);font-size:18px;letter-spacing:.1em;margin-bottom:14px;}
+  .review-card p{font-size:13.5px;color:#e3dac3;}
+  .review-card .reviewer{
+    margin-top:16px;
+    font-size:12px;
+    color:var(--gold);
+    text-align:right;
+    letter-spacing:.05em;
+  }
+
+  /* ===== shop info ===== */
+  .info-sec{background:var(--washi-light);}
+  .info-table{width:100%;border-collapse:collapse;font-size:13px;}
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:14px 10px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  .info-table th{
+    width:96px;
+    color:var(--vermillion-deep);
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .info-table a{color:var(--vermillion-deep);text-decoration:underline;}
+  .map-link{
+    display:inline-block;
+    margin-top:6px;
+    font-size:12px;
+    color:var(--vermillion-deep);
+    text-decoration:underline;
+  }
+
+  /* ===== cta ===== */
+  .cta-sec{
+    background:var(--vermillion-deep);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-sec h2{
+    font-family:'Shippori Mincho',serif;
+    font-size:22px;
+    margin-bottom:12px;
+  }
+  .cta-sec p{font-size:13px;color:#f2d9d0;margin-bottom:28px;}
+  .cta-btns{display:flex;flex-direction:column;gap:14px;max-width:320px;margin:0 auto;}
+  .cta-btns .btn-primary{background:#fff;color:var(--vermillion-deep);box-shadow:0 8px 18px rgba(0,0,0,.25);}
+  .cta-btns .btn-outline{border:1px solid rgba(255,255,255,.6);color:#fff;}
+
+  /* ===== footer ===== */
+  footer{
+    background:var(--sumi-deep);
+    color:#9c937c;
+    text-align:center;
+    padding:30px 18px 100px;
+    font-size:11.5px;
+  }
+  footer .fname{font-family:'Shippori Mincho',serif;color:var(--washi);font-size:15px;margin-bottom:8px;}
+
+  /* ===== fixed bottom CTA (mobile) ===== */
+  .fixed-cta{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    z-index:200;
+    box-shadow:0 -4px 14px rgba(0,0,0,.25);
+  }
+  .fixed-cta a{
+    flex:1;
+    text-align:center;
+    padding:14px 6px;
+    font-size:13px;
+    font-weight:700;
+  }
+  .fixed-cta .tel{background:var(--vermillion);color:#fff;}
+  .fixed-cta .form{background:var(--sumi);color:var(--washi);}
+
+  @media (min-width:600px){
+    .hero h1{font-size:36px;}
+    .section-head h2{font-size:27px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">永澤弓具<span>NAGASAWA KYUGU</span></div>
+  <a href="tel:0188523430" class="header-tel">📞 018-852-3430<small>営業時間内にお電話を</small></a>
+</header>
+
+<section class="hero">
+  <div class="mato"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">秋田県南秋田郡五城目町 ・ 弓道具専門店</span>
+    <h1>一射一射に、<br><em>確かな弓具</em>を。</h1>
+    <p class="lead">体型に合わせた丁寧な仕立てで、<br>弓道を始める方からベテランまで支える専門店</p>
+    <div class="hero-img">
+      <img src="images/hero-kyudogu.jpg" alt="永澤弓具 弓道具一式">
+    </div>
+    <div class="hero-btns">
+      <a href="tel:0188523430" class="btn btn-primary">📞 今すぐ電話で相談する</a>
+      <a href="#access" class="btn btn-outline">店舗情報を見る</a>
+    </div>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="section-head">
+    <span class="en">FEATURED ITEM</span>
+    <h2>イチオシ｜弓道具フルサポート</h2>
+  </div>
+  <div class="product-card" style="position:relative;">
+    <div class="img-wrap">
+      <span class="tag">体型に合わせた仕立て</span>
+      <img src="images/product-dougi.jpg" alt="弓道着一式">
+    </div>
+    <div class="body">
+      <h3>胴着・弓・矢・道具一式｜永澤弓具のフルサポート</h3>
+      <p>弓道着一式から弓・矢・かけまで、お一人おひとりの体型と使い方に合わせて丁寧にサイズ合わせ。専門店だからこそ分かる細やかな調整で、長くお付き合いいただける一着・一式をご用意します。</p>
+      <ul class="feature-list">
+        <li>体型に合わせたオーダーサイズ調整</li>
+        <li>初心者の方への道具選びの丁寧なご案内</li>
+        <li>胴着・弓・矢・かけまでワンストップで対応</li>
+        <li>末永くお付き合いできるアフターフォロー</li>
+      </ul>
+      <a href="tel:0188523430" class="btn btn-primary">📞 道具について相談する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-head">
+    <span class="en">OUR STRENGTH</span>
+    <h2>永澤弓具が選ばれる理由</h2>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">01</div>
+    <div>
+      <h3>豊かな自然が育む、五城目町の地で</h3>
+      <p>秋田県五城目町は秋田県中央部に位置し、古くから県北と中央部を結ぶ街道の要所として発展。豊富な森林資源、良い水と美味しい米に恵まれた土地です。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">02</div>
+    <div>
+      <h3>伝統の技を守り続ける職人の町</h3>
+      <p>古くからの技をかたくなに守り続ける職人が多く暮らす町で、500年の歴史を誇る五城目朝市も今なお続いています。その土地で弓具づくりに向き合ってきました。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">03</div>
+    <div>
+      <h3>専門店ならではのきめ細かな対応</h3>
+      <p>普段なかなか出会う機会の少ない弓道具を、体型に合わせて丁寧にご案内。柔らかな物腰で専門店ならではのポイントをしっかり押さえた接客が好評です。</p>
+    </div>
+  </div>
+  <div class="town-img">
+    <img src="images/town-gojoume.jpg" alt="五城目町の街並み">
+  </div>
+  <p class="town-cap">豊かな自然と伝統が息づく秋田県五城目町</p>
+</section>
+
+<section class="review-sec">
+  <div class="section-head">
+    <span class="en">VOICE</span>
+    <h2>お客様の声</h2>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>自然豊かな生活環境下で、普段見掛ける機会の少ない弓道着一式を購入しました。やはり専門店として活躍されているだけあって、自分の体型に合わせたサイズ合わせに非常に助かりました。今回は胴着一式。これから弓道具全てを自分好みに合わせて購入していきます。長いお付き合いになると思います、宜しくお願いいたします。店主さんの対応、柔らかな表情で専門店ならではのポイントをしっかりと押さえた対応に非常に助かりましたし感嘆致しました。出来れば、お店の看板がもっと目立ったら最高でした。</p>
+    <div class="reviewer">― ご来店のお客様より</div>
+  </div>
+</section>
+
+<section class="info-sec" id="access">
+  <div class="section-head">
+    <span class="en">SHOP INFO</span>
+    <h2>店舗情報</h2>
+  </div>
+  <table class="info-table">
+    <tr><th>店名</th><td>永澤弓具</td></tr>
+    <tr><th>会社名</th><td>有限会社永澤弓具</td></tr>
+    <tr><th>代表者</th><td>髙橋志帆</td></tr>
+    <tr><th>住所</th><td>秋田県南秋田郡五城目町稲荷前５４−８<br>
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=秋田県南秋田郡五城目町稲荷前54-8" target="_blank" rel="noopener">地図で見る ＞</a>
+    </td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0188523430">018-852-3430</a></td></tr>
+    <tr><th>定休日</th><td>日曜日・月曜日</td></tr>
+    <tr><th>メール</th><td><a href="mailto:onyasi@wonder.ocn.ne.jp">onyasi@wonder.ocn.ne.jp</a></td></tr>
+    <tr><th>HP</th><td><a href="http://nagasawa.shop-pro.jp/" target="_blank" rel="noopener">nagasawa.shop-pro.jp</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://nagasawa.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+  </table>
+</section>
+
+<section class="cta-sec">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>体型に合わせた道具選びは、専門店の永澤弓具にお任せください。</p>
+  <div class="cta-btns">
+    <a href="tel:0188523430" class="btn btn-primary">📞 電話で相談する（018-852-3430）</a>
+    <a href="https://nagasawa.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener" class="btn btn-outline">フォームで問い合わせる</a>
+  </div>
+</section>
+
+<footer>
+  <div class="fname">永澤弓具</div>
+  <p>有限会社永澤弓具｜秋田県南秋田郡五城目町稲荷前５４−８</p>
+  <p>© Nagasawa Kyugu</p>
+</footer>
+
+<div class="fixed-cta">
+  <a href="tel:0188523430" class="tel">📞 電話で相談</a>
+  <a href="https://nagasawa.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener" class="form">✉️ フォーム</a>
+</div>
+
+</body>
+</html>
