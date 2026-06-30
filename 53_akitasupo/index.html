@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アキタスポネット｜バドミントン・テニス・ミニテニス専門店</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-deep:#1c4a3a;
+    --green-main:#2e7d5b;
+    --green-light:#e9f5ee;
+    --accent-yellow:#f4c542;
+    --text-dark:#222;
+    --white:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Noto Sans JP",sans-serif;
+    color:var(--text-dark);
+    line-height:1.7;
+    background:var(--white);
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:"Noto Serif JP",serif;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:960px;margin:0 auto;padding:0 20px;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:1000;
+    background:rgba(28,74,58,0.95);
+    color:var(--white);
+    padding:12px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+  }
+  header .logo{
+    font-family:"Noto Serif JP",serif;
+    font-weight:900;
+    font-size:1.15rem;
+    letter-spacing:0.05em;
+  }
+  header .logo span{
+    display:block;
+    font-size:0.6rem;
+    font-weight:400;
+    letter-spacing:0.1em;
+    opacity:0.85;
+  }
+  header nav a{
+    color:var(--white);
+    font-size:0.85rem;
+    margin-left:14px;
+    font-weight:500;
+  }
+  @media (max-width:480px){
+    header nav a{margin-left:8px;font-size:0.7rem;}
+    header .logo{font-size:1rem;}
+  }
+
+  /* ヒーロー */
+  .hero{
+    margin-top:56px;
+    position:relative;
+    background:linear-gradient(135deg, var(--green-deep), var(--green-main));
+    color:var(--white);
+    text-align:center;
+    padding:70px 20px 90px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:-2px;left:0;right:0;
+    height:40px;
+    background:var(--white);
+    clip-path:polygon(0 100%, 100% 100%, 100% 0, 0 100%);
+  }
+  .hero-badge{
+    display:inline-block;
+    background:var(--accent-yellow);
+    color:var(--green-deep);
+    font-weight:700;
+    font-size:0.75rem;
+    padding:6px 18px;
+    border-radius:30px;
+    letter-spacing:0.1em;
+    margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:1.9rem;
+    font-weight:900;
+    line-height:1.5;
+    margin-bottom:16px;
+    text-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  .hero h1 small{
+    display:block;
+    font-size:1.05rem;
+    font-weight:500;
+    margin-top:8px;
+    opacity:0.95;
+  }
+  .hero p{
+    font-size:0.95rem;
+    opacity:0.92;
+    max-width:480px;
+    margin:0 auto;
+  }
+  @media (min-width:600px){
+    .hero h1{font-size:2.4rem;}
+  }
+
+  /* イチオシ商品セクション */
+  .spotlight{
+    padding:60px 20px 50px;
+    background:var(--white);
+    text-align:center;
+  }
+  .section-title{
+    font-size:1.6rem;
+    font-weight:900;
+    color:var(--green-deep);
+    margin-bottom:6px;
+  }
+  .section-sub{
+    font-size:0.85rem;
+    color:#777;
+    margin-bottom:35px;
+    letter-spacing:0.05em;
+  }
+  .spotlight-main-img{
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(28,74,58,0.25);
+    margin-bottom:30px;
+  }
+  .spotlight-main-img img{
+    width:100%;
+    height:auto;
+  }
+  .sport-cards{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+    text-align:left;
+  }
+  @media (min-width:640px){
+    .sport-cards{grid-template-columns:repeat(3,1fr);}
+  }
+  .sport-card{
+    background:var(--green-light);
+    border-left:5px solid var(--green-main);
+    border-radius:10px;
+    padding:20px;
+  }
+  .sport-card h3{
+    color:var(--green-deep);
+    font-size:1.1rem;
+    margin-bottom:8px;
+  }
+  .sport-card p{
+    font-size:0.85rem;
+    color:#444;
+  }
+
+  /* こだわりセクション */
+  .feature-photo{
+    background:var(--green-light);
+    padding:50px 20px;
+  }
+  .feature-grid{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    align-items:center;
+  }
+  @media (min-width:640px){
+    .feature-grid{flex-direction:row;}
+  }
+  .feature-grid img{
+    border-radius:14px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.12);
+    flex:1;
+  }
+  .feature-text{flex:1;}
+  .feature-text h2{
+    color:var(--green-deep);
+    font-size:1.4rem;
+    margin-bottom:14px;
+  }
+  .feature-text ul{
+    list-style:none;
+  }
+  .feature-text li{
+    position:relative;
+    padding-left:24px;
+    margin-bottom:10px;
+    font-size:0.9rem;
+  }
+  .feature-text li::before{
+    content:"●";
+    color:var(--accent-yellow);
+    position:absolute;
+    left:0;
+    font-size:0.7rem;
+    top:6px;
+  }
+
+  /* 店舗情報 */
+  .shop-info{
+    padding:55px 20px;
+    text-align:center;
+  }
+  .info-table{
+    max-width:520px;
+    margin:30px auto 0;
+    border-collapse:collapse;
+    width:100%;
+    font-size:0.9rem;
+  }
+  .info-table tr{
+    border-bottom:1px solid #ddd;
+  }
+  .info-table th{
+    text-align:left;
+    padding:14px 10px;
+    color:var(--green-deep);
+    font-weight:700;
+    white-space:nowrap;
+    width:30%;
+  }
+  .info-table td{
+    padding:14px 10px;
+    text-align:left;
+  }
+  .sns-link{
+    display:inline-block;
+    margin-top:20px;
+    background:#1877f2;
+    color:var(--white);
+    padding:10px 26px;
+    border-radius:30px;
+    font-size:0.85rem;
+    font-weight:700;
+  }
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(135deg, var(--green-main), var(--green-deep));
+    color:var(--white);
+    text-align:center;
+    padding:55px 20px;
+  }
+  .cta h2{
+    font-size:1.5rem;
+    margin-bottom:14px;
+  }
+  .cta p{
+    font-size:0.9rem;
+    margin-bottom:28px;
+    opacity:0.95;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .btn{
+    display:block;
+    padding:16px;
+    border-radius:50px;
+    font-weight:700;
+    font-size:1rem;
+  }
+  .btn-primary{
+    background:var(--accent-yellow);
+    color:var(--green-deep);
+  }
+  .btn-secondary{
+    background:transparent;
+    border:2px solid var(--white);
+    color:var(--white);
+  }
+
+  /* フッター */
+  footer{
+    background:#13241d;
+    color:#bcd2c6;
+    text-align:center;
+    padding:30px 20px;
+    font-size:0.75rem;
+  }
+  footer .shop-name{
+    font-family:"Noto Serif JP",serif;
+    font-size:0.95rem;
+    color:var(--white);
+    margin-bottom:8px;
+    font-weight:700;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">アキタスポネット<span>BADMINTON / TENNIS / MINI TENNIS</span></div>
+  <nav>
+    <a href="#spotlight">商品</a>
+    <a href="#shop-info">店舗情報</a>
+    <a href="#cta">お問合せ</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">秋田市土崎港南 専門店</span>
+    <h1>バドミントン・テニス・ミニテニスの<br>すべてがここに。
+      <small>豊富な品揃えと専門知識で、あなたのプレーをサポートします</small>
+    </h1>
+    <p>初心者からトップレベルのプレーヤーまで。用具選びのご相談はアキタスポネットにお任せください。</p>
+  </div>
+</section>
+
+<section class="spotlight" id="spotlight">
+  <div class="container">
+    <h2 class="section-title">イチオシジャンル</h2>
+    <p class="section-sub">― OUR SPECIALTY ―</p>
+    <div class="spotlight-main-img">
+      <img src="images/main_visual.jpg" alt="バドミントン・テニス・ミニテニス用品">
+    </div>
+    <div class="sport-cards">
+      <div class="sport-card">
+        <h3>バドミントン</h3>
+        <p>ラケット・シャトル・シューズなど、初心者から上級者向けまで幅広くご用意しています。</p>
+      </div>
+      <div class="sport-card">
+        <h3>テニス</h3>
+        <p>各種ラケット・ガット張り替え・ウェアまで、テニスに関するご相談を承ります。</p>
+      </div>
+      <div class="sport-card">
+        <h3>ミニテニス</h3>
+        <p>地域で人気のミニテニス用品も充実。専門知識を活かしたアドバイスが好評です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feature-photo">
+  <div class="container feature-grid">
+    <img src="images/store_interior.jpg" alt="アキタスポネット店内">
+    <div class="feature-text">
+      <h2>選ばれる理由</h2>
+      <ul>
+        <li>バドミントン・テニス・ミニテニス専門店ならではの豊富な品揃え</li>
+        <li>用具選びからメンテナンスまで丁寧にサポート</li>
+        <li>地域に根ざした秋田市土崎港南のスポーツショップ</li>
+        <li>初心者の方も安心してご相談いただけます</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="shop-info" id="shop-info">
+  <div class="container">
+    <h2 class="section-title">店舗情報</h2>
+    <p class="section-sub">― SHOP INFORMATION ―</p>
+    <img src="images/shop_goods.jpg" alt="店内の商品ラインナップ" style="border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,0.12);max-width:480px;margin:0 auto 10px;">
+    <table class="info-table">
+      <tr><th>店名</th><td>アキタスポネット</td></tr>
+      <tr><th>住所</th><td>秋田県秋田市土崎港南３丁目９−２０</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0188466112">018-846-6112</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:sekine_shop@yahoo.co.jp">sekine_shop@yahoo.co.jp</a></td></tr>
+    </table>
+    <a class="sns-link" href="https://www.facebook.com/akitasponet/?locale=ja_JP" target="_blank" rel="noopener">Facebookで見る</a>
+  </div>
+</section>
+
+<section class="cta" id="cta">
+  <div class="container">
+    <h2>用具選びのご相談はお気軽に</h2>
+    <p>バドミントン・テニス・ミニテニスのことならアキタスポネットへ</p>
+    <div class="cta-buttons">
+      <a class="btn btn-primary" href="tel:0188466112">📞 電話で問い合わせる</a>
+      <a class="btn btn-secondary" href="mailto:sekine_shop@yahoo.co.jp">✉️ メールで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shop-name">アキタスポネット</div>
+  <p>秋田県秋田市土崎港南３丁目９−２０ ｜ 018-846-6112</p>
+  <p style="margin-top:10px;">&copy; 2026 Akita Sponet. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
