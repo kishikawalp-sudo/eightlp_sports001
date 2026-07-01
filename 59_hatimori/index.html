@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八森スポーツ｜岩手県花巻市のグローブ専門店</title>
+<meta name="description" content="岩手県花巻市の八森スポーツ。豊富な種類のグローブと、丁寧な型付け・アフターケアが自慢の地域密着スポーツ用品店。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F3ECDC;
+    --cream-deep:#E9DFC7;
+    --leather:#5B3A22;
+    --leather-deep:#2E1D12;
+    --tan:#C89A66;
+    --tan-soft:#DCC49C;
+    --stitch:#A5382A;
+    --stitch-deep:#7C281D;
+    --ink:#2B2115;
+    --ink-soft:#5C4E3D;
+    --white:#FFFDF8;
+    --shadow: 0 14px 30px rgba(46,29,18,0.18);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.8;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:64px; /* space for fixed bottom nav on mobile */
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 20px;}
+
+  h1,h2,h3{font-family:'Shippori Mincho', serif; color:var(--leather-deep); letter-spacing:.02em;}
+
+  /* ===== stitching divider signature element ===== */
+  .stitch-divider{
+    width:100%;
+    height:22px;
+    background-repeat:repeat-x;
+    background-position:center;
+    background-size:44px 22px;
+    background-image:
+      linear-gradient(90deg, transparent 47%, var(--stitch) 47%, var(--stitch) 53%, transparent 53%),
+      linear-gradient(0deg, transparent 43%, var(--stitch) 43%, var(--stitch) 57%, transparent 57%);
+    opacity:.85;
+  }
+  .stitch-divider.small{height:14px; background-size:28px 14px;}
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Noto Sans JP', sans-serif;
+    font-weight:700;
+    font-size:.78rem;
+    letter-spacing:.18em;
+    color:var(--stitch-deep);
+    margin-bottom:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:18px; height:2px;
+    background:var(--stitch);
+    display:inline-block;
+  }
+
+  /* ===== header ===== */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    background:linear-gradient(180deg, rgba(46,29,18,.97), rgba(46,29,18,.9));
+    color:var(--white);
+    box-shadow:0 4px 16px rgba(0,0,0,.25);
+  }
+  .header-inner{
+    max-width:1080px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 16px;
+  }
+  .brand{
+    display:flex; align-items:baseline; gap:8px;
+  }
+  .brand-mark{
+    font-family:'Shippori Mincho', serif;
+    font-weight:800;
+    font-size:1.25rem;
+    color:var(--white);
+    letter-spacing:.04em;
+  }
+  .brand-sub{
+    font-size:.62rem;
+    letter-spacing:.12em;
+    color:var(--tan-soft);
+  }
+  .header-cta{
+    display:flex; align-items:center; gap:10px;
+  }
+  .tel-btn{
+    display:flex; flex-direction:column; align-items:flex-end;
+    line-height:1.15;
+  }
+  .tel-btn .num{
+    font-family:'Shippori Mincho', serif;
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--white);
+  }
+  .tel-btn .label{
+    font-size:.6rem;
+    color:var(--tan-soft);
+    letter-spacing:.08em;
+  }
+  .tel-icon{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--stitch);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .tel-icon svg{width:17px;height:17px;fill:var(--white);}
+
+  body{padding-top:60px;}
+
+  /* ===== hero ===== */
+  .hero{
+    position:relative;
+    background:var(--leather-deep);
+    color:var(--white);
+    overflow:hidden;
+  }
+  .hero-media{
+    position:relative;
+    width:100%;
+    aspect-ratio:4/3;
+    max-height:520px;
+    overflow:hidden;
+  }
+  .hero-media img{
+    width:100%; height:100%; object-fit:cover;
+    filter:brightness(.72) saturate(1.05);
+  }
+  .hero-media::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(46,29,18,.15) 0%, rgba(46,29,18,.85) 92%);
+  }
+  .hero-copy{
+    position:relative;
+    padding:26px 20px 34px;
+    text-align:center;
+  }
+  .hero-copy .eyebrow{color:var(--tan-soft); justify-content:center;}
+  .hero-copy .eyebrow::before{background:var(--tan);}
+  .hero-title{
+    font-size:2rem;
+    line-height:1.5;
+    color:var(--white);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .hero-title small{
+    display:block;
+    font-size:1rem;
+    color:var(--tan-soft);
+    font-weight:500;
+    margin-top:8px;
+    letter-spacing:.05em;
+  }
+  .hero-desc{
+    max-width:520px;
+    margin:16px auto 0;
+    font-size:.92rem;
+    color:#EFE3CD;
+  }
+  .hero-actions{
+    display:flex; flex-direction:column; gap:12px;
+    max-width:340px; margin:24px auto 0;
+  }
+  .btn{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    padding:15px 20px;
+    border-radius:6px;
+    font-weight:700;
+    font-size:.98rem;
+    letter-spacing:.02em;
+    border:2px solid transparent;
+  }
+  .btn-primary{
+    background:var(--stitch);
+    color:var(--white);
+    box-shadow:var(--shadow);
+  }
+  .btn-outline{
+    background:transparent;
+    color:var(--white);
+    border-color:rgba(255,255,255,.5);
+  }
+  .btn svg{width:18px;height:18px;fill:currentColor;flex-shrink:0;}
+
+  /* ===== section base ===== */
+  section{padding:52px 0;}
+  .section-head{text-align:center; max-width:600px; margin:0 auto 34px;}
+  .section-head h2{font-size:1.55rem; line-height:1.6;}
+  .section-head p{color:var(--ink-soft); margin-top:10px; font-size:.92rem;}
+
+  /* ===== featured products (イチオシ) ===== */
+  .featured{background:var(--white);}
+  .feature-card{
+    display:flex; flex-direction:column;
+    background:var(--cream);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    margin-bottom:26px;
+  }
+  .feature-card:last-child{margin-bottom:0;}
+  .feature-media{position:relative; aspect-ratio:16/10; overflow:hidden;}
+  .feature-media img{width:100%;height:100%;object-fit:cover;}
+  .feature-tag{
+    position:absolute; top:14px; left:14px;
+    background:var(--stitch);
+    color:var(--white);
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.06em;
+    padding:6px 12px;
+    border-radius:999px;
+  }
+  .feature-body{padding:22px 20px 26px;}
+  .feature-body h3{font-size:1.28rem; margin-bottom:10px;}
+  .feature-body p{color:var(--ink-soft); font-size:.92rem; margin-bottom:14px;}
+  .feature-points{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;}
+  .feature-points span{
+    background:var(--tan-soft);
+    color:var(--leather-deep);
+    font-size:.76rem;
+    font-weight:700;
+    padding:6px 12px;
+    border-radius:999px;
+  }
+  .feature-body .btn{width:100%;}
+
+  /* ===== strength (企業の強み) ===== */
+  .strength{
+    background:var(--leather-deep);
+    color:var(--white);
+  }
+  .strength .section-head h2{color:var(--white);}
+  .strength .eyebrow{color:var(--tan-soft);}
+  .strength .eyebrow::before{background:var(--tan);}
+  .strength-body{
+    max-width:680px; margin:0 auto;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:14px;
+    padding:28px 22px;
+  }
+  .strength-quote{
+    font-family:'Shippori Mincho', serif;
+    font-size:1.35rem;
+    color:var(--tan-soft);
+    text-align:center;
+    margin-bottom:18px;
+  }
+  .strength-body p{
+    color:#EFE3CD;
+    font-size:.93rem;
+    margin-bottom:12px;
+  }
+  .strength-body p:last-child{margin-bottom:0;}
+
+  /* ===== reviews ===== */
+  .reviews{background:var(--cream-deep);}
+  .review-card{
+    background:var(--white);
+    border-radius:12px;
+    padding:22px 20px;
+    box-shadow:var(--shadow);
+    margin-bottom:18px;
+    position:relative;
+    border-left:5px solid var(--stitch);
+  }
+  .review-card:last-child{margin-bottom:0;}
+  .stars{color:var(--stitch); font-size:1rem; letter-spacing:2px; margin-bottom:10px;}
+  .review-card p{font-size:.9rem; color:var(--ink); line-height:1.85;}
+  .review-card .reviewer{
+    margin-top:14px;
+    font-size:.78rem;
+    color:var(--ink-soft);
+    font-weight:700;
+    letter-spacing:.04em;
+  }
+
+  /* ===== shop info table ===== */
+  .shopinfo{background:var(--white);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:.88rem;
+    background:var(--cream);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .info-table tr{border-bottom:1px solid var(--tan-soft);}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    text-align:left;
+    background:var(--leather);
+    color:var(--white);
+    font-weight:700;
+    padding:13px 14px;
+    width:34%;
+    vertical-align:top;
+    font-family:'Shippori Mincho', serif;
+    letter-spacing:.03em;
+  }
+  .info-table td{
+    padding:13px 14px;
+    color:var(--ink);
+    word-break:break-word;
+  }
+  .info-table td a{color:var(--stitch-deep); font-weight:700; text-decoration:underline;}
+  .map-wrap{margin-top:22px; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);}
+  .map-wrap iframe{width:100%; height:280px; border:0; display:block;}
+
+  .sns-row{display:flex; gap:12px; margin-top:18px; justify-content:center; flex-wrap:wrap;}
+  .sns-btn{
+    display:flex; align-items:center; gap:8px;
+    background:var(--leather-deep);
+    color:var(--white);
+    padding:10px 18px;
+    border-radius:999px;
+    font-size:.82rem;
+    font-weight:700;
+  }
+  .sns-btn svg{width:16px;height:16px;fill:currentColor;}
+
+  /* ===== final CTA ===== */
+  .cta-final{
+    background:var(--stitch-deep);
+    color:var(--white);
+    text-align:center;
+  }
+  .cta-final h2{color:var(--white); font-size:1.5rem; margin-bottom:12px;}
+  .cta-final p{color:#F5DFD6; font-size:.9rem; margin-bottom:26px;}
+  .cta-final .hero-actions{max-width:340px;}
+  .cta-final .btn-outline{border-color:rgba(255,255,255,.6);}
+
+  /* ===== footer ===== */
+  footer{
+    background:var(--leather-deep);
+    color:var(--tan-soft);
+    text-align:center;
+    padding:30px 20px 20px;
+    font-size:.76rem;
+  }
+  footer .fname{
+    font-family:'Shippori Mincho', serif;
+    font-size:1.1rem;
+    color:var(--white);
+    margin-bottom:8px;
+  }
+  footer .fcopy{margin-top:16px; opacity:.7;}
+
+  /* ===== fixed bottom mobile nav ===== */
+  .mobile-nav{
+    position:fixed; bottom:0; left:0; right:0;
+    z-index:100;
+    display:flex;
+    background:var(--white);
+    box-shadow:0 -6px 18px rgba(0,0,0,.15);
+  }
+  .mobile-nav a{
+    flex:1;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:3px;
+    padding:9px 4px 8px;
+    font-size:.68rem;
+    font-weight:700;
+    color:var(--leather-deep);
+    border-right:1px solid var(--cream-deep);
+  }
+  .mobile-nav a:last-child{border-right:none;}
+  .mobile-nav a.primary{background:var(--stitch); color:var(--white);}
+  .mobile-nav svg{width:20px;height:20px;fill:currentColor;}
+
+  /* ===== responsive (tablet/desktop) ===== */
+  @media(min-width:760px){
+    body{font-size:17px;}
+    .hero-media{aspect-ratio:16/7; max-height:560px;}
+    .hero-title{font-size:2.6rem;}
+    .hero-desc{font-size:1rem;}
+    .hero-actions{flex-direction:row; max-width:520px;}
+    .feature-card{flex-direction:row;}
+    .feature-media{width:44%; aspect-ratio:auto;}
+    .feature-body{width:56%; padding:32px 34px;}
+    .feature-body .btn{width:auto; display:inline-flex;}
+    .section-head h2{font-size:1.9rem;}
+    .reviews .wrap{display:flex; gap:22px;}
+    .review-card{flex:1; margin-bottom:0;}
+    .cta-final .hero-actions{flex-direction:row; max-width:480px;}
+    .mobile-nav{display:none;}
+    body{padding-bottom:0;}
+    header{position:sticky;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark">八森スポーツ</span>
+    </div>
+    <div class="header-cta">
+      <a href="tel:0198248110" class="tel-icon" aria-label="電話をかける">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1z"/></svg>
+      </a>
+      <a href="tel:0198248110" class="tel-btn">
+        <span class="num">0198-24-8110</span>
+        <span class="label">お電話でのお問い合わせ</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero-media">
+    <img src="images/hero-glove.jpg" alt="八森スポーツ自慢の豊富なグローブラインナップ">
+  </div>
+  <div class="hero-copy wrap">
+    <span class="eyebrow">岩手県花巻市 ｜ グローブ専門店</span>
+    <h1 class="hero-title">道具を大切に。<small>その一言に、八森スポーツのすべてがあります。</small></h1>
+    <p class="hero-desc">
+      豊富な種類のグローブと、経験に基づいた丁寧な型付け・アフターケア。
+      子どもから本格派プレーヤーまで、一人ひとりに合う一台をご提案します。
+      年中無休（元旦のみ休業）で、いつでもご相談をお待ちしております。
+    </p>
+    <div class="hero-actions">
+      <a href="tel:0198248110" class="btn btn-primary">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1z"/></svg>
+        今すぐ電話で相談する
+      </a>
+      <a href="https://hachimori-sports.jimdofree.com/contact/" class="btn btn-outline" target="_blank" rel="noopener">
+        お問い合わせフォームへ
+      </a>
+    </div>
+  </div>
+</div>
+<div class="stitch-divider"></div>
+
+<!-- ===== FEATURED (イチオシ) ===== -->
+<section class="featured">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="justify-content:center;">FEATURED</span>
+      <h2>イチオシの商品・サービス</h2>
+      <p>八森スポーツが特に力を入れている、二つの自慢をご紹介します。</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-media">
+        <img src="images/glove-lineup.jpg" alt="豊富に取り揃えたグローブの数々">
+        <span class="feature-tag">ICHIOSHI 01</span>
+      </div>
+      <div class="feature-body">
+        <h3>グローブ</h3>
+        <p>
+          チラシでも紹介している通り、グローブの種類は圧倒的な豊富さ。
+          高価なトッププレー向けモデルまでしっかり取り揃え、購入時にはしっかりと「揉み込み」を行ってからお渡しします。
+          お子さまには手入れの仕方も丁寧にお伝えし、長く大切に使っていただけるようサポートします。
+        </p>
+        <div class="feature-points">
+          <span>豊富な品揃え</span>
+          <span>本格的な型付け・揉み込み</span>
+          <span>お手入れ方法もレクチャー</span>
+        </div>
+        <a href="tel:0198248110" class="btn btn-primary">グローブについて相談する</a>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-media">
+        <img src="images/shop-front.jpg" alt="八森スポーツ店舗外観">
+        <span class="feature-tag">ICHIOSHI 02</span>
+      </div>
+      <div class="feature-body">
+        <h3>ビデオ通話購入サービス</h3>
+        <p>
+          遠方にお住まいの方や、なかなか来店の時間が取れない方も安心。
+          ビデオ通話をつなぎながら、実際の商品を見て、店主に相談しながらお選びいただけます。
+          道具選びに欠かせない「対話」を、ご自宅にいながら体験していただけるサービスです。
+        </p>
+        <div class="feature-points">
+          <span>自宅から相談可能</span>
+          <span>実物を見ながら選べる</span>
+          <span>遠方のお客様にも好評</span>
+        </div>
+        <a href="https://hachimori-sports.jimdofree.com/contact/" class="btn btn-outline" style="color:var(--stitch-deep); border-color:var(--stitch-deep);" target="_blank" rel="noopener">ビデオ通話を申し込む</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stitch-divider small"></div>
+
+<!-- ===== STRENGTH ===== -->
+<section class="strength">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="justify-content:center;">OUR PROMISE</span>
+      <h2>八森スポーツの強み</h2>
+    </div>
+    <div class="strength-body">
+      <p class="strength-quote">「道具を大切に！！」</p>
+      <p>
+        わが八森スポーツスタッフのモットーは「道具を大切に！！」です。スポーツ用品は高価なものが多く、特に当店ではトッププレー向けの高価な商品を数多く取り揃えております。
+      </p>
+      <p>
+        それだけに、長く使っていただけるようなメンテナンスやアドバイスを必ずさせていただいております。道具を大切にすれば、必ずプレーの役に立つはずです。私たちも一緒に応援させていただきます。
+      </p>
+      <p>
+        どんな破損でもご相談ください。すぐに「新しいのを買ってください」とは言いません。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="justify-content:center;">VOICE</span>
+      <h2>お客様の声</h2>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★</div>
+      <p>地域に密着した素晴らしいお店です。高校のジャージとかも扱っています。</p>
+      <div class="reviewer">来店されたお客様の声</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>
+        子供のグローブを買いに行きました。接客してくれた店主さん？がとても対応が良くて、もの腰柔らかく感じで要望を言ったら色々教えてもらいながら、子供の気に入ったグローブを買うことができました。
+        ちゃんと揉んでもらえましたし（他の口コミにあるような変なふにゃふにゃって感じではないです）。
+        チラシにあった通り、グローブの種類がかなり豊富で良かったですし、子供に手入れの仕方も教えてもらい、大満足でした。
+        わざわざ遠方から行った甲斐がありました。これからもグローブを買うときはお世話になります。
+      </p>
+      <div class="reviewer">来店されたお客様の声</div>
+    </div>
+  </div>
+</section>
+
+<div class="stitch-divider small"></div>
+
+<!-- ===== SHOP INFO ===== -->
+<section class="shopinfo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="justify-content:center;">SHOP INFORMATION</span>
+      <h2>店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>八森スポーツ</td></tr>
+      <tr><th>会社名</th><td>八森スポーツ株式会社</td></tr>
+      <tr><th>住所</th><td>岩手県花巻市末広町２−１１</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0198248110">0198-24-8110</a></td></tr>
+      <tr><th>定休日</th><td>年中無休（元旦のみ休業）</td></tr>
+      <tr><th>ホームページ</th><td><a href="https://hachimori-sports.jimdo.com/" target="_blank" rel="noopener">hachimori-sports.jimdo.com</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://hachimori-sports.jimdofree.com/contact/" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:hachimor@muh.biglobe.ne.jp">hachimor@muh.biglobe.ne.jp</a></td></tr>
+    </table>
+
+    <div class="sns-row">
+      <a href="https://www.facebook.com/hachimorisports/?ref=embed_page#" target="_blank" rel="noopener" class="sns-btn">
+        <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.youtube.com/channel/UCNjMU2tP1Zw8m0hmaN8WOMg" target="_blank" rel="noopener" class="sns-btn">
+        <svg viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.8 2.6 12 2.6 12 2.6h0s-4.8 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S.2 8.1.2 10v1.9c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2.1.9 2.6 1 1.9.2 8.1.3 8.1.3s4.8 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.7 14.3V7.7l6.4 3.3-6.4 3.3z"/></svg>
+        Youtube
+      </a>
+    </div>
+
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E8%8A%B1%E5%B7%BB%E5%B8%82%E6%9C%AB%E5%BA%83%E7%94%BA%EF%BC%92%EF%BC%8D%EF%BC%91%EF%BC%91&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>グローブ選びも、道具のメンテナンスも。八森スポーツが一緒に応援します。</p>
+    <div class="hero-actions">
+      <a href="tel:0198248110" class="btn btn-primary">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1z"/></svg>
+        0198-24-8110 に電話する
+      </a>
+      <a href="https://hachimori-sports.jimdofree.com/contact/" class="btn btn-outline" target="_blank" rel="noopener">
+        フォームで問い合わせる
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fname">八森スポーツ株式会社</div>
+  <div>岩手県花巻市末広町２−１１ ｜ 0198-24-8110</div>
+  <div>年中無休（元旦のみ休業）</div>
+  <div class="fcopy">&copy; 八森スポーツ株式会社</div>
+</footer>
+
+<!-- ===== fixed bottom mobile nav ===== -->
+<nav class="mobile-nav">
+  <a href="tel:0198248110" class="primary">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1z"/></svg>
+    電話
+  </a>
+  <a href="https://hachimori-sports.jimdofree.com/contact/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    問い合わせ
+  </a>
+  <a href="https://hachimori-sports.jimdo.com/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm7.9 9h-3.2c-.1-2-.5-3.8-1.1-5.2 2.1.9 3.7 2.8 4.3 5.2zM12 4c.8 1.1 1.5 3 1.7 6H10.3c.2-3 .9-4.9 1.7-6zM4.1 13H8c.1 2 .5 3.8 1.1 5.2C7 17.3 5.4 15.4 4.1 13zM8 11H4.1c1.3-2.6 2.9-4.5 5-5.4C8.5 7 8.1 8.9 8 11zm4 9c-.8-1.1-1.5-3-1.7-6h3.4c-.2 3-.9 4.9-1.7 6zm2.1-8H9.9c.1-2 .5-3.8 1.1-5.2C10 5.6 12 5.6 12 5.6s2 0 1 .2c.6 1.4 1 3.2 1.1 5.2zm.9 2h3.9c-1.3 2.6-2.9 4.5-5 5.4.6-1.4 1-3.2 1.1-5.4z"/></svg>
+    HP
+  </a>
+</nav>
+
+</body>
+</html>
