@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>シートピア | 秋田のダイビングショップ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep-navy:#08283b;
+    --ocean-teal:#0f6788;
+    --aqua:#4fc7d9;
+    --sand:#eee2c6;
+    --coral:#ff6b4a;
+    --white:#ffffff;
+    --ink:#0b2634;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.7;
+    overflow-x:hidden;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  h1,h2,h3{font-family:'Noto Serif JP', serif;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(8,40,59,0.92);
+    backdrop-filter:blur(6px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.25);
+  }
+  .logo{
+    color:var(--white);
+    font-weight:700;
+    font-size:17px;
+    letter-spacing:0.08em;
+  }
+  .logo span{
+    display:block;
+    font-size:9px;
+    color:var(--aqua);
+    letter-spacing:0.2em;
+    font-family:'Noto Sans JP',sans-serif;
+    font-weight:400;
+  }
+  .tel-btn{
+    background:var(--coral);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    white-space:nowrap;
+    box-shadow:0 3px 8px rgba(255,107,74,0.4);
+  }
+  .tel-btn::before{content:"📞";font-size:14px;}
+  main{padding-top:56px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:78vh;
+    display:flex;
+    align-items:flex-end;
+    background:linear-gradient(180deg, rgba(8,40,59,0.15) 0%, rgba(8,40,59,0.85) 85%), var(--deep-navy) url('images/hero.jpg') center/cover no-repeat;
+    color:var(--white);
+  }
+  .bubbles{
+    position:absolute;inset:0;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  .bubble{
+    position:absolute;
+    bottom:-40px;
+    background:rgba(255,255,255,0.35);
+    border-radius:50%;
+    animation:rise linear infinite;
+  }
+  @keyframes rise{
+    0%{transform:translateY(0) translateX(0);opacity:0;}
+    10%{opacity:0.8;}
+    100%{transform:translateY(-90vh) translateX(10px);opacity:0;}
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    padding:32px 20px 42px;
+    width:100%;
+  }
+  .hero-eyebrow{
+    display:inline-block;
+    background:rgba(79,199,217,0.2);
+    border:1px solid var(--aqua);
+    color:var(--aqua);
+    font-size:11px;
+    letter-spacing:0.15em;
+    padding:4px 12px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:30px;
+    font-weight:900;
+    line-height:1.45;
+    margin-bottom:12px;
+    text-shadow:0 2px 12px rgba(0,0,0,0.4);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--aqua);
+  }
+  .hero p{
+    font-size:14px;
+    opacity:0.92;
+    margin-bottom:20px;
+  }
+  .hero-btns{display:flex;flex-direction:column;gap:10px;}
+  .btn-primary{
+    background:var(--coral);
+    color:var(--white);
+    text-align:center;
+    padding:15px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:15px;
+    box-shadow:0 6px 16px rgba(255,107,74,0.4);
+  }
+  .btn-secondary{
+    background:transparent;
+    border:1.5px solid var(--white);
+    color:var(--white);
+    text-align:center;
+    padding:14px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:14px;
+  }
+  .wave-divider{
+    position:relative;
+    height:44px;
+    background:var(--white);
+  }
+  .wave-divider svg{
+    position:absolute;top:-1px;left:0;width:100%;height:100%;
+  }
+
+  /* ---------- Section base ---------- */
+  section{padding:52px 20px;}
+  .section-tag{
+    display:block;
+    text-align:center;
+    font-size:12px;
+    letter-spacing:0.2em;
+    color:var(--ocean-teal);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:24px;
+    font-weight:900;
+    color:var(--deep-navy);
+    margin-bottom:34px;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    font-family:'Noto Sans JP',sans-serif;
+    font-weight:500;
+    color:#7a8b93;
+    margin-top:6px;
+    letter-spacing:0.05em;
+  }
+
+  /* ---------- Featured product (イチオシ) ---------- */
+  .featured{
+    background:linear-gradient(180deg, var(--deep-navy) 0%, var(--ocean-teal) 100%);
+    color:var(--white);
+    position:relative;
+  }
+  .featured-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(79,199,217,0.4);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  }
+  .featured-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+  }
+  .featured-badge{
+    position:absolute;
+    top:14px;
+    left:14px;
+    background:var(--coral);
+    color:var(--white);
+    font-size:12px;
+    font-weight:700;
+    padding:6px 14px;
+    border-radius:20px;
+    z-index:3;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  }
+  .featured-body{padding:22px;position:relative;}
+  .featured-body h3{
+    font-size:20px;
+    margin-bottom:10px;
+    color:var(--aqua);
+  }
+  .featured-body p{
+    font-size:14px;
+    opacity:0.9;
+    margin-bottom:18px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:20px;
+  }
+  .featured-list li{
+    font-size:13.5px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:10px;
+    opacity:0.95;
+  }
+  .featured-list li::before{
+    content:"◆";
+    position:absolute;
+    left:0;
+    color:var(--aqua);
+    font-size:11px;
+    top:3px;
+  }
+
+  /* ---------- Strengths ---------- */
+  .strengths{background:var(--sand);}
+  .strength-grid{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-card{
+    background:var(--white);
+    border-radius:14px;
+    padding:22px 20px;
+    box-shadow:0 4px 14px rgba(8,40,59,0.08);
+    border-left:5px solid var(--ocean-teal);
+  }
+  .strength-card .num{
+    font-family:'Noto Serif JP',serif;
+    font-size:13px;
+    color:var(--ocean-teal);
+    font-weight:700;
+    letter-spacing:0.1em;
+    margin-bottom:6px;
+    display:block;
+  }
+  .strength-card h4{
+    font-size:16px;
+    color:var(--deep-navy);
+    margin-bottom:8px;
+    font-family:'Noto Serif JP',serif;
+  }
+  .strength-card p{font-size:13.5px;color:#3d4d55;}
+
+  /* ---------- Gallery image ---------- */
+  .gallery{
+    padding:0;
+  }
+  .gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+
+  /* ---------- Shop info ---------- */
+  .info{background:var(--white);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .info-table tr{border-bottom:1px solid #e2e8ea;}
+  .info-table th{
+    text-align:left;
+    color:var(--ocean-teal);
+    padding:14px 10px 14px 0;
+    width:92px;
+    font-weight:700;
+    vertical-align:top;
+    font-family:'Noto Serif JP',serif;
+  }
+  .info-table td{
+    padding:14px 0;
+    color:var(--ink);
+  }
+  .info-table a{color:var(--coral);font-weight:700;}
+  .map-link{
+    display:inline-block;
+    margin-top:6px;
+    font-size:12.5px;
+    color:var(--ocean-teal);
+    text-decoration:underline;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:radial-gradient(circle at 30% 20%, var(--ocean-teal), var(--deep-navy) 75%);
+    color:var(--white);
+    text-align:center;
+  }
+  .cta h2{
+    font-size:22px;
+    margin-bottom:12px;
+    font-weight:900;
+  }
+  .cta p{font-size:13.5px;opacity:0.9;margin-bottom:26px;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--deep-navy);
+    color:rgba(255,255,255,0.75);
+    text-align:center;
+    padding:26px 20px 90px;
+    font-size:12px;
+  }
+  footer .fname{
+    font-family:'Noto Serif JP',serif;
+    color:var(--white);
+    font-size:15px;
+    margin-bottom:6px;
+    letter-spacing:0.05em;
+  }
+  footer .sns{
+    display:inline-block;
+    margin-top:14px;
+    color:var(--aqua);
+    font-size:12.5px;
+  }
+
+  /* ---------- Fixed bottom bar ---------- */
+  .fixed-bar{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:99;
+    display:flex;
+    background:var(--white);
+    box-shadow:0 -3px 14px rgba(0,0,0,0.15);
+  }
+  .fixed-bar a{
+    flex:1;
+    text-align:center;
+    padding:14px 6px;
+    font-size:13px;
+    font-weight:700;
+  }
+  .fixed-bar .fb-tel{
+    background:var(--coral);
+    color:var(--white);
+  }
+  .fixed-bar .fb-form{
+    background:var(--ocean-teal);
+    color:var(--white);
+  }
+
+  @media (min-width:480px){
+    .hero h1{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">シートピア<span>SEA-TOPIA DIVING</span></div>
+  <a href="tel:0188457740" class="tel-btn">018-845-7740</a>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="bubbles">
+      <div class="bubble" style="left:10%;width:8px;height:8px;animation-duration:7s;"></div>
+      <div class="bubble" style="left:25%;width:14px;height:14px;animation-duration:9s;animation-delay:1s;"></div>
+      <div class="bubble" style="left:45%;width:6px;height:6px;animation-duration:6s;animation-delay:2s;"></div>
+      <div class="bubble" style="left:65%;width:10px;height:10px;animation-duration:8s;animation-delay:0.5s;"></div>
+      <div class="bubble" style="left:80%;width:16px;height:16px;animation-duration:10s;animation-delay:3s;"></div>
+      <div class="bubble" style="left:90%;width:7px;height:7px;animation-duration:7.5s;animation-delay:1.5s;"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">秋田市土崎港 ダイビングショップ</span>
+      <h1>秋田の海へ、<br><em>もっと深く</em>もぐろう。</h1>
+      <p>ダイビング用品の品揃えとプロの知識で、あなたの海中体験をサポートするシートピア。初心者から上級者まで、安心して選べる一式がここに。</p>
+      <div class="hero-btns">
+        <a href="tel:0188457740" class="btn-primary">📞 今すぐ電話で相談する</a>
+        <a href="https://www.sea-topia.com/zeromail/contact.html" class="btn-secondary">お問い合わせフォームへ</a>
+      </div>
+    </div>
+  </section>
+  <div class="wave-divider">
+    <svg viewBox="0 0 500 44" preserveAspectRatio="none"><path d="M0,20 C125,44 375,0 500,20 L500,44 L0,44 Z" fill="#ffffff"/></svg>
+  </div>
+
+  <!-- Featured product -->
+  <section class="featured">
+    <span class="section-tag" style="color:var(--aqua);">ICHIOSHI PRODUCT</span>
+    <h2 class="section-title" style="color:var(--white);">イチオシの商品<span style="color:#bcd9e2;">ダイビング用品を豊富にラインナップ</span></h2>
+    <div class="featured-card">
+      <span class="featured-badge">おすすめ</span>
+      <img src="images/diving-gear.jpg" alt="ダイビング用品">
+      <div class="featured-body">
+        <h3>ダイビング用品フルラインナップ</h3>
+        <p>マスク・フィン・ウェットスーツからBCD・レギュレーターまで、信頼のブランドを豊富に取り揃え。あなたの体格・レベル・目的に合わせて、スタッフが最適な一式をご提案します。</p>
+        <ul class="featured-list">
+          <li>初心者向けレンタル器材から本格志向の購入相談まで対応</li>
+          <li>マスク・フィンのフィッティングを丁寧にサポート</li>
+          <li>器材のメンテナンス・点検も店舗で相談可能</li>
+        </ul>
+        <a href="tel:0188457740" class="btn-primary">在庫・料金について電話で聞く</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <img src="images/shop.jpg" alt="シートピア店舗">
+  </div>
+
+  <!-- Strengths -->
+  <section class="strengths">
+    <span class="section-tag">WHY SEA-TOPIA</span>
+    <h2 class="section-title">選ばれる理由<span>地域に根ざした専門ショップだからできること</span></h2>
+    <div class="strength-grid">
+      <div class="strength-card">
+        <span class="num">01</span>
+        <h4>豊富な品揃え</h4>
+        <p>ダイビング用品を幅広く取り扱い、目的や予算に合わせた提案が可能です。</p>
+      </div>
+      <div class="strength-card">
+        <span class="num">02</span>
+        <h4>丁寧な接客・相談対応</h4>
+        <p>代表の金坂芳和をはじめ、経験豊富なスタッフが器材選びを一緒にサポートします。</p>
+      </div>
+      <div class="strength-card">
+        <span class="num">03</span>
+        <h4>秋田・土崎港エリアの地域密着店</h4>
+        <p>秋田市土崎港北にお店を構え、長年地域のダイバーに親しまれています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop info -->
+  <section class="info">
+    <span class="section-tag">SHOP INFO</span>
+    <h2 class="section-title">店舗情報</h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>シートピア</td></tr>
+      <tr><th>会社名</th><td>有限会社シートピア</td></tr>
+      <tr><th>代表者</th><td>金坂芳和</td></tr>
+      <tr><th>住所</th><td>秋田県秋田市土崎港北７丁目５−２２<br><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=秋田県秋田市土崎港北７丁目５−２２" target="_blank" rel="noopener">地図で見る ＞</a></td></tr>
+      <tr><th>電話</th><td><a href="tel:0188457740">018-845-7740</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@sea-topia.com">info@sea-topia.com</a></td></tr>
+      <tr><th>HP</th><td><a href="http://www.sea-topia.com/" target="_blank" rel="noopener">www.sea-topia.com</a></td></tr>
+      <tr><th>お問合せ</th><td><a href="https://www.sea-topia.com/zeromail/contact.html" target="_blank" rel="noopener">お問い合わせフォーム ＞</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.facebook.com/seatopia/posts/pfbid02YSZGFQ5G25UwYu3z27m1rpTzhkp6hZbFJyWzddvXPharcbBb2wUjjKFTvN5XNizel?ref=embed_page" target="_blank" rel="noopener">Facebook ＞</a></td></tr>
+    </table>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>ダイビング用品のことなら、シートピアにお任せください。</p>
+    <div class="cta-buttons">
+      <a href="tel:0188457740" class="btn-primary">📞 018-845-7740 に電話する</a>
+      <a href="https://www.sea-topia.com/zeromail/contact.html" class="btn-secondary">お問い合わせフォーム</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="fname">有限会社シートピア</div>
+  <div>〒 秋田県秋田市土崎港北７丁目５−２２</div>
+  <div>TEL：018-845-7740　｜　info@sea-topia.com</div>
+  <a class="sns" href="https://www.sea-topia.com/" target="_blank" rel="noopener">www.sea-topia.com</a>
+  <div style="margin-top:16px;opacity:0.6;">© シートピア</div>
+</footer>
+
+<div class="fixed-bar">
+  <a href="tel:0188457740" class="fb-tel">📞 電話する</a>
+  <a href="https://www.sea-topia.com/zeromail/contact.html" class="fb-form">✉ 問い合わせ</a>
+</div>
+
+</body>
+</html>
