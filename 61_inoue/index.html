@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>井上スポーツ｜あなただけの一着と、街のスポーツ店</title>
+<meta name="description" content="岩手県奥州市江刺の井上スポーツ株式会社。オリジナルトレーナー・オリジナル帽子の別注制作と、グランドゴルフをはじめとする健康用品を扱う地域密着のスポーツ店です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1c2b40;
+    --navy-deep:#121d2c;
+    --cream:#f6f1e6;
+    --rust:#c15c34;
+    --rust-deep:#a3491f;
+    --mustard:#d8a13b;
+    --green:#4a5a41;
+    --ink:#26241f;
+    --paper:#fbf8f1;
+    --line:#d8cdb6;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    padding-bottom:64px; /* space for fixed bottom nav */
+  }
+
+  img{max-width:100%;display:block;}
+
+  a{color:inherit;text-decoration:none;}
+
+  .en-label{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    font-weight:700;
+  }
+
+  h1,h2,h3{
+    font-family:'Shippori Mincho', serif;
+    line-height:1.4;
+  }
+
+  .stitch{
+    border:none;
+    border-top:2px dashed var(--line);
+    margin:0;
+  }
+
+  .stitch-accent{
+    height:3px;
+    width:56px;
+    background-image:repeating-linear-gradient(90deg, var(--rust) 0 8px, transparent 8px 14px);
+  }
+
+  /* ============ HEADER ============ */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(28,43,64,.96);
+    backdrop-filter:blur(4px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 16px;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+  }
+  header .shop-name{
+    color:var(--cream);
+    font-family:'Shippori Mincho', serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:.03em;
+  }
+  header .shop-name span{
+    display:block;
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-size:.6rem;
+    letter-spacing:.2em;
+    color:var(--mustard);
+    font-weight:500;
+    margin-top:2px;
+  }
+  header .tel-btn{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:var(--rust);
+    color:#fff;
+    padding:9px 14px;
+    border-radius:24px;
+    font-weight:700;
+    font-size:.82rem;
+    white-space:nowrap;
+    box-shadow:0 3px 8px rgba(193,92,52,.4);
+  }
+  header .tel-btn svg{width:15px;height:15px;flex-shrink:0;}
+
+  main{padding-top:58px;}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:82vh;
+    display:flex;
+    align-items:flex-end;
+    background:linear-gradient(180deg, rgba(18,29,44,.35) 0%, rgba(18,29,44,.55) 55%, rgba(18,29,44,.92) 100%), url('images/hero-original-wear.jpg') center/cover no-repeat;
+    color:var(--cream);
+    padding:32px 20px 40px;
+  }
+  .hero-inner{width:100%;max-width:640px;margin:0 auto;position:relative;}
+  .hero .eyebrow{
+    color:var(--mustard);
+    display:inline-block;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:1.9rem;
+    font-weight:800;
+    color:#fff;
+    margin-bottom:14px;
+    text-shadow:0 2px 12px rgba(0,0,0,.4);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--mustard);
+    display:block;
+    font-size:1.05em;
+  }
+  .hero p.lead{
+    font-size:.92rem;
+    line-height:1.9;
+    color:#eee6d6;
+    margin-bottom:24px;
+    max-width:30em;
+  }
+  .hero-ctas{display:flex;gap:10px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 22px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:.88rem;
+    transition:transform .15s ease;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-primary{
+    background:var(--rust);
+    color:#fff;
+    box-shadow:0 6px 16px rgba(193,92,52,.45);
+  }
+  .btn-outline{
+    background:rgba(255,255,255,.08);
+    border:1.5px solid rgba(246,241,230,.5);
+    color:var(--cream);
+  }
+
+  /* ============ SECTION SHELL ============ */
+  section{padding:56px 20px;}
+  .section-inner{max-width:640px;margin:0 auto;}
+  .section-head{margin-bottom:30px;}
+  .section-head .en-label{color:var(--rust);}
+  .section-head h2{
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--navy);
+    margin-top:8px;
+  }
+  .section-head p{
+    margin-top:12px;
+    font-size:.88rem;
+    line-height:1.9;
+    color:#5a5648;
+  }
+
+  /* ============ FEATURED: original trainer ============ */
+  .feature-block{
+    background:var(--navy);
+    color:var(--cream);
+    position:relative;
+  }
+  .feature-block::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:28px;
+    background:var(--paper);
+    clip-path:polygon(0 0,100% 0,100% 0,0 100%);
+  }
+  .feature-block .section-inner{padding-top:12px;}
+  .feature-block .en-label{color:var(--mustard);}
+  .feature-block .section-head h2{color:#fff;}
+  .feature-block .section-head p{color:#cfc9b8;}
+
+  .product-card{
+    background:rgba(246,241,230,.06);
+    border:1px solid rgba(216,161,59,.35);
+    border-radius:4px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .product-card img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+  }
+  .product-card .card-body{padding:18px 18px 22px;}
+  .product-card .tag{
+    display:inline-block;
+    background:var(--rust);
+    color:#fff;
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.08em;
+    padding:4px 10px;
+    border-radius:3px;
+    margin-bottom:10px;
+  }
+  .product-card h3{
+    font-size:1.15rem;
+    color:#fff;
+    margin-bottom:8px;
+    font-weight:700;
+  }
+  .product-card p{
+    font-size:.85rem;
+    line-height:1.85;
+    color:#d8d2c1;
+    margin-bottom:14px;
+  }
+
+  .flow-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:8px;
+  }
+  .flow-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-size:.84rem;
+    color:#e7e2d3;
+  }
+  .flow-list .num{
+    flex-shrink:0;
+    width:26px;height:26px;
+    border-radius:50%;
+    background:var(--mustard);
+    color:var(--navy-deep);
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-weight:900;
+    font-size:.78rem;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* ============ HEALTH GOODS SECTION ============ */
+  .health-wrap{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .health-photo{
+    border-radius:4px;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .health-photo img{aspect-ratio:16/10;object-fit:cover;}
+
+  .chip-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:16px;
+  }
+  .chip{
+    font-size:.78rem;
+    font-weight:500;
+    padding:7px 14px;
+    border-radius:20px;
+    border:1px solid var(--green);
+    color:var(--green);
+    background:rgba(74,90,65,.06);
+  }
+
+  /* ============ REVIEWS ============ */
+  .reviews-section{background:var(--cream);}
+  .review-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:4px solid var(--rust);
+    border-radius:2px;
+    padding:20px;
+    margin-bottom:16px;
+  }
+  .review-card .stars{
+    color:var(--mustard);
+    font-size:1rem;
+    letter-spacing:2px;
+    margin-bottom:10px;
+  }
+  .review-card p{
+    font-size:.86rem;
+    line-height:1.95;
+    color:#3d3a30;
+    white-space:pre-line;
+  }
+  .review-card .signature{
+    margin-top:12px;
+    font-size:.74rem;
+    color:#9a9384;
+    font-weight:500;
+  }
+
+  /* ============ SHOP INFO ============ */
+  .info-section{background:var(--navy-deep);color:var(--cream);}
+  .info-section .en-label{color:var(--mustard);}
+  .info-section .section-head h2{color:#fff;}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:8px;
+  }
+  .info-table tr{border-bottom:1px solid rgba(246,241,230,.15);}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th, .info-table td{
+    text-align:left;
+    padding:14px 0;
+    font-size:.85rem;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:26%;
+    color:var(--mustard);
+    font-weight:700;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    letter-spacing:.03em;
+    white-space:nowrap;
+  }
+  .info-table td{color:#e9e4d5;line-height:1.7;}
+  .info-table a{color:var(--mustard);text-decoration:underline;text-underline-offset:3px;}
+
+  .map-frame{
+    margin-top:22px;
+    border-radius:4px;
+    overflow:hidden;
+    border:1px solid rgba(246,241,230,.2);
+  }
+  .map-frame iframe{width:100%;height:220px;border:0;filter:grayscale(20%) contrast(1.05);}
+
+  /* ============ CTA SECTION ============ */
+  .cta-section{
+    background:linear-gradient(135deg, var(--rust) 0%, var(--rust-deep) 100%);
+    color:#fff;
+    text-align:center;
+    padding:56px 20px;
+  }
+  .cta-section h2{
+    font-size:1.4rem;
+    margin-bottom:12px;
+    font-weight:700;
+  }
+  .cta-section p{
+    font-size:.86rem;
+    line-height:1.85;
+    margin-bottom:26px;
+    color:#ffe9dc;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:340px;
+    margin:0 auto;
+  }
+  .cta-buttons .btn{width:100%;font-size:.95rem;padding:16px;}
+  .cta-buttons .btn-white{background:#fff;color:var(--rust-deep);}
+  .cta-buttons .btn-line{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.6);color:#fff;}
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--navy-deep);
+    color:#a89f8a;
+    text-align:center;
+    padding:30px 20px 26px;
+    font-size:.75rem;
+    line-height:1.9;
+  }
+  footer .foot-shop{
+    color:var(--cream);
+    font-family:'Shippori Mincho',serif;
+    font-size:1rem;
+    margin-bottom:8px;
+    font-weight:700;
+  }
+  footer .foot-sns{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:10px;
+    color:var(--mustard);
+    font-weight:500;
+  }
+
+  /* ============ FIXED BOTTOM NAV ============ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:100;
+    display:flex;
+    background:var(--navy-deep);
+    border-top:1px solid rgba(216,161,59,.35);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    color:#d8d2c1;
+    padding:9px 4px 8px;
+    font-size:.62rem;
+    font-weight:500;
+  }
+  .bottom-nav a svg{width:19px;height:19px;}
+  .bottom-nav a.highlight{
+    background:var(--rust);
+    color:#fff;
+  }
+
+  /* ============ DESKTOP / WIDER SCREENS ============ */
+  @media (min-width:760px){
+    body{padding-bottom:0;}
+    .bottom-nav{display:none;}
+    header{padding:16px 40px;}
+    .hero{min-height:88vh;padding:40px 40px 64px;}
+    .hero h1{font-size:2.7rem;}
+    .hero p.lead{font-size:1.02rem;}
+    section{padding:88px 40px;}
+    .section-inner{max-width:920px;}
+    .health-wrap{flex-direction:row;align-items:center;}
+    .health-wrap .health-photo{flex:1;}
+    .health-wrap .health-copy{flex:1;}
+    .product-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
+    .info-table th{width:18%;}
+    .cta-buttons{flex-direction:row;max-width:none;justify-content:center;}
+    .cta-buttons .btn{width:auto;padding:16px 34px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">井上スポーツ<span>INOUE SPORTS</span></div>
+  <a href="tel:0197352000" class="tel-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    0197-35-2000
+  </a>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="en-label eyebrow">ORIGINAL WEAR &amp; HEALTH GOODS</span>
+      <h1>この街の想いを、<em>一着に仕立てる。</em></h1>
+      <p class="lead">岩手県奥州市江刺で50年以上、地域のスポーツを支えてきた井上スポーツ。オリジナルトレーナー・オリジナル帽子の別注づくりと、グランドゴルフなど健康づくりの道具選びを、親身にお手伝いします。</p>
+      <div class="hero-ctas">
+        <a href="#trainer" class="btn btn-primary">オリジナルトレーナーを見る</a>
+        <a href="tel:0197352000" class="btn btn-outline">電話で相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED: ORIGINAL TRAINER ============ -->
+  <section class="feature-block" id="trainer">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="en-label">SIGNATURE ITEM</span>
+        <h2>オリジナルトレーナー・オリジナル帽子</h2>
+        <p>チーム名やロゴ、思い描いたイメージをそのまま形に。生地選びからプリント・刺繍まで、担当スタッフが一つひとつ丁寧に相談に乗りながら仕立てます。学校や職場、チームのお揃いアイテムにも人気です。</p>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/original-trainer.jpg" alt="井上スポーツのオリジナルトレーナー">
+          <div class="card-body">
+            <span class="tag">別注制作</span>
+            <h3>オリジナルトレーナー</h3>
+            <p>チームカラーやロゴ入りのお揃いトレーナー。生地の風合いから相談でき、イメージ通りに仕上がると評判です。</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/original-cap.jpg" alt="井上スポーツのオリジナル帽子">
+          <div class="card-body">
+            <span class="tag">別注制作</span>
+            <h3>オリジナル帽子</h3>
+            <p>刺繍やワッペンでチームらしさを演出。トレーナーとお揃いでオーダーする方も多い人気アイテムです。</p>
+          </div>
+        </div>
+      </div>
+
+      <ul class="flow-list">
+        <li><span class="num">1</span>お店またはお電話でイメージをご相談ください</li>
+        <li><span class="num">2</span>生地・カラー・デザインを一緒に決めていきます</li>
+        <li><span class="num">3</span>仕上がりを確認して、お渡し・発送します</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ HEALTH GOODS ============ -->
+  <section class="health-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="en-label">HEALTH &amp; LIFELONG SPORTS</span>
+        <h2>健康用品・グランドゴルフ用品</h2>
+        <p>これから運動を始める方にも選びやすいよう、用具選びから丁寧にご案内します。年齢を問わず楽しめるグランドゴルフ用品をはじめ、健康づくりをサポートする道具を取り揃えています。</p>
+      </div>
+      <div class="health-wrap">
+        <div class="health-photo">
+          <img src="images/shopfront.jpg" alt="井上スポーツ店内・健康用品コーナー">
+        </div>
+        <div class="health-copy">
+          <p style="font-size:.86rem;line-height:1.9;color:#5a5648;">「何を選べばいいかわからない」という方こそ、まずは店頭でお気軽にご相談ください。用途や体力に合わせた道具選びと、割引などのご相談にも対応しています。</p>
+          <div class="chip-row">
+            <span class="chip">グランドゴルフ用品</span>
+            <span class="chip">健康器具</span>
+            <span class="chip">用具の買い替え相談</span>
+            <span class="chip">初心者サポート</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="reviews-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="en-label">VOICE</span>
+        <h2>お客様の声</h2>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p>グランドゴルフを始める人がいて、用具を買いに行きました、割引もして貰い助かりましたよ～＼(^-^)／</p>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>オリジナルの帽子とオリジナルトレナーを作成して頂きました。
+イメージ通りだったので大満足です。
+対応してくれたたけるくん！有難う。
+いろいろ相談にのってくれる親切なスポーツ店です！おすすめです(≧∀≦)///</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOP INFO ============ -->
+  <section class="info-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="en-label">SHOP INFO</span>
+        <h2>店舗情報</h2>
+      </div>
+      <table class="info-table">
+        <tr>
+          <th>店名</th>
+          <td>井上スポーツ（井上スポーツ株式会社）</td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>岩手県奥州市江刺西大通り１０−１３</td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td><a href="tel:0197352000">0197-35-2000</a></td>
+        </tr>
+        <tr>
+          <th>ホームページ</th>
+          <td><a href="https://inospo.jimdofree.com/" target="_blank" rel="noopener">inospo.jimdofree.com</a></td>
+        </tr>
+        <tr>
+          <th>お問い合わせ</th>
+          <td><a href="https://inospo.jimdofree.com/" target="_blank" rel="noopener">フォームはこちら</a></td>
+        </tr>
+        <tr>
+          <th>Instagram</th>
+          <td><a href="https://www.instagram.com/inospo01/" target="_blank" rel="noopener">@inospo01</a></td>
+        </tr>
+      </table>
+
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E5%A5%A5%E5%B7%9E%E5%B8%82%E6%B1%9F%E5%88%BA%E8%A5%BF%E5%A4%A7%E9%80%9A%E3%82%8A10-13&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="井上スポーツ地図"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>オリジナルトレーナー・帽子の別注制作から、健康用品選びまで。<br>電話でもインスタグラムのDMでも、お気軽にどうぞ。</p>
+    <div class="cta-buttons">
+      <a href="tel:0197352000" class="btn btn-white">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        電話で相談する
+      </a>
+      <a href="https://inospo.jimdofree.com/" target="_blank" rel="noopener" class="btn btn-line">お問い合わせフォーム</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-shop">井上スポーツ株式会社</div>
+  <div>岩手県奥州市江刺西大通り１０−１３ ／ 0197-35-2000</div>
+  <div class="foot-sns">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+    @inospo01
+  </div>
+  <div style="margin-top:14px;">© 井上スポーツ株式会社</div>
+</footer>
+
+<!-- ============ FIXED BOTTOM NAV (mobile) ============ -->
+<nav class="bottom-nav">
+  <a href="tel:0197352000">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    電話
+  </a>
+  <a href="#trainer" class="highlight">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+    別注商品
+  </a>
+  <a href="https://www.instagram.com/inospo01/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+    Instagram
+  </a>
+  <a href="https://www.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E5%A5%A5%E5%B7%9E%E5%B8%82%E6%B1%9F%E5%88%BA%E8%A5%BF%E5%A4%A7%E9%80%9A%E3%82%8A10-13" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    地図
+  </a>
+</nav>
+
+</body>
+</html>
