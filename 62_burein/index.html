@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スポーツブレイン｜岩手県盛岡市の総合スポーツ用品店</title>
+<meta name="description" content="スポーツブレインは岩手県盛岡市のスポーツ用品専門店。ケガ予防と疲労回復をサポートするストレッチ用品を豊富に取り揃えています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-deep:#153226;
+    --green-mid:#1F5C46;
+    --orange:#FF6A39;
+    --orange-soft:#FFE7DC;
+    --cream:#F7F4EC;
+    --gold:#C99A4B;
+    --ink:#1A1A1A;
+    --white:#FFFFFF;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.8;
+    padding-bottom:64px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{max-width:100%;display:block;}
+
+  h1,h2,h3{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-weight:900;
+    letter-spacing:0.02em;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .container{
+    max-width:960px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* ===== Header ===== */
+  .site-header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(21,50,38,0.96);
+    backdrop-filter:blur(6px);
+    color:var(--white);
+    padding:12px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 2px 12px rgba(0,0,0,0.15);
+  }
+  .site-header .logo{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-weight:900;
+    font-size:1.05rem;
+    letter-spacing:0.05em;
+  }
+  .site-header .logo span{
+    display:block;
+    font-size:0.6rem;
+    font-weight:500;
+    letter-spacing:0.15em;
+    color:var(--gold);
+    margin-top:2px;
+  }
+  .header-tel{
+    background:var(--orange);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:24px;
+    font-weight:700;
+    font-size:0.85rem;
+    white-space:nowrap;
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    margin-top:56px;
+    position:relative;
+    background:linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:48px 0 0;
+  }
+  .hero .container{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    position:relative;
+    z-index:2;
+  }
+  .hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--gold);
+    font-size:0.78rem;
+    letter-spacing:0.2em;
+    font-weight:700;
+  }
+  .hero-eyebrow::before{
+    content:"";
+    width:24px;height:2px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:2.1rem;
+    line-height:1.4;
+    color:var(--white);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--orange);
+  }
+  .hero p.lead{
+    font-size:0.95rem;
+    color:#E7ECE9;
+    max-width:32em;
+  }
+  .hero-img-wrap{
+    position:relative;
+    margin:0 -20px;
+  }
+  .hero-img-wrap img{
+    width:100%;
+    height:56vw;
+    max-height:340px;
+    object-fit:cover;
+  }
+  .hero-wave{
+    display:block;
+    width:100%;
+    height:40px;
+    margin-top:-2px;
+  }
+
+  /* stretch-band signature motif */
+  .band-divider{
+    width:100%;
+    height:34px;
+    display:block;
+  }
+
+  /* ===== Section base ===== */
+  section{padding:52px 0;}
+  .section-head{
+    text-align:center;
+    margin-bottom:32px;
+  }
+  .section-head .eyebrow{
+    font-size:0.75rem;
+    letter-spacing:0.2em;
+    color:var(--orange);
+    font-weight:700;
+    display:block;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-size:1.55rem;
+    color:var(--green-deep);
+  }
+  .section-head p{
+    font-size:0.88rem;
+    color:#555;
+    margin-top:10px;
+  }
+
+  /* ===== Featured Product (Hero of hero) ===== */
+  .feature{
+    background:var(--white);
+    position:relative;
+  }
+  .feature-badge{
+    display:inline-block;
+    background:var(--orange);
+    color:var(--white);
+    font-size:0.75rem;
+    font-weight:700;
+    letter-spacing:0.1em;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .feature-card{
+    background:var(--cream);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(21,50,38,0.08);
+  }
+  .feature-card img{
+    width:100%;
+    height:62vw;
+    max-height:320px;
+    object-fit:cover;
+  }
+  .feature-card-body{
+    padding:24px 20px 28px;
+  }
+  .feature-card-body h3{
+    font-size:1.35rem;
+    color:var(--green-deep);
+    margin-bottom:12px;
+  }
+  .feature-card-body p{
+    font-size:0.9rem;
+    color:#444;
+    margin-bottom:20px;
+  }
+  .benefit-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-bottom:22px;
+  }
+  .benefit-item{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    background:var(--white);
+    border-radius:10px;
+    padding:14px;
+    border:1px solid #EAE4D6;
+  }
+  .benefit-icon{
+    flex:0 0 auto;
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--green-deep);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .benefit-icon svg{width:18px;height:18px;stroke:var(--white);}
+  .benefit-text h4{
+    font-size:0.92rem;
+    color:var(--green-deep);
+    margin-bottom:2px;
+    font-weight:700;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+  }
+  .benefit-text p{
+    font-size:0.8rem;
+    color:#555;
+    margin:0;
+  }
+  .feature-cta{
+    display:block;
+    text-align:center;
+    background:var(--orange);
+    color:var(--white);
+    font-weight:700;
+    padding:14px;
+    border-radius:10px;
+    font-size:0.95rem;
+    letter-spacing:0.03em;
+  }
+
+  /* ===== Philosophy ===== */
+  .philosophy{
+    background:var(--green-deep);
+    color:var(--white);
+  }
+  .philosophy .section-head h2{color:var(--white);}
+  .philosophy .section-head p{color:#CFE0D6;}
+  .philosophy-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .philosophy-item{
+    background:rgba(255,255,255,0.06);
+    border-left:3px solid var(--gold);
+    padding:18px 18px;
+    border-radius:0 10px 10px 0;
+  }
+  .philosophy-item .num{
+    color:var(--gold);
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-weight:900;
+    font-size:0.85rem;
+    letter-spacing:0.1em;
+    display:block;
+    margin-bottom:6px;
+  }
+  .philosophy-item p{
+    font-size:0.88rem;
+    color:#EDF3EF;
+    margin:0;
+  }
+
+  /* ===== Shop snapshot ===== */
+  .snapshot{
+    background:var(--white);
+  }
+  .snapshot img{
+    border-radius:16px;
+    width:100%;
+    height:52vw;
+    max-height:280px;
+    object-fit:cover;
+    margin-bottom:24px;
+  }
+  .snapshot-text h3{
+    font-size:1.2rem;
+    color:var(--green-deep);
+    margin-bottom:10px;
+  }
+  .snapshot-text p{
+    font-size:0.88rem;
+    color:#444;
+  }
+
+  /* ===== Info table ===== */
+  .info{
+    background:var(--cream);
+  }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--white);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(21,50,38,0.06);
+  }
+  .info-table tr{border-bottom:1px solid #EDE7D9;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:14px 16px;
+    font-size:0.85rem;
+    vertical-align:top;
+  }
+  .info-table th{
+    color:var(--green-deep);
+    font-weight:700;
+    width:32%;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    background:#F0ECDF;
+  }
+  .info-table td a{
+    color:var(--orange);
+    font-weight:700;
+    word-break:break-all;
+  }
+  .map-wrap{
+    margin-top:20px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(21,50,38,0.06);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:260px;
+    border:0;
+    display:block;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section{
+    background:linear-gradient(135deg, var(--orange) 0%, #E8531F 100%);
+    color:var(--white);
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:1.5rem;
+    margin-bottom:10px;
+    color:var(--white);
+  }
+  .cta-section p{
+    font-size:0.9rem;
+    margin-bottom:26px;
+    color:#FFEDE5;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .btn{
+    display:block;
+    padding:15px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:0.95rem;
+  }
+  .btn-primary{
+    background:var(--white);
+    color:var(--orange);
+  }
+  .btn-secondary{
+    background:rgba(0,0,0,0.18);
+    color:var(--white);
+    border:1px solid rgba(255,255,255,0.5);
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    background:var(--green-deep);
+    color:#CFE0D6;
+    padding:36px 0 24px;
+    font-size:0.8rem;
+  }
+  footer .logo{
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-weight:900;
+    color:var(--white);
+    font-size:1.1rem;
+    margin-bottom:6px;
+  }
+  footer .foot-info{margin-bottom:18px;}
+  footer .foot-info p{margin-bottom:4px;}
+  footer .foot-links{
+    display:flex;
+    gap:16px;
+    margin-bottom:18px;
+  }
+  footer .foot-links a{
+    color:var(--gold);
+    font-weight:700;
+  }
+  footer .copyright{
+    border-top:1px solid rgba(255,255,255,0.12);
+    padding-top:16px;
+    color:#89A597;
+    font-size:0.72rem;
+  }
+
+  /* ===== Fixed bottom mobile nav ===== */
+  .mobile-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:100;
+    display:flex;
+    background:var(--white);
+    box-shadow:0 -2px 12px rgba(0,0,0,0.1);
+  }
+  .mobile-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px 8px;
+    font-size:0.68rem;
+    color:var(--green-deep);
+    font-weight:700;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+  }
+  .mobile-nav a.highlight{
+    background:var(--orange);
+    color:var(--white);
+  }
+  .mobile-nav svg{width:20px;height:20px;}
+
+  /* ===== Desktop refinements ===== */
+  @media (min-width:640px){
+    .hero h1{font-size:2.6rem;}
+    .hero-img-wrap{margin:0;border-radius:16px;overflow:hidden;}
+    .hero-img-wrap img{height:340px;}
+    .feature-card{display:flex;flex-wrap:wrap;}
+    .feature-card img{width:45%;height:auto;max-height:none;object-fit:cover;}
+    .feature-card-body{width:55%;}
+    .benefit-grid{grid-template-columns:1fr 1fr;}
+    .snapshot .container{display:flex;gap:32px;align-items:center;}
+    .snapshot img{width:45%;height:280px;margin-bottom:0;}
+    .snapshot-text{width:55%;}
+    .cta-buttons{flex-direction:row;justify-content:center;}
+    .btn{padding:16px 32px;}
+    footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="logo">スポーツブレイン<span>SPORTS BRAIN｜盛岡市</span></div>
+  <a href="tel:0196810067" class="header-tel">📞 019-681-0067</a>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-eyebrow">IWATE / MORIOKA SINCE ローカル密着</span>
+    <h1>その一伸びが、<br><em>ケガをしない体</em>をつくる。</h1>
+    <p class="lead">スポーツブレインは、岩手県盛岡市のスポーツ用品専門店。競技力の向上とケガの予防、そして毎日の疲労回復まで、ストレッチ用品を中心に本気でサポートします。</p>
+    <div class="hero-img-wrap">
+      <img src="images/hero-stretch.jpg" alt="ストレッチをするアスリートとスポーツブレインの店内">
+    </div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 400 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,20 C100,40 300,0 400,20 L400,40 L0,40 Z" fill="#F7F4EC"/>
+  </svg>
+</section>
+
+<!-- ===== Featured Product ===== -->
+<section class="feature" id="feature">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">ICHIOSHI PRODUCT</span>
+      <h2>今、いちばん伝えたいのは<br>ストレッチ用品です。</h2>
+      <p>「動ける体」は伸びる体から。トレーニング前後のケアから、日常のセルフメンテナンスまで対応します。</p>
+    </div>
+
+    <div class="feature-card">
+      <img src="images/stretch-goods.jpg" alt="スポーツブレイン店頭のストレッチ用品コーナー">
+      <div class="feature-card-body">
+        <span class="feature-badge">STAFF PICK</span>
+        <h3>ストレッチ用品コーナー</h3>
+        <p>ストレッチポール、バンド、ヨガマットなど、目的とレベルに合わせてスタッフが直接ご提案。実際に体を動かしながら、自分に合った一品を選べます。</p>
+
+        <div class="benefit-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4 12h16"/></svg>
+            </div>
+            <div class="benefit-text">
+              <h4>ケガの予防</h4>
+              <p>柔軟性を高め、筋肉や関節への負担を軽減します。</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 L3 14h7l-1 8 10-12h-7z"/></svg>
+            </div>
+            <div class="benefit-text">
+              <h4>パフォーマンス向上</h4>
+              <p>可動域が広がり、本来の動きを引き出します。</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </div>
+            <div class="benefit-text">
+              <h4>疲労回復をサポート</h4>
+              <p>練習後や仕事終わりの体をやさしくケアします。</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-3-8-6-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 5-4 8-8 11z"/></svg>
+            </div>
+            <div class="benefit-text">
+              <h4>毎日続けられる</h4>
+              <p>初めての方にも扱いやすいアイテムを厳選しています。</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="tel:0196810067" class="feature-cta">ストレッチ用品について電話で相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Philosophy ===== -->
+<section class="philosophy">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">OUR PHILOSOPHY</span>
+      <h2>スポーツブレインが<br>大切にしていること</h2>
+      <p>「命・人・想い」を繋ぎ、地域とともに歩む一軒でありたい。</p>
+    </div>
+    <div class="philosophy-list">
+      <div class="philosophy-item">
+        <span class="num">MISSION</span>
+        <p>私たちは、スポーツの素晴らしさを伝えることを使命とし、健康な人生、感動のある社会づくりに貢献します。</p>
+      </div>
+      <div class="philosophy-item">
+        <span class="num">VISION</span>
+        <p>私たちは、スポーツの持つ力を信じ、「命・人・想い」を繋ぎ、夢のある地域づくりに貢献します。</p>
+      </div>
+      <div class="philosophy-item">
+        <span class="num">VALUE</span>
+        <p>私たちは、スポーツマンシップにのっとり、チームワークを大切にし、ブレインファミリーの成長と、幸福を追求します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Shop snapshot ===== -->
+<section class="snapshot">
+  <div class="container">
+    <img src="images/shop-front.jpg" alt="スポーツブレイン店舗外観">
+    <div class="snapshot-text">
+      <h3>盛岡市山王町から、<br>地域のスポーツライフを支えます。</h3>
+      <p>スポーツブレインは株式会社スポーツブレインが運営する、地域密着のスポーツ用品専門店です。代表の岩本健児をはじめスタッフ一同、お一人おひとりの目的に合わせた商品選びをお手伝いしています。ストレッチ用品はもちろん、各種競技用品もお気軽にご相談ください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Info ===== -->
+<section class="info" id="info">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">SHOP INFORMATION</span>
+      <h2>店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>スポーツブレイン</td></tr>
+      <tr><th>運営会社</th><td>株式会社スポーツブレイン</td></tr>
+      <tr><th>代表者</th><td>岩本　健児</td></tr>
+      <tr><th>住所</th><td>岩手県盛岡市山王町１０−１６</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0196810067">019-681-0067</a></td></tr>
+      <tr><th>公式サイト</th><td><a href="https://www.sportsbrain.jp/" target="_blank" rel="noopener">www.sportsbrain.jp</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://www.sportsbrain.jp/mail/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@sportsbrain.jp">info@sportsbrain.jp</a></td></tr>
+      <tr><th>Facebook</th><td><a href="https://www.facebook.com/sportsbrain.iwate/" target="_blank" rel="noopener">sportsbrain.iwate</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E7%9B%9B%E5%B2%A1%E5%B8%82%E5%B1%B1%E7%8E%8B%E7%94%BA10-16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="スポーツブレイン地図"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="container">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>ストレッチ用品の選び方から各種スポーツ用品まで、スタッフが丁寧にご案内します。</p>
+    <div class="cta-buttons">
+      <a href="tel:0196810067" class="btn btn-primary">📞 電話で相談する</a>
+      <a href="https://www.sportsbrain.jp/mail/" target="_blank" rel="noopener" class="btn btn-secondary">✉️ フォームで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="container">
+    <div class="foot-info">
+      <div class="logo">スポーツブレイン</div>
+      <p>株式会社スポーツブレイン</p>
+      <p>岩手県盛岡市山王町１０−１６</p>
+      <p>TEL：019-681-0067</p>
+    </div>
+    <div>
+      <div class="foot-links">
+        <a href="https://www.sportsbrain.jp/" target="_blank" rel="noopener">公式サイト</a>
+        <a href="https://www.facebook.com/sportsbrain.iwate/" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:info@sportsbrain.jp">Email</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="copyright">© 株式会社スポーツブレイン All Rights Reserved.</div>
+  </div>
+</footer>
+
+<!-- ===== Fixed Mobile Nav ===== -->
+<nav class="mobile-nav">
+  <a href="#feature">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4 12h16"/></svg>
+    イチオシ
+  </a>
+  <a href="#info">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-4.5-7-8-7-11a7 7 0 0 1 14 0c0 3-3 6.5-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    アクセス
+  </a>
+  <a href="tel:0196810067" class="highlight">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.99.72 2.93a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.15-1.15a2 2 0 0 1 2.11-.45c.94.35 1.93.59 2.93.72A2 2 0 0 1 22 16.92z"/></svg>
+    電話
+  </a>
+</nav>
+
+</body>
+</html>
