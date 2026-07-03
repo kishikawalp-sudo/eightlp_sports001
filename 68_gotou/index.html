@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>後藤商店｜岩手県花巻市大迫町 なんでも屋「The General Store」</title>
+<meta name="description" content="岩手県花巻市大迫町の後藤商店。遊漁券・釣具、ハンドメイドクラフト、駄菓子・花火から、ロウ細工やイルミネーション製作体験まで。大迫の街歩きに、ぜひお立ち寄りください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEE3CB;
+    --paper-deep:#E4D5B7;
+    --ink:#332318;
+    --ink-soft:#5B4736;
+    --indigo:#26332B;
+    --indigo-deep:#1B241E;
+    --bamboo:#3F5D46;
+    --bamboo-deep:#2E4433;
+    --festival:#BD4630;
+    --festival-deep:#9C3623;
+    --amber:#D9A441;
+    --amber-deep:#B9832A;
+    --line:rgba(51,35,24,0.14);
+    --shadow:0 12px 28px rgba(27,36,30,0.16);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:"Noto Sans JP",sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.8;
+    padding-top:60px;
+    padding-bottom:64px;
+    overflow-x:hidden;
+  }
+
+  img{max-width:100%;display:block;}
+
+  h1,h2,h3,.brush{
+    font-family:"Yuji Syuku",serif;
+    font-weight:400;
+    letter-spacing:.03em;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{max-width:520px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--indigo-deep);
+    color:var(--paper);
+    height:60px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 16px;
+    box-shadow:0 2px 10px rgba(0,0,0,.25);
+  }
+  header .shopname{
+    font-family:"Yuji Syuku",serif;
+    font-size:22px;
+    color:var(--paper);
+  }
+  header .shopname small{
+    display:block;
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:9px;
+    letter-spacing:.12em;
+    color:var(--amber);
+    font-weight:500;
+  }
+  header .tel-btn{
+    background:var(--festival);
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    padding:8px 14px;
+    border-radius:20px;
+    white-space:nowrap;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    background:linear-gradient(180deg,rgba(27,36,30,.35),rgba(20,16,10,.78)),
+      url("images/hero.jpg") center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:40px 20px 70px;
+    color:var(--paper);
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    align-self:flex-start;
+    font-size:11px;
+    letter-spacing:.25em;
+    background:rgba(238,227,203,.14);
+    border:1px solid rgba(238,227,203,.5);
+    padding:6px 12px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:40px;
+    line-height:1.35;
+    text-shadow:0 4px 18px rgba(0,0,0,.5);
+    margin-bottom:14px;
+  }
+  .hero h1 span{color:var(--amber);}
+  .hero p.lead{
+    font-size:14.5px;
+    color:rgba(238,227,203,.92);
+    max-width:38ch;
+    margin-bottom:26px;
+  }
+  .hero .btn-row{display:flex;gap:10px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:14px 20px;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:700;
+    box-shadow:var(--shadow);
+  }
+  .btn-primary{background:var(--festival);color:#fff;}
+  .btn-ghost{background:rgba(238,227,203,.08);color:var(--paper);border:1px solid rgba(238,227,203,.55);}
+
+  /* noren fringe cut at hero bottom */
+  .noren-fringe{
+    position:absolute;left:0;right:0;bottom:-1px;height:26px;
+    background:repeating-linear-gradient(
+      90deg,
+      var(--paper) 0 22px,
+      transparent 22px 26px
+    );
+    -webkit-mask:linear-gradient(#000,#000);
+  }
+  .noren-fringe::before{
+    content:"";
+    position:absolute;inset:0;
+    background:var(--paper);
+    clip-path:polygon(
+      0% 0%,4% 0%,4% 70%,8% 0%,12% 0%,12% 70%,16% 0%,20% 0%,20% 70%,
+      24% 0%,28% 0%,28% 70%,32% 0%,36% 0%,36% 70%,40% 0%,44% 0%,44% 70%,
+      48% 0%,52% 0%,52% 70%,56% 0%,60% 0%,60% 70%,64% 0%,68% 0%,68% 70%,
+      72% 0%,76% 0%,76% 70%,80% 0%,84% 0%,84% 70%,88% 0%,92% 0%,92% 70%,
+      96% 0%,100% 0%,100% 100%,0% 100%
+    );
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:56px 0;}
+  .section-head{margin-bottom:30px;text-align:center;}
+  .section-head .tag{
+    display:inline-block;
+    font-size:11px;
+    letter-spacing:.22em;
+    color:var(--bamboo-deep);
+    background:rgba(63,93,70,.12);
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:12px;
+  }
+  .section-head h2{
+    font-size:28px;
+    color:var(--ink);
+  }
+  .section-head p{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-top:8px;
+  }
+
+  /* ---------- STORY ---------- */
+  .story{background:var(--paper);}
+  .story-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 22px;
+    box-shadow:var(--shadow);
+  }
+  .story-card p{font-size:14.5px;color:var(--ink-soft);margin-bottom:14px;}
+  .story-card p:last-child{margin-bottom:0;}
+  .story-quote{
+    font-family:"Yuji Syuku",serif;
+    font-size:18px;
+    color:var(--festival-deep);
+    line-height:1.7;
+    border-left:3px solid var(--amber);
+    padding-left:14px;
+    margin:18px 0;
+  }
+
+  /* ---------- OSHI / PILLARS ---------- */
+  .oshi{background:var(--indigo-deep);color:var(--paper);}
+  .oshi .section-head .tag{background:rgba(238,227,203,.12);color:var(--amber);}
+  .oshi .section-head h2{color:var(--paper);}
+  .oshi .section-head p{color:rgba(238,227,203,.75);}
+
+  .shelf{
+    position:relative;
+    background:var(--indigo);
+    border:1px solid rgba(238,227,203,.14);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:24px;
+    box-shadow:0 14px 30px rgba(0,0,0,.35);
+  }
+  .shelf:last-child{margin-bottom:0;}
+  .shelf-img{height:180px;background-size:cover;background-position:center;}
+  .shelf-body{padding:22px;}
+  .shelf-label{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.1em;
+    color:var(--indigo-deep);
+    background:var(--amber);
+    padding:5px 12px;
+    border-radius:4px;
+    margin-bottom:12px;
+  }
+  .shelf h3{font-size:22px;margin-bottom:10px;color:var(--paper);}
+  .shelf p{font-size:13.5px;color:rgba(238,227,203,.82);}
+  .shelf .price-tag{
+    position:absolute;top:16px;right:-6px;
+    background:var(--festival);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.05em;
+    padding:7px 16px 7px 12px;
+    border-radius:4px 0 0 4px;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+  }
+  .shelf .price-tag::after{
+    content:"";
+    position:absolute;right:-7px;top:0;
+    border-top:12px solid var(--festival);
+    border-bottom:12px solid transparent;
+    border-right:7px solid transparent;
+  }
+  .no-img .shelf-body{padding-top:26px;}
+  .fishing-visual{
+    height:180px;
+    background:
+      radial-gradient(circle at 20% 30%,rgba(217,164,65,.25),transparent 45%),
+      linear-gradient(135deg,var(--bamboo-deep),var(--indigo));
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .fishing-visual svg{width:96px;height:96px;opacity:.85;}
+
+  /* ---------- LINEUP ---------- */
+  .lineup{background:var(--paper-deep);}
+  .chip-grid{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .chip{
+    background:#fff;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    font-size:13px;
+    font-weight:500;
+    padding:9px 16px;
+    border-radius:999px;
+    box-shadow:0 3px 8px rgba(51,35,24,.08);
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews{background:var(--paper);}
+  .review-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+    margin-bottom:16px;
+    box-shadow:var(--shadow);
+  }
+  .review-card:last-child{margin-bottom:0;}
+  .stars{color:var(--amber-deep);font-size:15px;letter-spacing:2px;margin-bottom:10px;}
+  .review-card p{font-size:13.5px;color:var(--ink-soft);}
+
+  /* ---------- SHOP INFO ---------- */
+  .shopinfo{background:var(--paper-deep);}
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+    margin-bottom:22px;
+  }
+  .info-table tr{border-bottom:1px solid var(--line);}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:14px 16px;
+    font-size:13px;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:88px;
+    color:var(--bamboo-deep);
+    font-weight:700;
+    background:rgba(63,93,70,.06);
+  }
+  .info-table td a{color:var(--festival-deep);font-weight:600;word-break:break-all;}
+  .map-frame{
+    border-radius:14px;overflow:hidden;box-shadow:var(--shadow);
+    border:1px solid var(--line);
+  }
+  .map-frame iframe{width:100%;height:230px;border:0;display:block;}
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:linear-gradient(160deg,var(--bamboo-deep),var(--indigo-deep));
+    color:var(--paper);
+    text-align:center;
+  }
+  .cta h2{font-size:26px;margin-bottom:12px;}
+  .cta p{font-size:13.5px;color:rgba(238,227,203,.82);margin-bottom:26px;}
+  .cta .btn-row{display:flex;flex-direction:column;gap:12px;}
+  .cta .btn{justify-content:center;width:100%;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--indigo-deep);
+    color:rgba(238,227,203,.6);
+    text-align:center;
+    padding:30px 20px;
+    font-size:12px;
+  }
+  footer .shopname{
+    font-family:"Yuji Syuku",serif;
+    font-size:18px;
+    color:var(--paper);
+    margin-bottom:6px;
+    display:block;
+  }
+
+  /* ---------- BOTTOM NAV ---------- */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;z-index:100;
+    display:flex;
+    background:#fff;
+    border-top:1px solid var(--line);
+    box-shadow:0 -4px 16px rgba(0,0,0,.1);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;
+    padding:9px 0 8px;
+    font-size:10.5px;
+    font-weight:700;
+    color:var(--ink-soft);
+  }
+  .bottom-nav a svg{width:20px;height:20px;}
+  .bottom-nav a.primary{background:var(--festival);color:#fff;}
+
+  @media (min-width:600px){
+    .hero h1{font-size:46px;}
+    .shelf-img,.fishing-visual{height:220px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">後藤商店<small>THE GENERAL STORE / 大迫</small></div>
+  <a class="tel-btn" href="tel:0198483538">📞 019-848-3538</a>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">岩手県花巻市 大迫町</span>
+  <h1>大迫の街角に、<br><span>なんでも屋</span>あります。</h1>
+  <p class="lead">釣具も、駄菓子も、花火も。ハンドメイドのアクセサリーから、ロウ細工やイルミネーション作りの体験まで。「The General Store」と呼ばれる後藤商店で、ちょっと寄り道してみませんか。</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="tel:0198483538">📞 電話で問い合わせ</a>
+    <a class="btn btn-ghost" href="#shopinfo">📍 地図・アクセス</a>
+  </div>
+  <div class="noren-fringe"></div>
+</div>
+
+<section class="story">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">SINCE いつも、ここに</span>
+      <h2>『萬屋』と呼ばれる店</h2>
+      <p>昔懐かしさと、今の楽しさが同居する店</p>
+    </div>
+    <div class="story-card">
+      <p>大迫バスターミナル跡地のお隣、街のぶらぶら歩きにぴったりのロケーションにある後藤商店。地元では「萬屋（よろずや）」とも呼ばれ、駄菓子・雑貨・花火から、遊漁券や釣り道具まで、暮らしと遊びに必要なものが一通り揃います。</p>
+      <p>店主とのおしゃべりを目当てに、地元の学生たちも自然と集まってくる、そんな温かい空気が流れる店です。</p>
+      <div class="story-quote">「店のお隣には駐車スペースも公共トイレもあり、大迫の街歩きの合間に、ぜひ立ち寄ってほしい。」</div>
+    </div>
+  </div>
+</section>
+
+<section class="oshi">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">GOTOU'S BEST 3</span>
+      <h2>イチオシの3本柱</h2>
+      <p>釣り人にも、ものづくり好きにも、家族連れにも</p>
+    </div>
+
+    <div class="shelf no-img">
+      <span class="price-tag">釣り人 必見</span>
+      <div class="fishing-visual">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#EEE3CB" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 40c10 4 20 4 30-2 8-5 14-13 16-22-9 2-17 8-22 16-6 10-6 20-2 30"/>
+          <circle cx="52" cy="14" r="3" fill="#D9A441" stroke="none"/>
+        </svg>
+      </div>
+      <div class="shelf-body">
+        <span class="shelf-label">つり</span>
+        <h3>遊漁券・釣具コーナー</h3>
+        <p>遊漁券はもちろん、各種釣り道具小物、ヤスまで幅広く取り揃え。急な釣行前の立ち寄りにも便利です。</p>
+      </div>
+    </div>
+
+    <div class="shelf">
+      <span class="price-tag">職人の手仕事</span>
+      <div class="shelf-img" style="background-image:url('images/craft.jpg');"></div>
+      <div class="shelf-body">
+        <span class="shelf-label">てづくり</span>
+        <h3>ハンドメイドクラフト</h3>
+        <p>店主お手製のルアーをはじめ、鹿角や熊の爪を加工したアクセサリー、竹・わら細工の手作り籠まで。ここでしか出会えない一点ものが並びます。</p>
+      </div>
+    </div>
+
+    <div class="shelf">
+      <span class="price-tag">体験できる</span>
+      <div class="shelf-img" style="background-image:url('images/event.jpg');"></div>
+      <div class="shelf-body">
+        <span class="shelf-label">たいけん</span>
+        <h3>体験・キッズイベント</h3>
+        <p>ロウ細工（ワックスボール）やジョイキャンドル体験、イルミネーション製作、エア遊具を使った縁日系キッズイベントも開催。お子さま連れにも人気です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lineup">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">LINE UP</span>
+      <h2>取り扱い品</h2>
+      <p>暮らしと遊びに必要なもの、ひと通りあります</p>
+    </div>
+    <div class="chip-grid">
+      <span class="chip">スポーツ用品</span>
+      <span class="chip">釣具</span>
+      <span class="chip">雑貨</span>
+      <span class="chip">玩具</span>
+      <span class="chip">お菓子</span>
+      <span class="chip">花火</span>
+      <span class="chip">竹細工</span>
+      <span class="chip">わら細工</span>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">VOICE</span>
+      <h2>お客様の声</h2>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>初めて行ったのですが、店主の対応が良くて、釣具のハンドクラフトも品揃えが良いです😆😆😆</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>『The General Store』です。萬屋と呼ぶ方もいらっしゃいますが、昔懐かしい駄菓子、雑貨、花火もあります。釣りをする方は是非とも立ち寄って頂きたい。遊漁券はもちろん、各種釣り道具小物、ヤスまであります。ハンドメイドのルアーや鹿角、熊の爪を加工したアクセサリー、手作りの籠もあり、店主の方の楽しい会話と人柄で地元の学生も集まります。店のお隣には大迫バスターミナル跡地が駐車スペース、公共トイレもあり、大迫の街のぶらぶら歩きにも抜群のロケーションです。</p>
+    </div>
+  </div>
+</section>
+
+<section class="shopinfo" id="shopinfo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">SHOP INFO</span>
+      <h2>店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>後藤商店（The General Store）</td></tr>
+      <tr><th>住所</th><td>岩手県花巻市大迫町大迫第３地割１９６</td></tr>
+      <tr><th>電話</th><td><a href="tel:0198483538">019-848-3538</a></td></tr>
+      <tr><th>HP</th><td><a href="https://gotou-shop.jimdofree.com/" target="_blank" rel="noopener">gotou-shop.jimdofree.com</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:gotou-shop@vega.ocn.ne.jp">gotou-shop@vega.ocn.ne.jp</a></td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps?q=岩手県花巻市大迫町大迫第３地割１９６&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>大迫の街歩きに、<br>ちょっと寄り道を。</h2>
+    <p>釣具のご相談から、体験イベントのお問い合わせまで、お気軽にどうぞ。</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="tel:0198483538">📞 019-848-3538 に電話する</a>
+      <a class="btn btn-ghost" href="https://gotou-shop.jimdofree.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener">✉️ お問い合わせフォーム</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="shopname">後藤商店</span>
+  岩手県花巻市大迫町大迫第３地割１９６<br>
+  © 後藤商店 The General Store
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0198483538">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    電話する
+  </a>
+  <a href="#shopinfo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    地図
+  </a>
+  <a class="primary" href="https://gotou-shop.jimdofree.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+    お問い合わせ
+  </a>
+</nav>
+
+</body>
+</html>
