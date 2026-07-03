@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Sanka Outdoor&Craft Beer｜盛岡市 世界のクラフトビール専門店</title>
+<meta name="description" content="岩手県盛岡市中野のSanka Outdoor&Craft Beer。世界各国のクラフトビール、日本の地ビール、こだわりのキャンプ用品を店主自らソムリエのように案内します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#26362A;
+    --forest-deep:#1A251D;
+    --amber:#C4842B;
+    --amber-light:#E8C468;
+    --cream:#F3ECDC;
+    --cream-soft:#EAE1CC;
+    --wood:#5A4632;
+    --charcoal:#231F1A;
+    --red-accent:#9C3B2E;
+    --shadow: 0 10px 30px rgba(26,37,29,0.18);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    background:var(--cream);
+    color:var(--charcoal);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:64px;
+    overflow-x:hidden;
+  }
+
+  img{max-width:100%;display:block;}
+
+  a{text-decoration:none;color:inherit;}
+
+  .eyebrow{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-weight:700;
+    letter-spacing:0.18em;
+    font-size:0.72rem;
+    color:var(--amber);
+    text-transform:uppercase;
+  }
+
+  h1,h2,h3{
+    font-family:'Shippori Mincho B1', serif;
+    color:var(--forest-deep);
+    line-height:1.5;
+  }
+
+  .container{max-width:520px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(38,54,42,0.94);
+    backdrop-filter:blur(6px);
+    box-shadow:0 2px 12px rgba(0,0,0,0.2);
+  }
+  .header-inner{
+    max-width:520px;
+    margin:0 auto;
+    padding:10px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    font-family:'Shippori Mincho B1', serif;
+    color:var(--cream);
+    font-size:1.02rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .brand span{
+    display:block;
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-size:0.58rem;
+    letter-spacing:0.15em;
+    color:var(--amber-light);
+    font-weight:500;
+    margin-top:2px;
+  }
+  .header-call{
+    background:var(--amber);
+    color:var(--forest-deep);
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-weight:900;
+    font-size:0.78rem;
+    padding:9px 14px;
+    border-radius:30px;
+    white-space:nowrap;
+    box-shadow:0 4px 10px rgba(196,132,43,0.4);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    margin-top:52px;
+    padding:52px 0 40px;
+    background:
+      linear-gradient(180deg, rgba(26,37,29,0.55) 0%, rgba(26,37,29,0.86) 78%, var(--forest-deep) 100%),
+      url('images/hero.jpg') center/cover no-repeat;
+    color:var(--cream);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      repeating-radial-gradient(circle at 20% 30%, transparent 0, transparent 38px, rgba(243,236,220,0.05) 39px, transparent 40px),
+      repeating-radial-gradient(circle at 85% 75%, transparent 0, transparent 55px, rgba(243,236,220,0.04) 56px, transparent 57px);
+    pointer-events:none;
+  }
+  .hero-content{position:relative;z-index:2;}
+  .hero .eyebrow{color:var(--amber-light);}
+  .hero h1{
+    color:#fff;
+    font-size:1.9rem;
+    margin:14px 0 12px;
+    font-weight:600;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--amber-light);
+    display:block;
+    font-size:1.05em;
+  }
+  .hero p{
+    font-size:0.88rem;
+    color:#E9E3D2;
+    max-width:38em;
+    margin-bottom:26px;
+  }
+  .hero-badges{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+  .hero-badge{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-size:0.68rem;
+    font-weight:700;
+    border:1px solid rgba(232,196,104,0.6);
+    color:var(--amber-light);
+    padding:6px 12px;
+    border-radius:20px;
+    letter-spacing:0.03em;
+  }
+  .hero-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--amber);
+    color:var(--forest-deep);
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-weight:900;
+    font-size:0.9rem;
+    padding:14px 26px;
+    border-radius:6px;
+    margin-top:20px;
+    box-shadow:var(--shadow);
+  }
+
+  /* ---------- Section shared ---------- */
+  section{padding:56px 0;}
+  .section-head{text-align:center;margin-bottom:34px;}
+  .section-head h2{font-size:1.5rem;margin-top:8px;}
+  .section-head p{font-size:0.85rem;color:#5c5748;margin-top:10px;}
+
+  .divider{
+    width:46px;height:3px;background:var(--amber);
+    margin:0 auto;border-radius:2px;
+  }
+
+  /* ---------- Featured products (Icon Push) ---------- */
+  .featured{
+    background:var(--forest-deep);
+    color:var(--cream);
+    position:relative;
+  }
+  .featured .eyebrow{color:var(--amber-light);}
+  .featured .section-head h2{color:#fff;}
+  .featured .section-head p{color:#C9C3B0;}
+
+  .product-card{
+    background:var(--cream);
+    color:var(--charcoal);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    margin-bottom:26px;
+    position:relative;
+  }
+  .product-card:last-child{margin-bottom:0;}
+  .product-tag{
+    position:absolute;
+    top:14px; left:14px;
+    z-index:3;
+    background:var(--amber);
+    color:var(--forest-deep);
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-weight:900;
+    font-size:0.68rem;
+    padding:6px 12px 6px 10px;
+    border-radius:0 4px 4px 0;
+    box-shadow:2px 2px 0 rgba(0,0,0,0.15);
+  }
+  .product-tag.beer{background:var(--amber);}
+  .product-tag.camp{background:#7A8B63; color:#fff;}
+  .product-photo{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+  }
+  .product-body{padding:20px 22px 24px;}
+  .product-body h3{font-size:1.18rem;margin-bottom:10px;}
+  .product-body p{font-size:0.85rem;color:#443F35;margin-bottom:14px;}
+  .product-points{list-style:none;}
+  .product-points li{
+    font-size:0.8rem;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+    color:#3A362C;
+  }
+  .product-points li::before{
+    content:"●";
+    color:var(--amber);
+    position:absolute;
+    left:0;
+    font-size:0.6rem;
+    top:5px;
+  }
+
+  /* ---------- Owner voice ---------- */
+  .owner-strip{
+    background:var(--wood);
+    color:var(--cream);
+    text-align:center;
+    padding:28px 20px;
+  }
+  .owner-strip p{
+    font-family:'Shippori Mincho B1', serif;
+    font-size:1.05rem;
+    line-height:1.9;
+  }
+  .owner-strip span{
+    display:block;
+    margin-top:10px;
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-size:0.7rem;
+    color:var(--amber-light);
+    letter-spacing:0.1em;
+  }
+
+  /* ---------- Reviews (label style) ---------- */
+  .reviews{background:var(--cream-soft);}
+  .review-card{
+    background:#fff;
+    padding:24px 20px 22px;
+    border-radius:4px;
+    margin-bottom:22px;
+    position:relative;
+    box-shadow:0 6px 18px rgba(90,70,50,0.12);
+    clip-path:polygon(0% 2%,2% 0%,98% 0%,100% 2%,100% 98%,98% 100%,2% 100%,0% 98%);
+    border-left:4px solid var(--amber);
+  }
+  .review-card:last-child{margin-bottom:0;}
+  .stars{
+    display:flex;
+    gap:4px;
+    margin-bottom:12px;
+  }
+  .cap{
+    width:16px;height:16px;
+    border-radius:50%;
+    background:var(--amber);
+    position:relative;
+    box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 3px var(--amber);
+  }
+  .cap.off{background:#DDD5C0; box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 3px #DDD5C0;}
+  .review-card p{font-size:0.83rem;color:#3A362C;}
+  .review-card p.clamp{
+    display:-webkit-box;
+    -webkit-line-clamp:6;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  .review-more{
+    margin-top:10px;
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-size:0.72rem;
+    color:var(--amber);
+    font-weight:700;
+    cursor:pointer;
+    display:inline-block;
+  }
+  .review-card.expanded p.clamp{-webkit-line-clamp:unset;}
+
+  /* ---------- Shop info ---------- */
+  .shop-info{background:var(--cream);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(90,70,50,0.1);
+    font-size:0.82rem;
+  }
+  .info-table tr{border-bottom:1px solid #EDE6D6;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:var(--forest);
+    color:var(--cream);
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-weight:700;
+    text-align:left;
+    padding:12px 14px;
+    width:26%;
+    font-size:0.74rem;
+    letter-spacing:0.03em;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:12px 14px;
+    color:#3A362C;
+    word-break:break-word;
+  }
+  .info-table a{color:var(--red-accent); font-weight:700;}
+
+  .map-frame{
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(90,70,50,0.1);
+  }
+  .map-frame iframe{width:100%;height:230px;border:0;display:block;}
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:linear-gradient(160deg, var(--forest-deep), var(--forest));
+    color:var(--cream);
+    text-align:center;
+  }
+  .cta h2{color:#fff;font-size:1.4rem;margin-bottom:12px;}
+  .cta p{font-size:0.85rem;color:#D6D1BF;margin-bottom:26px;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+  .btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:15px 20px;
+    border-radius:8px;
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-weight:900;
+    font-size:0.9rem;
+  }
+  .btn-primary{background:var(--amber); color:var(--forest-deep); box-shadow:var(--shadow);}
+  .btn-outline{border:1.5px solid var(--amber-light); color:var(--amber-light);}
+  .btn-sns{border:1.5px solid #8B8570; color:#D6D1BF;}
+
+  footer{
+    text-align:center;
+    padding:26px 20px 20px;
+    background:var(--forest-deep);
+    color:#8B8570;
+    font-size:0.7rem;
+  }
+
+  /* ---------- Fixed bottom nav ---------- */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:100;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.12);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px 8px;
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-size:0.63rem;
+    font-weight:700;
+    color:var(--forest-deep);
+    border-right:1px solid #EEE8D9;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a .ic{
+    display:block;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .bottom-nav a.primary{background:var(--amber); color:var(--forest-deep);}
+
+  @media (min-width:600px){
+    .hero h1{font-size:2.3rem;}
+    .product-card{display:flex;}
+    .product-photo{width:42%; height:auto; aspect-ratio:auto;}
+    .product-body{width:58%;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">Sanka<br><span>OUTDOOR &amp; CRAFT BEER</span></div>
+    <a href="tel:0196778928" class="header-call">📞 019-677-8928</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-content">
+    <div class="eyebrow">IWATE MORIOKA / CRAFT BEER &amp; OUTDOOR</div>
+    <h1>岩手では出会えないビールと、<em>山と海へ続く道具たち。</em></h1>
+    <div class="hero-badges">
+      <span class="hero-badge">★4.6 クチコミ多数</span>
+      <span class="hero-badge">世界の地ビール取扱</span>
+      <span class="hero-badge">キャンプ用品充実</span>
+    </div>
+    <p>世界各国のクラフトビールから、岩手県内でもここでしか買えない日本の地ビールまで。店主が"ビールソムリエ"のように一本一本の個性を案内します。ふらっと立ち寄って、山キャンプ・海キャンプの相棒も一緒に見つけてください。</p>
+    <a href="tel:0196778928" class="hero-cta">📞 今すぐ電話で相談する</a>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">ICHIOSHI PRODUCTS</div>
+      <h2>イチオシの2本柱</h2>
+      <p>「クラフトビール」と「キャンプ用品」。<br>どちらも、店主が実際に選び抜いたものだけを並べています。</p>
+    </div>
+
+    <div class="product-card">
+      <span class="product-tag beer">CRAFT BEER</span>
+      <img src="images/beer-set.jpg" alt="世界のクラフトビールと岩手の地ビール" class="product-photo">
+      <div class="product-body">
+        <h3>世界の地ビール、岩手県内でここだけの一本</h3>
+        <p>岩手県内では取り扱いのない海外クラフトビールや、県内でも希少な日本の地ビールが並びます。「苦いやつ」「甘めの」など、ざっくりした好みを伝えるだけで店主がぴったりの一本を紹介。</p>
+        <ul class="product-points">
+          <li>苦味・甘み・香りの好みから提案してもらえる"接客型"の売り場</li>
+          <li>県内未入荷の海外ビール・希少な地ビールが常時入れ替わり</li>
+          <li>購入したビールとお店オリジナルグラスでの晩酌が楽しめる</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="product-tag camp">CAMP GEAR</span>
+      <img src="images/camp-goods.jpg" alt="こだわりのキャンプ用品" class="product-photo">
+      <div class="product-body">
+        <h3>つい欲しくなる、こだわりのキャンプ用品</h3>
+        <p>お店の前の道を進むと早池峰山や浄土ヶ浜へ。山にも海にも出かけたくなる、センスの良いアウトドアグッズが充実。お子様が夢中になる可愛い雑貨やラジコンも人気です。</p>
+        <ul class="product-points">
+          <li>山キャンプ・海キャンプどちらにも使える厳選ラインナップ</li>
+          <li>お子様も楽しめるアウトドア雑貨・ラジコンも取り扱い</li>
+          <li>ビールと合わせて買って、そのままキャンプ場へ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="owner-strip">
+  <p>「どんなビールか聞けば、<br>ソムリエみたいに答えてくれる。」</p>
+  <span>― お客様のクチコミより</span>
+</div>
+
+<section class="reviews">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">VOICE</div>
+      <h2>お客様のクチコミ</h2>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">
+        <span class="cap"></span><span class="cap"></span><span class="cap"></span><span class="cap"></span><span class="cap off"></span>
+      </div>
+      <p>岩手県では売ってない世界のビールや、日本の地ビールでも岩手県には売ってないものを販売してます。どんなビールか聞けばソムリエみたいに答えてくれます。キャンプ用品もつい欲しくなるものが充実してます。</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">
+        <span class="cap"></span><span class="cap"></span><span class="cap"></span><span class="cap"></span><span class="cap"></span>
+      </div>
+      <p class="clamp">クラフトビールとアウトドアのお店。「店もお洒落だし少し高いかなぁ」と思いつつ入店してみると、気さくな店主の対応が内気な私の敷居を下げてくれます。普段私が飲んでいるビールと違いますし、種類も沢山揃っているのでどれを買って良いか迷いましたが、あまり詳しくない私の「苦いやつ」や「甘めの」などと言った漠然とした好みを伝えるだけでも店主が良い意味で"適当な"ビールを紹介してくれます。釣りの話しも出来ますし、説明を聴いているだけでも「今日のビールはどれにしよう」ってワクワクしちゃいました。子供達も一緒に訪問しましたが、可愛いアウトドアグッズやラジコンなどに興味津々。ジュースも売っているので子供も満足した様子です。混雑はしていませんが、客足の絶えない中で程よい接客をして下さるのでついつい長居したくなる雰囲気の良いお店でした。お店の前の道を根気よく進むと早池峰山や浄土ヶ浜まで行けるそうです。お店でクラフトビールとアウトドアグッズを購入して、いざ山・海キャンプへ的な使い方も良いかもしれません。オンラインストアもやっているそうなので、今度注文してみます。買って帰ったビールとお店オリジナルのグラスを並べて記念撮影。汗水たらして作ったかまくらの中で飲むビールは最高でした。また来ます。</p>
+      <span class="review-more" onclick="this.parentElement.classList.toggle('expanded'); this.textContent = this.parentElement.classList.contains('expanded') ? '閉じる ▲' : 'つづきを読む ▼'">つづきを読む ▼</span>
+    </div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">SHOP INFO</div>
+      <h2>店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>Sanka Outdoor&amp;Craft Beer</td></tr>
+      <tr><th>代表者</th><td>海老名 勝文</td></tr>
+      <tr><th>住所</th><td>岩手県盛岡市中野１丁目１７−７</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0196778928">019-677-8928</a></td></tr>
+      <tr><th>HP</th><td><a href="https://sanka-iwate.com/" target="_blank" rel="noopener">https://sanka-iwate.com/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://sanka-iwate.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%81%9b/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@sanka-iwate.com">info@sanka-iwate.com</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://x.com/sanka_iwate" target="_blank" rel="noopener">@sanka_iwate（X）</a></td></tr>
+    </table>
+
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E7%9B%9B%E5%B2%A1%E5%B8%82%E4%B8%AD%E9%87%8E%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%97%E2%88%92%EF%BC%97&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>まずは気軽に、<br>お店の扉を開けてみてください。</h2>
+    <p>混雑はしていませんが、客足の絶えない人気店。<br>お電話でのご相談・オンラインストアでのご注文もお気軽にどうぞ。</p>
+    <div class="cta-buttons">
+      <a href="tel:0196778928" class="btn btn-primary">📞 電話で相談・来店予約</a>
+      <a href="https://sanka-iwate.com/" target="_blank" rel="noopener" class="btn btn-outline">🌐 HP・オンラインストアを見る</a>
+      <a href="https://sanka-iwate.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%81%9b/" target="_blank" rel="noopener" class="btn btn-outline">✉️ お問い合わせフォーム</a>
+      <a href="https://x.com/sanka_iwate" target="_blank" rel="noopener" class="btn btn-sns">🐦 Xで最新情報をチェック</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; Sanka Outdoor&amp;Craft Beer / 岩手県盛岡市中野１丁目１７−７
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0196778928" class="primary"><span class="ic">📞</span>電話</a>
+  <a href="https://www.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E7%9B%9B%E5%B2%A1%E5%B8%82%E4%B8%AD%E9%87%8E%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%97%E2%88%92%EF%BC%97" target="_blank" rel="noopener"><span class="ic">📍</span>地図</a>
+  <a href="https://sanka-iwate.com/" target="_blank" rel="noopener"><span class="ic">🌐</span>HP</a>
+  <a href="https://sanka-iwate.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%81%9b/" target="_blank" rel="noopener"><span class="ic">✉️</span>お問合せ</a>
+</nav>
+
+</body>
+</html>
