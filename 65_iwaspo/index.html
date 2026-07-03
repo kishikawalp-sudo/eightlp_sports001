@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>岩手スポーツ用品販売㈱ IWASPO銀河モール花巻店｜オリジナルプリント承ります</title>
+<meta name="description" content="岩手スポーツ用品販売㈱ IWASPO銀河モール花巻店。チームウェアのオリジナルプリントはお任せください。岩手から新しいスポーツの形を発信します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101c34;
+    --navy-2:#182a4d;
+    --ink:#0a0a0a;
+    --orange:#ff5a1f;
+    --orange-2:#ffb703;
+    --cream:#f6f2e9;
+    --white:#ffffff;
+    --gray:#6b7280;
+    --line:rgba(16,28,52,0.12);
+    --radius:4px;
+    --maxw:1100px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:64px; /* space for fixed bottom nav */
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+  .disp{
+    font-family:'Bebas Neue', 'Zen Kaku Gothic New', sans-serif;
+    letter-spacing:0.03em;
+  }
+
+  /* ===== halftone signature texture ===== */
+  .halftone{
+    position:absolute;inset:0;
+    background-image:radial-gradient(circle, rgba(255,255,255,0.35) 1.4px, transparent 1.6px);
+    background-size:10px 10px;
+    opacity:0.5;
+    pointer-events:none;
+  }
+  .halftone.dark{
+    background-image:radial-gradient(circle, rgba(16,28,52,0.16) 1.4px, transparent 1.6px);
+  }
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky;top:0;z-index:500;
+    background:var(--navy);
+    color:var(--white);
+    border-bottom:3px solid var(--orange);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 20px;
+    max-width:var(--maxw);margin:0 auto;
+    gap:10px;
+  }
+  .brand{
+    display:flex;flex-direction:column;line-height:1.1;
+  }
+  .brand .en{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:26px;letter-spacing:0.08em;color:var(--white);
+  }
+  .brand .ja{
+    font-size:10px;color:var(--orange-2);letter-spacing:0.05em;
+  }
+  .header-cta{
+    display:flex;align-items:center;gap:6px;
+    background:var(--orange);
+    color:var(--white);
+    padding:9px 14px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:13px;
+    white-space:nowrap;
+    box-shadow:0 2px 0 rgba(0,0,0,0.25);
+  }
+  .header-cta svg{width:16px;height:16px;flex:none;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background:var(--navy);
+    color:var(--white);
+    overflow:hidden;
+    padding:38px 0 0;
+  }
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;letter-spacing:0.18em;
+    color:var(--orange-2);
+    border:1px solid rgba(255,183,3,0.5);
+    padding:5px 12px;border-radius:999px;
+    margin-bottom:16px;
+  }
+  .hero-title{
+    position:relative;
+    font-size:clamp(38px,10vw,64px);
+    line-height:1.05;
+    color:var(--white);
+    text-shadow:3px 3px 0 var(--orange), -1px -1px 0 rgba(255,183,3,0.5);
+  }
+  .hero-title small{
+    display:block;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-size:clamp(14px,4vw,18px);
+    letter-spacing:0.08em;
+    color:var(--cream);
+    text-shadow:none;
+    margin-top:10px;
+    font-weight:700;
+  }
+  .hero-sub{
+    margin-top:18px;
+    max-width:520px;
+    color:rgba(246,242,233,0.85);
+    font-size:15px;
+  }
+  .hero-btns{
+    display:flex;gap:10px;flex-wrap:wrap;
+    margin-top:26px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 22px;
+    font-weight:700;
+    font-size:14.5px;
+    border-radius:999px;
+    border:2px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{
+    background:var(--orange);color:var(--white);
+    box-shadow:0 4px 0 #b5390d;
+  }
+  .btn-primary:active{transform:translateY(4px);box-shadow:none;}
+  .btn-outline{
+    border-color:rgba(255,255,255,0.5);color:var(--white);
+  }
+  .hero-media{
+    position:relative;
+    margin-top:32px;
+  }
+  .hero-media img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    filter:saturate(1.05) contrast(1.03);
+  }
+  .hero-media::after{
+    content:"";
+    position:absolute;left:0;right:0;bottom:-1px;height:60px;
+    background:linear-gradient(to top, var(--cream), transparent);
+  }
+  .ink-strip{
+    position:absolute;
+    left:-10%;right:-10%;
+    height:34px;
+    background:var(--orange);
+    transform:rotate(-2deg);
+    z-index:2;
+    box-shadow:0 6px 0 rgba(0,0,0,0.15);
+  }
+  .ink-strip.top{top:210px;}
+
+  /* ===== SECTION shell ===== */
+  section{padding:56px 0;position:relative;}
+  .section-head{
+    text-align:center;
+    margin-bottom:34px;
+  }
+  .section-head .tag{
+    display:inline-block;
+    font-size:11px;letter-spacing:0.2em;
+    color:var(--orange);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(28px,6vw,40px);
+    letter-spacing:0.02em;
+    color:var(--navy);
+  }
+  .section-head p{
+    margin-top:10px;color:var(--gray);font-size:14px;
+  }
+
+  /* ===== FEATURED PRODUCT: オリジナルプリント ===== */
+  .feature{
+    background:var(--navy);
+    color:var(--white);
+    position:relative;
+  }
+  .feature .halftone{background-image:radial-gradient(circle, rgba(255,90,31,0.35) 1.6px, transparent 1.8px);background-size:12px 12px;opacity:0.6;}
+  .feature-grid{
+    position:relative;z-index:2;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+  .feature-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--orange);
+    color:var(--white);
+    font-weight:900;
+    font-size:12px;
+    letter-spacing:0.1em;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:14px;
+  }
+  .feature h3{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(30px,7vw,46px);
+    line-height:1.1;
+    margin-bottom:14px;
+  }
+  .feature h3 span{color:var(--orange-2);}
+  .feature p.lead{
+    color:rgba(246,242,233,0.85);
+    font-size:15px;
+    margin-bottom:20px;
+  }
+  .feature-img{
+    position:relative;
+    border:4px solid var(--white);
+    outline:2px solid var(--orange);
+    outline-offset:6px;
+    transform:rotate(-1.2deg);
+  }
+  .feature-img img{width:100%;height:240px;object-fit:cover;}
+  .feature-list{
+    list-style:none;
+    display:grid;gap:12px;
+    margin-top:22px;
+  }
+  .feature-list li{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:14px;
+    color:var(--cream);
+  }
+  .feature-list li::before{
+    content:"●";
+    color:var(--orange-2);
+    font-size:8px;
+    margin-top:7px;
+    flex:none;
+  }
+  .feature-cta{
+    margin-top:26px;
+    display:flex;gap:10px;flex-wrap:wrap;
+  }
+
+  /* ===== STRENGTHS ===== */
+  .strengths{background:var(--cream);}
+  .grid-4{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 20px;
+    position:relative;
+    border-top:4px solid var(--orange);
+  }
+  .card .num{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:34px;
+    color:var(--orange-2);
+    -webkit-text-stroke:1.5px var(--navy);
+    color:transparent;
+    line-height:1;
+    margin-bottom:10px;
+  }
+  .card h4{
+    font-size:16px;
+    color:var(--navy);
+    margin-bottom:8px;
+    font-weight:700;
+  }
+  .card p{font-size:13.5px;color:var(--gray);}
+
+  .mission-strip{
+    margin-top:30px;
+    background:var(--navy);
+    color:var(--white);
+    padding:22px 22px;
+    border-radius:var(--radius);
+    text-align:center;
+    font-size:14.5px;
+    line-height:1.9;
+    position:relative;
+    overflow:hidden;
+  }
+  .mission-strip strong{color:var(--orange-2);}
+
+  /* ===== REVIEWS ===== */
+  .reviews{background:var(--white);}
+  .review-grid{
+    display:grid;grid-template-columns:1fr;gap:16px;
+  }
+  .review-card{
+    background:var(--cream);
+    border-radius:var(--radius);
+    padding:20px;
+    border-left:4px solid var(--orange);
+  }
+  .review-stars{color:var(--orange-2);font-size:14px;margin-bottom:8px;letter-spacing:2px;}
+  .review-card p{font-size:13.5px;color:var(--ink);margin-bottom:10px;}
+  .review-name{font-size:12px;color:var(--gray);font-weight:700;}
+
+  /* ===== SHOP INFO ===== */
+  .shopinfo{background:var(--cream);}
+  .info-box{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  table.info-table{width:100%;border-collapse:collapse;}
+  table.info-table th,table.info-table td{
+    text-align:left;
+    padding:14px 16px;
+    font-size:13.5px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  table.info-table th{
+    width:110px;
+    color:var(--white);
+    background:var(--navy);
+    font-weight:700;
+    letter-spacing:0.03em;
+  }
+  table.info-table tr:last-child th,
+  table.info-table tr:last-child td{border-bottom:none;}
+  table.info-table a{color:var(--orange);font-weight:700;text-decoration:underline;}
+  .map-embed{width:100%;height:260px;border:0;display:block;}
+
+  /* ===== CTA SECTION ===== */
+  .cta-section{
+    background:linear-gradient(135deg, var(--orange), #ff7a3d);
+    color:var(--white);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-section h2{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(28px,7vw,42px);
+    margin-bottom:12px;
+  }
+  .cta-section p{margin-bottom:24px;font-size:14.5px;}
+  .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn-white{background:var(--white);color:var(--orange);box-shadow:0 4px 0 rgba(0,0,0,0.2);}
+  .btn-ghost{border:2px solid var(--white);color:var(--white);}
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,0.7);
+    padding:34px 0 24px;
+    font-size:12.5px;
+    text-align:center;
+  }
+  footer .fname{
+    color:var(--white);
+    font-weight:700;
+    font-size:14px;
+    margin-bottom:6px;
+  }
+  footer a{color:var(--orange-2);}
+  footer .copy{margin-top:18px;font-size:11px;color:rgba(255,255,255,0.4);}
+
+  /* ===== FIXED BOTTOM NAV (mobile) ===== */
+  .bottom-nav{
+    position:fixed;left:0;right:0;bottom:0;z-index:600;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    background:var(--navy);
+    border-top:3px solid var(--orange);
+  }
+  .bottom-nav a{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;
+    color:var(--white);
+    padding:9px 4px 8px;
+    font-size:10.5px;
+    font-weight:700;
+  }
+  .bottom-nav a svg{width:20px;height:20px;}
+  .bottom-nav a.accent{background:var(--orange);}
+
+  /* ===== RESPONSIVE (tablet/desktop) ===== */
+  @media(min-width:760px){
+    .hero-inner{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      align-items:center;
+      gap:30px;
+    }
+    .hero-media{margin-top:0;}
+    .hero-media img{height:380px;border-radius:var(--radius);}
+    .ink-strip.top{display:none;}
+    .feature-grid{grid-template-columns:1fr 1fr;align-items:center;}
+    .feature-img img{height:340px;border-radius:var(--radius);}
+    .grid-4{grid-template-columns:repeat(4,1fr);}
+    .review-grid{grid-template-columns:repeat(3,1fr);}
+    .bottom-nav{display:none;}
+    body{padding-bottom:0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="en disp">IWASPO</span>
+      <span class="ja">岩手スポーツ用品販売㈱ 銀河モール花巻店</span>
+    </div>
+    <a href="tel:0198-29-5010" class="header-cta">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+      電話で相談
+    </a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="hero-eyebrow">IWATE SPORTS SHOP</span>
+      <h1 class="hero-title disp">
+        想いを、カタチに。
+        <small>チームの一体感をつくる、オリジナルプリント承ります</small>
+      </h1>
+      <p class="hero-sub">部活動・少年団・企業チームまで。ユニフォームやウェアへの名入れ・チーム名プリントは、岩手スポーツ用品販売㈱ IWASPO銀河モール花巻店にお任せください。</p>
+      <div class="hero-btns">
+        <a href="tel:0198-29-5010" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+          0198-29-5010
+        </a>
+        <a href="https://iwate-sports.jp/contact" class="btn btn-outline">オリジナルプリントを相談する</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="ink-strip top"></div>
+      <img src="images/hero.jpg" alt="岩手スポーツ用品販売 IWASPO銀河モール花巻店の店内とチームウェア">
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED PRODUCT: オリジナルプリント ===== -->
+<section class="feature" id="print">
+  <div class="halftone"></div>
+  <div class="wrap feature-grid">
+    <div>
+      <span class="feature-badge">ICHIOSHI ｜ イチオシサービス</span>
+      <h3 class="disp">オリジナル<span>プリント</span></h3>
+      <p class="lead">チーム名、選手名、ロゴマーク…あなたのチームだけの一着を、IWASPOのオリジナルプリントで実現します。学校の部活動から地域のスポーツ少年団、社会人チームまで幅広く対応。</p>
+      <ul class="feature-list">
+        <li>ユニフォーム・ウェアへのチーム名／背番号プリント</li>
+        <li>オリジナルロゴのデザイン相談から対応可能</li>
+        <li>少人数チームから団体注文まで柔軟に対応</li>
+        <li>お子様の記念ウェアや卒団記念にも人気</li>
+      </ul>
+      <div class="feature-cta">
+        <a href="https://iwate-sports.jp/contact" class="btn btn-primary">プリントを相談する</a>
+        <a href="tel:0198-29-5010" class="btn btn-outline">店舗に電話する</a>
+      </div>
+    </div>
+    <div class="feature-img">
+      <img src="images/original-print.jpg" alt="オリジナルプリントを施したチームユニフォームのサンプル">
+    </div>
+  </div>
+</section>
+
+<!-- ===== STRENGTHS ===== -->
+<section class="strengths">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">OUR MISSION</span>
+      <h2 class="disp">私たちが大切にしていること</h2>
+      <p>岩手から、スポーツの新しい形を発信し続けます</p>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <div class="num disp">01</div>
+        <h4>新しいスポーツの形を発信</h4>
+        <p>岩手から新しいスポーツの形を発信。地域に根ざした店舗づくりを進めています。</p>
+      </div>
+      <div class="card">
+        <div class="num disp">02</div>
+        <h4>競技力向上のお手伝い</h4>
+        <p>全てのアスリートへ、道具選びから使い方まで競技力向上のお手伝いをします。</p>
+      </div>
+      <div class="card">
+        <div class="num disp">03</div>
+        <h4>地域と社会への貢献</h4>
+        <p>社会・学校スポーツを通じて、地域と社会に貢献することを目指しています。</p>
+      </div>
+      <div class="card">
+        <div class="num disp">04</div>
+        <h4>子供たちに運動の楽しさを</h4>
+        <p>子供たちにスポーツ・運動の楽しさを伝え、笑顔あふれる毎日を応援します。</p>
+      </div>
+    </div>
+    <div class="mission-strip">
+      皆様の<strong>健康と笑顔</strong>に寄与できるように、IWASPOは頑張ります！
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">VOICE</span>
+      <h2 class="disp">お客様の声</h2>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>少年野球チームのユニフォームプリントをお願いしました。デザインの相談にも丁寧に乗ってくださり、子供たちも大喜びでした。</p>
+        <div class="review-name">花巻市 / 少年野球チーム保護者様</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>部活動のウェアに名前を入れてもらいました。仕上がりがとても綺麗で、注文から受け取りまでスムーズでした。</p>
+        <div class="review-name">花巻市 / 中学校部活動顧問様</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>店員さんの商品知識が豊富で、初心者の自分にも分かりやすく道具を選んでいただけました。また利用したいです。</p>
+        <div class="review-name">北上市 / 一般のお客様</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SHOP INFO ===== -->
+<section class="shopinfo" id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">SHOP INFO</span>
+      <h2 class="disp">店舗情報</h2>
+    </div>
+    <div class="info-box">
+      <table class="info-table">
+        <tr><th>店名</th><td>岩手スポーツ用品販売㈱ IWASPO銀河モール花巻店</td></tr>
+        <tr><th>会社名</th><td>岩手スポーツ用品販売株式会社</td></tr>
+        <tr><th>住所</th><td>岩手県花巻市高木16地割68−６</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0198-29-5010">0198-29-5010</a></td></tr>
+        <tr><th>定休日</th><td>毎週月曜日、第1・第3日曜日</td></tr>
+        <tr><th>公式HP</th><td><a href="https://iwate-sports.jp/" target="_blank" rel="noopener">https://iwate-sports.jp/</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://iwate-sports.jp/contact" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+      </table>
+      <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E8%8A%B1%E5%B7%BB%E5%B8%82%E9%AB%98%E6%9C%A816%E5%9C%B0%E5%89%B268%E2%88%926&output=embed" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="halftone"></div>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <h2 class="disp">チームの一着、IWASPOにお任せください</h2>
+    <p>オリジナルプリントのご相談はお電話・お問い合わせフォームから、お気軽にどうぞ。</p>
+    <div class="cta-btns">
+      <a href="tel:0198-29-5010" class="btn btn-white">0198-29-5010 に電話する</a>
+      <a href="https://iwate-sports.jp/contact" class="btn btn-ghost">お問い合わせフォーム</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="fname">岩手スポーツ用品販売株式会社</div>
+    <div>IWASPO銀河モール花巻店｜岩手県花巻市高木16地割68−６</div>
+    <div style="margin-top:6px;"><a href="https://iwate-sports.jp/" target="_blank" rel="noopener">https://iwate-sports.jp/</a></div>
+    <div class="copy">&copy; Iwate Sports Hanbai Co., Ltd.</div>
+  </div>
+</footer>
+
+<!-- ===== FIXED BOTTOM NAV (mobile) ===== -->
+<nav class="bottom-nav">
+  <a href="tel:0198-29-5010">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+    電話
+  </a>
+  <a href="#shop">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+    地図
+  </a>
+  <a href="https://iwate-sports.jp/contact" class="accent">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v14H7l-3 3V4z"/></svg>
+    お問い合わせ
+  </a>
+</nav>
+
+</body>
+</html>
