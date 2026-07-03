@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ヨコミチスポーツ金ケ崎店｜ランニング用品専門</title>
+<meta name="description" content="岩手県胆沢郡金ケ崎町のヨコミチスポーツ金ケ崎店。独自のランニング理論とアドバイスに定評のある地域密着スポーツショップ。ランニング用品が充実。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0d1b2a;
+    --navy-deep:#081521;
+    --orange:#ff6b1a;
+    --orange-light:#ff8c42;
+    --white:#ffffff;
+    --off-white:#f5f5f2;
+    --gray:#7a8a99;
+    --line:#e5e5e0;
+    --shadow: 0 8px 24px rgba(13,27,42,0.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    color:var(--navy);
+    background:var(--off-white);
+    padding-bottom:64px;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  .en{font-family:'Bebas Neue', sans-serif; letter-spacing:0.04em;}
+
+  /* ===== Track line decoration ===== */
+  .track-lines{
+    position:relative;
+  }
+  .track-lines::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background:repeating-linear-gradient(
+      100deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.04) 40px,
+      rgba(255,255,255,0.04) 44px
+    );
+    pointer-events:none;
+  }
+
+  /* ===== Header ===== */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    background:var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.25);
+  }
+  .header-logo{
+    color:var(--white);
+    font-size:15px;
+    font-weight:700;
+    line-height:1.3;
+  }
+  .header-logo span{
+    display:block;
+    font-family:'Bebas Neue', sans-serif;
+    color:var(--orange);
+    font-size:11px;
+    letter-spacing:0.15em;
+  }
+  .header-tel{
+    background:var(--orange);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:700;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    white-space:nowrap;
+    box-shadow:0 4px 10px rgba(255,107,26,0.4);
+  }
+  .header-tel svg{width:14px;height:14px;fill:var(--white);}
+
+  main{padding-top:52px;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--white);
+    padding:36px 20px 44px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:-40px; left:-10%;
+    width:120%;
+    height:80px;
+    background:var(--orange);
+    transform:rotate(-3deg);
+    opacity:0.9;
+    z-index:0;
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .hero-tag{
+    display:inline-block;
+    background:rgba(255,107,26,0.15);
+    border:1px solid var(--orange);
+    color:var(--orange-light);
+    font-size:11px;
+    letter-spacing:0.1em;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:900;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero h1 em{
+    display:block;
+    font-family:'Bebas Neue', sans-serif;
+    font-style:normal;
+    color:var(--orange);
+    font-size:38px;
+    letter-spacing:0.06em;
+    margin-top:4px;
+  }
+  .hero p.sub{
+    font-size:13.5px;
+    color:#c9d3dc;
+    line-height:1.8;
+    margin-bottom:22px;
+  }
+  .hero-img-wrap{
+    position:relative;
+    z-index:2;
+    margin:0 -20px;
+    padding:0 20px;
+  }
+  .hero-img{
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 16px 30px rgba(0,0,0,0.4);
+    border:3px solid rgba(255,255,255,0.1);
+  }
+  .hero-img img{width:100%;height:220px;object-fit:cover;}
+
+  .hero-cta{
+    position:relative;
+    z-index:2;
+    margin-top:26px;
+    display:flex;
+    gap:10px;
+    justify-content:center;
+  }
+  .btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:14px 18px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:14px;
+    text-decoration:none;
+    flex:1;
+    max-width:170px;
+  }
+  .btn-primary{
+    background:var(--orange);
+    color:var(--white);
+    box-shadow:0 8px 18px rgba(255,107,26,0.45);
+  }
+  .btn-secondary{
+    background:rgba(255,255,255,0.08);
+    color:var(--white);
+    border:1px solid rgba(255,255,255,0.35);
+  }
+  .btn svg{width:15px;height:15px;fill:currentColor;}
+
+  /* ===== Section common ===== */
+  section{
+    padding:44px 20px;
+  }
+  .section-head{
+    text-align:center;
+    margin-bottom:26px;
+  }
+  .section-head .en-tag{
+    font-family:'Bebas Neue', sans-serif;
+    color:var(--orange);
+    font-size:13px;
+    letter-spacing:0.25em;
+  }
+  .section-head h2{
+    font-size:21px;
+    font-weight:900;
+    margin-top:4px;
+    color:var(--navy);
+  }
+  .section-head .bar{
+    width:36px;
+    height:3px;
+    background:var(--orange);
+    margin:12px auto 0;
+    border-radius:2px;
+  }
+
+  /* ===== Featured product (Ichioshi) ===== */
+  .feature{
+    background:var(--navy);
+    color:var(--white);
+    position:relative;
+  }
+  .feature .section-head h2{color:var(--white);}
+  .feature-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:16px;
+    overflow:hidden;
+    position:relative;
+    z-index:2;
+  }
+  .feature-badge{
+    position:absolute;
+    top:14px; left:14px;
+    background:var(--orange);
+    color:var(--white);
+    font-family:'Bebas Neue', sans-serif;
+    font-size:15px;
+    letter-spacing:0.05em;
+    padding:6px 14px;
+    border-radius:6px;
+    z-index:3;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  }
+  .feature-img img{width:100%;height:210px;object-fit:cover;}
+  .feature-body{padding:20px;}
+  .feature-body h3{
+    font-size:19px;
+    font-weight:900;
+    margin-bottom:10px;
+    line-height:1.5;
+  }
+  .feature-body h3 span{color:var(--orange-light);}
+  .feature-body p{
+    font-size:13.5px;
+    line-height:1.9;
+    color:#c9d3dc;
+    margin-bottom:16px;
+  }
+  .feature-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .feature-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    font-size:13px;
+    color:var(--white);
+  }
+  .feature-list li::before{
+    content:"✓";
+    color:var(--orange);
+    font-weight:900;
+    flex-shrink:0;
+    background:rgba(255,107,26,0.15);
+    width:18px;height:18px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    margin-top:1px;
+  }
+  .feature .btn-primary{width:100%;max-width:none;}
+
+  /* ===== Strengths ===== */
+  .strengths{background:var(--off-white);}
+  .strength-grid{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-card{
+    background:var(--white);
+    border-radius:14px;
+    padding:18px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:var(--shadow);
+    border-left:4px solid var(--orange);
+  }
+  .strength-icon{
+    width:44px;height:44px;
+    background:var(--navy);
+    border-radius:50%;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .strength-icon svg{width:22px;height:22px;fill:var(--orange-light);}
+  .strength-text h4{font-size:15px;font-weight:700;margin-bottom:4px;}
+  .strength-text p{font-size:12.5px;color:var(--gray);line-height:1.7;}
+
+  /* ===== Reviews ===== */
+  .reviews{background:var(--navy-deep);color:var(--white);}
+  .reviews .section-head h2{color:var(--white);}
+  .review-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:14px;
+    padding:18px;
+    margin-bottom:14px;
+  }
+  .review-stars{
+    color:var(--orange);
+    font-size:15px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    line-height:1.9;
+    color:#dfe6ec;
+  }
+  .review-card .reviewer{
+    margin-top:10px;
+    font-size:11.5px;
+    color:var(--gray);
+  }
+
+  /* ===== Shop photo ===== */
+  .shopphoto{background:var(--off-white);}
+  .shopphoto-img{
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    margin-bottom:18px;
+  }
+  .shopphoto-img img{width:100%;height:200px;object-fit:cover;}
+  .shopphoto p{
+    text-align:center;
+    font-size:13.5px;
+    color:var(--navy);
+    line-height:1.9;
+  }
+
+  /* ===== Shop info ===== */
+  .info{background:var(--white);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .info-table tr{border-bottom:1px solid var(--line);}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:var(--navy);
+    color:var(--white);
+    font-size:12.5px;
+    font-weight:700;
+    text-align:left;
+    padding:12px 12px;
+    width:96px;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:12px 12px;
+    font-size:13.5px;
+    color:var(--navy);
+    line-height:1.7;
+    background:var(--white);
+  }
+  .info-table a{color:var(--orange);font-weight:700;text-decoration:none;word-break:break-all;}
+  .map-wrap{
+    margin-top:18px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block;}
+
+  .sns-row{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+  }
+  .sns-btn{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:12px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:700;
+    text-decoration:none;
+  }
+  .sns-line{background:#06C755;color:var(--white);}
+  .sns-mail{background:var(--navy);color:var(--white);}
+  .sns-btn svg{width:16px;height:16px;fill:currentColor;}
+
+  /* ===== Final CTA ===== */
+  .cta-final{
+    background:linear-gradient(135deg, var(--orange) 0%, #e8551a 100%);
+    color:var(--white);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-final h2{
+    font-size:22px;
+    font-weight:900;
+    margin-bottom:10px;
+    line-height:1.5;
+  }
+  .cta-final p{
+    font-size:13.5px;
+    margin-bottom:22px;
+    color:#fff0e6;
+    line-height:1.8;
+  }
+  .cta-final .btn-primary{
+    background:var(--white);
+    color:var(--orange);
+    max-width:none;
+    width:100%;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    font-size:16px;
+    padding:16px;
+  }
+  .cta-final .btn-secondary{
+    background:rgba(0,0,0,0.15);
+    color:var(--white);
+    border:1px solid rgba(255,255,255,0.5);
+    max-width:none;
+    width:100%;
+    margin-top:12px;
+  }
+
+  footer{
+    background:var(--navy-deep);
+    color:var(--gray);
+    text-align:center;
+    padding:22px 20px 30px;
+    font-size:11.5px;
+    line-height:1.8;
+  }
+  footer .fname{color:var(--white);font-weight:700;font-size:13px;margin-bottom:4px;}
+
+  /* ===== Fixed bottom nav ===== */
+  .bottom-nav{
+    position:fixed;
+    bottom:0; left:0; right:0;
+    z-index:100;
+    display:flex;
+    background:var(--white);
+    box-shadow:0 -4px 14px rgba(0,0,0,0.12);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:2px;
+    padding:9px 4px 8px;
+    text-decoration:none;
+    color:var(--navy);
+    font-size:10.5px;
+    font-weight:700;
+  }
+  .bottom-nav a svg{width:19px;height:19px;fill:var(--navy);}
+  .bottom-nav a.call{
+    background:var(--orange);
+    color:var(--white);
+  }
+  .bottom-nav a.call svg{fill:var(--white);}
+  .bottom-nav a.line{
+    background:#06C755;
+    color:var(--white);
+  }
+  .bottom-nav a.line svg{fill:var(--white);}
+
+  @media (min-width:480px){
+    .hero h1{font-size:29px;}
+    .hero h1 em{font-size:42px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-logo">
+    ヨコミチスポーツ
+    <span>KANEGASAKI STORE</span>
+  </div>
+  <a href="tel:0197-44-2524" class="header-tel">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+    電話する
+  </a>
+</header>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero track-lines">
+    <div class="hero-inner">
+      <span class="hero-tag">岩手県胆沢郡金ケ崎町 ランニング専門</span>
+      <h1>その一歩を、もっと自由に。<em>RUN FREE</em></h1>
+      <p class="sub">オーナー自らが実践する独自のランニング理論で、<br>あなたの走りを根本からサポートします。</p>
+      <div class="hero-img-wrap">
+        <div class="hero-img">
+          <img src="./images/hero.jpg" alt="ヨコミチスポーツ金ケ崎店 ランニングシューズ">
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="tel:0197-44-2524" class="btn btn-primary">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+          電話で相談
+        </a>
+        <a href="#access" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          アクセス
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PRODUCT (イチオシ) ===== -->
+  <section class="feature" id="feature">
+    <div class="section-head">
+      <div class="en-tag">RECOMMEND</div>
+      <h2>イチオシ商品</h2>
+      <div class="bar"></div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-badge">No.1</span>
+      <div class="feature-img">
+        <img src="./images/product.jpg" alt="ランニング用品 イチオシ商品">
+      </div>
+      <div class="feature-body">
+        <h3>足に合った一足が、<span>タイムも故障予防も変える。</span></h3>
+        <p>ランニングシューズ選びは自己流になりがちですが、実は走り方のクセや足の特徴によって最適な一足は人それぞれ違います。ヨコミチスポーツでは、オーナーが長年培った独自のランニング理論をもとに、あなたの走りに本当に合うシューズ・ウェア・小物を一つひとつ丁寧にご提案します。</p>
+        <ul class="feature-list">
+          <li>豊富なランニングシューズ・ウェアの取り扱い</li>
+          <li>走り方のクセを見た上でのフィッティングアドバイス</li>
+          <li>初心者からマラソンランナーまで対応</li>
+          <li>購入後も相談できる気さくなオーナー</li>
+        </ul>
+        <a href="tel:0197-44-2524" class="btn btn-primary">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+          在庫・相談は電話で
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STRENGTHS ===== -->
+  <section class="strengths">
+    <div class="section-head">
+      <div class="en-tag" style="color:var(--orange);">WHY US</div>
+      <h2>選ばれる理由</h2>
+      <div class="bar"></div>
+    </div>
+    <div class="strength-grid">
+      <div class="strength-card">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2 3 14h7v8l10-12h-7z"/></svg>
+        </div>
+        <div class="strength-text">
+          <h4>独自のランニング理論</h4>
+          <p>オーナー独自の理論に基づいたアドバイスが「新鮮」と評判。走りの根本から見直せます。</p>
+        </div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 8 1.3 8 4v2H4v-2c0-2.7 5.3-4 8-4zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>
+        </div>
+        <div class="strength-text">
+          <h4>気さくなオーナー</h4>
+          <p>小さなお店ながらオーナーの人柄が魅力。マラソンランナーを中心に地域で人気です。</p>
+        </div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="strength-text">
+          <h4>地域密着スポーツショップ</h4>
+          <p>金ケ崎町で長年愛される専門店。ランニング用品のご相談はお気軽にどうぞ。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews">
+    <div class="section-head">
+      <div class="en-tag">VOICE</div>
+      <h2>お客様の声</h2>
+      <div class="bar"></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p>小さなお店ですが、オーナーが気さくで、マラソンランナーなどに人気があるようです。落ち着いて相談できる雰囲気が魅力です。</p>
+      <div class="reviewer">― 来店されたお客様の声</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>独自のランニング理論が新鮮でした！具体的なアドバイスもしてくれるので、自己流で走っていた頃より安心して練習できています。</p>
+      <div class="reviewer">― 来店されたお客様の声</div>
+    </div>
+  </section>
+
+  <!-- ===== SHOP PHOTO ===== -->
+  <section class="shopphoto">
+    <div class="section-head">
+      <div class="en-tag" style="color:var(--orange);">SHOP</div>
+      <h2>お店の様子</h2>
+      <div class="bar"></div>
+    </div>
+    <div class="shopphoto-img">
+      <img src="./images/shop.jpg" alt="ヨコミチスポーツ金ケ崎店 店内の様子">
+    </div>
+    <p>アットホームな雰囲気の店内で、ランニングのお悩みをじっくりご相談いただけます。</p>
+  </section>
+
+  <!-- ===== SHOP INFO ===== -->
+  <section class="info" id="access">
+    <div class="section-head">
+      <div class="en-tag">ACCESS</div>
+      <h2>店舗情報</h2>
+      <div class="bar"></div>
+    </div>
+    <table class="info-table">
+      <tr>
+        <th>店名</th>
+        <td>ヨコミチスポーツ金ケ崎店</td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td>岩手県胆沢郡金ケ崎町西根前野218−1</td>
+      </tr>
+      <tr>
+        <th>定休日</th>
+        <td>月曜日</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><a href="tel:0197-44-2524">0197-44-2524</a></td>
+      </tr>
+      <tr>
+        <th>HP</th>
+        <td><a href="https://sites.google.com/site/yokomichisports/" target="_blank" rel="noopener">公式サイトを見る</a></td>
+      </tr>
+      <tr>
+        <th>メール</th>
+        <td><a href="mailto:yokomichi.sports@gmail.com">yokomichi.sports@gmail.com</a></td>
+      </tr>
+    </table>
+
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=岩手県胆沢郡金ケ崎町西根前野218-1&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="sns-row">
+      <a href="https://line.me/R/ti/p/%40096dkfcl" target="_blank" rel="noopener" class="sns-btn sns-line">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 5.8 2 10.5c0 3.9 3.1 7.2 7.4 8.2-.3.9-1.1 3.2-1.2 3.6-.2.5.2.5.4.4.3-.1 3.4-2.2 4.7-3.1.6.1 1.1.1 1.7.1 5.5 0 10-3.8 10-8.5S17.5 2 12 2z"/></svg>
+        LINEで相談
+      </a>
+      <a href="mailto:yokomichi.sports@gmail.com" class="sns-btn sns-mail">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        メールで問合せ
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="cta-final">
+    <h2>あなたに合った一足、<br>一緒に見つけませんか？</h2>
+    <p>ランニング用品のご相談はお気軽に。<br>気さくなオーナーがお待ちしています。</p>
+    <a href="tel:0197-44-2524" class="btn btn-primary">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+      0197-44-2524 に電話する
+    </a>
+    <a href="https://line.me/R/ti/p/%40096dkfcl" target="_blank" rel="noopener" class="btn btn-secondary">
+      LINEで気軽に相談する
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="fname">ヨコミチスポーツ金ケ崎店</div>
+  岩手県胆沢郡金ケ崎町西根前野218−1<br>
+  TEL：0197-44-2524／定休日：月曜日
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0197-44-2524" class="call">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+    電話
+  </a>
+  <a href="https://line.me/R/ti/p/%40096dkfcl" target="_blank" rel="noopener" class="line">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 5.8 2 10.5c0 3.9 3.1 7.2 7.4 8.2-.3.9-1.1 3.2-1.2 3.6-.2.5.2.5.4.4.3-.1 3.4-2.2 4.7-3.1.6.1 1.1.1 1.7.1 5.5 0 10-3.8 10-8.5S17.5 2 12 2z"/></svg>
+    LINE
+  </a>
+  <a href="#access">
+    <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+    アクセス
+  </a>
+  <a href="https://sites.google.com/site/yokomichisports/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm7.9 9h-3.1c-.1-2-.6-3.8-1.4-5.2A8.03 8.03 0 0 1 19.9 11zM12 4.1c1 1.4 1.8 3.5 2 4.9H10c.2-1.4 1-3.5 2-4.9zM4.1 13h3.1c.1 2 .6 3.8 1.4 5.2A8.03 8.03 0 0 1 4.1 13zm3.1-2H4.1a8.03 8.03 0 0 1 4.5-5.2C7.8 7.2 7.3 9 7.2 11zM12 19.9c-1-1.4-1.8-3.5-2-4.9h4c-.2 1.4-1 3.5-2 4.9zM10.1 13h3.8c-.1 1.6-.7 3.4-1.9 4.9-1.2-1.5-1.8-3.3-1.9-4.9zm0-2c.1-1.6.7-3.4 1.9-4.9 1.2 1.5 1.8 3.3 1.9 4.9h-3.8zm5.4 7.2c.8-1.4 1.3-3.2 1.4-5.2h3.1a8.03 8.03 0 0 1-4.5 5.2z"/></svg>
+    HP
+  </a>
+</div>
+
+</body>
+</html>
