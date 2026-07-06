@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本間ゴルフ 盛岡店 スタッフ募集｜販売/フロアスタッフ</title>
+<style>
+  :root{
+    --green-dark:#0d3b2e;
+    --green:#155c45;
+    --green-light:#1e7a5c;
+    --gold:#c9a24b;
+    --gold-light:#e5c878;
+    --cream:#faf7ef;
+    --text:#2a2a2a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    padding-bottom:64px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--green-dark);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  header .shop-name{
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:.5px;
+  }
+  header .shop-name span{
+    display:block;
+    font-size:10px;
+    color:var(--gold-light);
+    font-weight:normal;
+  }
+  header .tel-btn{
+    background:var(--gold);
+    color:var(--green-dark);
+    padding:8px 14px;
+    border-radius:24px;
+    font-weight:bold;
+    font-size:13px;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    margin-top:56px;
+    position:relative;
+    text-align:center;
+    color:#fff;
+    overflow:hidden;
+  }
+  .hero img{
+    width:100%;
+    height:60vh;
+    object-fit:cover;
+    filter:brightness(.5);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text .recruit-badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--green-dark);
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 16px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:1px;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.6;
+    text-shadow:0 2px 8px rgba(0,0,0,.6);
+  }
+  .hero-text .catch em{
+    display:block;
+    color:var(--gold-light);
+    font-size:27px;
+    font-style:normal;
+    margin-top:6px;
+  }
+  .hero-text .sub{
+    margin-top:14px;
+    font-size:13px;
+    letter-spacing:1px;
+    text-shadow:0 1px 4px rgba(0,0,0,.6);
+  }
+
+  /* Section common */
+  section{
+    padding:40px 18px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--green-dark);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--gold);
+    margin:10px auto 0;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:12px;
+    color:#777;
+    margin-bottom:26px;
+  }
+
+  /* Job summary highlight */
+  .job-highlight{
+    background:linear-gradient(180deg,var(--green-dark),var(--green));
+    color:#fff;
+  }
+  .job-highlight .section-title{color:#fff;}
+  .job-highlight .section-title::after{background:var(--gold-light);}
+  .job-highlight .section-sub{color:#cfe3d9;}
+  .wage-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,.25);
+    text-align:center;
+    padding:26px 20px;
+  }
+  .wage-card .job-name{
+    font-size:13px;
+    color:var(--green-light);
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .wage-card .wage{
+    font-size:34px;
+    font-weight:bold;
+    color:var(--green-dark);
+  }
+  .wage-card .wage span{
+    font-size:15px;
+    font-weight:normal;
+  }
+  .wage-card .wage-note{
+    font-size:12px;
+    color:#888;
+    margin-top:4px;
+  }
+  .job-points{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    margin-top:18px;
+  }
+  .job-points span{
+    background:var(--cream);
+    border:1px solid var(--gold);
+    color:var(--green-dark);
+    font-size:11.5px;
+    padding:7px 12px;
+    border-radius:8px;
+    font-weight:bold;
+  }
+  .cta-inline{
+    display:block;
+    text-align:center;
+    background:var(--gold);
+    color:var(--green-dark);
+    font-weight:bold;
+    font-size:15px;
+    padding:14px;
+    margin:20px 0 0;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
+  }
+
+  /* Work content */
+  .work-content{background:#fff;}
+  .work-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .work-item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    background:var(--cream);
+    border-radius:10px;
+    padding:14px 16px;
+  }
+  .work-item .icon{
+    font-size:20px;
+    line-height:1;
+    flex-shrink:0;
+  }
+  .work-item p{
+    font-size:13.5px;
+    line-height:1.7;
+    color:#444;
+  }
+
+  /* Flow */
+  .flow{background:var(--cream);}
+  .flow-list{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .flow-item{
+    position:relative;
+    background:#fff;
+    border-left:4px solid var(--gold);
+    padding:16px 16px 16px 20px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    margin-bottom:16px;
+  }
+  .flow-item .step{
+    color:var(--gold);
+    font-weight:bold;
+    font-size:12px;
+    letter-spacing:1px;
+  }
+  .flow-item h4{
+    color:var(--green-dark);
+    font-size:15px;
+    margin:4px 0 6px;
+  }
+  .flow-item p{
+    font-size:13px;
+    color:#555;
+    line-height:1.7;
+  }
+
+  /* Shop photo */
+  .shop-photo{padding:0;}
+  .shop-photo img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+
+  /* Requirements */
+  .requirements{background:#fff;}
+  .req-card{
+    background:var(--cream);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:14px;
+  }
+  .req-card h4{
+    color:var(--green-dark);
+    font-size:14px;
+    margin-bottom:10px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .req-card h4::before{
+    content:"";
+    width:8px;
+    height:8px;
+    background:var(--gold);
+    border-radius:50%;
+    display:inline-block;
+  }
+  .req-card ul{
+    list-style:none;
+    padding-left:14px;
+  }
+  .req-card li{
+    font-size:13px;
+    line-height:1.9;
+    color:#444;
+    position:relative;
+    padding-left:14px;
+  }
+  .req-card li::before{
+    content:"・";
+    position:absolute;
+    left:0;
+  }
+
+  /* Conditions table */
+  .conditions{background:var(--cream);}
+  .cond-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .cond-table th,.cond-table td{
+    padding:13px 12px;
+    font-size:12.5px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+    line-height:1.7;
+    vertical-align:top;
+  }
+  .cond-table th{
+    background:var(--green-dark);
+    color:#fff;
+    width:32%;
+    font-weight:normal;
+    white-space:nowrap;
+  }
+
+  /* Shop info */
+  .info{background:#fff;}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--cream);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .info-table th,.info-table td{
+    padding:13px 12px;
+    font-size:13px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+    line-height:1.6;
+  }
+  .info-table th{
+    background:var(--green-dark);
+    color:#fff;
+    width:30%;
+    font-weight:normal;
+    white-space:nowrap;
+  }
+  .info-table a{color:var(--green-light);font-weight:bold;text-decoration:underline;}
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    display:block;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:linear-gradient(180deg,var(--green),var(--green-dark));
+    text-align:center;
+    color:#fff;
+  }
+  .cta-section h2{
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13px;
+    color:#d9ead9;
+    margin-bottom:22px;
+    line-height:1.8;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-buttons a{
+    padding:15px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-tel{
+    background:var(--gold);
+    color:var(--green-dark);
+  }
+  .cta-form{
+    background:transparent;
+    border:1px solid var(--gold-light);
+    color:var(--gold-light);
+  }
+
+  /* Footer */
+  footer{
+    background:var(--green-dark);
+    color:#bcd6c8;
+    text-align:center;
+    padding:24px 18px;
+    font-size:11.5px;
+    line-height:1.8;
+  }
+  footer .company{
+    color:#fff;
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:6px;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #e2e2e2;
+    box-shadow:0 -2px 10px rgba(0,0,0,.08);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px 8px;
+    font-size:11px;
+    color:var(--green-dark);
+    font-weight:bold;
+  }
+  .bottom-nav a.primary{
+    background:var(--gold);
+    color:var(--green-dark);
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero-text .catch{font-size:27px;}
+    .hero-text .catch em{font-size:34px;}
+    section{padding:56px 30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">本間ゴルフ 盛岡店<span>STAFF RECRUITMENT</span></div>
+  <a href="tel:0196399077" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/recruit_hero.jpg" alt="本間ゴルフ盛岡店 スタッフ募集">
+  <div class="hero-text">
+    <span class="recruit-badge">STAFF WANTED</span>
+    <p class="catch">「ゴルフの楽しさ」を、<em>あなたの言葉で届けよう。</em></p>
+    <p class="sub">本間ゴルフ 盛岡店 ― 販売/フロアスタッフ募集</p>
+  </div>
+</div>
+
+<section class="job-highlight">
+  <h2 class="section-title">募集要項ハイライト</h2>
+  <p class="section-sub">JOB HIGHLIGHT</p>
+  <div class="wage-card">
+    <p class="job-name">販売/フロアスタッフ（ゴルフ用品）</p>
+    <p class="wage">時給 1,150円<span> 〜 1,200円</span></p>
+    <p class="wage-note">シフト制／週3日〜勤務OK（週5日勤務も歓迎）</p>
+    <div class="job-points">
+      <span>✓ ゴルフ未経験でも大歓迎</span>
+      <span>✓ 週3日〜・1日4h〜勤務可</span>
+      <span>✓ 自社商品の社割あり</span>
+      <span>✓ 昇給/昇格あり</span>
+    </div>
+    <a href="tel:0196399077" class="cta-inline">📞 まずは電話で問い合わせる</a>
+  </div>
+</section>
+
+<section class="work-content">
+  <h2 class="section-title">お仕事内容</h2>
+  <p class="section-sub">WORK CONTENT</p>
+  <div class="work-list">
+    <div class="work-item">
+      <span class="icon">⛳</span>
+      <p>ゴルフ商品やアクセサリー、アパレル等の販売促進・商品説明</p>
+    </div>
+    <div class="work-item">
+      <span class="icon">🙋</span>
+      <p>お客様への接客サービス、来店時のコミュニケーション</p>
+    </div>
+    <div class="work-item">
+      <span class="icon">🧹</span>
+      <p>商品の陳列整理、バックヤード商品の確認、店舗清掃</p>
+    </div>
+    <div class="work-item">
+      <span class="icon">💴</span>
+      <p>レジ打ち、精算業務</p>
+    </div>
+    <div class="work-item">
+      <span class="icon">🏪</span>
+      <p>その他、店舗運営に関する業務全般</p>
+    </div>
+  </div>
+</section>
+
+<section class="flow">
+  <h2 class="section-title">ご入社後の流れ</h2>
+  <p class="section-sub">FLOW</p>
+  <div class="flow-list">
+    <div class="flow-item">
+      <p class="step">STEP 01</p>
+      <h4>商品知識の習得と接客サービス</h4>
+      <p>販売するゴルフ商品の知識を身につけながら、接客サービスを中心に業務理解を深めていただきます。日常会話も大切に、「居心地の良いお店の雰囲気づくり」を一緒に目指します。</p>
+    </div>
+    <div class="flow-item">
+      <p class="step">STEP 02（入社半年目安）</p>
+      <h4>店舗管理業務へステップアップ</h4>
+      <p>在庫管理や精算業務など、ご自身の経験や興味関心に沿って、新しい業務にも挑戦いただけます。</p>
+    </div>
+  </div>
+</section>
+
+<div class="shop-photo">
+  <img src="images/recruit_shop.jpg" alt="本間ゴルフ盛岡店 店内スタッフ">
+</div>
+
+<section class="requirements">
+  <h2 class="section-title">求める人材</h2>
+  <p class="section-sub">REQUIREMENTS</p>
+  <div class="req-card">
+    <h4>必須条件</h4>
+    <ul>
+      <li>ゴルフに興味関心をお持ちの方（プレー経験が少ない方も大歓迎）</li>
+    </ul>
+  </div>
+  <div class="req-card">
+    <h4>歓迎条件</h4>
+    <ul>
+      <li>商品販売やサービス業の経験をお持ちの方</li>
+      <li>ゴルフに関する知見をお持ちの方</li>
+    </ul>
+  </div>
+  <div class="req-card">
+    <h4>求める人物像</h4>
+    <ul>
+      <li>ホスピタリティがあり、誠実さをもって取組みを推進できる方</li>
+      <li>コミュニケーションをとることがお好きな方</li>
+    </ul>
+  </div>
+</section>
+
+<section class="conditions">
+  <h2 class="section-title">募集要項</h2>
+  <p class="section-sub">JOB CONDITIONS</p>
+  <table class="cond-table">
+    <tr><th>職種</th><td>販売/フロアスタッフ（アパレル/アクセサリー/インテリア）、アミューズメント販売/フロアスタッフ、その他サービス業接客/フロアスタッフ</td></tr>
+    <tr><th>時給</th><td>1,150円 〜 1,200円</td></tr>
+    <tr><th>勤務形態</th><td>シフト制　10：10〜19：10（実働8時間・休憩60分）<br>週3日以上の勤務ができる方を募集（可能であれば週5日）<br>1日4時間以上からシフトイン可能</td></tr>
+    <tr><th>休日・休暇</th><td>4週8休制（勤務日以外が休日）<br>年次有給休暇（入社日より付与）<br>産前産後休暇、育児休業制度、介護休暇</td></tr>
+    <tr><th>社会保険</th><td>健康保険、厚生年金保険、雇用保険、労災保険</td></tr>
+    <tr><th>福利厚生</th><td>昇給/昇格あり、社会保険完備、通勤手当支給、自社商品の社割販売あり</td></tr>
+  </table>
+</section>
+
+<section class="info">
+  <h2 class="section-title">勤務地・お問い合わせ</h2>
+  <p class="section-sub">ACCESS & CONTACT</p>
+  <table class="info-table">
+    <tr><th>勤務地</th><td>本間ゴルフ 盛岡店</td></tr>
+    <tr><th>会社名</th><td>株式会社本間ゴルフ</td></tr>
+    <tr><th>住所</th><td>岩手県盛岡市津志田１３地割１７−２</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0196399077">019-639-9077</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:onlineshop@honmagolf-ec.com">onlineshop@honmagolf-ec.com</a></td></tr>
+    <tr><th>公式HP</th><td><a href="https://honmagolf-ec.com/jp/shop/detail_3.html" target="_blank" rel="noopener">honmagolf-ec.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=岩手県盛岡市津志田13地割17-2&z=16&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>一緒にゴルフの楽しさを伝えませんか</h2>
+  <p>未経験の方も大歓迎です。まずはお気軽にお問い合わせください。</p>
+  <div class="cta-buttons">
+    <a href="tel:0196399077" class="cta-tel">📞 019-639-9077 に電話する</a>
+    <a href="https://honmagolf-ec.com/contact" target="_blank" rel="noopener" class="cta-form">✉️ お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<footer>
+  <p class="company">株式会社本間ゴルフ</p>
+  <p>岩手県盛岡市津志田１３地割１７−２</p>
+  <p>© HONMA GOLF MORIOKA RECRUIT</p>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0196399077">
+    <span class="icon">📞</span>電話
+  </a>
+  <a href="https://maps.google.com/maps?q=岩手県盛岡市津志田13地割17-2" target="_blank" rel="noopener">
+    <span class="icon">📍</span>地図
+  </a>
+  <a href="https://honmagolf-ec.com/contact" target="_blank" rel="noopener" class="primary">
+    <span class="icon">✉️</span>応募・問合せ
+  </a>
+</nav>
+
+</body>
+</html>
