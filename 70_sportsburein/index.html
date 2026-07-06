@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スポーツブレイン山王店｜盛岡市のスポーツ用品店</title>
+<style>
+  :root{
+    --main:#0b3d91;
+    --accent:#ff6b00;
+    --light:#f4f7fb;
+    --dark:#16213e;
+    --text:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.7;
+    padding-top:60px;
+    padding-bottom:56px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{max-width:700px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main);
+    color:#fff;
+    height:60px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 16px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  }
+  header .shopname{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:0.5px;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg,var(--main) 0%,var(--dark) 100%);
+    color:#fff;
+    text-align:center;
+    padding:36px 16px 30px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    width:300px;height:300px;
+    background:rgba(255,255,255,0.05);
+    border-radius:50%;
+    top:-100px;right:-80px;
+  }
+  .hero .catch{
+    font-size:14px;
+    letter-spacing:2px;
+    color:var(--accent);
+    font-weight:bold;
+    margin-bottom:8px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:900;
+    margin-bottom:14px;
+    line-height:1.4;
+  }
+  .hero p.sub{
+    font-size:14px;
+    opacity:0.9;
+    margin-bottom:20px;
+  }
+  .hero-img{
+    width:100%;
+    max-width:500px;
+    margin:0 auto;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,0.3);
+  }
+  .cta-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    padding:14px 32px;
+    border-radius:30px;
+    margin-top:20px;
+    font-size:16px;
+    box-shadow:0 4px 12px rgba(255,107,0,0.4);
+    transition:transform 0.2s;
+  }
+  .cta-btn:active{transform:scale(0.97);}
+
+  /* Section titles */
+  .section{padding:40px 0;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:900;
+    color:var(--main);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent);
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:13px;
+    color:#555;
+    margin-bottom:28px;
+  }
+
+  /* Featured product - push hardest */
+  .featured{
+    background:var(--light);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    border:2px solid var(--accent);
+    position:relative;
+  }
+  .featured-badge{
+    position:absolute;
+    top:14px;left:14px;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:6px 14px;
+    border-radius:20px;
+    z-index:2;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  .featured-card img{
+    width:100%;
+    height:auto;
+  }
+  .featured-body{
+    padding:20px 18px 26px;
+  }
+  .featured-body h3{
+    font-size:19px;
+    color:var(--main);
+    margin-bottom:10px;
+    font-weight:900;
+  }
+  .featured-body p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:16px;
+  }
+  .featured-points{
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .featured-points li{
+    font-size:13.5px;
+    padding:8px 0 8px 28px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .featured-points li:last-child{border-bottom:none;}
+  .featured-points li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:8px;
+    color:#fff;
+    background:var(--main);
+    width:20px;height:20px;
+    border-radius:50%;
+    font-size:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .featured .cta-btn{width:100%;text-align:center;display:block;}
+
+  /* Strengths */
+  .strengths-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    padding:16px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    align-items:flex-start;
+  }
+  .strength-icon{
+    flex-shrink:0;
+    width:44px;height:44px;
+    background:var(--main);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:bold;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#555;
+  }
+
+  /* Gallery image */
+  .gallery-img{
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,0,0,0.1);
+    margin-bottom:10px;
+  }
+
+  /* Reviews */
+  .reviews{background:var(--light);}
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:14px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  }
+  .review-stars{color:var(--accent);font-size:14px;margin-bottom:8px;}
+  .review-card p{font-size:13.5px;color:#444;margin-bottom:8px;}
+  .review-name{font-size:12px;color:#888;text-align:right;}
+
+  /* Shop info */
+  .shop-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  }
+  .shop-table th,.shop-table td{
+    padding:14px 12px;
+    font-size:13.5px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+  }
+  .shop-table th{
+    background:var(--main);
+    color:#fff;
+    width:30%;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    display:block;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg,var(--dark) 0%,var(--main) 100%);
+    color:#fff;
+    text-align:center;
+    padding:44px 16px;
+  }
+  .final-cta h2{
+    font-size:21px;
+    margin-bottom:10px;
+    font-weight:900;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    opacity:0.9;
+    margin-bottom:20px;
+  }
+
+  /* Footer */
+  footer{
+    background:#111;
+    color:#aaa;
+    text-align:center;
+    padding:24px 16px 30px;
+    font-size:12px;
+  }
+  footer .company{color:#fff;font-weight:bold;margin-bottom:6px;font-size:13px;}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px;
+    font-size:11px;
+    color:var(--main);
+    font-weight:bold;
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.tel{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:520px){
+    .hero h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">スポーツブレイン山王店</div>
+  <a href="tel:0196015260" class="tel-btn">📞 電話する</a>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p class="catch">盛岡市山王町のスポーツ用品専門店</p>
+    <h1>あなたのスポーツライフを、<br>もっと快適に、もっと楽しく。</h1>
+    <p class="sub">野球・サッカー・ランニングなど幅広いジャンルのスポーツ用品を豊富に取り揃えています</p>
+    <div class="hero-img">
+      <img src="images/hero.jpg" alt="スポーツブレイン山王店 店内">
+    </div>
+    <a href="tel:0196015260" class="cta-btn">📞 019-601-5260 お問い合わせ</a>
+  </div>
+</section>
+
+<section class="section featured">
+  <div class="container">
+    <div class="section-title"><span>ICHIOSHI ITEM</span>イチオシのスポーツ用品</div>
+    <p class="section-lead">経験豊富なスタッフが、あなたに最適な一品をご提案します</p>
+    <div class="featured-card">
+      <div class="featured-badge">🏆 店長イチオシ</div>
+      <img src="images/product.jpg" alt="イチオシのスポーツ用品">
+      <div class="featured-body">
+        <h3>プロも認める確かな品揃え</h3>
+        <p>野球・サッカー・バスケットボール・ランニングなど、各種スポーツ用品を幅広くラインナップ。初心者からアスリートまで、目的やレベルに合わせた商品選びをサポートします。</p>
+        <ul class="featured-points">
+          <li>専門知識を持つスタッフが丁寧にご案内</li>
+          <li>用具の選び方からメンテナンスまで相談OK</li>
+          <li>地域密着だからできる細やかな対応</li>
+        </ul>
+        <a href="tel:0196015260" class="cta-btn">今すぐ電話で相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title"><span>STRENGTH</span>選ばれる理由</div>
+    <div class="strengths-grid">
+      <div class="strength-item">
+        <div class="strength-icon">1</div>
+        <div>
+          <h4>豊富な品揃え</h4>
+          <p>各種スポーツのウェアや用具を幅広く取り扱い、目的に合った商品が見つかります。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-icon">2</div>
+        <div>
+          <h4>専門スタッフによる丁寧な接客</h4>
+          <p>用具選びに迷ったときも、経験豊富なスタッフが親身にアドバイスいたします。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-icon">3</div>
+        <div>
+          <h4>地域密着の安心感</h4>
+          <p>盛岡市山王町で長年営業し、地域の皆さまに信頼していただいているお店です。</p>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-img" style="margin-top:24px;">
+      <img src="images/gallery.jpg" alt="スポーツブレイン山王店 商品棚">
+    </div>
+  </div>
+</section>
+
+<section class="section reviews">
+  <div class="container">
+    <div class="section-title"><span>VOICE</span>お客様の声</div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>子供の野球用品を揃えに来ましたが、サイズ選びまで丁寧に教えてもらえて助かりました。</p>
+      <div class="review-name">30代・男性</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>ランニングシューズを購入しましたが、足に合ったものを選んでもらえて快適に走れています。</p>
+      <div class="review-name">40代・女性</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p>品揃えが良く、店員さんも気さくで相談しやすいお店です。</p>
+      <div class="review-name">20代・男性</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+    <table class="shop-table">
+      <tr><th>店名</th><td>スポーツブレイン山王店</td></tr>
+      <tr><th>会社名</th><td>株式会社スポーツブレイン</td></tr>
+      <tr><th>代表者</th><td>藤川 雄一郎</td></tr>
+      <tr><th>住所</th><td>岩手県盛岡市山王町１０−６ 山王ハイツ１０３号</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0196015260">019-601-5260</a></td></tr>
+      <tr><th>定休日</th><td>土日祝日</td></tr>
+      <tr><th>HP</th><td><a href="https://www.rakuten.co.jp/sportsbrain/" target="_blank" rel="noopener">楽天市場店を見る</a></td></tr>
+      <tr><th>メール</th><td>sportsbrain@shop.rakuten.co.jp</td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E7%9B%9B%E5%B2%A1%E5%B8%82%E5%B1%B1%E7%8E%8B%E7%94%BA10-6&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>ご来店・お問い合わせをお待ちしております</h2>
+    <p>スポーツ用品のことなら、何でもお気軽にご相談ください</p>
+    <a href="tel:0196015260" class="cta-btn">📞 019-601-5260</a>
+  </div>
+</section>
+
+<footer>
+  <div class="company">株式会社スポーツブレイン</div>
+  <p>スポーツブレイン山王店</p>
+  <p>岩手県盛岡市山王町１０−６ 山王ハイツ１０３号</p>
+  <p style="margin-top:10px;">&copy; 2026 Sportsbrain. All Rights Reserved.</p>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="#">
+    <span class="icon">🏠</span>トップ
+  </a>
+  <a href="#" onclick="document.querySelector('.shop-table').scrollIntoView({behavior:'smooth'});return false;">
+    <span class="icon">📍</span>アクセス
+  </a>
+  <a href="tel:0196015260" class="tel">
+    <span class="icon">📞</span>電話する
+  </a>
+</nav>
+
+</body>
+</html>
