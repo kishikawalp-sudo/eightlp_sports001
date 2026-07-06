@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本間ゴルフ 盛岡店｜あなたに合うクラブが見つかる</title>
+<style>
+  :root{
+    --green-dark:#0d3b2e;
+    --green:#155c45;
+    --green-light:#1e7a5c;
+    --gold:#c9a24b;
+    --gold-light:#e5c878;
+    --cream:#faf7ef;
+    --text:#2a2a2a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    padding-bottom:64px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--green-dark);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:.5px;
+  }
+  header .shop-name span{
+    display:block;
+    font-size:10px;
+    color:var(--gold-light);
+    font-weight:normal;
+  }
+  header .tel-btn{
+    background:var(--gold);
+    color:var(--green-dark);
+    padding:8px 14px;
+    border-radius:24px;
+    font-weight:bold;
+    font-size:13px;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    margin-top:56px;
+    position:relative;
+    text-align:center;
+    color:#fff;
+    overflow:hidden;
+  }
+  .hero img{
+    width:100%;
+    height:60vh;
+    object-fit:cover;
+    filter:brightness(.55);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.6;
+    text-shadow:0 2px 8px rgba(0,0,0,.6);
+  }
+  .hero-text .catch em{
+    display:block;
+    color:var(--gold-light);
+    font-size:28px;
+    font-style:normal;
+    margin-top:6px;
+  }
+  .hero-text .sub{
+    margin-top:14px;
+    font-size:13px;
+    letter-spacing:1px;
+    text-shadow:0 1px 4px rgba(0,0,0,.6);
+  }
+
+  /* Section common */
+  section{
+    padding:40px 18px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--green-dark);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--gold);
+    margin:10px auto 0;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:12px;
+    color:#777;
+    margin-bottom:26px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:linear-gradient(180deg,var(--green-dark),var(--green));
+    color:#fff;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-title::after{background:var(--gold-light);}
+  .featured .section-sub{color:#cfe3d9;}
+  .product-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,.25);
+  }
+  .product-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .product-card .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--green-dark);
+    font-size:11px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:20px;
+    margin:14px 0 8px 16px;
+  }
+  .product-card h3{
+    padding:0 16px;
+    font-size:19px;
+    color:var(--green-dark);
+    margin-bottom:8px;
+  }
+  .product-card p{
+    padding:0 16px 18px;
+    font-size:13.5px;
+    line-height:1.8;
+    color:#444;
+  }
+  .product-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:0 16px 20px;
+  }
+  .product-points span{
+    background:var(--cream);
+    border:1px solid var(--gold);
+    color:var(--green-dark);
+    font-size:11.5px;
+    padding:6px 10px;
+    border-radius:8px;
+    font-weight:bold;
+  }
+  .cta-inline{
+    display:block;
+    text-align:center;
+    background:var(--gold);
+    color:var(--green-dark);
+    font-weight:bold;
+    font-size:15px;
+    padding:14px;
+    margin:0 16px 18px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
+  }
+
+  /* Strengths */
+  .strengths{background:var(--cream);}
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    background:#fff;
+    border-left:4px solid var(--gold);
+    padding:16px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .strength-item .num{
+    color:var(--gold);
+    font-weight:bold;
+    font-size:12px;
+    letter-spacing:1px;
+  }
+  .strength-item h4{
+    color:var(--green-dark);
+    font-size:16px;
+    margin:4px 0 6px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#555;
+    line-height:1.7;
+  }
+
+  /* Shop image */
+  .shop-photo{
+    padding:0;
+  }
+  .shop-photo img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+
+  /* Reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--cream);
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,.05);
+  }
+  .stars{
+    color:var(--gold);
+    font-size:15px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13px;
+    line-height:1.8;
+    color:#444;
+  }
+
+  /* Shop info */
+  .info{background:var(--cream);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .info-table th,.info-table td{
+    padding:13px 12px;
+    font-size:13px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+    line-height:1.6;
+  }
+  .info-table th{
+    background:var(--green-dark);
+    color:#fff;
+    width:30%;
+    font-weight:normal;
+    white-space:nowrap;
+  }
+  .info-table a{color:var(--green-light);font-weight:bold;text-decoration:underline;}
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    display:block;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:linear-gradient(180deg,var(--green),var(--green-dark));
+    text-align:center;
+    color:#fff;
+  }
+  .cta-section h2{
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13px;
+    color:#d9ead9;
+    margin-bottom:22px;
+    line-height:1.8;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-buttons a{
+    padding:15px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-tel{
+    background:var(--gold);
+    color:var(--green-dark);
+  }
+  .cta-form{
+    background:transparent;
+    border:1px solid var(--gold-light);
+    color:var(--gold-light);
+  }
+
+  /* Footer */
+  footer{
+    background:var(--green-dark);
+    color:#bcd6c8;
+    text-align:center;
+    padding:24px 18px;
+    font-size:11.5px;
+    line-height:1.8;
+  }
+  footer .company{
+    color:#fff;
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:6px;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #e2e2e2;
+    box-shadow:0 -2px 10px rgba(0,0,0,.08);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px 8px;
+    font-size:11px;
+    color:var(--green-dark);
+    font-weight:bold;
+  }
+  .bottom-nav a.primary{
+    background:var(--gold);
+    color:var(--green-dark);
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero-text .catch{font-size:28px;}
+    .hero-text .catch em{font-size:36px;}
+    section{padding:56px 30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">本間ゴルフ 盛岡店<span>HONMA GOLF MORIOKA</span></div>
+  <a href="tel:0196399077" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="本間ゴルフ盛岡店 ゴルフクラブ">
+  <div class="hero-text">
+    <p class="catch">あなたのスイングに、<em>本当に合う一本</em>を。</p>
+    <p class="sub">本間ゴルフ 盛岡店 ― フィッティングで見つける理想のクラブ</p>
+  </div>
+</div>
+
+<section class="featured">
+  <h2 class="section-title">イチオシ商品</h2>
+  <p class="section-sub">FEATURED PRODUCT</p>
+  <div class="product-card">
+    <img src="images/club.jpg" alt="ゴルフクラブ フィッティング">
+    <span class="badge">スタッフ一押し</span>
+    <h3>ゴルフクラブ フィッティング販売</h3>
+    <p>
+      一人ひとりのスイングやクセに合わせて、専門スタッフが丁寧にフィッティングいたします。
+      「今より飛距離を伸ばしたい」「方向性を安定させたい」「初めての一本を選びたい」など、
+      お悩みやご要望をじっくり伺いながら、本当に合うクラブをご提案します。
+      購入するかどうか迷っている段階でのご相談も大歓迎です。
+    </p>
+    <div class="product-points">
+      <span>✓ 無料フィッティング相談</span>
+      <span>✓ 押し売りなしの接客</span>
+      <span>✓ 初心者〜上級者まで対応</span>
+    </div>
+    <a href="tel:0196399077" class="cta-inline">📞 まずは電話で相談してみる</a>
+  </div>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">選ばれる理由</h2>
+  <p class="section-sub">STRENGTH</p>
+  <div class="strength-list">
+    <div class="strength-item">
+      <p class="num">POINT 01</p>
+      <h4>納得いくまで相談できるフィッティング</h4>
+      <p>購入前提でなくても大丈夫。スイングやお悩みをしっかりお聞きし、最適な一本を一緒に探します。</p>
+    </div>
+    <div class="strength-item">
+      <p class="num">POINT 02</p>
+      <h4>押し付けない、あたたかい接客</h4>
+      <p>店長をはじめスタッフ全員、お客様のペースを大切に。気持ちよく選べる雰囲気づくりを心がけています。</p>
+    </div>
+    <div class="strength-item">
+      <p class="num">POINT 03</p>
+      <h4>本間ゴルフブランドの安心感</h4>
+      <p>株式会社本間ゴルフが運営する直営店として、確かな品質のクラブを豊富に取り揃えています。</p>
+    </div>
+  </div>
+</section>
+
+<div class="shop-photo">
+  <img src="images/shop.jpg" alt="本間ゴルフ盛岡店 店内">
+</div>
+
+<section class="reviews">
+  <h2 class="section-title">お客様の声</h2>
+  <p class="section-sub">CUSTOMER REVIEWS</p>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>フィッティングをしていただきました。購入の是非を問わず相談にのっていただきありがとうございました。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>店長さんは優しくて、押し付けない接客で、気持ち良くクラブを選べました。ありがとうございました。ずーと本間クラブのファンです。腕はまだまだですが（笑）、クラブに見合うように頑張ります。</p>
+  </div>
+</section>
+
+<section class="info">
+  <h2 class="section-title">店舗情報</h2>
+  <p class="section-sub">SHOP INFORMATION</p>
+  <table class="info-table">
+    <tr><th>店名</th><td>本間ゴルフ 盛岡店</td></tr>
+    <tr><th>会社名</th><td>株式会社本間ゴルフ</td></tr>
+    <tr><th>住所</th><td>岩手県盛岡市津志田１３地割１７−２</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0196399077">019-639-9077</a></td></tr>
+    <tr><th>定休日</th><td>火曜日・水曜日</td></tr>
+    <tr><th>メール</th><td><a href="mailto:onlineshop@honmagolf-ec.com">onlineshop@honmagolf-ec.com</a></td></tr>
+    <tr><th>公式HP</th><td><a href="https://honmagolf-ec.com/jp/shop/detail_3.html" target="_blank" rel="noopener">honmagolf-ec.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=岩手県盛岡市津志田13地割17-2&z=16&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>フィッティングのご予約・お問い合わせをお待ちしております。</p>
+  <div class="cta-buttons">
+    <a href="tel:0196399077" class="cta-tel">📞 019-639-9077 に電話する</a>
+    <a href="https://honmagolf-ec.com/contact" target="_blank" rel="noopener" class="cta-form">✉️ お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<footer>
+  <p class="company">株式会社本間ゴルフ</p>
+  <p>岩手県盛岡市津志田１３地割１７−２</p>
+  <p>© HONMA GOLF MORIOKA</p>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0196399077">
+    <span class="icon">📞</span>電話
+  </a>
+  <a href="https://maps.google.com/maps?q=岩手県盛岡市津志田13地割17-2" target="_blank" rel="noopener">
+    <span class="icon">📍</span>地図
+  </a>
+  <a href="https://honmagolf-ec.com/contact" target="_blank" rel="noopener" class="primary">
+    <span class="icon">✉️</span>お問い合わせ
+  </a>
+</nav>
+
+</body>
+</html>
