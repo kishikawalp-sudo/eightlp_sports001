@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>knotty | 岩手県紫波町のクライミング専門店</title>
+<style>
+  :root{
+    --stone:#2b2b28;
+    --stone-dark:#1a1a18;
+    --chalk:#f4f1ea;
+    --rope:#d9542b;
+    --rope-dark:#b8431f;
+    --moss:#5c6b4f;
+    --gray-line:#3f3f3b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    background:var(--chalk);
+    color:var(--stone-dark);
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  img{width:100%;display:block;object-fit:cover;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:var(--stone-dark);
+    color:var(--chalk);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 16px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.3);
+  }
+  header .logo{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:2px;
+    color:var(--chalk);
+  }
+  header .logo span{color:var(--rope);}
+  header .tel-btn{
+    background:var(--rope);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:700;
+    white-space:nowrap;
+  }
+
+  main{padding-top:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{height:60vh;min-height:340px;}
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(26,26,24,0.1) 0%, rgba(26,26,24,0.85) 100%);
+  }
+  .hero-text{
+    position:absolute;
+    bottom:24px;left:0;right:0;
+    text-align:center;
+    color:#fff;
+    z-index:2;
+    padding:0 16px;
+  }
+  .hero-text .catch-sub{
+    font-size:13px;
+    letter-spacing:3px;
+    color:var(--rope);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .hero-text h1{
+    font-size:26px;
+    font-weight:800;
+    line-height:1.5;
+    text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  }
+
+  /* Section common */
+  section{padding:40px 18px;}
+  .section-title{
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .section-title .en{
+    font-size:12px;
+    letter-spacing:3px;
+    color:var(--rope);
+    font-weight:700;
+    display:block;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:22px;
+    font-weight:800;
+    color:var(--stone-dark);
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--stone-dark);
+    color:var(--chalk);
+  }
+  .featured .section-title h2{color:var(--chalk);}
+  .featured-card{
+    background:#232320;
+    border:1px solid var(--gray-line);
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .featured-card img{height:220px;}
+  .featured-card .body{padding:18px;}
+  .featured-tag{
+    display:inline-block;
+    background:var(--rope);
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:4px;
+    margin-bottom:10px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    margin-bottom:10px;
+    font-weight:800;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#d8d5cc;
+    margin-bottom:14px;
+  }
+  .featured-list{
+    list-style:none;
+    font-size:14px;
+    margin-bottom:16px;
+  }
+  .featured-list li{
+    padding-left:20px;
+    position:relative;
+    margin-bottom:8px;
+    color:#e8e5dd;
+  }
+  .featured-list li::before{
+    content:"⛰";
+    position:absolute;
+    left:0;
+    color:var(--rope);
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--rope);
+    color:#fff;
+    font-weight:800;
+    padding:14px;
+    border-radius:8px;
+    font-size:15px;
+    letter-spacing:1px;
+  }
+  .cta-btn:active{background:var(--rope-dark);}
+
+  /* Strengths */
+  .strengths{background:var(--chalk);}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    margin-bottom:24px;
+    align-items:flex-start;
+  }
+  .strength-num{
+    flex:0 0 auto;
+    width:42px;height:42px;
+    background:var(--stone-dark);
+    color:var(--rope);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:16px;
+  }
+  .strength-item h3{
+    font-size:16px;
+    margin-bottom:4px;
+    font-weight:800;
+  }
+  .strength-item p{
+    font-size:13.5px;
+    color:#4a4a45;
+  }
+
+  /* Shop photo */
+  .shopphoto{padding:0;}
+  .shopphoto img{height:240px;}
+
+  /* Reviews */
+  .reviews{background:#efece3;}
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .stars{
+    color:var(--rope);
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:#3a3a36;
+  }
+
+  /* Shop info */
+  .shopinfo{background:var(--chalk);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #ddd8cb;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:92px;
+    color:var(--rope);
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .info-table a{color:var(--stone-dark);text-decoration:underline;}
+  .map-wrap{
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    display:block;
+  }
+  .sns-links{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-top:16px;
+  }
+  .sns-links a{
+    background:var(--stone-dark);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:700;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--stone-dark);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+    font-weight:800;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    color:#d8d5cc;
+    margin-bottom:20px;
+  }
+  .final-cta .cta-btn{margin-bottom:12px;}
+
+  /* Footer */
+  footer{
+    background:var(--stone-dark);
+    color:#8a877d;
+    text-align:center;
+    padding:20px;
+    font-size:12px;
+    border-top:1px solid var(--gray-line);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:var(--stone-dark);
+    border-top:1px solid var(--gray-line);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    color:#fff;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:700;
+  }
+  .bottom-nav a.call{
+    background:var(--rope);
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:16px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero-text h1{font-size:32px;}
+    .featured-card img{height:300px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">knotty<span>.</span></div>
+  <a href="tel:0196015512" class="tel-btn">📞 電話する</a>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="knotty 店内クライミング用品">
+    <div class="hero-text">
+      <span class="catch-sub">CLIMBING GEAR SPECIALIST</span>
+      <h1>岩と向き合う人へ。<br>紫波のクライミング専門店 knotty</h1>
+    </div>
+  </div>
+
+  <!-- Featured Product -->
+  <section class="featured">
+    <div class="section-title">
+      <span class="en">OUR RECOMMENDATION</span>
+      <h2>イチオシ｜クライミング用品</h2>
+    </div>
+    <div class="featured-card">
+      <img src="images/climbing_gear.jpg" alt="クライミング用品 シューズ ハーネス チョークバッグ">
+      <div class="body">
+        <span class="featured-tag">豊富な品揃え</span>
+        <h3>あなたに本当に合う一足・一式を、専門知識でご提案</h3>
+        <p>クライミングシューズ、ハーネス、チョークバッグ、ロープなど、初心者から上級者まで対応できる品揃え。スタッフの深い知識と経験を活かし、体力・技術レベル・目的に合わせたベストな商品選びをサポートします。</p>
+        <ul class="featured-list">
+          <li>クライミングシューズ各種取り扱い</li>
+          <li>ハーネス・チョークバッグ・関連ギア</li>
+          <li>山と道など人気アウトドアブランドも充実</li>
+          <li>使い方・メンテナンス方法まで丁寧に説明</li>
+        </ul>
+        <a href="tel:0196015512" class="cta-btn">電話で相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section class="strengths">
+    <div class="section-title">
+      <span class="en">WHY KNOTTY</span>
+      <h2>knottyが選ばれる理由</h2>
+    </div>
+
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div>
+        <h3>圧倒的な知識と経験</h3>
+        <p>スタッフの知識と経験は豊富で、話を聞くだけでも来店の価値があると評判。クライミングに関する疑問や不安を丁寧に解消します。</p>
+      </div>
+    </div>
+
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div>
+        <h3>豊富な品揃え</h3>
+        <p>クライミング用品を中心に幅広いラインナップ。しっかりとしたアドバイスを受けながら、自分にぴったりの商品を選べます。</p>
+      </div>
+    </div>
+
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div>
+        <h3>使い方まで丁寧にフォロー</h3>
+        <p>購入して終わりではなく、実際に使う際のポイントまでしっかり説明。初めての方でも安心して道具を使いこなせます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop photo -->
+  <div class="shopphoto">
+    <img src="images/shop_interior.jpg" alt="knotty 店内の様子">
+  </div>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <div class="section-title">
+      <span class="en">VOICE</span>
+      <h2>お客様の声</h2>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>お店の方の知識と経験は素晴らしく、話を聞くだけでもお店に行った価値はあると思います。品揃えも豊富で、しっかりとアドバイスをして頂きながらベストな商品を購入出来ました。</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>山と道のザック、mini2を購入しました。使うときのポイントもしっかり教えて頂き、説明が分かりやすかったです。</p>
+    </div>
+  </section>
+
+  <!-- Shop Info -->
+  <section class="shopinfo">
+    <div class="section-title">
+      <span class="en">SHOP INFO</span>
+      <h2>店舗情報</h2>
+    </div>
+
+    <table class="info-table">
+      <tr><th>店名</th><td>knotty（ノッティー）</td></tr>
+      <tr><th>定休日</th><td>水曜日</td></tr>
+      <tr><th>住所</th><td>岩手県紫波郡紫波町紫波中央駅前2丁目3−3</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0196015512">019-601-5512</a></td></tr>
+      <tr><th>HP</th><td><a href="http://knottysports.com/" target="_blank" rel="noopener">knottysports.com</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:nottysports@gmail.com">nottysports@gmail.com</a></td></tr>
+    </table>
+
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E7%B4%AB%E6%B3%A2%E9%83%A1%E7%B4%AB%E6%B3%A2%E7%94%BA%E7%B4%AB%E6%B3%A2%E4%B8%AD%E5%A4%AE%E9%A7%85%E5%89%8D2%E4%B8%81%E7%9B%AE3%EF%BC%8D3&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <div class="sns-links">
+      <a href="https://www.instagram.com/knotty0527/" target="_blank" rel="noopener">📷 Instagram</a>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>クライミング用品選びのプロが、あなたにぴったりの一品をご提案します。</p>
+    <a href="tel:0196015512" class="cta-btn">📞 019-601-5512 に電話する</a>
+  </section>
+
+</main>
+
+<footer>
+  © knotty. All Rights Reserved.
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0196015512" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://maps.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E7%B4%AB%E6%B3%A2%E9%83%A1%E7%B4%AB%E6%B3%A2%E7%94%BA%E7%B4%AB%E6%B3%A2%E4%B8%AD%E5%A4%AE%E9%A7%85%E5%89%8D2%E4%B8%81%E7%9B%AE3%EF%BC%8D3" target="_blank"><span class="icon">📍</span>地図</a>
+  <a href="http://knottysports.com/" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="https://www.instagram.com/knotty0527/" target="_blank"><span class="icon">📷</span>Instagram</a>
+</div>
+
+</body>
+</html>
