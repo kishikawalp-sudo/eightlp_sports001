@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Dprtment Skateshop Park | 花巻発 スケート＆ストリートウェア</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+
+  :root{
+    --ink:#111111;
+    --paper:#eeeae2;
+    --concrete:#b9b3a6;
+    --acid:#d7ff3f;
+    --spray:#ff4d1c;
+    --line:#111111;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans JP',sans-serif;
+    padding-bottom:64px; /* space for fixed bottom nav */
+    overflow-x:hidden;
+  }
+
+  img{display:block;max-width:100%;height:auto;}
+
+  .display{
+    font-family:'Anton','Noto Sans JP',sans-serif;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    line-height:0.95;
+  }
+
+  .mono{
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:0.03em;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{
+    max-width:520px;
+    margin:0 auto;
+    position:relative;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:var(--ink);
+    color:var(--paper);
+    border-bottom:3px solid var(--acid);
+  }
+  .header-inner{
+    max-width:520px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+  }
+  .brand{
+    font-family:'Anton',sans-serif;
+    font-size:1.15rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    line-height:1;
+  }
+  .brand span{color:var(--acid);}
+  .header-call{
+    background:var(--acid);
+    color:var(--ink);
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:0.78rem;
+    padding:8px 12px;
+    border:2px solid var(--ink);
+    box-shadow:3px 3px 0 var(--paper);
+    white-space:nowrap;
+  }
+
+  main{padding-top:52px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--paper);
+    padding:34px 18px 30px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 14px);
+    pointer-events:none;
+  }
+  .hero-tag{
+    display:inline-block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    background:var(--spray);
+    color:var(--paper);
+    padding:4px 10px;
+    transform:rotate(-2deg);
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:2.5rem;
+    position:relative;
+    z-index:1;
+  }
+  .hero h1 .accent{color:var(--acid);}
+  .hero p.lead{
+    margin-top:14px;
+    font-size:0.95rem;
+    line-height:1.7;
+    color:var(--concrete);
+    max-width:34ch;
+    position:relative;
+    z-index:1;
+  }
+  .hero-img{
+    margin-top:22px;
+    border:3px solid var(--acid);
+    position:relative;
+    z-index:1;
+  }
+  .hero-img img{width:100%;filter:grayscale(15%) contrast(1.05);}
+  .hero-caption{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;
+    color:var(--concrete);
+    margin-top:6px;
+    letter-spacing:0.04em;
+  }
+
+  /* ---------- SECTION LABEL ---------- */
+  .sec-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    color:var(--spray);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:8px;
+  }
+  .sec-label::before{
+    content:"";
+    width:18px;height:2px;
+    background:var(--spray);
+    display:inline-block;
+  }
+
+  section{padding:36px 18px;}
+  section h2{font-size:1.6rem;margin-bottom:14px;}
+
+  /* ---------- FEATURED PRODUCT ---------- */
+  .feature{
+    background:var(--ink);
+    color:var(--paper);
+    position:relative;
+    border-top:3px solid var(--ink);
+    border-bottom:3px solid var(--ink);
+  }
+  .feature .sec-label{color:var(--acid);}
+  .feature .sec-label::before{background:var(--acid);}
+  .feature h2{color:var(--paper);}
+  .feature h2 .hi{color:var(--acid);}
+
+  .feature-card{
+    margin-top:18px;
+    border:2px solid var(--acid);
+    background:#1a1a1a;
+  }
+  .feature-card img{width:100%;border-bottom:2px solid var(--acid);}
+  .feature-card .fc-body{padding:16px;}
+  .feature-price-tag{
+    display:inline-block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    background:var(--acid);
+    color:var(--ink);
+    padding:3px 8px;
+    margin-bottom:10px;
+    transform:rotate(-1deg);
+  }
+  .feature-card h3{
+    font-family:'Anton',sans-serif;
+    font-size:1.3rem;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .feature-card p{
+    font-size:0.88rem;
+    line-height:1.75;
+    color:var(--concrete);
+    margin-bottom:16px;
+  }
+  .feature-list{
+    list-style:none;
+    display:grid;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .feature-list li{
+    font-size:0.85rem;
+    display:flex;
+    gap:8px;
+    align-items:flex-start;
+  }
+  .feature-list li::before{
+    content:"×";
+    color:var(--acid);
+    font-family:'Anton',sans-serif;
+    font-size:1rem;
+    line-height:1.2;
+  }
+  .cta-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:var(--acid);
+    color:var(--ink);
+    font-family:'Anton',sans-serif;
+    font-size:1.05rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    padding:15px;
+    border:2px solid var(--paper);
+    box-shadow:4px 4px 0 var(--spray);
+  }
+  .cta-btn:active{
+    transform:translate(2px,2px);
+    box-shadow:2px 2px 0 var(--spray);
+  }
+
+  /* ---------- STRENGTHS ---------- */
+  .strengths .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-top:18px;
+  }
+  .strength-item{
+    background:var(--paper);
+    border:2px solid var(--ink);
+    padding:16px;
+    position:relative;
+  }
+  .strength-item .num{
+    font-family:'Anton',sans-serif;
+    font-size:2rem;
+    color:var(--concrete);
+    -webkit-text-stroke:1.5px var(--ink);
+    color:transparent;
+    line-height:1;
+  }
+  .strength-item h3{
+    font-size:1rem;
+    margin:8px 0 6px;
+  }
+  .strength-item p{
+    font-size:0.85rem;
+    line-height:1.7;
+    color:#3a3a3a;
+  }
+
+  /* ---------- REVIEW ---------- */
+  .review{
+    background:var(--concrete);
+  }
+  .review-card{
+    background:var(--paper);
+    border:2px solid var(--ink);
+    padding:20px;
+    margin-top:18px;
+    box-shadow:5px 5px 0 var(--ink);
+  }
+  .stars{
+    color:var(--spray);
+    font-size:1.2rem;
+    letter-spacing:2px;
+    margin-bottom:8px;
+  }
+  .review-title{
+    font-family:'Anton',sans-serif;
+    font-size:1.15rem;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .review-body{
+    font-size:0.9rem;
+    line-height:1.85;
+  }
+  .review-meta{
+    margin-top:14px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    color:#555;
+  }
+
+  /* ---------- SHOP INFO ---------- */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:18px;
+    font-size:0.85rem;
+  }
+  .shop-info th,.shop-info td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid var(--ink);
+    vertical-align:top;
+  }
+  .shop-info th{
+    width:28%;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    color:var(--spray);
+    font-weight:700;
+  }
+  .shop-info td a{
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .map-frame{
+    margin-top:18px;
+    border:2px solid var(--ink);
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:260px;
+    border:0;
+    display:block;
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    background:var(--ink);
+    color:var(--paper);
+    text-align:center;
+  }
+  .final-cta .display{font-size:1.7rem;margin-bottom:8px;}
+  .final-cta .display .accent{color:var(--acid);}
+  .final-cta p{
+    font-size:0.85rem;
+    color:var(--concrete);
+    margin-bottom:22px;
+  }
+  .cta-stack{display:grid;gap:12px;}
+  .cta-btn.outline{
+    background:transparent;
+    color:var(--paper);
+    border:2px solid var(--paper);
+    box-shadow:4px 4px 0 var(--acid);
+  }
+
+  footer{
+    text-align:center;
+    padding:22px 18px 90px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;
+    color:#555;
+  }
+
+  /* ---------- BOTTOM NAV ---------- */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:100;
+    background:var(--ink);
+    border-top:3px solid var(--acid);
+    display:flex;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px 8px;
+    color:var(--paper);
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.66rem;
+    letter-spacing:0.02em;
+    border-right:1px solid #2a2a2a;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a .ico{
+    display:block;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .bottom-nav a.primary{
+    background:var(--acid);
+    color:var(--ink);
+    font-weight:700;
+  }
+
+  @media (min-width:521px){
+    .hero h1{font-size:2.9rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">Dprtment <span>Skateshop</span></div>
+    <a href="tel:0198295595" class="header-call">📞 019-829-5595</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <span class="hero-tag">IWATE / HANAMAKI</span>
+      <h1 class="display">花巻の<br>ストリートに<br><span class="accent">魂を積む。</span></h1>
+      <p class="lead">マルカンビルB1F、Dprtment Skateshop Park。スケートを愛する全ての人へ、本気のウェアとギアを届ける。</p>
+      <div class="hero-img">
+        <img src="images/hero.jpg" alt="Dprtment Skateshop Park 店内の様子">
+      </div>
+      <div class="hero-caption">// PARK LOCAL SINCE HANAMAKI</div>
+    </section>
+
+    <!-- FEATURED PRODUCT -->
+    <section class="feature">
+      <div class="sec-label">FEATURE ITEM</div>
+      <h2 class="display">イチオシ<br>スポーツ<span class="hi">ウェア</span></h2>
+
+      <div class="feature-card">
+        <img src="images/apparel.jpg" alt="Dprtment 一押しスポーツウェア">
+        <div class="fc-body">
+          <span class="feature-price-tag">SELECT BY DPRTMENT</span>
+          <h3>滑りを支える一着</h3>
+          <p>動きやすさとストリートの見た目、両方を諦めない。花巻のスケーターの声から選び抜いたウェアラインナップを店頭で展開中。</p>
+          <ul class="feature-list">
+            <li>可動域を妨げないカッティング</li>
+            <li>擦れに強い素材で長く使える</li>
+            <li>park styleに合う配色・シルエット</li>
+          </ul>
+          <a href="https://dprtment.stores.jp/" class="cta-btn">オンラインで見る →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRENGTHS -->
+    <section class="strengths">
+      <div class="sec-label">WHY DPRTMENT</div>
+      <h2 class="display">選ばれる<br>理由</h2>
+      <div class="grid">
+        <div class="strength-item">
+          <div class="num">01</div>
+          <h3>地元スケーターとの距離が近い</h3>
+          <p>花巻でスケートする人たちのリアルな声を聞きながら商品を選定。だから、実際に使えるものしか置かない。</p>
+        </div>
+        <div class="strength-item">
+          <div class="num">02</div>
+          <h3>マルカンビルB1Fという象徴的な場所</h3>
+          <p>地域に根付いたビルの地下、アクセスしやすい立地でふらっと立ち寄れるショップ。</p>
+        </div>
+        <div class="strength-item">
+          <div class="num">03</div>
+          <h3>ウェアからギアまでワンストップ</h3>
+          <p>スポーツウェアはもちろん、スケートに関わる装備を幅広く取り揃え。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEW -->
+    <section class="review">
+      <div class="sec-label">VOICE</div>
+      <h2 class="display">お客様の声</h2>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <div class="review-title">ローカル愛の極み</div>
+        <p class="review-body">花巻、スケートを愛する熱い思いが詰まってます。スケートする若者達はこの場所を大切にして欲しいなと思います。</p>
+        <div class="review-meta">// GOOGLE レビューより</div>
+      </div>
+    </section>
+
+    <!-- SHOP INFO -->
+    <section class="shop-info">
+      <div class="sec-label">SHOP INFO</div>
+      <h2 class="display">店舗情報</h2>
+      <table>
+        <tr><th>店名</th><td>Dprtment Skateshop Park</td></tr>
+        <tr><th>住所</th><td>岩手県花巻市上町６−２<br>マルカンビル B1F</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0198295595">019-829-5595</a></td></tr>
+        <tr><th>HP</th><td><a href="https://dprtment.stores.jp/" target="_blank" rel="noopener">dprtment.stores.jp</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://dprtment.stores.jp/inquiry" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      </table>
+      <div class="map-frame">
+        <iframe src="https://maps.google.com/maps?q=岩手県花巻市上町6-2%20マルカンビル&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="display">今すぐ<span class="accent">チェック</span></div>
+      <p>花巻のスケートシーンを支えるショップへ。</p>
+      <div class="cta-stack">
+        <a href="https://dprtment.stores.jp/" class="cta-btn">オンラインストアを見る</a>
+        <a href="tel:0198295595" class="cta-btn outline">電話で問い合わせる</a>
+      </div>
+    </section>
+
+    <footer>© Dprtment Skateshop Park</footer>
+  </div>
+</main>
+
+<nav class="bottom-nav">
+  <a href="tel:0198295595"><span class="ico">📞</span>電話</a>
+  <a href="https://dprtment.stores.jp/inquiry" target="_blank" rel="noopener"><span class="ico">✉️</span>問合せ</a>
+  <a href="https://maps.google.com/maps?q=岩手県花巻市上町6-2+マルカンビル" target="_blank" rel="noopener"><span class="ico">📍</span>地図</a>
+  <a href="https://dprtment.stores.jp/" class="primary" target="_blank" rel="noopener"><span class="ico">🛒</span>ストア</a>
+</nav>
+
+</body>
+</html>
