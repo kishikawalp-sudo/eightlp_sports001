@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>二木ゴルフ 盛岡西仙北店｜ミズノ認定クラブフィッター在籍のゴルフ専門店</title>
+<style>
+  :root{
+    --green-dark:#0b3d2e;
+    --green:#155c3f;
+    --green-light:#1f7a52;
+    --gold:#c9a227;
+    --gold-light:#e6c667;
+    --cream:#faf7ee;
+    --white:#ffffff;
+    --text:#222222;
+    --gray:#666666;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    line-height:1.7;
+    padding-bottom:64px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:var(--green-dark);
+    color:var(--white);
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  header .shop-name{
+    font-size:14px;
+    font-weight:bold;
+    line-height:1.3;
+  }
+  header .shop-name span{
+    display:block;
+    font-size:10px;
+    color:var(--gold-light);
+    font-weight:normal;
+  }
+  header .tel-btn{
+    background:var(--gold);
+    color:var(--green-dark);
+    font-weight:bold;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    white-space:nowrap;
+    box-shadow:0 2px 6px rgba(0,0,0,0.25);
+  }
+  header .tel-btn small{
+    display:block;
+    font-size:9px;
+    font-weight:normal;
+  }
+
+  main{margin-top:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg,var(--green-dark),var(--green) 60%,var(--green-light));
+    color:var(--white);
+    padding:36px 18px 44px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-40px;right:-60px;
+    width:220px;height:220px;
+    background:radial-gradient(circle,rgba(201,162,39,0.35),transparent 70%);
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--green-dark);
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:8px;
+    line-height:1.4;
+  }
+  .hero h1 .accent{
+    color:var(--gold-light);
+    display:block;
+    font-size:28px;
+    margin-top:4px;
+  }
+  .hero p.lead{
+    font-size:14px;
+    color:#e3ecE6;
+    margin-bottom:20px;
+  }
+  .hero .hero-img{
+    width:100%;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,0.35);
+    margin-bottom:18px;
+    border:3px solid var(--gold);
+  }
+  .hero .hero-img img{width:100%;height:auto;}
+  .hero .cta-group{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .cta-btn{
+    display:block;
+    padding:14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-btn.primary{
+    background:var(--gold);
+    color:var(--green-dark);
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  }
+  .cta-btn.secondary{
+    background:transparent;
+    color:var(--white);
+    border:1.5px solid var(--white);
+  }
+
+  /* Section common */
+  section{
+    padding:40px 18px;
+  }
+  .section-title{
+    text-align:center;
+    margin-bottom:24px;
+  }
+  .section-title .sub{
+    display:block;
+    font-size:12px;
+    color:var(--gold);
+    letter-spacing:2px;
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:21px;
+    color:var(--green-dark);
+    font-weight:bold;
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--white);
+  }
+  .featured-card{
+    background:linear-gradient(180deg,var(--cream),var(--white));
+    border:2px solid var(--gold);
+    border-radius:16px;
+    padding:20px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  }
+  .featured-card .ribbon{
+    display:inline-block;
+    background:var(--green-dark);
+    color:var(--gold-light);
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:4px;
+    margin-bottom:12px;
+  }
+  .featured-card img{
+    border-radius:10px;
+    margin-bottom:16px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--green-dark);
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:var(--gray);
+    margin-bottom:14px;
+  }
+  .feature-points{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .feature-points li{
+    font-size:13.5px;
+    padding:8px 0 8px 26px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .feature-points li::before{
+    content:"⛳";
+    position:absolute;
+    left:0;top:8px;
+  }
+  .featured .cta-btn.primary{
+    text-align:center;
+  }
+
+  /* Strengths */
+  .strengths{
+    background:var(--cream);
+  }
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-item{
+    background:var(--white);
+    border-radius:12px;
+    padding:16px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    border-left:4px solid var(--gold);
+  }
+  .strength-item .num{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--gold);
+    min-width:32px;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--green-dark);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:var(--gray);
+  }
+
+  /* Gallery */
+  .gallery{
+    background:var(--white);
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:10px;
+    height:130px;
+    object-fit:cover;
+    width:100%;
+  }
+  .gallery-grid .full{
+    grid-column:1/3;
+    height:160px;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:var(--green-dark);
+    color:var(--white);
+  }
+  .reviews .section-title h2{color:var(--white);}
+  .review-card{
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(201,162,39,0.4);
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+  }
+  .review-card .stars{
+    color:var(--gold-light);
+    font-size:15px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#e6e6e6;
+  }
+
+  /* Founder story */
+  .story{
+    background:var(--white);
+  }
+  .story-box{
+    background:var(--cream);
+    border-radius:12px;
+    padding:18px;
+    font-size:13.5px;
+    color:var(--text);
+    white-space:pre-line;
+    border-top:3px solid var(--gold);
+  }
+  .story .rep{
+    text-align:right;
+    margin-top:12px;
+    font-size:13px;
+    color:var(--green-dark);
+    font-weight:bold;
+  }
+
+  /* Shop info */
+  .shop-info{
+    background:var(--cream);
+  }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--white);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .info-table tr{border-bottom:1px solid #eee;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:var(--green-dark);
+    color:var(--gold-light);
+    font-size:12.5px;
+    text-align:left;
+    padding:12px 10px;
+    width:92px;
+    vertical-align:top;
+    font-weight:normal;
+  }
+  .info-table td{
+    padding:12px 10px;
+    font-size:13.5px;
+    word-break:break-all;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+  .sns-row{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+  }
+  .sns-row a{
+    flex:1;
+    text-align:center;
+    padding:12px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:bold;
+  }
+  .sns-row .hp{background:var(--green-dark);color:var(--white);}
+  .sns-row .insta{background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);color:var(--white);}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(160deg,var(--green),var(--green-dark));
+    color:var(--white);
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    color:#dcefe2;
+    margin-bottom:20px;
+  }
+  .final-cta .cta-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:var(--gray);
+    background:var(--cream);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:var(--white);
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px 8px;
+    font-size:11px;
+    color:var(--green-dark);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.tel{
+    background:var(--gold);
+    color:var(--green-dark);
+    font-weight:bold;
+  }
+  .bottom-nav a .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero h1{font-size:28px;}
+    .hero h1 .accent{font-size:32px;}
+    section{padding:56px 24px;}
+    .gallery-grid img{height:180px;}
+    .gallery-grid .full{height:220px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">
+    二木ゴルフ<span>盛岡西仙北店</span>
+  </div>
+  <a href="tel:0196311333" class="tel-btn">📞 電話する<small>019-631-1333</small></a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="badge">ミズノ盛岡地区コアフィッティング店</span>
+    <h1>もっと飛ばしたい、もっと快適に。
+      <span class="accent">あなただけの1本を、ここで。</span>
+    </h1>
+    <p class="lead">認定クラブフィッターが、あなたのスイングに本当に合うゴルフクラブをご提案します。</p>
+    <div class="hero-img">
+      <img src="images/main.jpg" alt="二木ゴルフ 盛岡西仙北店 店内">
+    </div>
+    <div class="cta-group">
+      <a href="tel:0196311333" class="cta-btn primary">📞 今すぐ電話で相談する</a>
+      <a href="#access" class="cta-btn secondary">📍 店舗情報を見る</a>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCT -->
+  <section class="featured" id="product">
+    <div class="section-title">
+      <span class="sub">ICHIOSHI PRODUCT</span>
+      <h2>イチオシ｜ゴルフクラブ</h2>
+    </div>
+    <div class="featured-card">
+      <span class="ribbon">プロも認める フィッティング技術</span>
+      <img src="images/club.jpg" alt="二木ゴルフのゴルフクラブフィッティング">
+      <h3>ミズノ認定クラブフィッターによる本格フィッティング</h3>
+      <p>店長・小田島力はミズノ認定クラブフィッターであり、当店はミズノの盛岡地区コアフィッティング店に指定されています。お客様のスイングやクセを丁寧に分析し、飛距離アップと安定したショットを実現するクラブ選びをサポートします。</p>
+      <ul class="feature-points">
+        <li>ミズノ認定フィッターによる精密フィッティング</li>
+        <li>フェアウェイウッドの使い方まで丁寧にレクチャー</li>
+        <li>20年近く通い続けるお客様も多数の信頼実績</li>
+        <li>初心者から上級者まで安心して相談できる接客</li>
+      </ul>
+      <a href="tel:0196311333" class="cta-btn primary">📞 クラブフィッティングを相談する</a>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section class="strengths">
+    <div class="section-title">
+      <span class="sub">STRENGTH</span>
+      <h2>選ばれる理由</h2>
+    </div>
+    <div class="strength-list">
+      <div class="strength-item">
+        <div class="num">01</div>
+        <div>
+          <h4>ミズノ認定クラブフィッター在籍</h4>
+          <p>店長・小田島力はミズノ認定クラブフィッターとして、確かな知識と技術でお客様のクラブ選びをサポートします。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">02</div>
+        <div>
+          <h4>盛岡地区コアフィッティング店に指定</h4>
+          <p>ミズノより盛岡地区のコアフィッティング店として指定を受けており、専門性の高いフィッティングが受けられます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">03</div>
+        <div>
+          <h4>親切・丁寧なスタッフ対応</h4>
+          <p>小物商品の相談からクラブの使い方まで、スタッフが親切に説明。初めての方でも安心してご来店いただけます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">04</div>
+        <div>
+          <h4>明るく整然とした売場</h4>
+          <p>店内は明るく商品が整然と並び、ゆっくりと商品を選んでいただける快適な空間です。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">05</div>
+        <div>
+          <h4>年中無休で営業</h4>
+          <p>年中無休なので、ご都合の良いタイミングでいつでもお立ち寄りいただけます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="section-title">
+      <span class="sub">GALLERY</span>
+      <h2>店内のご紹介</h2>
+    </div>
+    <div class="gallery-grid">
+      <img class="full" src="images/interior.jpg" alt="二木ゴルフ 盛岡西仙北店 売場の様子">
+      <img src="images/main.jpg" alt="店内の商品陳列">
+      <img src="images/club.jpg" alt="ゴルフクラブ フィッティングの様子">
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="section-title">
+      <span class="sub">VOICE</span>
+      <h2>お客様の声</h2>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>小物商品を見てきました、あとフェアウェイウッドの使い方を教わってきました。親切にスタッフの方が説明してくれました。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>店内は明るく整然と商品がならんでいます。ゴルフクラブのフィッティングは定評があります。店長小田島力はミズノ認定クラブフィッターでミズノの盛岡地区コアフィッティング店に指定されました。店長は技術は勿論応対も的確で信頼が置けます。私は20年近くクラブのカスタマイズを当店でやってます。</p>
+    </div>
+  </section>
+
+  <!-- FOUNDER STORY -->
+  <section class="story">
+    <div class="section-title">
+      <span class="sub">OUR STORY</span>
+      <h2>創業者ストーリー</h2>
+    </div>
+    <div class="story-box">当社は1973年、上野アメ横商店街のガード下でゴルフ用品の販売を開始しました。
+開業当初から様々な困難もありましたが、多くのゴルファーの皆様からのご支持をいただき、店舗を運営してまいりました。ウェブサイトでのビジネスも順調に拡大を続けております。
+
+お客様からのご支持、お取引先様のご理解とご協力、そして当社スタッフたちの情熱、それらのどの部分が欠けても、現在の当社の姿は無かったはずです。改めましてすべての方々へ御礼を申し上げます。
+
+『もっと飛ばしたい』『もっと快適にプレーしたい』などゴルファーの皆様の欲求を満たすべく、フィッティングやリペアなどのサービスを拡充し、ゴルフに関する様々なお悩みに対して寄り添い、そして楽しいご提案ができるよう、社員一同、全力でサポートしてまいります。
+
+お客様と共にゴルフの楽しさを共有し、成長してまいりますので今後とも変わらぬご愛顧のほどよろしくお願いいたします。</div>
+    <div class="rep">代表取締役　二木一成</div>
+  </section>
+
+  <!-- SHOP INFO -->
+  <section class="shop-info" id="access">
+    <div class="section-title">
+      <span class="sub">ACCESS</span>
+      <h2>店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>二木ゴルフ 盛岡西仙北店</td></tr>
+      <tr><th>会社名</th><td>株式会社二木ゴルフ</td></tr>
+      <tr><th>代表者</th><td>二木一成</td></tr>
+      <tr><th>住所</th><td>岩手県盛岡市西仙北１丁目２１−３８</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0196311333">019-631-1333</a></td></tr>
+      <tr><th>定休日</th><td>年中無休</td></tr>
+      <tr><th>公式HP</th><td><a href="https://www.nikigolf.co.jp/" target="_blank" rel="noopener">https://www.nikigolf.co.jp/</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=岩手県盛岡市西仙北１丁目２１−３８&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="sns-row">
+      <a class="hp" href="https://www.nikigolf.co.jp/contact/niki/" target="_blank" rel="noopener">お問い合わせ</a>
+      <a class="insta" href="https://www.instagram.com/nikigolf_japan/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>あなたに合う1本、見つけませんか？</h2>
+    <p>ミズノ認定クラブフィッターが、飛距離アップと快適なプレーをサポートします。</p>
+    <div class="cta-group">
+      <a href="tel:0196311333" class="cta-btn primary">📞 019-631-1333 に電話する</a>
+      <a href="https://www.nikigolf.co.jp/contact/niki/" target="_blank" rel="noopener" class="cta-btn secondary">✉️ お問い合わせフォーム</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 株式会社二木ゴルフ 盛岡西仙北店
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0196311333" class="tel"><span class="icon">📞</span>電話</a>
+  <a href="#product"><span class="icon">⛳</span>イチオシ</a>
+  <a href="#access"><span class="icon">📍</span>アクセス</a>
+  <a href="https://www.instagram.com/nikigolf_japan/" target="_blank" rel="noopener"><span class="icon">📷</span>Instagram</a>
+</nav>
+
+</body>
+</html>
