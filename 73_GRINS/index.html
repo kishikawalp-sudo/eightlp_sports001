@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bicycle Shop GRINS｜盛岡市のロードバイク専門店</title>
+<meta name="description" content="盛岡市下ノ橋町のBicycle Shop GRINS。初めての方にも丁寧に対応するロードバイク専門店。修理・整備・相談はお気軽に。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --asphalt: #1B1E22;
+    --asphalt-2: #24282E;
+    --cream: #F6F4EE;
+    --cream-2: #EFECE3;
+    --road-yellow: #FFC933;
+    --road-yellow-dark: #E6AE1A;
+    --steel: #6E7681;
+    --charcoal: #26292E;
+    --line-white: #ECEAE4;
+    --success: #3D7A5C;
+
+    --font-display: 'Oswald', 'Noto Sans JP', sans-serif;
+    --font-body: 'Noto Sans JP', sans-serif;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family: var(--font-body);
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 64px; /* space for fixed mobile nav */
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+
+  .eyebrow{
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--road-yellow-dark);
+  }
+  h1,h2,h3{
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .section{ padding: 4.5rem 1.25rem; }
+  .section-inner{ max-width: 960px; margin: 0 auto; }
+  .center{ text-align:center; }
+
+  /* ---------- road line divider (signature motif) ---------- */
+  .road-divider{
+    width:100%;
+    height: 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background: var(--asphalt);
+  }
+  .road-divider .dashes{
+    display:flex;
+    gap: 18px;
+    animation: roll 3.2s linear infinite;
+  }
+  .road-divider .dashes span{
+    width: 34px;
+    height: 4px;
+    background: var(--road-yellow);
+    border-radius: 2px;
+    flex-shrink:0;
+  }
+  @keyframes roll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-104px); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .road-divider .dashes{ animation: none; }
+  }
+
+  /* ---------- header ---------- */
+  .site-header{
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 100;
+    background: rgba(27,30,34,0.94);
+    backdrop-filter: blur(6px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 0.7rem 1rem;
+    border-bottom: 2px solid var(--road-yellow);
+  }
+  .site-header .brand{
+    font-family: var(--font-display);
+    color: var(--cream);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height:1.1;
+  }
+  .site-header .brand small{
+    display:block;
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    color: var(--road-yellow);
+    letter-spacing: 0.15em;
+    font-weight: 400;
+  }
+  .header-tel{
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+    background: var(--road-yellow);
+    color: var(--asphalt);
+    font-family: var(--font-display);
+    font-weight:600;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    white-space:nowrap;
+  }
+  .header-tel svg{ width:16px; height:16px; flex-shrink:0; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position: relative;
+    margin-top: 54px;
+    background: var(--asphalt);
+    color: var(--cream);
+    padding: 3rem 1.25rem 0;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width: 960px;
+    margin: 0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .hero .eyebrow{ color: var(--road-yellow); }
+  .hero h1{
+    font-size: clamp(2.1rem, 8vw, 3.4rem);
+    line-height: 1.12;
+    margin: 0.6rem 0 1rem;
+  }
+  .hero h1 em{
+    font-style: normal;
+    color: var(--road-yellow);
+  }
+  .hero p.lead{
+    font-size: 1rem;
+    color: var(--line-white);
+    max-width: 34em;
+    margin-bottom: 1.8rem;
+  }
+  .hero-ctas{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.2rem;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    font-family: var(--font-display);
+    font-weight:600;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 8px;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn svg{ width:18px; height:18px; }
+  .btn-primary{
+    background: var(--road-yellow);
+    color: var(--asphalt);
+    box-shadow: 0 6px 0 var(--road-yellow-dark);
+  }
+  .btn-primary:active{ transform: translateY(4px); box-shadow: 0 2px 0 var(--road-yellow-dark); }
+  .btn-outline{
+    background: transparent;
+    color: var(--cream);
+    border: 1.5px solid rgba(246,244,238,0.4);
+  }
+  .hero-image-wrap{
+    position: relative;
+    z-index: 2;
+    border-radius: 14px 14px 0 0;
+    overflow:hidden;
+    margin: 0 -1.25rem;
+  }
+  .hero-image-wrap img{
+    width:100%;
+    height: 240px;
+    object-fit: cover;
+  }
+  /* faux road horizon behind hero image */
+  .hero::before{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height: 320px;
+    background: linear-gradient(180deg, transparent, rgba(255,201,51,0.06));
+    z-index:1;
+  }
+
+  /* ---------- featured product ---------- */
+  .featured{
+    background: var(--cream);
+  }
+  .featured-card{
+    background: #fff;
+    border-radius: 16px;
+    overflow:hidden;
+    box-shadow: 0 10px 30px rgba(27,30,34,0.08);
+    border: 1px solid var(--cream-2);
+  }
+  .featured-card img{
+    width:100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .featured-body{ padding: 1.75rem 1.5rem 2rem; }
+  .featured-body h2{
+    font-size: 1.7rem;
+    color: var(--charcoal);
+    margin: 0.4rem 0 0.9rem;
+  }
+  .featured-body h2 span{ color: var(--road-yellow-dark); }
+  .featured-body p{ color: #454952; margin-bottom: 1.2rem; }
+  .feature-points{
+    display:grid;
+    gap: 0.85rem;
+    margin: 1.4rem 0 1.6rem;
+  }
+  .feature-point{
+    display:flex;
+    gap: 0.75rem;
+    align-items:flex-start;
+    font-size: 0.94rem;
+  }
+  .feature-point .dot{
+    flex-shrink:0;
+    width: 22px; height: 22px;
+    border-radius:50%;
+    background: var(--road-yellow);
+    display:flex; align-items:center; justify-content:center;
+    margin-top: 0.1rem;
+  }
+  .feature-point .dot svg{ width:13px; height:13px; color: var(--asphalt); }
+
+  /* ---------- strengths ---------- */
+  .strengths{ background: var(--asphalt-2); color: var(--cream); }
+  .strengths .eyebrow{ color: var(--road-yellow); }
+  .strengths h2{ color:#fff; font-size: 1.6rem; margin: 0.5rem 0 2.2rem; }
+  .strength-grid{
+    display:grid;
+    gap: 1.1rem;
+  }
+  .strength-card{
+    background: rgba(246,244,238,0.05);
+    border: 1px solid rgba(246,244,238,0.12);
+    border-radius: 14px;
+    padding: 1.4rem 1.3rem;
+  }
+  .strength-card .num{
+    font-family: var(--font-display);
+    color: var(--road-yellow);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+  }
+  .strength-card h3{
+    color:#fff;
+    font-size: 1.15rem;
+    margin: 0.5rem 0 0.5rem;
+  }
+  .strength-card p{ color: #C7CAD1; font-size: 0.92rem; }
+
+  /* ---------- reviews ---------- */
+  .reviews{ background: var(--cream); }
+  .review-card{
+    background:#fff;
+    border-radius: 16px;
+    padding: 1.8rem 1.6rem;
+    border: 1px solid var(--cream-2);
+    box-shadow: 0 8px 24px rgba(27,30,34,0.06);
+    position:relative;
+  }
+  .stars{ color: var(--road-yellow-dark); font-size: 1.3rem; letter-spacing:0.1em; margin-bottom:0.7rem; }
+  .review-card blockquote{
+    font-size: 0.98rem;
+    color: #3A3E45;
+    white-space: pre-line;
+  }
+  .review-card .reviewer{
+    margin-top: 1.1rem;
+    font-size: 0.82rem;
+    color: var(--steel);
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- shop info ---------- */
+  .shopinfo{ background: var(--asphalt); color: var(--cream); }
+  .shopinfo .eyebrow{ color: var(--road-yellow); }
+  .shopinfo h2{ color:#fff; font-size: 1.6rem; margin: 0.5rem 0 2rem; }
+  .info-table{
+    width:100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  .info-table tr{ border-bottom: 1px solid rgba(246,244,238,0.14); }
+  .info-table th{
+    text-align:left;
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--road-yellow);
+    padding: 0.85rem 0.8rem 0.85rem 0;
+    width: 32%;
+    vertical-align: top;
+    letter-spacing: 0.03em;
+  }
+  .info-table td{
+    padding: 0.85rem 0;
+    color: var(--line-white);
+  }
+  .info-table td a{ color: var(--road-yellow); border-bottom: 1px solid rgba(255,201,51,0.4); }
+  .map-wrap{
+    border-radius: 14px;
+    overflow:hidden;
+    border: 2px solid rgba(255,201,51,0.35);
+  }
+  .map-wrap iframe{ width:100%; height: 260px; border:0; display:block; }
+
+  /* ---------- final CTA ---------- */
+  .final-cta{
+    background: var(--road-yellow);
+    color: var(--asphalt);
+    text-align:center;
+  }
+  .final-cta h2{ font-size: 1.7rem; margin-bottom: 0.6rem; }
+  .final-cta p{ margin-bottom: 1.8rem; color: #3A2F0E; }
+  .final-cta .hero-ctas{ justify-content:center; }
+  .final-cta .btn-primary{
+    background: var(--asphalt);
+    color: var(--road-yellow);
+    box-shadow: 0 6px 0 #000;
+  }
+  .final-cta .btn-outline{
+    color: var(--asphalt);
+    border-color: rgba(27,30,34,0.4);
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    background: var(--asphalt);
+    color: var(--steel);
+    padding: 2.5rem 1.25rem 2rem;
+    text-align:center;
+    font-size: 0.85rem;
+  }
+  footer .brand{
+    font-family: var(--font-display);
+    color: var(--cream);
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+  footer .sns{
+    display:flex;
+    justify-content:center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  footer .sns a{
+    width: 38px; height: 38px;
+    border-radius:50%;
+    border: 1px solid rgba(246,244,238,0.25);
+    display:flex; align-items:center; justify-content:center;
+  }
+  footer .sns svg{ width:18px; height:18px; color: var(--cream); }
+  footer .rep{ margin-top: 0.8rem; color: #8A8F98; }
+
+  /* ---------- fixed mobile bottom nav ---------- */
+  .bottom-nav{
+    position: fixed;
+    left:0; right:0; bottom:0;
+    z-index: 100;
+    display:flex;
+    background: #fff;
+    border-top: 1px solid var(--cream-2);
+    box-shadow: 0 -4px 16px rgba(27,30,34,0.08);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap: 0.2rem;
+    padding: 0.55rem 0.2rem;
+    font-size: 0.68rem;
+    color: var(--charcoal);
+    font-family: var(--font-display);
+  }
+  .bottom-nav a svg{ width:20px; height:20px; }
+  .bottom-nav a.primary{ background: var(--road-yellow); color: var(--asphalt); }
+
+  /* ---------- responsive: tablet / desktop ---------- */
+  @media (min-width: 720px){
+    .section{ padding: 6rem 2rem; }
+    .hero{ padding-top: 4.5rem; }
+    .hero-inner{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items:center; padding-bottom: 3rem; }
+    .hero-image-wrap{ margin:0; border-radius: 16px; align-self:stretch; }
+    .hero-image-wrap img{ height: 100%; min-height: 360px; }
+    .hero::before{ display:none; }
+    .featured-card{ display:grid; grid-template-columns: 1fr 1fr; }
+    .featured-card img{ height:100%; }
+    .strength-grid{ grid-template-columns: repeat(3, 1fr); }
+    .shop-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items:start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="brand">GRINS<small>BICYCLE SHOP</small></div>
+  <a class="header-tel" href="tel:0196018880" aria-label="電話をかける">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    電話する
+  </a>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow">盛岡市 下ノ橋町 ｜ ロードバイク専門店</p>
+      <h1>「自転車、詳しくないけど<br>入っていいですか？」<br>その答えは、<em>もちろん。</em></h1>
+      <p class="lead">Bicycle Shop GRINSは、初めての方にも一つずつ丁寧に説明する自転車店です。専門用語で置いてけぼりにしません。まずはお気軽にお越しください。</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:0196018880">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          019-601-8880
+        </a>
+        <a class="btn btn-outline" href="#roadbike">イチオシのロードバイクを見る</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="images/hero-roadbike.jpg" alt="Bicycle Shop GRINSのロードバイク">
+    </div>
+  </div>
+</section>
+
+<div class="road-divider"><div class="dashes"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+
+<!-- ================= FEATURED PRODUCT ================= -->
+<section class="section featured" id="roadbike">
+  <div class="section-inner">
+    <p class="eyebrow center">イチオシ</p>
+    <div class="featured-card" style="margin-top:1rem;">
+      <img src="images/roadbike-detail.jpg" alt="GRINSが提案するロードバイク">
+      <div class="featured-body">
+        <p class="eyebrow">FEATURED / ROAD BIKE</p>
+        <h2>次の休日を、<span>ロードバイク</span>で走り出そう。</h2>
+        <p>体格、走る場所、目的をお伺いしてから車種をご提案します。「かっこいいから」だけで選んで後悔しないよう、実際にまたがって重心やハンドル位置を確認しながら決められます。</p>
+        <div class="feature-points">
+          <div class="feature-point">
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
+            <span>体に合ったサイズとポジションを一緒に確認</span>
+          </div>
+          <div class="feature-point">
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
+            <span>購入後のブレーキ調整・変速調整もお任せください</span>
+          </div>
+          <div class="feature-point">
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
+            <span>メンテナンスの目安を、わかりやすい言葉で説明</span>
+          </div>
+        </div>
+        <a class="btn btn-primary" href="tel:0196018880">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          相談してみる
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STRENGTHS ================= -->
+<section class="section strengths">
+  <div class="section-inner">
+    <p class="eyebrow">GRINSが選ばれる理由</p>
+    <h2>大きな自転車屋さんが、少し怖かった人へ。</h2>
+    <div class="strength-grid">
+      <div class="strength-card">
+        <p class="num">01</p>
+        <h3>気軽に相談できる雰囲気</h3>
+        <p>専門用語でいきなり質問されることはありません。詳しくない方にこそ、ゆっくり話を聞くところから始めます。</p>
+      </div>
+      <div class="strength-card">
+        <p class="num">02</p>
+        <h3>丁寧で話しやすい接客</h3>
+        <p>わからないことをわからないまま帰らせません。注意事項もわかりやすい目安で説明します。</p>
+      </div>
+      <div class="strength-card">
+        <p class="num">03</p>
+        <h3>仕上がりに満足できる整備</h3>
+        <p>ブレーキ修理から日常のメンテナンスまで、預ける前より走りやすい一台に仕上げます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="section reviews">
+  <div class="section-inner">
+    <p class="eyebrow center">お客様の声</p>
+    <div class="review-card" style="margin-top:1.2rem;">
+      <div class="stars">★★★★★</div>
+      <blockquote>「自転車に詳しくなくても入りやすい雰囲気でした。いきなり専門用語でぶっきらぼうに質問されることもありませんでした（大きな自転車屋さんに行った時に、怖い思いをしたので…）。接客も丁寧で、話しやすかったです。
+
+ブレーキ修理を頼みましたが、仕上がりも満足でした。詳しくは分かりませんが、預ける前より走りやすくなっていたので、なにかメンテナンスしてくれたのだと思います。ありがたかったです。
+
+あと、注意事項を聞いた時に、わかりやすい目安で教えてくれました。」</blockquote>
+      <p class="reviewer">— ご来店されたお客様</p>
+    </div>
+  </div>
+</section>
+
+<div class="road-divider"><div class="dashes"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+
+<!-- ================= SHOP INFO ================= -->
+<section class="section shopinfo" id="access">
+  <div class="section-inner">
+    <p class="eyebrow">ACCESS</p>
+    <h2>店舗情報</h2>
+    <div class="shop-grid">
+      <table class="info-table">
+        <tr><th>店名</th><td>Bicycle Shop GRINS</td></tr>
+        <tr><th>代表者</th><td>西田浩二</td></tr>
+        <tr><th>定休日</th><td>火曜日</td></tr>
+        <tr><th>住所</th><td>岩手県盛岡市下ノ橋町２−１３−１ F</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0196018880">019-601-8880</a></td></tr>
+        <tr><th>ホームページ</th><td><a href="http://www.grins-bikes.com/" target="_blank" rel="noopener">www.grins-bikes.com</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://www.grins-bikes.com/contact" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:contact@girns-bikes.com">contact@girns-bikes.com</a></td></tr>
+      </table>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E7%9B%9B%E5%B2%A1%E5%B8%82%E4%B8%8B%E3%83%8E%E6%A9%8B%E7%94%BA%EF%BC%92%EF%BC%8D%EF%BC%91%EF%BC%93%EF%BC%8D%EF%BC%91&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Bicycle Shop GRINS 地図"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="section final-cta">
+  <div class="section-inner">
+    <h2>まずは、気軽に話しに来てください。</h2>
+    <p>ロードバイク選びも、修理のご相談も。火曜定休、その他は店頭でお待ちしています。</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:0196018880">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        019-601-8880
+      </a>
+      <a class="btn btn-outline" href="https://www.grins-bikes.com/contact" target="_blank" rel="noopener">問い合わせフォーム</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="brand">Bicycle Shop GRINS</div>
+  <div class="sns">
+    <a href="https://www.instagram.com/bicycleshopgrins/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+    </a>
+  </div>
+  <p>岩手県盛岡市下ノ橋町２−１３−１ F ｜ 定休日：火曜日</p>
+  <p class="rep">代表者：西田浩二</p>
+  <p style="margin-top:1rem; font-size:0.75rem;">&copy; 2026 Bicycle Shop GRINS</p>
+</footer>
+
+<!-- ================= FIXED MOBILE BOTTOM NAV ================= -->
+<nav class="bottom-nav">
+  <a href="#access">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    地図
+  </a>
+  <a class="primary" href="tel:0196018880">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    電話する
+  </a>
+  <a href="https://www.grins-bikes.com/contact" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+    問合せ
+  </a>
+</nav>
+
+</body>
+</html>
