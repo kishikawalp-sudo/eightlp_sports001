@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サッカーマーケット 前橋本店｜サッカーウェア専門店</title>
+<style>
+  :root{
+    --green:#0b6e2f;
+    --green-dark:#074d20;
+    --accent:#ffcc00;
+    --text:#222;
+    --bg:#f7f7f5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+
+  /* Header */
+  header{
+    background:linear-gradient(135deg,var(--green),var(--green-dark));
+    color:#fff;
+    text-align:center;
+    padding:18px 12px 14px;
+  }
+  header .shopname{
+    font-size:1.5rem;
+    font-weight:bold;
+    letter-spacing:0.05em;
+  }
+  header .sub{
+    font-size:0.8rem;
+    margin-top:4px;
+    opacity:0.9;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:52vw;
+    max-height:340px;
+    object-fit:cover;
+  }
+  .hero-caption{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,0.65));
+    color:#fff;
+    padding:30px 16px 14px;
+  }
+  .hero-caption .catch{
+    font-size:1.3rem;
+    font-weight:bold;
+    line-height:1.5;
+  }
+  .hero-caption .catch span{
+    background:var(--accent);
+    color:#111;
+    padding:2px 8px;
+    border-radius:4px;
+  }
+
+  section{
+    padding:34px 18px;
+  }
+  h2{
+    text-align:center;
+    font-size:1.3rem;
+    color:var(--green-dark);
+    margin-bottom:22px;
+    position:relative;
+    padding-bottom:10px;
+  }
+  h2::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    width:50px;height:3px;
+    background:var(--accent);
+  }
+
+  /* Push item */
+  .push{
+    background:#fff;
+    border:2px solid var(--green);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  }
+  .push-badge{
+    background:var(--green);
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    padding:8px;
+    font-size:1.05rem;
+    letter-spacing:0.05em;
+  }
+  .push img{
+    width:100%;
+    height:56vw;
+    max-height:320px;
+    object-fit:cover;
+  }
+  .push-body{
+    padding:18px;
+  }
+  .push-body .title{
+    font-size:1.15rem;
+    font-weight:bold;
+    color:var(--green-dark);
+    margin-bottom:10px;
+  }
+  .push-body p{
+    font-size:0.92rem;
+    margin-bottom:10px;
+  }
+  .points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:10px;
+  }
+  .points span{
+    background:var(--bg);
+    border:1px solid var(--green);
+    color:var(--green-dark);
+    font-size:0.8rem;
+    padding:6px 12px;
+    border-radius:20px;
+    font-weight:bold;
+  }
+
+  /* Reviews */
+  .review{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .review .stars{
+    color:var(--accent);
+    font-size:1.05rem;
+    margin-bottom:6px;
+    letter-spacing:2px;
+  }
+  .review .date{
+    font-size:0.75rem;
+    color:#888;
+    margin-left:8px;
+  }
+  .review p{
+    font-size:0.9rem;
+  }
+
+  /* Gallery */
+  .gallery img{
+    width:100%;
+    height:52vw;
+    max-height:300px;
+    object-fit:cover;
+    border-radius:8px;
+  }
+
+  /* Info table */
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .info-table tr{
+    border-bottom:1px solid #eee;
+  }
+  .info-table tr:last-child{
+    border-bottom:none;
+  }
+  .info-table th, .info-table td{
+    text-align:left;
+    padding:12px 14px;
+    font-size:0.88rem;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:30%;
+    background:#f0f5f0;
+    color:var(--green-dark);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table td a{
+    color:var(--green);
+    text-decoration:underline;
+    word-break:break-all;
+  }
+
+  /* CTA */
+  .cta-area{
+    text-align:center;
+    padding:30px 18px 40px;
+  }
+  .cta-btn{
+    display:block;
+    width:100%;
+    max-width:360px;
+    margin:0 auto 14px;
+    padding:16px;
+    border-radius:50px;
+    font-weight:bold;
+    font-size:1.05rem;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  }
+  .cta-btn.primary{
+    background:var(--accent);
+    color:#111;
+  }
+  .cta-btn.secondary{
+    background:var(--green);
+    color:#fff;
+  }
+
+  footer{
+    background:var(--green-dark);
+    color:#fff;
+    text-align:center;
+    padding:20px 14px;
+    font-size:0.8rem;
+  }
+  footer .company{
+    margin-bottom:6px;
+    font-weight:bold;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">サッカーマーケット 前橋本店</div>
+  <div class="sub">サッカーウェア専門店｜群馬県前橋市</div>
+</header>
+
+<div class="hero">
+  <img src="images/79_maebasi_hero.jpg" alt="サッカーマーケット前橋本店 外観">
+  <div class="hero-caption">
+    <div class="catch">こだわりの<span>サッカーウェア</span>が見つかるお店</div>
+  </div>
+</div>
+
+<section>
+  <h2>イチオシ商品</h2>
+  <div class="push">
+    <div class="push-badge">★ ICHI OSHI ★ サッカーウェア</div>
+    <img src="images/79_maebasi_wear.jpg" alt="サッカーウェア 商品イメージ">
+    <div class="push-body">
+      <div class="title">豊富なラインナップのサッカーウェア</div>
+      <p>試合用ユニフォームから練習着まで、幅広いブランド・デザインを取り揃えています。サッカーだけでなく、マラソンやランニング用のTシャツ・ハーフパンツをお探しの方にもおすすめ。特に男性用は定番色に偏りがちなスポーツウェア市場の中で、デザイン性の高いアイテムが見つかると評判です。</p>
+      <div class="points">
+        <span>豊富なデザイン</span>
+        <span>お値段ホドホド</span>
+        <span>バーゲンあり</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>お客様の声</h2>
+  <div class="review">
+    <span class="stars">★★★★☆</span><span class="date">8月17日</span>
+    <p>バーゲンを開催していて、素敵なシャツを購入することが出来ました〜！</p>
+  </div>
+  <div class="review">
+    <span class="stars">★★★★★</span>
+    <p>近所のお店が閉店してしまい、こちらへ来店。サッカーはやりませんが、マラソン用のハーフパンツやTシャツを購入しています。マラソン用は女性用だとデザインのバリエーションが豊富ですが、男性用は黒・紺・白など地味な色ばかり。気に入るものを探してたどり着いたのがこのお店でした。デザイン性も良く、お値段もホドホドで購入しやすいです。</p>
+  </div>
+</section>
+
+<section>
+  <h2>店内のご紹介</h2>
+  <div class="gallery">
+    <img src="images/79_maebasi_shop1.jpg" alt="店内の様子">
+  </div>
+</section>
+
+<section>
+  <h2>店舗情報</h2>
+  <table class="info-table">
+    <tr><th>店名</th><td>サッカーマーケット 前橋本店</td></tr>
+    <tr><th>会社名</th><td>株式会社エーエス</td></tr>
+    <tr><th>代表者</th><td>浅井秀実</td></tr>
+    <tr><th>住所</th><td>群馬県前橋市元総社町1720</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0272122218">027-212-2218</a></td></tr>
+    <tr><th>定休日</th><td>年中無休（1月1日休業）</td></tr>
+    <tr><th>公式HP</th><td><a href="https://soccermarket.jp/" target="_blank" rel="noopener">https://soccermarket.jp/</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://www.soccermarket.jp/ssl/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@soccermarket.jp">info@soccermarket.jp</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://www.facebook.com/soccermarket" target="_blank" rel="noopener">Facebook</a></td></tr>
+  </table>
+</section>
+
+<div class="cta-area">
+  <a class="cta-btn primary" href="https://www.soccermarket.jp/ssl/contact/" target="_blank" rel="noopener">お問い合わせはこちら</a>
+  <a class="cta-btn secondary" href="tel:0272122218">📞 027-212-2218 に電話する</a>
+</div>
+
+<footer>
+  <div class="company">株式会社エーエス</div>
+  <div>〒 群馬県前橋市元総社町1720</div>
+</footer>
+
+</body>
+</html>
