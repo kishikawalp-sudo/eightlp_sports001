@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社B.B.JUMP | バスケットボール専門店の想いを込めたオリジナルスポーツウェア</title>
+<meta name="description" content="岩手県花巻市のバスケットボール専門店 B.B.JUMP。創業20年のノウハウでチームの想いを形にするオリジナルデザインスポーツウェアをお届けします。">
+<style>
+  :root{
+    --navy:#12202f;
+    --navy-deep:#0a151f;
+    --wood:#c8935e;
+    --wood-dark:#a6733e;
+    --court-orange:#e2571f;
+    --cream:#f6f1e7;
+    --ink:#20262c;
+    --line:#dcd2c0;
+    --font-display: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+    --font-body: "Noto Sans JP", "Hiragino Sans", sans-serif;
+    --font-num: "Oswald", "Arial Narrow", sans-serif;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.8;
+    padding-bottom:64px;
+    overflow-x:hidden;
+  }
+
+  img{ max-width:100%; display:block; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  .wrap{ max-width:520px; margin:0 auto; padding:0 20px; }
+
+  /* ===== Header ===== */
+  .site-header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:var(--navy);
+    box-shadow:0 2px 10px rgba(0,0,0,0.25);
+  }
+  .header-inner{
+    max-width:520px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 16px;
+  }
+  .brand{
+    display:flex; flex-direction:column; line-height:1.1;
+  }
+  .brand .en{
+    font-family:var(--font-num);
+    font-size:19px; letter-spacing:1px; color:#fff; font-weight:600;
+  }
+  .brand .jp{
+    font-size:9px; letter-spacing:2px; color:var(--wood); margin-top:2px;
+  }
+  .header-cta{
+    display:flex; align-items:center; gap:6px;
+    background:var(--court-orange);
+    color:#fff; font-weight:700; font-size:13px;
+    padding:9px 14px; border-radius:24px;
+    white-space:nowrap;
+  }
+  .header-cta svg{ width:14px; height:14px; fill:#fff; flex-shrink:0; }
+
+  main{ padding-top:52px; }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    background:var(--navy);
+    color:#fff;
+    overflow:hidden;
+    padding:38px 0 44px;
+  }
+  .hero-number{
+    position:absolute;
+    top:-40px; right:-30px;
+    font-family:var(--font-num);
+    font-size:230px;
+    font-weight:700;
+    color:rgba(255,255,255,0.05);
+    line-height:1;
+    z-index:0;
+    letter-spacing:-6px;
+  }
+  .hero .wrap{ position:relative; z-index:2; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12px; letter-spacing:3px; color:var(--wood);
+    border:1px solid rgba(200,147,94,0.5);
+    padding:5px 12px; border-radius:20px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:var(--font-display);
+    font-size:30px;
+    font-weight:900;
+    line-height:1.45;
+    margin-bottom:14px;
+    letter-spacing:0.5px;
+  }
+  .hero h1 span{
+    color:var(--court-orange);
+  }
+  .hero p.lead{
+    font-size:14px;
+    color:#cdd6dd;
+    margin-bottom:26px;
+  }
+  .hero-img{
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,0.4);
+    border:1px solid rgba(255,255,255,0.08);
+    margin-bottom:22px;
+  }
+  .hero-img img{ width:100%; height:260px; object-fit:cover; }
+  .hero-actions{ display:flex; gap:10px; }
+  .btn{
+    flex:1;
+    text-align:center;
+    padding:13px 10px;
+    border-radius:6px;
+    font-weight:700;
+    font-size:14px;
+    display:flex; align-items:center; justify-content:center; gap:6px;
+  }
+  .btn svg{ width:15px; height:15px; fill:currentColor; }
+  .btn-primary{ background:var(--court-orange); color:#fff; }
+  .btn-outline{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.4); }
+
+  /* ===== Section generic ===== */
+  section{ padding:44px 0; }
+  .section-tag{
+    font-family:var(--font-num);
+    font-size:12px; letter-spacing:3px; color:var(--wood-dark);
+    text-transform:uppercase; margin-bottom:8px; display:block;
+  }
+  .section-title{
+    font-family:var(--font-display);
+    font-size:22px; font-weight:900; color:var(--navy);
+    margin-bottom:16px; line-height:1.5;
+  }
+
+  /* ===== Featured Product ===== */
+  .featured{
+    background:linear-gradient(180deg, var(--navy) 0%, var(--navy) 62%, var(--cream) 62%);
+  }
+  .featured .section-tag{ color:var(--wood); }
+  .featured .section-title{ color:#fff; }
+  .product-card{
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 14px 34px rgba(10,21,31,0.28);
+    border:1px solid var(--line);
+  }
+  .product-card .img-wrap{ position:relative; }
+  .product-card img{ width:100%; height:230px; object-fit:cover; }
+  .product-badge{
+    position:absolute; top:14px; left:14px;
+    background:var(--court-orange); color:#fff;
+    font-size:12px; font-weight:700;
+    padding:6px 12px; border-radius:20px;
+    letter-spacing:1px;
+  }
+  .product-body{ padding:22px 20px 24px; }
+  .product-body h3{
+    font-family:var(--font-display);
+    font-size:19px; color:var(--navy); margin-bottom:10px;
+    font-weight:900;
+  }
+  .product-body p{ font-size:13.5px; color:#4a4f54; margin-bottom:16px; }
+  .spec-list{ list-style:none; margin-bottom:18px; }
+  .spec-list li{
+    display:flex; align-items:flex-start; gap:8px;
+    font-size:13px; color:var(--ink); margin-bottom:9px;
+  }
+  .spec-list li::before{
+    content:"";
+    flex-shrink:0;
+    width:8px; height:8px;
+    margin-top:5px;
+    background:var(--court-orange);
+    border-radius:2px;
+    transform:rotate(45deg);
+  }
+  .product-cta{
+    display:block; text-align:center;
+    background:var(--navy); color:#fff;
+    padding:14px; border-radius:6px; font-weight:700; font-size:14px;
+  }
+
+  /* ===== Strengths ===== */
+  .strengths{ background:var(--cream); }
+  .strength-grid{ display:flex; flex-direction:column; gap:14px; }
+  .strength-item{
+    display:flex; gap:14px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:16px;
+  }
+  .strength-num{
+    font-family:var(--font-num);
+    font-size:30px; font-weight:700;
+    color:var(--wood);
+    line-height:1;
+    flex-shrink:0;
+    width:44px;
+  }
+  .strength-text h4{
+    font-size:15px; font-weight:700; color:var(--navy); margin-bottom:5px;
+  }
+  .strength-text p{ font-size:13px; color:#575c61; }
+
+  /* ===== Story ===== */
+  .story{
+    background:var(--navy);
+    color:#e7ebee;
+  }
+  .story .section-tag{ color:var(--wood); }
+  .story .section-title{ color:#fff; }
+  .story-card{
+    background:rgba(255,255,255,0.04);
+    border-left:3px solid var(--court-orange);
+    padding:18px 18px;
+    border-radius:4px;
+    font-size:13.5px;
+    line-height:2;
+    margin-bottom:18px;
+  }
+  .story-founder{
+    display:flex; align-items:center; gap:12px;
+  }
+  .founder-icon{
+    width:44px; height:44px; border-radius:50%;
+    background:var(--wood);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-num); font-weight:700; color:var(--navy); font-size:18px;
+    flex-shrink:0;
+  }
+  .story-founder .name{ font-size:14px; font-weight:700; color:#fff; }
+  .story-founder .role{ font-size:12px; color:#9fa9b0; }
+
+  /* ===== Gallery small ===== */
+  .gallery{ background:var(--cream); }
+  .gallery-img{
+    border-radius:8px; overflow:hidden; margin-bottom:20px;
+    border:1px solid var(--line);
+  }
+  .gallery-img img{ width:100%; height:200px; object-fit:cover; }
+  .gallery-caption{ font-size:12.5px; color:#5b6066; margin-top:8px; }
+
+  /* ===== Shop Info ===== */
+  .shop-info{ background:#fff; }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+    margin-bottom:20px;
+  }
+  .info-table tr{ border-bottom:1px solid var(--line); }
+  .info-table th{
+    text-align:left;
+    padding:13px 10px 13px 0;
+    color:var(--wood-dark);
+    font-weight:700;
+    width:84px;
+    vertical-align:top;
+    font-size:12.5px;
+    letter-spacing:1px;
+  }
+  .info-table td{ padding:13px 0; color:var(--ink); }
+  .info-table td a{ color:var(--court-orange); font-weight:700; }
+  .map-frame{
+    border-radius:8px; overflow:hidden; border:1px solid var(--line);
+    margin-bottom:22px;
+  }
+  .map-frame iframe{ width:100%; height:230px; border:0; display:block; }
+
+  .sns-row{ display:flex; gap:10px; }
+  .sns-btn{
+    flex:1;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    border:1px solid var(--navy);
+    color:var(--navy);
+    padding:12px; border-radius:6px; font-weight:700; font-size:13px;
+  }
+  .sns-btn svg{ width:16px; height:16px; fill:currentColor; }
+
+  /* ===== Final CTA ===== */
+  .final-cta{
+    background:var(--navy);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .final-cta .hero-number{ top:auto; bottom:-60px; right:-40px; font-size:200px; }
+  .final-cta .wrap{ position:relative; z-index:2; }
+  .final-cta h2{
+    font-family:var(--font-display);
+    color:#fff; font-size:21px; font-weight:900;
+    margin-bottom:12px; line-height:1.5;
+  }
+  .final-cta p{ font-size:13px; color:#c9d2d8; margin-bottom:24px; }
+  .final-actions{ display:flex; flex-direction:column; gap:10px; }
+  .final-actions .btn{ padding:16px; font-size:15px; }
+
+  footer{
+    background:var(--navy-deep);
+    color:#8b949c;
+    text-align:center;
+    font-size:11.5px;
+    padding:22px 20px;
+  }
+  footer .company{ color:#c9d2d8; font-size:12.5px; margin-bottom:4px; font-weight:700;}
+
+  /* ===== Fixed bottom nav ===== */
+  .bottom-nav{
+    position:fixed; bottom:0; left:0; right:0; z-index:100;
+    display:flex;
+    background:#fff;
+    border-top:1px solid var(--line);
+    box-shadow:0 -3px 12px rgba(0,0,0,0.12);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:3px;
+    padding:9px 4px 8px;
+    font-size:10.5px; color:var(--navy); font-weight:700;
+  }
+  .bottom-nav a svg{ width:19px; height:19px; fill:var(--navy); }
+  .bottom-nav a.call{ background:var(--court-orange); color:#fff; }
+  .bottom-nav a.call svg{ fill:#fff; }
+
+  @media (min-width:521px){
+    .wrap{ max-width:560px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="en">B.B.JUMP</span>
+      <span class="jp">バスケットボール専門店</span>
+    </div>
+    <a class="header-cta" href="tel:0198419238">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+      電話する
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-number">20</div>
+    <div class="wrap">
+      <span class="eyebrow">岩手県花巻市 ・ 創業20年</span>
+      <h1>バスケを愛する人へ。<br>想いを形にする<span>オリジナルウェア</span>。</h1>
+      <p class="lead">株式会社B.B.JUMPは、バスケットボール専門店としてのプライドと20年の実績で、チームの一枚一枚に想いを込めたスポーツウェアをお届けします。</p>
+      <div class="hero-img">
+        <img src="images/hero-wear.jpg" alt="B.B.JUMPのオリジナルバスケットボールウェア">
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:0198419238">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+          電話で相談
+        </a>
+        <a class="btn btn-outline" href="https://www.b-b-jump.com/contact" target="_blank" rel="noopener">
+          フォームで問合せ
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PRODUCT ===== -->
+  <section class="featured" id="product">
+    <div class="wrap">
+      <span class="section-tag">Our Best</span>
+      <h2 class="section-title">イチオシは、<br>オリジナルデザイン<br>スポーツウェア。</h2>
+      <div class="product-card">
+        <div class="img-wrap">
+          <img src="images/product-uniform.jpg" alt="チーム別注のオリジナルバスケットボールユニフォーム">
+          <span class="product-badge">FULL ORDER MADE</span>
+        </div>
+        <div class="product-body">
+          <h3>オリジナルスポーツウェア</h3>
+          <p>チームカラー、ロゴ、選手名、背番号まで。バスケットボール専門店だからこそ分かる「動きやすさ」と「魅せるデザイン」を両立させた、世界に一つのウェアを製作します。</p>
+          <ul class="spec-list">
+            <li>チームロゴ・カラーを自由にデザイン可能</li>
+            <li>吸汗速乾・伸縮性に優れた高機能生地を採用</li>
+            <li>選手名・背番号のネーム入れに対応</li>
+            <li>小ロットのチーム発注も相談可能</li>
+          </ul>
+          <a class="product-cta" href="https://www.b-b-jump.com/contact" target="_blank" rel="noopener">オリジナルウェアを相談する</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STRENGTHS ===== -->
+  <section class="strengths">
+    <div class="wrap">
+      <span class="section-tag">Why B.B.JUMP</span>
+      <h2 class="section-title">選ばれる理由</h2>
+      <div class="strength-grid">
+        <div class="strength-item">
+          <div class="strength-num">01</div>
+          <div class="strength-text">
+            <h4>創業20年の実績</h4>
+            <p>バスケットボール専門店として長年培ったノウハウで、安心してお任せいただけるものづくりを行っています。</p>
+          </div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-num">02</div>
+          <div class="strength-text">
+            <h4>専門店だからの提案力</h4>
+            <p>プレーヤー目線で機能性とデザイン性を両立させた、バスケットボールに特化したウェア提案が可能です。</p>
+          </div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-num">03</div>
+          <div class="strength-text">
+            <h4>安心の供給体制</h4>
+            <p>お客様へ安定して商品をお届けできる体制を整え、チームの大切な瞬間に間に合うようサポートします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section class="story">
+    <div class="wrap">
+      <span class="section-tag">Our Story</span>
+      <h2 class="section-title">創業者からのメッセージ</h2>
+      <div class="story-card">
+        私たち株式会社B.B.JUMPは岩手県花巻市に会社を構え、バスケットボール専門店のプライドを持ちながらお客様へ安心供給を行う会社であります。創業20年だからできるオリジナルデザインを具現化し、バスケットボールを愛する人たちに愛される商品を追求し提供できる会社を目指します。今後もこれまでと変わらぬご愛顧を賜りますよう、お願い申し上げます。
+      </div>
+      <div class="story-founder">
+        <div class="founder-icon">山</div>
+        <div>
+          <div class="name">山影　敦彦</div>
+          <div class="role">株式会社B.B.JUMP 代表者</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery">
+    <div class="wrap">
+      <span class="section-tag">Gallery</span>
+      <h2 class="section-title">製作事例</h2>
+      <div class="gallery-img">
+        <img src="images/team-photo.jpg" alt="B.B.JUMPのオリジナルウェアを着用したチーム写真">
+      </div>
+      <p class="gallery-caption">チームの個性を活かしたデザインで、選手一人ひとりの想いをウェアに込めます。</p>
+    </div>
+  </section>
+
+  <!-- ===== SHOP INFO ===== -->
+  <section class="shop-info" id="shop">
+    <div class="wrap">
+      <span class="section-tag">Shop Info</span>
+      <h2 class="section-title">店舗情報</h2>
+      <table class="info-table">
+        <tr>
+          <th>店名</th>
+          <td>株式会社B.B.JUMP</td>
+        </tr>
+        <tr>
+          <th>代表者</th>
+          <td>山影　敦彦</td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>岩手県花巻市湯本第１９地割１１３−６</td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td><a href="tel:0198419238">0198-41-9238</a></td>
+        </tr>
+        <tr>
+          <th>メール</th>
+          <td><a href="mailto:info@b-b-jump.com">info@b-b-jump.com</a></td>
+        </tr>
+        <tr>
+          <th>HP</th>
+          <td><a href="https://www.b-b-jump.com/" target="_blank" rel="noopener">https://www.b-b-jump.com/</a></td>
+        </tr>
+      </table>
+
+      <div class="map-frame">
+        <iframe src="https://maps.google.com/maps?q=%E5%B2%A9%E6%89%8B%E7%9C%8C%E8%8A%B1%E5%B7%BB%E5%B8%82%E6%B9%AF%E6%9C%AC%E7%AC%AC%EF%BC%91%EF%BC%99%E5%9C%B0%E5%89%B2%EF%BC%91%EF%BC%91%EF%BC%93%EF%BC%8D%EF%BC%96&output=embed" loading="lazy" allowfullscreen></iframe>
+      </div>
+
+      <div class="sns-row">
+        <a class="sns-btn" href="https://www.instagram.com/b.b.jump_company_limited/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.42.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 01-1.15 1.77 4.9 4.9 0 01-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.42.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 01-1.77-1.15 4.9 4.9 0 01-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 015.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.3 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm0 8.25A3.25 3.25 0 1112 8.75a3.25 3.25 0 010 6.5zM17.7 6.3a1.17 1.17 0 100 2.34 1.17 1.17 0 000-2.34z"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final-cta">
+    <div class="hero-number">20</div>
+    <div class="wrap">
+      <h2>あなたのチームの想いを、<br>ウェアに込めませんか。</h2>
+      <p>オリジナルデザインのご相談は、お電話・フォームどちらでも承っております。</p>
+      <div class="final-actions">
+        <a class="btn btn-primary" href="tel:0198419238">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+          0198-41-9238 に電話する
+        </a>
+        <a class="btn btn-outline" href="https://www.b-b-jump.com/contact" target="_blank" rel="noopener">問い合わせフォームへ</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="company">株式会社B.B.JUMP</div>
+  <div>岩手県花巻市湯本第１９地割１１３−６</div>
+  <div>&copy; B.B.JUMP Co., Ltd.</div>
+</footer>
+
+<nav class="bottom-nav">
+  <a class="call" href="tel:0198419238">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+    電話
+  </a>
+  <a href="https://www.b-b-jump.com/contact" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm0 2v.01L12 12l8-5.99V6H4zm16 12V8.24l-8 6-8-6V18h16z"/></svg>
+    フォーム
+  </a>
+  <a href="#shop">
+    <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+    地図
+  </a>
+  <a href="https://www.instagram.com/b.b.jump_company_limited/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.42.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 01-1.15 1.77 4.9 4.9 0 01-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.42.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 01-1.77-1.15 4.9 4.9 0 01-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 015.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.3 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm0 8.25A3.25 3.25 0 1112 8.75a3.25 3.25 0 010 6.5zM17.7 6.3a1.17 1.17 0 100 2.34 1.17 1.17 0 000-2.34z"/></svg>
+    Instagram
+  </a>
+</nav>
+
+</body>
+</html>
