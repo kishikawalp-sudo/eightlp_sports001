@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スポーツコア｜群馬県前橋市のスキー専門店</title>
+<style>
+  :root{
+    --navy:#0b1f3a;
+    --navy-deep:#071527;
+    --ice:#eaf3fb;
+    --ice-blue:#bfe0f5;
+    --accent:#ff5a36;
+    --accent-deep:#e8431f;
+    --snow:#ffffff;
+    --text-dark:#16233a;
+    --gray:#5c6b80;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    background:var(--ice);
+    color:var(--text-dark);
+    line-height:1.75;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:520px;margin:0 auto;position:relative;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--navy-deep) 0%,var(--navy) 55%,#123157 100%);
+    color:var(--snow);
+    padding:34px 20px 46px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-40%;left:-20%;
+    width:160%;height:160%;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 10%, rgba(191,224,245,0.12) 0%, transparent 35%);
+    pointer-events:none;
+  }
+  .hero-top{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:12px;letter-spacing:.08em;color:var(--ice-blue);
+    position:relative;z-index:2;
+    margin-bottom:26px;
+  }
+  .hero-eyebrow{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:.25em;
+    color:var(--ice-blue);
+    border:1px solid rgba(191,224,245,.4);
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:18px;
+    position:relative;z-index:2;
+  }
+  .hero h1{
+    position:relative;z-index:2;
+    font-size:30px;
+    font-weight:800;
+    line-height:1.5;
+    margin-bottom:14px;
+    letter-spacing:.02em;
+  }
+  .hero h1 span{
+    display:block;
+    font-size:15px;
+    font-weight:500;
+    color:var(--ice-blue);
+    margin-top:8px;
+    letter-spacing:.05em;
+  }
+  .hero-sub{
+    position:relative;z-index:2;
+    font-size:13.5px;
+    color:#cfe1f2;
+    margin-bottom:24px;
+    max-width:420px;
+  }
+  .hero-img{
+    position:relative;z-index:2;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+    margin-bottom:22px;
+  }
+  .hero-img img{width:100%;height:230px;object-fit:cover;}
+  .hero-cta{
+    position:relative;z-index:2;
+    display:flex;
+    gap:10px;
+  }
+  .btn{
+    flex:1;
+    text-align:center;
+    padding:15px 10px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:14.5px;
+    letter-spacing:.03em;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#fff;
+    box-shadow:0 10px 22px rgba(255,90,54,.35);
+  }
+  .btn-secondary{
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    border:1px solid rgba(255,255,255,.35);
+  }
+
+  /* ===== SECTION COMMON ===== */
+  section{padding:44px 20px;}
+  .sec-label{
+    font-size:12px;
+    letter-spacing:.2em;
+    color:var(--accent-deep);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  .sec-title{
+    font-size:22px;
+    font-weight:800;
+    color:var(--navy);
+    margin-bottom:18px;
+    line-height:1.5;
+  }
+
+  /* ===== ICHIOSHI (FEATURE) ===== */
+  .feature{
+    background:var(--snow);
+  }
+  .feature-card{
+    background:linear-gradient(160deg,var(--navy) 0%, #1a3a63 100%);
+    border-radius:18px;
+    padding:26px 22px 24px;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 18px 34px rgba(11,31,58,.25);
+  }
+  .feature-card::after{
+    content:"SKI GEAR";
+    position:absolute;
+    right:-18px;top:14px;
+    font-size:46px;
+    font-weight:900;
+    color:rgba(255,255,255,.05);
+    letter-spacing:.05em;
+    transform:rotate(0deg);
+  }
+  .feature-tag{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:14px;
+    letter-spacing:.05em;
+  }
+  .feature-card h3{
+    font-size:21px;
+    font-weight:800;
+    margin-bottom:12px;
+    line-height:1.6;
+    position:relative;z-index:2;
+  }
+  .feature-card p{
+    font-size:13.5px;
+    color:#dbe8f5;
+    position:relative;z-index:2;
+    margin-bottom:18px;
+  }
+  .feature-img{
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:18px;
+    position:relative;z-index:2;
+  }
+  .feature-img img{width:100%;height:190px;object-fit:cover;}
+  .feature-list{
+    list-style:none;
+    position:relative;z-index:2;
+  }
+  .feature-list li{
+    display:flex;
+    gap:10px;
+    font-size:13px;
+    color:#eaf3fb;
+    margin-bottom:10px;
+    align-items:flex-start;
+  }
+  .feature-list li::before{
+    content:"❄";
+    color:var(--accent);
+    font-size:14px;
+    flex-shrink:0;
+    margin-top:1px;
+  }
+
+  /* ===== POINTS ===== */
+  .points{
+    background:var(--ice);
+  }
+  .point-grid{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .point-item{
+    background:#fff;
+    border-radius:14px;
+    padding:18px 18px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 6px 16px rgba(11,31,58,.06);
+    border-left:4px solid var(--accent);
+  }
+  .point-num{
+    font-size:20px;
+    font-weight:900;
+    color:var(--navy);
+    opacity:.25;
+    flex-shrink:0;
+    width:34px;
+  }
+  .point-item h4{
+    font-size:15px;
+    color:var(--navy);
+    margin-bottom:6px;
+    font-weight:700;
+  }
+  .point-item p{
+    font-size:13px;
+    color:var(--gray);
+  }
+
+  /* ===== VOICE (口コミ) ===== */
+  .voice{
+    background:linear-gradient(180deg,#0b1f3a 0%, #123157 100%);
+    color:#fff;
+  }
+  .voice .sec-title{color:#fff;}
+  .voice .sec-label{color:var(--ice-blue);}
+  .voice-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:14px;
+    padding:20px;
+    margin-bottom:16px;
+  }
+  .stars{
+    color:#ffc94d;
+    font-size:15px;
+    margin-bottom:10px;
+    letter-spacing:.05em;
+  }
+  .voice-card p{
+    font-size:13px;
+    color:#e6eef7;
+    line-height:1.85;
+  }
+
+  /* ===== SHOP INFO ===== */
+  .info{
+    background:#fff;
+  }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .info-table tr{
+    border-bottom:1px solid #e4ecf3;
+  }
+  .info-table th{
+    text-align:left;
+    color:var(--navy);
+    font-weight:700;
+    padding:14px 10px 14px 0;
+    width:92px;
+    vertical-align:top;
+    white-space:nowrap;
+  }
+  .info-table td{
+    padding:14px 0;
+    color:var(--text-dark);
+  }
+  .info-img{
+    border-radius:12px;
+    overflow:hidden;
+    margin-top:20px;
+  }
+  .info-img img{width:100%;height:180px;object-fit:cover;}
+
+  /* ===== CONTACT / FOOTER CTA ===== */
+  .contact{
+    background:linear-gradient(160deg,var(--accent) 0%, var(--accent-deep) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .contact .sec-label{color:rgba(255,255,255,.85);}
+  .contact .sec-title{color:#fff;}
+  .contact p{
+    font-size:13.5px;
+    color:#fff0ec;
+    margin-bottom:22px;
+  }
+  .contact-btns{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .btn-white{
+    background:#fff;
+    color:var(--accent-deep);
+    padding:16px;
+    border-radius:10px;
+    font-weight:800;
+    font-size:15px;
+  }
+  .btn-outline-white{
+    border:1.5px solid rgba(255,255,255,.8);
+    color:#fff;
+    padding:16px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:14px;
+  }
+
+  footer{
+    background:var(--navy-deep);
+    color:#8ea2bb;
+    text-align:center;
+    padding:26px 20px 34px;
+    font-size:11.5px;
+    line-height:2;
+  }
+  footer .brand{
+    color:#fff;
+    font-weight:700;
+    font-size:13px;
+    margin-bottom:6px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== HERO ===== -->
+  <div class="hero">
+    <div class="hero-top">
+      <span>群馬県前橋市</span>
+      <span>スキー専門店</span>
+    </div>
+    <span class="hero-eyebrow">SPORTS CORE</span>
+    <h1>2階に広がる、モーグル板の楽園。
+      <span>スポーツコア｜群馬で唯一無二のスキー専門フロア</span>
+    </h1>
+    <p class="hero-sub">
+      1階はトレッキングシューズが並ぶ普通のスポーツ店。でも2階に上がれば、そこは国内でも珍しいほど多彩なモーグル用スキーが揃う別世界。あなたの一台が、ここにあります。
+    </p>
+    <div class="hero-img">
+      <img src="images/main.jpg" alt="スポーツコア 店内のスキー板ディスプレイ">
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#contact">無料相談する</a>
+      <a class="btn btn-secondary" href="tel:0272347770">電話で問い合わせ</a>
+    </div>
+  </div>
+
+  <!-- ===== ICHIOSHI ===== -->
+  <section class="feature" id="feature">
+    <div class="sec-label">ICHIOSHI ITEM</div>
+    <div class="sec-title">イチオシは、スキー用品。</div>
+    <div class="feature-card">
+      <span class="feature-tag">SKI EQUIPMENT</span>
+      <h3>モーグル板からフリースキーまで、<br>群馬有数の品揃え。</h3>
+      <div class="feature-img">
+        <img src="images/ski_goods.jpg" alt="モーグル用スキー板とブーツの陳列">
+      </div>
+      <p>
+        都内でもなかなか見られないほど多くのメーカーのモーグル用スキー板を常時展示。フリースキー板、ブーツも数社分を取り揃え、群馬でスキーをするなら一度は覗いてほしいフロアです。
+      </p>
+      <ul class="feature-list">
+        <li>国内外複数メーカーのモーグル板を常時展示</li>
+        <li>フリースキー用の板もラインナップ</li>
+        <li>ブーツは足型に悩む方こそ要相談</li>
+        <li>量販店にはない専門知識でじっくり提案</li>
+        <li>良心的な価格で掘り出し物に出会えることも</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== POINTS ===== -->
+  <section class="points">
+    <div class="sec-label">WHY SPORTS CORE</div>
+    <div class="sec-title">選ばれる理由</div>
+    <div class="point-grid">
+      <div class="point-item">
+        <div class="point-num">01</div>
+        <div>
+          <h4>専門知識で親身に相談</h4>
+          <p>スキー、特にモーグルに精通したスタッフが、量販店にはない深い商品知識でじっくり相談に乗ります。</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">02</div>
+        <div>
+          <h4>足型の悩みも相談できるブーツ選び</h4>
+          <p>スキーブーツで足型に悩んでいる方も安心。フィッティングの相談実績があるスタッフが対応します。</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">03</div>
+        <div>
+          <h4>良心的な価格設定</h4>
+          <p>無理のない価格でご案内。思わぬ掘り出し物に出会えることもあるお店です。</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">04</div>
+        <div>
+          <h4>駐車場完備で通いやすい</h4>
+          <p>店舗横に3〜4台分の駐車スペースあり。前橋市中心部からもアクセスしやすい立地です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VOICE ===== -->
+  <section class="voice">
+    <div class="sec-label">VOICE</div>
+    <div class="sec-title">お客様の声</div>
+    <div class="voice-card">
+      <div class="stars">★★★★☆</div>
+      <p>親切です。親身に相談に乗ってくれます。</p>
+    </div>
+    <div class="voice-card">
+      <div class="stars">★★★★★</div>
+      <p>
+        知人の紹介で伺いました。駐車場は店舗の横に3〜4台止まります。1階はトレッキングシューズ等が並びスキーの気配すらありませんが、2階に上がると別世界です！都内でもここまで多くのメーカーのモーグル用の板が置いてあるお店はなかなか見た事が無いです。初めて行った時は大興奮でした。
+        フリースキーの板も置いてあり、ブーツも数社のメーカーの物が常時揃っています。量販店の商品知識の少ない店員さんから買うより、群馬県でスキーをする方にはこういうお店で話を聞いてほしいと感じました。足型に悩んでいる方も、一度相談してみることをおすすめします。値段も良心的で、掘り出し物が見つかるかもしれません。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SHOP INFO ===== -->
+  <section class="info">
+    <div class="sec-label">SHOP INFO</div>
+    <div class="sec-title">店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>スポーツコア</td></tr>
+      <tr><th>会社名</th><td>株式会社 スポーツコア</td></tr>
+      <tr><th>代表者</th><td>小山祐二</td></tr>
+      <tr><th>住所</th><td>群馬県前橋市千代田町1丁目11-13</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0272347770">027-234-7770</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:tinbarow@gmail.com">tinbarow@gmail.com</a></td></tr>
+    </table>
+    <div class="info-img">
+      <img src="images/shop.jpg" alt="スポーツコア 店舗外観">
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="sec-label">CONTACT</div>
+    <div class="sec-title">まずはお気軽にご相談ください</div>
+    <p>足型のお悩み、板選びのご相談も大歓迎。<br>2階のモーグル王国で、あなたにぴったりの一台を見つけましょう。</p>
+    <div class="contact-btns">
+      <a class="btn-white" href="tel:0272347770">📞 027-234-7770 に電話する</a>
+      <a class="btn-outline-white" href="https://www.sports-core.net/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener">お問い合わせフォームはこちら</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">スポーツコア</div>
+    <div>株式会社 スポーツコア｜代表 小山祐二</div>
+    <div>群馬県前橋市千代田町1丁目11-13</div>
+  </footer>
+
+</div>
+</body>
+</html>
