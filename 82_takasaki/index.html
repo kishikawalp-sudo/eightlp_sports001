@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高崎卓球｜群馬県高崎市の卓球専門店</title>
+<style>
+  :root{
+    --main-red:#c8102e;
+    --dark-red:#8e0b1f;
+    --navy:#1a2340;
+    --gold:#e8b23c;
+    --bg-light:#faf7f2;
+    --text-dark:#222;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:var(--bg-light);
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{text-decoration:none; color:inherit;}
+
+  /* ヘッダー */
+  header{
+    background:var(--navy);
+    color:#fff;
+    text-align:center;
+    padding:14px 10px;
+    font-size:14px;
+    letter-spacing:1px;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    color:#fff;
+    text-align:center;
+    padding:60px 20px 50px;
+    background:linear-gradient(135deg, var(--main-red), var(--dark-red));
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15), transparent 50%);
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:900;
+    margin-bottom:10px;
+    position:relative;
+    text-shadow:0 2px 6px rgba(0,0,0,0.3);
+  }
+  .hero .catch{
+    font-size:15px;
+    margin-bottom:20px;
+    position:relative;
+    font-weight:700;
+  }
+  .hero-img{
+    width:100%;
+    max-width:480px;
+    margin:0 auto 20px;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    position:relative;
+  }
+  .hero-img img{width:100%; height:auto;}
+  .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:900;
+    padding:8px 22px;
+    border-radius:30px;
+    font-size:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
+    position:relative;
+  }
+
+  /* イチオシセクション */
+  .push{
+    padding:45px 18px;
+    text-align:center;
+    background:#fff;
+  }
+  .push h2{
+    font-size:22px;
+    color:var(--main-red);
+    font-weight:900;
+    margin-bottom:6px;
+  }
+  .push .sub{
+    font-size:13px;
+    color:#888;
+    margin-bottom:24px;
+  }
+  .push-img{
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 8px 22px rgba(0,0,0,0.15);
+    margin-bottom:20px;
+  }
+  .push-text{
+    text-align:left;
+    max-width:520px;
+    margin:0 auto;
+    background:var(--bg-light);
+    border-left:5px solid var(--main-red);
+    padding:18px 20px;
+    border-radius:8px;
+    font-size:15px;
+  }
+  .push-text strong{color:var(--main-red);}
+
+  .features{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    max-width:520px;
+    margin:24px auto 0;
+  }
+  .feature{
+    flex:1 1 45%;
+    background:var(--navy);
+    color:#fff;
+    padding:14px 8px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:700;
+  }
+  .feature span{
+    display:block;
+    font-size:22px;
+    margin-bottom:4px;
+  }
+
+  /* 店内画像セクション */
+  .shop{
+    padding:40px 18px;
+    background:var(--bg-light);
+    text-align:center;
+  }
+  .shop h2{
+    font-size:20px;
+    color:var(--navy);
+    font-weight:900;
+    margin-bottom:20px;
+  }
+  .shop-img{
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 8px 22px rgba(0,0,0,0.15);
+    max-width:500px;
+    margin:0 auto;
+  }
+
+  /* クチコミ */
+  .reviews{
+    padding:40px 18px;
+    background:#fff;
+  }
+  .reviews h2{
+    text-align:center;
+    font-size:20px;
+    color:var(--main-red);
+    font-weight:900;
+    margin-bottom:24px;
+  }
+  .review{
+    background:var(--bg-light);
+    border-radius:12px;
+    padding:16px 18px;
+    max-width:520px;
+    margin:0 auto 16px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  }
+  .stars{
+    color:var(--gold);
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review p{font-size:14px; color:#333;}
+
+  /* 店舗情報 */
+  .info{
+    padding:40px 18px;
+    background:var(--navy);
+    color:#fff;
+  }
+  .info h2{
+    text-align:center;
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:22px;
+    color:var(--gold);
+  }
+  table{
+    width:100%;
+    max-width:520px;
+    margin:0 auto;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  table tr{
+    border-bottom:1px solid rgba(255,255,255,0.15);
+  }
+  table th{
+    text-align:left;
+    padding:12px 8px;
+    width:28%;
+    color:var(--gold);
+    font-weight:700;
+    vertical-align:top;
+    white-space:nowrap;
+  }
+  table td{
+    padding:12px 8px;
+    word-break:break-all;
+  }
+  table td a{
+    color:#fff;
+    text-decoration:underline;
+  }
+
+  .map-note{
+    max-width:520px;
+    margin:18px auto 0;
+    background:rgba(255,255,255,0.08);
+    border-left:4px solid var(--gold);
+    padding:14px 16px;
+    font-size:13px;
+    border-radius:6px;
+  }
+
+  /* CTA */
+  .cta{
+    padding:40px 18px 50px;
+    text-align:center;
+    background:linear-gradient(135deg, var(--dark-red), var(--main-red));
+    color:#fff;
+  }
+  .cta h2{
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:18px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    max-width:400px;
+    margin:0 auto;
+  }
+  .btn{
+    display:block;
+    padding:16px;
+    border-radius:40px;
+    font-weight:900;
+    font-size:16px;
+    box-shadow:0 6px 16px rgba(0,0,0,0.25);
+  }
+  .btn-primary{
+    background:var(--gold);
+    color:var(--navy);
+  }
+  .btn-secondary{
+    background:#fff;
+    color:var(--main-red);
+  }
+
+  footer{
+    text-align:center;
+    padding:18px;
+    background:var(--navy);
+    color:#aaa;
+    font-size:12px;
+  }
+</style>
+</head>
+<body>
+
+  <header>群馬県高崎市 卓球専門店</header>
+
+  <section class="hero">
+    <h1>高崎卓球</h1>
+    <p class="catch">卓球用具のことなら、なんでもお任せください</p>
+    <div class="hero-img">
+      <img src="images/main.jpg" alt="高崎卓球 店舗外観">
+    </div>
+    <span class="badge">丁寧な接客 × 豊富な品揃え</span>
+  </section>
+
+  <section class="push">
+    <h2>イチオシ商品</h2>
+    <p class="sub">卓球用品 ラケット・ラバー・シューズ・ウェアまで全て揃います</p>
+    <div class="push-img">
+      <img src="images/goods.jpg" alt="卓球用品 ラケット・ラバー">
+    </div>
+    <div class="push-text">
+      <strong>初心者から上級者まで対応。</strong><br>
+      「どのラケット・ラバーを選べばいいか分からない」という方もご安心ください。店員が一人ひとりのプレースタイルに合わせて、丁寧にご説明・ご提案いたします。卓球練習場も併設しているので、購入前の試打も可能です。
+    </div>
+    <div class="features">
+      <div class="feature"><span>🏓</span>卓球練習場併設</div>
+      <div class="feature"><span>💬</span>丁寧な商品説明</div>
+      <div class="feature"><span>📦</span>豊富な品揃え</div>
+      <div class="feature"><span>💳</span>PayPay対応</div>
+    </div>
+  </section>
+
+  <section class="shop">
+    <h2>店内のご紹介</h2>
+    <div class="shop-img">
+      <img src="images/shop.jpg" alt="高崎卓球 店内の様子">
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2>お客様のクチコミ</h2>
+    <div class="review">
+      <div class="stars">★★★★</div>
+      <p>卓球用具を買うならここです。丁寧に説明してくれます。卓球練習場も併設されています。店の前には車が２台停められますが、国道17号に面しているので第２駐車場に停めるのをおすすめします。店を通りすぎてすぐ左折してホテルの先にあります。</p>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>いつも店員さんが親切に対応してくれます。品揃えも文句無しです。PayPayが使えるのも嬉しい。</p>
+    </div>
+  </section>
+
+  <section class="info">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>高崎卓球</td></tr>
+      <tr><th>住所</th><td>群馬県高崎市上並榎町３４６</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0273626322">027-362-6322</a></td></tr>
+      <tr><th>定休日</th><td>月曜日（祝日は営業、翌火曜日振替休業）</td></tr>
+      <tr><th>HP</th><td><a href="https://takasakitakkyu.com/" target="_blank">https://takasakitakkyu.com/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:y-taka-p@agate.plala.or.jp">y-taka-p@agate.plala.or.jp</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.facebook.com/takatakutakataku/?locale=ja_JP" target="_blank">Facebook公式ページ</a></td></tr>
+    </table>
+    <div class="map-note">
+      🚗 駐車場について：店前には２台分の駐車スペースがございますが、国道17号沿いのため、第２駐車場のご利用がおすすめです。店を通り過ぎてすぐ左折し、ホテルの先にございます。
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>ご来店・お問い合わせはこちらから</h2>
+    <div class="cta-buttons">
+      <a class="btn btn-primary" href="tel:0273626322">📞 電話で問い合わせる</a>
+      <a class="btn btn-secondary" href="https://takasakitakkyu.com/" target="_blank">🌐 公式サイトを見る</a>
+    </div>
+  </section>
+
+  <footer>
+    © 高崎卓球　群馬県高崎市上並榎町３４６
+  </footer>
+
+</body>
+</html>
