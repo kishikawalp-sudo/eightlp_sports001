@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>イソベスポーツ｜新体操道具の専門店</title>
+<style>
+  :root{
+    --main-color:#e6007a;
+    --sub-color:#2b2b2b;
+    --accent:#ffd400;
+    --bg-light:#fff5fa;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:var(--sub-color);
+    background:#fff;
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:600px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header{
+    background:var(--sub-color);
+    color:#fff;
+    padding:12px 16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+  }
+  header .shop-name{font-size:16px;font-weight:bold;letter-spacing:1px;}
+  header .tel-btn{
+    background:var(--main-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(135deg,var(--main-color),#ff4fa3);
+    color:#fff;
+    padding:40px 16px 30px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    width:300px;height:300px;
+    background:rgba(255,255,255,0.1);
+    border-radius:50%;
+    top:-100px;right:-80px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:10px;
+    position:relative;
+  }
+  .hero p.sub{
+    font-size:15px;
+    margin-bottom:20px;
+    position:relative;
+  }
+  .hero .hero-img{
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    margin:0 auto 20px;
+    max-width:340px;
+    position:relative;
+  }
+  .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#333;
+    font-weight:bold;
+    padding:6px 16px;
+    border-radius:20px;
+    font-size:13px;
+    margin-bottom:14px;
+    position:relative;
+  }
+  .cta-btn{
+    display:block;
+    background:var(--accent);
+    color:#333;
+    font-weight:bold;
+    font-size:17px;
+    padding:16px;
+    border-radius:50px;
+    margin:16px auto 0;
+    max-width:320px;
+    box-shadow:0 6px 14px rgba(0,0,0,0.2);
+    position:relative;
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.03);}
+    100%{transform:scale(1);}
+  }
+
+  /* Section common */
+  section{padding:36px 16px;}
+  .section-title{
+    text-align:center;
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:24px;
+    color:var(--main-color);
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:50px;height:3px;
+    background:var(--main-color);
+    margin:8px auto 0;
+  }
+
+  /* Reviews */
+  .review-box{
+    background:var(--bg-light);
+    border:2px solid var(--main-color);
+    border-radius:14px;
+    padding:20px;
+    max-width:500px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .stars{color:var(--accent);font-size:24px;letter-spacing:3px;text-shadow:0 0 1px #999;}
+  .review-text{margin-top:10px;font-size:15px;}
+
+  /* Push item */
+  .push-item{
+    background:var(--sub-color);
+    color:#fff;
+    padding:40px 16px;
+  }
+  .push-item .section-title{color:var(--accent);}
+  .push-item .section-title::after{background:var(--accent);}
+  .push-card{
+    background:#fff;
+    color:var(--sub-color);
+    border-radius:16px;
+    overflow:hidden;
+    max-width:500px;
+    margin:0 auto;
+    box-shadow:0 10px 24px rgba(0,0,0,0.35);
+  }
+  .push-card img{width:100%;}
+  .push-card .push-body{padding:20px;}
+  .push-card h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .push-card p{font-size:14.5px;margin-bottom:14px;}
+  .push-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .push-list li{
+    padding-left:22px;
+    position:relative;
+    margin-bottom:6px;
+    font-size:14px;
+  }
+  .push-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--main-color);
+    font-weight:bold;
+  }
+
+  /* Strengths */
+  .strength-grid{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    max-width:500px;
+    margin:0 auto;
+  }
+  .strength-card{
+    background:var(--bg-light);
+    border-left:5px solid var(--main-color);
+    border-radius:8px;
+    padding:16px 18px;
+  }
+  .strength-card h4{
+    color:var(--main-color);
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .strength-card p{font-size:14px;}
+
+  /* Story */
+  .story-section{background:var(--bg-light);}
+  .story-box{
+    max-width:520px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:14px;
+    padding:22px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  }
+  .story-box img{border-radius:10px;margin-bottom:16px;}
+  .story-box p{font-size:14.5px;margin-bottom:10px;}
+  .story-box .quote{
+    font-style:normal;
+    font-weight:bold;
+    color:var(--main-color);
+    border-left:4px solid var(--main-color);
+    padding-left:12px;
+    margin:14px 0;
+  }
+
+  /* Company info table */
+  .info-table{
+    width:100%;
+    max-width:500px;
+    margin:0 auto;
+    border-collapse:collapse;
+    font-size:14.5px;
+  }
+  .info-table th,.info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:110px;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table a{color:var(--main-color);text-decoration:underline;}
+
+  .sns-links{
+    display:flex;
+    gap:12px;
+    margin-top:10px;
+    flex-wrap:wrap;
+  }
+  .sns-links a{
+    background:var(--main-color);
+    color:#fff;
+    padding:8px 16px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+  }
+
+  /* Map */
+  .map-wrap{max-width:500px;margin:20px auto 0;}
+  .map-wrap iframe{width:100%;height:220px;border:0;border-radius:10px;}
+
+  /* Footer CTA */
+  .footer-cta{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+    padding:40px 16px;
+  }
+  .footer-cta h2{font-size:20px;margin-bottom:16px;}
+  .footer-cta .cta-btn{background:var(--accent);color:#333;}
+  .footer-cta .tel-large{
+    display:block;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:16px;
+  }
+  .footer-cta .tel-large span{font-size:13px;display:block;font-weight:normal;}
+
+  footer{
+    background:var(--sub-color);
+    color:#ccc;
+    text-align:center;
+    padding:20px 16px;
+    font-size:12px;
+  }
+
+  @media (min-width:601px){
+    .hero h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">イソベスポーツ</div>
+  <a href="tel:0272318277" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <div class="badge">選手の想いに応える専門店</div>
+  <h1>イソベスポーツ</h1>
+  <p class="sub">群馬県前橋市 ｜ 新体操道具の専門店</p>
+  <img class="hero-img" src="images/hero_main.jpg" alt="イソベスポーツ 新体操道具">
+  <a href="tel:0272318277" class="cta-btn">📞 今すぐ電話で相談する</a>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-title">お客様の声</div>
+    <div class="review-box">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">相談しやすく親切です。<br>いつもありがとうございます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="push-item">
+  <div class="container">
+    <div class="section-title">イチオシ商品</div>
+    <div class="push-card">
+      <img src="images/rhythmic_gymnastics.jpg" alt="新体操道具">
+      <div class="push-body">
+        <h3>新体操道具　豊富な取り揃え</h3>
+        <p>フープ・クラブ・リボン・ボール・ロープなど、選手のレベルや大会規定に合わせた新体操道具を幅広くご用意しています。初心者から選手まで、経験豊富なスタッフが最適な一本をご提案します。</p>
+        <ul class="push-list">
+          <li>大会規定に対応した競技用具を多数取扱い</li>
+          <li>体型・レベルに合わせたサイズ選び相談OK</li>
+          <li>お直し・メンテナンスのご相談も承ります</li>
+        </ul>
+        <a href="tel:0272318277" class="cta-btn">📞 新体操道具について相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">企業の強み</div>
+    <div class="strength-grid">
+      <div class="strength-card">
+        <h4>挑戦</h4>
+        <p>課題に対して積極的に取り組み、変化を楽しむことができる。</p>
+      </div>
+      <div class="strength-card">
+        <h4>チームワーク</h4>
+        <p>フェアでオープンなコミュニケーションを心がけ、他のメンバーに協力する。</p>
+      </div>
+      <div class="strength-card">
+        <h4>誠実</h4>
+        <p>ルールや期限を必ず守ることで、正しい自分で在り続ける。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="container">
+    <div class="section-title">創業者ストーリー</div>
+    <div class="story-box">
+      <img src="images/shop_interior.jpg" alt="ササキスポーツ 店内">
+      <p>大学内の小さな売店からはじまったササキスポーツの歴史。「選手たちが求めている製品をつくりたい」という想いから体操・新体操用品の製造開発への取り組みを始め、世界的なスポーツメーカーへと発展を遂げてきました。</p>
+      <p class="quote">それでも、私たちは成長を続けます。<br>いつだって必要なのは『新しいSASAKI』を創る『新しいチカラ』です。</p>
+      <p>SASAKIのCREDOである「挑戦・誠実・チームワーク」を大切にできる新しい仲間と、SASAKIの未来を彩ることができたら…そんな夢こそが、私たちにとってもチカラになるのです。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>イソベスポーツ</td></tr>
+      <tr><th>運営会社</th><td>株式会社 ササキスポーツ</td></tr>
+      <tr><th>代表者</th><td>廣西 俊二</td></tr>
+      <tr><th>住所</th><td>群馬県前橋市城東町２丁目３−８</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0272318277">027-231-8277</a></td></tr>
+      <tr><th>公式HP</th><td><a href="http://www.sasaki-sports.co.jp/shop/173/" target="_blank" rel="noopener">www.sasaki-sports.co.jp</a></td></tr>
+      <tr><th>お問合せ</th><td><a href="https://www.sasaki-sports.co.jp/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr>
+        <th>SNS</th>
+        <td>
+          <div class="sns-links">
+            <a href="https://www.instagram.com/sasakisports/#" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.youtube.com/channel/UCtQMNveteWnjAmUaFcfJ-8g" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=群馬県前橋市城東町２丁目３−８&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="footer-cta">
+  <h2>新体操道具のご相談は<br>イソベスポーツへ</h2>
+  <a href="tel:0272318277" class="cta-btn">📞 電話で相談する</a>
+  <a class="tel-large" href="tel:0272318277">027-231-8277<span>受付時間はお気軽にお問い合わせください</span></a>
+</div>
+
+<footer>
+  © イソベスポーツ（株式会社ササキスポーツ）
+</footer>
+
+</body>
+</html>
