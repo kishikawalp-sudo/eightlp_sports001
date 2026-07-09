@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>細井スポーツ｜高崎市のスポーツウェア専門店</title>
+<style>
+  :root{
+    --navy:#12294a;
+    --navy-dark:#0a1a30;
+    --red:#e8382e;
+    --red-dark:#c22a21;
+    --gray:#f4f5f7;
+    --text:#222;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:600px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  .header{
+    background:var(--navy);
+    color:#fff;
+    padding:14px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  .header .shop-name{font-size:16px;font-weight:bold;letter-spacing:.5px;}
+  .header .tel-btn{
+    background:var(--red);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    text-align:center;
+    padding:36px 20px 30px;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--red);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:16px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:800;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero h1 span{
+    color:#ffd23f;
+  }
+  .hero p{
+    font-size:14px;
+    opacity:.9;
+    margin-bottom:22px;
+  }
+  .hero-img{
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    margin-bottom:22px;
+  }
+  .hero-img img{width:100%;height:auto;}
+
+  .cta-btn{
+    display:block;
+    background:var(--red);
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+    padding:16px 20px;
+    border-radius:8px;
+    text-align:center;
+    box-shadow:0 6px 16px rgba(232,56,46,.4);
+    max-width:420px;
+    margin:0 auto;
+    transition:transform .15s;
+  }
+  .cta-btn:active{transform:scale(.97);}
+  .cta-sub{font-size:11px;opacity:.7;margin-top:8px;}
+
+  /* Section common */
+  section{padding:40px 20px;}
+  .section-title{
+    text-align:center;
+    font-size:21px;
+    font-weight:800;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .section-title small{
+    display:block;
+    font-size:12px;
+    color:var(--red);
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:8px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:13.5px;
+    color:#555;
+    margin-bottom:28px;
+  }
+
+  /* Push product */
+  .push-wrap{
+    background:var(--gray);
+  }
+  .push-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    margin-bottom:20px;
+  }
+  .push-card img{width:100%;}
+  .push-card .ribbon{
+    background:var(--red);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    display:inline-block;
+    padding:5px 14px;
+    border-radius:0 0 8px 0;
+  }
+  .push-card .body{padding:18px 18px 22px;}
+  .push-card .body h3{
+    font-size:18px;
+    color:var(--navy);
+    margin-bottom:8px;
+    font-weight:800;
+  }
+  .push-card .body p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  .feature-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-top:20px;
+  }
+  .feature-item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    background:#fff;
+    border-radius:10px;
+    padding:14px 16px;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+  }
+  .feature-item .num{
+    flex:0 0 auto;
+    background:var(--navy);
+    color:#fff;
+    font-weight:800;
+    font-size:14px;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .feature-item .txt h4{
+    font-size:14.5px;
+    color:var(--navy);
+    margin-bottom:3px;
+  }
+  .feature-item .txt p{
+    font-size:12.5px;
+    color:#555;
+  }
+
+  /* Gallery */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:10px;
+    width:100%;
+    height:140px;
+    object-fit:cover;
+  }
+  .gallery-grid .wide{grid-column:span 2;height:180px;}
+
+  /* Shop info */
+  .info-wrap{background:var(--navy);color:#fff;}
+  .info-wrap .section-title{color:#fff;}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    margin-top:10px;
+  }
+  .info-table tr{border-bottom:1px solid rgba(255,255,255,.15);}
+  .info-table th{
+    text-align:left;
+    padding:14px 10px 14px 0;
+    width:90px;
+    color:#ffd23f;
+    font-weight:bold;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:14px 0;
+    vertical-align:top;
+    word-break:break-all;
+  }
+  .info-table a{color:#fff;text-decoration:underline;}
+
+  .sns-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    margin-top:6px;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    text-align:center;
+    background:#fff;
+  }
+  .final-cta .price-catch{
+    background:var(--gray);
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:24px;
+  }
+  .final-cta .price-catch p{
+    font-size:13.5px;
+    color:#444;
+  }
+  .final-cta .price-catch strong{
+    color:var(--red);
+    font-size:16px;
+  }
+  .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:420px;
+    margin:0 auto;
+  }
+  .btn-group .cta-btn.outline{
+    background:#fff;
+    color:var(--navy);
+    border:2px solid var(--navy);
+    box-shadow:none;
+  }
+
+  footer{
+    background:var(--navy-dark);
+    color:#aaa;
+    text-align:center;
+    font-size:11.5px;
+    padding:24px 20px;
+  }
+  footer .company{color:#fff;font-size:13px;margin-bottom:6px;font-weight:bold;}
+
+  @media (max-width:360px){
+    .hero h1{font-size:22px;}
+    .section-title{font-size:19px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="shop-name">細井スポーツ</div>
+    <a href="tel:0273359547" class="tel-btn">📞 電話する</a>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="container">
+      <span class="badge">高崎市 通町 創業の地元スポーツ専門店</span>
+      <h1>動きやすさも、着心地も。<br><span>イチオシのスポーツウェア</span>が新入荷</h1>
+      <p>細井スポーツが自信を持っておすすめする、機能性とデザイン性を兼ね備えたスポーツウェアを多数取り揃えています。</p>
+      <div class="hero-img">
+        <img src="images/hosoi_main.jpg" alt="細井スポーツ イチオシのスポーツウェア">
+      </div>
+      <a href="#contact" class="cta-btn">お問い合わせ・ご来店はこちら</a>
+      <p class="cta-sub">群馬県高崎市通町141-14／年中無休で対応</p>
+    </div>
+  </div>
+
+  <!-- Push Product -->
+  <div class="push-wrap">
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <small>PICK UP ITEM</small>
+          イチオシ商品：スポーツウェア
+        </div>
+        <p class="section-lead">練習にも、試合にも、普段使いにも。<br>細井スポーツが厳選したウェアで、あなたのパフォーマンスを一段上へ。</p>
+
+        <div class="push-card">
+          <span class="ribbon">STAFF PICK</span>
+          <img src="images/hosoi_wear1.jpg" alt="スポーツウェア商品写真1">
+          <div class="body">
+            <h3>吸汗速乾×高機能スポーツウェア</h3>
+            <p>汗をかいてもベタつかない吸汗速乾素材を使用。動きやすいストレッチ性で、練習や試合はもちろん、日常使いにもぴったりの一着です。サイズやカラー展開も豊富にご用意しています。</p>
+          </div>
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="num">1</div>
+            <div class="txt">
+              <h4>豊富なサイズ・カラー展開</h4>
+              <p>お子様から大人まで、体型やお好みに合わせて選べます。</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="num">2</div>
+            <div class="txt">
+              <h4>専門スタッフが選び方をサポート</h4>
+              <p>競技やシーンに合わせて最適な一着をご提案いたします。</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="num">3</div>
+            <div class="txt">
+              <h4>チーム・団体でのまとめ買いも対応</h4>
+              <p>チームウェアのご相談・お見積りもお気軽にどうぞ。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Gallery -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <small>SHOP GALLERY</small>
+        店内・商品のご紹介
+      </div>
+      <div class="gallery-grid">
+        <img class="wide" src="images/hosoi_shop.jpg" alt="細井スポーツ 店内の様子">
+        <img src="images/hosoi_wear1.jpg" alt="スポーツウェア商品写真1">
+        <img src="images/hosoi_main.jpg" alt="細井スポーツ イチオシのスポーツウェア">
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Info -->
+  <div class="info-wrap" id="info">
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <small>SHOP INFORMATION</small>
+          店舗情報
+        </div>
+        <table class="info-table">
+          <tr>
+            <th>店名</th>
+            <td>細井スポーツ</td>
+          </tr>
+          <tr>
+            <th>会社名</th>
+            <td>有限会社細井スポーツ</td>
+          </tr>
+          <tr>
+            <th>代表者</th>
+            <td>木原 将</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>群馬県高崎市通町141-14</td>
+          </tr>
+          <tr>
+            <th>電話番号</th>
+            <td><a href="tel:0273359547">027-335-9547</a></td>
+          </tr>
+          <tr>
+            <th>HP</th>
+            <td><a href="https://www.hosoisports-plus.shop/" target="_blank" rel="noopener">hosoisports-plus.shop</a></td>
+          </tr>
+          <tr>
+            <th>メール</th>
+            <td><a href="mailto:info@hosoi-sports.com">info@hosoi-sports.com</a></td>
+          </tr>
+          <tr>
+            <th>SNS</th>
+            <td>
+              <a href="https://www.instagram.com/hosoi_sports.plus/" target="_blank" rel="noopener" class="sns-btn">
+                📷 Instagram
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- Final CTA -->
+  <section class="final-cta" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <small>CONTACT</small>
+        お気軽にお問い合わせください
+      </div>
+      <div class="price-catch">
+        <p>「サイズが分からない」「自分に合うウェアを相談したい」など、<br><strong>ご不明な点はスタッフまでお気軽にご相談ください。</strong></p>
+      </div>
+      <div class="btn-group">
+        <a href="tel:0273359547" class="cta-btn">📞 027-335-9547 に電話する</a>
+        <a href="https://www.hosoisports-plus.shop/ssl/contact/" target="_blank" rel="noopener" class="cta-btn outline">✉️ お問い合わせフォームはこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="company">有限会社細井スポーツ</div>
+    <div>群馬県高崎市通町141-14｜TEL 027-335-9547</div>
+    <div>&copy; 2026 Hosoi Sports. All Rights Reserved.</div>
+  </footer>
+
+</body>
+</html>
