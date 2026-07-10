@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オーレ｜群馬県佐波郡 スキー用品専門店</title>
+<style>
+  :root{
+    --main-color:#0d3b66;
+    --accent-color:#ee6c4d;
+    --sub-color:#f0f7ff;
+    --text-color:#222;
+    --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color:var(--text-color);
+    background:var(--white);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  .header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:var(--main-color);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  .header .shop-name{
+    color:var(--white);
+    font-size:16px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  .header .tel-btn{
+    background:var(--accent-color);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+    white-space:nowrap;
+  }
+
+  /* フッターナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:56px;
+    background:var(--white);
+    border-top:1px solid #ddd;
+    display:flex;
+    z-index:1000;
+    box-shadow:0 -2px 6px rgba(0,0,0,.1);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main-color);
+  }
+  .bottom-nav a.call{
+    background:var(--accent-color);
+    color:var(--white);
+    font-weight:bold;
+  }
+  .bottom-nav .icon{font-size:18px;line-height:1;margin-bottom:2px;}
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    width:100%;
+  }
+  .hero img{
+    width:100%;
+    height:auto;
+    object-fit:cover;
+  }
+  .hero-catch{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,.75));
+    color:var(--white);
+    padding:24px 16px 16px;
+  }
+  .hero-catch h1{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+  }
+  .hero-catch p{
+    font-size:13px;
+    margin-top:6px;
+    opacity:.9;
+  }
+
+  section{padding:32px 16px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:20px;
+    position:relative;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent-color);
+    font-weight:normal;
+    letter-spacing:2px;
+    margin-bottom:4px;
+  }
+
+  /* イチオシ商品セクション */
+  .push-item{
+    background:var(--sub-color);
+  }
+  .push-badge{
+    background:var(--accent-color);
+    color:var(--white);
+    font-size:13px;
+    font-weight:bold;
+    display:inline-block;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:12px;
+  }
+  .push-card{
+    background:var(--white);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    margin-bottom:20px;
+  }
+  .push-card img{width:100%;}
+  .push-card-body{padding:16px;}
+  .push-card-body h3{
+    font-size:17px;
+    color:var(--main-color);
+    margin-bottom:8px;
+  }
+  .push-card-body p{font-size:14px;}
+  .push-list{
+    background:var(--white);
+    border-radius:12px;
+    padding:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+  }
+  .push-list h4{
+    color:var(--accent-color);
+    font-size:15px;
+    margin-bottom:8px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .push-list p{font-size:13.5px;margin-bottom:14px;}
+  .push-list p:last-child{margin-bottom:0;}
+
+  /* クチコミ */
+  .review{
+    background:var(--white);
+    border:1px solid #eee;
+    border-radius:12px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+  }
+  .stars{
+    color:#ffb400;
+    font-size:18px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+  }
+  .review p{font-size:14px;}
+
+  /* 店舗情報 */
+  .shop-info{
+    background:var(--sub-color);
+  }
+  .info-table{
+    width:100%;
+    background:var(--white);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+  }
+  .info-table tr{border-bottom:1px solid #eee;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:var(--main-color);
+    color:var(--white);
+    font-size:13px;
+    padding:12px 10px;
+    width:90px;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:12px 10px;
+    font-size:13.5px;
+  }
+  .info-table td a{color:var(--main-color);text-decoration:underline;}
+
+  .map-frame{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+  }
+  .map-frame iframe{
+    width:100%;
+    height:250px;
+    border:0;
+    display:block;
+  }
+
+  /* SNS・お問い合わせ */
+  .contact-section{
+    text-align:center;
+  }
+  .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:20px;
+  }
+  .btn{
+    display:block;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .btn-primary{
+    background:var(--accent-color);
+    color:var(--white);
+  }
+  .btn-secondary{
+    background:var(--main-color);
+    color:var(--white);
+  }
+  .btn-outline{
+    background:var(--white);
+    color:var(--main-color);
+    border:1px solid var(--main-color);
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:20px 16px 32px;
+  }
+
+  @media (min-width:600px){
+    body{padding-top:64px;}
+    .header{height:64px;}
+    .hero-catch h1{font-size:26px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header">
+  <div class="shop-name">オーレ</div>
+  <a href="tel:0270501112" class="tel-btn">📞 0270-50-1112</a>
+</header>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <img src="images/main-visual.jpg" alt="オーレ スキー用品">
+  <div class="hero-catch">
+    <h1>板のことなら、オーレへ。<br>サーモチューンで滑走感が変わる。</h1>
+    <p>群馬県佐波郡玉村町 ｜ スキー用品専門店</p>
+  </div>
+</div>
+
+<!-- イチオシ商品 -->
+<section class="push-item">
+  <div class="section-title">
+    <span>SKI EQUIPMENT</span>
+    今シーズン、イチオシのスキー用品
+  </div>
+
+  <div class="push-card">
+    <img src="images/ski-tune.jpg" alt="サーモチューン スキー板メンテナンス">
+    <div class="push-card-body">
+      <span class="push-badge">★5 高評価メンテナンス</span>
+      <h3>サーモチューン仕上げ</h3>
+      <p>板のソールとエッジを最適な状態に整える本格チューンナップ。滑走面の抵抗を抑え、雪面をなめらかに走る感覚を実感いただけます。さらに秋までの長期保管もお任せいただけるので、シーズンオフの置き場所に困る心配もありません。</p>
+    </div>
+  </div>
+
+  <div class="push-list">
+    <h4>🧊 あわせておすすめ「固形ワックス」</h4>
+    <p>滑らない雪の日に効果を発揮する固形タイプのワックスです。サーモチューンと合わせて塗ることで、滑走面がさらにつるつるに。湿った雪や気温の高い日でも滑走性をキープします。</p>
+    <h4>❄️ 秋まで板をお預かり</h4>
+    <p>チューンナップ後は秋までスタッフが大切に保管。ご自宅に置き場所がない方や、シーズン終わりの手入れが面倒な方にも好評です。</p>
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section>
+  <div class="section-title">
+    <span>REVIEW</span>
+    お客様の声
+  </div>
+  <div class="review">
+    <div class="stars">★★★★★</div>
+    <p>サーモチューンをお願いしました。秋まで板を預かってくれるのもよいですね！それと、併せておすすめなのが「固形ワックス」。滑らない雪の日にってやつ。これを塗ればさらにつるつるになります。</p>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shop-info">
+  <div class="section-title">
+    <span>SHOP INFO</span>
+    店舗情報
+  </div>
+  <table class="info-table">
+    <tr>
+      <th>店名</th>
+      <td>オーレ</td>
+    </tr>
+    <tr>
+      <th>定休日</th>
+      <td>水曜日</td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td>群馬県佐波郡玉村町上新田６２１−１２</td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><a href="tel:0270501112">0270-50-1112</a></td>
+    </tr>
+    <tr>
+      <th>運営会社</th>
+      <td>株式会社 HAMA R&D</td>
+    </tr>
+    <tr>
+      <th>HP</th>
+      <td><a href="https://hamar-d.co.jp/" target="_blank" rel="noopener">https://hamar-d.co.jp/</a></td>
+    </tr>
+  </table>
+
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=群馬県佐波郡玉村町上新田621-12&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- お問い合わせ・SNS -->
+<section class="contact-section">
+  <div class="section-title">
+    <span>CONTACT</span>
+    お問い合わせ
+  </div>
+  <p>板のメンテナンスやスキー用品について、お気軽にご相談ください。</p>
+  <div class="btn-group">
+    <a href="tel:0270501112" class="btn btn-primary">📞 電話で問い合わせる</a>
+    <a href="https://hamar-d.co.jp/info/" target="_blank" rel="noopener" class="btn btn-secondary">✉️ お問い合わせフォーム</a>
+    <a href="https://x.com/hama_r_d" target="_blank" rel="noopener" class="btn btn-outline">🐦 公式X（旧Twitter）</a>
+  </div>
+</section>
+
+<footer>
+  &copy; オーレ / 株式会社 HAMA R&D
+</footer>
+
+<!-- 固定フッターナビ -->
+<nav class="bottom-nav">
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+    <span class="icon">🏠</span>トップ
+  </a>
+  <a href="https://hamar-d.co.jp/" target="_blank" rel="noopener">
+    <span class="icon">🌐</span>HP
+  </a>
+  <a href="https://hamar-d.co.jp/info/" target="_blank" rel="noopener">
+    <span class="icon">✉️</span>問合せ
+  </a>
+  <a href="tel:0270501112" class="call">
+    <span class="icon">📞</span>電話する
+  </a>
+</nav>
+
+</body>
+</html>
