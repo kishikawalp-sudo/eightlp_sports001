@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ラケットショップミッキー | 群馬県前橋市のテニス・バドミントン専門店</title>
+<style>
+  :root{
+    --main-color:#1b5e20;
+    --sub-color:#ffb300;
+    --dark-color:#123018;
+    --light-bg:#f7f9f4;
+    --text-color:#2b2b2b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-color);
+    background:#fff;
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:0.5px;
+  }
+  header .tel-btn{
+    background:var(--sub-color);
+    color:#1b1b1b;
+    padding:8px 14px;
+    border-radius:20px;
+    font-weight:bold;
+    font-size:13px;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    text-align:center;
+  }
+  .hero img{
+    width:100%;
+    height:52vh;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,0.75));
+    color:#fff;
+    padding:30px 16px 18px;
+  }
+  .hero-overlay .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 2px 4px rgba(0,0,0,0.5);
+  }
+  .hero-overlay .sub{
+    font-size:13px;
+    margin-top:6px;
+    color:#ffe9a8;
+  }
+
+  section{
+    padding:32px 18px;
+  }
+  .section-title{
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+    color:var(--main-color);
+    margin-bottom:20px;
+    position:relative;
+    padding-bottom:10px;
+  }
+  .section-title::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    width:50px;height:3px;
+    background:var(--sub-color);
+  }
+
+  /* Push item */
+  .push-item{
+    background:var(--light-bg);
+  }
+  .push-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.1);
+    border:2px solid var(--sub-color);
+  }
+  .push-card .badge{
+    background:var(--sub-color);
+    color:#1b1b1b;
+    font-weight:bold;
+    font-size:13px;
+    text-align:center;
+    padding:8px;
+    letter-spacing:1px;
+  }
+  .push-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .push-card .push-body{
+    padding:18px;
+  }
+  .push-card h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:8px;
+  }
+  .push-card p{
+    font-size:14px;
+    margin-bottom:12px;
+  }
+  .push-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:10px;
+  }
+  .push-points span{
+    background:var(--main-color);
+    color:#fff;
+    font-size:12px;
+    padding:6px 10px;
+    border-radius:16px;
+  }
+  .cta-inline{
+    display:block;
+    margin-top:16px;
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+
+  /* Strength */
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-item{
+    background:var(--light-bg);
+    border-left:4px solid var(--main-color);
+    padding:14px 16px;
+    border-radius:6px;
+    font-size:14px;
+  }
+  .strength-item strong{
+    color:var(--main-color);
+    display:block;
+    margin-bottom:4px;
+    font-size:15px;
+  }
+
+  /* Gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:8px;
+  }
+
+  /* Reviews */
+  .review-card{
+    background:var(--light-bg);
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+  }
+  .stars{
+    color:var(--sub-color);
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .review-card p{
+    font-size:14px;
+  }
+
+  /* Shop info */
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #ddd;
+    vertical-align:top;
+  }
+  .info-table th{
+    color:var(--main-color);
+    width:28%;
+    white-space:nowrap;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* SNS */
+  .sns-links{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin-top:10px;
+  }
+  .sns-links a{
+    background:var(--main-color);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--dark-color);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13px;
+    margin-bottom:18px;
+    color:#dcdcdc;
+  }
+  .final-cta .cta-inline{
+    background:var(--sub-color);
+    color:#1b1b1b;
+  }
+
+  footer{
+    background:#111;
+    color:#aaa;
+    text-align:center;
+    font-size:12px;
+    padding:18px;
+  }
+
+  /* Fixed bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:56px;
+    display:flex;
+    z-index:1000;
+    box-shadow:0 -2px 6px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:bold;
+    color:#fff;
+  }
+  .bottom-nav a.tel{background:var(--main-color);}
+  .bottom-nav a.contact{background:var(--sub-color);color:#1b1b1b;}
+  .bottom-nav a.map{background:#455a64;}
+  .bottom-nav .icon{font-size:18px;margin-bottom:2px;}
+
+  @media (min-width:600px){
+    .hero img{height:60vh;}
+    .gallery{grid-template-columns:1fr 1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">ラケットショップミッキー</div>
+  <a href="tel:0272434267" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="ラケットショップミッキー 店内風景">
+  <div class="hero-overlay">
+    <div class="catch">試打ラケット多数。<br>あなたに合う一本が見つかる。</div>
+    <div class="sub">群馬県前橋市 | テニス・バドミントン専門店</div>
+  </div>
+</div>
+
+<section class="push-item">
+  <div class="section-title">イチオシ商品</div>
+  <div class="push-card">
+    <div class="badge">★ ミッキー イチオシ ★</div>
+    <img src="images/racket.jpg" alt="テニスラケット">
+    <div class="push-body">
+      <h3>テニスラケット</h3>
+      <p>初心者から上級者まで、幅広いラインナップを取り揃え。実際に試打できるラケットも豊富にご用意しています。あなたのプレースタイルに合った一本を、スタッフが丁寧にご提案します。</p>
+      <div class="push-points">
+        <span>試打ラケットあり</span>
+        <span>ガット取り寄せ対応</span>
+        <span>セール情報あり</span>
+      </div>
+      <a href="tel:0272434267" class="cta-inline">📞 ラケットのご相談はお電話で</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">お店の強み</div>
+  <div class="strength-list">
+    <div class="strength-item">
+      <strong>地域密着のコミュニティづくり</strong>
+      バドミントン・テニス愛好家の皆様に向けて、大会開催などを通じた地域貢献・イベント活動を行っています。
+    </div>
+    <div class="strength-item">
+      <strong>顧客との絆を大切にした接客</strong>
+      商品販売だけでなく、お客様一人ひとりとの関係を大切にし、末永くご愛顧いただけるお店を目指しています。
+    </div>
+    <div class="strength-item">
+      <strong>豊富な試打・在庫対応</strong>
+      小さな店舗ながら試打ラケットを多数ご用意。ガットの在庫がない場合でも、お気軽にお問い合わせください。
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--light-bg);">
+  <div class="section-title">店内・商品紹介</div>
+  <div class="gallery">
+    <img src="images/shop.jpg" alt="ラケットショップミッキー 店内">
+    <img src="images/racket.jpg" alt="テニスラケット 商品">
+  </div>
+</section>
+
+<section>
+  <div class="section-title">お客様の口コミ</div>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>店内は狭いですが試打ラケットなどもまぁまぁ有りますし贔屓にしてます。基本的にセールの時期に合わせて行ってます。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>優しく接してくれてお店の人も親切です。ガットがおいてなくてもありますか?と聞けばあるときもありますよ。一度行ってみてください。</p>
+  </div>
+</section>
+
+<section style="background:var(--light-bg);">
+  <div class="section-title">店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>ラケットショップミッキー</td></tr>
+    <tr><th>会社名</th><td>有限会社 ラケットショップ ミッキー</td></tr>
+    <tr><th>代表者</th><td>稲村　ひとみ</td></tr>
+    <tr><th>住所</th><td>群馬県前橋市表町１丁目２２−２６</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0272434267">027-243-4267</a></td></tr>
+    <tr><th>定休日</th><td>水曜日</td></tr>
+    <tr><th>HP</th><td><a href="http://www.mickey55.com/" target="_blank" rel="noopener">www.mickey55.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%89%8D%E6%A9%8B%E5%B8%82%E8%A1%A8%E7%94%BA1%E4%B8%81%E7%9B%AE22-26&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <div class="sns-links">
+    <a href="https://www.instagram.com/racket_shop.mickey/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>あなたにぴったりの一本を、<br>ミッキーで見つけてください。</h2>
+  <p>ご来店・お電話・お問い合わせフォームからお気軽にどうぞ。</p>
+  <a href="tel:0272434267" class="cta-inline">📞 027-243-4267 に電話する</a>
+</section>
+
+<footer>
+  &copy; 有限会社 ラケットショップ ミッキー
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0272434267" class="tel">
+    <span class="icon">📞</span>電話
+  </a>
+  <a href="https://mickey55.com/contact/" target="_blank" rel="noopener" class="contact">
+    <span class="icon">✉️</span>お問合せ
+  </a>
+  <a href="https://maps.google.com/maps?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%89%8D%E6%A9%8B%E5%B8%82%E8%A1%A8%E7%94%BA1%E4%B8%81%E7%9B%AE22-26" target="_blank" rel="noopener" class="map">
+    <span class="icon">📍</span>地図
+  </a>
+</div>
+
+</body>
+</html>
