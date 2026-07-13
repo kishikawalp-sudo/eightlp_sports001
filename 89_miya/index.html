@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ミヤ・スポーツ｜ユニフォームのご相談ならお任せください</title>
+<style>
+  :root{
+    --main-color:#0b4da2;
+    --sub-color:#f5a623;
+    --dark:#1a1a1a;
+    --bg-light:#f7f9fc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px; /* 固定ナビの分 */
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:1000;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+  }
+  header .logo{
+    font-size:16px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--main-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+  main{margin-top:56px;}
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{
+    width:100%;
+    height:60vh;
+    object-fit:cover;
+    filter:brightness(0.65);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text .catch{
+    font-size:clamp(20px,6vw,32px);
+    font-weight:bold;
+    margin-bottom:10px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  }
+  .hero-text .sub{
+    font-size:clamp(13px,3.5vw,16px);
+    text-shadow:0 1px 4px rgba(0,0,0,0.5);
+  }
+
+  /* セクション共通 */
+  section{
+    padding:40px 18px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:50px;height:3px;
+    background:var(--sub-color);
+    margin:10px auto 0;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:14px;
+    color:#555;
+    margin-bottom:30px;
+  }
+
+  /* イチオシ商品 */
+  .featured{
+    background:var(--bg-light);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    max-width:480px;
+    margin:0 auto;
+  }
+  .featured-card img{
+    width:100%;
+    height:auto;
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--sub-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .featured-body{
+    padding:20px;
+  }
+  .featured-body h3{
+    font-size:20px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-body p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:16px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:20px;
+  }
+  .featured-list li{
+    font-size:14px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .featured-list li::before{
+    content:"✔";
+    color:var(--sub-color);
+    position:absolute;
+    left:0;
+    font-weight:bold;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    font-size:16px;
+  }
+  .cta-btn:active{opacity:0.85;}
+
+  /* 強み */
+  .strengths .cards{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    max-width:520px;
+    margin:0 auto;
+  }
+  .strength-card{
+    background:var(--bg-light);
+    border-left:5px solid var(--main-color);
+    padding:16px;
+    border-radius:8px;
+  }
+  .strength-card h4{
+    color:var(--main-color);
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .strength-card p{
+    font-size:13px;
+    color:#444;
+  }
+
+  /* クチコミ */
+  .review{
+    background:#fff;
+  }
+  .review-card{
+    max-width:520px;
+    margin:0 auto;
+    background:var(--bg-light);
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+  }
+  .stars{
+    color:var(--sub-color);
+    font-size:22px;
+    margin-bottom:10px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:#333;
+    font-style:italic;
+  }
+
+  /* 店舗画像・情報 */
+  .shopimg img{
+    border-radius:12px;
+    max-width:520px;
+    margin:0 auto 30px;
+  }
+  table.shop-info{
+    width:100%;
+    max-width:520px;
+    margin:0 auto;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  table.shop-info th,
+  table.shop-info td{
+    padding:12px 10px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+    vertical-align:top;
+  }
+  table.shop-info th{
+    color:var(--main-color);
+    width:30%;
+    white-space:nowrap;
+    font-weight:bold;
+  }
+  .map-wrap{
+    max-width:520px;
+    margin:20px auto 0;
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:250px;
+    border:0;
+  }
+
+  /* SNS */
+  .sns-links{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin-top:20px;
+  }
+  .sns-links a{
+    background:var(--main-color);
+    color:#fff;
+    padding:10px 20px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+  }
+
+  /* 最終CTA */
+  .final-cta{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:22px;
+    margin-bottom:14px;
+  }
+  .final-cta p{
+    font-size:14px;
+    margin-bottom:24px;
+    opacity:0.9;
+  }
+  .final-cta .cta-btn{
+    background:var(--sub-color);
+    max-width:400px;
+    margin:0 auto 14px;
+  }
+  .final-cta .cta-btn.outline{
+    background:transparent;
+    border:2px solid #fff;
+  }
+
+  /* 固定ボトムナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:1000;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.12);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main-color);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.call{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .bottom-nav a.form{
+    background:var(--sub-color);
+    color:#fff;
+  }
+
+  @media (min-width:600px){
+    .hero img{height:70vh;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ミヤ・スポーツ</div>
+  <a href="tel:0274220850" class="tel-btn">📞 0274-22-0850</a>
+</header>
+
+<main>
+
+  <!-- ヒーロー -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="ミヤ・スポーツ ユニフォーム">
+    <div class="hero-text">
+      <div class="catch">学校・チームのユニフォームは<br>ミヤ・スポーツにお任せください</div>
+      <div class="sub">最先端の情報力と親身な提案力で、最適な一着をご提案します</div>
+    </div>
+  </div>
+
+  <!-- イチオシ商品 -->
+  <section class="featured">
+    <div class="section-title">イチオシ商品</div>
+    <p class="section-lead">学校・企業・チームのユニフォームをトータルサポート</p>
+    <div class="featured-card">
+      <img src="images/uniform.jpg" alt="ユニフォーム">
+      <div class="featured-body">
+        <span class="featured-badge">一番人気</span>
+        <h3>オリジナルユニフォーム制作</h3>
+        <p>デザインから素材選び、サイズ調整まで、お客様一人ひとりのご要望を丁寧にお伺いしてご提案いたします。学校・企業・個人チームまで幅広く対応可能です。</p>
+        <ul class="featured-list">
+          <li>豊富な素材・デザインからご提案</li>
+          <li>サイズ相談・チーム一括対応OK</li>
+          <li>納期・ご予算のご相談も歓迎</li>
+        </ul>
+        <a href="tel:0274220850" class="cta-btn">📞 まずは電話で相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section class="strengths">
+    <div class="section-title">選ばれる理由</div>
+    <p class="section-lead">株式会社ミヤ・スポーツの強み</p>
+    <div class="cards">
+      <div class="strength-card">
+        <h4>最先端の情報収集力</h4>
+        <p>スポーツ用品業界の最新トレンドや情報をいち早くキャッチし、最適な商品をご提案します。</p>
+      </div>
+      <div class="strength-card">
+        <h4>親身な提案力</h4>
+        <p>学校・企業・個人のお客様、それぞれのご要望をしっかり受け止め、納得いただける提案を行います。</p>
+      </div>
+      <div class="strength-card">
+        <h4>迅速な対応力</h4>
+        <p>スポーツ用品の提案・販売はもちろん、体育器具の修理・修繕、記念品の製作まで幅広く迅速に対応します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="review">
+    <div class="section-title">お客様の声</div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>「ユニフォームの相談をさせていただき、とても良いアドバイスをいただいてありがたかったです！」</p>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="shopinfo">
+    <div class="section-title">店舗情報</div>
+    <div class="shopimg">
+      <img src="images/shop.jpg" alt="ミヤ・スポーツ 店舗">
+    </div>
+    <table class="shop-info">
+      <tr><th>店名</th><td>ミヤ・スポーツ</td></tr>
+      <tr><th>会社名</th><td>株式会社ミヤ・スポーツ</td></tr>
+      <tr><th>定休日</th><td>毎週水曜日</td></tr>
+      <tr><th>住所</th><td>群馬県藤岡市藤岡４０</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0274220850">0274-22-0850</a></td></tr>
+      <tr><th>HP</th><td><a href="https://miya-sports.com/" target="_blank" rel="noopener">https://miya-sports.com/</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=群馬県藤岡市藤岡40&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="sns-links">
+      <a href="https://x.com/38sports" target="_blank" rel="noopener">Xをフォロー</a>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="final-cta">
+    <h2>ユニフォームのご相談、お気軽にどうぞ</h2>
+    <p>学校・企業・個人チームまで、豊富な実績でしっかりサポートいたします</p>
+    <a href="tel:0274220850" class="cta-btn">📞 電話で相談する</a>
+    <a href="https://miya-sports.com/free/1" target="_blank" rel="noopener" class="cta-btn outline">お問い合わせフォームへ</a>
+  </section>
+
+</main>
+
+<!-- 固定ボトムナビ -->
+<div class="bottom-nav">
+  <a href="tel:0274220850" class="call">📞 電話</a>
+  <a href="https://miya-sports.com/free/1" target="_blank" rel="noopener" class="form">✉️ お問い合わせ</a>
+  <a href="https://miya-sports.com/" target="_blank" rel="noopener">🌐 HP</a>
+</div>
+
+</body>
+</html>
