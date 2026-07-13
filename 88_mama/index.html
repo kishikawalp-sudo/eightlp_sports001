@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ママスポ 上佐野店｜群馬・高崎のユニフォーム制作専門店</title>
+<style>
+  :root {
+    --main-color: #1e3d59;
+    --accent-color: #f5a623;
+    --accent-red: #d64545;
+    --bg-light: #f7f5f0;
+    --text-dark: #222;
+    --white: #fff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color: var(--text-dark);
+    background: var(--bg-light);
+    line-height: 1.7;
+    padding-bottom: 60px;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--main-color);
+    color: var(--white);
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  header.site-header .back-link {
+    font-size: 12px;
+    border: 1px solid var(--white);
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  header.site-header .shop-name {
+    font-size: 15px;
+    font-weight: bold;
+    flex: 1;
+    text-align: center;
+    min-width: 140px;
+  }
+  header.site-header .tel-btn {
+    background: var(--accent-red);
+    color: var(--white);
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .hero {
+    position: relative;
+    color: var(--white);
+    text-align: center;
+  }
+  .hero img {
+    width: 100%;
+    height: 60vh;
+    min-height: 320px;
+    object-fit: cover;
+    filter: brightness(0.55);
+  }
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+  }
+  .hero-text .catch {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  }
+  .hero-text .sub {
+    margin-top: 14px;
+    font-size: 14px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  }
+  .hero-text .stars {
+    margin-top: 10px;
+    color: var(--accent-color);
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  section { padding: 40px 16px; }
+  .section-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    position: relative;
+    color: var(--main-color);
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 10px auto 0;
+  }
+
+  .featured {
+    background: var(--main-color);
+    color: var(--white);
+  }
+  .featured .section-title { color: var(--white); }
+  .featured .section-title::after { background: var(--accent-color); }
+  .product-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .product-card img { width: 100%; }
+  .product-card .product-body { padding: 18px; }
+  .product-card h3 {
+    font-size: 17px;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+  .product-card p { font-size: 14px; }
+  .badge {
+    display: inline-block;
+    background: var(--accent-red);
+    color: var(--white);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .point-list {
+    list-style: none;
+    margin-top: 14px;
+  }
+  .point-list li {
+    font-size: 14px;
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .point-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+
+  .strengths {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .strength-item {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--accent-color);
+  }
+  .strength-item h4 {
+    color: var(--main-color);
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .strength-item p { font-size: 13px; color: #444; }
+
+  .gallery { background: var(--white); }
+  .gallery img {
+    border-radius: 10px;
+    margin-bottom: 14px;
+  }
+  .gallery figcaption {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .review-box {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: relative;
+  }
+  .review-box .stars {
+    color: var(--accent-color);
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .review-box p { font-size: 14px; color: #333; }
+  .review-box .reviewer {
+    margin-top: 14px;
+    font-size: 13px;
+    color: #888;
+    text-align: right;
+  }
+
+  .shop-info table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .shop-info th, .shop-info td {
+    padding: 12px 14px;
+    font-size: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+  }
+  .shop-info th {
+    background: var(--bg-light);
+    color: var(--main-color);
+    width: 30%;
+    white-space: nowrap;
+  }
+  .map-frame {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .map-frame iframe {
+    width: 100%;
+    height: 260px;
+    border: 0;
+  }
+  .sns-links {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .sns-links a {
+    background: var(--main-color);
+    color: var(--white);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, var(--main-color), #2c4f6e);
+    color: var(--white);
+    text-align: center;
+  }
+  .cta-section p { font-size: 14px; margin-bottom: 20px; }
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .cta-buttons a {
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .cta-buttons .call { background: var(--accent-red); color: var(--white); }
+  .cta-buttons .web { background: var(--accent-color); color: var(--main-color); }
+  .cta-buttons .form { background: var(--white); color: var(--main-color); border: 1px solid var(--white); }
+
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    display: flex;
+    background: var(--white);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--main-color);
+    border-right: 1px solid #eee;
+  }
+  .bottom-nav a:last-child { border-right: none; }
+  .bottom-nav a.call-nav { background: var(--accent-red); color: var(--white); }
+
+  @media (min-width: 700px) {
+    .hero-text .catch { font-size: 30px; }
+    section { padding: 60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../../../" class="back-link">← トップページへ戻る</a>
+  <div class="shop-name">ママスポ 上佐野店</div>
+  <a href="tel:0273277883" class="tel-btn">📞 電話</a>
+</header>
+
+<div class="hero">
+  <img src="images/mamaspo_hero.jpg" alt="ママスポ上佐野店 外観">
+  <div class="hero-text">
+    <div class="catch">チームの想いを、1着のユニフォームに。</div>
+    <div class="sub">群馬県高崎市｜ママスポ 上佐野店（株式会社ママダスポーツプロダクト）</div>
+    <div class="stars">★★★★★</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title">イチオシサービス：ユニフォーム制作</div>
+  <div class="product-card">
+    <img src="images/mamaspo_uniform.jpg" alt="オリジナルユニフォーム制作">
+    <div class="product-body">
+      <span class="badge">お客様満足度No.1</span>
+      <h3>オリジナルユニフォーム制作</h3>
+      <p>チーム名・ゼッケン番号・ロゴなど、細部までこだわったオリジナルユニフォームを一枚から丁寧に制作。急ぎのご依頼にもスピーディーに対応し、なるべく早くお手元に届くよう調整いたします。</p>
+      <ul class="point-list">
+        <li>急な内容の相談もすぐに確認・対応</li>
+        <li>お守りやTシャツなどの関連グッズも同時注文可能</li>
+        <li>長年の実績を持つ株式会社ママダスポーツプロダクトが制作</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">ママスポが選ばれる理由</div>
+  <div class="strengths">
+    <div class="strength-item">
+      <h4>急ぎの相談にも即対応</h4>
+      <p>急な内容でもすぐに確認し、なるべく早く手元に届くよう声掛けしてもらえると好評です。</p>
+    </div>
+    <div class="strength-item">
+      <h4>ユニフォーム以外のグッズも一緒に注文可能</h4>
+      <p>お守りやTシャツなど、チームや個人の記念グッズもまとめて注文できるので便利です。</p>
+    </div>
+    <div class="strength-item">
+      <h4>高崎市上佐野の地元密着店</h4>
+      <p>松井ビル2Fにある店舗で、地域のチーム・クラブから長く愛されています。</p>
+    </div>
+    <div class="strength-item">
+      <h4>電話・フォーム・メールと相談しやすい窓口</h4>
+      <p>電話はもちろん、公式サイトの問い合わせフォームやメールでも気軽に相談できます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-title">店舗フォト</div>
+  <figure>
+    <img src="images/mamaspo_hero.jpg" alt="ママスポ上佐野店 外観">
+    <figcaption>群馬県高崎市上中居町の店舗（松井ビル2F）</figcaption>
+  </figure>
+  <figure>
+    <img src="images/mamaspo_uniform.jpg" alt="制作したユニフォーム">
+    <figcaption>ひとつひとつ丁寧に仕上げるオリジナルユニフォーム</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="section-title">お客様の声</div>
+  <div class="review-box">
+    <div class="stars">★★★★★</div>
+    <p>
+      いつもお世話になっていて、急な内容でもすぐ確認してくれてなるべく早く手元に来るように声掛けしてもらってます！お守りやTシャツなども注文できます。
+    </p>
+    <div class="reviewer">— ご利用のお客様</div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <table>
+    <tr><th>店名</th><td>ママスポ 上佐野店</td></tr>
+    <tr><th>会社名</th><td>株式会社ママダスポーツプロダクト</td></tr>
+    <tr><th>住所</th><td>群馬県高崎市上中居町139-1 松井ビル2F</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0273277883">027-327-7883</a></td></tr>
+    <tr><th>HP</th><td><a href="http://mamaspo.com/" target="_blank" rel="noopener">http://mamaspo.com/</a></td></tr>
+    <tr><th>お問い合わせフォーム</th><td><a href="https://www.mamaspo.com/contact/" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:mamaspo.1948@cream.plala.or.jp">mamaspo.1948@cream.plala.or.jp</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E9%AB%98%E5%B4%8E%E5%B8%82%E4%B8%8A%E4%B8%AD%E5%B1%85%E7%94%BA139-1&output=embed" loading="lazy"></iframe>
+  </div>
+  <div class="sns-links">
+    <a href="https://www.instagram.com/mamaspo_takasaki/" target="_blank" rel="noopener">Instagram</a>
+    <a href="http://mamaspo.com/" target="_blank" rel="noopener">公式サイト</a>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-title" style="color:#fff;">まずはお気軽にご相談ください</div>
+  <p>チームのユニフォーム制作から関連グッズのご注文まで、丁寧にサポートいたします。</p>
+  <div class="cta-buttons">
+    <a href="tel:0273277883" class="call">📞 今すぐ電話する</a>
+    <a href="https://www.mamaspo.com/contact/" target="_blank" rel="noopener" class="form">✉️ お問い合わせフォーム</a>
+    <a href="http://mamaspo.com/" target="_blank" rel="noopener" class="web">🌐 公式サイトを見る</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0273277883" class="call-nav">📞 電話</a>
+  <a href="https://maps.google.com/maps?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E9%AB%98%E5%B4%8E%E5%B8%82%E4%B8%8A%E4%B8%AD%E5%B1%85%E7%94%BA139-1" target="_blank" rel="noopener">📍 地図</a>
+  <a href="https://www.instagram.com/mamaspo_takasaki/" target="_blank" rel="noopener">📷 Instagram</a>
+  <a href="http://mamaspo.com/" target="_blank" rel="noopener">🌐 HP</a>
+</nav>
+
+</body>
+</html>
