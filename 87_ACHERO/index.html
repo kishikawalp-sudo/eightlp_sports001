@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>パワースポーツショップACHERO（アチーロ）本店｜群馬・中之条</title>
+<style>
+  :root {
+    --main-color: #1a2b3c;
+    --accent-color: #d4a017;
+    --accent-red: #c0392b;
+    --bg-light: #f7f5f0;
+    --text-dark: #222;
+    --white: #fff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color: var(--text-dark);
+    background: var(--bg-light);
+    line-height: 1.7;
+    padding-bottom: 60px; /* space for fixed bottom nav */
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* Header */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--main-color);
+    color: var(--white);
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  header.site-header .back-link {
+    font-size: 12px;
+    border: 1px solid var(--white);
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  header.site-header .shop-name {
+    font-size: 15px;
+    font-weight: bold;
+    flex: 1;
+    text-align: center;
+    min-width: 140px;
+  }
+  header.site-header .tel-btn {
+    background: var(--accent-red);
+    color: var(--white);
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    color: var(--white);
+    text-align: center;
+  }
+  .hero img {
+    width: 100%;
+    height: 60vh;
+    min-height: 320px;
+    object-fit: cover;
+    filter: brightness(0.55);
+  }
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+  }
+  .hero-text .catch {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  }
+  .hero-text .sub {
+    margin-top: 14px;
+    font-size: 14px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  }
+  .hero-text .stars {
+    margin-top: 10px;
+    color: var(--accent-color);
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  section { padding: 40px 16px; }
+  .section-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    position: relative;
+    color: var(--main-color);
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 10px auto 0;
+  }
+
+  /* Featured product */
+  .featured {
+    background: var(--main-color);
+    color: var(--white);
+  }
+  .featured .section-title { color: var(--white); }
+  .featured .section-title::after { background: var(--accent-color); }
+  .product-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .product-card img { width: 100%; }
+  .product-card .product-body { padding: 18px; }
+  .product-card h3 {
+    font-size: 17px;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+  .product-card p { font-size: 14px; }
+  .badge {
+    display: inline-block;
+    background: var(--accent-red);
+    color: var(--white);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .point-list {
+    list-style: none;
+    margin-top: 14px;
+  }
+  .point-list li {
+    font-size: 14px;
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .point-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+
+  /* Strengths */
+  .strengths {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .strength-item {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--accent-color);
+  }
+  .strength-item h4 {
+    color: var(--main-color);
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .strength-item p { font-size: 13px; color: #444; }
+
+  /* Gallery image */
+  .gallery {
+    background: var(--white);
+  }
+  .gallery img {
+    border-radius: 10px;
+    margin-bottom: 14px;
+  }
+  .gallery figcaption {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Review */
+  .review-box {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: relative;
+  }
+  .review-box .stars {
+    color: var(--accent-color);
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .review-box p {
+    font-size: 14px;
+    color: #333;
+  }
+  .review-box .reviewer {
+    margin-top: 14px;
+    font-size: 13px;
+    color: #888;
+    text-align: right;
+  }
+
+  /* Shop info */
+  .shop-info table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .shop-info th, .shop-info td {
+    padding: 12px 14px;
+    font-size: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+  }
+  .shop-info th {
+    background: var(--bg-light);
+    color: var(--main-color);
+    width: 30%;
+    white-space: nowrap;
+  }
+  .map-frame {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .map-frame iframe {
+    width: 100%;
+    height: 260px;
+    border: 0;
+  }
+  .sns-links {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .sns-links a {
+    background: var(--main-color);
+    color: var(--white);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+  }
+
+  /* CTA section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--main-color), #2c4257);
+    color: var(--white);
+    text-align: center;
+  }
+  .cta-section p { font-size: 14px; margin-bottom: 20px; }
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .cta-buttons a {
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .cta-buttons .call { background: var(--accent-red); color: var(--white); }
+  .cta-buttons .web { background: var(--accent-color); color: var(--main-color); }
+
+  /* Bottom nav */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    display: flex;
+    background: var(--white);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--main-color);
+    border-right: 1px solid #eee;
+  }
+  .bottom-nav a:last-child { border-right: none; }
+  .bottom-nav a.call-nav { background: var(--accent-red); color: var(--white); }
+
+  @media (min-width: 700px) {
+    .hero-text .catch { font-size: 30px; }
+    section { padding: 60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../../../" class="back-link">← トップページへ戻る</a>
+  <div class="shop-name">パワースポーツショップACHERO本店</div>
+  <a href="tel:08012328511" class="tel-btn">📞 電話</a>
+</header>
+
+<div class="hero">
+  <img src="images/achero_hero.jpg" alt="パワースポーツショップACHERO本店 外観">
+  <div class="hero-text">
+    <div class="catch">アドベンチャーバイクライフを、<br>本気でサポートする店。</div>
+    <div class="sub">群馬県吾妻郡中之条町｜パワースポーツショップACHERO（アチーロ）本店</div>
+    <div class="stars">★★★★★</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title">イチオシ商品：KLIMアパレル一式</div>
+  <div class="product-card">
+    <img src="images/achero_klim_jacket.jpg" alt="KLIMジャケット＆パンツ">
+    <div class="product-body">
+      <span class="badge">お客様が絶賛！</span>
+      <h3>KLIM ジャケット＆パンツ</h3>
+      <p>アドベンチャーバイクライフをしっかり支える本格ウエア。ウエストベルトを締めることでジャケットがより軽く感じられる設計で、長距離のツーリングでも疲れにくいのが特長です。</p>
+      <ul class="point-list">
+        <li>トールサイズ展開あり（ジャケット：L／XL、パンツ：34など）</li>
+        <li>試着してご自身にぴったりのサイズが見つかります</li>
+        <li>代表・関さんが細部まで丁寧にフィッティングをサポート</li>
+      </ul>
+    </div>
+  </div>
+  <div class="product-card">
+    <img src="images/achero_helmet.jpg" alt="オフロード＆アドベンチャーヘルメット">
+    <div class="product-body">
+      <span class="badge">軽さが第一印象</span>
+      <h3>オフロード／アドベンチャーヘルメット</h3>
+      <p>「めちゃ軽い」と評判のオフロード用ヘルメットから、アドベンチャー向けモデルまで豊富に取り揃え。用途に合わせてじっくり選べます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">ACHEROが選ばれる理由</div>
+  <div class="strengths">
+    <div class="strength-item">
+      <h4>代表・関さんによる丁寧な接客</h4>
+      <p>サイズ選びからウエアの着こなし方まで、細かい点まで教えてもらえると好評です。</p>
+    </div>
+    <div class="strength-item">
+      <h4>アドベンチャーライダーに強い品揃え</h4>
+      <p>KLIMをはじめとした本格アドベンチャーウエア、オフロード・アドベンチャーヘルメットなど専門性の高い商品を厳選。</p>
+    </div>
+    <div class="strength-item">
+      <h4>地元の走行スポット情報も教えてもらえる</h4>
+      <p>群馬県内の万沢林道・秋鹿大影林道など、近隣のおすすめツーリングスポットも案内してもらえます。</p>
+    </div>
+    <div class="strength-item">
+      <h4>BMW Motorrad Days Japan HAKUBAでも話題に</h4>
+      <p>イベントをきっかけに来店し、そのまま本格的な装備一式を揃えるライダーも多数。</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-title">店舗フォト</div>
+  <figure>
+    <img src="images/achero_hero.jpg" alt="ACHERO店舗外観">
+    <figcaption>群馬県中之条町にある本店（Dステーション横）</figcaption>
+  </figure>
+  <figure>
+    <img src="images/achero_klim_jacket.jpg" alt="KLIMジャケット陳列">
+    <figcaption>試着しながらじっくり選べるKLIMアパレルコーナー</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="section-title">お客様の声</div>
+  <div class="review-box">
+    <div class="stars">★★★★★</div>
+    <p>
+      BMW Motorrad Days Japan HAKUBAへ行った時に、渋川に店舗がある事を知って行きました。KLIMジャケット＆パンツはとにかくアドベンチャーバイクライフをしっかりサポートしてくれるつくりでした。ウエストベルトをしめれば更にジャケットは軽く感じました。<br>
+      KLIMジャケットは試着して上着はトールサイズのLかXL、パンツはトールサイズ34。代表の関さんが細かいところまで教えて頂き助かりました。<br>
+      ヘルメットに関してはオフロード用はめちゃ軽いのが第一印象でした。アドベンチャーヘルメットと悩むところです。近くには群馬県万沢林道や秋鹿大影林道等あると教えてもらったので是非走りに行こうと考えております。色々ありがとうございました。
+    </p>
+    <div class="reviewer">— ご来店のお客様</div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <table>
+    <tr><th>店名</th><td>パワースポーツショップACHERO（アチーロ）本店</td></tr>
+    <tr><th>住所</th><td>群馬県吾妻郡中之条町青山194 194-1 Dステーション横</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:08012328511">080-1232-8511</a></td></tr>
+    <tr><th>HP</th><td><a href="https://achero.jp/" target="_blank" rel="noopener">https://achero.jp/</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@achero.jp">info@achero.jp</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%90%BE%E5%A6%BB%E9%83%A1%E4%B8%AD%E4%B9%8B%E6%9D%A1%E7%94%BA%E9%9D%92%E5%B1%B1194-1&output=embed" loading="lazy"></iframe>
+  </div>
+  <div class="sns-links">
+    <a href="https://www.instagram.com/achero_jp/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://achero.jp/" target="_blank" rel="noopener">公式サイト</a>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-title" style="color:#fff;">まずはお気軽にご来店・お問い合わせください</div>
+  <p>KLIMアパレルやヘルメットなど、あなたにぴったりの一着をスタッフが丁寧にご案内します。</p>
+  <div class="cta-buttons">
+    <a href="tel:08012328511" class="call">📞 今すぐ電話する</a>
+    <a href="https://achero.jp/" target="_blank" rel="noopener" class="web">🌐 公式サイトを見る</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:08012328511" class="call-nav">📞 電話</a>
+  <a href="https://maps.google.com/maps?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%90%BE%E5%A6%BB%E9%83%A1%E4%B8%AD%E4%B9%8B%E6%9D%A1%E7%94%BA%E9%9D%92%E5%B1%B1194-1" target="_blank" rel="noopener">📍 地図</a>
+  <a href="https://www.instagram.com/achero_jp/" target="_blank" rel="noopener">📷 Instagram</a>
+  <a href="https://achero.jp/" target="_blank" rel="noopener">🌐 HP</a>
+</nav>
+
+</body>
+</html>
