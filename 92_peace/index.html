@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>peacetree｜群馬県高崎市のスポーツウェア専門店</title>
+<style>
+  :root{
+    --main:#1c3d5a;
+    --accent:#ff7a00;
+    --sub:#f4f7f9;
+    --text:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:var(--text);
+    line-height:1.7;
+    background:#fff;
+    padding-bottom:64px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:680px;margin:0 auto;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:#fff;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  header .shopname{
+    font-size:18px;
+    font-weight:bold;
+    color:var(--main);
+    letter-spacing:1px;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  main{margin-top:52px;}
+
+  /* hero */
+  .hero{position:relative;}
+  .hero img{width:100%;height:60vw;max-height:420px;object-fit:cover;}
+  .hero-catch{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(0deg, rgba(0,0,0,0.75) 20%, rgba(0,0,0,0));
+    color:#fff;
+    padding:30px 16px 18px;
+  }
+  .hero-catch .small{
+    font-size:13px;
+    letter-spacing:2px;
+    color:#ffd7a8;
+    margin-bottom:6px;
+  }
+  .hero-catch h1{
+    font-size:24px;
+    line-height:1.5;
+    font-weight:800;
+  }
+
+  section{padding:40px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:800;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent);
+    letter-spacing:3px;
+    margin-bottom:6px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:14px;
+    color:#555;
+    margin-bottom:28px;
+  }
+
+  /* featured product */
+  .featured{
+    background:var(--main);
+    color:#fff;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-lead{color:#cfe0ee;}
+  .featured-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+  }
+  .featured-card img{width:100%;}
+  .featured-card .body{padding:20px;}
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 12px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .featured-card h3{
+    font-size:20px;
+    color:var(--main);
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:16px;
+  }
+  .featured-points{
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .featured-points li{
+    font-size:14px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .featured-points li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-weight:bold;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px;
+    border-radius:10px;
+  }
+
+  /* strengths */
+  .strengths{background:var(--sub);}
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--main);
+    color:#fff;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main);
+    margin-bottom:4px;
+  }
+  .strength-item p{font-size:13px;color:#555;}
+
+  /* gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .gallery img{border-radius:12px;width:100%;}
+
+  /* review */
+  .review{background:#fff9f0;}
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.07);
+  }
+  .stars{color:#ffb400;font-size:18px;margin-bottom:10px;letter-spacing:2px;}
+  .review-card p{font-size:14px;color:#444;white-space:pre-line;}
+  .review-card .reviewer{
+    margin-top:14px;
+    font-size:12px;
+    color:#999;
+    text-align:right;
+  }
+
+  /* shop info */
+  .shopinfo table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .shopinfo th,.shopinfo td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #e2e2e2;
+    vertical-align:top;
+  }
+  .shopinfo th{
+    width:88px;
+    color:var(--main);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .shopinfo iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    border-radius:12px;
+    margin-top:16px;
+  }
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:6px;
+  }
+  .sns-links a{
+    background:var(--main);
+    color:#fff;
+    font-size:13px;
+    padding:8px 14px;
+    border-radius:20px;
+  }
+
+  /* final cta */
+  .final-cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{font-size:22px;margin-bottom:10px;}
+  .final-cta p{font-size:14px;color:#cfe0ee;margin-bottom:22px;}
+  .final-cta .cta-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .final-cta .cta-group a{
+    padding:14px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .final-cta .tel{background:var(--accent);color:#fff;}
+  .final-cta .form{background:#fff;color:var(--main);}
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:#999;
+    padding:20px;
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.1);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.tel{background:var(--accent);color:#fff;}
+  .bottom-nav .icon{display:block;font-size:18px;margin-bottom:2px;}
+
+  @media (min-width:600px){
+    .gallery{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">peacetree</div>
+  <a href="tel:0273842940" class="tel-btn">📞 電話で問合せ</a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="peacetree 店舗外観">
+    <div class="hero-catch">
+      <div class="small">群馬県高崎市 スポーツウェア専門店</div>
+      <h1>あなたの一着が、<br>次のパフォーマンスを変える。</h1>
+    </div>
+  </div>
+
+  <!-- FEATURED PRODUCT -->
+  <section class="featured">
+    <div class="wrap">
+      <p class="section-title"><span>ICHIOSHI ITEM</span>スポーツウェア</p>
+      <p class="section-lead">ランニング・トレイルランから普段使いまで。<br>あなたの動きに寄り添う一着を見つけます。</p>
+
+      <div class="featured-card">
+        <img src="images/product.jpg" alt="peacetree イチオシのスポーツウェア">
+        <div class="body">
+          <span class="featured-badge">STAFF PICK</span>
+          <h3>機能性×デザイン性の高いスポーツウェア</h3>
+          <p>吸汗速乾・軽量・動きやすさにこだわった、国内外の人気ブランドを豊富にラインナップ。トレラン初心者からベテランランナーまで、目的とレベルに合わせたウェア選びをスタッフが丁寧にサポートします。</p>
+          <ul class="featured-points">
+            <li>機能素材で快適な着心地をキープ</li>
+            <li>初心者にもわかりやすい丁寧な接客</li>
+            <li>サングラスなどアイテムも豊富に取扱い</li>
+          </ul>
+          <a href="tel:0273842940" class="cta-btn">お気軽にご相談ください</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section class="strengths">
+    <div class="wrap">
+      <p class="section-title"><span>POINT</span>peacetreeが選ばれる理由</p>
+      <div class="strength-list">
+        <div class="strength-item">
+          <div class="strength-num">1</div>
+          <div>
+            <h4>初心者にも丁寧なアドバイス</h4>
+            <p>運動を始めたばかりの方にも、目的や体格に合わせて分かりやすく説明。安心して相談できます。</p>
+          </div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-num">2</div>
+          <div>
+            <h4>豊富な品揃え</h4>
+            <p>スポーツウェアをはじめ、サングラスなどトレラン・ランニングに役立つアイテムを幅広く取扱い。</p>
+          </div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-num">3</div>
+          <div>
+            <h4>専門知識を持つスタッフ</h4>
+            <p>調光レンズなど機能性の高い商品についても、用途に合わせた最適な提案が受けられます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section>
+    <div class="wrap">
+      <p class="section-title"><span>SHOP</span>店内のご紹介</p>
+      <div class="gallery">
+        <img src="images/shop.jpg" alt="peacetree 店内の様子">
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW -->
+  <section class="review">
+    <div class="wrap">
+      <p class="section-title"><span>VOICE</span>お客様の声</p>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>TIMERのサングラスが欲しくて調べたところ、取扱い店ということで伺いました。
+TIMERのサングラスを観に来ました！とお伝えしたところ…
+誠にわかりやすいアドバイスを頂きトレランでも使用出来る調光レンズを購入致しました。
+トレラン初心者と伝えると、いろんな事を丁寧に教えて頂きました✨
+とても良い買い物が出来ました🙏</p>
+        <div class="reviewer">Googleクチコミより</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP INFO -->
+  <section class="shopinfo">
+    <div class="wrap">
+      <p class="section-title"><span>ACCESS</span>店舗情報</p>
+      <table>
+        <tr><th>店名</th><td>peacetree（ピーストゥリー）</td></tr>
+        <tr><th>住所</th><td>群馬県高崎市江木町1637-5</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0273842940">027-384-2940</a></td></tr>
+        <tr><th>HP</th><td><a href="https://peacetree.co.jp/" target="_blank" rel="noopener">https://peacetree.co.jp/</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://peacetree.co.jp/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:shop@peacetree.co.jp">shop@peacetree.co.jp</a></td></tr>
+        <tr><th>SNS</th><td>
+          <div class="sns-links">
+            <a href="https://www.instagram.com/peacetree2009/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </td></tr>
+      </table>
+      <iframe src="https://maps.google.com/maps?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E9%AB%98%E5%B4%8E%E5%B8%82%E6%B1%9F%E6%9C%A8%E7%94%BA1637-5&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="wrap">
+      <h2>まずはお気軽にご相談ください</h2>
+      <p>スポーツウェア選びのプロが、あなたにぴったりの一着をご提案します。</p>
+      <div class="cta-group">
+        <a href="tel:0273842940" class="tel">📞 027-384-2940</a>
+        <a href="https://peacetree.co.jp/contact/" class="form" target="_blank" rel="noopener">お問い合わせフォーム</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>&copy; peacetree</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0273842940" class="tel"><span class="icon">📞</span>電話</a>
+  <a href="https://peacetree.co.jp/contact/" target="_blank" rel="noopener"><span class="icon">✉️</span>問合せ</a>
+  <a href="https://www.instagram.com/peacetree2009/" target="_blank" rel="noopener"><span class="icon">📷</span>Instagram</a>
+  <a href="https://peacetree.co.jp/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
