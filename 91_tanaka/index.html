@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>田中商店｜群馬県桐生市の何でも屋・アウトドア用品なら田中商店</title>
+<style>
+  :root {
+    --main-color: #3e6b3a;
+    --sub-color: #f2a900;
+    --bg-cream: #faf6ee;
+    --text-dark: #33291f;
+    --accent-brown: #7a5c3e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: var(--text-dark);
+    background: var(--bg-cream);
+    line-height: 1.7;
+    padding-bottom: 60px;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* ヘッダー */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--main-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  header .tel-btn {
+    background: var(--sub-color);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  main { margin-top: 52px; }
+
+  /* ヒーロー */
+  .hero {
+    position: relative;
+    text-align: center;
+  }
+  .hero img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+  }
+  .hero-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: #fff;
+    padding: 30px 16px 16px;
+  }
+  .hero-overlay h1 {
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+  .hero-overlay p {
+    font-size: 13px;
+    margin-top: 6px;
+  }
+  .stars { color: #ffd54a; font-size: 15px; }
+
+  /* セクション共通 */
+  section { padding: 30px 16px; }
+  .section-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--sub-color);
+    margin: 8px auto 0;
+  }
+
+  /* イチオシ商品 */
+  .featured {
+    background: #fff;
+    border: 2px solid var(--sub-color);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .featured-badge {
+    background: var(--sub-color);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .featured img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .featured-body {
+    padding: 16px;
+  }
+  .featured-body h3 {
+    font-size: 18px;
+    color: var(--accent-brown);
+    margin-bottom: 8px;
+  }
+  .featured-body p {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  .cta-btn {
+    display: block;
+    text-align: center;
+    background: var(--main-color);
+    color: #fff;
+    padding: 14px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  /* 強み */
+  .strengths {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .strength-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .strength-icon {
+    font-size: 26px;
+  }
+  .strength-item h4 {
+    font-size: 15px;
+    color: var(--main-color);
+    margin-bottom: 4px;
+  }
+  .strength-item p {
+    font-size: 13px;
+  }
+
+  /* ギャラリー */
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .gallery img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* クチコミ */
+  .review {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .review .stars { color: var(--sub-color); margin-bottom: 6px; }
+  .review p {
+    font-size: 13px;
+  }
+  .review .date {
+    text-align: right;
+    font-size: 11px;
+    color: #999;
+    margin-top: 8px;
+  }
+
+  /* 店舗情報 */
+  .shop-info table {
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .shop-info th, .shop-info td {
+    padding: 12px;
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  .shop-info th {
+    background: #f0ebe0;
+    color: var(--accent-brown);
+    white-space: nowrap;
+    width: 90px;
+  }
+  .shop-info a { color: var(--main-color); text-decoration: underline; }
+  .map-frame {
+    margin-top: 14px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .map-frame iframe {
+    width: 100%;
+    height: 220px;
+    border: 0;
+  }
+
+  /* SNS・お問い合わせ */
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .contact-links a {
+    display: block;
+    background: #fff;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    text-align: center;
+    padding: 12px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  /* 最終CTA */
+  .final-cta {
+    background: var(--main-color);
+    color: #fff;
+    text-align: center;
+  }
+  .final-cta h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .final-cta p {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+  .final-cta .tel-big {
+    display: inline-block;
+    background: var(--sub-color);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px 30px;
+    border-radius: 30px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    padding: 20px 16px 80px;
+  }
+
+  /* フッターナビ */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    display: flex;
+    background: #fff;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+  }
+  .bottom-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--main-color);
+  }
+  .bottom-nav a.call {
+    background: var(--sub-color);
+    color: #fff;
+  }
+  .bottom-nav a.map {
+    background: var(--main-color);
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">田中商店</div>
+  <a href="tel:0277477808" class="tel-btn">📞 電話する</a>
+</header>
+
+<main>
+  <!-- ヒーロー -->
+  <div class="hero">
+    <img src="images/main.jpg" alt="田中商店 外観">
+    <div class="hero-overlay">
+      <h1>群馬県桐生市の何でも屋<br>田中商店</h1>
+      <p class="stars">★★★★★ 地元で愛される懐かしい風情のお店</p>
+    </div>
+  </div>
+
+  <!-- イチオシ商品 -->
+  <section>
+    <div class="section-title">イチオシ商品</div>
+    <div class="featured">
+      <div class="featured-badge">イチオシ！ アウトドア用品</div>
+      <img src="images/outdoor.jpg" alt="アウトドア用品">
+      <div class="featured-body">
+        <h3>キャンプ・薪から日用品まで揃うアウトドアコーナー</h3>
+        <p>新鮮野菜や薪などのアウトドアグッズまで、幅広い商品を取り揃えています。キャンプや焚き火に使う薪はもちろん、アウトドアシーンで役立つアイテムが充実。ちょっとした買い出しにも便利です。</p>
+        <a href="tel:0277477808" class="cta-btn">アウトドア用品について電話で問い合わせる</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section>
+    <div class="section-title">田中商店の魅力</div>
+    <div class="strengths">
+      <div class="strength-item">
+        <div class="strength-icon">🌿</div>
+        <div>
+          <h4>厳選されたアロマ・ハーブティー</h4>
+          <p>コンビニほどの広さの店内に、厳選されたアロマ用品やハーブティー、紅茶を販売。地元産の無農薬紅茶も並びます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-icon">☕</div>
+        <div>
+          <h4>コスパ抜群のカフェ・イートインコーナー</h4>
+          <p>ドリンクや軽食が楽しめるイートインコーナーがあり、買い物の合間にひと休みできます。プリンなど手作りスイーツも好評です。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-icon">🥬</div>
+        <div>
+          <h4>地元産の新鮮野菜</h4>
+          <p>地元産らしい新鮮な野菜が並び、地域に根ざした品揃え。青空市も時々開催しています。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-icon">😊</div>
+        <div>
+          <h4>親切・丁寧な接客</h4>
+          <p>「とても親切」と評判の接客で、初めての方でも安心して立ち寄れるお店です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ギャラリー -->
+  <section>
+    <div class="section-title">店内・店舗の様子</div>
+    <div class="gallery">
+      <img src="images/interior.jpg" alt="田中商店 店内の様子">
+      <img src="images/outdoor.jpg" alt="田中商店 アウトドア用品コーナー">
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section>
+    <div class="section-title">お客様の声</div>
+    <div class="review">
+      <div class="stars">★★★★☆</div>
+      <p>お店の広さは一般的なコンビニくらいかと思います。アウトドアやキャンプ用品はわからないのですが、厳選したアロマ用品、ハーブティー、紅茶などが販売されています。地元産らしい野菜、地元産らしい無農薬紅茶もありました。カフェメニューはコスパが良いです。</p>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>とても親切。外観は懐かしい風情の田中商店さん、新鮮野菜や薪などのアウトドアグッズまで、色々な商品を扱っていて楽しいです。ドリンクやイートインコーナーもあるので、☕🍛ひと休みも出来ますよ☺ 青空市も時々開催しているようです。プリン🍮がおいしかった‼️</p>
+      <div class="date">2023年5月8日</div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="shop-info">
+    <div class="section-title">店舗情報</div>
+    <table>
+      <tr><th>店名</th><td>田中商店</td></tr>
+      <tr><th>会社名</th><td>合同会社ビーバービレッジ</td></tr>
+      <tr><th>代表者</th><td>貝之瀨 賢人</td></tr>
+      <tr><th>住所</th><td>群馬県桐生市梅田町４丁目３２４−１</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0277477808">0277-47-7808</a></td></tr>
+      <tr><th>定休日</th><td>火曜日・水曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://www.tanakashoten2020online.com/" target="_blank">公式サイト</a></td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps?q=群馬県桐生市梅田町４丁目３２４−１&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- SNS・お問い合わせ -->
+  <section>
+    <div class="section-title">お問い合わせ・SNS</div>
+    <div class="contact-links">
+      <a href="https://www.instagram.com/tanakashoten2020/" target="_blank">📷 Instagramをフォローする</a>
+      <a href="https://www.tanakashoten2020online.com/contact" target="_blank">✉️ お問い合わせフォーム</a>
+      <a href="mailto:contact@tanakashoten2020.com">📧 メールで問い合わせる</a>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="final-cta">
+    <h2>アウトドア用品のことなら田中商店へ</h2>
+    <p>薪・キャンプ用品から新鮮野菜、こだわりのアロマまで。<br>お気軽にお電話ください。</p>
+    <a href="tel:0277477808" class="tel-big">📞 0277-47-7808</a>
+  </section>
+
+  <footer>
+    &copy; 田中商店（合同会社ビーバービレッジ）
+  </footer>
+</main>
+
+<div class="bottom-nav">
+  <a href="tel:0277477808" class="call">📞 電話</a>
+  <a href="https://www.google.com/maps?q=群馬県桐生市梅田町４丁目３２４−１" target="_blank" class="map">📍 地図</a>
+  <a href="https://www.instagram.com/tanakashoten2020/" target="_blank">📷 Instagram</a>
+</div>
+
+</body>
+</html>
