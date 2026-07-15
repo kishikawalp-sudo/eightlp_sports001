@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APORITO岡山｜アウトドア・スキー・スノーボード用品店</title>
+<style>
+  :root{
+    --main:#1b3a2f;
+    --accent:#ff7a00;
+    --sub:#f4f1ea;
+    --white:#ffffff;
+    --text:#2c2c2c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--white);
+    padding-bottom:60px; /* space for bottom nav */
+    line-height:1.6;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main);
+    color:var(--white);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name{font-size:16px;font-weight:bold;letter-spacing:0.5px;}
+  header .tel-btn{
+    background:var(--accent);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-space{height:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:var(--white);
+  }
+  .hero img{width:100%;height:340px;object-fit:cover;filter:brightness(0.55);}
+  .hero-text{
+    position:absolute;top:0;left:0;right:0;bottom:0;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:0 20px;
+  }
+  .hero-text .catch{
+    font-size:24px;font-weight:bold;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+    margin-bottom:10px;
+  }
+  .hero-text .sub{
+    font-size:14px;
+    background:rgba(0,0,0,0.4);
+    padding:6px 14px;
+    border-radius:16px;
+  }
+
+  section{padding:36px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:24px;
+    color:var(--main);
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent);
+    margin:10px auto 0;
+  }
+
+  /* Featured Product */
+  .featured{
+    background:var(--main);
+    color:var(--white);
+  }
+  .featured .section-title{color:var(--white);}
+  .featured .section-title::after{background:var(--accent);}
+  .featured-card{
+    background:var(--white);
+    color:var(--text);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+  }
+  .featured-card img{width:100%;height:220px;object-fit:cover;}
+  .featured-body{padding:18px;}
+  .featured-body .tag{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--white);
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 10px;
+    border-radius:12px;
+    margin-bottom:10px;
+  }
+  .featured-body h3{font-size:19px;margin-bottom:10px;color:var(--main);}
+  .featured-body p{font-size:14px;margin-bottom:14px;}
+  .featured-list{list-style:none;font-size:14px;margin-bottom:16px;}
+  .featured-list li{margin-bottom:8px;padding-left:20px;position:relative;}
+  .featured-list li::before{
+    content:"✓";
+    color:var(--accent);
+    font-weight:bold;
+    position:absolute;left:0;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:var(--white);
+    font-weight:bold;
+    font-size:16px;
+    padding:14px;
+    border-radius:8px;
+  }
+
+  /* Strengths */
+  .strengths{background:var(--sub);}
+  .strength-grid{display:flex;flex-direction:column;gap:16px;}
+  .strength-item{
+    background:var(--white);
+    border-radius:10px;
+    padding:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:36px;height:36px;
+    background:var(--main);
+    color:var(--white);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+  }
+  .strength-item h4{font-size:15px;margin-bottom:6px;color:var(--main);}
+  .strength-item p{font-size:13px;color:#555;}
+
+  /* Gallery */
+  .gallery{}
+  .gallery img{
+    border-radius:10px;
+    height:180px;
+    width:100%;
+    object-fit:cover;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Reviews */
+  .reviews{background:var(--sub);}
+  .review-card{
+    background:var(--white);
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .review-card .stars{color:var(--accent);font-size:16px;margin-bottom:8px;}
+  .review-card p{font-size:13.5px;color:#444;}
+
+  /* Shop Info */
+  .info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .info th{
+    background:var(--main);
+    color:var(--white);
+    text-align:left;
+    padding:10px;
+    width:30%;
+    font-weight:normal;
+    vertical-align:top;
+  }
+  .info td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+    vertical-align:top;
+    word-break:break-all;
+  }
+  .info iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    margin-top:16px;
+    border-radius:8px;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--accent);
+    color:var(--white);
+    text-align:center;
+  }
+  .final-cta h2{font-size:20px;margin-bottom:10px;}
+  .final-cta p{font-size:13px;margin-bottom:20px;opacity:0.95;}
+  .final-cta .btn-white{
+    display:inline-block;
+    background:var(--white);
+    color:var(--accent);
+    font-weight:bold;
+    padding:14px 30px;
+    border-radius:24px;
+    font-size:15px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:#888;
+    padding:20px;
+    background:var(--white);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:var(--main);
+    z-index:1000;
+    box-shadow:0 -2px 6px rgba(0,0,0,0.2);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    color:var(--white);
+    font-size:12px;
+    padding:10px 4px;
+    border-right:1px solid rgba(255,255,255,0.15);
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.accent{background:var(--accent);font-weight:bold;}
+  .bottom-nav .icon{display:block;font-size:16px;margin-bottom:2px;}
+
+  @media (min-width:600px){
+    .strength-grid{flex-direction:row;flex-wrap:wrap;}
+    .strength-item{flex:1 1 45%;}
+    .gallery{display:flex;gap:14px;}
+    .gallery img{margin-bottom:0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">APORITO岡山</div>
+  <a href="tel:0862444106" class="tel-btn">📞 電話する</a>
+</header>
+<div class="header-space"></div>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="APORITO岡山 店舗外観">
+  <div class="hero-text">
+    <div class="catch">アウトドア・スキー・スノーボードなら<br>APORITO岡山へ</div>
+    <div class="sub">POWER'S岡山南 1階フロア全てがアウトドア用品売場に</div>
+  </div>
+</div>
+
+<!-- Featured Product -->
+<section class="featured">
+  <div class="section-title">イチオシ商品</div>
+  <div class="featured-card">
+    <img src="images/product.jpg" alt="アウトドア用品・スキー・スノーボード用品">
+    <div class="featured-body">
+      <span class="tag">今シーズン注目</span>
+      <h3>アウトドア用品／スキー・スノーボード用品</h3>
+      <p>キャンプギアからスキー・スノーボードまで、シーズンに合わせた豊富な品揃え。広い通路でゆったり商品を選べる、岡山エリア最大級のアウトドア専門フロアです。</p>
+      <ul class="featured-list">
+        <li>キャンプ・アウトドア用品が充実</li>
+        <li>スキー・スノーボード用品も豊富に取り揃え</li>
+        <li>知識豊富なスタッフが選び方をアドバイス</li>
+        <li>見やすく広々とした売場レイアウト</li>
+      </ul>
+      <a href="tel:0862444106" class="cta-btn">商品について問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="strength-grid">
+    <div class="strength-item">
+      <div class="num">1</div>
+      <div>
+        <h4>1階全フロアがアウトドア専門売場</h4>
+        <p>POWER'Sのリニューアルオープンにより、1階すべてがアウトドア用品売場に。ジャンルを問わず幅広く商品を探せます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">2</div>
+      <div>
+        <h4>見やすい売場・広い通路</h4>
+        <p>商品レイアウトが工夫されており、他店に比べて通路も広め。ゆったりと商品を見比べながら選べます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">3</div>
+      <div>
+        <h4>知識豊富なスタッフによる接客</h4>
+        <p>スタッフの接客・知識レベルが高く、おすすめのキャンプ場やスキー場情報など、お店ならではの情報収集も可能です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">4</div>
+      <div>
+        <h4>年中無休で営業</h4>
+        <p>年中無休なので、思い立った時にいつでも立ち寄れます。週末は多くのお客様で賑わう人気店です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery-section">
+  <div class="section-title">店内のようす</div>
+  <div class="gallery">
+    <img src="images/store.jpg" alt="APORITO岡山 店内の様子">
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>POWER'Sがリニューアルオープンし、1階全てがアウトドア用品売場になりました。コロナ禍のアウトドアブームにより、週末はお客さんが多いです。商品のレイアウトや他店に比べて広い通路が良く見やすいです。この日はホーロー製マグカップを買いました。APORITOステッカーを販売して欲しいです。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>よく利用してます、店員さんの接客や知識も豊富なため良いお店だと思います、良いキャンプ場やスキー場など情報収集出来ます。ただAmazonなどと比べると特別値段が安いわけではなく、お店特有の何かがあるわけでもないので、結局安いAmazonで買ってしまいます…</p>
+  </div>
+</section>
+
+<!-- Shop Info -->
+<section class="info">
+  <div class="section-title">店舗情報</div>
+  <table>
+    <tr><th>店名</th><td>APORITO岡山</td></tr>
+    <tr><th>定休日</th><td>年中無休</td></tr>
+    <tr><th>住所</th><td>岡山県岡山市南区西市115−5</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0862444106">086-244-4106</a></td></tr>
+    <tr><th>会社名</th><td>RIZAP株式会社</td></tr>
+    <tr><th>代表者名</th><td>瀬戸 健</td></tr>
+    <tr><th>HP</th><td><a href="https://aporito-online.com/pages/store-aporito-okayama" target="_blank">公式サイトはこちら</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://aporito-online.com/pages/contact" target="_blank">お問い合わせフォーム</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://www.instagram.com/aporito_official/?hl=ja" target="_blank">Instagram</a></td></tr>
+  </table>
+  <iframe src="https://maps.google.com/maps?q=岡山県岡山市南区西市115-5&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <h2>アウトドア・スキー用品はAPORITO岡山で</h2>
+  <p>年中無休で営業中。お気軽にお問い合わせください。</p>
+  <a href="tel:0862444106" class="btn-white">📞 086-244-4106</a>
+</section>
+
+<footer>
+  &copy; APORITO岡山（RIZAP株式会社）
+</footer>
+
+<!-- Bottom Nav -->
+<div class="bottom-nav">
+  <a href="tel:0862444106"><span class="icon">📞</span>電話</a>
+  <a href="https://aporito-online.com/pages/store-aporito-okayama" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="https://www.instagram.com/aporito_official/?hl=ja" target="_blank"><span class="icon">📷</span>SNS</a>
+  <a href="https://aporito-online.com/pages/contact" target="_blank" class="accent"><span class="icon">✉️</span>お問い合わせ</a>
+</div>
+
+</body>
+</html>
