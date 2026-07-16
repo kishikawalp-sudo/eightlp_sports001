@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>レギュラースポーツ | コーチング事業のご案内</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#152238;
+    --navy-2:#1f3358;
+    --gold:#b8912f;
+    --cream:#f7f4ec;
+    --line:#e4ddc9;
+  }
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--cream);
+    color:var(--navy);
+    padding-bottom:64px; /* space for fixed bottom nav */
+  }
+  .font-mincho{font-family:'Shippori Mincho',serif;}
+
+  /* signature: ascending growth-path rule, used as section divider */
+  .path-divider{
+    position:relative;
+    height:34px;
+    margin:0 auto;
+    width:100%;
+    max-width:340px;
+  }
+  .path-divider svg{width:100%;height:100%;display:block;}
+
+  .cta-btn{
+    display:block;
+    background:var(--gold);
+    color:#fff;
+    text-align:center;
+    padding:16px;
+    font-weight:700;
+    letter-spacing:.02em;
+    border-radius:2px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .cta-btn:active{transform:translateY(1px);}
+
+  .eyebrow{
+    font-family:'Shippori Mincho',serif;
+    letter-spacing:.35em;
+    font-size:.7rem;
+    color:var(--gold);
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .fade-up{
+      opacity:0;
+      transform:translateY(14px);
+      animation:fadeUp .7s ease forwards;
+    }
+    @keyframes fadeUp{
+      to{opacity:1;transform:translateY(0);}
+    }
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- ヘッダー -->
+<header class="fixed top-0 inset-x-0 z-40 bg-[var(--navy)] text-white">
+  <div class="max-w-3xl mx-auto flex items-center justify-between px-4 py-3">
+    <span class="font-mincho text-lg tracking-wider">レギュラースポーツ</span>
+    <a href="tel:0868053714" class="flex items-center gap-2 border border-[var(--gold)] text-[var(--gold)] text-sm px-3 py-1.5 rounded-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.4 11.4 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4.5a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+      086-805-3714
+    </a>
+  </div>
+</header>
+
+<div class="max-w-3xl mx-auto px-5 pt-20">
+
+  <!-- メインビジュアル/ヒーロー -->
+  <section class="text-center py-12 fade-up">
+    <p class="eyebrow mb-4">REGULAR SPORTS COACHING</p>
+    <h1 class="font-mincho text-3xl sm:text-4xl leading-snug mb-5">
+      「続ける力」が、<br>その子の可能性を伸ばす。
+    </h1>
+    <p class="text-sm sm:text-base leading-relaxed text-slate-700 max-w-md mx-auto mb-8">
+      副業からの経験と小回りのきく対応で、スポーツの魅力を全力でサポートします。
+      日頃の学校外商で培った信頼関係と、スポーツ現場を知り尽くしたプロの視点で、
+      一人ひとりに寄り添った指導をいたします。
+    </p>
+    <img src="images/main_visual.jpg" alt="レギュラースポーツ メインビジュアル" class="w-full rounded-sm mb-8 shadow-sm">
+    <a href="https://regular-sports.jp/contact" class="cta-btn max-w-xs mx-auto">コーチングについて問い合わせる</a>
+  </section>
+
+  <div class="path-divider">
+    <svg viewBox="0 0 340 34" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="4,30 90,26 170,14 250,18 336,4" fill="none" stroke="var(--gold)" stroke-width="2"/>
+      <circle cx="336" cy="4" r="4" fill="var(--gold)"/>
+    </svg>
+  </div>
+
+  <!-- コーチング事業について -->
+  <section class="py-12 fade-up">
+    <p class="eyebrow mb-2">ABOUT COACHING</p>
+    <h2 class="font-mincho text-2xl mb-6 border-l-4 border-[var(--gold)] pl-4">コーチング事業について</h2>
+    <img src="images/coaching.jpg" alt="コーチング風景" class="w-full rounded-sm mb-6 shadow-sm">
+    <p class="text-sm sm:text-base leading-relaxed text-slate-700">
+      当社では、スポーツを通じた人間形成や技術向上を目的としたコーチング事業を展開しています。
+      日頃の学校外商で培った信頼関係と、スポーツ現場を知り尽くしたプロの視点で、
+      一人ひとりに寄り添った指導をいたします。
+    </p>
+  </section>
+
+  <div class="path-divider">
+    <svg viewBox="0 0 340 34" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="4,20 90,28 170,10 250,16 336,6" fill="none" stroke="var(--gold)" stroke-width="2"/>
+      <circle cx="336" cy="6" r="4" fill="var(--gold)"/>
+    </svg>
+  </div>
+
+  <!-- 企業の想い -->
+  <section class="py-12 fade-up">
+    <p class="eyebrow mb-2">OUR VALUES</p>
+    <h2 class="font-mincho text-2xl mb-6 border-l-4 border-[var(--gold)] pl-4">レギュラースポーツの強み</h2>
+    <p class="text-sm sm:text-base leading-relaxed text-slate-700">
+      「小さい店舗だからこその小回りのきく対応」を大切にしています。
+      アナログな伝統を活かしつつ、新時代に合わせた新しい営業スタイルで、
+      地域のスポーツ振興に貢献します。
+    </p>
+  </section>
+
+  <div class="path-divider">
+    <svg viewBox="0 0 340 34" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="4,26 90,18 170,24 250,8 336,12" fill="none" stroke="var(--gold)" stroke-width="2"/>
+      <circle cx="336" cy="12" r="4" fill="var(--gold)"/>
+    </svg>
+  </div>
+
+  <!-- CTA再訴求 -->
+  <section class="py-10 text-center fade-up">
+    <h2 class="font-mincho text-xl mb-4">お子様の可能性を、<br>一緒に伸ばしませんか。</h2>
+    <a href="https://regular-sports.jp/contact" class="cta-btn max-w-xs mx-auto">コーチングについて問い合わせる</a>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="py-12 fade-up">
+    <p class="eyebrow mb-2">SHOP INFO</p>
+    <h2 class="font-mincho text-2xl mb-6 border-l-4 border-[var(--gold)] pl-4">店舗情報</h2>
+    <table class="w-full text-sm border-collapse mb-6">
+      <tbody class="divide-y divide-[var(--line)]">
+        <tr><th class="text-left font-medium text-slate-500 py-3 pr-4 w-24 align-top">店名</th><td class="py-3">レギュラースポーツ</td></tr>
+        <tr><th class="text-left font-medium text-slate-500 py-3 pr-4 align-top">代表者</th><td class="py-3">古川 和也</td></tr>
+        <tr><th class="text-left font-medium text-slate-500 py-3 pr-4 align-top">住所</th><td class="py-3">岡山県岡山市北区北長瀬表町2丁目13−28</td></tr>
+        <tr><th class="text-left font-medium text-slate-500 py-3 pr-4 align-top">電話番号</th><td class="py-3"><a href="tel:0868053714" class="underline decoration-[var(--gold)]">086-805-3714</a></td></tr>
+        <tr><th class="text-left font-medium text-slate-500 py-3 pr-4 align-top">定休日</th><td class="py-3">年末年始、日曜日、祝日</td></tr>
+        <tr><th class="text-left font-medium text-slate-500 py-3 pr-4 align-top">メール</th><td class="py-3"><a href="mailto:furukawa@regular-sports.jp" class="underline decoration-[var(--gold)]">furukawa@regular-sports.jp</a></td></tr>
+        <tr><th class="text-left font-medium text-slate-500 py-3 pr-4 align-top">公式サイト</th><td class="py-3"><a href="https://regular-sports.jp/" class="underline decoration-[var(--gold)]">https://regular-sports.jp/</a></td></tr>
+      </tbody>
+    </table>
+    <div class="rounded-sm overflow-hidden shadow-sm">
+      <iframe
+        src="https://www.google.com/maps?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8C%97%E5%8C%BA%E5%8C%97%E9%95%B7%E7%80%AC%E8%A1%A8%E7%94%BA2%E4%B8%81%E7%9B%AE13-28&output=embed"
+        width="100%" height="220" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="レギュラースポーツ 地図">
+      </iframe>
+    </div>
+  </section>
+
+  <footer class="text-center py-10 text-xs text-slate-500">
+    &copy; 株式会社レギュラースポーツ
+  </footer>
+</div>
+
+<!-- 固定フッターナビ（モバイル） -->
+<nav class="fixed bottom-0 inset-x-0 z-40 bg-[var(--navy)] text-white flex">
+  <a href="tel:0868053714" class="flex-1 flex flex-col items-center justify-center py-2 text-xs gap-0.5">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.4 11.4 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4.5a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+    電話する
+  </a>
+  <a href="https://regular-sports.jp/contact" class="flex-1 flex flex-col items-center justify-center py-2 text-xs gap-0.5 bg-[var(--gold)]">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    お問い合わせ
+  </a>
+  <a href="https://regular-sports.jp/" class="flex-1 flex flex-col items-center justify-center py-2 text-xs gap-0.5">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3z"/></svg>
+    公式サイト
+  </a>
+</nav>
+
+</body>
+</html>
