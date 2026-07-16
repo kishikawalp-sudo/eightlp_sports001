@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アシーズブリッジ 岡山店｜登山・アウトドア用品専門店</title>
+<style>
+  :root{
+    --main-color:#1b4332;
+    --sub-color:#2d6a4f;
+    --accent-color:#d9822b;
+    --bg-light:#f7f5f0;
+    --text-dark:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;width:100%;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:10px 14px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shop-name{font-size:15px;font-weight:bold;}
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:14px;
+    white-space:nowrap;
+  }
+  .header-spacer{height:56px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{width:100%;height:auto;}
+  .hero-text{
+    position:absolute;
+    bottom:0;left:0;width:100%;
+    background:linear-gradient(transparent, rgba(0,0,0,.75));
+    color:#fff;
+    padding:30px 16px 20px;
+    text-align:center;
+  }
+  .hero-text h1{
+    font-size:22px;
+    line-height:1.5;
+    margin-bottom:8px;
+    text-shadow:1px 1px 4px rgba(0,0,0,.6);
+  }
+  .hero-text p{font-size:13px;opacity:.9;}
+
+  section{padding:36px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    color:var(--main-color);
+    margin-bottom:24px;
+    position:relative;
+    padding-bottom:12px;
+  }
+  .section-title:after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    width:50px;height:3px;
+    background:var(--accent-color);
+  }
+
+  /* featured product */
+  .featured{
+    background:var(--bg-light);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    border:2px solid var(--accent-color);
+  }
+  .featured-card img{width:100%;}
+  .featured-badge{
+    background:var(--accent-color);
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    padding:10px;
+    font-size:15px;
+    letter-spacing:1px;
+  }
+  .featured-body{padding:18px;}
+  .featured-body h3{
+    color:var(--main-color);
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .featured-body p{font-size:14px;margin-bottom:14px;}
+  .featured-list{list-style:none;margin-bottom:16px;}
+  .featured-list li{
+    font-size:13px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .featured-list li:before{
+    content:"✓";
+    color:var(--accent-color);
+    font-weight:bold;
+    position:absolute;left:0;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    padding:14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+
+  /* strengths */
+  .strengths-grid{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:var(--bg-light);
+    border-radius:10px;
+    padding:16px;
+  }
+  .strength-num{
+    flex:0 0 auto;
+    width:36px;height:36px;
+    background:var(--sub-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+  }
+  .strength-item h4{
+    color:var(--main-color);
+    font-size:15px;
+    margin-bottom:4px;
+  }
+  .strength-item p{font-size:13px;}
+
+  /* story */
+  .story{background:var(--main-color);color:#fff;}
+  .story .section-title{color:#fff;}
+  .story .section-title:after{background:var(--accent-color);}
+  .story img{border-radius:10px;margin-bottom:18px;}
+  .story p{font-size:13.5px;margin-bottom:12px;}
+  .story .rep{font-size:13px;text-align:right;opacity:.85;}
+
+  /* reviews */
+  .review-card{
+    background:var(--bg-light);
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:16px;
+    border-left:4px solid var(--accent-color);
+  }
+  .stars{color:var(--accent-color);font-size:15px;margin-bottom:8px;letter-spacing:2px;}
+  .review-card p{font-size:13px;}
+
+  /* shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .shop-info th,.shop-info td{
+    padding:12px 8px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-info th{
+    color:var(--main-color);
+    width:30%;
+    white-space:nowrap;
+    font-weight:bold;
+  }
+  .shop-info td a{color:var(--sub-color);text-decoration:underline;word-break:break-all;}
+  .map-wrap{margin-top:18px;border-radius:10px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  .sns-icons{
+    display:flex;gap:14px;margin-top:6px;
+  }
+  .sns-icons a{
+    background:var(--sub-color);
+    color:#fff;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+  }
+
+  /* final CTA */
+  .final-cta{
+    background:var(--accent-color);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{font-size:20px;margin-bottom:14px;}
+  .final-cta p{font-size:13px;margin-bottom:20px;}
+  .final-cta .cta-btn{background:#fff;color:var(--accent-color);}
+  .final-cta .cta-btn.tel{margin-top:12px;background:var(--main-color);color:#fff;}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;width:100%;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  .bottom-nav a.call{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .bottom-nav a.map{
+    background:var(--main-color);
+    color:#fff;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">アシーズブリッジ 岡山店</div>
+  <a href="tel:0849212435" class="tel-btn">📞 電話する</a>
+</header>
+<div class="header-spacer"></div>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="アシーズブリッジ岡山店 店内風景">
+  <div class="hero-text">
+    <h1>登山・アウトドアの「第一の関門」を、<br>あなたと一緒に越える。</h1>
+    <p>創業1986年｜登山用品からキャンプ用品まで品揃え豊富な岡山のプロショップ</p>
+  </div>
+</div>
+
+<section class="featured">
+  <h2 class="section-title">イチオシ商品</h2>
+  <div class="featured-card">
+    <img src="images/featured-item.jpg" alt="イチオシのアウトドア用品">
+    <div class="featured-badge">★ STAFF'S PICK ★ アウトドア用品 総力特集</div>
+    <div class="featured-body">
+      <h3>プロの目で選ぶ、確かなアウトドアギア</h3>
+      <p>登山ザック・ウェア・シューズから、キャンプ用品、日常使いできるアウターまで。豊富な品揃えの中から、あなたの使い方にぴったりの一品をスタッフが一緒に探します。</p>
+      <ul class="featured-list">
+        <li>ALTRA取扱店｜豊富なサイズ・モデル展開</li>
+        <li>登山用品〜キャンプ用品まで幅広くラインナップ</li>
+        <li>試着OK｜自分に合う一足をじっくり選べる</li>
+        <li>専門知識豊富なスタッフが丁寧に説明</li>
+      </ul>
+      <a href="tel:0849212435" class="cta-btn">商品について電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">選ばれる理由</h2>
+  <div class="strengths-grid">
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div>
+        <h4>圧倒的な品揃え</h4>
+        <p>登山用品からキャンプ用品まで、ジャンルを問わず幅広く取り揃えています。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div>
+        <h4>使うシーンに合わせた提案力</h4>
+        <p>どんな場所で、どう使いたいかを伝えると、それに合う製品を持ってきて分かりやすく説明。良い点・そうでない点も正直に教えてくれます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div>
+        <h4>押し売りしない接客</h4>
+        <p>強引に売り付けることなく、納得して選べるまでしっかり付き合ってくれる、感じの良いスタッフばかりです。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">4</div>
+      <div>
+        <h4>創業1986年の実績と知識</h4>
+        <p>メーカーにもユーザーにも近い専門店として、長年の経験と知恵を積み重ね、公平な視点で確かな情報を提供しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <h2 class="section-title">創業者ストーリー</h2>
+  <img src="images/store-front.jpg" alt="アシーズブリッジ岡山店 外観">
+  <p>ようこそ、登山・アウトドアのプロショップ、アシーズブリッジです。</p>
+  <p>ちょっと変わった名前ですが、ちゃんと由来があります。アシーズブリッジとは、直訳すると「ロバの落ちる橋」。ユークリッド幾何学で多くの学生が初めてつまづく問題を指す慣用句で、つまり「第一の関門」という意味です。</p>
+  <p>橋から落ちて、アウトドアで不快な思いをしないよう、さらなるステップの踏み台となれるよう、私たちはお役に立てればと考えています。</p>
+  <p>様々な情報が飛び交う今、メーカーにもユーザーにも一番近い専門店として、創業1986年からの経験と知識と知恵の集積で、公平にプロの目で選んだ確かな情報提供こそが、私たちの役割であり最大の強みです。</p>
+  <p class="rep">代表者：藤原 一彦</p>
+</section>
+
+<section class="reviews">
+  <h2 class="section-title">お客様の声</h2>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>登山用品からキャンプ用品まで品数が多いです。触って落としてしまったものは傷の有無を10分ほど検品されました。大丈夫そうでしたが、うっかり触ると買わされるリスクがあるのかも…とは思いました。ただ試着自体は問題なくできるようです。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>登山ザック、ウェア、靴、小物、日常用の上着まで購入しています。迷ったときは良い点・そうでない点をしっかり説明してくれ、使いたい場所や着用シーンを伝えると合う製品を分かりやすく紹介してくれます。強引に押し付けず、みなさん感じの良い店員さんばかり。相談しながら選べて、実際とても快適に使えています。ALTRAのスニーカーを探して訪れましたが、種類も豊富でスタッフも皆フレンドリー、良い買い物ができました。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <h2 class="section-title">店舗情報</h2>
+  <table>
+    <tr><th>店名</th><td>アシーズブリッジ 岡山店</td></tr>
+    <tr><th>会社名</th><td>株式会社アシーズ</td></tr>
+    <tr><th>代表者</th><td>藤原 一彦</td></tr>
+    <tr><th>住所</th><td>岡山県岡山市北区横井上57−1</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0849212435">084-921-2435</a></td></tr>
+    <tr><th>定休日</th><td>毎週木曜日、20日前後の水曜日</td></tr>
+    <tr><th>HP</th><td><a href="https://superassesbridge.com/" target="_blank">https://superassesbridge.com/</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://superassesbridge.com/ssl/contact/" target="_blank">お問い合わせフォーム</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:ab0849212435@gmail.com">ab0849212435@gmail.com</a></td></tr>
+    <tr>
+      <th>SNS</th>
+      <td>
+        <div class="sns-icons">
+          <a href="https://www.facebook.com/people/%E3%82%A2%E3%82%B7%E3%83%BC%E3%82%BA%E3%83%96%E3%83%AA%E3%83%83%E3%82%B8/100057538356410/#" target="_blank">Facebook</a>
+          <a href="https://www.youtube.com/user/assesonlineshop" target="_blank">YouTube</a>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A8%AA%E4%BA%95%E4%B8%8A57-1&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>あなたにぴったりのアウトドアギア、プロのスタッフが一緒に見つけます。</p>
+  <a href="tel:0849212435" class="cta-btn tel">📞 084-921-2435 に電話する</a>
+  <a href="https://superassesbridge.com/ssl/contact/" target="_blank" class="cta-btn">お問い合わせフォームへ</a>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0849212435" class="call">📞 電話</a>
+  <a href="https://superassesbridge.com/ssl/contact/" target="_blank">✉️ お問合せ</a>
+  <a href="https://maps.google.com/maps?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8C%97%E5%8C%BA%E6%A8%AA%E4%BA%95%E4%B8%8A57-1" target="_blank" class="map">📍 地図</a>
+</nav>
+
+</body>
+</html>
