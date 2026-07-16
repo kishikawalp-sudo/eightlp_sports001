@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プレイスポーツ｜グラブ湯もみ加工 岡山県倉敷市</title>
+<style>
+  :root{
+    --main-color:#1b5e3c;
+    --sub-color:#f2a900;
+    --dark-color:#1a1a1a;
+    --light-bg:#f7f7f2;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark-color);
+    line-height:1.7;
+    background:var(--white);
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:var(--white);
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 12px;
+  }
+  header .shop-name{
+    font-size:16px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--sub-color);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-space{height:56px;}
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:var(--white);
+  }
+  .hero img{
+    width:100%;
+    height:60vh;
+    object-fit:cover;
+    filter:brightness(0.6);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+  }
+  .hero-text .sub{
+    margin-top:10px;
+    font-size:14px;
+    background:var(--main-color);
+    display:inline-block;
+    padding:6px 16px;
+    border-radius:20px;
+  }
+
+  section{
+    padding:40px 20px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:24px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--sub-color);
+    margin:10px auto 0;
+  }
+
+  /* イチオシ商品 */
+  .featured{
+    background:var(--light-bg);
+  }
+  .featured-card{
+    background:var(--white);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  }
+  .featured-card img{
+    width:100%;
+  }
+  .featured-card .badge{
+    background:var(--sub-color);
+    color:var(--white);
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 14px;
+    display:inline-block;
+    margin:16px 0 0 16px;
+    border-radius:20px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main-color);
+    padding:10px 16px 0;
+  }
+  .featured-card p{
+    padding:10px 16px 20px;
+    font-size:14px;
+  }
+  .featured-list{
+    padding:0 16px 20px;
+  }
+  .featured-list li{
+    list-style:none;
+    padding:8px 0;
+    border-bottom:1px dashed #ddd;
+    font-size:14px;
+    display:flex;
+    align-items:flex-start;
+  }
+  .featured-list li::before{
+    content:"⚾";
+    margin-right:8px;
+  }
+  .cta-inline{
+    display:block;
+    text-align:center;
+    background:var(--main-color);
+    color:var(--white);
+    font-weight:bold;
+    padding:14px;
+    margin:16px;
+    border-radius:8px;
+    font-size:15px;
+  }
+
+  /* 強み */
+  .strengths ul{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strengths li{
+    list-style:none;
+    background:var(--white);
+    border:1px solid #eee;
+    border-radius:10px;
+    padding:16px;
+    display:flex;
+    gap:14px;
+    align-items:center;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  }
+  .strengths .num{
+    background:var(--main-color);
+    color:var(--white);
+    min-width:36px;
+    height:36px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+  }
+  .strengths .txt h4{
+    font-size:15px;
+    color:var(--main-color);
+    margin-bottom:4px;
+  }
+  .strengths .txt p{
+    font-size:13px;
+  }
+
+  /* 店舗写真 */
+  .shop-photo{
+    background:var(--light-bg);
+  }
+  .shop-photo img{
+    border-radius:12px;
+  }
+
+  /* 口コミ */
+  .review{
+    background:var(--white);
+  }
+  .review-card{
+    background:var(--light-bg);
+    border-radius:10px;
+    padding:20px;
+    position:relative;
+  }
+  .stars{
+    color:var(--sub-color);
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .review-card p{
+    font-size:14px;
+  }
+  .review-card .name{
+    margin-top:14px;
+    font-size:13px;
+    text-align:right;
+    color:#666;
+  }
+
+  /* 店舗情報 */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .shop-info th,.shop-info td{
+    padding:12px 8px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-info th{
+    width:90px;
+    color:var(--main-color);
+    white-space:nowrap;
+  }
+  .shop-info iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    border-radius:10px;
+    margin-top:16px;
+  }
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:6px;
+    flex-wrap:wrap;
+  }
+  .sns-links a{
+    background:var(--main-color);
+    color:var(--white);
+    font-size:12px;
+    padding:6px 12px;
+    border-radius:20px;
+  }
+
+  /* CTA セクション */
+  .cta-section{
+    background:var(--main-color);
+    color:var(--white);
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:20px;
+    margin-bottom:16px;
+  }
+  .cta-section .tel-num{
+    font-size:26px;
+    font-weight:bold;
+    display:block;
+    margin:16px 0;
+  }
+  .cta-buttons a{
+    display:block;
+    background:var(--sub-color);
+    color:var(--white);
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    margin:10px 0;
+  }
+  .cta-buttons a.outline{
+    background:transparent;
+    border:2px solid var(--white);
+  }
+
+  /* フッターナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:var(--white);
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main-color);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{
+    border-right:none;
+    background:var(--sub-color);
+    color:var(--white);
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">プレイスポーツ</div>
+  <a href="tel:0864723099" class="tel-btn">📞 今すぐ電話</a>
+</header>
+<div class="header-space"></div>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="プレイスポーツ 店舗外観">
+  <div class="hero-text">
+    <p class="catch">お子様のグローブ選びは<br>プレイスポーツにお任せください</p>
+    <p class="sub">岡山県倉敷市児島小川町</p>
+  </div>
+</div>
+
+<!-- イチオシ商品 -->
+<section class="featured">
+  <h2 class="section-title">イチオシサービス</h2>
+  <div class="featured-card">
+    <img src="images/yumomi.jpg" alt="グラブ湯もみ加工">
+    <span class="badge">当店イチオシ</span>
+    <h3>グラブ湯もみ加工</h3>
+    <p>新品グローブの硬さでお困りではありませんか？プレイスポーツでは、職人が手がける「湯もみ加工」で、購入したその日から使いやすい、しなやかなグローブに仕上げます。</p>
+    <ul class="featured-list">
+      <li>お湯でじっくりほぐし型崩れを防止</li>
+      <li>捕球しやすいポケットを職人がしっかり形成</li>
+      <li>低学年のお子様のグローブにも対応</li>
+    </ul>
+    <a href="tel:0864723099" class="cta-inline">湯もみ加工のご相談はこちら</a>
+  </div>
+</section>
+
+<!-- 選ばれる理由 -->
+<section class="strengths">
+  <h2 class="section-title">プレイスポーツが選ばれる理由</h2>
+  <ul>
+    <li>
+      <div class="num">1</div>
+      <div class="txt">
+        <h4>丁寧な接客対応</h4>
+        <p>お客様一人ひとりに合わせた対応で、お子様にも安心してご来店いただけます。</p>
+      </div>
+    </li>
+    <li>
+      <div class="num">2</div>
+      <div class="txt">
+        <h4>低学年から使えるグローブ</h4>
+        <p>体格や年齢に合わせたグローブを豊富に取り揃え、ぴったりの一品が見つかります。</p>
+      </div>
+    </li>
+    <li>
+      <div class="num">3</div>
+      <div class="txt">
+        <h4>職人技の湯もみ加工</h4>
+        <p>購入後すぐに使いやすいグローブへ。お子様の「お気に入り」を全力でサポートします。</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- 店舗写真 -->
+<section class="shop-photo">
+  <h2 class="section-title">店内のご紹介</h2>
+  <img src="images/shop.jpg" alt="プレイスポーツ 店内の様子" style="border-radius:12px;">
+</section>
+
+<!-- 口コミ -->
+<section class="review">
+  <h2 class="section-title">お客様の声</h2>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>先日グローブを購入しました。とても対応もよく接客も丁寧で、子供もお気に入りのお店になりました。低学年でも使用できるグローブもあり、１年生の我が子もお気に入りのグローブを見つけれました。ありがとうございました。</p>
+    <div class="name">― ご来店のお客様</div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shop-info">
+  <h2 class="section-title">店舗情報</h2>
+  <table>
+    <tr><th>店名</th><td>プレイスポーツ</td></tr>
+    <tr><th>定休日</th><td>火曜日・水曜日</td></tr>
+    <tr><th>住所</th><td>岡山県倉敷市児島小川町３６９０−２</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0864723099">086-472-3099</a></td></tr>
+    <tr><th>HP</th><td><a href="http://www.playsports.jp/" target="_blank">www.playsports.jp</a></td></tr>
+    <tr><th>SNS</th>
+      <td>
+        <div class="sns-links">
+          <a href="https://www.instagram.com/playsports2017/" target="_blank">Instagram</a>
+          <a href="https://www.youtube.com/user/playsportschannel" target="_blank">Youtube</a>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <iframe src="https://maps.google.com/maps?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%80%89%E6%95%B7%E5%B8%82%E5%85%90%E5%B3%B6%E5%B0%8F%E5%B7%9D%E7%94%BA%EF%BC%93%EF%BC%96%EF%BC%99%EF%BC%90%E2%88%92%EF%BC%92&output=embed" loading="lazy"></iframe>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>お気に入りの一品、見つけましょう</h2>
+  <span class="tel-num">086-472-3099</span>
+  <div class="cta-buttons">
+    <a href="tel:0864723099">📞 電話で問い合わせる</a>
+    <a href="https://www.playsports.jp/inquiry/" target="_blank" class="outline">✉️ フォームで問い合わせる</a>
+  </div>
+</section>
+
+<!-- 固定フッターナビ -->
+<nav class="bottom-nav">
+  <a href="tel:0864723099"><span class="icon">📞</span>電話</a>
+  <a href="https://www.playsports.jp/inquiry/" target="_blank"><span class="icon">✉️</span>問合せ</a>
+  <a href="http://www.playsports.jp/" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="https://www.instagram.com/playsports2017/" target="_blank"><span class="icon">📷</span>SNS</a>
+</nav>
+
+</body>
+</html>
