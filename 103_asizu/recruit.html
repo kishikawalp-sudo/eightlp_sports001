@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アシーズブリッジ 広島店 スタッフ募集｜登山・アウトドア用品専門店</title>
+<style>
+  :root{
+    --main-color:#1b4332;
+    --sub-color:#2d6a4f;
+    --accent-color:#d9822b;
+    --bg-light:#f7f5f0;
+    --text-dark:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  header{
+    position:fixed;top:0;left:0;width:100%;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:10px 14px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shop-name{font-size:15px;font-weight:bold;}
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:14px;
+    white-space:nowrap;
+  }
+  .header-spacer{height:56px;}
+
+  .hero{position:relative;}
+  .hero img{width:100%;height:auto;}
+  .hero-text{
+    position:absolute;
+    bottom:0;left:0;width:100%;
+    background:linear-gradient(transparent, rgba(0,0,0,.75));
+    color:#fff;
+    padding:30px 16px 20px;
+    text-align:center;
+  }
+  .hero-text h1{
+    font-size:22px;
+    line-height:1.5;
+    margin-bottom:8px;
+    text-shadow:1px 1px 4px rgba(0,0,0,.6);
+  }
+  .hero-text p{font-size:13px;opacity:.9;}
+
+  section{padding:36px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    color:var(--main-color);
+    margin-bottom:24px;
+    position:relative;
+    padding-bottom:12px;
+  }
+  .section-title:after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    width:50px;height:3px;
+    background:var(--accent-color);
+  }
+
+  /* featured (job appeal) */
+  .featured{background:var(--bg-light);}
+  .featured-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    border:2px solid var(--accent-color);
+  }
+  .featured-card img{width:100%;}
+  .featured-badge{
+    background:var(--accent-color);
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    padding:10px;
+    font-size:15px;
+    letter-spacing:1px;
+  }
+  .featured-body{padding:18px;}
+  .featured-body h3{
+    color:var(--main-color);
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .featured-body p{font-size:14px;margin-bottom:14px;}
+  .featured-list{list-style:none;margin-bottom:16px;}
+  .featured-list li{
+    font-size:13px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .featured-list li:before{
+    content:"✓";
+    color:var(--accent-color);
+    font-weight:bold;
+    position:absolute;left:0;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    padding:14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+
+  /* strengths */
+  .strengths-grid{display:flex;flex-direction:column;gap:16px;}
+  .strength-item{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--bg-light);
+    border-radius:10px;
+    padding:16px;
+  }
+  .strength-num{
+    flex:0 0 auto;width:36px;height:36px;
+    background:var(--sub-color);
+    color:#fff;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+  }
+  .strength-item h4{color:var(--main-color);font-size:15px;margin-bottom:4px;}
+  .strength-item p{font-size:13px;}
+
+  /* story */
+  .story{background:var(--main-color);color:#fff;}
+  .story .section-title{color:#fff;}
+  .story .section-title:after{background:var(--accent-color);}
+  .story img{border-radius:10px;margin-bottom:18px;}
+  .story p{font-size:13.5px;margin-bottom:12px;}
+  .story .rep{font-size:13px;text-align:right;opacity:.85;}
+
+  /* job info table */
+  .job-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .job-info th,.job-info td{
+    padding:12px 8px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+    vertical-align:top;
+  }
+  .job-info th{
+    color:var(--main-color);
+    width:32%;
+    white-space:nowrap;
+    font-weight:bold;
+  }
+
+  /* shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .shop-info th,.shop-info td{
+    padding:12px 8px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-info th{
+    color:var(--main-color);
+    width:30%;
+    white-space:nowrap;
+    font-weight:bold;
+  }
+  .map-wrap{margin-top:18px;border-radius:10px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  /* final CTA */
+  .final-cta{background:var(--accent-color);color:#fff;text-align:center;}
+  .final-cta h2{font-size:20px;margin-bottom:14px;}
+  .final-cta p{font-size:13px;margin-bottom:20px;}
+  .final-cta .cta-btn{background:#fff;color:var(--accent-color);}
+  .final-cta .cta-btn.tel{margin-top:12px;background:var(--main-color);color:#fff;}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;width:100%;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;text-align:center;padding:10px 4px;
+    font-size:12px;font-weight:bold;color:var(--main-color);
+  }
+  .bottom-nav a.call{background:var(--accent-color);color:#fff;}
+  .bottom-nav a.map{background:var(--main-color);color:#fff;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">アシーズブリッジ 広島店 採用</div>
+  <a href="tel:0829294221" class="tel-btn">📞 電話する</a>
+</header>
+<div class="header-spacer"></div>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="アシーズブリッジ広島店 店内風景">
+  <div class="hero-text">
+    <h1>好きなアウトドアを、<br>仕事にしませんか。</h1>
+    <p>アシーズブリッジ広島店 スタッフ募集中｜未経験・学歴不問</p>
+  </div>
+</div>
+
+<section class="featured">
+  <h2 class="section-title">この仕事の魅力</h2>
+  <div class="featured-card">
+    <img src="images/featured-item.jpg" alt="アウトドア用品売り場での接客の様子">
+    <div class="featured-badge">★ STAFF WANTED ★ 一緒に働く仲間を募集します</div>
+    <div class="featured-body">
+      <h3>登山・キャンプ好きの知識が活きる仕事</h3>
+      <p>登山、キャンプ、その他アウトドアスポーツ用品やウェアの販売・接客業務をお任せします。お客様一人ひとりに合った製品を一緒に見つける、やりがいのある仕事です。</p>
+      <ul class="featured-list">
+        <li>学歴不問｜未経験の方も歓迎</li>
+        <li>普通自動車免許（AT限定可）があればOK</li>
+        <li>アウトドア用品の知識を活かせる／深められる環境</li>
+        <li>禁煙環境での勤務</li>
+      </ul>
+      <a href="tel:0829294221" class="cta-btn">電話で応募・問い合わせをする</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">アシーズブリッジで働く理由</h2>
+  <div class="strengths-grid">
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div>
+        <h4>圧倒的な品揃えの中で学べる</h4>
+        <p>登山用品からキャンプ用品まで幅広く取り扱っており、日々の業務を通じて商品知識が自然と身につきます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div>
+        <h4>お客様と向き合う接客</h4>
+        <p>使うシーンに合わせて製品を提案する接客スタイル。押し売りではなく、お客様が納得して選べるお手伝いをします。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div>
+        <h4>創業1986年の安定した基盤</h4>
+        <p>長年の実績を持つ専門店で、メーカーにもユーザーにも近い立場から確かな知識を積み重ねていける環境です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <h2 class="section-title">私たちが大切にしていること</h2>
+  <img src="images/store-front.jpg" alt="アシーズブリッジ 店舗外観">
+  <p>アシーズブリッジという名前には「第一の関門」という意味があります。橋から落ちて、アウトドアで不快な思いをしないよう、お客様のさらなる一歩を支える存在でありたいという想いから生まれました。</p>
+  <p>様々な情報が飛び交う今、メーカーにもユーザーにも一番近い専門店として、創業1986年からの経験と知識と知恵の集積で、公平にプロの目で選んだ確かな情報提供こそが、私たちの役割であり最大の強みです。</p>
+  <p>そんな私たちの想いに共感し、一緒にお客様と向き合ってくれる仲間をお待ちしています。</p>
+  <p class="rep">代表者：藤原 一彦</p>
+</section>
+
+<section class="job-info">
+  <h2 class="section-title">募集要項</h2>
+  <table>
+    <tr><th>勤務地</th><td>アシーズブリッジ広島店</td></tr>
+    <tr><th>仕事内容</th><td>店舗業務（接客業等）<br>登山、キャンプ、その他アウトドアスポーツ用品及びウェア等の販売業務</td></tr>
+    <tr><th>応募資格</th><td>学歴不問<br>普通自動車免許（AT限定可）<br>煙草を吸わない方</td></tr>
+    <tr><th>営業時間</th><td>午前11:00～午後7:30<br>午前11:00～午後7:00（日・祝）</td></tr>
+    <tr><th>定休日</th><td>毎週木曜日、20日前後の水曜日</td></tr>
+  </table>
+</section>
+
+<section class="shop-info">
+  <h2 class="section-title">店舗情報</h2>
+  <table>
+    <tr><th>店名</th><td>アシーズブリッジ 広島店</td></tr>
+    <tr><th>住所</th><td>〒731-5115<br>広島県広島市佐伯区八幡東3-10-43</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0829294221">082-929-4221</a></td></tr>
+    <tr><th>定休日</th><td>毎週木曜日、20日前後の水曜日</td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%BA%83%E5%B3%B6%E5%B8%82%E4%BD%90%E4%BC%AF%E5%8C%BA%E5%85%AB%E5%B9%A1%E6%9D%B13-10-43&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>あなたの応募をお待ちしています</h2>
+  <p>好きなアウトドアの知識を活かしながら、一緒に成長していきましょう。</p>
+  <a href="tel:0829294221" class="cta-btn tel">📞 082-929-4221 に電話する</a>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0829294221" class="call">📞 電話</a>
+  <a href="https://maps.google.com/maps?q=%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%BA%83%E5%B3%B6%E5%B8%82%E4%BD%90%E4%BC%AF%E5%8C%BA%E5%85%AB%E5%B9%A1%E6%9D%B13-10-43" target="_blank" class="map">📍 地図</a>
+</nav>
+
+</body>
+</html>
