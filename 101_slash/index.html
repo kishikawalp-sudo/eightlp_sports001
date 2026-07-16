@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>SLASH（スラッシュ）｜岡山県倉敷市のアウトドア用品専門店</title>
+<style>
+  :root{
+    --main-color:#1b3a2e;
+    --accent-color:#e8752c;
+    --sub-color:#f4efe6;
+    --text-color:#26261f;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-color);
+    background:var(--white);
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  img{width:100%;display:block;object-fit:cover;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:600px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;width:100%;
+    background:var(--main-color);
+    color:var(--white);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 16px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name{font-size:18px;font-weight:bold;letter-spacing:1px;}
+  header .tel-btn{
+    background:var(--accent-color);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  main{margin-top:52px;}
+
+  /* Hero */
+  .hero{position:relative;}
+  .hero img{height:60vw;max-height:420px;}
+  .hero-catch{
+    position:absolute;bottom:0;left:0;width:100%;
+    background:linear-gradient(transparent, rgba(0,0,0,0.75));
+    color:var(--white);
+    padding:30px 16px 16px;
+  }
+  .hero-catch .small{font-size:13px;letter-spacing:2px;color:var(--accent-color);font-weight:bold;}
+  .hero-catch h1{font-size:24px;margin-top:6px;line-height:1.4;}
+
+  /* Section common */
+  section{padding:36px 0;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent-color);
+    letter-spacing:2px;
+    margin-bottom:4px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:14px;
+    color:#555;
+    margin-bottom:24px;
+  }
+
+  /* Featured Product */
+  .featured{background:var(--sub-color);}
+  .featured-card{
+    background:var(--white);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom:16px;
+  }
+  .featured-card .badge{
+    background:var(--accent-color);
+    color:var(--white);
+    display:inline-block;
+    font-size:13px;
+    font-weight:bold;
+    padding:6px 16px;
+    border-radius:0 0 8px 0;
+  }
+  .featured-card img{height:56vw;max-height:320px;}
+  .featured-card .body{padding:18px;}
+  .featured-card h3{font-size:19px;color:var(--main-color);margin-bottom:10px;}
+  .featured-card p{font-size:14px;color:#444;margin-bottom:14px;}
+  .featured-list{list-style:none;font-size:14px;}
+  .featured-list li{
+    padding:8px 0 8px 26px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .featured-list li:last-child{border-bottom:none;}
+  .featured-list li::before{
+    content:"✓";
+    position:absolute;left:0;top:8px;
+    color:var(--accent-color);
+    font-weight:bold;
+  }
+
+  /* Strengths */
+  .strengths .container{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:var(--white);
+    border:1px solid #eee;
+    border-radius:10px;
+    padding:16px;
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--main-color);
+    color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .strength-text h4{font-size:16px;color:var(--main-color);margin-bottom:4px;}
+  .strength-text p{font-size:13.5px;color:#555;}
+
+  /* Reviews */
+  .reviews{background:var(--sub-color);}
+  .review-card{
+    background:var(--white);
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .stars{color:#f5a623;font-size:18px;letter-spacing:2px;margin-bottom:10px;}
+  .review-card p{font-size:14px;color:#444;}
+
+  /* Gallery image */
+  .gallery{padding-top:0;}
+  .gallery img{border-radius:10px;}
+
+  /* Shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .shop-info th,.shop-info td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #ddd;
+    vertical-align:top;
+  }
+  .shop-info th{
+    width:90px;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .shop-info iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    border-radius:8px;
+    margin-top:16px;
+  }
+  .sns-link{
+    display:inline-block;
+    margin-top:6px;
+    color:var(--accent-color);
+    font-weight:bold;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:var(--main-color);
+    color:var(--white);
+    text-align:center;
+    padding:40px 20px;
+  }
+  .cta-section h2{font-size:20px;margin-bottom:10px;}
+  .cta-section p{font-size:13px;margin-bottom:20px;color:#dcdcdc;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .cta-btn{
+    display:block;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-btn.tel{background:var(--accent-color);color:var(--white);}
+  .cta-btn.form{background:var(--white);color:var(--main-color);}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;width:100%;
+    display:flex;
+    background:var(--white);
+    border-top:1px solid #ddd;
+    z-index:100;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main-color);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.highlight{background:var(--accent-color);color:var(--white);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">SLASH</div>
+  <a href="tel:0864258863" class="tel-btn">📞 電話する</a>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="SLASH 店舗外観">
+    <div class="hero-catch">
+      <div class="small">岡山県倉敷市 アウトドア用品専門店</div>
+      <h1>知る人ぞ知る、<br>本物のアウトドアギアが揃う店</h1>
+    </div>
+  </div>
+
+  <!-- Featured Product -->
+  <section class="featured">
+    <div class="container">
+      <div class="section-title"><span>PICK UP</span>イチオシ商品</div>
+      <div class="section-sub">近隣ではなかなか手に入らない希少ブランドを豊富に取り揃え</div>
+      <div class="featured-card">
+        <span class="badge">おすすめ No.1</span>
+        <img src="images/product.jpg" alt="SLASH イチオシのアウトドア用品">
+        <div class="body">
+          <h3>厳選アウトドア用品</h3>
+          <p>店舗面積は決して広くありませんが、その分商品一つひとつへのこだわりが違います。近隣地域では取扱いの少ない希少ブランドの品を数多くセレクト。芝ジブなどを楽しむ常連さんにも支持される、目の肥えたお客様も納得のラインナップです。</p>
+          <ul class="featured-list">
+            <li>他店では見かけない希少ブランドを多数取扱い</li>
+            <li>スタッフが自ら使い込んだ上での確かなセレクト</li>
+            <li>初めての方にも分かりやすく丁寧な商品説明</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section class="strengths">
+    <div class="container">
+      <div class="section-title"><span>POINT</span>SLASHが選ばれる理由</div>
+      <div class="strength-item">
+        <div class="strength-num">1</div>
+        <div class="strength-text">
+          <h4>希少ブランドの品揃え</h4>
+          <p>店舗規模はコンパクトながら、近隣ではあまり見かけない厳選ブランドの商品を数多く取り扱っています。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">2</div>
+        <div class="strength-text">
+          <h4>初めてでも安心の接客</h4>
+          <p>常連さんも多いお店ですが、スタッフの方は初めて訪れるお客様にも分け隔てなく丁寧に対応してくれます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">3</div>
+        <div class="strength-text">
+          <h4>何度も通いたくなる魅力</h4>
+          <p>年に数回しか行けなくても毎回新しい発見がある、そんな「行くのが楽しみ」になるお店です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <div class="container">
+      <div class="section-title"><span>VOICE</span>お客様の声</div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>店舗面積は広くはなく商品数は限られてますが品揃えが秀逸です。年に数回しか行けませんが、近隣地域でも取扱いの少ないブランドの品がたくさんあります。芝ジブ等の常連さんも毎回おられて輪に入るのはややハードルありますが、スタッフの方は初見でも素晴らしい接客でした。毎回行くのが楽しみなお店です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <div class="container">
+      <img src="images/shop.jpg" alt="SLASH 店内の様子">
+    </div>
+  </section>
+
+  <!-- Shop Info -->
+  <section class="shop-info">
+    <div class="container">
+      <div class="section-title"><span>INFO</span>店舗情報</div>
+      <table>
+        <tr><th>店名</th><td>SLASH（スラッシュ）</td></tr>
+        <tr><th>住所</th><td>岡山県倉敷市大内1224-14</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0864258863">086-425-8863</a></td></tr>
+        <tr><th>HP</th><td><a href="https://slash1995.com/" target="_blank" rel="noopener">https://slash1995.com/</a></td></tr>
+        <tr><th>SNS</th><td><a class="sns-link" href="https://www.instagram.com/slash_wake_snow/" target="_blank" rel="noopener">Instagram @slash_wake_snow</a></td></tr>
+      </table>
+      <iframe src="https://maps.google.com/maps?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%80%89%E6%95%B7%E5%B8%82%E5%A4%A7%E5%86%851224-14&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>希少なアウトドアギアを、その目で。</h2>
+    <p>ご来店・お問い合わせをお待ちしております</p>
+    <div class="cta-buttons">
+      <a href="tel:0864258863" class="cta-btn tel">📞 電話で問い合わせる</a>
+      <a href="https://slash1995.com/contact/" target="_blank" rel="noopener" class="cta-btn form">✉ フォームで問い合わせる</a>
+    </div>
+  </section>
+
+</main>
+
+<nav class="bottom-nav">
+  <a href="tel:0864258863">📞 電話</a>
+  <a href="https://slash1995.com/contact/" target="_blank" rel="noopener" class="highlight">✉ お問い合わせ</a>
+  <a href="https://www.instagram.com/slash_wake_snow/" target="_blank" rel="noopener">Instagram</a>
+</nav>
+
+</body>
+</html>
