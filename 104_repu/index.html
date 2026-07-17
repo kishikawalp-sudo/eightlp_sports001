@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ミリタリーショップ レプマート｜岡山市中区 サバゲー・エアガン専門店</title>
+<style>
+  :root{
+    --main-color:#3b4a2e;
+    --sub-color:#6b7a4f;
+    --accent-color:#c9a648;
+    --dark-color:#1e2517;
+    --light-bg:#f5f3ea;
+    --text-color:#2b2b26;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif;
+    color:var(--text-color);
+    background:var(--light-bg);
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--dark-color);
+    color:var(--white);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 14px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.3);
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:0.5px;
+  }
+  header .shop-name span{
+    display:block;
+    font-size:10px;
+    color:var(--accent-color);
+    font-weight:normal;
+  }
+  header .tel-btn{
+    background:var(--accent-color);
+    color:var(--dark-color);
+    font-weight:bold;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    white-space:nowrap;
+  }
+
+  main{margin-top:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:#000;
+  }
+  .hero img{
+    width:100%;
+    opacity:0.85;
+  }
+  .hero-text{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+    color:#fff;
+    padding:40px 16px 16px;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.4;
+    text-shadow:0 2px 4px rgba(0,0,0,0.6);
+  }
+  .hero-text .catch em{
+    color:var(--accent-color);
+    font-style:normal;
+  }
+  .hero-text .sub{
+    font-size:13px;
+    margin-top:8px;
+    color:#ddd;
+  }
+  .stars{
+    color:var(--accent-color);
+    font-size:14px;
+    margin-top:6px;
+  }
+
+  section{
+    padding:36px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title small{
+    display:block;
+    font-size:11px;
+    color:var(--accent-color);
+    letter-spacing:2px;
+    margin-bottom:4px;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+  }
+
+  /* Featured product / push section */
+  .push-section{
+    background:var(--dark-color);
+    color:#fff;
+  }
+  .push-section .section-title{color:#fff;}
+  .push-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:var(--dark-color);
+    font-weight:bold;
+    font-size:12px;
+    padding:4px 12px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .push-wrap{
+    text-align:center;
+  }
+  .push-wrap img{
+    border-radius:10px;
+    margin:16px 0;
+    border:2px solid var(--accent-color);
+  }
+  .push-lead{
+    font-size:17px;
+    font-weight:bold;
+    margin-bottom:12px;
+    color:var(--accent-color);
+  }
+  .push-desc{
+    font-size:14px;
+    color:#e5e5da;
+    text-align:left;
+  }
+  .push-list{
+    list-style:none;
+    margin-top:16px;
+    text-align:left;
+  }
+  .push-list li{
+    font-size:13.5px;
+    padding:10px 0 10px 26px;
+    position:relative;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+  }
+  .push-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--accent-color);
+    font-weight:bold;
+  }
+
+  /* Strengths */
+  .strengths{
+    background:var(--white);
+  }
+  .strength-card{
+    background:var(--light-bg);
+    border-left:4px solid var(--accent-color);
+    padding:14px 16px;
+    margin-bottom:14px;
+    border-radius:4px;
+  }
+  .strength-card h3{
+    font-size:15px;
+    color:var(--main-color);
+    margin-bottom:6px;
+  }
+  .strength-card p{
+    font-size:13px;
+    color:#555;
+  }
+  .gallery-img{
+    margin:20px 0;
+    border-radius:8px;
+    overflow:hidden;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:var(--light-bg);
+  }
+  .review-card{
+    background:var(--white);
+    padding:16px;
+    border-radius:8px;
+    margin-bottom:16px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+  }
+  .review-card .stars{margin-bottom:8px;}
+  .review-card p{
+    font-size:13px;
+    color:#444;
+  }
+
+  /* Company strength */
+  .company-strength{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .company-strength .section-title{color:#fff;}
+  .company-strength p{
+    font-size:13.5px;
+    color:#eef0e6;
+  }
+
+  /* Shop info table */
+  .shop-info{
+    background:var(--white);
+  }
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  table.info-table th{
+    background:var(--light-bg);
+    color:var(--main-color);
+    width:28%;
+    text-align:left;
+    padding:12px 10px;
+    border-bottom:1px solid #ddd;
+    vertical-align:top;
+  }
+  table.info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #ddd;
+    vertical-align:top;
+  }
+  table.info-table td a{
+    color:var(--sub-color);
+    text-decoration:underline;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* SNS links */
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+    flex-wrap:wrap;
+  }
+  .sns-links a{
+    flex:1;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    padding:10px 6px;
+    border-radius:6px;
+    font-size:12.5px;
+    font-weight:bold;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:var(--accent-color);
+    text-align:center;
+    color:var(--dark-color);
+  }
+  .cta-section h2{
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13px;
+    margin-bottom:18px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-buttons a{
+    background:var(--dark-color);
+    color:#fff;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-buttons a.secondary{
+    background:#fff;
+    color:var(--dark-color);
+    border:2px solid var(--dark-color);
+  }
+
+  /* Fixed bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:var(--dark-color);
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.3);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    color:#fff;
+    font-size:11px;
+    padding:10px 4px;
+    border-right:1px solid rgba(255,255,255,0.1);
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.highlight{
+    background:var(--accent-color);
+    color:var(--dark-color);
+    font-weight:bold;
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:16px;
+    margin-bottom:2px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#888;
+    padding:20px 16px 80px;
+    background:var(--light-bg);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">ミリタリーショップ レプマート<span>MILITARY SHOP REPMART</span></div>
+  <a href="tel:0862013100" class="tel-btn">📞 電話する</a>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="ミリタリーショップ レプマート 店舗外観">
+    <div class="hero-text">
+      <div class="stars">★★★★★ 地元サバゲーマーから信頼される専門店</div>
+      <div class="catch">実物・エアガン・装備が<em>ここだけで全部揃う。</em></div>
+      <div class="sub">岡山市中区長岡 ／ サバゲー・ミリタリー用品専門店</div>
+    </div>
+  </div>
+
+  <!-- 一押し商品セクション -->
+  <section class="push-section">
+    <div class="push-badge">ICHIOSHI ITEM</div>
+    <div class="section-title">
+      <small>WE RECOMMEND</small>
+      当店イチオシ
+    </div>
+    <div class="push-wrap">
+      <p class="push-lead">サバゲー・ミリタリー用品 総合ラインナップ</p>
+      <div class="gallery-img">
+        <img src="images/airsoft-lineup.jpg" alt="エアガンと実物装備の豊富なラインナップ">
+      </div>
+      <p class="push-desc">
+        レプマートの一押しは、なんといっても「サバゲー・ミリタリー用品」の圧倒的な品揃え。
+        新品はもちろん、状態の良い中古エアガンまで幅広く取り扱い、実物のプレートキャリアや米軍放出品も充実。
+        ゴーグル・マスク・チョッキ・バッグ・リュックなど、装備品はここだけでほぼ全て揃います。
+      </p>
+      <ul class="push-list">
+        <li>新品・中古エアガンが豊富。中古品も状態良好でラベル管理も安心</li>
+        <li>実物プレートキャリア・米軍放出品を多数取扱い</li>
+        <li>ゴーグル・マスク・チョッキ・バッグ・リュックなど装備品が一通り揃う</li>
+        <li>試着可能だから、通販で不安なサイズ感も店頭で確認できる</li>
+        <li>商品によっては通販より安く購入できるケースも</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- こだわり・強み -->
+  <section class="strengths">
+    <div class="section-title">
+      <small>OUR STRENGTH</small>
+      選ばれる理由
+    </div>
+
+    <div class="gallery-img">
+      <img src="images/store-interior.jpg" alt="レプマート 店内の様子">
+    </div>
+
+    <div class="strength-card">
+      <h3>圧倒的な品揃えで「実物」を見て選べる</h3>
+      <p>エアガンの品揃えが豊富で、沢山の実物を実際に手に取って確認可能。話題のクライタック ベクターなど、なかなかお目にかかれないモデルも取扱いがあります。</p>
+    </div>
+    <div class="strength-card">
+      <h3>中古エアガンも安心の状態管理</h3>
+      <p>中古エアガンも綺麗な状態で並び、新品・中古はラベルで区別されているので選びやすいと好評です。</p>
+    </div>
+    <div class="strength-card">
+      <h3>サバゲー装備がワンストップで揃う</h3>
+      <p>ゴーグル・マスク・チョッキ・エアガン用バッグ・リュックなど消耗品から装備一式まで、ここだけで揃えられる充実のラインナップです。</p>
+    </div>
+    <div class="strength-card">
+      <h3>試着できるから通販より安心</h3>
+      <p>プレートキャリアやベルトなど、サイズ感が心配なアイテムも試着してから購入可能。商品によっては通販よりお得に購入できることもあります。</p>
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="reviews">
+    <div class="section-title">
+      <small>CUSTOMER'S VOICE</small>
+      お客様のクチコミ
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>エアガンの品揃えが豊富で、沢山の実物を見ることができました。中古エアガンも綺麗な状態で置いてあり、クライタックのベクターがあったのには驚きました。サバゲー装備はここだけで全部揃えられそうなくらいの品揃えで、ゴーグルもマスクもチョッキもエアガン用バッグもリュックもありました。新品と中古品はラベルで区別されていて選びやすかったです。店内はコンビニくらいの広さで、チラシ類も色々置いてあり、物販イベントの案内などもあって楽しめました。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>岡山のサバゲーマーの方はよく利用されているのではないでしょうか。実物のプレートキャリアや米軍放出品の中古、エアガンの新品・中古の取扱がしっかりしています。試着もできるので、通販だと不安なプレートキャリアやベルトも安心して購入できます。商品によっては通販より500〜5000円ほど安く購入できることもあり、実際に触って選びたい方には特におすすめです。</p>
+    </div>
+  </section>
+
+  <!-- 企業の強み -->
+  <section class="company-strength">
+    <div class="section-title">
+      <small>COMPANY POLICY</small>
+      デジストのこだわり
+    </div>
+    <p>
+      提供するサービスに徹底的にこだわり、物心の豊かさを全ての人に提供する。仕事や物事全てを自分のものとして受けとめ、損得を越えて誠実に行動し、最高のサービスを提供するために決して妥協しない。
+      デジストだけの商品、空間、体験を、高いレベルの方法と手段で創造し、物質的・精神的豊かさを全てのお客様、社員に提供することを目指しています。
+    </p>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="shop-info">
+    <div class="section-title">
+      <small>SHOP INFORMATION</small>
+      店舗情報
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>ミリタリーショップ レプマート</td></tr>
+      <tr><th>運営会社</th><td>株式会社 デジスト</td></tr>
+      <tr><th>住所</th><td>岡山県岡山市中区長岡601-1</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0862013100">086-201-3100</a></td></tr>
+      <tr><th>定休日</th><td>水曜日</td></tr>
+      <tr><th>公式HP</th><td><a href="https://repmart.jp/" target="_blank" rel="noopener">https://repmart.jp/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://repmart.jp/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@repmart.jp">info@repmart.jp</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%B2%A1%E5%B1%B1%E5%B8%82%E4%B8%AD%E5%8C%BA%E9%95%B7%E5%B2%A1601-1&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+    </div>
+    <div class="sns-links">
+      <a href="https://www.youtube.com/channel/UCSXKSSiUM5SXYs8TVgHXhKA" target="_blank" rel="noopener">▶ Youtube</a>
+      <a href="https://repmart.jp/" target="_blank" rel="noopener">🌐 公式HP</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>実物を見て、触って選べる。</h2>
+    <p>サバゲー・ミリタリー用品のことなら、まずはレプマートへお越しください。</p>
+    <div class="cta-buttons">
+      <a href="tel:0862013100">📞 今すぐ電話で問い合わせる</a>
+      <a href="https://repmart.jp/contact/" class="secondary" target="_blank" rel="noopener">✉ お問い合わせフォームへ</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 株式会社デジスト｜ミリタリーショップ レプマート
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0862013100"><span class="icon">📞</span>電話</a>
+  <a href="https://maps.google.com/maps?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%B2%A1%E5%B1%B1%E5%B8%82%E4%B8%AD%E5%8C%BA%E9%95%B7%E5%B2%A1601-1" target="_blank" rel="noopener"><span class="icon">📍</span>地図</a>
+  <a href="https://repmart.jp/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+  <a href="https://repmart.jp/contact/" class="highlight" target="_blank" rel="noopener"><span class="icon">✉</span>お問い合わせ</a>
+</nav>
+
+</body>
+</html>
