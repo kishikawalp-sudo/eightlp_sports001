@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永井バドミントンクラブ｜倉敷市のバドミントン専門店</title>
+<style>
+  :root{
+    --main-color:#0B5ED7;
+    --accent-color:#FFB300;
+    --dark-color:#12203A;
+    --light-bg:#F4F7FB;
+    --text-color:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-color);
+    background:#fff;
+    padding-bottom:64px; /* for fixed bottom nav */
+    line-height:1.7;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header.fixed-header{
+    position:fixed;top:0;left:0;right:0;
+    background:#fff;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    z-index:1000;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+  }
+  header.fixed-header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+    color:var(--dark-color);
+  }
+  header.fixed-header .tel-btn{
+    background:var(--main-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-spacer{height:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    text-align:center;
+    background:var(--dark-color);
+  }
+  .hero img{
+    width:100%;
+    height:auto;
+    opacity:0.85;
+  }
+  .hero-text{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    color:#fff;
+    padding:24px 16px 18px;
+  }
+  .hero-text h1{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .hero-text p{
+    font-size:13px;
+    color:#e0e0e0;
+  }
+  .stars{color:var(--accent-color);font-size:16px;margin-bottom:4px;}
+
+  section{padding:32px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--dark-color);
+    margin-bottom:22px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+  }
+
+  /* Featured product */
+  .featured{
+    background:linear-gradient(135deg,var(--main-color),#083c8f);
+    color:#fff;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:var(--dark-color);
+    font-weight:bold;
+    font-size:13px;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .featured-box{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.3);
+    border-radius:12px;
+    padding:18px;
+    margin-top:16px;
+  }
+  .featured-box img{
+    border-radius:10px;
+    margin-bottom:14px;
+  }
+  .featured-box h3{
+    font-size:19px;
+    margin-bottom:8px;
+  }
+  .featured-box p{
+    font-size:14px;
+    color:#eaf1ff;
+  }
+  .feature-list{
+    list-style:none;
+    margin-top:14px;
+  }
+  .feature-list li{
+    font-size:14px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .feature-list li::before{
+    content:"✓";
+    position:absolute;left:0;
+    color:var(--accent-color);
+    font-weight:bold;
+  }
+  .cta-inline{
+    display:block;
+    text-align:center;
+    background:var(--accent-color);
+    color:var(--dark-color);
+    font-weight:bold;
+    font-size:15px;
+    padding:14px;
+    border-radius:8px;
+    margin-top:18px;
+  }
+
+  /* Strengths */
+  .strengths{background:var(--light-bg);}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+  }
+  .strength-item h4{
+    font-size:15px;
+    margin-bottom:4px;
+    color:var(--dark-color);
+  }
+  .strength-item p{font-size:13px;color:#555;}
+
+  /* Gallery */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:8px;
+    height:130px;
+    object-fit:cover;
+    width:100%;
+  }
+
+  /* Reviews */
+  .review-box{
+    background:#fff;
+    border:1px solid #e5e5e5;
+    border-radius:10px;
+    padding:18px;
+  }
+  .review-box .stars{color:var(--accent-color);}
+  .review-box p{
+    font-size:14px;
+    color:#444;
+    margin-top:10px;
+  }
+  .review-author{
+    margin-top:12px;
+    font-size:12px;
+    color:#999;
+    text-align:right;
+  }
+
+  /* Shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .shop-info th,.shop-info td{
+    padding:12px 8px;
+    border-bottom:1px solid #e5e5e5;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-info th{
+    width:28%;
+    color:var(--dark-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:var(--dark-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13px;
+    color:#cbd6ea;
+    margin-bottom:20px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .btn{
+    display:block;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .btn-primary{background:var(--accent-color);color:var(--dark-color);}
+  .btn-outline{border:1px solid #fff;color:#fff;}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.12);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    color:var(--dark-color);
+    font-weight:bold;
+  }
+  .bottom-nav a.call{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .bottom-nav a.contact{
+    background:var(--accent-color);
+    color:var(--dark-color);
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:#999;
+    padding:20px;
+  }
+</style>
+</head>
+<body>
+
+<header class="fixed-header">
+  <div class="shop-name">永井バドミントンクラブ</div>
+  <a href="tel:0864275111" class="tel-btn">📞 電話する</a>
+</header>
+<div class="header-spacer"></div>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="images/main.jpg" alt="永井バドミントンクラブ 店内">
+  <div class="hero-text">
+    <div class="stars">★★★★★</div>
+    <h1>倉敷でバドミントンなら永井バドミントンクラブ</h1>
+    <p>専門店だからできる、確かなガット張りとバドミントン指導</p>
+  </div>
+</div>
+
+<!-- Featured Product -->
+<section class="featured">
+  <div class="badge">イチオシサービス</div>
+  <h2 class="section-title">バドミントン指導</h2>
+  <div class="featured-box">
+    <img src="images/lesson.jpg" alt="バドミントン指導の様子">
+    <h3>基礎から上達まで、専門店だからこそのきめ細かな指導</h3>
+    <p>永井バドミントンクラブでは、単なる用品販売にとどまらず、バドミントン専門店ならではの視点を活かした指導を行っています。初心者の方には正しいフォームの基礎から、経験者の方にはワンランク上の技術向上まで、一人ひとりに合わせたレッスンをご提供します。</p>
+    <ul class="feature-list">
+      <li>バドミントン専門店ならではの実践的な指導</li>
+      <li>用具選びから技術指導までワンストップで対応</li>
+      <li>初心者から経験者まで、レベルに合わせて丁寧に指導</li>
+    </ul>
+    <a href="tel:0864275111" class="cta-inline">📞 指導について電話で相談する</a>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="strengths">
+  <h2 class="section-title">選ばれる理由</h2>
+  <div class="strength-item">
+    <div class="strength-num">1</div>
+    <div>
+      <h4>バドミントン専門店ならではのガット張り</h4>
+      <p>専門店だからこそできる、他店とは一味違うガット張りが好評です。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">2</div>
+    <div>
+      <h4>清潔感のある店内</h4>
+      <p>いつ訪れても気持ちよくお買い物いただける、清潔な店内環境を整えています。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">3</div>
+    <div>
+      <h4>迅速・丁寧な対応</h4>
+      <p>商品説明もわかりやすく、迅速かつ丁寧な対応を心がけています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section>
+  <h2 class="section-title">店舗紹介</h2>
+  <div class="gallery-grid">
+    <img src="images/shop1.jpg" alt="店内の様子1">
+    <img src="images/shop2.jpg" alt="店内の様子2">
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="strengths">
+  <h2 class="section-title">お客様の声</h2>
+  <div class="review-box">
+    <div class="stars">★★★★★</div>
+    <p>清潔感のあるお店で、商品の説明などわかりやすかったです。バドミントン専門店なのでガット張りは他のお店と違いますね！迅速かつ丁寧でした。倉敷では1番いいのではと思います。</p>
+    <div class="review-author">ご来店のお客様より</div>
+  </div>
+</section>
+
+<!-- Shop Info -->
+<section class="shop-info">
+  <h2 class="section-title">店舗情報</h2>
+  <table>
+    <tr><th>店名</th><td>永井バドミントンクラブ</td></tr>
+    <tr><th>代表者</th><td>永井　大吉</td></tr>
+    <tr><th>住所</th><td>岡山県倉敷市東富井723-1</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0864275111">086-427-5111</a></td></tr>
+    <tr><th>公式HP</th><td><a href="https://nagai-club.com/" target="_blank" rel="noopener">https://nagai-club.com/</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=岡山県倉敷市東富井723-1&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>バドミントン用品のご相談・ガット張り・指導のお申し込みは、お電話またはお問い合わせフォームから</p>
+  <div class="cta-buttons">
+    <a href="tel:0864275111" class="btn btn-primary">📞 086-427-5111 に電話する</a>
+    <a href="https://nagai-club.com/contact/" target="_blank" rel="noopener" class="btn btn-outline">✉️ お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 永井バドミントンクラブ
+</footer>
+
+<!-- Bottom Nav -->
+<div class="bottom-nav">
+  <a href="tel:0864275111" class="call">📞 電話</a>
+  <a href="https://nagai-club.com/" target="_blank" rel="noopener">🌐 HP</a>
+  <a href="https://nagai-club.com/contact/" target="_blank" rel="noopener" class="contact">✉️ 問合せ</a>
+</div>
+
+</body>
+</html>
