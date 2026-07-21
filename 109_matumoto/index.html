@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スポーツショップまつもと｜島根県安来市のテニス専門スポーツ用品店</title>
+<style>
+  :root{
+    --green-deep:#1b3a2f;
+    --green-court:#2f6b4f;
+    --lime:#c8e063;
+    --cream:#f7f5ee;
+    --line:#dfe3d8;
+    --ball:#d4e157;
+    --text:#233229;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Sans","Yu Gothic",sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.7;
+    padding-bottom:64px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* header */
+  .header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--green-deep);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  .header .shopname{font-size:15px;font-weight:700;letter-spacing:.02em;}
+  .header .shopname span{display:block;font-size:10px;font-weight:400;opacity:.75;}
+  .header .call-btn{
+    background:var(--lime);color:var(--green-deep);
+    font-weight:700;font-size:13px;
+    padding:8px 14px;border-radius:24px;
+    display:flex;align-items:center;gap:4px;
+  }
+  main{padding-top:56px;}
+
+  /* hero */
+  .hero{position:relative;}
+  .hero img{width:100%;height:64vw;max-height:320px;object-fit:cover;}
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(27,58,47,.15) 0%,rgba(27,58,47,.85) 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:20px 18px 22px;
+    color:#fff;
+  }
+  .hero-eyebrow{
+    font-size:12px;letter-spacing:.15em;color:var(--ball);font-weight:700;margin-bottom:6px;
+  }
+  .hero-title{font-size:24px;font-weight:800;line-height:1.4;margin-bottom:8px;}
+  .hero-sub{font-size:13px;opacity:.9;}
+  .hero-stars{color:var(--ball);font-size:14px;margin-top:8px;}
+
+  /* section common */
+  .section{padding:40px 18px;}
+  .section-label{
+    font-size:11px;letter-spacing:.2em;color:var(--green-court);font-weight:700;margin-bottom:6px;
+  }
+  .section-title{font-size:20px;font-weight:800;margin-bottom:18px;color:var(--green-deep);}
+
+  /* featured product */
+  .featured{
+    background:var(--green-deep);color:#fff;
+    position:relative;overflow:hidden;
+  }
+  .featured::before{
+    content:"";position:absolute;top:-40px;right:-40px;width:160px;height:160px;
+    border-radius:50%;background:var(--green-court);opacity:.5;
+  }
+  .featured .section-label{color:var(--ball);}
+  .featured .section-title{color:#fff;}
+  .featured-img{border-radius:12px;overflow:hidden;margin-bottom:16px;position:relative;z-index:1;}
+  .featured-copy{position:relative;z-index:1;}
+  .featured-copy p{font-size:14px;margin-bottom:14px;opacity:.95;}
+  .featured-list{list-style:none;margin-bottom:18px;}
+  .featured-list li{
+    font-size:13.5px;padding-left:22px;position:relative;margin-bottom:8px;
+  }
+  .featured-list li::before{
+    content:"●";color:var(--lime);position:absolute;left:0;font-size:10px;top:5px;
+  }
+  .featured-cta{
+    display:block;text-align:center;background:var(--lime);color:var(--green-deep);
+    font-weight:800;padding:14px;border-radius:8px;font-size:15px;
+  }
+
+  /* strengths */
+  .strength-card{
+    background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:16px;margin-bottom:14px;
+  }
+  .strength-card h3{
+    font-size:15px;color:var(--green-deep);margin-bottom:6px;font-weight:700;
+    display:flex;align-items:center;gap:8px;
+  }
+  .strength-card h3::before{
+    content:"";width:8px;height:8px;background:var(--green-court);border-radius:50%;flex:none;
+  }
+  .strength-card p{font-size:13.5px;color:#4a5750;}
+
+  /* reviews */
+  .reviews{background:#eef1e6;}
+  .review-card{
+    background:#fff;border-radius:10px;padding:16px;margin-bottom:12px;
+    border-left:4px solid var(--green-court);
+  }
+  .review-stars{color:#e0a800;font-size:14px;margin-bottom:6px;}
+  .review-card p{font-size:13.5px;color:#3a453e;}
+  .review-note{
+    font-size:12.5px;color:#6b5a2e;background:#fdf3d8;border-radius:8px;
+    padding:10px 12px;margin-top:10px;
+  }
+
+  /* shop info */
+  .info-table{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:18px;}
+  .info-table th{
+    text-align:left;background:#eef1e6;color:var(--green-deep);
+    width:92px;padding:10px 10px;vertical-align:top;font-weight:700;
+    border-bottom:1px solid var(--line);white-space:nowrap;
+  }
+  .info-table td{
+    padding:10px 10px;border-bottom:1px solid var(--line);word-break:break-all;
+  }
+  .map-frame{border-radius:10px;overflow:hidden;margin-bottom:18px;border:1px solid var(--line);}
+  .map-frame iframe{width:100%;height:220px;border:0;display:block;}
+  .sns-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    background:#fff;border:1px solid var(--line);border-radius:24px;
+    padding:8px 16px;font-size:13px;font-weight:700;color:var(--green-deep);
+  }
+
+  /* final cta */
+  .cta-section{
+    background:var(--green-court);color:#fff;text-align:center;padding:44px 18px;
+  }
+  .cta-section h2{font-size:19px;font-weight:800;margin-bottom:10px;}
+  .cta-section p{font-size:13.5px;opacity:.9;margin-bottom:20px;}
+  .cta-buttons a{
+    display:block;background:#fff;color:var(--green-deep);
+    font-weight:800;padding:14px;border-radius:8px;margin-bottom:10px;font-size:15px;
+  }
+  .cta-buttons a.outline{
+    background:transparent;border:1.5px solid #fff;color:#fff;
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;z-index:100;
+    display:flex;background:#fff;border-top:1px solid var(--line);
+    box-shadow:0 -2px 10px rgba(0,0,0,.08);
+  }
+  .bottom-nav a{
+    flex:1;text-align:center;padding:10px 4px 8px;font-size:11px;color:var(--green-deep);font-weight:700;
+  }
+  .bottom-nav a.primary{background:var(--green-deep);color:#fff;}
+  .bottom-nav .icon{font-size:18px;display:block;margin-bottom:2px;}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="shopname">スポーツショップまつもと<span>島根県安来市</span></div>
+  <a href="tel:0854231211" class="call-btn">📞 電話する</a>
+</header>
+
+<main>
+  <section class="hero">
+    <img src="images/hero.jpg" alt="スポーツショップまつもと 店舗外観">
+    <div class="hero-overlay">
+      <div class="hero-eyebrow">島根県安来市 ｜ 地域密着50年以上</div>
+      <h1 class="hero-title">テニス用品なら、<br>まつもとにお任せください</h1>
+      <p class="hero-sub">県下唯一のソフトテニスサービスも対応。カタログ注文で豊富な品揃え。</p>
+      <div class="hero-stars">★★★★☆ 地域のお客様から高評価</div>
+    </div>
+  </section>
+
+  <section class="featured section">
+    <div class="section-label">ICHIOSHI PRODUCT</div>
+    <h2 class="section-title">イチオシ｜テニス用品</h2>
+    <div class="featured-img">
+      <img src="images/tennis.jpg" alt="テニス用品 ラケット ガット張り替え">
+    </div>
+    <div class="featured-copy">
+      <p>硬式・ソフトテニス問わず、ラケット選びからガット張り、シューズ、ウェアまで幅広く取り揃えています。店頭に無い商品もカタログから取り寄せ可能です。</p>
+      <ul class="featured-list">
+        <li>ソフトテニスに関しては県下唯一のサービスを提供</li>
+        <li>店員が一人ひとりに合ったラケット・ガットをご提案</li>
+        <li>カタログ注文で店頭にない品も取り寄せOK</li>
+      </ul>
+      <a href="tel:0854231211" class="featured-cta">テニス用品について電話で相談する</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">STRENGTH</div>
+    <h2 class="section-title">選ばれる理由</h2>
+    <div class="strength-card">
+      <h3>豊富な取り寄せ対応</h3>
+      <p>店頭にない商品でも、カタログ等から取り寄せてご注文いただけます。欲しい商品が見つからない時も、まずはご相談ください。</p>
+    </div>
+    <div class="strength-card">
+      <h3>ソフトテニス県下唯一のサービス</h3>
+      <p>ソフトテニスに関しては島根県内でも珍しいサービスを行っています。用具選びに迷ったら、ぜひ店員へお気軽にお尋ねください。</p>
+    </div>
+    <div class="strength-card">
+      <h3>地域に根差した丁寧な接客</h3>
+      <p>お客様一人ひとりの用途やレベルに合わせて、少しずつでも丁寧なサービスを心がけています。</p>
+    </div>
+  </section>
+
+  <section class="section reviews">
+    <div class="section-label">REVIEW</div>
+    <h2 class="section-title">お客様の声</h2>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p>店員さんが親身に相談に乗ってくれました。テニス用品のことは何でも聞けるので助かります。</p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p>欲しかったラケットが店頭に無かったのですが、カタログから取り寄せてもらえました。</p>
+    </div>
+    <p class="review-note">
+      ※一部商品は価格がやや高めの場合や、Tシャツなど衣類の種類が少なめとの声もございます。テニス用品を中心に、ぜひ店頭でご確認ください。
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-label">SHOP INFO</div>
+    <h2 class="section-title">店舗情報</h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>スポーツショップまつもと</td></tr>
+      <tr><th>会社名</th><td>有限会社スポーツショップまつもと</td></tr>
+      <tr><th>代表者</th><td>松本 昇平</td></tr>
+      <tr><th>住所</th><td>島根県安来市安来町1833</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0854231211">0854-23-1211</a></td></tr>
+      <tr><th>定休日</th><td>火曜日</td></tr>
+      <tr><th>メール</th><td>matsumoto-shohei@mue.biglobe.ne.jp</td></tr>
+      <tr><th>HP</th><td><a href="https://cf556128.cloudfree.jp/ssmatsumoto/" target="_blank">公式サイト</a></td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=島根県安来市安来町1833&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+    </div>
+    <a href="https://www.instagram.com/sportsmatsu/" target="_blank" class="sns-btn">📷 Instagramをフォロー</a>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <img src="images/shop.jpg" alt="スポーツショップまつもと 店内の様子" style="border-radius:10px;">
+  </section>
+
+  <section class="cta-section">
+    <h2>テニス用品のご相談はお気軽に</h2>
+    <p>ラケット選びからガット張り、ソフトテニスの専門サービスまで、店員が丁寧にご案内します。</p>
+    <div class="cta-buttons">
+      <a href="tel:0854231211">📞 電話で相談する（0854-23-1211）</a>
+      <a href="https://cf556128.cloudfree.jp/ssmatsumoto/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" class="outline">お問い合わせフォームはこちら</a>
+    </div>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <a href="tel:0854231211" class="primary"><span class="icon">📞</span>電話</a>
+  <a href="https://cf556128.cloudfree.jp/ssmatsumoto/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank"><span class="icon">✉️</span>問い合わせ</a>
+  <a href="https://www.instagram.com/sportsmatsu/" target="_blank"><span class="icon">📷</span>Instagram</a>
+  <a href="https://cf556128.cloudfree.jp/ssmatsumoto/" target="_blank"><span class="icon">🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
