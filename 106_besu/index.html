@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ベースボールガレージ岡山｜木製バット・グラブ修理は完全予約制の野球専門店</title>
+<meta name="description" content="ベースボールガレージ岡山は木製バット・グローブの修理加工を専門とする完全予約制の野球専門店。店長藤本英樹が丁寧に対応します。岡山市北区本町。">
+<style>
+  :root{
+    --main-navy:#1a2b4a;
+    --main-red:#c8102e;
+    --accent-gold:#d4af37;
+    --bg-cream:#f7f4ec;
+    --text-dark:#22262e;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color:var(--text-dark);
+    background:var(--bg-cream);
+    padding-bottom:64px;
+    line-height:1.7;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* ---- Header ---- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--main-navy);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:.5px;
+  }
+  header .shop-name span{
+    display:block;
+    font-size:10px;
+    color:var(--accent-gold);
+    font-weight:400;
+    letter-spacing:1px;
+  }
+  header .tel-btn{
+    background:var(--main-red);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .header-space{height:56px;}
+
+  /* ---- Hero ---- */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--main-navy) 0%, #0d1830 100%);
+    color:#fff;
+    padding:36px 20px 40px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;top:-40px;right:-40px;
+    width:180px;height:180px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(212,175,55,.25) 0%,transparent 70%);
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--accent-gold);
+    color:var(--main-navy);
+    font-weight:700;
+    font-size:12px;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:24px;
+    font-weight:800;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero h1 em{
+    display:block;
+    color:var(--accent-gold);
+    font-style:normal;
+    font-size:28px;
+    margin-top:4px;
+  }
+  .hero p.lead{
+    font-size:14px;
+    color:#dfe4ee;
+    margin-bottom:20px;
+  }
+  .hero-img{
+    width:100%;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,.4);
+    margin-bottom:20px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--main-red);
+    color:#fff;
+    padding:14px 22px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:15px;
+    box-shadow:0 4px 12px rgba(200,16,46,.4);
+    min-width:220px;
+  }
+  .btn-outline{
+    border:2px solid var(--accent-gold);
+    color:var(--accent-gold);
+    padding:12px 22px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:15px;
+    min-width:220px;
+  }
+
+  /* ---- Section common ---- */
+  section{padding:44px 18px;}
+  .section-title{
+    text-align:center;
+    margin-bottom:26px;
+  }
+  .section-title .en{
+    font-size:11px;
+    letter-spacing:3px;
+    color:var(--main-red);
+    font-weight:700;
+    display:block;
+    margin-bottom:6px;
+  }
+  .section-title .ja{
+    font-size:21px;
+    font-weight:800;
+    color:var(--main-navy);
+  }
+
+  /* ---- Featured product (イチオシ) ---- */
+  .featured{
+    background:var(--main-navy);
+    color:#fff;
+  }
+  .featured .section-title .ja{color:#fff;}
+  .featured .section-title .en{color:var(--accent-gold);}
+  .feature-card{
+    background:#fff;
+    color:var(--text-dark);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    margin-bottom:18px;
+  }
+  .feature-card img{width:100%;}
+  .feature-card .body{padding:18px;}
+  .feature-card .tag{
+    display:inline-block;
+    background:var(--main-red);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:14px;
+    margin-bottom:10px;
+  }
+  .feature-card h3{
+    font-size:18px;
+    color:var(--main-navy);
+    margin-bottom:8px;
+    font-weight:800;
+  }
+  .feature-card p{font-size:14px;color:#444;margin-bottom:12px;}
+  .feature-list{
+    list-style:none;
+    margin-bottom:14px;
+  }
+  .feature-list li{
+    font-size:13px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:6px;
+  }
+  .feature-list li::before{
+    content:"✓";
+    position:absolute;left:0;top:0;
+    color:var(--main-red);
+    font-weight:900;
+  }
+  .feature-card .btn-primary{
+    width:100%;
+    text-align:center;
+    min-width:auto;
+  }
+
+  /* ---- Strengths ---- */
+  .strengths{background:var(--bg-cream);}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+    border-left:4px solid var(--main-red);
+  }
+  .strength-item .num{
+    font-size:26px;
+    font-weight:900;
+    color:var(--main-red);
+    flex-shrink:0;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main-navy);
+    margin-bottom:6px;
+    font-weight:800;
+  }
+  .strength-item p{font-size:13px;color:#444;}
+
+  /* ---- Story ---- */
+  .story{
+    background:#fff;
+  }
+  .story-photo{
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:18px;
+    box-shadow:0 6px 20px rgba(0,0,0,.15);
+  }
+  .story-box{
+    background:var(--bg-cream);
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:16px;
+    position:relative;
+  }
+  .story-box::before{
+    content:"“";
+    font-size:50px;
+    color:var(--accent-gold);
+    position:absolute;
+    top:-6px;left:10px;
+    font-family:serif;
+  }
+  .story-box p{
+    font-size:13.5px;
+    padding-top:14px;
+    color:#333;
+    white-space:pre-line;
+  }
+  .story-name{
+    text-align:right;
+    font-size:12px;
+    font-weight:700;
+    color:var(--main-navy);
+    margin-top:8px;
+  }
+  .profile-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:12.5px;
+    margin-top:10px;
+  }
+  .profile-table th{
+    background:var(--main-navy);
+    color:#fff;
+    padding:8px 6px;
+    width:80px;
+    text-align:left;
+    font-weight:700;
+    vertical-align:top;
+  }
+  .profile-table td{
+    padding:8px 6px;
+    border-bottom:1px solid #ddd;
+    vertical-align:top;
+  }
+
+  /* ---- Shop info ---- */
+  .shopinfo{background:var(--bg-cream);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    font-size:13.5px;
+  }
+  .info-table th,.info-table td{
+    padding:12px 10px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+  }
+  .info-table th{
+    background:var(--main-navy);
+    color:#fff;
+    width:88px;
+    font-weight:700;
+  }
+  .info-table a{color:var(--main-red);font-weight:700;}
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+  .sns-row{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+    justify-content:center;
+  }
+  .sns-row a{
+    background:var(--main-navy);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:700;
+  }
+
+  /* ---- Final CTA ---- */
+  .final-cta{
+    background:linear-gradient(135deg,var(--main-red),#8f0c20);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    margin-bottom:22px;
+    color:#ffe3e3;
+  }
+  .final-cta .btn-primary{
+    background:#fff;
+    color:var(--main-red);
+    width:100%;
+    box-shadow:0 6px 20px rgba(0,0,0,.25);
+  }
+  .final-cta .btn-outline{
+    border-color:#fff;
+    color:#fff;
+    width:100%;
+    margin-top:10px;
+  }
+
+  /* ---- Bottom nav ---- */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    z-index:100;
+    box-shadow:0 -2px 10px rgba(0,0,0,.1);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px;
+    font-size:11px;
+    font-weight:700;
+    color:var(--main-navy);
+  }
+  .bottom-nav a.call{
+    background:var(--main-red);
+    color:#fff;
+  }
+  .bottom-nav a .ic{
+    display:block;
+    font-size:17px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero h1{font-size:28px;}
+    section{padding:56px 30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">ベースボールガレージ岡山<span>BASEBALL GARAGE OKAYAMA</span></div>
+  <a href="tel:0869934664" class="tel-btn">📞 電話</a>
+</header>
+<div class="header-space"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="badge">完全予約制の野球専門店</span>
+  <h1>木製バット・グラブの修理なら<em>ベースボールガレージ</em></h1>
+  <p class="lead">元フジモトスポーツ店長・藤本英樹が営む、岡山市北区本町の小さな野球専門店</p>
+  <div class="hero-img">
+    <img src="images/besu_hero.jpg" alt="ベースボールガレージ岡山 店内・木製バット">
+  </div>
+  <div class="hero-cta">
+    <a href="tel:0869934664" class="btn-primary">📞 予約のお電話はこちら</a>
+    <a href="https://baseballgarage.jp/contact" class="btn-outline">フォームで相談する</a>
+  </div>
+</section>
+
+<!-- 特集：イチオシ -->
+<section class="featured">
+  <div class="section-title">
+    <span class="en">FEATURED SERVICE</span>
+    <span class="ja">イチオシは完全予約制の木製バット・グラブ修理</span>
+  </div>
+  <div class="feature-card">
+    <img src="images/besu_bat.jpg" alt="木製バット・グローブの修理加工">
+    <div class="body">
+      <span class="tag">完全予約制</span>
+      <h3>木製バット・グローブの修理・加工はお任せください</h3>
+      <p>店主自らが一本一本、一つ一つ丁寧に向き合う完全予約制のサービス。長年培った知識と技術で、大切な野球用品を最善の状態に仕上げます。</p>
+      <ul class="feature-list">
+        <li>木製バットの割れ・欠け修理、グリップ加工</li>
+        <li>グローブの型付け・スジ入れ・修理</li>
+        <li>国内外の野球ブランドを知り尽くした提案力</li>
+        <li>お一人お一人にじっくり対応する予約制だから安心</li>
+      </ul>
+      <a href="tel:0869934664" class="btn-primary">📞 まずは電話で予約する</a>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="strengths">
+  <div class="section-title">
+    <span class="en">OUR STRENGTHS</span>
+    <span class="ja">ベースボールガレージが選ばれる理由</span>
+  </div>
+  <div class="strength-item">
+    <div class="num">01</div>
+    <div>
+      <h4>元フジモトスポーツ店長の確かな経験</h4>
+      <p>14年間の店長経験と、独立後10年以上に渡り木製バット・グローブの修理加工に打ち込んできた確かな技術力。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="num">02</div>
+    <div>
+      <h4>自宅の一室から始まった、こだわりの小さな野球店</h4>
+      <p>自宅の一室で営む、かなり小さな野球店だからこそ実現できる、一人ひとりに寄り添った丁寧な対応。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="num">03</div>
+    <div>
+      <h4>2022年10月、岡山市北区本町に２号店オープン</h4>
+      <p>目標であった地元・岡山市北区本町にベーガレ２号店をオープン。地域の野球ファンにより近い存在に。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ストーリー -->
+<section class="story">
+  <div class="section-title">
+    <span class="en">OUR STORY</span>
+    <span class="ja">「野球を、もっと楽しく」</span>
+  </div>
+  <div class="story-photo">
+    <img src="images/besu_owner.jpg" alt="ベースボールガレージ岡山 店長 藤本英樹">
+  </div>
+  <div class="story-box">
+    <p>どうも！皆さま、ベーガレことベースボールガレージの藤本英樹です。
+「野球を、もっと楽しく」をモットーにベーガレに来ることで少しでも「さらに野球が楽しくなった」と思ってもらえるように、お客さまのお役に立てればと思っております。
+木製バットとグローブと音楽が大好きな店主です！お気軽に頼っていただければ喜びますので、何でも気楽にご相談して下さいね！</p>
+    <div class="story-name">店長　藤本 英樹（フジモトヒデキ）</div>
+  </div>
+  <table class="profile-table">
+    <tr><th>生まれ</th><td>1978年岡山市生まれ</td></tr>
+    <tr><th>経歴</th><td>高校卒業後、地元企業に4年間勤務。実家のフジモトスポーツで14年間店長を務め、アメリカ製バットや国内外の野球ブランドと出会う。</td></tr>
+    <tr><th>独立</th><td>2014年にB.C Worksを立ち上げ独立。備前市に拠点を移し、Withsieで6年間、木製バット・グローブの修理加工に打ち込む。</td></tr>
+    <tr><th>創業</th><td>2020年、自宅の一室でベースボールガレージをオープン。</td></tr>
+    <tr><th>2号店</th><td>2022年10月20日、地元・岡山市北区本町にベースボールガレージ岡山をオープン。</td></tr>
+  </table>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shopinfo">
+  <div class="section-title">
+    <span class="en">SHOP INFO</span>
+    <span class="ja">店舗情報</span>
+  </div>
+  <table class="info-table">
+    <tr><th>店名</th><td>ベースボールガレージ岡山</td></tr>
+    <tr><th>代表者</th><td>藤本英樹</td></tr>
+    <tr><th>住所</th><td>岡山県岡山市北区本町１０−２２ 本町ビル ＲＦ</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0869934664">086-993-4664</a></td></tr>
+    <tr><th>定休日</th><td>完全予約制</td></tr>
+    <tr><th>HP</th><td><a href="https://baseballgarage.jp/" target="_blank" rel="noopener">https://baseballgarage.jp/</a></td></tr>
+    <tr><th>お問合せ</th><td><a href="https://baseballgarage.jp/contact" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8C%97%E5%8C%BA%E6%9C%AC%E7%94%BA10-22&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <div class="sns-row">
+    <a href="https://x.com/BaseballGarage" target="_blank" rel="noopener">𝕏 公式SNS</a>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="final-cta">
+  <h2>大切な木製バット・グローブ、<br>まずはご相談ください</h2>
+  <p>完全予約制のため、ご来店前に必ずお電話・フォームにてご連絡をお願いします。</p>
+  <a href="tel:0869934664" class="btn-primary">📞 086-993-4664 に電話する</a>
+  <a href="https://baseballgarage.jp/contact" class="btn-outline">フォームで問い合わせる</a>
+</section>
+
+<!-- 固定フッターナビ -->
+<div class="bottom-nav">
+  <a href="tel:0869934664" class="call"><span class="ic">📞</span>電話予約</a>
+  <a href="https://baseballgarage.jp/contact" target="_blank" rel="noopener"><span class="ic">✉️</span>お問合せ</a>
+  <a href="https://baseballgarage.jp/" target="_blank" rel="noopener"><span class="ic">🌐</span>公式HP</a>
+  <a href="https://x.com/BaseballGarage" target="_blank" rel="noopener"><span class="ic">𝕏</span>SNS</a>
+</div>
+
+</body>
+</html>
