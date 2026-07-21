@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>持田スポーツ｜島根で本格スキー用品を扱う専門店</title>
+<style>
+  :root{
+    --main-color:#0b3d91;
+    --accent-color:#ff6a00;
+    --bg-light:#f5f8fc;
+    --text-dark:#1a1a1a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px; /* 固定ナビ分の余白 */
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:#fff;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  }
+  header .shop-name{
+    font-size:16px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  main{margin-top:52px;}
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:60vw;
+    max-height:420px;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    color:#fff;
+    padding:30px 16px 18px;
+  }
+  .hero-overlay h1{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .hero-overlay p{
+    font-size:13px;
+    opacity:0.9;
+  }
+
+  /* 共通セクション */
+  section{
+    padding:36px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:22px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:50px;
+    height:3px;
+    background:var(--accent-color);
+    margin:8px auto 0;
+  }
+
+  /* イチオシ商品 */
+  .featured{
+    background:var(--bg-light);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    border:2px solid var(--accent-color);
+  }
+  .featured-card img{
+    width:100%;
+    height:56vw;
+    max-height:320px;
+    object-fit:cover;
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:20px;
+    margin:14px 14px 0;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin:10px 14px 8px;
+  }
+  .featured-card p{
+    font-size:14px;
+    margin:0 14px 16px;
+  }
+  .featured-list{
+    list-style:none;
+    margin:0 14px 18px;
+  }
+  .featured-list li{
+    font-size:14px;
+    padding-left:1.4em;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .featured-list li::before{
+    content:"✓";
+    color:var(--accent-color);
+    font-weight:bold;
+    position:absolute;
+    left:0;
+  }
+  .featured-cta{
+    display:block;
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    padding:14px;
+    margin:0 14px 16px;
+    border-radius:8px;
+    font-size:15px;
+  }
+
+  /* 強み */
+  .strengths{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:var(--bg-light);
+    border-radius:10px;
+    padding:16px;
+  }
+  .strength-num{
+    background:var(--main-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    min-width:32px;
+    height:32px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main-color);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13px;
+  }
+
+  /* ギャラリー */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .gallery img{
+    width:100%;
+    height:32vw;
+    max-height:200px;
+    object-fit:cover;
+    border-radius:8px;
+  }
+
+  /* クチコミ */
+  .review-box{
+    background:var(--bg-light);
+    border-radius:12px;
+    padding:20px;
+  }
+  .stars{
+    color:#ffb400;
+    font-size:20px;
+    text-align:center;
+    margin-bottom:12px;
+  }
+  .review-text{
+    font-size:14px;
+    white-space:pre-line;
+  }
+
+  /* 店舗情報 */
+  .shop-info{
+    background:var(--bg-light);
+  }
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  table.info-table th,
+  table.info-table td{
+    padding:12px 10px;
+    font-size:13px;
+    text-align:left;
+    border-bottom:1px solid #e0e0e0;
+    vertical-align:top;
+  }
+  table.info-table th{
+    background:var(--main-color);
+    color:#fff;
+    width:28%;
+    font-weight:normal;
+  }
+  table.info-table a{
+    color:var(--main-color);
+    text-decoration:underline;
+    word-break:break-all;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:250px;
+    border:0;
+  }
+
+  /* CTA セクション */
+  .cta-section{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-btn{
+    display:block;
+    padding:16px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-btn.tel{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .cta-btn.web{
+    background:#fff;
+    color:var(--main-color);
+  }
+
+  /* フッター */
+  footer{
+    text-align:center;
+    padding:20px 16px;
+    font-size:12px;
+    color:#777;
+  }
+
+  /* 固定ボトムナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px 4px;
+    font-size:13px;
+    font-weight:bold;
+    color:#fff;
+  }
+  .bottom-nav a.nav-tel{background:var(--accent-color);}
+  .bottom-nav a.nav-map{background:var(--main-color);}
+  .bottom-nav a.nav-web{background:#333;}
+
+  @media (min-width:600px){
+    .hero img{height:340px;}
+    .featured-card img{height:300px;}
+    .gallery img{height:180px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">持田スポーツ</div>
+  <a href="tel:0853210074" class="tel-btn">📞 電話する</a>
+</header>
+
+<main>
+
+  <!-- ヒーロー -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="持田スポーツ 店舗外観">
+    <div class="hero-overlay">
+      <h1>山陰で貴重な本格スキー専門店</h1>
+      <p>夏でも扱うスキー用品、経験豊富な店長が丁寧にご案内します｜島根県出雲市</p>
+    </div>
+  </div>
+
+  <!-- イチオシ商品 -->
+  <section class="featured">
+    <h2 class="section-title">イチオシ商品</h2>
+    <div class="featured-card">
+      <img src="images/ski-item.jpg" alt="スキー用品">
+      <span class="featured-badge">当店イチオシ</span>
+      <h3>本格派スキー用品</h3>
+      <p>ニューモデルのスキー板をはじめ、ブーツ・グローブなどの小物まで、山陰では珍しい本格的なラインナップを取り揃えています。</p>
+      <ul class="featured-list">
+        <li>ニューモデルのスキー予約注文が可能（割引あり）</li>
+        <li>スキー＆スノボウェア・ブーツの専用クリーニング対応</li>
+        <li>防水加工を保持したままクリーニング可能</li>
+        <li>ギアのメンテナンス一式もお任せください</li>
+      </ul>
+      <a href="tel:0853210074" class="featured-cta">スキー用品について電話で相談する</a>
+    </div>
+  </section>
+
+  <!-- 選ばれる理由 -->
+  <section class="strengths-section">
+    <h2 class="section-title">持田スポーツが選ばれる理由</h2>
+    <div class="strengths">
+      <div class="strength-item">
+        <div class="strength-num">1</div>
+        <div>
+          <h4>山陰では貴重な本格スキーショップ</h4>
+          <p>夏でもスキーを扱う数少ない店舗として、本格的な商品を豊富に取り揃えています。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">2</div>
+        <div>
+          <h4>店長による丁寧な接客</h4>
+          <p>スキーに詳しくない方にも興味深い話をたくさんしてくれると評判。安心して相談できます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">3</div>
+        <div>
+          <h4>専用クリーニング・メンテナンス対応</h4>
+          <p>ウェアやブーツの防水加工を保持したままクリーニングでき、ギアのメンテ一式もお任せできます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ギャラリー -->
+  <section class="gallery-section">
+    <h2 class="section-title">店内のご紹介</h2>
+    <div class="gallery">
+      <img src="images/hero.jpg" alt="店舗外観">
+      <img src="images/ski-item.jpg" alt="スキー用品ラインナップ">
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="review-section">
+    <h2 class="section-title">お客様のクチコミ</h2>
+    <div class="review-box">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">夏でもスキーを扱うショップで本格派のスキーが並ぶ、山陰では貴重な店。わざわざ行く価値がある。小さい店ですがブーツはもちろんグローブなどの小物もひと通りあります。
+店長が大変丁寧でスキーに詳しくない私にも興味深い話をたくさんして下さいました。
+この店でニューモデルのスキーを予約注文しましたが、割引もあって大満足です。スキー＆スノボウェア、ブーツの専用クリーニングをしてもらえます。防水加工が保持されたままクリーニングできるのでオススメです。もちろん、ギアのメンテ一式もお願いできます。小さい店舗ですが、店内には結構なラインナップのスキー板が揃えてあります。</p>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="shop-info">
+    <h2 class="section-title">店舗情報</h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>持田スポーツ</td></tr>
+      <tr><th>会社名</th><td>株式会社 持田スポーツ</td></tr>
+      <tr><th>住所</th><td>島根県出雲市今市町北本町３丁目２−７</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0853210074">0853-21-0074</a></td></tr>
+      <tr><th>定休日</th><td>毎週木曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://mochidasports.com/" target="_blank" rel="noopener">https://mochidasports.com/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:msp@mochidasports.com">msp@mochidasports.com</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.facebook.com/mochidasports/" target="_blank" rel="noopener">Facebook</a></td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=島根県出雲市今市町北本町３丁目２−７&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>本格スキー用品なら持田スポーツへ</h2>
+    <p>ニューモデルのご予約や、ウェア・ブーツのクリーニングもお気軽にご相談ください。</p>
+    <div class="cta-buttons">
+      <a href="tel:0853210074" class="cta-btn tel">📞 0853-21-0074 に電話する</a>
+      <a href="https://mochidasports.com/" target="_blank" rel="noopener" class="cta-btn web">🌐 公式サイトを見る</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 持田スポーツ
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0853210074" class="nav-tel">📞 電話</a>
+  <a href="https://maps.google.com/maps?q=島根県出雲市今市町北本町３丁目２−７" target="_blank" class="nav-map">📍 地図</a>
+  <a href="https://mochidasports.com/" target="_blank" class="nav-web">🌐 HP</a>
+</nav>
+
+</body>
+</html>
