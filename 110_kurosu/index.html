@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アウトドアショップ クロスキャンパー｜島根県松江市</title>
+<style>
+  :root{
+    --main:#1e4d3a;
+    --accent:#e8892a;
+    --sub:#f4f1e8;
+    --dark:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif;
+    color:var(--dark);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px; /* for fixed bottom nav */
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  .header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:#fff;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  }
+  .header .shopname{
+    font-size:15px;
+    font-weight:bold;
+    color:var(--main);
+  }
+  .header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .spacer{height:56px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:60vw;
+    max-height:420px;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    color:#fff;
+    padding:30px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .hero-overlay .sub{
+    font-size:14px;
+  }
+  .stars{
+    color:#ffd54a;
+    font-size:16px;
+    margin-top:6px;
+  }
+
+  section{
+    padding:36px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:24px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent);
+    margin:10px auto 0;
+  }
+
+  /* Featured product */
+  .feature{
+    background:var(--sub);
+  }
+  .feature-badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:20px;
+    margin-bottom:12px;
+  }
+  .feature-img{
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  }
+  .feature h3{
+    font-size:19px;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .feature p{
+    font-size:14px;
+    margin-bottom:10px;
+  }
+  .feature-list{
+    background:#fff;
+    border-radius:8px;
+    padding:16px;
+    margin-top:12px;
+    font-size:14px;
+  }
+  .feature-list li{
+    list-style:none;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .feature-list li::before{
+    content:"✓";
+    color:var(--accent);
+    font-weight:bold;
+    position:absolute;
+    left:0;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px;
+    border-radius:8px;
+    margin-top:20px;
+    box-shadow:0 4px 10px rgba(232,137,42,0.4);
+  }
+
+  /* strengths */
+  .strengths .item{
+    display:flex;
+    gap:14px;
+    margin-bottom:22px;
+    align-items:flex-start;
+  }
+  .strengths .num{
+    flex-shrink:0;
+    width:36px;height:36px;
+    background:var(--main);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;justify-content:center;
+    font-weight:bold;
+  }
+  .strengths h4{
+    font-size:15px;
+    color:var(--main);
+    margin-bottom:4px;
+  }
+  .strengths p{
+    font-size:13px;
+    color:#444;
+  }
+
+  /* image gallery */
+  .gallery{
+    background:var(--sub);
+  }
+  .gallery-img{
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:16px;
+  }
+
+  /* reviews */
+  .review{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:16px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .review .stars{color:#f5b400;font-size:15px;margin-bottom:8px;}
+  .review p{font-size:13px;color:#333;}
+
+  /* shop info */
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:10px 8px;
+    border-bottom:1px solid #e5e5e5;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:100px;
+    color:var(--main);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* final CTA */
+  .final-cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+  .final-cta .cta-btn{
+    background:var(--accent);
+  }
+  .final-cta .sns-btn{
+    display:inline-block;
+    margin-top:14px;
+    color:#fff;
+    font-size:13px;
+    border:1px solid rgba(255,255,255,0.6);
+    padding:8px 16px;
+    border-radius:20px;
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.12);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.primary{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:20px 16px 80px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="shopname">アウトドアショップ<br>クロスキャンパー</div>
+    <a href="tel:0852671400" class="tel-btn">📞 電話する</a>
+  </div>
+  <div class="spacer"></div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="アウトドアショップ クロスキャンパー 店内">
+    <div class="hero-overlay">
+      <div class="catch">山陰最大級の品揃え。<br>アウトドアの全てがここに。</div>
+      <div class="sub">初心者にもやさしい、スノーピーク製品マスター在籍店</div>
+      <div class="stars">★★★★★ 地域のお客様から高評価</div>
+    </div>
+  </div>
+
+  <!-- Featured Product -->
+  <section class="feature">
+    <div class="section-title">イチオシ商品</div>
+    <span class="feature-badge">当店イチオシ</span>
+    <div class="feature-img">
+      <img src="images/feature.jpg" alt="アウトドア用品 イチオシ商品">
+    </div>
+    <h3>アウトドア用品全般 － 初心者からベテランまで</h3>
+    <p>
+      キャンプ用品はもちろん、登山用品まで幅広く取り揃え。スノーピーク製品に精通したスタッフが、
+      あなたにぴったりの一台・一式をご提案します。近隣にはない充実のラインナップを、ぜひ店頭で体感してください。
+    </p>
+    <div class="feature-list">
+      <ul>
+        <li>スノーピーク製品マスターによる丁寧な接客</li>
+        <li>キャンプ用品から登山用品まで幅広く網羅</li>
+        <li>会員カード無料・5%割引特典あり</li>
+        <li>広い駐車場で安心してご来店いただけます</li>
+      </ul>
+    </div>
+    <a href="tel:0852671400" class="cta-btn">お気軽にお問い合わせください 📞</a>
+  </section>
+
+  <!-- Strengths -->
+  <section class="strengths">
+    <div class="section-title">選ばれる理由</div>
+    <div class="item">
+      <div class="num">1</div>
+      <div>
+        <h4>圧倒的な品揃え</h4>
+        <p>店内が広く、キャンプ用品・登山用品ともに充実。ここですべてのアウトドア用品を揃えることができます。</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="num">2</div>
+      <div>
+        <h4>専門知識豊富なスタッフ</h4>
+        <p>スノーピーク製品のマスターが在籍し、初心者にも親切・丁寧にアドバイス。安心して相談できます。</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="num">3</div>
+      <div>
+        <h4>お子様連れでも安心</h4>
+        <p>キッズスペースにはブロックなどの玩具を設置。お子様が飽きずに待てるので、ゆっくりお買い物が可能です。</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="num">4</div>
+      <div>
+        <h4>広い駐車場・快適な店舗環境</h4>
+        <p>駐車場は広く出入口も複数あり安心。清潔なトイレも完備し、快適にお買い物いただけます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <div class="section-title">店内の様子</div>
+    <div class="gallery-img">
+      <img src="images/gallery1.jpg" alt="クロスキャンパー 店内の様子">
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <div class="section-title">お客様の声</div>
+    <div class="review">
+      <div class="stars">★★★★☆</div>
+      <p>
+        近隣の自治体に住んでいたのですが、初めて利用しました。偶然にもセール中で、結構な金額の購入をしました。
+        お店の方も親切で、スノーピーク製品のマスターらしく、初心者に優しいお店だと思います。
+        キャンプのみならず登山用品も並んでおり、近場にはない立ち寄って面白いお店です。
+        キッズスペースにはブロックなどの玩具が置いてあり、買い物を子どもに急かされることもありません。
+        店内が広くて品揃えが多く、ここですべてのキャンプ用品を揃えることができます。
+        駐車場も広いので安心して車を停められますよ。
+      </p>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>
+        ここに移転する前からお世話になっているアウトドアショップです。普段はほとんどネット通販で購入するのですが、
+        急に入用になった物などを当日すぐ買いに行けるので便利です。店内を歩いた感じでは満足行く品揃えでした。
+        価格は普通。駐車場は割と広く出入口は３箇所。トイレは綺麗でした。会員カードは無料で5%割引の特典あり。
+        ワークショップを時々やってます。市街地から少し離れていますがまた利用したいお店でした。
+        スタッフが皆さん優しく接客しています。
+      </p>
+    </div>
+  </section>
+
+  <!-- Shop info -->
+  <section class="shop-info">
+    <div class="section-title">店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>アウトドアショップ クロスキャンパー</td></tr>
+      <tr><th>会社名</th><td>有限会社 ワールドウィンズ</td></tr>
+      <tr><th>代表者</th><td>勝部 洋治</td></tr>
+      <tr><th>住所</th><td>島根県松江市矢田町３１−３</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0852671400">085-267-1400</a></td></tr>
+      <tr><th>定休日</th><td>不定休</td></tr>
+      <tr><th>HP</th><td><a href="https://crosscamper.com/" target="_blank">https://crosscamper.com/</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.instagram.com/cross_camper/" target="_blank">Instagram</a></td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=島根県松江市矢田町31-3&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2>まずはお気軽にご来店・お問い合わせください</h2>
+    <p>スノーピーク製品マスターが、あなたにぴったりのアウトドア用品をご提案します。</p>
+    <a href="tel:0852671400" class="cta-btn">📞 085-267-1400 に電話する</a>
+    <a href="https://crosscamper.com/contact" target="_blank" class="sns-btn">お問い合わせフォームはこちら</a>
+  </section>
+
+  <footer>
+    © アウトドアショップ クロスキャンパー（有限会社ワールドウィンズ）
+  </footer>
+
+  <!-- Bottom fixed nav -->
+  <div class="bottom-nav">
+    <a href="tel:0852671400">
+      <span class="icon">📞</span>電話
+    </a>
+    <a href="https://maps.google.com/maps?q=島根県松江市矢田町31-3" target="_blank">
+      <span class="icon">📍</span>地図
+    </a>
+    <a href="https://crosscamper.com/" target="_blank">
+      <span class="icon">🌐</span>HP
+    </a>
+    <a href="https://crosscamper.com/contact" target="_blank" class="primary">
+      <span class="icon">✉️</span>お問い合わせ
+    </a>
+  </div>
+
+</body>
+</html>
