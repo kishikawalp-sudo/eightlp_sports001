@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マツウラスポーツ｜島根県出雲市の野球用品専門店</title>
+<style>
+  :root {
+    --main-color: #0b4d2c;
+    --sub-color: #d3a625;
+    --accent-color: #e63946;
+    --bg-light: #f7f5ef;
+    --text-dark: #1f1f1f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: var(--text-dark);
+    background: #fff;
+    padding-bottom: 64px;
+    line-height: 1.7;
+  }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--main-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .header .shop-name {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  .header .tel-btn {
+    background: var(--accent-color);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero {
+    margin-top: 52px;
+    position: relative;
+  }
+  .hero img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
+  .hero-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    color: #fff;
+    padding: 30px 16px 20px;
+  }
+  .hero-overlay .catch {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+  .hero-overlay .sub {
+    font-size: 14px;
+    color: #f0e6c8;
+  }
+
+  section { padding: 40px 16px; }
+  .section-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .section-title span {
+    display: block;
+    font-size: 12px;
+    color: var(--sub-color);
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--sub-color);
+    margin: 12px auto 0;
+  }
+
+  /* Featured product */
+  .featured {
+    background: var(--bg-light);
+  }
+  .featured-card {
+    background: #fff;
+    border: 2px solid var(--sub-color);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .featured-badge {
+    background: var(--accent-color);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px;
+    letter-spacing: 1px;
+  }
+  .featured-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .featured-body {
+    padding: 18px;
+  }
+  .featured-body h3 {
+    font-size: 19px;
+    color: var(--main-color);
+    margin-bottom: 10px;
+  }
+  .featured-body p {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  .featured-list {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+  .featured-list li {
+    font-size: 14px;
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .featured-list li::before {
+    content: "⚾";
+    position: absolute;
+    left: 0;
+  }
+  .cta-button {
+    display: block;
+    text-align: center;
+    background: var(--main-color);
+    color: #fff;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  /* Strengths */
+  .strengths-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .strength-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--bg-light);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .strength-num {
+    background: var(--main-color);
+    color: #fff;
+    min-width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .strength-text h4 {
+    font-size: 15px;
+    color: var(--main-color);
+    margin-bottom: 4px;
+  }
+  .strength-text p {
+    font-size: 13px;
+  }
+
+  /* Gallery */
+  .gallery {
+    background: var(--bg-light);
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  /* Reviews */
+  .review-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  .review-card .stars {
+    color: var(--sub-color);
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  .review-card p {
+    font-size: 14px;
+  }
+  .review-card .name {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #777;
+    text-align: right;
+  }
+
+  /* Shop info */
+  .shop-info {
+    background: var(--bg-light);
+  }
+  .info-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .info-table th, .info-table td {
+    padding: 12px 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+  .info-table th {
+    width: 90px;
+    background: var(--main-color);
+    color: #fff;
+    font-weight: normal;
+  }
+  .map-wrap {
+    margin-top: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .map-wrap iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+  }
+
+  /* CTA section */
+  .cta-section {
+    background: var(--main-color);
+    color: #fff;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .cta-section p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #e8e8e8;
+  }
+  .cta-section .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .btn-tel, .btn-form {
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .btn-tel {
+    background: var(--accent-color);
+    color: #fff;
+  }
+  .btn-form {
+    background: var(--sub-color);
+    color: #1f1f1f;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #888;
+    background: #fff;
+  }
+
+  /* Bottom nav */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    display: flex;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    z-index: 100;
+  }
+  .bottom-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0 8px;
+    font-size: 11px;
+    color: var(--main-color);
+  }
+  .bottom-nav a.call {
+    background: var(--accent-color);
+    color: #fff;
+    font-weight: bold;
+  }
+  .bottom-nav a.form {
+    background: var(--sub-color);
+    color: #1f1f1f;
+    font-weight: bold;
+  }
+  .bottom-nav .icon {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  @media (min-width: 600px) {
+    .gallery-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .cta-section .btn-group { flex-direction: row; justify-content: center; }
+    .btn-tel, .btn-form { flex: 1; max-width: 260px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="shop-name">マツウラスポーツ</div>
+    <a href="tel:0853630001" class="tel-btn">📞 電話する</a>
+  </header>
+
+  <div class="hero">
+    <img src="images/hero.jpg" alt="マツウラスポーツ 店舗外観">
+    <div class="hero-overlay">
+      <div class="catch">出雲市で野球用品を選ぶなら、<br>マツウラスポーツへ。</div>
+      <div class="sub">グローブ・バット・ユニフォームまで、地域密着の専門スタッフがしっかりサポートします</div>
+    </div>
+  </div>
+
+  <section class="featured">
+    <div class="section-title"><span>PICK UP ITEM</span>イチオシ商品</div>
+    <div class="featured-card">
+      <div class="featured-badge">★ 野球用品 取り扱い充実 ★</div>
+      <img src="images/baseball.jpg" alt="野球用品 グローブ バット">
+      <div class="featured-body">
+        <h3>野球用品を豊富にラインナップ</h3>
+        <p>グローブ・バット・ユニフォーム・スパイクなど、少年野球から一般・大人の草野球まで幅広く対応。お子様の成長やプレースタイルに合わせて、経験豊富なスタッフが最適な一品をご提案します。</p>
+        <ul class="featured-list">
+          <li>グローブの型付け・お手入れ相談も対応</li>
+          <li>各種メーカーの新商品を随時入荷</li>
+          <li>初心者から経験者まで丁寧にご案内</li>
+        </ul>
+        <a href="tel:0853630001" class="cta-button">野球用品について電話で相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="strengths">
+    <div class="section-title"><span>STRENGTH</span>マツウラスポーツの強み</div>
+    <div class="strengths-grid">
+      <div class="strength-item">
+        <div class="strength-num">1</div>
+        <div class="strength-text">
+          <h4>豊富な野球用品ラインナップ</h4>
+          <p>グローブやバットなど、野球用品の品揃えに自信があります。用途や目的に合わせてお選びいただけます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">2</div>
+        <div class="strength-text">
+          <h4>地域密着の丁寧な接客</h4>
+          <p>出雲市平田町で長年営業してきた地域のスポーツ店として、お客様一人ひとりに寄り添った提案を心がけています。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">3</div>
+        <div class="strength-text">
+          <h4>相談しやすい店内環境</h4>
+          <p>用具選びに迷った際も、スタッフが親身に相談に乗ります。お気軽にお立ち寄りください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="section-title"><span>SHOP</span>店内のご紹介</div>
+    <div class="gallery-grid">
+      <img src="images/shop1.jpg" alt="マツウラスポーツ 店内の様子1">
+      <img src="images/shop2.jpg" alt="マツウラスポーツ 店内の様子2">
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="section-title"><span>VOICE</span>お客様の声</div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>子供のグローブを選びに伺いました。スタッフの方が丁寧に相談に乗ってくれて、とても選びやすかったです。</p>
+      <div class="name">出雲市 40代 保護者様</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>草野球用のバットを探していましたが、種類が豊富で助かりました。地元にこういうお店があると心強いです。</p>
+      <div class="name">出雲市 30代 男性</div>
+    </div>
+  </section>
+
+  <section class="shop-info">
+    <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>マツウラスポーツ</td></tr>
+      <tr><th>代表者</th><td>松浦康之</td></tr>
+      <tr><th>住所</th><td>島根県出雲市平田町京町2110-24</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0853630001">085-363-0001</a></td></tr>
+      <tr><th>HP</th><td><a href="https://matsuspo89.base.shop/" target="_blank" rel="noopener">https://matsuspo89.base.shop/</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=島根県出雲市平田町京町2110-24&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>野球用品のことなら、マツウラスポーツへ<br>お電話・お問い合わせフォームでどうぞ</p>
+    <div class="btn-group">
+      <a href="tel:0853630001" class="btn-tel">📞 085-363-0001 に電話する</a>
+      <a href="https://thebase.com/inquiry/matsuspo89-base-shop?_gl=1*17z7i6t*_gcl_au*MTE1MjUyNzczNy4xNzU3NTU0Njc3*_ga*MTk4MjM2MzYyMC4xNzU3NTU0Njc3*_ga_574HL6KGKQ*czE3NTc1NTQ2NzckbzEkZzEkdDE3NTc1NTQ4MDYkajE3JGwwJGgw" target="_blank" rel="noopener" class="btn-form">お問い合わせフォームはこちら</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; マツウラスポーツ
+  </footer>
+
+  <nav class="bottom-nav">
+    <a href="tel:0853630001" class="call"><span class="icon">📞</span>電話</a>
+    <a href="https://matsuspo89.base.shop/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+    <a href="https://thebase.com/inquiry/matsuspo89-base-shop?_gl=1*17z7i6t*_gcl_au*MTE1MjUyNzczNy4xNzU3NTU0Njc3*_ga*MTk4MjM2MzYyMC4xNzU3NTU0Njc3*_ga_574HL6KGKQ*czE3NTc1NTQ2NzckbzEkZzEkdDE3NTc1NTQ4MDYkajE3JGwwJGgw" target="_blank" rel="noopener" class="form"><span class="icon">✉️</span>お問合せ</a>
+  </nav>
+
+</body>
+</html>
