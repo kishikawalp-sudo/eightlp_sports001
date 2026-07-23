@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>愛スポーツ｜島根県松江市のスポーツ用品・外商・リペアサービス</title>
+<style>
+  :root{
+    --main-color:#0b5ed7;
+    --accent-color:#ff7a00;
+    --dark:#1a1a1a;
+    --bg-light:#f5f8fc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark);
+    line-height:1.7;
+    padding-bottom:60px;
+    background:#fff;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:#fff;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 12px;
+  }
+  .logo{
+    font-size:16px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  .logo span{
+    display:block;
+    font-size:10px;
+    color:#666;
+    font-weight:normal;
+  }
+  .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:6px;
+    font-weight:bold;
+    font-size:14px;
+    white-space:nowrap;
+  }
+  .tel-btn small{
+    display:block;
+    font-size:9px;
+    font-weight:normal;
+  }
+
+  main{margin-top:56px;}
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    filter:brightness(0.6);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+    margin-bottom:8px;
+  }
+  .hero-text .sub{
+    font-size:14px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+  }
+  .hero-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:12px;
+    padding:4px 12px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+
+  section{
+    padding:36px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:24px;
+    position:relative;
+  }
+  .section-title:after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+  }
+
+  /* イチオシ商品セクション */
+  .push-section{
+    background:linear-gradient(135deg,#0b5ed7 0%,#0a3d91 100%);
+    color:#fff;
+    padding:40px 16px;
+  }
+  .push-section .section-title{color:#fff;}
+  .push-section .section-title:after{background:var(--accent-color);}
+  .push-card{
+    background:#fff;
+    color:var(--dark);
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:20px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+  }
+  .push-card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+  }
+  .push-card-body{
+    padding:16px;
+  }
+  .push-card-body .tag{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:11px;
+    padding:3px 10px;
+    border-radius:14px;
+    margin-bottom:8px;
+    font-weight:bold;
+  }
+  .push-card-body h3{
+    font-size:17px;
+    margin-bottom:8px;
+    color:var(--main-color);
+  }
+  .push-card-body p{
+    font-size:13.5px;
+    color:#333;
+  }
+
+  /* 強みセクション */
+  .strength-item{
+    display:flex;
+    gap:12px;
+    margin-bottom:20px;
+    align-items:flex-start;
+  }
+  .strength-num{
+    background:var(--main-color);
+    color:#fff;
+    width:32px;
+    height:32px;
+    min-width:32px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:14px;
+  }
+  .strength-item p{
+    font-size:14px;
+  }
+  .strength-lead{
+    text-align:center;
+    font-size:15px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:20px;
+  }
+
+  /* クチコミ */
+  .review-box{
+    background:var(--bg-light);
+    border-radius:12px;
+    padding:20px;
+    max-width:480px;
+    margin:0 auto;
+  }
+  .stars{
+    color:var(--accent-color);
+    font-size:20px;
+    margin-bottom:8px;
+  }
+  .review-box p{
+    font-size:14px;
+    color:#333;
+  }
+
+  /* 店舗情報 */
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .info-table th,.info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #e0e0e0;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:30%;
+    background:var(--bg-light);
+    color:var(--main-color);
+    white-space:nowrap;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta-section{
+    background:var(--dark);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section .section-title{color:#fff;}
+  .cta-section .section-title:after{background:var(--accent-color);}
+  .cta-section p{
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:340px;
+    margin:0 auto;
+  }
+  .cta-btn{
+    display:block;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-btn.tel{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .cta-btn.form{
+    background:#fff;
+    color:var(--main-color);
+    border:2px solid var(--main-color);
+  }
+  .cta-btn small{
+    display:block;
+    font-size:11px;
+    font-weight:normal;
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:#999;
+    padding:20px 16px;
+  }
+
+  /* 固定フッターナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 6px rgba(0,0,0,0.15);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+  }
+  .bottom-nav a.tel{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .bottom-nav a.form{
+    background:var(--main-color);
+    color:#fff;
+  }
+
+  @media (min-width:600px){
+    .hero-text .catch{font-size:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">愛スポーツ<span>島根県松江市 スポーツ用品・外商・リペア</span></div>
+  <a href="tel:0852595599" class="tel-btn">📞 電話<small>0852-59-5599</small></a>
+</header>
+
+<main>
+
+  <section class="hero" style="padding:0;">
+    <img src="images/hero.jpg" alt="愛スポーツ 店舗外観">
+    <div class="hero-text">
+      <div class="hero-badge">島根県松江市 創業スポーツ専門店</div>
+      <div class="catch">スポーツのお悩み、まるごとご相談ください</div>
+      <div class="sub">用品販売・外商・リペア・トレーニング機器修理・施設施工まで対応</div>
+    </div>
+  </section>
+
+  <section class="push-section">
+    <div class="section-title">イチオシサービス</div>
+
+    <div class="push-card">
+      <img src="images/gaisho.jpg" alt="スポーツ外商サービス">
+      <div class="push-card-body">
+        <span class="tag">出張・訪問対応</span>
+        <h3>スポーツ外商サービス</h3>
+        <p>学校やチーム、団体様のもとへ直接お伺いし、ユニフォームや部活動用品の選定・提案・納品まで一貫サポート。忙しい現場に足を運ぶ手間なく、最適な商品をご案内します。</p>
+      </div>
+    </div>
+
+    <div class="push-card">
+      <img src="images/repair.jpg" alt="リペアサービス">
+      <div class="push-card-body">
+        <span class="tag">修理・メンテナンス</span>
+        <h3>リペアサービス</h3>
+        <p>スポーツ用品やトレーニング機器の修理・メンテナンスに対応。長く使いたい大切な道具を、経験豊富なスタッフが丁寧に修理いたします。買い替え前に、まずはご相談ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">愛スポーツが選ばれる理由</div>
+    <p class="strength-lead">島根県のスポーツライフを幅広くサポート</p>
+
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <p>スポーツ用品の販売はもちろん、学校・団体向けの外商対応や、用品・トレーニング機器の修理（リペア）まで、幅広いニーズにワンストップで対応しています。</p>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <p>スポーツ施設の設計・施工にも対応。用品店ならではの視点から、使いやすく安全な施設づくりをご提案します。</p>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <p>島根県を中心に地域密着で営業。学校・チーム・個人のお客様まで、それぞれのご要望に合わせて柔軟にご相談に対応します。</p>
+    </div>
+  </section>
+
+  <section style="background:var(--bg-light);">
+    <div class="section-title">お客様の声</div>
+    <div class="review-box">
+      <div class="stars">★★★★☆</div>
+      <p>チームTシャツの作成でお世話になりました。相談から仕上がりまで丁寧に対応していただき、安心してお任せできました。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">店舗情報</div>
+    <table class="info-table">
+      <tr><th>店舗名</th><td>愛スポーツ</td></tr>
+      <tr><th>運営会社</th><td>株式会社 愛スポーツ</td></tr>
+      <tr><th>住所</th><td>島根県松江市東津田町1736−1</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0852595599">0852-59-5599</a></td></tr>
+      <tr><th>定休日</th><td>水曜日・日曜日・祝日</td></tr>
+      <tr><th>公式HP</th><td><a href="https://i-sports.jp/matsue/" target="_blank">https://i-sports.jp/matsue/</a></td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=島根県松江市東津田町1736-1&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="section-title">お気軽にご相談ください</div>
+    <p>用品選び・外商・修理・施設のご相談まで、<br>愛スポーツが丁寧に対応いたします。</p>
+    <div class="cta-buttons">
+      <a href="tel:0852595599" class="cta-btn tel">📞 電話で相談する<small>0852-59-5599（水・日・祝を除く）</small></a>
+      <a href="https://i-sports.jp/inquiry/" target="_blank" class="cta-btn form">✉️ フォームで問い合わせる</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 株式会社 愛スポーツ
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0852595599" class="tel">📞 電話する</a>
+  <a href="https://i-sports.jp/inquiry/" target="_blank" class="form">✉️ お問い合わせ</a>
+</nav>
+
+</body>
+</html>
