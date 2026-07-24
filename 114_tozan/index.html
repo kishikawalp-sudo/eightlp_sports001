@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登山の店 菊信｜島根県松江市の登山・アウトドア専門店</title>
+<style>
+  :root{
+    --main-color:#1f5c3f;
+    --sub-color:#2e7d52;
+    --accent-color:#e8a33d;
+    --bg-light:#f6f4ee;
+    --text-dark:#26302a;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:var(--white);
+    line-height:1.7;
+    padding-bottom:64px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;width:100%;
+    background:var(--white);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    z-index:100;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--main-color);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .spacer{height:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(rgba(20,40,25,0.45),rgba(20,40,25,0.55)),url('images/hero.jpg') center/cover no-repeat;
+    color:var(--white);
+    padding:70px 20px 50px;
+    text-align:center;
+  }
+  .hero .catch-sub{
+    font-size:14px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+    color:var(--accent-color);
+    font-weight:bold;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:16px;
+    line-height:1.5;
+  }
+  .hero p{
+    font-size:14px;
+    margin-bottom:24px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-btn{
+    display:block;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-btn.primary{
+    background:var(--accent-color);
+    color:var(--white);
+  }
+  .cta-btn.secondary{
+    background:var(--white);
+    color:var(--main-color);
+    border:2px solid var(--white);
+  }
+
+  /* Section Common */
+  section{
+    padding:44px 20px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:8px;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent-color);
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:13px;
+    color:#555;
+    margin-bottom:28px;
+  }
+
+  /* Featured Product */
+  .featured{
+    background:var(--bg-light);
+  }
+  .featured-card{
+    background:var(--white);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    margin-bottom:20px;
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-card .badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:var(--white);
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:20px;
+    margin:14px 0 0 14px;
+  }
+  .featured-card h3{
+    font-size:18px;
+    color:var(--main-color);
+    padding:8px 14px 4px;
+  }
+  .featured-card p{
+    font-size:13.5px;
+    padding:0 14px 16px;
+    color:#444;
+  }
+  .feature-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:0 14px 18px;
+  }
+  .feature-points div{
+    background:var(--bg-light);
+    color:var(--main-color);
+    font-size:12.5px;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:6px;
+    flex:1 1 auto;
+    text-align:center;
+    border:1px solid var(--sub-color);
+  }
+
+  /* Strengths */
+  .strengths-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .strength-item{
+    background:var(--white);
+    border-left:5px solid var(--main-color);
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    padding:16px;
+    border-radius:6px;
+  }
+  .strength-item h3{
+    font-size:15.5px;
+    color:var(--main-color);
+    margin-bottom:6px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#444;
+  }
+
+  /* Gallery */
+  .gallery{
+    background:var(--bg-light);
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:8px;
+    object-fit:cover;
+    width:100%;
+  }
+  .gallery-grid .full{
+    height:220px;
+  }
+
+  /* Reviews */
+  .review-card{
+    background:var(--white);
+    border:1px solid #e2ded4;
+    border-radius:10px;
+    padding:18px;
+  }
+  .review-stars{
+    color:var(--accent-color);
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* Company Info */
+  .company-box{
+    background:var(--bg-light);
+  }
+  .company-box .strengths-list .strength-item{
+    border-left-color:var(--sub-color);
+  }
+
+  /* Shop Info Table */
+  table.shop-info{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    margin-bottom:24px;
+  }
+  table.shop-info th, table.shop-info td{
+    padding:12px 10px;
+    border-bottom:1px solid #e0ddd3;
+    text-align:left;
+    vertical-align:top;
+  }
+  table.shop-info th{
+    color:var(--main-color);
+    width:30%;
+    white-space:nowrap;
+  }
+  table.shop-info a{
+    color:var(--sub-color);
+    text-decoration:underline;
+    word-break:break-all;
+  }
+  .map-frame{
+    width:100%;
+    height:220px;
+    border:0;
+    border-radius:10px;
+    margin-bottom:24px;
+  }
+
+  /* CTA Section */
+  .cta-section{
+    background:var(--main-color);
+    color:var(--white);
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13.5px;
+    margin-bottom:22px;
+    opacity:0.9;
+  }
+
+  /* Fixed Bottom Nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;width:100%;
+    display:flex;
+    z-index:100;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px 4px;
+    font-size:13px;
+    font-weight:bold;
+    color:var(--white);
+  }
+  .bottom-nav a.tel{
+    background:var(--accent-color);
+  }
+  .bottom-nav a.map{
+    background:var(--main-color);
+  }
+
+  @media (min-width:600px){
+    .hero h1{font-size:32px;}
+    .cta-buttons{flex-direction:row;justify-content:center;}
+    .cta-btn{flex:0 0 auto;padding:14px 32px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">登山の店 菊信</div>
+  <a href="tel:0852212875" class="tel-btn">📞 電話で相談</a>
+</header>
+<div class="spacer"></div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="catch-sub">島根県松江市の登山・アウトドア専門店</div>
+  <h1>通好みのブランドが揃う、<br>信頼できる登山用品専門店</h1>
+  <p>クライミングギアから登山本まで。詳しく親切なスタッフが<br>あなたの登山・アウトドアライフをサポートします。</p>
+  <div class="cta-buttons">
+    <a href="tel:0852212875" class="cta-btn primary">📞 今すぐ電話で相談する</a>
+    <a href="#shopinfo" class="cta-btn secondary">🗺️ 店舗情報を見る</a>
+  </div>
+</div>
+
+<!-- Featured Product -->
+<section class="featured">
+  <div class="section-title">
+    <span>OUR RECOMMENDATION</span>
+    イチオシのアウトドア用品
+  </div>
+  <p class="section-lead">通好みの品揃えとクライミングギアで登山の楽しさを広げます</p>
+
+  <div class="featured-card">
+    <img src="images/item01.jpg" alt="アウトドア用品">
+    <div class="badge">店主イチオシ</div>
+    <h3>豊富なアウトドア用品ラインナップ</h3>
+    <p>登山用ウェア・シューズはもちろん、クライミングギア（アッセンダーなど）まで、通好みのブランドを幅広く取り揃えています。地元・里山の登山本などマニアックな品揃えも魅力です。</p>
+    <div class="feature-points">
+      <div>クライミングギア充実</div>
+      <div>通好みブランド多数</div>
+      <div>地元登山本も取扱い</div>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="strengths">
+  <div class="section-title">
+    <span>STRENGTH</span>
+    菊信が選ばれる理由
+  </div>
+  <div class="strengths-list">
+    <div class="strength-item">
+      <h3>① 店員さんの豊富な知識と親切な接客</h3>
+      <p>登山経験豊富なスタッフが、初心者からベテランまで一人ひとりに合ったギア選びを丁寧にアドバイスします。</p>
+    </div>
+    <div class="strength-item">
+      <h3>② 通好みのブランド・品揃え</h3>
+      <p>他店にはないクライミングギア（アッセンダー等）も常備。本格志向の登山者から信頼される品揃えです。</p>
+    </div>
+    <div class="strength-item">
+      <h3>③ キャッシュレス決済に対応</h3>
+      <p>楽天ペイ・auペイが利用可能で、お支払いもスムーズ。気軽にお立ち寄りいただけます。</p>
+    </div>
+    <div class="strength-item">
+      <h3>④ 地元の登山情報にも精通</h3>
+      <p>地元・里山などの登山本も取り扱っており、地域の登山情報を深く知ることができます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <div class="section-title">
+    <span>GALLERY</span>
+    店内・商品ギャラリー
+  </div>
+  <div class="gallery-grid">
+    <img class="full" src="images/gallery01.jpg" alt="店内の様子">
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+  <div class="section-title">
+    <span>VOICE</span>
+    お客様の口コミ
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p>店員さん詳しくて親切です。楽天ペイ、auペイ使えます。通好みのブランド、品揃え。クライミングギアも揃っており、アッセンダーなどもちゃんとあります。信頼できるお店です。登山用品だけでなく、地元の里山などの登山本なども扱っていましたので購入させていただきました。</p>
+  </div>
+</section>
+
+<!-- Company Info -->
+<section class="company-box">
+  <div class="section-title">
+    <span>COMPANY</span>
+    運営会社について
+  </div>
+  <div class="strengths-list">
+    <div class="strength-item">
+      <h3>YAMAP（ヤマップ）が支える安心の登山体験</h3>
+      <p>運営会社の株式会社ヤマップは、オフラインで使える登山地図アプリ「YAMAP」と日本最大級のアウトドアコミュニティを組み合わせた登山プラットフォームを展開。電波の届かない山中でも現在地を確認できる機能で安全登山を支援し、「地球とつながるよろこび。」という理念のもと、登山者同士の情報共有とサービス革新を続けています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Shop Info -->
+<section id="shopinfo" class="shop-info-section">
+  <div class="section-title">
+    <span>SHOP INFO</span>
+    店舗情報
+  </div>
+  <table class="shop-info">
+    <tr><th>店名</th><td>登山の店 菊信</td></tr>
+    <tr><th>住所</th><td>島根県松江市東茶町２８</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0852212875">085-221-2875</a></td></tr>
+    <tr><th>運営会社</th><td>株式会社ヤマップ（YAMAP INC.）</td></tr>
+    <tr><th>代表者</th><td>春山慶彦</td></tr>
+    <tr><th>公式サイト</th><td><a href="https://yamap.com/users/1481776" target="_blank" rel="noopener">https://yamap.com/users/1481776</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://corporate.yamap.co.jp/contact" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+    <tr><th>Facebook</th><td><a href="https://www.facebook.com/yamap.inc/" target="_blank" rel="noopener">公式Facebookページ</a></td></tr>
+    <tr><th>YouTube</th><td><a href="https://www.youtube.com/@yamap_inc" target="_blank" rel="noopener">公式YouTubeチャンネル</a></td></tr>
+  </table>
+  <iframe class="map-frame" src="https://maps.google.com/maps?q=%E5%B3%B6%E6%A0%B9%E7%9C%8C%E6%9D%BE%E6%B1%9F%E5%B8%82%E6%9D%B1%E8%8C%B6%E7%94%BA28&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>登山・クライミングギアのご相談は「登山の店 菊信」まで</p>
+  <div class="cta-buttons">
+    <a href="tel:0852212875" class="cta-btn primary">📞 085-221-2875 に電話する</a>
+  </div>
+</section>
+
+<!-- Fixed Bottom Nav -->
+<div class="bottom-nav">
+  <a href="tel:0852212875" class="tel">📞 電話する</a>
+  <a href="#shopinfo" class="map">🗺️ 地図を見る</a>
+</div>
+
+</body>
+</html>
