@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ムラシゲスポーツ｜山口県周南市のテニス用品専門店</title>
+<style>
+  :root{
+    --main-color:#0b3d91;
+    --accent-color:#ff6b00;
+    --sub-color:#f4f7fb;
+    --text-color:#222;
+    --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:var(--text-color);
+    line-height:1.7;
+    background:var(--white);
+    padding-bottom:60px; /* space for fixed bottom nav */
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .inner{max-width:640px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--white);
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    z-index:1000;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:8px 12px;
+  }
+  header .shop-name{
+    font-size:15px;font-weight:bold;color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--accent-color);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-spacer{height:52px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:var(--main-color);
+  }
+  .hero img{
+    width:100%;
+    height:auto;
+    opacity:0.85;
+  }
+  .hero-text{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,0.75));
+    color:var(--white);
+    padding:24px 16px 16px;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:6px;
+    text-shadow:0 2px 4px rgba(0,0,0,0.5);
+  }
+  .hero-text .sub{
+    font-size:14px;
+    opacity:0.95;
+  }
+
+  /* Section common */
+  section{padding:40px 0;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:8px;
+  }
+  .section-title span{
+    display:block;
+    font-size:13px;
+    color:var(--accent-color);
+    font-weight:bold;
+    margin-bottom:4px;
+    letter-spacing:2px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:14px;
+    color:#555;
+    margin-bottom:28px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--sub-color);
+  }
+  .featured-card{
+    background:var(--white);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    border:2px solid var(--accent-color);
+  }
+  .featured-badge{
+    background:var(--accent-color);
+    color:var(--white);
+    text-align:center;
+    font-weight:bold;
+    font-size:14px;
+    padding:8px;
+    letter-spacing:2px;
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-body{padding:20px;}
+  .featured-body h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-body p{
+    font-size:14px;
+    margin-bottom:12px;
+  }
+  .feature-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .feature-list li{
+    font-size:14px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .feature-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--accent-color);
+    font-weight:bold;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent-color);
+    color:var(--white);
+    font-weight:bold;
+    font-size:16px;
+    padding:14px;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(255,107,0,0.35);
+  }
+
+  /* Strengths */
+  .strengths .item{
+    display:flex;
+    gap:14px;
+    margin-bottom:28px;
+    align-items:flex-start;
+  }
+  .strengths .num{
+    flex-shrink:0;
+    width:36px;height:36px;
+    background:var(--main-color);
+    color:var(--white);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .strengths .item h4{
+    font-size:16px;
+    color:var(--main-color);
+    margin-bottom:6px;
+  }
+  .strengths .item p{
+    font-size:13.5px;
+    color:#444;
+  }
+  .strengths .founder{
+    background:var(--sub-color);
+    border-radius:10px;
+    padding:20px;
+    margin-top:10px;
+  }
+  .strengths .founder h4{
+    color:var(--accent-color);
+    font-size:15px;
+    margin-bottom:8px;
+  }
+  .strengths .founder p{
+    font-size:13.5px;
+  }
+
+  /* Product photo strip */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:8px;
+  }
+
+  /* Reviews */
+  .reviews{background:var(--sub-color);}
+  .review-card{
+    background:var(--white);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .stars{
+    color:#ffb400;
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:#333;
+  }
+
+  /* Shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .shop-info th,
+  .shop-info td{
+    padding:12px 8px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-info th{
+    width:30%;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-wrap{
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--main-color);
+    color:var(--white);
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+  .final-cta .cta-btn{
+    background:var(--accent-color);
+  }
+  .final-cta .tel-big{
+    display:block;
+    margin-top:14px;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--white);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:var(--white);
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main-color);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.call{
+    background:var(--accent-color);
+    color:var(--white);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">ムラシゲスポーツ</div>
+  <a href="tel:0834311345" class="tel-btn">📞 0834-31-1345</a>
+</header>
+<div class="header-spacer"></div>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="ムラシゲスポーツ 店舗外観">
+  <div class="hero-text">
+    <div class="catch">ソフトテニスの品揃え、山口県周南市No.1クラス</div>
+    <div class="sub">店長自らガットを張る「張人」ライセンス保持者。地域の選手から厚い信頼。</div>
+  </div>
+</div>
+
+<!-- Featured product -->
+<section class="featured">
+  <div class="inner">
+    <div class="section-title"><span>ICHIOSHI PRODUCT</span>イチオシ商品</div>
+    <div class="section-lead">テニス用品なら、ムラシゲスポーツにお任せください</div>
+
+    <div class="featured-card">
+      <div class="featured-badge">★ イチオシ ★ テニス用品</div>
+      <img src="images/tennis_goods.jpg" alt="テニス用品 ラケット ガット">
+      <div class="featured-body">
+        <h3>豊富な品揃えと確かな技術力で選ぶ、あなただけの一本</h3>
+        <p>ソフトテニスの品揃えは地域随一。店長自らが用具知識も豊富で、ラケット選びからガットのセッティングまで丁寧にアドバイスします。</p>
+        <ul class="feature-list">
+          <li>超高級ガット張り機を完備、時間が経っても緩みにくい高精度な張り上げ</li>
+          <li>社長自らが「張人」ライセンスを持つストリンガー</li>
+          <li>ソフトテニス用品の品揃えが豊富で、初心者〜上級者まで対応</li>
+        </ul>
+        <a href="tel:0834311345" class="cta-btn">今すぐ電話で相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="strengths">
+  <div class="inner">
+    <div class="section-title"><span>OUR STRENGTH</span>選ばれる理由</div>
+
+    <div class="item">
+      <div class="num">1</div>
+      <div>
+        <h4>各種スポーツに精通したスタッフが的確にアドバイス</h4>
+        <p>ムラシゲスポーツには各種スポーツに精通したスタッフが在籍。商品購入の際、お客様一人ひとりに合った的確なアドバイスをいたします。</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="num">2</div>
+      <div>
+        <h4>「フットウェアアドバイザー」資格保持スタッフ在籍</h4>
+        <p>足の骨や関節の動きを理解し、シューズのテクノロジーを深く知るスタッフが、あなたに最適な一足を見つけます。個人の足の特徴に気づき、スポーツやランニング、ウォーキングに最適なシューズ選びをサポートします。</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="num">3</div>
+      <div>
+        <h4>超高級ガット張り機で緩まない仕上がり</h4>
+        <p>時間が経っても緩みにくい高精度なガット張りが可能。ラケットスポーツをする方から高い評価をいただいています。</p>
+      </div>
+    </div>
+
+    <div class="founder">
+      <h4>創業者ストーリー</h4>
+      <p>社長でありながら「張人（はりびと）」のライセンスを持つストリンガーでもある村重代表。地域のラケットスポーツ選手たちの信頼も厚く、日夜ガットを張り続けています。</p>
+    </div>
+
+    <div class="gallery" style="margin-top:24px;">
+      <img src="images/gut_machine.jpg" alt="超高級ガット張り機">
+      <img src="images/tennis_goods.jpg" alt="テニス用品コーナー">
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+  <div class="inner">
+    <div class="section-title"><span>REVIEW</span>お客様の声</div>
+
+    <div class="review-card">
+      <div class="stars">★★★★</div>
+      <p>ソフトテニスの品揃えが豊富で、欲しいものがすぐ見つかります。店長（社長？）さんの用具に関する知識も豊富で、トークも楽しくて毎回長居してしまいます。</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>超高級ガット張り機があり、時間が経っても緩みません。ガット張りをお願いするなら断然こちらです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Shop info -->
+<section class="shop-info">
+  <div class="inner">
+    <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+    <table>
+      <tr><th>店名</th><td>ムラシゲスポーツ</td></tr>
+      <tr><th>会社名</th><td>株式会社ムラシゲスポーツ</td></tr>
+      <tr><th>代表者</th><td>村重　光範</td></tr>
+      <tr><th>住所</th><td>山口県周南市岐南町８−１８</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0834311345">0834-31-1345</a></td></tr>
+      <tr><th>定休日</th><td>年中無休</td></tr>
+      <tr><th>HP</th><td><a href="http://www.murashige-sports.com/" target="_blank" rel="noopener">www.murashige-sports.com</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://www.murashige-sports.com/contact" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@murashige-sports.com">info@murashige-sports.com</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E5%91%A8%E5%8D%97%E5%B8%82%E5%B2%90%E5%8D%97%E7%94%BA%EF%BC%98%E2%88%92%EF%BC%91%EF%BC%98&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="inner">
+    <h2>テニス用品のご相談は、ムラシゲスポーツへ</h2>
+    <p>豊富な品揃えと確かな技術力で、あなたにぴったりの一本をご提案します。<br>まずはお気軽にお電話ください。</p>
+    <a href="tel:0834311345" class="cta-btn">電話で相談する</a>
+    <a href="tel:0834311345" class="tel-big">0834-31-1345</a>
+  </div>
+</section>
+
+<!-- Bottom nav -->
+<div class="bottom-nav">
+  <a href="tel:0834311345" class="call">📞 電話</a>
+  <a href="https://www.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E5%91%A8%E5%8D%97%E5%B8%82%E5%B2%90%E5%8D%97%E7%94%BA%EF%BC%98%E2%88%92%EF%BC%91%EF%BC%98" target="_blank">📍 地図</a>
+  <a href="https://www.murashige-sports.com/contact" target="_blank">✉️ お問合せ</a>
+  <a href="http://www.murashige-sports.com/" target="_blank">🌐 HP</a>
+</div>
+
+</body>
+</html>
