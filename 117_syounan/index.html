@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>周南スポーツ｜山口県周南市の野球専門店</title>
+<style>
+  :root{
+    --navy:#0b2545;
+    --navy-dark:#081a33;
+    --red:#c8102e;
+    --gold:#e8b923;
+    --gray-bg:#f5f6f8;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:#222;
+    background:var(--white);
+    padding-bottom:60px;
+    line-height:1.7;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:var(--navy);
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 14px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  header .shop-name{
+    font-size:16px;
+    font-weight:bold;
+  }
+  header .tel-btn{
+    background:var(--red);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-spacer{height:56px;}
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    padding:34px 20px 40px;
+    text-align:center;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy-dark);
+    font-weight:bold;
+    font-size:12px;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:.05em;
+  }
+  .hero h1{
+    font-size:24px;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero h1 span{
+    color:var(--gold);
+  }
+  .hero p{
+    font-size:14px;
+    opacity:.9;
+    margin-bottom:20px;
+  }
+  .hero img{
+    border-radius:10px;
+    margin:0 auto 18px;
+    box-shadow:0 6px 20px rgba(0,0,0,.35);
+  }
+  .cta-btn{
+    display:block;
+    background:var(--red);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:15px;
+    border-radius:8px;
+    margin:0 auto;
+    max-width:320px;
+    box-shadow:0 4px 12px rgba(200,16,46,.4);
+  }
+  .cta-sub{
+    font-size:12px;
+    margin-top:8px;
+    opacity:.85;
+  }
+
+  /* セクション共通 */
+  section{
+    padding:40px 20px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .section-title small{
+    display:block;
+    font-size:12px;
+    color:var(--red);
+    font-weight:bold;
+    letter-spacing:.1em;
+    margin-bottom:8px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:#555;
+    margin-bottom:26px;
+  }
+
+  /* イチオシ商品 */
+  .featured{
+    background:var(--gray-bg);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
+    border:2px solid var(--gold);
+  }
+  .featured-card img{
+    width:100%;
+  }
+  .featured-card .body{
+    padding:20px;
+  }
+  .featured-card h3{
+    font-size:18px;
+    color:var(--navy);
+    margin-bottom:10px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .featured-list li{
+    font-size:14px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .featured-list li::before{
+    content:"⚾";
+    position:absolute;
+    left:0;
+  }
+  .flow{
+    display:flex;
+    justify-content:space-between;
+    text-align:center;
+    margin-top:18px;
+    gap:6px;
+  }
+  .flow div{
+    flex:1;
+    font-size:11px;
+    background:var(--navy);
+    color:#fff;
+    border-radius:8px;
+    padding:10px 4px;
+  }
+  .flow div b{
+    display:block;
+    font-size:15px;
+    color:var(--gold);
+    margin-bottom:2px;
+  }
+
+  /* 強み */
+  .strengths{
+    background:#fff;
+  }
+  .strength-box{
+    background:var(--gray-bg);
+    border-left:4px solid var(--red);
+    padding:18px;
+    border-radius:6px;
+    font-size:14px;
+    white-space:pre-line;
+  }
+
+  /* クチコミ */
+  .reviews{
+    background:var(--gray-bg);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .stars{
+    color:var(--gold);
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#333;
+  }
+
+  /* 店舗情報 */
+  .shop-info{
+    background:#fff;
+  }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #e0e0e0;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:28%;
+    color:var(--navy);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-wrap{
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:260px;
+    border:0;
+  }
+
+  /* 最終CTA */
+  .final-cta{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13px;
+    opacity:.9;
+    margin-bottom:22px;
+  }
+  .final-cta img{
+    border-radius:10px;
+    margin-bottom:20px;
+    box-shadow:0 6px 20px rgba(0,0,0,.35);
+  }
+  .sub-btn{
+    display:block;
+    background:transparent;
+    border:1px solid #fff;
+    color:#fff;
+    font-size:14px;
+    padding:13px;
+    border-radius:8px;
+    margin:10px auto 0;
+    max-width:320px;
+  }
+
+  /* フッターナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:11px;
+    color:var(--navy);
+    font-weight:bold;
+  }
+  .bottom-nav a.call{
+    background:var(--red);
+    color:#fff;
+  }
+  .bottom-nav a span{
+    display:block;
+    font-size:16px;
+    margin-bottom:2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">周南スポーツ</div>
+  <a href="tel:0834343089" class="tel-btn">📞 電話で問合せ</a>
+</header>
+<div class="header-spacer"></div>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <span class="badge">野球専門店 × 山口県周南市</span>
+  <h1>お子様の<span>「はじめてのグローブ」</span>を<br>本気で選びたいなら周南スポーツ</h1>
+  <img src="images/hero_glove.jpg" alt="周南スポーツ 硬式グローブ">
+  <p>専門知識豊富なスタッフが型付けまで対応。<br>球場併設だから購入後すぐに試せます。</p>
+  <a href="tel:0834343089" class="cta-btn">📞 今すぐ電話で相談する</a>
+  <p class="cta-sub">周南市福川南町｜駐車場広め｜球場隣接</p>
+</div>
+
+<!-- イチオシ商品 -->
+<section class="featured">
+  <div class="section-title">
+    <small>ICHIOSHI PRODUCT</small>
+    イチオシ｜野球用品（グローブ）
+  </div>
+  <p class="section-sub">在庫品・お取り寄せ、どちらからでも選べます</p>
+
+  <div class="featured-card">
+    <img src="images/glove_main.jpg" alt="周南スポーツ 野球グローブ 型付けサービス">
+    <div class="body">
+      <h3>子供から大人まで。硬式・軟式グローブ専門</h3>
+      <ul class="featured-list">
+        <li>豊富な品揃え。店頭在庫からも取り寄せからも選択可能</li>
+        <li>購入後は無料で型付け（お湯で柔らかくして叩く仕上げ）</li>
+        <li>野球専門店ならではの、細かい相談・説明に対応</li>
+        <li>店舗隣接の投球場で、実際にキャッチボールして感触確認</li>
+      </ul>
+      <div class="flow">
+        <div><b>ご相談</b>目線を合わせた丁寧な接客</div>
+        <div><b>型付け</b>約1〜2週間で仕上げ</div>
+        <div><b>お渡し</b>隣の球場で試し投げも</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="strengths">
+  <div class="section-title">
+    <small>OUR STRENGTH</small>
+    周南スポーツが選ばれる理由
+  </div>
+  <div class="strength-box">私たち『株式会社周南スポーツ』は、社員全員が前向きで明るく元気な会社です。
+スポーツビジネスを通し自らを成長させ、社会の発展、スポーツ業界の発展に努めます。
+周南スポーツはお客様のスポーツに関する不安を真剣に考え、明日の生活がいっそう快適になるようにサポートしてまいります。</div>
+</section>
+
+<!-- クチコミ -->
+<section class="reviews">
+  <div class="section-title">
+    <small>VOICE</small>
+    お客様の声
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>息子と突然行き、突然グローブ買わされ…かなりの金額…めちゃくちゃ厳しい高ーい！！硬式グローブ！店員さん、感じが良くて説明してくださり。2週間後届く予定です。息子は待ち遠しい模様…</p>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>初めて子供へのグローブをと思いお店を色々探してました。口コミ通り店員の方の対応が素晴らしかった。グローブの納品まで一週間はかかりますが、すぐ隣で実際ボールを投げ新しいグローブの感触を試すときも子供と同じ目線で話をされてる姿は親としても尊敬に値しました。是非オススメします。子供2人が野球を始めたのでチームの親御さんに教えて貰い、初めて行きました。元々飲食店が入っていた建物で、隣に球場もあり駐車場は広いです。店舗は野球専門店なので一般大型スポーツ店の店員さんよりも知識も豊富、細かい話までできました。店員さんも優しく良かったです。私はサッカー畑なので全く分からず、助かりました😄グラブを買いました。並んでいる商品からも、在庫からも選べます。購入後は型付け（お湯で柔らかくして叩いてくれる）してくれるので初期から使いやすくしてくれます。1週間ほどで仕上がりました。子供たちと一緒に受け取りに行き、店舗併設の投球場で少しキャッチボールしました。とても喜んでくれて良かったです。</p>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shop-info">
+  <div class="section-title">
+    <small>SHOP INFO</small>
+    店舗情報
+  </div>
+  <table class="info-table">
+    <tr><th>店名</th><td>周南スポーツ</td></tr>
+    <tr><th>会社名</th><td>株式会社 周南スポーツ</td></tr>
+    <tr><th>代表者</th><td>髙瀨 英明</td></tr>
+    <tr><th>住所</th><td>山口県周南市福川南町2-3</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0834343089">0834-34-3089</a></td></tr>
+    <tr><th>定休日</th><td>不定休</td></tr>
+    <tr><th>HP</th><td><a href="http://www.syunan-sports.co.jp/" target="_blank">www.syunan-sports.co.jp</a></td></tr>
+    <tr><th>お問合せ</th><td><a href="https://www.syunan-sports.co.jp/contact/" target="_blank">お問い合わせフォーム</a></td></tr>
+    <tr><th>メール</th><td>info@syunan-sports.co.jp</td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E5%91%A8%E5%8D%97%E5%B8%82%E7%A6%8F%E5%B7%9D%E5%8D%97%E7%94%BA2-3&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<div class="final-cta">
+  <section>
+    <h2>お子様に合った1つを、専門店で。</h2>
+    <img src="images/glove_sub.jpg" alt="周南スポーツ グローブ選びの相談風景">
+    <p>グローブ選びは、専門知識のあるスタッフとの<br>相談がいちばんの近道です。まずはお気軽にご連絡ください。</p>
+    <a href="tel:0834343089" class="cta-btn">📞 電話で相談する</a>
+    <a href="https://www.syunan-sports.co.jp/contact/" target="_blank" class="sub-btn">✉️ フォームで問い合わせる</a>
+  </section>
+</div>
+
+<!-- 固定フッターナビ -->
+<div class="bottom-nav">
+  <a href="tel:0834343089" class="call"><span>📞</span>電話</a>
+  <a href="https://maps.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E5%91%A8%E5%8D%97%E5%B8%82%E7%A6%8F%E5%B7%9D%E5%8D%97%E7%94%BA2-3" target="_blank"><span>📍</span>地図</a>
+  <a href="https://www.syunan-sports.co.jp/contact/" target="_blank"><span>✉️</span>問合せ</a>
+  <a href="http://www.syunan-sports.co.jp/" target="_blank"><span>🌐</span>HP</a>
+</div>
+
+</body>
+</html>
