@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山とアウトドアの店 ハックルベリー｜山口県宇部市のアウトドアショップ</title>
+<style>
+  :root{
+    --main-green:#2f4d33;
+    --sub-green:#5c7a52;
+    --accent:#e8871e;
+    --cream:#f7f3ea;
+    --brown:#4a3728;
+    --text:#333;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    line-height:1.7;
+    padding-bottom:60px; /* space for fixed bottom nav */
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:480px;margin:0 auto;background:#fff;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--main-green);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shop-name{font-size:14px;font-weight:bold;line-height:1.3;}
+  header .tel-btn{
+    background:var(--accent);color:#fff;font-weight:bold;
+    padding:8px 12px;border-radius:20px;font-size:13px;white-space:nowrap;
+  }
+  .header-spacer{height:56px;}
+
+  /* Hero */
+  .hero{position:relative;}
+  .hero img{width:100%;height:260px;object-fit:cover;}
+  .hero-overlay{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,.75));
+    color:#fff;padding:30px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:20px;font-weight:bold;line-height:1.5;
+    text-shadow:0 2px 4px rgba(0,0,0,.5);
+  }
+  .hero-overlay .sub{font-size:13px;margin-top:6px;opacity:.9;}
+
+  .review-badge{
+    background:var(--accent);color:#fff;
+    display:inline-block;padding:4px 10px;border-radius:4px;
+    font-size:12px;font-weight:bold;margin-bottom:8px;
+  }
+
+  section{padding:28px 18px;}
+  .section-title{
+    font-size:19px;font-weight:bold;color:var(--main-green);
+    text-align:center;margin-bottom:20px;position:relative;
+  }
+  .section-title::after{
+    content:"";display:block;width:40px;height:3px;background:var(--accent);
+    margin:8px auto 0;
+  }
+
+  /* Featured product push */
+  .push-section{
+    background:var(--main-green);color:#fff;
+  }
+  .push-section .section-title{color:#fff;}
+  .push-section .section-title::after{background:var(--accent);}
+  .push-card{
+    background:#fff;color:var(--text);border-radius:10px;overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+  }
+  .push-card img{width:100%;height:200px;object-fit:cover;}
+  .push-card .push-body{padding:16px;}
+  .push-card .push-label{
+    display:inline-block;background:var(--accent);color:#fff;font-size:12px;
+    font-weight:bold;padding:3px 10px;border-radius:4px;margin-bottom:10px;
+  }
+  .push-card h3{font-size:17px;color:var(--main-green);margin-bottom:8px;}
+  .push-card p{font-size:14px;}
+  .push-points{margin-top:14px;}
+  .push-points li{
+    list-style:none;display:flex;align-items:flex-start;gap:8px;
+    font-size:13.5px;margin-bottom:8px;
+  }
+  .push-points li::before{content:"✔";color:var(--main-green);font-weight:bold;}
+  .cta-inline{
+    display:block;text-align:center;background:var(--accent);color:#fff;
+    font-weight:bold;padding:13px;border-radius:30px;margin-top:16px;font-size:15px;
+  }
+
+  /* Strengths */
+  .strengths-grid{display:flex;flex-direction:column;gap:16px;}
+  .strength-item{
+    display:flex;gap:12px;align-items:flex-start;
+    background:var(--cream);border-radius:10px;padding:14px;
+  }
+  .strength-num{
+    flex-shrink:0;width:36px;height:36px;border-radius:50%;
+    background:var(--main-green);color:#fff;font-weight:bold;
+    display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  .strength-item h4{font-size:15px;color:var(--main-green);margin-bottom:4px;}
+  .strength-item p{font-size:13.5px;}
+
+  /* Reviews */
+  .review-card{
+    background:var(--cream);border-left:4px solid var(--accent);
+    border-radius:6px;padding:14px 16px;margin-bottom:14px;
+  }
+  .review-stars{color:var(--accent);font-size:15px;margin-bottom:6px;letter-spacing:2px;}
+  .review-card p{font-size:13.5px;}
+
+  /* Photo gallery */
+  .gallery img{width:100%;height:200px;object-fit:cover;border-radius:8px;}
+
+  /* Shop info */
+  .info-table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  .info-table th, .info-table td{
+    text-align:left;padding:10px 6px;border-bottom:1px solid #ddd;vertical-align:top;
+  }
+  .info-table th{
+    color:var(--main-green);width:82px;white-space:nowrap;font-weight:bold;
+  }
+  .map-wrap{margin-top:14px;border-radius:8px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:200px;border:0;}
+
+  /* CTA section */
+  .cta-section{
+    background:var(--brown);color:#fff;text-align:center;
+  }
+  .cta-section .section-title{color:#fff;}
+  .cta-section .section-title::after{background:var(--accent);}
+  .cta-section p{font-size:14px;margin-bottom:18px;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .cta-buttons a{
+    padding:14px;border-radius:30px;font-weight:bold;font-size:15px;
+  }
+  .btn-tel{background:var(--accent);color:#fff;}
+  .btn-mail, .btn-form{background:#fff;color:var(--brown);border:2px solid #fff;}
+
+  footer{
+    text-align:center;padding:20px 16px 40px;font-size:12px;color:#888;
+    background:#fff;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;z-index:100;
+    display:flex;background:#fff;box-shadow:0 -2px 8px rgba(0,0,0,.15);
+    max-width:480px;margin:0 auto;
+  }
+  .bottom-nav a{
+    flex:1;text-align:center;padding:10px 4px;font-size:12px;font-weight:bold;
+    color:var(--main-green);border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.primary{background:var(--accent);color:#fff;}
+  .bottom-nav .icon{display:block;font-size:17px;margin-bottom:2px;}
+
+  @media (min-width:481px){
+    .container{box-shadow:0 0 20px rgba(0,0,0,.1);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">山とアウトドアの店<br>ハックルベリー</div>
+  <a class="tel-btn" href="tel:0836210139">📞 0836-21-0139</a>
+</header>
+<div class="header-spacer"></div>
+
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="山とアウトドアの店 ハックルベリー 外観">
+    <div class="hero-overlay">
+      <span class="review-badge">★★★★★ 口コミ高評価</span>
+      <div class="catch">山口県で数少ない、<br>本物を知るアウトドアショップ</div>
+      <div class="sub">小さな店内に、こだわりの逸品がぎゅっと詰まっています</div>
+    </div>
+  </div>
+
+  <!-- イチオシ商品 -->
+  <section class="push-section">
+    <div class="section-title">イチオシ｜アウトドア用品</div>
+    <div class="push-card">
+      <img src="images/product.jpg" alt="ハックルベリーが取り扱うアウトドア用品">
+      <div class="push-body">
+        <span class="push-label">県内では珍しいブランド多数</span>
+        <h3>大型ザック・登山靴は、試着できるここで。</h3>
+        <p>ギアの機能や特徴をしっかり聞いて、納得してから購入できるのが一番の魅力。パーゴワークスやパタゴニアなど、大型店にはない個性派ブランドも豊富に揃います。</p>
+        <ul class="push-points">
+          <li>大型ザック・登山靴のフィッティングに対応</li>
+          <li>県内で珍しいブランドの取り扱いが充実</li>
+          <li>店主ご夫婦がひとつひとつ丁寧に説明</li>
+        </ul>
+        <a class="cta-inline" href="tel:0836210139">📞 まずはお電話でご相談</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 選ばれる理由 -->
+  <section>
+    <div class="section-title">選ばれる理由</div>
+    <div class="strengths-grid">
+      <div class="strength-item">
+        <div class="strength-num">1</div>
+        <div>
+          <h4>気さくで優しいご夫婦経営</h4>
+          <p>店長さんも奥さんもとても話しやすく、初めての方でも安心して相談できます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">2</div>
+        <div>
+          <h4>珍しいブランドの豊富な品揃え</h4>
+          <p>大型店では出会えない、コアなアウトドアブランドを多数取り扱っています。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">3</div>
+        <div>
+          <h4>納得して選べるフィッティング</h4>
+          <p>登山用品は安くないからこそ、実際に試して機能を理解した上で購入できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ギャラリー -->
+  <section style="padding-top:0;">
+    <div class="gallery">
+      <img src="images/gallery1.jpg" alt="ハックルベリー店内の様子">
+    </div>
+  </section>
+
+  <!-- 口コミ -->
+  <section style="background:var(--cream);">
+    <div class="section-title">お客様の声</div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p>小さくて可愛い外観に似合わず、中には所狭しと商品があそこにもここにもと隠れていたり、あふれるように沢山の品物が置いてあります。見つける喜びもありますよ。気さくなとっても優しいご夫婦で経営されてるアウトドアのショップです。県内では珍しいブランドの取り扱いがあり、品揃えも豊富です。大型店舗と違い色々コアなお店で個人的に好きなお店です。</p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>登山用品は安くないので、ギアの機能や特徴を聞け、納得して購入出来る点が有り難いです。店長さんも奥さんも優しくて話しやすい。特に大型ザックや登山靴はフィッティング出来るコチラで長年購入しています。取扱いメーカーも良いところを押さえています。オーナー夫妻の人の良さが伝わってくるショップです。</p>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section>
+    <div class="section-title">店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>山とアウトドアの店 ハックルベリー</td></tr>
+      <tr><th>代表者</th><td>佐伯和俊</td></tr>
+      <tr><th>住所</th><td>〒755-0006<br>山口県宇部市上宇部広田2517-17</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0836210139">0836-21-0139</a></td></tr>
+      <tr><th>HP</th><td><a href="http://outdoor-huck.com/" target="_blank" rel="noopener">outdoor-huck.com</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@outdoor-huck.com">info@outdoor-huck.com</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E5%AE%87%E9%83%A8%E5%B8%82%E4%B8%8A%E5%AE%87%E9%83%A8%E5%BA%83%E7%94%B0%EF%BC%92%EF%BC%95%EF%BC%91%EF%BC%97%E2%88%92%EF%BC%91%EF%BC%97&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title">お問い合わせ</div>
+    <p>気になるギアがあれば、まずはお気軽にご連絡ください。<br>優しいご夫婦が丁寧にご案内します。</p>
+    <div class="cta-buttons">
+      <a class="btn-tel" href="tel:0836210139">📞 電話で問い合わせる</a>
+      <a class="btn-form" href="https://outdoor-huck.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener">📝 問い合わせフォーム</a>
+      <a class="btn-mail" href="mailto:info@outdoor-huck.com">✉️ メールで問い合わせる</a>
+    </div>
+  </section>
+
+  <footer>
+    © 山とアウトドアの店 ハックルベリー
+  </footer>
+
+</div>
+
+<!-- 固定フッターナビ -->
+<div class="bottom-nav">
+  <a href="tel:0836210139" class="primary"><span class="icon">📞</span>電話</a>
+  <a href="https://outdoor-huck.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener"><span class="icon">📝</span>お問い合わせ</a>
+  <a href="mailto:info@outdoor-huck.com"><span class="icon">✉️</span>メール</a>
+  <a href="http://outdoor-huck.com/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+</div>
+
+</body>
+</html>
