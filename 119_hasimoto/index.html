@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハシモトスポーツ｜卓球用品専門店</title>
+<style>
+  :root{
+    --main:#c0392b;
+    --main-dark:#8e2418;
+    --accent:#2c3e50;
+    --bg:#faf7f2;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    background:var(--bg);
+    color:#333;
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:var(--white);
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+  }
+  header .shopname{
+    font-size:16px;
+    font-weight:bold;
+    color:var(--main-dark);
+  }
+  header .tel-btn{
+    background:var(--main);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{
+    width:100%;
+    height:60vw;
+    max-height:420px;
+    object-fit:cover;
+    filter:brightness(0.6);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text h1{
+    font-size:26px;
+    font-weight:bold;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+    margin-bottom:10px;
+  }
+  .hero-text p{
+    font-size:15px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+  }
+
+  section{
+    padding:40px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main-dark);
+    margin-bottom:24px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:50px;
+    height:3px;
+    background:var(--main);
+    margin:10px auto 0;
+  }
+
+  /* 一押し商品 */
+  .push{
+    background:var(--white);
+  }
+  .push-card{
+    background:var(--bg);
+    border:2px solid var(--main);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  }
+  .push-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .push-badge{
+    display:inline-block;
+    background:var(--main);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:20px;
+    margin:14px 0 6px 14px;
+  }
+  .push-card h3{
+    font-size:19px;
+    padding:0 14px;
+    color:var(--main-dark);
+    margin-bottom:8px;
+  }
+  .push-card p{
+    padding:0 14px 18px;
+    font-size:14.5px;
+  }
+  .push-points{
+    list-style:none;
+    padding:0 14px 18px;
+  }
+  .push-points li{
+    font-size:14.5px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:6px;
+  }
+  .push-points li::before{
+    content:"🏓";
+    position:absolute;
+    left:0;
+  }
+
+  /* 強み */
+  .strengths{
+    background:var(--accent);
+    color:#fff;
+  }
+  .strengths .section-title{
+    color:#fff;
+  }
+  .strengths .section-title::after{
+    background:#fff;
+  }
+  .strength-grid{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    background:rgba(255,255,255,0.08);
+    border-radius:12px;
+    padding:16px;
+  }
+  .strength-item h4{
+    font-size:16px;
+    margin-bottom:6px;
+    color:#f1c40f;
+  }
+  .strength-item p{
+    font-size:14px;
+    color:#eee;
+  }
+
+  /* 店内写真 */
+  .gallery{
+    background:var(--bg);
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:10px;
+    height:150px;
+    object-fit:cover;
+  }
+
+  /* お客様の声 */
+  .voice{
+    background:var(--white);
+  }
+  .voice-card{
+    background:var(--bg);
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .voice-card .stars{
+    color:#f1c40f;
+    margin-bottom:6px;
+  }
+  .voice-card p{
+    font-size:14px;
+  }
+  .voice-card .name{
+    text-align:right;
+    font-size:12.5px;
+    color:#888;
+    margin-top:6px;
+  }
+
+  /* 店舗情報 */
+  .info{
+    background:var(--accent);
+    color:#fff;
+  }
+  .info .section-title{color:#fff;}
+  .info .section-title::after{background:#fff;}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14.5px;
+  }
+  .info-table th,.info-table td{
+    padding:12px 8px;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:28%;
+    color:#f1c40f;
+    font-weight:bold;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(135deg,var(--main),var(--main-dark));
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:22px;
+    margin-bottom:10px;
+  }
+  .cta p{
+    font-size:14.5px;
+    margin-bottom:20px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .btn{
+    display:block;
+    padding:16px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .btn-white{
+    background:#fff;
+    color:var(--main-dark);
+  }
+  .btn-outline{
+    border:2px solid #fff;
+    color:#fff;
+  }
+
+  /* footer nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    display:flex;
+    background:var(--white);
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    color:var(--accent);
+    font-weight:bold;
+  }
+  .bottom-nav a.call{
+    background:var(--main);
+    color:#fff;
+  }
+  .bottom-nav a span{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  footer.copyright{
+    text-align:center;
+    font-size:12px;
+    color:#999;
+    padding:20px 0 80px;
+    background:var(--bg);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">ハシモトスポーツ</div>
+  <a href="tel:0834280058" class="tel-btn">📞 0834-28-0058</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="ハシモトスポーツ 店舗">
+  <div class="hero-text">
+    <h1>卓球用品なら地域No.1の品揃え</h1>
+    <p>ハシモトスポーツが、あなたの一打を本気でサポートします</p>
+  </div>
+</div>
+
+<section class="push">
+  <div class="section-title">イチオシ商品</div>
+  <div class="push-card">
+    <img src="images/table-tennis.jpg" alt="卓球用品">
+    <div class="push-badge">当店イチオシ</div>
+    <h3>卓球用品フルラインナップ</h3>
+    <p>ラケット・ラバー・シューズ・ウェアまで、初心者からトップ選手まで対応する豊富な品揃え。専門知識豊富なスタッフが、プレースタイルに合わせて最適な一台をご提案します。</p>
+    <ul class="push-points">
+      <li>人気メーカーの最新ラバー・ラケットを多数取り扱い</li>
+      <li>グリップ・重量バランスなど細かい相談もお任せください</li>
+      <li>貼り替え・張り替えサービスも対応</li>
+    </ul>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="strength-grid">
+    <div class="strength-item">
+      <h4>専門知識で選ぶ最適な一本</h4>
+      <p>卓球経験豊富なスタッフが、プレースタイルやレベルに合わせて丁寧にアドバイス。初心者の方も安心してご相談いただけます。</p>
+    </div>
+    <div class="strength-item">
+      <h4>地域密着の安心感</h4>
+      <p>周南市周陽で長年愛される地元のスポーツ用品店。学校や地域のチームとのつながりも深く、信頼の実績があります。</p>
+    </div>
+    <div class="strength-item">
+      <h4>豊富な在庫と取り寄せ対応</h4>
+      <p>店頭にない商品もお取り寄せ可能。欲しい商品がきっと見つかります。</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-title">店内のご紹介</div>
+  <div class="gallery-grid">
+    <img src="images/shop-inside1.jpg" alt="店内の様子1">
+    <img src="images/shop-inside2.jpg" alt="店内の様子2">
+  </div>
+</section>
+
+<section class="voice">
+  <div class="section-title">お客様の声</div>
+  <div class="voice-card">
+    <div class="stars">★★★★★</div>
+    <p>ラバー選びで悩んでいましたが、丁寧に相談に乗ってもらえて、自分に合った組み合わせが見つかりました。</p>
+    <div class="name">30代・男性</div>
+  </div>
+  <div class="voice-card">
+    <div class="stars">★★★★★</div>
+    <p>子供の卓球用品を揃えるのに利用しています。スタッフさんが子供にも分かりやすく説明してくれるので助かります。</p>
+    <div class="name">40代・女性</div>
+  </div>
+</section>
+
+<section class="info">
+  <div class="section-title">店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>ハシモトスポーツ</td></tr>
+    <tr><th>代表者</th><td>橋本 敦</td></tr>
+    <tr><th>住所</th><td>山口県周南市周陽２丁目１−３ 周陽2丁目団地 3</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0834280058">0834-28-0058</a></td></tr>
+    <tr><th>定休日</th><td>水曜日</td></tr>
+    <tr><th>HP</th><td><a href="http://www.hashimoto-sports.com/" target="_blank">www.hashimoto-sports.com</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://www.instagram.com/hashimoto.sports/" target="_blank">Instagram</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E5%91%A8%E5%8D%97%E5%B8%82%E5%91%A8%E9%99%BD%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%8D%EF%BC%93&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>卓球用品のことなら、ハシモトスポーツにお任せください。</p>
+  <div class="cta-buttons">
+    <a href="tel:0834280058" class="btn btn-white">📞 電話で問い合わせる</a>
+    <a href="http://www.hashimoto-sports.com/contact.php" target="_blank" class="btn btn-outline">✉️ フォームで問い合わせる</a>
+  </div>
+</section>
+
+<footer class="copyright">
+  © ハシモトスポーツ All Rights Reserved.
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0834280058" class="call"><span>📞</span>電話</a>
+  <a href="http://www.hashimoto-sports.com/contact.php" target="_blank"><span>✉️</span>お問合せ</a>
+  <a href="https://www.instagram.com/hashimoto.sports/" target="_blank"><span>📷</span>Instagram</a>
+  <a href="http://www.hashimoto-sports.com/" target="_blank"><span>🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
