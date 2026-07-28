@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T.T.プロショップATS 山口店｜卓球専門店</title>
+<style>
+  :root{
+    --navy:#0f1e3d;
+    --navy-deep:#081226;
+    --ball-orange:#ff6a2b;
+    --ball-orange-deep:#e64c0e;
+    --cream:#faf6ef;
+    --line:#e3ded2;
+    --gray:#5a5f6b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Sans","Yu Gothic",-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--cream);
+    color:var(--navy-deep);
+    line-height:1.7;
+    padding-bottom:64px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  .header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--navy);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+  }
+  .header .shopname{
+    font-size:14px;font-weight:700;letter-spacing:.02em;
+  }
+  .header .shopname span{
+    display:block;font-size:10px;font-weight:400;color:#ffb08a;letter-spacing:.1em;
+  }
+  .header .tel-btn{
+    background:var(--ball-orange);
+    color:#fff;font-weight:700;font-size:13px;
+    padding:8px 14px;border-radius:24px;
+    white-space:nowrap;
+  }
+  .header .tel-btn small{display:block;font-size:9px;font-weight:400;opacity:.9;}
+  main{margin-top:56px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:#fff;
+    padding:40px 20px 34px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    width:220px;height:220px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#fff,var(--ball-orange) 70%);
+    opacity:.15;
+    top:-60px;right:-60px;
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    background:rgba(255,106,43,.15);
+    color:var(--ball-orange);
+    border:1px solid var(--ball-orange);
+    font-size:11px;font-weight:700;
+    padding:4px 12px;border-radius:20px;
+    margin-bottom:14px;letter-spacing:.05em;
+  }
+  .hero h1{
+    font-size:26px;font-weight:800;line-height:1.4;
+    position:relative;z-index:1;
+  }
+  .hero h1 em{
+    font-style:normal;color:var(--ball-orange);
+  }
+  .hero p.lead{
+    margin-top:12px;font-size:13.5px;color:#d7dbe5;
+    position:relative;z-index:1;
+  }
+  .hero .hero-img{
+    margin-top:22px;border-radius:14px;overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    position:relative;z-index:1;
+  }
+  .hero .hero-img img{width:100%;height:200px;object-fit:cover;}
+  .hero-ctas{
+    display:flex;gap:10px;margin-top:20px;position:relative;z-index:1;
+  }
+  .btn{
+    flex:1;text-align:center;
+    padding:13px 8px;border-radius:10px;
+    font-weight:700;font-size:13.5px;
+  }
+  .btn-primary{background:var(--ball-orange);color:#fff;}
+  .btn-secondary{background:transparent;border:1.5px solid #fff;color:#fff;}
+
+  /* section common */
+  section{padding:38px 20px;}
+  .section-title{
+    font-size:20px;font-weight:800;
+    text-align:center;margin-bottom:6px;
+    color:var(--navy-deep);
+  }
+  .section-title .accent{color:var(--ball-orange);}
+  .section-sub{
+    text-align:center;font-size:12.5px;color:var(--gray);
+    margin-bottom:26px;
+  }
+
+  /* featured product */
+  .featured{
+    background:#fff;
+  }
+  .featured-card{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
+    border-radius:18px;
+    overflow:hidden;
+    color:#fff;
+    box-shadow:0 12px 28px rgba(15,30,61,.25);
+  }
+  .featured-card .badge{
+    background:var(--ball-orange);
+    display:inline-block;
+    font-size:11px;font-weight:800;
+    padding:6px 14px;border-radius:0 0 10px 0;
+  }
+  .featured-card .fc-img img{
+    width:100%;height:190px;object-fit:cover;
+  }
+  .featured-card .fc-body{padding:20px 18px 24px;}
+  .featured-card h3{
+    font-size:19px;font-weight:800;margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:13px;color:#cfd4e0;margin-bottom:16px;
+  }
+  .fc-points{
+    display:flex;flex-direction:column;gap:8px;margin-bottom:18px;
+  }
+  .fc-points .pt{
+    display:flex;align-items:center;gap:8px;
+    font-size:12.5px;font-weight:600;
+  }
+  .fc-points .pt::before{
+    content:"●";color:var(--ball-orange);font-size:10px;
+  }
+  .fc-body .btn-primary{width:100%;}
+
+  /* strengths */
+  .strengths{background:var(--cream);}
+  .strength-box{
+    background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:22px 20px;
+    position:relative;
+  }
+  .strength-box::before{
+    content:"STRENGTH";
+    position:absolute;top:-10px;left:18px;
+    background:var(--ball-orange);color:#fff;
+    font-size:10px;font-weight:800;letter-spacing:.08em;
+    padding:3px 10px;border-radius:20px;
+  }
+  .strength-box p{
+    font-size:14.5px;font-weight:700;color:var(--navy-deep);
+    margin-top:8px;line-height:1.9;
+  }
+
+  /* reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--cream);
+    border-radius:14px;
+    padding:18px 18px;
+    margin-bottom:14px;
+    border-left:4px solid var(--ball-orange);
+  }
+  .review-card .stars{
+    color:var(--ball-orange);font-size:14px;letter-spacing:2px;margin-bottom:8px;
+  }
+  .review-card p{font-size:13px;color:#3d4250;}
+
+  /* shop info */
+  .shopinfo{background:var(--cream);}
+  .info-table{
+    width:100%;background:#fff;border-radius:14px;overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .info-table tr{border-bottom:1px solid var(--line);}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:var(--navy);color:#fff;
+    font-size:12px;font-weight:700;
+    padding:12px 10px;text-align:left;width:96px;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:12px 12px;font-size:13px;color:var(--navy-deep);
+  }
+  .info-table td a{color:var(--ball-orange-deep);font-weight:700;}
+  .map-wrap{
+    margin-top:16px;border-radius:14px;overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block;}
+
+  /* final cta */
+  .final-cta{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:#fff;text-align:center;
+  }
+  .final-cta h2{font-size:21px;font-weight:800;margin-bottom:10px;}
+  .final-cta p{font-size:13px;color:#d7dbe5;margin-bottom:22px;}
+  .final-cta .btn-primary{padding:16px;font-size:15px;}
+  .final-cta .btn-secondary{margin-top:10px;}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;z-index:100;
+    display:flex;background:#fff;
+    border-top:1px solid var(--line);
+    box-shadow:0 -4px 14px rgba(0,0,0,.08);
+  }
+  .bottom-nav a{
+    flex:1;text-align:center;padding:11px 4px;
+    font-size:11.5px;font-weight:700;color:var(--navy-deep);
+  }
+  .bottom-nav a.call{
+    background:var(--ball-orange);color:#fff;
+  }
+  .bottom-nav a small{display:block;font-size:9px;font-weight:400;color:var(--gray);margin-top:2px;}
+  .bottom-nav a.call small{color:#ffe2d1;}
+
+  @media (min-width:480px){
+    .hero h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="shopname">T.T.プロショップATS 山口店<span>卓球専門店</span></div>
+  <a href="tel:0839285461" class="tel-btn">📞 電話<small>今すぐ相談</small></a>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <span class="eyebrow">山口県 卓球専門店</span>
+    <h1>あなたの一打を、<br><em>プロの目利き</em>で選ぶ。</h1>
+    <p class="lead">ラケット・ラバーの品揃えは専門店ならでは。オーナー自らが対応する丁寧なフィッティングと、その場で仕上がるラバー張り替えで、地元の卓球ライフを支えます。</p>
+    <div class="hero-img">
+      <img src="images/hero_shop.jpg" alt="T.T.プロショップATS 山口店 店内">
+    </div>
+    <div class="hero-ctas">
+      <a href="tel:0839285461" class="btn btn-primary">電話で相談</a>
+      <a href="https://proshop-ats.com/form/" class="btn btn-secondary">お問い合わせ</a>
+    </div>
+  </section>
+
+  <!-- 一押し商品 -->
+  <section class="featured">
+    <h2 class="section-title">イチオシ<span class="accent">の卓球用品</span></h2>
+    <p class="section-sub">ラケット・ラバーを、あなたのプレースタイルに合わせて</p>
+
+    <div class="featured-card">
+      <span class="badge">SHOP'S BEST</span>
+      <div class="fc-img">
+        <img src="images/product_ttgoods.jpg" alt="卓球用ラケットとラバー">
+      </div>
+      <div class="fc-body">
+        <h3>卓球用品（ラケット・ラバー）</h3>
+        <p>豊富な在庫の中から、スタッフがひとりひとりのプレースタイルに合う一本をご提案。ラバーの張り替えも予約不要・即日対応でお応えします。</p>
+        <div class="fc-points">
+          <div class="pt">専門店ならではの豊富な在庫からご提案</div>
+          <div class="pt">オーナー兼トレーナーが直接対応</div>
+          <div class="pt">レッスンも開講、初心者も安心</div>
+        </div>
+        <a href="tel:0839285461" class="btn btn-primary">在庫・料金を電話で聞く</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section class="strengths">
+    <h2 class="section-title">選ばれる<span class="accent">理由</span></h2>
+    <p class="section-sub">専門店だからできる、ひとりひとりへの提案</p>
+    <div class="strength-box">
+      <p>専門店ならでは多数の在庫から、あなたに合うものをスタッフが提案させて頂きます。</p>
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="reviews">
+    <h2 class="section-title">お客様の<span class="accent">クチコミ</span></h2>
+    <p class="section-sub">実際にご来店されたお客様の声</p>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>卓球に特化した素晴らしいお店です。知識も豊富で、オーナー兼トレーナーもとても親切です。雰囲気も最高です。レッスンも開講しています。裏には大きな緑のATS看板が目印の駐車場がたっぷりあります。ラバーの張り替えで伺いました。予約も要らず、すぐに張り替えてもらえて助かりました。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>以前、若い方？にラバーの張り替えを頼みましたがラバーが伸ばして貼られていた上に切り方が雑でした。店舗の品揃えは良く接客も良いのでそこだけが少し残念でした…</p>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="shopinfo">
+    <h2 class="section-title">店舗<span class="accent">情報</span></h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>T.T.プロショップATS 山口店</td></tr>
+      <tr><th>住所</th><td>山口県山口市穂積町1-2 リバーサイド山陽2号館</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0839285461">0839-28-5461</a></td></tr>
+      <tr><th>定休日</th><td>火曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://proshop-ats.com/yamaguchi/" target="_blank" rel="noopener">proshop-ats.com/yamaguchi</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=山口県山口市穂積町1-2&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="final-cta">
+    <h2>まずはお気軽に<br>ご相談ください</h2>
+    <p>ラケット選び・ラバー張り替え・レッスンのご相談、<br>お電話でもフォームでも承ります。</p>
+    <a href="tel:0839285461" class="btn btn-primary">📞 0839-28-5461</a>
+    <a href="https://proshop-ats.com/form/" class="btn btn-secondary">お問い合わせフォーム</a>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <a href="tel:0839285461" class="call">📞 電話<small>今すぐ相談</small></a>
+  <a href="https://proshop-ats.com/form/">✉️ フォーム<small>お問い合わせ</small></a>
+  <a href="https://proshop-ats.com/yamaguchi/" target="_blank" rel="noopener">🌐 HP<small>詳しく見る</small></a>
+</nav>
+
+</body>
+</html>
