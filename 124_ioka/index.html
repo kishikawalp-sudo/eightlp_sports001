@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>井岡武道具専門店 山口支店｜剣道防具の専門店</title>
+<style>
+  :root{
+    --navy:#1a2744;
+    --navy-dark:#101a2e;
+    --gold:#b8862e;
+    --gold-light:#d9a94b;
+    --cream:#f7f4ee;
+    --white:#ffffff;
+    --text:#2b2b2b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    line-height:1.7;
+    padding-bottom:64px; /* for fixed bottom nav */
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header.site-header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:var(--navy);
+    color:var(--white);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.25);
+  }
+  header.site-header .shop-name{
+    font-size:14px;
+    font-weight:bold;
+    line-height:1.4;
+  }
+  header.site-header .shop-name small{
+    display:block;
+    font-size:10px;
+    color:var(--gold-light);
+    font-weight:normal;
+  }
+  header.site-header .tel-btn{
+    background:var(--gold);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    color:var(--white);
+    text-align:center;
+    padding:70px 20px 50px;
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-40px;left:-40px;right:-40px;
+    height:120px;
+    background:radial-gradient(circle,var(--gold) 0%,transparent 70%);
+    opacity:0.15;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--white);
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 16px;
+    border-radius:20px;
+    margin-bottom:16px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:12px;
+  }
+  .hero h1 span{
+    color:var(--gold-light);
+  }
+  .hero p.lead{
+    font-size:14px;
+    color:#dbe0ea;
+    margin-bottom:26px;
+  }
+  .hero-img{
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    border:3px solid rgba(255,255,255,0.15);
+  }
+  .cta-buttons{
+    margin-top:26px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:340px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .btn-primary{
+    background:var(--gold);
+    color:var(--white);
+    padding:15px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+    box-shadow:0 4px 14px rgba(184,134,46,0.4);
+  }
+  .btn-secondary{
+    background:transparent;
+    color:var(--white);
+    border:1px solid rgba(255,255,255,0.5);
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:14px;
+  }
+
+  /* Section common */
+  section{
+    padding:44px 18px;
+  }
+  .section-title{
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .section-title .en{
+    display:block;
+    font-size:11px;
+    letter-spacing:3px;
+    color:var(--gold);
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:21px;
+    color:var(--navy);
+    font-weight:bold;
+    position:relative;
+    display:inline-block;
+    padding-bottom:12px;
+  }
+  .section-title h2::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    width:44px;height:3px;
+    background:var(--gold);
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--white);
+  }
+  .featured-card{
+    background:var(--cream);
+    border:1px solid #e6ddc9;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  }
+  .featured-card img{
+    width:100%;
+  }
+  .featured-card .body{
+    padding:20px;
+  }
+  .featured-card .tag{
+    display:inline-block;
+    background:var(--navy);
+    color:var(--gold-light);
+    font-size:11px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:14px;
+    margin-bottom:10px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--navy);
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#4a4a4a;
+    margin-bottom:14px;
+  }
+  .featured-points{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .featured-points li{
+    font-size:13.5px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+    color:#333;
+  }
+  .featured-points li::before{
+    content:"◆";
+    position:absolute;
+    left:0;
+    top:0;
+    color:var(--gold);
+    font-size:11px;
+  }
+  .featured-card .btn-primary{
+    display:block;
+    text-align:center;
+    width:100%;
+  }
+
+  /* Strengths */
+  .strengths{
+    background:var(--navy);
+    color:var(--white);
+  }
+  .strengths .section-title h2{color:var(--white);}
+  .strength-box{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:10px;
+    padding:22px;
+  }
+  .strength-box p{
+    font-size:14px;
+    color:#e2e6ee;
+  }
+  .strength-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-top:18px;
+  }
+  .strength-item{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:34px;height:34px;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--white);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:14px;
+  }
+  .strength-item .txt h4{
+    font-size:14.5px;
+    margin-bottom:4px;
+    color:var(--gold-light);
+  }
+  .strength-item .txt p{
+    font-size:13px;
+    color:#cfd4e0;
+  }
+
+  /* Reviews */
+  .reviews{background:var(--cream);}
+  .review-card{
+    background:var(--white);
+    border-radius:10px;
+    padding:22px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.06);
+    border-left:4px solid var(--gold);
+  }
+  .stars{
+    color:var(--gold);
+    font-size:16px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+  }
+  .review-card p.comment{
+    font-size:14px;
+    color:#3a3a3a;
+    margin-bottom:12px;
+  }
+  .review-card .reviewer{
+    font-size:12px;
+    color:#888;
+    text-align:right;
+  }
+
+  /* Shop info */
+  .shop-info{background:var(--white);}
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    margin-bottom:20px;
+  }
+  table.info-table th{
+    background:var(--cream);
+    color:var(--navy);
+    text-align:left;
+    padding:12px 10px;
+    width:28%;
+    border-bottom:1px solid #e6e0d2;
+    vertical-align:top;
+    font-weight:bold;
+  }
+  table.info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #e6e0d2;
+    vertical-align:top;
+  }
+  table.info-table td a{
+    color:var(--gold);
+    font-weight:bold;
+  }
+  .map-wrap{
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid #ddd;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:230px;
+    border:0;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(160deg,var(--navy-dark) 0%,var(--navy) 100%);
+    color:var(--white);
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    color:#dbe0ea;
+    margin-bottom:22px;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:200;
+    display:flex;
+    background:var(--white);
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:11px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--navy);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.call{
+    background:var(--gold);
+    color:var(--white);
+  }
+  .bottom-nav a.form{
+    background:var(--navy);
+    color:var(--white);
+  }
+
+  footer{
+    background:var(--navy-dark);
+    color:#98a0b3;
+    text-align:center;
+    font-size:11px;
+    padding:18px;
+  }
+
+  @media(min-width:600px){
+    .hero h1{font-size:30px;}
+    section{padding:60px 40px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shop-name">井岡武道具専門店 山口支店
+    <small>井岡武道具株式会社</small>
+  </div>
+  <a href="tel:0839229981" class="tel-btn">📞 083-922-9981</a>
+</header>
+
+<section class="hero">
+  <span class="badge">創業の技術で仕立てる剣道防具専門店</span>
+  <h1>職人が直接お聞きする<br><span>あなただけの剣道防具</span>を山口で</h1>
+  <p class="lead">井岡武道具専門店 山口支店では、経験豊富な職人と店員が<br>お客様一人ひとりに合った防具選びをお手伝いします。</p>
+  <div class="hero-img">
+    <img src="images/hero.jpg" alt="井岡武道具専門店 山口支店 店舗外観">
+  </div>
+  <div class="cta-buttons">
+    <a href="tel:0839229981" class="btn-primary">📞 今すぐ電話で相談する</a>
+    <a href="https://www.ioka-b.com/toiawase/index.html" class="btn-secondary">✉️ お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="section-title">
+    <span class="en">RECOMMEND</span>
+    <h2>イチオシ商品｜剣道道具</h2>
+  </div>
+  <div class="featured-card">
+    <img src="images/kendo-bogu.jpg" alt="剣道防具 井岡武道具専門店">
+    <div class="body">
+      <span class="tag">職人お仕立て</span>
+      <h3>使いやすさにこだわった剣道防具</h3>
+      <p>「地域に密着したサービス」をモットーに、井岡では職人が直接お客様のご要望をお聞きしながら、動きやすく体に合った防具をお仕立てします。初心者の方から選手クラスの方まで、目的に応じた一着をご提案いたします。</p>
+      <ul class="featured-points">
+        <li>職人による直接ヒアリングで体格・用途に合わせて選定</li>
+        <li>面・胴・小手・垂まで一式トータルでご相談可能</li>
+        <li>初心者の方にも分かりやすく丁寧にご説明</li>
+      </ul>
+      <a href="tel:0839229981" class="btn-primary">この商品について電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">
+    <span class="en">STRENGTH</span>
+    <h2>選ばれる理由</h2>
+  </div>
+  <div class="strength-box">
+    <p>地域に密着したサービスをモットーに、井岡では職人が直接お客様のご要望をお聞きして、適切で使いやすい防具をお作りいたします。</p>
+    <div class="strength-grid">
+      <div class="strength-item">
+        <div class="num">1</div>
+        <div class="txt">
+          <h4>職人による直接対応</h4>
+          <p>お客様のご要望を職人が直接お聞きし、体に合った防具をお仕立てします。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">2</div>
+        <div class="txt">
+          <h4>地域密着の丁寧な接客</h4>
+          <p>初めての方にも分かりやすく、親切丁寧にご案内いたします。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">3</div>
+        <div class="txt">
+          <h4>安心の駐車場完備</h4>
+          <p>お車でのご来店も安心。近隣に駐車スペースをご用意しています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">
+    <span class="en">VOICE</span>
+    <h2>お客様の声</h2>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p class="comment">剣道の道具を買いに行きました。店員さんが親切丁寧に色々教えてくださいました。駐車場が隣の典礼会館さんの敷地に５台分くらいありました。</p>
+    <div class="reviewer">来店されたお客様より</div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">
+    <span class="en">ACCESS</span>
+    <h2>店舗情報</h2>
+  </div>
+  <table class="info-table">
+    <tr>
+      <th>店舗名</th>
+      <td>井岡武道具専門店 山口支店</td>
+    </tr>
+    <tr>
+      <th>会社名</th>
+      <td>井岡武道具株式会社</td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td>山口県山口市楠木町６−２ 第3信和ビル</td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><a href="tel:0839229981">083-922-9981</a></td>
+    </tr>
+    <tr>
+      <th>公式HP</th>
+      <td><a href="https://www.ioka-b.com/" target="_blank" rel="noopener">https://www.ioka-b.com/</a></td>
+    </tr>
+    <tr>
+      <th>お問い合わせ</th>
+      <td><a href="https://www.ioka-b.com/toiawase/index.html" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td>
+    </tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E5%B1%B1%E5%8F%A3%E5%B8%82%E6%A5%A0%E6%9C%A8%E7%94%BA%EF%BC%96%EF%BC%8D%EF%BC%92%20%E7%AC%AC3%E4%BF%A1%E5%92%8C%E3%83%93%E3%83%AB&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>剣道防具のご相談は井岡武道具へ</h2>
+  <p>職人が直接お話をお聞きし、使いやすい一着をお仕立てします。<br>お気軽にお電話・フォームよりお問い合わせください。</p>
+  <div class="cta-buttons">
+    <a href="tel:0839229981" class="btn-primary">📞 083-922-9981 に電話する</a>
+    <a href="https://www.ioka-b.com/toiawase/index.html" class="btn-secondary">✉️ フォームで問い合わせる</a>
+  </div>
+</section>
+
+<footer>
+  © 井岡武道具株式会社 井岡武道具専門店 山口支店
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0839229981" class="call">📞 電話する</a>
+  <a href="https://www.ioka-b.com/" target="_blank" rel="noopener">🏠 公式HP</a>
+  <a href="https://www.ioka-b.com/toiawase/index.html" class="form" target="_blank" rel="noopener">✉️ 問い合わせ</a>
+</nav>
+
+</body>
+</html>
