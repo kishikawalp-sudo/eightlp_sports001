@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOXplus（ボックスプラス）｜山口県宇部市 スクーバダイビング・スノーボード専門店</title>
+<style>
+  :root{
+    --blue-deep:#0a3d62;
+    --blue-main:#1e6fa8;
+    --blue-light:#eaf5fb;
+    --accent:#ff9f1c;
+    --white:#ffffff;
+    --text:#333333;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:var(--blue-deep);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:65vw;
+    max-height:420px;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(10,61,98,0.9), rgba(10,61,98,0));
+    color:#fff;
+    padding:30px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .hero-overlay .sub{
+    font-size:13px;
+  }
+
+  section{
+    padding:32px 16px;
+  }
+  h2.section-title{
+    text-align:center;
+    font-size:20px;
+    color:var(--blue-deep);
+    margin-bottom:20px;
+    position:relative;
+    padding-bottom:10px;
+  }
+  h2.section-title::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    width:50px;
+    height:3px;
+    background:var(--accent);
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--blue-light);
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 14px;
+    border-radius:20px;
+    margin-bottom:12px;
+  }
+  .featured-box{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  }
+  .featured-box img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-box .content{
+    padding:20px;
+  }
+  .featured-box .content h3{
+    font-size:18px;
+    color:var(--blue-deep);
+    margin-bottom:10px;
+  }
+  .featured-box .content p{
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .featured-list li{
+    font-size:14px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .featured-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-weight:bold;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--blue-main);
+    color:#fff;
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    font-size:15px;
+  }
+
+  /* Strengths */
+  .strengths .item{
+    display:flex;
+    gap:14px;
+    margin-bottom:22px;
+    align-items:flex-start;
+  }
+  .strengths .num{
+    flex:none;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:var(--blue-deep);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+  }
+  .strengths .item p{
+    font-size:14px;
+  }
+  .strengths .item h3{
+    font-size:15px;
+    color:var(--blue-deep);
+    margin-bottom:4px;
+  }
+
+  /* Founder story */
+  .founder{
+    background:var(--blue-light);
+  }
+  .founder-box{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  }
+  .founder-box .name{
+    font-weight:bold;
+    color:var(--blue-deep);
+    margin-bottom:10px;
+    font-size:15px;
+  }
+  .founder-box p{
+    font-size:14px;
+    margin-bottom:10px;
+  }
+
+  /* Review */
+  .review-box{
+    background:#fff;
+    border:1px solid #e0e0e0;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.05);
+  }
+  .stars{
+    color:var(--accent);
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .review-box p{
+    font-size:14px;
+    white-space:pre-line;
+  }
+  .review-photo{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .review-photo img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+  }
+
+  /* Shop info */
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    background:#fff;
+  }
+  .info-table th,.info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #e0e0e0;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:28%;
+    background:var(--blue-light);
+    color:var(--blue-deep);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table td a{
+    color:var(--blue-main);
+    text-decoration:underline;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:250px;
+    border:0;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--blue-deep);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    color:#fff;
+    font-size:20px;
+    margin-bottom:14px;
+  }
+  .final-cta h2::after{
+    background:var(--accent);
+  }
+  .final-cta p{
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  .final-cta .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .final-cta .btn{
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .final-cta .btn.tel{
+    background:var(--accent);
+    color:#fff;
+  }
+  .final-cta .btn.form{
+    background:#fff;
+    color:var(--blue-deep);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.12);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--blue-deep);
+  }
+  .bottom-nav a.tel{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav a.form{
+    background:var(--blue-main);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    font-size:18px;
+    margin-bottom:2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">VOXplus（ボックスプラス）</div>
+  <a href="tel:0836517022" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="VOXplus 青海島でのダイビング風景">
+  <div class="hero-overlay">
+    <div class="catch">初心者もベテランも、安心して海と雪を楽しめる</div>
+    <div class="sub">スキューバダイビング＆スノーボード専門店 VOXplus｜山口県宇部市</div>
+  </div>
+</div>
+
+<section class="featured">
+  <span class="featured-badge">イチオシ</span>
+  <h2 class="section-title">ダイビング教室</h2>
+  <div class="featured-box">
+    <img src="images/diving.jpg" alt="ダイビング教室の様子">
+    <div class="content">
+      <h3>目標に合わせたPADI Cカード取得コース</h3>
+      <p>初めての方でも安心して始められるよう、丁寧な説明とマンツーマンに近いサポートでお迎えします。地元・山口県の海はもちろん、沖縄から北海道の流氷ダイブまで、全国各地でのファンダイブも充実しています。</p>
+      <ul class="featured-list">
+        <li>PADIライセンス取得のための各種スクール講習</li>
+        <li>体験ダイビング・日帰りファンダイブも常時開催</li>
+        <li>機材のレンタル・購入も無理のないプランで相談可能</li>
+        <li>国内外ツアーへのご案内あり</li>
+      </ul>
+      <a href="tel:0836517022" class="cta-btn">ダイビング教室について電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">VOXplusの強み</h2>
+  <div class="item">
+    <div class="num">1</div>
+    <div>
+      <h3>2007年創業、地域密着の専門店</h3>
+      <p>山口県宇部市でスキューバダイビングとスノーボードを中心に営業。20年以上地元の海を潜り続けてきた経験と知識があります。</p>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">2</div>
+    <div>
+      <h3>初心者からベテランまで丁寧に対応</h3>
+      <p>スクーバダイビング、スノーボード、クライミングいずれも、レベルに合わせて無理のないプランをご提案します。</p>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">3</div>
+    <div>
+      <h3>ファンダイブ・イベントが充実</h3>
+      <p>日帰りファンダイブや体験ダイビング、各種スクール講習を常時開催。国内外へのツアーもご案内しています。</p>
+    </div>
+  </div>
+  <div class="item">
+    <div class="num">4</div>
+    <div>
+      <h3>スノーボード用品のメンテナンスも対応</h3>
+      <p>スノーボード用品を各種取り揃え、メンテナンスも常時受付しています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="founder">
+  <h2 class="section-title">代表からのメッセージ</h2>
+  <div class="founder-box">
+    <div class="name">代表：Masami Toda</div>
+    <p>「のんびり楽しむ」がモットーです。スクール講習や体験ダイブは特にお任せください！</p>
+    <p>山口県の海を潜り始めて早20年以上になりますが、地元の海は本当に沢山魅力があり飽きることはありません。もちろん、南は沖縄、北は北海道の流氷ダイブまで、日本各地の海をお客様と楽しんでいます。</p>
+    <p>普段は地元でのんびり潜って、たまには一緒に国内外ツアーもいかがでしょうか。ぜひお気軽にご来店、お問い合わせなど、お待ちしております。</p>
+  </div>
+</section>
+
+<section class="review">
+  <h2 class="section-title">お客様の声</h2>
+  <div class="review-box">
+    <div class="stars">★★★★★</div>
+    <p>スクーバダイビング、スノーボード、クライミング、どれも初心者にもベテランにも親切丁寧です。
+ダイビングではPADIでの目標に合わせたCカード取得の為の講習はもちろん、機材のレンタルや購入の相談も無理のないプランで応じてもらえますし、ファンダイブ等のイベントも充実しています。
+青海島でダイビングを体験させていただきました！とても親切に説明をしてもらい不安も無く海の中を泳げました、海の中はとても綺麗でいろいろな魚がいて綺麗です。
+終わった後も体調の具合など聞いてくださったり、美味しいご飯屋さんなど教えてもらいました。</p>
+    <div class="review-photo">
+      <img src="images/review.jpg" alt="青海島でのダイビング体験">
+    </div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <h2 class="section-title">店舗情報</h2>
+  <table class="info-table">
+    <tr><th>店名</th><td>VOXplus（ボックスプラス）</td></tr>
+    <tr><th>代表者</th><td>Masami Toda</td></tr>
+    <tr><th>住所</th><td>山口県宇部市西岐波4401-4</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0836517022">0836-51-7022</a></td></tr>
+    <tr><th>定休日</th><td>毎週火曜日</td></tr>
+    <tr><th>ホームページ</th><td><a href="http://www.vox-plus.com/" target="_blank">http://www.vox-plus.com/</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://www.facebook.com/voxplus/" target="_blank">Facebookページ</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://www.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E5%AE%87%E9%83%A8%E5%B8%82%E8%A5%BF%E5%B2%90%E6%B3%A24401-4&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2 class="section-title">まずはお気軽にご相談ください</h2>
+  <p>ダイビング教室のご相談、体験ダイビング・スノーボード用品のことなど、なんでもお問い合わせください。</p>
+  <div class="btn-group">
+    <a href="tel:0836517022" class="btn tel">📞 電話で問い合わせる（0836-51-7022）</a>
+    <a href="https://www.facebook.com/voxplus/" target="_blank" class="btn form">💬 Facebookで問い合わせる</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0836517022" class="tel">
+    <span class="icon">📞</span>電話
+  </a>
+  <a href="https://www.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E5%AE%87%E9%83%A8%E5%B8%82%E8%A5%BF%E5%B2%90%E6%B3%A24401-4" target="_blank">
+    <span class="icon">📍</span>地図
+  </a>
+  <a href="https://www.facebook.com/voxplus/" target="_blank" class="form">
+    <span class="icon">💬</span>お問い合わせ
+  </a>
+</nav>
+
+</body>
+</html>
