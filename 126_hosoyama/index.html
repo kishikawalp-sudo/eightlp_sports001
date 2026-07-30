@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>細山田弓具店｜弓道具の専門店　山口県周南市</title>
+<style>
+  :root{
+    --main-green:#1f4d3a;
+    --main-green-dark:#123527;
+    --accent-gold:#c9a24b;
+    --bg-cream:#faf7f0;
+    --text-dark:#2b2b2b;
+    --text-gray:#666;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:var(--bg-cream);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:var(--main-green);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:0.5px;
+  }
+  header .tel-btn{
+    background:var(--accent-gold);
+    color:#1f2a1f;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,0.75));
+    color:#fff;
+    padding:30px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 1px 4px rgba(0,0,0,0.6);
+  }
+  .hero-overlay .sub{
+    font-size:13px;
+    margin-top:6px;
+    color:#e8e0cf;
+  }
+
+  section{
+    padding:32px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-green);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--accent-gold);
+    margin:10px auto 0;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:13px;
+    color:var(--text-gray);
+    margin-bottom:24px;
+  }
+
+  /* イチオシ商品 */
+  .featured{
+    background:#fff;
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent-gold);
+    color:#2b2b2b;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:4px;
+    margin-bottom:12px;
+  }
+  .featured-card{
+    background:var(--bg-cream);
+    border:1px solid #e5ddc8;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-card .body{
+    padding:18px;
+  }
+  .featured-card h3{
+    font-size:18px;
+    color:var(--main-green-dark);
+    margin-bottom:8px;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:var(--text-dark);
+    margin-bottom:14px;
+  }
+  .featured-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .featured-points span{
+    background:#eef3ee;
+    color:var(--main-green);
+    font-size:12px;
+    padding:5px 10px;
+    border-radius:14px;
+    border:1px solid #d5e2d7;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--main-green);
+    color:#fff;
+    font-weight:bold;
+    font-size:15px;
+    padding:14px;
+    border-radius:8px;
+  }
+  .cta-btn.gold{
+    background:var(--accent-gold);
+    color:#2b2b2b;
+  }
+
+  /* 強み */
+  .strengths-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    padding:16px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:var(--main-green);
+    color:#fff;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main-green-dark);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:var(--text-gray);
+  }
+
+  /* ギャラリー画像 */
+  .gallery-img{
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+  }
+  .gallery-img img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+  }
+
+  /* クチコミ */
+  .reviews{
+    background:#fff;
+  }
+  .review-card{
+    background:var(--bg-cream);
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    border-left:4px solid var(--accent-gold);
+  }
+  .review-card .stars{
+    color:var(--accent-gold);
+    font-size:15px;
+    margin-bottom:6px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13px;
+    color:var(--text-dark);
+  }
+
+  /* 店舗情報 */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    font-size:13px;
+  }
+  .shop-info th, .shop-info td{
+    padding:12px 10px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .shop-info th{
+    background:#f1ede1;
+    color:var(--main-green-dark);
+    width:30%;
+    white-space:nowrap;
+  }
+  .shop-info a{
+    color:var(--main-green);
+    font-weight:bold;
+    text-decoration:underline;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* 最終CTA */
+  .final-cta{
+    background:var(--main-green);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13px;
+    color:#dce8de;
+    margin-bottom:20px;
+  }
+  .final-cta .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  /* フッター簡易 */
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:var(--text-gray);
+    padding:16px;
+    background:var(--bg-cream);
+  }
+
+  /* 固定ボトムナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    border-top:1px solid #ddd;
+    display:flex;
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main-green-dark);
+    font-weight:bold;
+  }
+  .bottom-nav a.tel{
+    background:var(--main-green);
+    color:#fff;
+  }
+  .bottom-nav a.mail{
+    background:var(--accent-gold);
+    color:#2b2b2b;
+  }
+  .bottom-nav .icon{
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero img{height:360px;}
+    section{padding:48px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">細山田弓具店</div>
+  <a href="tel:0834212717" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="細山田弓具店 店舗外観">
+  <div class="hero-overlay">
+    <div class="catch">弓道具のことなら、この一軒。<br>細山田弓具店</div>
+    <div class="sub">山口県周南市青山町 ｜ 弓・矢・道具一式が揃う専門店</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title">イチオシ商品</div>
+  <div class="section-lead">初心者から経験者まで、あなたに合う一張りを</div>
+
+  <div class="featured-card">
+    <img src="images/item_kyugu.jpg" alt="細山田弓具店の弓具一式">
+    <div class="body">
+      <span class="featured-badge">当店イチオシ</span>
+      <h3>弓具（弓・矢・道具一式）</h3>
+      <p>弓、矢、弽（ゆがけ）、道着まで、弓道に必要な道具をトータルで取り揃えています。部活動で新しく弓道を始める学生さんから、長年続けているベテランの方まで、一人ひとりの体格・レベルに合わせてご提案いたします。</p>
+      <div class="featured-points">
+        <span>矢・弓の品揃え豊富</span>
+        <span>初心者向け相談OK</span>
+        <span>部活動デビューに最適</span>
+      </div>
+      <a href="tel:0834212717" class="cta-btn">📞 弓具について電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="section-lead">専門店だからできる、確かな品揃えと対応</div>
+  <div class="strengths-list">
+    <div class="strength-item">
+      <div class="num">1</div>
+      <div>
+        <h4>弓道具専門店ならではの品揃え</h4>
+        <p>矢や弓をはじめ、弓道に関わる道具が幅広く揃っています。専門店だからこそできる充実のラインナップです。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">2</div>
+      <div>
+        <h4>部活動デビューも安心サポート</h4>
+        <p>お子様が部活動で弓道を始める際も、必要な道具を一からしっかりご案内します。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">3</div>
+      <div>
+        <h4>店主の丁寧な人柄</h4>
+        <p>お客様からも「人柄が表情に表れている」と評判の店主が、一人ひとり親身に対応します。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-img">
+    <img src="images/store_inside.jpg" alt="細山田弓具店 店内の様子">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="section-lead">ご利用いただいた方からの口コミ</div>
+
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>初めて行きました。息子が部活に入ったので…。矢とか弓とか沢山揃ってました。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>専門店だけに品揃え完璧です。店主さんの人柄も表情に表れていると思います。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <table>
+    <tr><th>店名</th><td>細山田弓具店</td></tr>
+    <tr><th>代表者</th><td>細山田 誠</td></tr>
+    <tr><th>住所</th><td>山口県周南市青山町10-1</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0834212717">0834-21-2717</a></td></tr>
+    <tr><th>定休日</th><td>毎週月曜日</td></tr>
+    <tr><th>ホームページ</th><td><a href="http://www.h-yumiya.com/" target="_blank" rel="noopener">www.h-yumiya.com</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://h-yumiya.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@h-yumiya.com">info@h-yumiya.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=山口県周南市青山町10-1&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>弓具のご相談は、お気軽に</h2>
+  <p>部活動での弓道スタートも、道具選びも、まずはお電話・メールでご相談ください。</p>
+  <div class="btn-group">
+    <a href="tel:0834212717" class="cta-btn gold">📞 0834-21-2717 に電話する</a>
+    <a href="mailto:info@h-yumiya.com" class="cta-btn">✉️ メールで問い合わせる</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 細山田弓具店
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0834212717" class="tel"><span class="icon">📞</span>電話</a>
+  <a href="https://h-yumiya.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener"><span class="icon">📝</span>問い合わせ</a>
+  <a href="mailto:info@h-yumiya.com" class="mail"><span class="icon">✉️</span>メール</a>
+</div>
+
+</body>
+</html>
