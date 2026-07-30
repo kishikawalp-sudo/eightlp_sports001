@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ル・モンド・ヴェロ｜山口県防府市のプロショップ</title>
+<style>
+  :root{
+    --main: #1a3c5e;
+    --accent: #e85d2c;
+    --light: #f7f5f1;
+    --text: #2b2b2b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family: "Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:#fff;
+    padding-bottom:64px;
+    line-height:1.7;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:#fff;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  }
+  header .shopname{
+    font-size:15px;
+    font-weight:bold;
+    color:var(--main);
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-space{height:56px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:56vw;
+    max-height:320px;
+    object-fit:cover;
+  }
+  .hero-copy{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+    padding:22px 16px;
+  }
+  .hero-copy .catch{
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.5;
+  }
+  .hero-copy .catch span{
+    color:#ffd479;
+  }
+  .hero-copy .sub{
+    margin-top:8px;
+    font-size:13px;
+    opacity:0.9;
+  }
+
+  /* section common */
+  section{
+    padding:36px 18px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .section-title small{
+    display:block;
+    font-size:12px;
+    color:var(--accent);
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:13px;
+    color:#555;
+    margin-bottom:24px;
+  }
+
+  /* push product */
+  .push{
+    background:linear-gradient(135deg,#fff8f0,#ffffff);
+    border:2px solid var(--accent);
+    border-radius:12px;
+    padding:20px;
+  }
+  .push-badge{
+    background:var(--accent);
+    color:#fff;
+    display:inline-block;
+    padding:4px 12px;
+    border-radius:16px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:12px;
+  }
+  .push img{
+    border-radius:8px;
+    margin-bottom:16px;
+  }
+  .push h3{
+    font-size:19px;
+    color:var(--main);
+    margin-bottom:10px;
+  }
+  .push p{
+    font-size:14px;
+    margin-bottom:10px;
+  }
+  .push ul{
+    list-style:none;
+    margin:14px 0;
+  }
+  .push ul li{
+    font-size:13.5px;
+    padding:8px 0 8px 26px;
+    position:relative;
+    border-bottom:1px dashed #e0d5c8;
+  }
+  .push ul li:before{
+    content:"✔";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-weight:bold;
+  }
+  .push .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+    margin-top:16px;
+  }
+
+  /* strengths */
+  .strengths{
+    background:var(--light);
+  }
+  .strength-box{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .strength-box h4{
+    color:var(--main);
+    font-size:15px;
+    margin-bottom:8px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .strength-box h4:before{
+    content:"◆";
+    color:var(--accent);
+  }
+  .strength-box p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* reviews */
+  .review-card{
+    background:#fff;
+    border:1px solid #e5e0d8;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+  }
+  .review-card .stars{
+    color:#f5a623;
+    font-size:15px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13px;
+    color:#444;
+  }
+
+  /* shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .shop-info th{
+    background:var(--main);
+    color:#fff;
+    text-align:left;
+    padding:10px;
+    width:30%;
+    font-weight:normal;
+  }
+  .shop-info td{
+    padding:10px;
+    border-bottom:1px solid #eee;
+    background:#fff;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+  .sns-links{
+    margin-top:14px;
+    display:flex;
+    gap:10px;
+  }
+  .sns-links a{
+    background:var(--main);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:6px;
+    font-size:12.5px;
+  }
+
+  /* final cta */
+  .final-cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h3{
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+  .final-cta .btn-row{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .final-cta .btn{
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .final-cta .btn.tel{
+    background:var(--accent);
+    color:#fff;
+  }
+  .final-cta .btn.form{
+    background:#fff;
+    color:var(--main);
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.tel{
+    background:var(--accent);
+    color:#fff;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">ル・モンド・ヴェロ</div>
+  <a href="tel:0835232930" class="tel-btn">📞 電話する</a>
+</header>
+<div class="header-space"></div>
+
+<div class="hero">
+  <img src="images/hero_shop.jpg" alt="ル・モンド・ヴェロ 店舗外観">
+  <div class="hero-copy">
+    <p class="catch">プロショップならではの<br><span>組み付け・メンテナンス</span>で<br>安心して長く乗れるバイクを</p>
+    <p class="sub">防府市でロードバイクをお探しなら ル・モンド・ヴェロへ</p>
+  </div>
+</div>
+
+<section class="push-section">
+  <div class="section-title"><small>ICHIOSHI PRODUCT</small>イチオシ商品</div>
+  <div class="push">
+    <span class="push-badge">当店イチオシ</span>
+    <img src="images/road_bike.jpg" alt="ロードバイク イチオシ商品">
+    <h3>ロードバイク</h3>
+    <p>コルナゴ・トレック・ピナレロなど、憧れの高級モデルが店内にずらりと並びます。希望するタイヤサイズ、カラー、フレーム形状をお伝えいただければ、経験豊富な若い店長が最適な一台を手際よくご提案いたします。</p>
+    <ul>
+      <li>コルナゴ・トレック・ピナレロなど高級ブランド多数取扱い</li>
+      <li>付属品（カゴ・キャリアなど）のご相談も丁寧に対応</li>
+      <li>お乗り換えの際は今までの自転車を無料引き取り</li>
+      <li>購入後のパンク・不調も電話一本で対応</li>
+      <li>ご購入後のメンテナンス・調整は部品代を除き無料</li>
+    </ul>
+    <a href="tel:0835232930" class="cta-btn">📞 ロードバイクについて相談する</a>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title"><small>OUR STRENGTH</small>選ばれる理由</div>
+  <div class="strength-box">
+    <h4>プロショップならではの組み付け・メンテナンス</h4>
+    <p>スポーツバイクは、どこで買っても同じではありません。乗っているうちにブレーキの効きや変速の調子が落ちてくることがあります。ル・モンド・ヴェロでは、購入後も安全に乗っていただけるよう、当店でご購入されたバイクのメンテナンス・調整を、部品費用がかかる場合を除いて無料で行っています。</p>
+  </div>
+  <div class="strength-box">
+    <h4>豊富な在庫と充実したパーツ</h4>
+    <p>店内にはメーカー品の自転車がびっしりと並び、パーツも充実。ご希望のタイヤサイズ・色・フレーム形状を伝えるだけで、手際よく最適な商品をご紹介いただけます。</p>
+  </div>
+  <div class="strength-box">
+    <h4>知識も経験も豊富な若い店長</h4>
+    <p>付属品の相談から組み立てまで丁寧に対応。組み付けられたバイクはお値打ち価格で提供されています。</p>
+  </div>
+  <div class="strength-box">
+    <h4>購入後も安心のアフターケア</h4>
+    <p>乗っていた自転車は買い替え時に無料引き取り。パンクなどのトラブル時も電話一本で対応いただけます。</p>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title"><small>CUSTOMER'S VOICE</small>お客様の声</div>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>8月、自転車の買い替えでこちらのお店で購入。店内にはメーカー品の自転車がズラリと並べてあり、価格はお値打ちだと思います。希望するタイヤの大きさ、色、フレームの形状を伝えると手際よく最適な商品を紹介してもらえました。乗っていた自転車は買い替え時にタダで引き取ってもらえて、パンクした時は電話一本で来ていただけるとのこと。アフターケアもしっかりされているようで安心です。次の自転車もここで購入するつもりです。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>通学用自転車の購入に行きました。初めての入店でしたが、親切にお話しを聞いていただき、気持ちよく購入できました。オススメです。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title"><small>SHOP INFO</small>店舗情報</div>
+  <table>
+    <tr><th>店名</th><td>ル・モンド・ヴェロ</td></tr>
+    <tr><th>会社名</th><td>株式会社ルモンドヴェロ</td></tr>
+    <tr><th>住所</th><td>山口県防府市千日１丁目６−６−２</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0835232930">083-523-2930</a></td></tr>
+    <tr><th>定休日</th><td>水曜日・第三日曜日</td></tr>
+    <tr><th>HP</th><td><a href="http://www.lemond-velo.com/" target="_blank" rel="noopener">www.lemond-velo.com</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=山口県防府市千日1丁目6-6-2&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <div class="sns-links">
+    <a href="https://www.facebook.com/lemondvelo/" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://lemond-velo.com/contact-2/" target="_blank" rel="noopener">お問い合わせ</a>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h3>まずはお気軽にご相談ください</h3>
+  <p>希望のタイヤサイズ・カラー・フレーム形状をお伝えいただくだけで<br>あなたにぴったりの一台をご提案します</p>
+  <div class="btn-row">
+    <a href="tel:0835232930" class="btn tel">📞 電話で相談する（083-523-2930）</a>
+    <a href="https://lemond-velo.com/contact-2/" target="_blank" rel="noopener" class="btn form">✉️ お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="#push-section">イチオシ商品</a>
+  <a href="#" onclick="document.querySelector('.shop-info').scrollIntoView({behavior:'smooth'});return false;">店舗情報</a>
+  <a href="tel:0835232930" class="tel">📞 電話する</a>
+</nav>
+
+</body>
+</html>
