@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マリン＆マリン｜下関市彦島のダイビングショップ</title>
+<style>
+  :root{
+    --sea-deep:#003b5c;
+    --sea-blue:#0077a8;
+    --sea-light:#4fb8d8;
+    --sand:#fdf6e9;
+    --accent:#ff8c3f;
+    --text:#213238;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--sand);
+    padding-bottom:64px; /* space for fixed bottom nav */
+    line-height:1.7;
+  }
+  img{max-width:100%; display:block;}
+  a{text-decoration:none; color:inherit;}
+
+  /* Header */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    background:var(--sea-deep);
+    color:#fff;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  header .shop-name{
+    font-size:16px; font-weight:bold; letter-spacing:0.5px;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-spacer{height:52px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--sea-blue) 0%, var(--sea-deep) 100%);
+    color:#fff;
+    text-align:center;
+    padding:36px 16px 30px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 50% 120%, rgba(255,255,255,0.15), transparent 60%);
+  }
+  .hero img{
+    width:100%;
+    border-radius:16px;
+    margin:16px 0 18px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.35);
+  }
+  .hero h1{
+    font-size:22px;
+    line-height:1.5;
+    margin-bottom:8px;
+    position:relative;
+  }
+  .hero p.sub{
+    font-size:14px;
+    opacity:0.9;
+    position:relative;
+  }
+  .badge-row{
+    display:flex; justify-content:center; gap:8px; margin-top:14px; flex-wrap:wrap;
+    position:relative;
+  }
+  .badge{
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.4);
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+  }
+
+  /* Section title */
+  .sec-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--sea-deep);
+    margin-bottom:18px;
+    position:relative;
+    padding-bottom:10px;
+  }
+  .sec-title::after{
+    content:"";
+    position:absolute;
+    bottom:0; left:50%; transform:translateX(-50%);
+    width:44px; height:3px;
+    background:var(--accent);
+    border-radius:3px;
+  }
+
+  section{padding:40px 16px;}
+  section.alt{background:#fff;}
+
+  /* Featured product */
+  .feature-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,60,90,0.12);
+    border:2px solid var(--sea-light);
+  }
+  .feature-card img{width:100%;}
+  .feature-card .feature-body{padding:20px;}
+  .feature-card .push-label{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 12px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .feature-card h3{
+    font-size:19px;
+    color:var(--sea-deep);
+    margin-bottom:10px;
+  }
+  .feature-card p{
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .feature-list{
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .feature-list li{
+    font-size:14px;
+    padding:8px 0 8px 26px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .feature-list li::before{
+    content:"✓";
+    position:absolute; left:0; top:8px;
+    color:var(--sea-blue);
+    font-weight:bold;
+  }
+  .cta-button{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(255,140,63,0.4);
+  }
+
+  /* Strengths */
+  .strength-box{
+    background:var(--sea-deep);
+    color:#fff;
+    border-radius:16px;
+    padding:22px 18px;
+    font-size:14px;
+  }
+  .strength-box h3{
+    font-size:17px;
+    margin-bottom:12px;
+    color:#fff;
+  }
+  .strength-box .map-pins{
+    display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;
+  }
+  .strength-box .pin{
+    background:rgba(255,255,255,0.12);
+    padding:6px 10px;
+    border-radius:8px;
+    font-size:12px;
+  }
+
+  /* Reviews */
+  .review-card{
+    background:#fff;
+    border-radius:14px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  }
+  .review-card .stars{
+    color:#ffb400;
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .review-card p{font-size:13.5px;}
+
+  /* Shop info table */
+  table.shop-info{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    font-size:13.5px;
+  }
+  table.shop-info th, table.shop-info td{
+    text-align:left;
+    padding:12px 14px;
+    border-bottom:1px solid #eee;
+  }
+  table.shop-info th{
+    background:var(--sea-light);
+    color:#fff;
+    width:34%;
+    white-space:nowrap;
+    font-weight:normal;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  }
+  .map-frame iframe{width:100%; height:220px; border:0;}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(180deg, var(--sea-blue), var(--sea-deep));
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h3{font-size:19px; margin-bottom:10px;}
+  .final-cta p{font-size:14px; margin-bottom:18px; opacity:0.92;}
+  .final-cta .tel-big{
+    display:block;
+    font-size:22px;
+    font-weight:bold;
+    color:#fff;
+    background:var(--accent);
+    padding:14px;
+    border-radius:12px;
+    margin-bottom:12px;
+  }
+  .final-cta .sub-link{
+    font-size:13px;
+    text-decoration:underline;
+    opacity:0.85;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed; bottom:0; left:0; right:0; z-index:1000;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px 8px;
+    font-size:11px;
+    color:var(--sea-deep);
+  }
+  .bottom-nav a.primary{
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  footer.copyright{
+    text-align:center;
+    font-size:11px;
+    color:#889;
+    padding:18px 16px 8px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">マリン＆マリン</div>
+  <a href="tel:0832667168" class="tel-btn">📞 電話する</a>
+</header>
+<div class="header-spacer"></div>
+
+<!-- Hero -->
+<div class="hero">
+  <p class="sub">本州最西端・山口県下関市彦島</p>
+  <h1>身近な海を、<br>一緒に覗いてみませんか？</h1>
+  <img src="images/hero_diving.jpg" alt="マリン＆マリン ダイビングの様子">
+  <div class="badge-row">
+    <span class="badge">★4.5 口コミ多数</span>
+    <span class="badge">喫茶店併設</span>
+    <span class="badge">体験ダイビングOK</span>
+  </div>
+</div>
+
+<!-- Featured product -->
+<section>
+  <div class="sec-title">イチオシサービス</div>
+  <div class="feature-card">
+    <img src="images/diving_experience.jpg" alt="体験ダイビングの様子">
+    <div class="feature-body">
+      <span class="push-label">初心者も安心</span>
+      <h3>体験ダイビング・ダイビングショップ</h3>
+      <p>下関・彦島の海はもちろん、高知県柏島、熊本県牛深、奄美大島など、選りすぐりのポイントへもご案内。地元密着のダイビングショップだから、あなたに合った海を提案できます。</p>
+      <ul class="feature-list">
+        <li>初めての方向け体験ダイビング受付中</li>
+        <li>地元・彦島の海でのファンダイブ</li>
+        <li>高知・柏島や熊本・牛深、奄美大島へのツアーも相談可能</li>
+        <li>ダイビング後は隣接の喫茶店でひと休み</li>
+      </ul>
+      <a href="tel:0832667168" class="cta-button">今すぐ電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="alt">
+  <div class="sec-title">私たちの強み</div>
+  <div class="strength-box">
+    <h3>本州の一番端っこから、海の楽しさをお届け</h3>
+    <p>山口県下関市彦島にあるダイビングショップ「マリン＆マリン」。運営はジャパンマリン株式会社 海洋スポーツ部です。地元の海を知り尽くしたスタッフが、初めての方にも安心の体験ダイビングをご案内しています。</p>
+    <div class="map-pins">
+      <span class="pin">📍 彦島（地元の海）</span>
+      <span class="pin">📍 高知県柏島</span>
+      <span class="pin">📍 熊本県牛深</span>
+      <span class="pin">📍 奄美大島</span>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section>
+  <div class="sec-title">お客様の口コミ</div>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>普通の喫茶店ですが名前の通り横はダイビングショップです。昔もずくスープの通販をやってたような？ 日替わり定食はコーヒー付きでお得ですよ。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>喫茶店も併設していてとても良いですよ！</p>
+  </div>
+  <img src="images/shop_cafe.jpg" alt="併設の喫茶店の様子" style="border-radius:14px; margin-top:6px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+</section>
+
+<!-- Shop info -->
+<section class="alt">
+  <div class="sec-title">店舗情報</div>
+  <table class="shop-info">
+    <tr><th>店名</th><td>マリン＆マリン</td></tr>
+    <tr><th>運営会社</th><td>ジャパンマリン株式会社 海洋スポーツ部</td></tr>
+    <tr><th>代表者</th><td>堀野智子</td></tr>
+    <tr><th>住所</th><td>山口県下関市彦島迫町４丁目１０−３２</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0832667168">0832-66-7168</a></td></tr>
+    <tr><th>ホームページ</th><td><a href="http://marineandmarine.blue.coocan.jp/" target="_blank" rel="noopener">marineandmarine.blue.coocan.jp</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:pxp05560@nifty.com">pxp05560@nifty.com</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://www.facebook.com/marineandmarineshimonoseki/" target="_blank" rel="noopener">Facebook</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E4%B8%8B%E9%96%A2%E5%B8%82%E5%BD%A6%E5%B3%B6%E8%BF%AB%E7%94%BA4%E4%B8%81%E7%9B%AE10-32&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <h3>海の楽しさ、一緒に体験しませんか？</h3>
+  <p>体験ダイビングのご相談はお気軽にお電話ください</p>
+  <a href="tel:0832667168" class="tel-big">📞 0832-66-7168</a>
+  <a href="http://marineandmarine.blue.coocan.jp/" target="_blank" rel="noopener" class="sub-link">ホームページも見てみる</a>
+</section>
+
+<footer class="copyright">© マリン＆マリン / ジャパンマリン株式会社 海洋スポーツ部</footer>
+
+<!-- Bottom nav -->
+<div class="bottom-nav">
+  <a href="tel:0832667168" class="primary"><span class="icon">📞</span>電話で相談</a>
+  <a href="https://maps.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E4%B8%8B%E9%96%A2%E5%B8%82%E5%BD%A6%E5%B3%B6%E8%BF%AB%E7%94%BA4%E4%B8%81%E7%9B%AE10-32" target="_blank" rel="noopener"><span class="icon">📍</span>地図を見る</a>
+  <a href="http://marineandmarine.blue.coocan.jp/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+</div>
+
+</body>
+</html>
