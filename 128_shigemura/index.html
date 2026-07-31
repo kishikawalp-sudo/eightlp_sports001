@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>バイクショップシゲムラ｜山口県防府市の地域密着バイク・自転車専門店</title>
+<style>
+  :root{
+    --main-color:#d32f2f;
+    --dark-color:#1a1a1a;
+    --sub-color:#f5a623;
+    --bg-light:#f9f7f2;
+    --text-color:#333;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-color);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px; /* for fixed bottom nav */
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 12px;
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+    color:var(--dark-color);
+  }
+  header .tel-btn{
+    background:var(--main-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-space{height:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    margin-top:0;
+  }
+  .hero img{
+    width:100%;
+    height:60vw;
+    max-height:420px;
+    object-fit:cover;
+  }
+  .hero-text{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,0.75));
+    color:#fff;
+    padding:30px 16px 16px;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:1px 1px 4px rgba(0,0,0,0.6);
+  }
+  .hero-text .sub{
+    font-size:13px;
+    margin-top:6px;
+    opacity:0.95;
+  }
+
+  section{
+    padding:36px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--dark-color);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:50px;
+    height:3px;
+    background:var(--main-color);
+    margin:10px auto 0;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:#777;
+    margin-bottom:24px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--bg-light);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.1);
+    margin-bottom:20px;
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-card .badge{
+    display:inline-block;
+    background:var(--sub-color);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 10px;
+    border-radius:20px;
+    margin:12px 0 0 12px;
+  }
+  .featured-card .content{
+    padding:6px 16px 20px;
+  }
+  .featured-card h3{
+    font-size:18px;
+    margin-bottom:8px;
+    color:var(--dark-color);
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#555;
+  }
+
+  /* Strengths */
+  .strengths{
+    background:#fff;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    margin-bottom:24px;
+    align-items:flex-start;
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:38px;height:38px;
+    background:var(--main-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .strength-item h4{
+    font-size:16px;
+    margin-bottom:4px;
+    color:var(--dark-color);
+  }
+  .strength-item p{
+    font-size:13.5px;
+    color:#555;
+  }
+  .message-box{
+    background:var(--bg-light);
+    border-left:4px solid var(--main-color);
+    padding:16px;
+    border-radius:6px;
+    font-size:13.5px;
+    margin-top:20px;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:var(--bg-light);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .stars{
+    color:var(--sub-color);
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* Shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .shop-info th, .shop-info td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .shop-info th{
+    width:28%;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .shop-info td a{
+    color:var(--main-color);
+    text-decoration:underline;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:250px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta-section{
+    background:var(--dark-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section .section-title{color:#fff;}
+  .cta-section .section-title::after{background:var(--sub-color);}
+  .cta-section .catch{
+    font-size:15px;
+    margin-bottom:24px;
+    color:#ddd;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-btn{
+    display:block;
+    padding:16px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .cta-btn.tel{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .cta-btn.form{
+    background:var(--sub-color);
+    color:#fff;
+  }
+  .cta-btn.web{
+    background:#fff;
+    color:var(--dark-color);
+    border:1px solid #555;
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:20px 16px;
+    background:#fff;
+  }
+
+  /* Fixed bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--dark-color);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.tel{color:var(--main-color);}
+  .bottom-nav .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero img{height:380px;}
+    section{padding:56px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">バイクショップシゲムラ</div>
+  <a href="tel:0835242888" class="tel-btn">📞 0835-24-2888</a>
+</header>
+<div class="header-space"></div>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="バイクショップシゲムラ 店舗外観">
+  <div class="hero-text">
+    <div class="catch">地域でいちばん身近な<br>バイク・自転車ショップ</div>
+    <div class="sub">山口県防府市 ｜ ホンダ認定一級整備士在籍 ｜ アフターサービス充実</div>
+  </div>
+</div>
+
+<!-- 一押し商品 -->
+<section class="featured">
+  <div class="section-title">イチオシの商品</div>
+  <div class="section-sub">バイク・自転車のことなら何でもご相談ください</div>
+
+  <div class="featured-card">
+    <span class="badge">PICK UP</span>
+    <img src="images/bike.jpg" alt="新車バイク 原付き">
+    <div class="content">
+      <h3>新車バイク（原付き〜各種）</h3>
+      <p>ホンダ認定一級整備士の資格を持つ店主が、購入後も安心の整備・アフターサービスでサポート。オフロードバイクのご相談にも強く、初めての一台選びから乗り換えまで丁寧にご案内します。</p>
+    </div>
+  </div>
+
+  <div class="featured-card">
+    <span class="badge">PICK UP</span>
+    <img src="images/cycle.jpg" alt="自転車 各種取り扱い">
+    <div class="content">
+      <h3>自転車全般</h3>
+      <p>通学用から普段使いの一台まで、自転車のこともお任せください。バイクと同じく、購入後のメンテナンスや修理もいつでも気軽にご相談いただけます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="section-sub">昔ながらの田舎のバイク屋さんだからこそできること</div>
+
+  <div class="strength-item">
+    <div class="strength-num">1</div>
+    <div>
+      <h4>ホンダ認定一級整備士による確かな技術</h4>
+      <p>資格を持つ店主が整備を担当。購入後のアフターサービスも安心してお任せいただけます。</p>
+    </div>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-num">2</div>
+    <div>
+      <h4>バイクも自転車も何でも相談できる</h4>
+      <p>二輪車のことなら大小問わず気軽に立ち寄れる、地域でいちばん身近な存在を目指しています。</p>
+    </div>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-num">3</div>
+    <div>
+      <h4>親身な対応とオフロードバイクへの強さ</h4>
+      <p>ぶっきらぼうでも話せば親切、と評判。物事を親身になって一緒に判断してくれると好評です。</p>
+    </div>
+  </div>
+
+  <div class="message-box">
+    シゲムラは、お客様・地域のみなさまにとって<b>いちばん身近なバイクショップ</b>でありたいと思っています。安全で快適な二輪車ライフをお過ごしいただけるよう、精一杯寄り添いサポートさせていただきます！みなさまのご来店を心よりお待ちしております。
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>店員さんの対応が良かったので原付きバイク（新車）を買わせていただきました。昔ながらの田舎のバイク屋さん的な感じのお店です。大手のバイクショップに比べると余り大きな値引きは期待出来ませんが、アフターサービスに期待出来るかと・・・。またホンダ認定の一級整備士の資格を持つ店主の腕は確かかと思います。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>店員さん、態度悪いってみんなよく言いますけど、確かに愛想悪くてぶっきらぼうだけど話してみたら親切で良い人ですよ。親身になって物事を判断してくれます。仕事柄、約2年ごとに転勤するため全国でいろいろなバイクショップにお世話になりましたが、その中でも対応は一番良かったです。オフロードバイクにも強く、信頼出来るお店だと思います。</p>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <table>
+    <tr><th>店名</th><td>バイクショップシゲムラ</td></tr>
+    <tr><th>会社名</th><td>株式会社バイクショップシゲムラ</td></tr>
+    <tr><th>住所</th><td>山口県防府市大字田島319-2</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0835242888">0835-24-2888</a></td></tr>
+    <tr><th>定休日</th><td>火曜日・第2,4週目の月曜日</td></tr>
+    <tr><th>HP</th><td><a href="https://bike-shigemura.com/" target="_blank">https://bike-shigemura.com/</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:sg819046@able.ocn.ne.jp">sg819046@able.ocn.ne.jp</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E5%8F%A3%E7%9C%8C%E9%98%B2%E5%BA%9C%E5%B8%82%E5%A4%A7%E5%AD%97%E7%94%B0%E5%B3%B6319-2&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-title">お気軽にご相談ください</div>
+  <div class="catch">バイクも自転車も、いつでも気軽に立ち寄れる<br>地域いちばんのバイクショップへ</div>
+  <div class="cta-buttons">
+    <a href="tel:0835242888" class="cta-btn tel">📞 電話で問い合わせる（0835-24-2888）</a>
+    <a href="https://bike-shigemura.com/contact/" target="_blank" class="cta-btn form">✉️ 問い合わせフォームはこちら</a>
+    <a href="https://bike-shigemura.com/" target="_blank" class="cta-btn web">🌐 公式サイトを見る</a>
+  </div>
+</section>
+
+<footer>
+  © バイクショップシゲムラ（株式会社バイクショップシゲムラ）
+</footer>
+
+<!-- Fixed bottom nav -->
+<div class="bottom-nav">
+  <a href="tel:0835242888" class="tel"><span class="icon">📞</span>電話</a>
+  <a href="https://bike-shigemura.com/contact/" target="_blank"><span class="icon">✉️</span>問い合わせ</a>
+  <a href="https://bike-shigemura.com/" target="_blank"><span class="icon">🌐</span>HP</a>
+</div>
+
+</body>
+</html>
