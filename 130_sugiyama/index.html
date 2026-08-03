@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>杉山スポーツ 本店｜広島市南区のラケット専門店（テニス・バドミントン）</title>
+<style>
+  :root{
+    --main:#0b3d91;
+    --accent:#ffb400;
+    --dark:#1a1a1a;
+    --light:#f7f8fa;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    color:var(--dark);
+    background:var(--light);
+    line-height:1.7;
+    padding-bottom:64px; /* space for bottom nav */
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--white);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  header .shop-name{
+    font-size:15px;font-weight:bold;color:var(--main);
+  }
+  header .tel-btn{
+    background:var(--main);color:#fff;
+    padding:8px 14px;border-radius:30px;
+    font-size:13px;font-weight:bold;
+    display:flex;align-items:center;gap:4px;
+    white-space:nowrap;
+  }
+  .header-spacer{height:56px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(135deg,var(--main),#082a66);
+    color:#fff;
+    text-align:center;
+    padding:36px 18px 30px;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#1a1a1a;
+    font-weight:bold;
+    font-size:12px;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:24px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero p{
+    font-size:14px;
+    opacity:0.95;
+    margin-bottom:18px;
+  }
+  .hero .stars{
+    color:var(--accent);
+    font-size:20px;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .hero .stars-label{
+    font-size:12px;
+    opacity:0.85;
+    margin-bottom:16px;
+  }
+  .hero img{
+    width:100%;
+    border-radius:12px;
+    margin-top:6px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .cta-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#1a1a1a;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px 30px;
+    border-radius:40px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  section{padding:36px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:6px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:12px;
+    color:#666;
+    margin-bottom:24px;
+  }
+
+  /* featured product */
+  .feature{
+    background:var(--white);
+    border:2px solid var(--accent);
+    border-radius:16px;
+    padding:20px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  }
+  .feature .ribbon{
+    display:inline-block;
+    background:#e2001c;
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:4px;
+    margin-bottom:12px;
+  }
+  .feature img{
+    border-radius:10px;
+    margin-bottom:14px;
+  }
+  .feature h3{
+    font-size:19px;
+    color:var(--main);
+    margin-bottom:10px;
+    font-weight:bold;
+  }
+  .feature p{
+    font-size:14px;
+    color:#333;
+    margin-bottom:14px;
+  }
+  .feature ul{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .feature ul li{
+    font-size:13.5px;
+    padding:6px 0 6px 24px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .feature ul li:before{
+    content:"✓";
+    position:absolute;left:0;
+    color:var(--main);
+    font-weight:bold;
+  }
+  .feature .cta-btn{
+    display:block;
+    text-align:center;
+    width:100%;
+  }
+
+  /* strengths */
+  .strengths-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-item{
+    background:var(--white);
+    border-radius:12px;
+    padding:16px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:34px;height:34px;
+    background:var(--main);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:14px;
+  }
+  .strength-item p{
+    font-size:13.5px;
+    color:#333;
+  }
+
+  /* review */
+  .review-box{
+    background:var(--white);
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    position:relative;
+  }
+  .review-box .stars{
+    color:var(--accent);
+    font-size:18px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+  }
+  .review-box p{
+    font-size:13.5px;
+    color:#444;
+    font-style:italic;
+  }
+  .review-box .quote-mark{
+    font-size:40px;
+    color:var(--accent);
+    opacity:0.4;
+    line-height:0.5;
+    display:block;
+    margin-bottom:6px;
+  }
+
+  /* gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery img{
+    border-radius:10px;
+    height:140px;
+    object-fit:cover;
+    width:100%;
+  }
+
+  /* shop info */
+  .info-table{
+    width:100%;
+    background:var(--white);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .info-table tr{border-bottom:1px solid #eee;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:#eef1f8;
+    color:var(--main);
+    font-size:13px;
+    text-align:left;
+    padding:12px;
+    width:88px;
+    vertical-align:top;
+    white-space:nowrap;
+  }
+  .info-table td{
+    padding:12px;
+    font-size:13.5px;
+    word-break:break-all;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+    justify-content:center;
+  }
+  .sns-links a{
+    background:var(--main);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    padding:10px 18px;
+    border-radius:30px;
+  }
+
+  /* final cta */
+  .final-cta{
+    background:linear-gradient(135deg,var(--main),#082a66);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:var(--white);
+    box-shadow:0 -2px 8px rgba(0,0,0,0.12);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:11.5px;
+    font-weight:bold;
+    color:var(--main);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.primary{
+    background:var(--accent);
+    color:#1a1a1a;
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:16px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero h1{font-size:28px;}
+    section{padding:48px 40px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">杉山スポーツ 本店</div>
+  <a href="tel:0822633939" class="tel-btn">📞 082-263-3939</a>
+</header>
+<div class="header-spacer"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="badge">中国地方に10店舗のみ｜日本バドミントン専門店会 加盟店</span>
+  <h1>あなたにぴったりの1本が、<br>ここで見つかる。</h1>
+  <div class="stars">★★★★★</div>
+  <div class="stars-label">お客様満足度の高い口コミ多数</div>
+  <p>硬式・軟式テニス／バドミントン用品専門店<br>広島県広島市南区 杉山スポーツ 本店</p>
+  <img src="images/sugiyama_main.jpg" alt="杉山スポーツ 本店 店内・ラケット売り場">
+  <div style="margin-top:20px;">
+    <a href="tel:0822633939" class="cta-btn">📞 今すぐ電話で相談する</a>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCT -->
+<section>
+  <div class="section-title">イチオシ</div>
+  <p class="section-sub">専門店だから提案できる、あなただけの1本</p>
+  <div class="feature">
+    <span class="ribbon">杉山スポーツ 一番人気</span>
+    <img src="images/sugiyama_racket.jpg" alt="ラケット専門店 杉山スポーツの豊富なラケット品揃え">
+    <h3>ラケット専門店としての品揃え・提案力</h3>
+    <p>硬式・軟式テニスからバドミントンまで、定番モデルからレアアイテムまで専門店ならではの豊富な在庫。経験豊富なスタッフが、プレースタイルやレベルに合わせて最適な1本をご提案します。</p>
+    <ul>
+      <li>中国地方に10店舗のみの日本バドミントン専門店会 加盟店</li>
+      <li>全国大会サポート実績のあるストリンガーが丁寧にガット張り</li>
+      <li>納得いくまで付き合う、じっくり相談スタイル</li>
+      <li>チーム用品・マーキング・記念品の相談も対応</li>
+    </ul>
+    <a href="tel:0822633939" class="cta-btn">📞 ラケット選びを相談する</a>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section style="background:var(--white);">
+  <div class="section-title">選ばれる理由</div>
+  <p class="section-sub">近隣では満たされないプレーヤーが辿り着く専門店</p>
+  <div class="strengths-list">
+    <div class="strength-item">
+      <div class="num">1</div>
+      <p>近隣のショップでは満たされない専門性を求め、各地から多数のお客様がご来店。テニス・バドミントンに特化した確かな知識で対応します。</p>
+    </div>
+    <div class="strength-item">
+      <div class="num">2</div>
+      <p>商品選びのご相談は、納得いくまでとことんお付き合い。「なんとなく買う」のではなく、自分に合った1本を見つけられます。</p>
+    </div>
+    <div class="strength-item">
+      <div class="num">3</div>
+      <p>全国大会でサポートしてきたストリンガーが、丁寧にガットを張り上げます。仕上がりの質にこだわりたい方にも安心です。</p>
+    </div>
+    <div class="strength-item">
+      <div class="num">4</div>
+      <p>定番商品からレアアイテムまで、専門店ならではの幅広い品揃え。チーム用品・マーキング・記念品まで幅広くご相談いただけます。</p>
+    </div>
+    <div class="strength-item">
+      <div class="num">5</div>
+      <p>大会運営やスポーツスクールのサポートなど、スポーツ普及活動にも積極的に取り組んでいます。</p>
+    </div>
+    <div class="strength-item">
+      <div class="num">6</div>
+      <p>施設の不具合のご相談にも対応。専門スタッフが現地まで調査・修理にお伺いします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW -->
+<section>
+  <div class="section-title">お客様の声</div>
+  <div class="review-box">
+    <span class="quote-mark">”</span>
+    <div class="stars">★★★★★</div>
+    <p>今日新しいラケットを買わせていただきました！対応してもらったら店員さん本当にいい人で親身になっていろいろ考えていただけました！また利用したいと思っています！品揃えもいいので自分にあったラケット見つかるはずです！</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section style="background:var(--white);">
+  <div class="section-title">店内のご紹介</div>
+  <div class="gallery">
+    <img src="images/sugiyama_shop1.jpg" alt="杉山スポーツ 本店 外観・店頭">
+    <img src="images/sugiyama_racket.jpg" alt="杉山スポーツ ラケット売り場の様子">
+  </div>
+</section>
+
+<!-- SHOP INFO -->
+<section>
+  <div class="section-title">店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>杉山スポーツ 本店</td></tr>
+    <tr><th>住所</th><td>広島県広島市南区金屋町２−６</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0822633939">082-263-3939</a></td></tr>
+    <tr><th>Webサイト</th><td><a href="http://sugiyamasports.com/" target="_blank" rel="noopener">sugiyamasports.com</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:s-sport@khaki.plala.or.jp">s-sport@khaki.plala.or.jp</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%BA%83%E5%B3%B6%E5%B8%82%E5%8D%97%E5%8C%BA%E9%87%91%E5%B1%8B%E7%94%BA%EF%BC%92%EF%BC%8D%EF%BC%96&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <div class="sns-links">
+    <a href="https://www.facebook.com/SugiyamaSports" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>自分にあった1本を、専門店で。</h2>
+  <p>ラケット選びのご相談は、杉山スポーツ 本店へお気軽にどうぞ。</p>
+  <a href="tel:0822633939" class="cta-btn">📞 082-263-3939 に電話する</a>
+</section>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="tel:0822633939" class="primary"><span class="icon">📞</span>電話する</a>
+  <a href="http://sugiyamasports.com/" target="_blank" rel="noopener"><span class="icon">🌐</span>サイト</a>
+  <a href="https://maps.google.com/maps?q=%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%BA%83%E5%B3%B6%E5%B8%82%E5%8D%97%E5%8C%BA%E9%87%91%E5%B1%8B%E7%94%BA%EF%BC%92%EF%BC%8D%EF%BC%96" target="_blank" rel="noopener"><span class="icon">📍</span>地図</a>
+  <a href="https://www.facebook.com/SugiyamaSports" target="_blank" rel="noopener"><span class="icon">👍</span>SNS</a>
+</div>
+
+</body>
+</html>
