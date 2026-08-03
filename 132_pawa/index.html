@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>広島パワーハウス｜バスケットボール用品専門店</title>
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --court:#c94f1c;      /* バスケコート・オレンジ */
+    --court-dark:#a83f14;
+    --navy:#182642;        /* ユニフォーム紺 */
+    --navy-light:#28395c;
+    --cream:#faf6ef;
+    --line:#e4ddd0;
+    --gold:#e0a53a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    padding-bottom:64px; /* bottom nav分 */
+    line-height:1.7;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* ===== Header ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--navy);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    z-index:100;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  header .shopname{
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:.02em;
+  }
+  header .shopname span{
+    display:block;
+    font-size:10px;
+    color:var(--gold);
+    font-weight:400;
+    letter-spacing:.05em;
+  }
+  header .tel-btn{
+    background:var(--court);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    padding:8px 14px;
+    border-radius:20px;
+    display:flex;align-items:center;gap:5px;
+  }
+  main{margin-top:52px;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(224,165,58,.25), transparent 45%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 55%, var(--court-dark) 130%);
+    color:#fff;
+    padding:38px 20px 34px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-40px;bottom:-60px;
+    width:220px;height:220px;
+    border:3px dashed rgba(255,255,255,.15);
+    border-radius:50%;
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.15em;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    padding:4px 10px;
+    border-radius:3px;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:800;
+    line-height:1.5;
+    margin-bottom:10px;
+    position:relative;z-index:2;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold);
+  }
+  .hero p{
+    font-size:13.5px;
+    color:#e9e6df;
+    position:relative;z-index:2;
+    margin-bottom:20px;
+  }
+  .hero img{
+    width:100%;
+    border-radius:10px;
+    box-shadow:0 10px 26px rgba(0,0,0,.35);
+    position:relative;z-index:2;
+  }
+  .hero-cta{
+    margin-top:18px;
+    display:flex;
+    gap:10px;
+    position:relative;z-index:2;
+  }
+  .hero-cta a{
+    flex:1;
+    text-align:center;
+    padding:13px 8px;
+    border-radius:6px;
+    font-size:13.5px;
+    font-weight:700;
+  }
+  .hero-cta .primary{background:var(--court);color:#fff;}
+  .hero-cta .secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.4);}
+
+  /* ===== Section common ===== */
+  section{padding:44px 20px;}
+  .section-head{
+    text-align:center;
+    margin-bottom:26px;
+  }
+  .section-head .tag{
+    font-size:11px;
+    font-weight:700;
+    color:var(--court);
+    letter-spacing:.15em;
+  }
+  .section-head h2{
+    font-size:21px;
+    font-weight:800;
+    margin-top:6px;
+    color:var(--navy);
+  }
+  .section-head .sub{
+    font-size:12.5px;
+    color:#777;
+    margin-top:6px;
+  }
+
+  /* ===== Featured product (イチオシ) ===== */
+  .featured{
+    background:var(--navy);
+    color:#fff;
+    position:relative;
+  }
+  .featured .section-head h2{color:#fff;}
+  .featured .section-head .tag{color:var(--gold);}
+  .feature-card{
+    background:linear-gradient(180deg,#22335a,#1a2846);
+    border:1px solid rgba(224,165,58,.3);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 12px 28px rgba(0,0,0,.35);
+  }
+  .feature-card img{width:100%;}
+  .feature-card .body{padding:20px;}
+  .feature-card .badge{
+    display:inline-block;
+    background:var(--court);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:3px;
+    margin-bottom:10px;
+  }
+  .feature-card h3{
+    font-size:18px;
+    font-weight:800;
+    margin-bottom:8px;
+    line-height:1.5;
+  }
+  .feature-card p{
+    font-size:13px;
+    color:#d6d9e2;
+    margin-bottom:16px;
+  }
+  .feature-list{
+    list-style:none;
+    display:grid;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .feature-list li{
+    font-size:12.5px;
+    color:#e9e6df;
+    display:flex;
+    gap:8px;
+    align-items:flex-start;
+  }
+  .feature-list li::before{
+    content:"●";
+    color:var(--gold);
+    font-size:8px;
+    margin-top:6px;
+  }
+  .feature-card .cta{
+    display:block;
+    text-align:center;
+    background:var(--court);
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    padding:14px;
+    border-radius:8px;
+  }
+
+  /* ===== Strengths ===== */
+  .strengths{background:var(--cream);}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .strength-item:last-child{border-bottom:none;}
+  .strength-item .num{
+    flex-shrink:0;
+    width:34px;height:34px;
+    background:var(--court);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;
+    font-size:13px;
+  }
+  .strength-item .txt h4{
+    font-size:14px;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:4px;
+  }
+  .strength-item .txt p{
+    font-size:12.5px;
+    color:#666;
+  }
+  .strength-lead{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:18px;
+    font-size:13px;
+    color:#444;
+    margin-bottom:22px;
+  }
+
+  /* ===== Reviews ===== */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--cream);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:14px;
+    border-left:4px solid var(--court);
+  }
+  .review-card .stars{
+    color:var(--gold);
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13px;
+    color:#444;
+  }
+
+  /* ===== Shop info ===== */
+  .shopinfo{background:var(--cream);}
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    margin-bottom:20px;
+  }
+  .info-table tr{border-bottom:1px solid var(--line);}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:#f2ede2;
+    text-align:left;
+    font-size:12px;
+    font-weight:700;
+    color:var(--navy);
+    padding:12px 12px;
+    width:96px;
+    vertical-align:top;
+  }
+  .info-table td{
+    font-size:13px;
+    padding:12px 12px;
+    color:#333;
+  }
+  .info-table a{color:var(--court);font-weight:700;}
+  .map-wrap{
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  /* ===== Final CTA ===== */
+  .final-cta{
+    background:linear-gradient(135deg,var(--court) 0%,var(--court-dark) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13px;
+    margin-bottom:22px;
+    color:#fde9dd;
+  }
+  .final-cta .btn-group{display:grid;gap:10px;}
+  .final-cta a{
+    display:block;
+    padding:15px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:14.5px;
+  }
+  .final-cta .tel{background:#fff;color:var(--court-dark);}
+  .final-cta .form{background:rgba(0,0,0,.2);color:#fff;border:1px solid rgba(255,255,255,.5);}
+
+  footer{
+    padding:22px 20px 84px;
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    background:var(--navy);
+  }
+  footer .company{color:#cfd4de;margin-bottom:4px;font-size:12px;}
+
+  /* ===== Bottom nav ===== */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid var(--line);
+    z-index:100;
+    box-shadow:0 -2px 10px rgba(0,0,0,.08);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px 8px;
+    font-size:11px;
+    color:var(--navy);
+    font-weight:700;
+  }
+  .bottom-nav a.call{
+    background:var(--court);
+    color:#fff;
+  }
+  .bottom-nav a .ic{
+    display:block;
+    font-size:16px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:480px){
+    .hero h1{font-size:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">広島パワーハウス<span>HIROSHIMA POWER HOUSE</span></div>
+  <a href="tel:0825445050" class="tel-btn">📞 082-544-5050</a>
+</header>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" style="padding-top:38px;">
+    <span class="eyebrow">広島市中区 バスケットボール専門店</span>
+    <h1>ミニバスから社会人まで。<br><em>本気のバスケ用品</em>、揃います。</h1>
+    <p>豊富なウエア・シューズの品揃えと、チームユニフォーム・Tシャツのオーダー対応まで。広島パワーハウスがチームの「勝ちたい」を支えます。</p>
+    <img src="images/hero.jpg" alt="広島パワーハウス バスケットボール用品売り場">
+    <div class="hero-cta">
+      <a href="tel:0825445050" class="primary">📞 電話で問い合わせ</a>
+      <a href="#shopinfo" class="secondary">📍 アクセスを見る</a>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED ===== -->
+  <section class="featured">
+    <div class="section-head">
+      <div class="tag">FEATURED ITEM</div>
+      <h2>イチオシは、バスケ用品</h2>
+      <div class="sub">プレイヤーからチーム関係者まで、幅広くサポート</div>
+    </div>
+
+    <div class="feature-card">
+      <img src="images/feature.jpg" alt="バスケットボール用品 ウエア・シューズ・ユニフォーム">
+      <div class="body">
+        <span class="badge">チームオーダー承ります</span>
+        <h3>ミニバス〜社会人クラブまで、<br>全カテゴリー対応のバスケ用品</h3>
+        <p>プレーに直結するシューズ・ウエア選びから、チームで揃えるユニフォームやTシャツの製作まで、ワンストップでご相談いただけます。</p>
+        <ul class="feature-list">
+          <li>ミニバスケットボール〜中学・高校・大学・社会人クラブチームまで幅広くサポート</li>
+          <li>豊富なウエア・シューズの在庫からプレイヤーに合った一足をご提案</li>
+          <li>ユニフォーム・Tシャツなどチームオーダーを一括対応</li>
+        </ul>
+        <a href="tel:0825445050" class="cta">📞 バスケ用品について相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STRENGTHS ===== -->
+  <section class="strengths">
+    <div class="section-head">
+      <div class="tag">STRENGTH</div>
+      <h2>広島パワーハウスの強み</h2>
+    </div>
+    <div class="strength-lead">
+      広島パワーハウスでは、バスケットボールに関してミニバスケットボール、中学・高校・大学バスケットボール部をはじめ社会人クラブチームに至るまで幅広くサポートさせて頂きます。プレイヤーのみなさん、チーム関係者のみなさん、是非一度遊びにきてください。スタッフ一同お待ちしております。
+    </div>
+    <div class="strength-item">
+      <div class="num">1</div>
+      <div class="txt">
+        <h4>幅広いカテゴリーに対応</h4>
+        <p>ミニバスから中学・高校・大学の部活、社会人クラブチームまで、あらゆる年代・レベルをサポートします。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">2</div>
+      <div class="txt">
+        <h4>豊富なウエア・シューズの品揃え</h4>
+        <p>プレイヤー一人ひとりに合ったシューズ・ウエア選びをスタッフがサポートします。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">3</div>
+      <div class="txt">
+        <h4>チームオーダーもおまかせ</h4>
+        <p>ユニフォームやTシャツなど、チームで揃えるアイテムのオーダーメイドまで一括で承ります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews">
+    <div class="section-head">
+      <div class="tag">VOICE</div>
+      <h2>お客様の声</h2>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>レアなお店。もう少し広ければなと。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>お世話になりました！いろんなお話しをしてくれました😊 また伺います！</p>
+    </div>
+  </section>
+
+  <!-- ===== SHOP INFO ===== -->
+  <section class="shopinfo" id="shopinfo">
+    <div class="section-head">
+      <div class="tag">SHOP INFO</div>
+      <h2>店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>広島パワーハウス</td></tr>
+      <tr><th>会社名</th><td>株式会社広島パワーハウス</td></tr>
+      <tr><th>住所</th><td>広島県広島市中区中町５−６</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0825445050">082-544-5050</a></td></tr>
+      <tr><th>公式HP</th><td><a href="http://www.h-powerhouse.com/" target="_blank" rel="noopener">www.h-powerhouse.com</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=広島県広島市中区中町５−６&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final-cta">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>バスケ用品のご相談、チームオーダーのお見積りなど、<br>スタッフ一同お待ちしております。</p>
+    <div class="btn-group">
+      <a href="tel:0825445050" class="tel">📞 082-544-5050 に電話する</a>
+      <a href="http://www.h-powerhouse.com/inquiry/index.html" target="_blank" rel="noopener" class="form">✉️ お問い合わせフォームへ</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="company">株式会社広島パワーハウス</div>
+  <div>広島県広島市中区中町５−６</div>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0825445050" class="call"><span class="ic">📞</span>電話</a>
+  <a href="#shopinfo"><span class="ic">📍</span>アクセス</a>
+  <a href="http://www.h-powerhouse.com/" target="_blank" rel="noopener"><span class="ic">🌐</span>HP</a>
+  <a href="http://www.h-powerhouse.com/inquiry/index.html" target="_blank" rel="noopener"><span class="ic">✉️</span>お問合せ</a>
+</nav>
+
+</body>
+</html>
