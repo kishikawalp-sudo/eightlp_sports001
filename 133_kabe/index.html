@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カベスポーツ安店｜広島市安佐南区の野球用品専門店</title>
+<style>
+  :root{
+    --main-color:#0b3d91;
+    --sub-color:#e63946;
+    --accent-color:#f4a300;
+    --bg-light:#f7f8fa;
+    --text-dark:#1c1c1c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:700px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+  }
+  .shop-name{
+    font-size:15px;font-weight:bold;color:var(--main-color);
+  }
+  .tel-btn{
+    background:var(--sub-color);color:#fff;
+    padding:8px 14px;border-radius:6px;
+    font-size:14px;font-weight:bold;
+    white-space:nowrap;
+  }
+  .tel-btn span{font-size:11px;display:block;font-weight:normal;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;height:340px;object-fit:cover;
+    filter:brightness(0.65);
+  }
+  .hero-text{
+    position:absolute;top:0;left:0;width:100%;height:100%;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;color:#fff;padding:0 20px;
+  }
+  .hero-text .catch-sub{
+    background:var(--accent-color);color:#1c1c1c;
+    font-size:13px;font-weight:bold;
+    padding:4px 12px;border-radius:20px;margin-bottom:14px;
+  }
+  .hero-text h1{
+    font-size:26px;font-weight:bold;line-height:1.5;
+    text-shadow:0 2px 6px rgba(0,0,0,.6);
+  }
+  .hero-text .sub{
+    margin-top:14px;font-size:15px;
+    text-shadow:0 1px 4px rgba(0,0,0,.6);
+  }
+  .hero-cta{
+    margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+  }
+  .btn{
+    display:inline-block;padding:12px 22px;border-radius:30px;
+    font-weight:bold;font-size:14px;
+  }
+  .btn-primary{background:var(--sub-color);color:#fff;}
+  .btn-outline{background:#fff;color:var(--main-color);}
+
+  /* Section common */
+  section{padding:44px 0;}
+  .section-title{
+    text-align:center;font-size:22px;font-weight:bold;
+    color:var(--main-color);margin-bottom:8px;
+    position:relative;
+  }
+  .section-title small{
+    display:block;font-size:12px;color:var(--sub-color);
+    letter-spacing:2px;margin-bottom:6px;font-weight:bold;
+  }
+  .section-title::after{
+    content:"";display:block;width:40px;height:3px;
+    background:var(--accent-color);margin:12px auto 0;
+  }
+
+  /* Featured product */
+  .product-section{
+    background:linear-gradient(180deg,#0b3d91 0%,#0a2f6e 100%);
+    color:#fff;
+  }
+  .product-section .section-title{color:#fff;}
+  .product-section .section-title small{color:var(--accent-color);}
+  .product-card{
+    background:#fff;color:var(--text-dark);
+    border-radius:12px;overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    margin-top:20px;
+  }
+  .product-card img{width:100%;height:220px;object-fit:cover;}
+  .product-card-body{padding:20px;}
+  .product-card-body h3{
+    font-size:19px;color:var(--main-color);margin-bottom:10px;
+  }
+  .product-list{list-style:none;margin:14px 0;}
+  .product-list li{
+    padding:8px 0 8px 26px;position:relative;font-size:14px;
+    border-bottom:1px dashed #ddd;
+  }
+  .product-list li:last-child{border-bottom:none;}
+  .product-list li::before{
+    content:"⚾";position:absolute;left:0;top:8px;
+  }
+  .product-price-note{
+    background:var(--bg-light);border-radius:8px;padding:12px 14px;
+    font-size:13px;margin-top:14px;color:#333;
+  }
+  .center-btn{text-align:center;margin-top:22px;}
+
+  /* Strengths */
+  .strengths-grid{
+    display:flex;flex-direction:column;gap:16px;margin-top:24px;
+  }
+  .strength-card{
+    display:flex;gap:14px;background:var(--bg-light);
+    border-radius:10px;padding:16px;align-items:flex-start;
+  }
+  .strength-num{
+    flex-shrink:0;width:38px;height:38px;border-radius:50%;
+    background:var(--main-color);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;font-size:16px;
+  }
+  .strength-card h4{font-size:15px;color:var(--main-color);margin-bottom:4px;}
+  .strength-card p{font-size:13px;color:#444;}
+
+  /* Reviews */
+  .reviews{background:var(--bg-light);}
+  .review-card{
+    background:#fff;border-radius:10px;padding:18px;
+    margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .stars{color:var(--accent-color);font-size:16px;margin-bottom:8px;letter-spacing:2px;}
+  .review-card p{font-size:13.5px;color:#333;}
+
+  /* Shop image */
+  .shop-photo{margin-top:24px;border-radius:10px;overflow:hidden;}
+  .shop-photo img{width:100%;height:200px;object-fit:cover;}
+
+  /* Info table */
+  .info-table{
+    width:100%;border-collapse:collapse;margin-top:20px;font-size:14px;
+  }
+  .info-table th,.info-table td{
+    text-align:left;padding:12px 10px;border-bottom:1px solid #e0e0e0;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:100px;color:var(--main-color);font-weight:bold;white-space:nowrap;
+  }
+  .info-table a{color:var(--sub-color);font-weight:bold;}
+  .map-wrap{margin-top:20px;border-radius:10px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:260px;border:0;}
+
+  /* CTA section */
+  .cta-section{
+    background:var(--sub-color);color:#fff;text-align:center;
+  }
+  .cta-section .section-title{color:#fff;}
+  .cta-section .section-title small{color:#ffe1a8;}
+  .cta-section p{font-size:14px;margin-bottom:22px;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;}
+  .cta-buttons .btn{width:100%;font-size:16px;padding:15px;}
+  .cta-buttons .btn-white{background:#fff;color:var(--sub-color);}
+  .cta-buttons .btn-line{background:#1c2a4d;color:#fff;}
+
+  footer{
+    text-align:center;padding:20px;font-size:12px;color:#888;background:#f2f2f2;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;width:100%;
+    display:flex;z-index:200;
+    box-shadow:0 -2px 10px rgba(0,0,0,.15);
+  }
+  .bottom-nav a{
+    flex:1;text-align:center;padding:12px 4px;
+    font-size:12px;font-weight:bold;color:#fff;
+  }
+  .bottom-nav .nav-tel{background:var(--sub-color);}
+  .bottom-nav .nav-map{background:var(--main-color);}
+  .bottom-nav .nav-form{background:var(--accent-color);color:#1c1c1c;}
+  .bottom-nav .nav-icon{display:block;font-size:16px;margin-bottom:2px;}
+
+  @media (min-width:480px){
+    .hero-text h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="shop-name">カベスポーツ安店</div>
+    <a href="tel:0828720861" class="tel-btn">
+      <span>お電話はこちら</span>
+      082-872-0861
+    </a>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="カベスポーツ安店 野球用品">
+  <div class="hero-text">
+    <div class="catch-sub">久保田スラッガー取扱店</div>
+    <h1>野球道具のことなら、<br>カベスポーツにご相談ください</h1>
+    <p class="sub">グローブの型付け・リペアも安心の広島市安佐南区の専門店</p>
+    <div class="hero-cta">
+      <a href="tel:0828720861" class="btn btn-primary">📞 今すぐ電話で相談</a>
+      <a href="#access" class="btn btn-outline">📍 アクセスを見る</a>
+    </div>
+  </div>
+</div>
+
+<section class="product-section">
+  <div class="container">
+    <div class="section-title">
+      <small>ICHIOSHI PRODUCT</small>
+      イチオシ野球商品
+    </div>
+    <div class="product-card">
+      <img src="images/product.jpg" alt="野球用グローブ・バット等の商品">
+      <div class="product-card-body">
+        <h3>久保田スラッガー取扱店の確かな品揃え</h3>
+        <p>玄人にも愛される野球専門店として、グローブ・バット・スパイクなど幅広い野球用品を取り揃えています。</p>
+        <ul class="product-list">
+          <li>グローブの型付け（プロの手仕上げ）</li>
+          <li>野球用品のリペア・スパイク修理</li>
+          <li>野球特化のオーダーメイドプロテイン</li>
+          <li>選手向けトレーニング講座</li>
+        </ul>
+        <div class="product-price-note">
+          スパイクのP皮交換や修理も対応可能。まずはお気軽にお持ち込みください。
+        </div>
+      </div>
+    </div>
+    <div class="center-btn">
+      <a href="tel:0828720861" class="btn btn-primary">📞 商品について電話で聞く</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="container">
+    <div class="section-title">
+      <small>STRENGTH</small>
+      選ばれる理由
+    </div>
+    <div class="strengths-grid">
+      <div class="strength-card">
+        <div class="strength-num">1</div>
+        <div>
+          <h4>久保田スラッガー取扱店</h4>
+          <p>玄人うけする品揃えで、道具にこだわる選手・保護者様から高い信頼をいただいています。</p>
+        </div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-num">2</div>
+        <div>
+          <h4>グローブの型付け・リペアが得意</h4>
+          <p>他店で断られたスパイク修理も、丁寧・安価・即日仕上げで対応した実績があります。</p>
+        </div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-num">3</div>
+        <div>
+          <h4>親切丁寧な接客・道具相談</h4>
+          <p>道具のことで悩んだら、まずは相談を。専門知識豊富なスタッフが親身に対応します。</p>
+        </div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-num">4</div>
+        <div>
+          <h4>野球特化のプロテイン・トレーニング講座</h4>
+          <p>オーダーメイドプロテインの販売や、選手のためのトレーニング講座も行っています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <div class="section-title">
+      <small>REVIEW</small>
+      お客様の声
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★</div>
+      <p>久保田スラッガー取扱店。玄人うけする素敵なお店です。親切丁寧な、お店です。道具について、詳しく、相談などぜひ、いってみるべき。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>スパイクのP皮交換で始めて行きました。スポーツオーソリティーで断られ、スポーツデポでは持ち込み料金が発生するので約3500円かかりますとの事！買い替えを勧められました。まだ半年しか使用してないスパイクなんで買い替えは考えてませんでした。店を出てスマホで調べ近くでカベスポーツ店という店を発見！早速行ってみました！スパイクを見せたら修理可能ですと言われ、料金も2000円と安価、即日仕上げ、丁寧、綺麗！文句なしです。ありがとうございました。これからはカベスポーツさんを利用します。</p>
+    </div>
+    <div class="shop-photo">
+      <img src="images/shop.jpg" alt="カベスポーツ安店 店内の様子">
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <div class="container">
+    <div class="section-title">
+      <small>SHOP INFO</small>
+      店舗情報
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>カベスポーツ安店</td></tr>
+      <tr><th>代表者</th><td>細川 猛</td></tr>
+      <tr><th>住所</th><td>広島県広島市安佐南区相田１丁目１４−１４ 第２清木ビル</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0828720861">082-872-0861</a></td></tr>
+      <tr><th>定休日</th><td>不定休</td></tr>
+      <tr><th>HP</th><td><a href="https://www.kabesport.com/" target="_blank" rel="noopener">https://www.kabesport.com/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://www.kabesport.com/contact" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.facebook.com/people/%E7%B4%B0%E5%B7%9D%E7%8C%9B/100013412053677/" target="_blank" rel="noopener">Facebook</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%BA%83%E5%B3%B6%E5%B8%82%E5%AE%89%E4%BD%90%E5%8D%97%E5%8C%BA%E7%9B%B8%E7%94%B0%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%94%EF%BC%8D%EF%BC%91%EF%BC%94&output=embed" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="section-title">
+      <small>CONTACT</small>
+      道具のご相談はお気軽に
+    </div>
+    <p>グローブの型付け・修理・購入相談など、<br>野球用品のことならカベスポーツ安店へ。</p>
+    <div class="cta-buttons">
+      <a href="tel:0828720861" class="btn btn-white">📞 電話で相談する</a>
+      <a href="https://www.kabesport.com/contact" target="_blank" rel="noopener" class="btn btn-line">✉️ お問い合わせフォーム</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; カベスポーツ安店
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0828720861" class="nav-tel"><span class="nav-icon">📞</span>電話する</a>
+  <a href="#access" class="nav-map"><span class="nav-icon">📍</span>アクセス</a>
+  <a href="https://www.kabesport.com/contact" target="_blank" rel="noopener" class="nav-form"><span class="nav-icon">✉️</span>お問い合わせ</a>
+</nav>
+
+</body>
+</html>
