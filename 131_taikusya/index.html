@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>体育社 本店｜広島の老舗スポーツ用品店 野球・ラケット・ランニング</title>
+<style>
+  :root{
+    --main:#1a4d2e;
+    --accent:#e8622c;
+    --sub:#f2b705;
+    --bg:#fdfcf7;
+    --text:#222;
+    --gray:#666;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main);
+    color:#fff;
+    height:56px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shopname{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{
+    width:100%;
+    height:56vw;
+    max-height:320px;
+    object-fit:cover;
+    filter:brightness(0.55);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text .est{
+    font-size:12px;
+    letter-spacing:3px;
+    color:var(--sub);
+    margin-bottom:8px;
+  }
+  .hero-text h1{
+    font-size:26px;
+    font-weight:bold;
+    line-height:1.4;
+    text-shadow:0 2px 6px rgba(0,0,0,.5);
+  }
+  .hero-text .sub{
+    margin-top:10px;
+    font-size:14px;
+    background:rgba(0,0,0,.35);
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:20px;
+  }
+
+  section{
+    padding:36px 18px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:22px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:44px;height:3px;
+    background:var(--accent);
+    margin:10px auto 0;
+  }
+
+  /* イチオシ商品 */
+  .featured{
+    background:linear-gradient(180deg,#fff,#fdf4ea);
+    border-top:3px solid var(--sub);
+    border-bottom:3px solid var(--sub);
+  }
+  .featured-badge{
+    background:var(--accent);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    display:inline-block;
+    padding:5px 16px;
+    border-radius:4px;
+    margin-bottom:14px;
+  }
+  .featured-lead{
+    text-align:center;
+    font-size:15px;
+    color:var(--gray);
+    margin-bottom:20px;
+  }
+  .featured-img{
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.15);
+    margin-bottom:20px;
+  }
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .product-grid div{
+    background:#fff;
+    border:2px solid var(--main);
+    border-radius:8px;
+    padding:14px 6px;
+    text-align:center;
+    font-weight:bold;
+    color:var(--main);
+    font-size:14px;
+  }
+  .product-grid div span{
+    display:block;
+    font-size:22px;
+    margin-bottom:4px;
+  }
+  .featured-note{
+    background:#fff;
+    border-left:4px solid var(--accent);
+    padding:14px 16px;
+    font-size:14px;
+    border-radius:4px;
+  }
+
+  /* 強み */
+  .strengths{
+    background:#fff;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    margin-bottom:22px;
+    align-items:flex-start;
+  }
+  .strength-icon{
+    flex-shrink:0;
+    width:44px;height:44px;
+    background:var(--main);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:20px;
+    font-weight:bold;
+  }
+  .strength-item h3{
+    font-size:16px;
+    color:var(--main);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:14px;
+    color:var(--gray);
+  }
+
+  /* 職人リペア */
+  .repair{
+    background:var(--main);
+    color:#fff;
+    border-radius:10px;
+    padding:22px 18px;
+    margin-top:10px;
+  }
+  .repair h3{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--sub);
+  }
+  .repair p{
+    font-size:14px;
+    opacity:.95;
+  }
+
+  /* 店舗写真 */
+  .gallery{
+    background:#fdf4ea;
+  }
+  .gallery img{
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+    margin-bottom:14px;
+  }
+  .gallery p{
+    text-align:center;
+    font-size:14px;
+    color:var(--gray);
+  }
+
+  /* クチコミ */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--bg);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .review-stars{
+    color:var(--sub);
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:var(--text);
+  }
+
+  /* 創業者ストーリー */
+  .story{
+    background:var(--main);
+    color:#fff;
+  }
+  .story .section-title{color:#fff;}
+  .story .section-title::after{background:var(--sub);}
+  .story p{
+    font-size:14px;
+    margin-bottom:14px;
+    opacity:.95;
+  }
+  .story .founder{
+    text-align:right;
+    font-size:13px;
+    color:var(--sub);
+    margin-top:10px;
+  }
+
+  /* 会社概要 */
+  .info{background:#fff;}
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  table.info-table th{
+    background:#f2ede2;
+    color:var(--main);
+    text-align:left;
+    padding:12px 10px;
+    width:32%;
+    vertical-align:top;
+    border-bottom:1px solid #e5e0d5;
+  }
+  table.info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #e5e0d5;
+    vertical-align:top;
+  }
+  .map-wrap{
+    margin-top:18px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(135deg,var(--accent),#c94a1a);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta p{
+    font-size:14px;
+    margin-bottom:20px;
+    opacity:.95;
+  }
+  .cta-btns{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-btn{
+    background:#fff;
+    color:var(--accent);
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    font-size:15px;
+  }
+  .cta-btn.outline{
+    background:transparent;
+    color:#fff;
+    border:2px solid #fff;
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:var(--gray);
+    padding:24px 18px 30px;
+  }
+
+  /* 下部固定ナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    z-index:100;
+    box-shadow:0 -2px 8px rgba(0,0,0,.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:11px 4px;
+    font-size:13px;
+    font-weight:bold;
+    color:#fff;
+  }
+  .bottom-nav .nav-tel{background:var(--main);}
+  .bottom-nav .nav-map{background:#555;}
+  .bottom-nav .nav-web{background:var(--accent);}
+
+  @media (min-width:600px){
+    .hero-text h1{font-size:30px;}
+    .product-grid{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">体育社 本店</div>
+  <a href="tel:0822461212" class="tel-btn">📞 082-246-1212</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="体育社 本店 外観">
+  <div class="hero-text">
+    <div class="est">創業1947年 広島の老舗スポーツ用品店</div>
+    <h1>愛する競技と、<br>ずっと付き合っていける安心を。</h1>
+    <div class="sub">野球・ラケット・ランニング用品が充実</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="featured-badge">イチオシ</div>
+  <h2 class="section-title">野球・ラケット・ランニング用品</h2>
+  <p class="featured-lead">フロア別だから選びやすい。専門知識豊富なスタッフが、あなたの競技に合った一本を見つけます。</p>
+  <div class="featured-img">
+    <img src="images/product.jpg" alt="野球・ラケット・ランニング用品売場">
+  </div>
+  <div class="product-grid">
+    <div><span>⚾</span>野球</div>
+    <div><span>🏸</span>ラケット</div>
+    <div><span>🏃</span>ランニング</div>
+  </div>
+  <div class="featured-note">
+    バラ売り対応や商品への値引きなど、通販にはない「痒いところに手が届く」品揃えとサービスが好評です。グラブ工房も併設。
+  </div>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">選ばれる理由</h2>
+
+  <div class="strength-item">
+    <div class="strength-icon">1</div>
+    <div>
+      <h3>フロア別で選びやすい</h3>
+      <p>各階で分野が分かれ、野球・陸上をはじめ多様なスポーツ・競技の用品が揃います。広島発祥のエスキーテニス用品も取り扱い（一部お取り寄せ）。</p>
+    </div>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-icon">2</div>
+    <div>
+      <h3>丁寧な接客とアフターフォロー</h3>
+      <p>店頭スタッフによる丁寧な相談・応対に加え、購入履歴に基づくアフターサポートで、長く安心して競技を続けられます。</p>
+    </div>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-icon">3</div>
+    <div>
+      <h3>メンバーカードでポイント還元</h3>
+      <p>広島都市圏に店舗ネットワークを持つ地元の大手スポーツ用品店。メンバーカードのご利用でポイント還元が受けられます。</p>
+    </div>
+  </div>
+
+  <div class="repair">
+    <h3>野球用品の加工・修理サービス</h3>
+    <p>エキスパートリペアマンによるグラブ・スパイクの修理や加工、ウェブ交換、クリーニング、グラブ、リストバンド、アンダーシャツへの刺繍加工まで幅広く対応しています。</p>
+  </div>
+</section>
+
+<section class="gallery">
+  <h2 class="section-title">店内のようす</h2>
+  <img src="images/shop.jpg" alt="体育社 本店 店内">
+  <p>3階建てで野球・ラケット・ランニングなどカテゴリー別のフロアに分かれています。</p>
+</section>
+
+<section class="reviews">
+  <h2 class="section-title">お客様の声</h2>
+
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p>品数は大型スポーツ店には負けるが、ホントにスポーツしてる人の痒いところに手が届くよいお店。特殊なボールもバラ売りしてくれて助かります。グラブの工房があるのもすごい。スタッフさんの対応もよく、商品の値引きがあらかじめしてあるので通販より安いこともあります。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="review-stars">★★★★</div>
+    <p>地元の大手スポーツ用品店。学校教育から地域・実業団の競技まで幅広く期待に応えてくれます。何より店員さんによる丁寧な接客・相談、確かな応対、購入履歴に基づくアフターの安心があります。初心者やこれから始める方にオススメです。</p>
+  </div>
+</section>
+
+<section class="story">
+  <h2 class="section-title">創業者ストーリー</h2>
+  <p>弊社は1947年（昭和22年）に創業し、今日まで広島の地でスポーツ用品と、そのサービスの提供に努めて参りました。</p>
+  <p>どんなに生活環境が良くなったとしても、人間の本来持つ心の満足感は得られないのではないでしょうか。感動や興奮から生まれる笑顔や涙、困難に挑戦し成功や失敗を通じて学ぶ成長。これらが得られるのがスポーツだと私たちは考えます。</p>
+  <p>私たちは、こうしたスポーツのチカラや価値を提供し、地域を活性化させ明るく健康な社会を実現させることを使命として、これからも存在し続けて参ります。</p>
+  <div class="founder">代表者：大野昌志</div>
+</section>
+
+<section class="info">
+  <h2 class="section-title">店舗情報</h2>
+  <table class="info-table">
+    <tr><th>店名</th><td>体育社 本店</td></tr>
+    <tr><th>会社名</th><td>株式会社 体育社</td></tr>
+    <tr><th>代表者</th><td>大野昌志</td></tr>
+    <tr><th>住所</th><td>広島県広島市中区三川町7-5</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0822461212">082-246-1212</a></td></tr>
+    <tr><th>定休日</th><td>火曜日（祝日除く）</td></tr>
+    <tr><th>公式HP</th><td><a href="http://www.taiikusha.co.jp/" target="_blank">www.taiikusha.co.jp</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://taiikusha.co.jp/contact/" target="_blank">お問い合わせフォーム</a></td></tr>
+    <tr><th>Youtube</th><td><a href="https://www.youtube.com/@TAIIKUSHA-g8v" target="_blank">公式チャンネル</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=広島県広島市中区三川町7-5&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>野球・ラケット・ランニング用品のことなら体育社 本店へ</p>
+  <div class="cta-btns">
+    <a href="tel:0822461212" class="cta-btn">📞 電話で問い合わせる</a>
+    <a href="https://taiikusha.co.jp/contact/" target="_blank" class="cta-btn outline">✉️ フォームで問い合わせる</a>
+  </div>
+</section>
+
+<footer>
+  © 株式会社 体育社　All Rights Reserved.
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0822461212" class="nav-tel">📞 電話</a>
+  <a href="https://www.google.com/maps?q=広島県広島市中区三川町7-5" target="_blank" class="nav-map">📍 地図</a>
+  <a href="http://www.taiikusha.co.jp/" target="_blank" class="nav-web">🌐 HP</a>
+</div>
+
+</body>
+</html>
