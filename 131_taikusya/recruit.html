@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>体育社 本店 採用情報｜広島の老舗スポーツ用品店 スタッフ募集</title>
+<style>
+  :root{
+    --main:#1a4d2e;
+    --accent:#e8622c;
+    --sub:#f2b705;
+    --bg:#fdfcf7;
+    --text:#222;
+    --gray:#666;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main);
+    color:#fff;
+    height:56px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shopname{
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{
+    width:100%;
+    height:56vw;
+    max-height:320px;
+    object-fit:cover;
+    filter:brightness(0.5);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text .est{
+    font-size:12px;
+    letter-spacing:3px;
+    color:var(--sub);
+    margin-bottom:8px;
+  }
+  .hero-text h1{
+    font-size:25px;
+    font-weight:bold;
+    line-height:1.4;
+    text-shadow:0 2px 6px rgba(0,0,0,.5);
+  }
+  .hero-text .sub{
+    margin-top:10px;
+    font-size:14px;
+    background:rgba(0,0,0,.35);
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:20px;
+  }
+
+  section{
+    padding:36px 18px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:22px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:44px;height:3px;
+    background:var(--accent);
+    margin:10px auto 0;
+  }
+
+  /* 待遇・制度 イチオシ */
+  .featured{
+    background:linear-gradient(180deg,#fff,#fdf4ea);
+    border-top:3px solid var(--sub);
+    border-bottom:3px solid var(--sub);
+  }
+  .featured-badge{
+    background:var(--accent);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    display:inline-block;
+    padding:5px 16px;
+    border-radius:4px;
+    margin-bottom:14px;
+  }
+  .featured-lead{
+    text-align:center;
+    font-size:15px;
+    color:var(--gray);
+    margin-bottom:22px;
+  }
+  .benefit-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    border-left:5px solid var(--accent);
+  }
+  .benefit-card h3{
+    color:var(--main);
+    font-size:16px;
+    margin-bottom:6px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .benefit-card h3 .num{
+    background:var(--main);
+    color:#fff;
+    width:26px;height:26px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;
+    flex-shrink:0;
+  }
+  .benefit-card p{
+    font-size:14px;
+    color:var(--text);
+  }
+
+  /* 仕事のようす */
+  .gallery{
+    background:#fdf4ea;
+  }
+  .gallery img{
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+    margin-bottom:14px;
+  }
+  .gallery p{
+    text-align:center;
+    font-size:14px;
+    color:var(--gray);
+  }
+
+  /* 働く魅力 */
+  .strengths{background:#fff;}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    margin-bottom:22px;
+    align-items:flex-start;
+  }
+  .strength-icon{
+    flex-shrink:0;
+    width:44px;height:44px;
+    background:var(--main);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:20px;
+    font-weight:bold;
+  }
+  .strength-item h3{
+    font-size:16px;
+    color:var(--main);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:14px;
+    color:var(--gray);
+  }
+
+  /* 先輩の声 */
+  .reviews{background:#fdf4ea;}
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .review-card .badge{
+    display:inline-block;
+    background:var(--main);
+    color:#fff;
+    font-size:12px;
+    padding:3px 10px;
+    border-radius:12px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:var(--text);
+  }
+
+  /* 会社ストーリー */
+  .story{
+    background:var(--main);
+    color:#fff;
+  }
+  .story .section-title{color:#fff;}
+  .story .section-title::after{background:var(--sub);}
+  .story p{
+    font-size:14px;
+    margin-bottom:14px;
+    opacity:.95;
+  }
+  .story .founder{
+    text-align:right;
+    font-size:13px;
+    color:var(--sub);
+    margin-top:10px;
+  }
+
+  /* 会社概要 */
+  .info{background:#fff;}
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  table.info-table th{
+    background:#f2ede2;
+    color:var(--main);
+    text-align:left;
+    padding:12px 10px;
+    width:32%;
+    vertical-align:top;
+    border-bottom:1px solid #e5e0d5;
+  }
+  table.info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #e5e0d5;
+    vertical-align:top;
+  }
+  .map-wrap{
+    margin-top:18px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(135deg,var(--accent),#c94a1a);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta p{
+    font-size:14px;
+    margin-bottom:20px;
+    opacity:.95;
+  }
+  .cta-btns{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-btn{
+    background:#fff;
+    color:var(--accent);
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    font-size:15px;
+  }
+  .cta-btn.outline{
+    background:transparent;
+    color:#fff;
+    border:2px solid #fff;
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:var(--gray);
+    padding:24px 18px 30px;
+  }
+
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    z-index:100;
+    box-shadow:0 -2px 8px rgba(0,0,0,.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:11px 4px;
+    font-size:13px;
+    font-weight:bold;
+    color:#fff;
+  }
+  .bottom-nav .nav-tel{background:var(--main);}
+  .bottom-nav .nav-map{background:#555;}
+  .bottom-nav .nav-web{background:var(--accent);}
+
+  @media (min-width:600px){
+    .hero-text h1{font-size:29px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">体育社 本店 採用情報</div>
+  <a href="tel:0822461212" class="tel-btn">📞 082-246-1212</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="体育社 本店 外観">
+  <div class="hero-text">
+    <div class="est">創業1947年 広島の老舗スポーツ用品店</div>
+    <h1>頑張りが、そのまま<br>評価につながる会社です。</h1>
+    <div class="sub">体育社 本店 スタッフ募集</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="featured-badge">イチオシ制度</div>
+  <h2 class="section-title">頑張りに応える待遇制度</h2>
+  <p class="featured-lead">学歴・年齢・性別・勤続年数に関係なく、成果と貢献をしっかり評価します。</p>
+
+  <div class="benefit-card">
+    <h3><span class="num">1</span>成果主義</h3>
+    <p>学歴・年齢・性別・勤務年数に関係なく、成果に応じた評価を行っています。成果はインセンティブとして支給されるので、頑張りがそのまま収入に反映されます。</p>
+  </div>
+
+  <div class="benefit-card">
+    <h3><span class="num">2</span>給与の見直し</h3>
+    <p>人事評価によるベースアップを毎年8月に実施。日々の頑張りが翌年の給与にしっかり反映されます。</p>
+  </div>
+
+  <div class="benefit-card">
+    <h3><span class="num">3</span>利益還元金</h3>
+    <p>賞与額は利益部署評価・勤怠評価・個人評価等に応じて、7月と12月の年2回支給されます。</p>
+  </div>
+
+  <div class="benefit-card">
+    <h3><span class="num">4</span>親睦会制度</h3>
+    <p>入社時に親睦会へ入会いただき、毎月3,000円の会費を積立て、社員旅行・新年会・歓迎会など社員主体の各種行事を実施しています。</p>
+  </div>
+</section>
+
+<section class="gallery">
+  <h2 class="section-title">お店・仕事のようす</h2>
+  <img src="images/shop.jpg" alt="体育社 本店 店内・仕事風景">
+  <p>3階建てでカテゴリー別のフロアに分かれ、それぞれの分野に強いスタッフが活躍しています。</p>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">体育社で働く魅力</h2>
+
+  <div class="strength-item">
+    <div class="strength-icon">1</div>
+    <div>
+      <h3>専門性を活かせる売場</h3>
+      <p>野球・ラケット・ランニングなどフロア別の売場で、自分の得意分野・好きな競技の知識を接客に活かせます。</p>
+    </div>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-icon">2</div>
+    <div>
+      <h3>お客様との距離が近い</h3>
+      <p>学校教育から地域・実業団の競技まで幅広いお客様と接し、感謝の声を直接もらえるやりがいのある仕事です。</p>
+    </div>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-icon">3</div>
+    <div>
+      <h3>1947年創業の安定した基盤</h3>
+      <p>広島都市圏に店舗ネットワークを持つ老舗企業で、長く安心して働ける環境が整っています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <h2 class="section-title">スタッフの声・お客様の声</h2>
+
+  <div class="review-card">
+    <div class="badge">お客様の声</div>
+    <p>スタッフさんの対応がよく、いろいろな相談はもちろん雑談も楽しいです。女の子のスタッフさんはみんなかわいいです！これからもお世話になります。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="badge">お客様の声</div>
+    <p>店頭 店員さんによる丁寧な接客・相談、確かな応対に安心感があります。一人一人のお客様と長く付き合っていける関係づくりを大切にしているお店です。</p>
+  </div>
+</section>
+
+<section class="story">
+  <h2 class="section-title">私たちが目指すもの</h2>
+  <p>弊社は1947年（昭和22年）に創業し、今日まで広島の地でスポーツ用品と、そのサービスの提供に努めて参りました。</p>
+  <p>感動や興奮から生まれる笑顔や涙、困難に挑戦し成功や失敗を通じて学ぶ成長。これらが得られるのがスポーツの価値だと私たちは考えます。</p>
+  <p>私たちは、こうしたスポーツのチカラや価値を提供し、地域を活性化させ明るく健康な社会を実現させることを使命として、これからも存在し続けて参ります。一緒にその使命を担ってくれる仲間をお待ちしています。</p>
+  <div class="founder">代表者：大野昌志</div>
+</section>
+
+<section class="info">
+  <h2 class="section-title">会社情報</h2>
+  <table class="info-table">
+    <tr><th>店名</th><td>体育社 本店</td></tr>
+    <tr><th>会社名</th><td>株式会社 体育社</td></tr>
+    <tr><th>代表者</th><td>大野昌志</td></tr>
+    <tr><th>住所</th><td>広島県広島市中区三川町7-5</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0822461212">082-246-1212</a></td></tr>
+    <tr><th>定休日</th><td>火曜日（祝日除く）</td></tr>
+    <tr><th>公式HP</th><td><a href="http://www.taiikusha.co.jp/" target="_blank">www.taiikusha.co.jp</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://taiikusha.co.jp/contact/" target="_blank">お問い合わせフォーム</a></td></tr>
+    <tr><th>Youtube</th><td><a href="https://www.youtube.com/@TAIIKUSHA-g8v" target="_blank">公式チャンネル</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=広島県広島市中区三川町7-5&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>あなたの頑張りを、力に変えませんか</h2>
+  <p>体育社 本店で一緒に働く仲間を募集しています</p>
+  <div class="cta-btns">
+    <a href="tel:0822461212" class="cta-btn">📞 電話で問い合わせる</a>
+    <a href="https://taiikusha.co.jp/contact/" target="_blank" class="cta-btn outline">✉️ フォームで応募・問い合わせる</a>
+  </div>
+</section>
+
+<footer>
+  © 株式会社 体育社　All Rights Reserved.
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0822461212" class="nav-tel">📞 電話</a>
+  <a href="https://www.google.com/maps?q=広島県広島市中区三川町7-5" target="_blank" class="nav-map">📍 地図</a>
+  <a href="http://www.taiikusha.co.jp/" target="_blank" class="nav-web">🌐 HP</a>
+</div>
+
+</body>
+</html>
