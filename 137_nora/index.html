@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>野良道具製作所 HIROSHIMA GATEPARK店｜広島のアウトドア専門店</title>
+<style>
+  :root{
+    --forest:#2C3B2C;
+    --forest-deep:#1C2620;
+    --khaki:#C9B78C;
+    --rust:#B5531A;
+    --cream:#F3EDE1;
+    --ink:#22201B;
+    --canvas:#EAE2CC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.8;
+    padding-top:56px;
+    padding-bottom:64px;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+
+  /* ===== Header ===== */
+  .header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--forest-deep);
+    color:var(--canvas);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 14px;height:56px;
+    border-bottom:3px solid var(--rust);
+  }
+  .header .shopname{
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:0.03em;
+  }
+  .header .shopname small{display:block;font-size:9px;font-weight:normal;color:var(--khaki);letter-spacing:0.1em;}
+  .header .tel-btn{
+    background:var(--rust);
+    color:#fff;
+    font-size:12px;
+    padding:8px 14px;
+    border-radius:2px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    background:var(--forest-deep);
+    color:var(--canvas);
+    padding:38px 20px 46px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(201,183,140,0.05) 0 2px, transparent 2px 22px);
+    pointer-events:none;
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    font-size:11px;
+    letter-spacing:0.25em;
+    color:var(--khaki);
+    border:1px solid var(--khaki);
+    padding:4px 12px;
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero h1 span{
+    color:var(--rust);
+  }
+  .hero p.lead{
+    font-size:13.5px;
+    color:var(--canvas);
+    opacity:0.85;
+    margin-bottom:24px;
+  }
+  .hero .hero-img{
+    position:relative;
+    border:1px solid var(--khaki);
+    padding:6px;
+    margin:0 auto 22px;
+    max-width:420px;
+  }
+  .hero .hero-img img{width:100%;}
+  .hero .stars{
+    color:var(--khaki);
+    font-size:15px;
+    letter-spacing:0.15em;
+    margin-bottom:6px;
+  }
+  .hero-cta{
+    display:inline-block;
+    background:var(--rust);
+    color:#fff;
+    padding:14px 34px;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:0.1em;
+    border-radius:2px;
+    box-shadow:0 4px 0 #7c3a10;
+  }
+
+  /* ===== Section common ===== */
+  .section{padding:44px 20px;}
+  .section-tag{
+    display:flex;align-items:center;gap:10px;
+    justify-content:center;
+    margin-bottom:6px;
+  }
+  .section-tag .line{flex:0 0 24px;height:1px;background:var(--rust);}
+  .section-tag span{
+    font-size:11px;letter-spacing:0.3em;color:var(--rust);font-weight:bold;
+  }
+  .section h2{
+    text-align:center;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:0.05em;
+    margin-bottom:28px;
+    color:var(--forest-deep);
+  }
+
+  /* ===== Featured Product (イチオシ) ===== */
+  .feature{
+    background:var(--forest);
+    color:var(--cream);
+    position:relative;
+  }
+  .feature .section-tag span{color:var(--khaki);}
+  .feature .section-tag .line{background:var(--khaki);}
+  .feature h2{color:#fff;}
+  .feature-tag-badge{
+    background:var(--canvas);
+    color:var(--forest-deep);
+    max-width:460px;
+    margin:0 auto 22px;
+    padding:18px;
+    border-radius:2px;
+    position:relative;
+    box-shadow:0 6px 16px rgba(0,0,0,0.25);
+  }
+  .feature-tag-badge::before{
+    content:"";
+    position:absolute;
+    left:50%;top:-9px;
+    transform:translateX(-50%);
+    width:18px;height:18px;
+    background:var(--forest);
+    border:2px solid var(--rust);
+    border-radius:50%;
+  }
+  .feature-tag-badge img{
+    width:100%;
+    margin-bottom:14px;
+    border:1px solid var(--forest-deep);
+  }
+  .feature-tag-badge h3{
+    font-size:17px;
+    margin-bottom:8px;
+    color:var(--forest-deep);
+    letter-spacing:0.03em;
+  }
+  .feature-tag-badge p{
+    font-size:13px;
+    color:#3a3a30;
+  }
+  .feature-points{
+    max-width:460px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .feature-points .pt{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:13px;
+    color:var(--canvas);
+    border-left:2px solid var(--rust);
+    padding-left:12px;
+  }
+  .feature-points .pt b{color:var(--khaki);display:block;font-size:13.5px;margin-bottom:2px;}
+
+  /* ===== Strength ===== */
+  .strength{background:var(--cream);}
+  .strength-card{
+    max-width:480px;margin:0 auto;
+    background:#fff;
+    border:1px solid var(--khaki);
+    padding:22px;
+  }
+  .strength-card .name{
+    font-size:12px;color:var(--rust);letter-spacing:0.1em;margin-bottom:8px;font-weight:bold;
+  }
+  .strength-card p{font-size:13.5px;color:var(--ink);}
+
+  /* ===== Gallery strip ===== */
+  .gallery{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;
+    max-width:480px;margin:26px auto 0;
+  }
+  .gallery img{border:1px solid var(--khaki);height:140px;width:100%;object-fit:cover;}
+
+  /* ===== Reviews ===== */
+  .reviews{background:var(--forest-deep);}
+  .reviews .section-tag span{color:var(--khaki);}
+  .reviews .section-tag .line{background:var(--khaki);}
+  .reviews h2{color:#fff;}
+  .review-card{
+    max-width:480px;margin:0 auto 16px;
+    background:rgba(243,237,225,0.06);
+    border:1px solid rgba(201,183,140,0.3);
+    padding:18px;
+  }
+  .review-card .stars{color:var(--khaki);font-size:14px;margin-bottom:8px;letter-spacing:0.1em;}
+  .review-card p{font-size:13px;color:var(--canvas);opacity:0.9;}
+
+  /* ===== Shop info ===== */
+  .info{background:var(--cream);}
+  .info-table{
+    max-width:480px;margin:0 auto;
+    border-collapse:collapse;
+    width:100%;
+    font-size:13px;
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid var(--khaki);
+    vertical-align:top;
+  }
+  .info-table th{
+    width:92px;
+    color:var(--rust);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table a{color:var(--forest);text-decoration:underline;}
+  .map-wrap{max-width:480px;margin:20px auto 0;border:1px solid var(--khaki);}
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block;}
+
+  /* ===== CTA section ===== */
+  .cta-section{
+    background:var(--rust);
+    color:#fff;
+    text-align:center;
+    padding:44px 20px;
+  }
+  .cta-section h2{color:#fff;font-size:20px;margin-bottom:10px;}
+  .cta-section p{font-size:13px;opacity:0.9;margin-bottom:24px;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+  .cta-buttons a{
+    background:#fff;color:var(--rust);
+    padding:14px;
+    font-weight:bold;font-size:14px;
+    border-radius:2px;
+  }
+  .cta-buttons a.secondary{
+    background:transparent;
+    color:#fff;
+    border:1px solid #fff;
+  }
+
+  /* ===== Bottom nav ===== */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;z-index:100;
+    background:var(--forest-deep);
+    display:flex;
+    border-top:3px solid var(--rust);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px 8px;
+    color:var(--canvas);
+    font-size:11px;
+  }
+  .bottom-nav a .ico{display:block;font-size:16px;margin-bottom:2px;}
+  .bottom-nav a.main{
+    background:var(--rust);
+    color:#fff;
+    font-weight:bold;
+  }
+
+  @media (min-width:600px){
+    .hero h1{font-size:32px;}
+    .gallery{grid-template-columns:1fr 1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="shopname">野良道具製作所<small>HIROSHIMA GATEPARK店</small></div>
+    <a href="tel:0503-632-3040" class="tel-btn">📞 電話する</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="eyebrow">OUTDOOR TOOLS WORKSHOP</div>
+    <h1>広島のド真ん中で見つかる、<br><span>個性が滲み出る</span>野外道具。</h1>
+    <div class="hero-img">
+      <img src="images/hero.jpg" alt="野良道具製作所 店内の様子">
+    </div>
+    <div class="stars">★★★★★</div>
+    <p class="lead">シミントひろしまE棟。自社製品からオーナー厳選の逸品、防災グッズ、そして魚突きの相談まで。見ているだけで長居してしまう、広島発アウトドアの発信基地です。</p>
+    <a href="#access" class="hero-cta">アクセス・営業時間を見る</a>
+  </section>
+
+  <!-- Featured Product -->
+  <section class="section feature">
+    <div class="section-tag"><span class="line"></span><span>ICHIOSHI</span><span class="line"></span></div>
+    <h2>イチオシのアウトドア用品</h2>
+    <div class="feature-tag-badge">
+      <img src="images/product.jpg" alt="イチオシのアウトドア用品">
+      <h3>野良道具製作所が選ぶ、道具の本気</h3>
+      <p>自社ブランドのオリジナルウェア・バッグから、オーナー里崎亮が全国で見つけてきたセレクト品まで。キャンプだけでなく、暮らしの防災や魚突きの装備まで、"使える野外道具"を一点ずつ吟味してご紹介しています。</p>
+    </div>
+    <div class="feature-points">
+      <div class="pt"><b>自社製品 × セレクト品</b>他にはない自社デザインのグッズと、オーナー厳選のブランド品が並ぶ二重の品揃え。</div>
+      <div class="pt"><b>防災グッズも常備</b>アウトドアの知見を活かした、いざという時に頼れる防災アイテムも取り扱い。</div>
+      <div class="pt"><b>魚突きの相談OK</b>これから魚突きを始めたい方も、道具選びからじっくり相談できます。</div>
+    </div>
+  </section>
+
+  <!-- Strength -->
+  <section class="section strength">
+    <div class="section-tag"><span class="line"></span><span>STRENGTH</span><span class="line"></span></div>
+    <h2>選ばれる理由</h2>
+    <div class="strength-card">
+      <div class="name">代表 里崎 亮</div>
+      <p>センスの良さと楽しさが滲み出る店内づくりから、商品一つひとつの目利きまで。オーナー自らが選び抜いた品揃えと丁寧な接客が、リピーターの多さにつながっています。明るい店内には野外グッズが所狭しと並び、他のアウトドア用品店とは一味違う世界観が広がります。</p>
+    </div>
+    <div class="gallery">
+      <img src="images/shop.jpg" alt="野良道具製作所 店内2">
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section reviews">
+    <div class="section-tag"><span class="line"></span><span>REVIEW</span><span class="line"></span></div>
+    <h2>お客様の声</h2>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>「ここは何？」というネーミングですが、アウトドア関連では有名なお店みたいです。センスが良く楽しい感じが滲み出ています。明るい店内に所狭しと並ぶ野外グッズがロマンに溢れ、他のアウトドア用品店とは一味違います。個性的な商品はどれも手に取ってみたくなるものばかり。つい長居してしまいます。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>元市民球場跡のシミント広島にあるキャンプ道具屋さん。個性的な自社製品だけでなく、オーナーが選んだおすすめの商品・防災グッズなども販売されています。キャンプだけでなく魚突きの相談もできるので、これから魚突きをしたいと思っている方はぜひ相談に行ってみてください。店頭のロゴTシャツに惹かれて入店し、Tシャツとトートバッグを広島土産に購入。床革の手袋もつい購入してしまうほど、見ているだけで購買意欲がそそられるお店でした。</p>
+    </div>
+  </section>
+
+  <!-- Shop Info -->
+  <section class="section info" id="access">
+    <div class="section-tag"><span class="line"></span><span>SHOP INFO</span><span class="line"></span></div>
+    <h2>店舗情報</h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>野良道具製作所 HIROSHIMA GATEPARK店</td></tr>
+      <tr><th>運営会社</th><td>株式会社ノラクリエイト</td></tr>
+      <tr><th>住所</th><td>広島県広島市中区基町5-25 シミントひろしま E棟</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0503-632-3040">0503-632-3040</a></td></tr>
+      <tr><th>定休日</th><td>土日祝</td></tr>
+      <tr><th>HP</th><td><a href="https://noraoutdoor.theshop.jp/" target="_blank" rel="noopener">noraoutdoor.theshop.jp</a></td></tr>
+      <tr><th>Instagram</th><td><a href="https://www.instagram.com/nora_outdoor_tools/" target="_blank" rel="noopener">@nora_outdoor_tools</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=広島県広島市中区基町5-25+シミントひろしま&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>気になったら、まずはお気軽に</h2>
+    <p>お電話・お問い合わせフォーム・Instagramにて、いつでもご相談を受け付けています。</p>
+    <div class="cta-buttons">
+      <a href="tel:0503-632-3040">📞 電話で問い合わせる</a>
+      <a href="https://thebase.com/inquiry/noraoutdoor-theshop-jp" target="_blank" rel="noopener" class="secondary">✉️ フォームで問い合わせる</a>
+      <a href="https://www.instagram.com/nora_outdoor_tools/" target="_blank" rel="noopener" class="secondary">📷 Instagramを見る</a>
+    </div>
+  </section>
+
+  <!-- Bottom Nav -->
+  <nav class="bottom-nav">
+    <a href="#access"><span class="ico">📍</span>アクセス</a>
+    <a href="tel:0503-632-3040" class="main"><span class="ico">📞</span>電話する</a>
+    <a href="https://www.instagram.com/nora_outdoor_tools/" target="_blank" rel="noopener"><span class="ico">📷</span>Instagram</a>
+  </nav>
+
+</body>
+</html>
