@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スポーツのニシヒロ己斐店｜デザインウェアのご相談も</title>
+<style>
+  :root{
+    --main-color:#0b5d3b;
+    --sub-color:#f2a900;
+    --dark:#1a1a1a;
+    --light-bg:#f7f7f2;
+    --white:#fff;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark);
+    line-height:1.7;
+    background:var(--light-bg);
+    padding-bottom:60px;
+  }
+  a{text-decoration:none; color:inherit;}
+  img{max-width:100%; display:block;}
+
+  /* header */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:var(--white);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  }
+  header .shop-name{
+    font-size:15px; font-weight:bold; color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--sub-color); color:var(--white);
+    padding:8px 14px; border-radius:30px;
+    font-size:13px; font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-spacer{height:56px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(135deg, var(--main-color), #063d27);
+    color:var(--white);
+    text-align:center;
+    padding:40px 16px 30px;
+  }
+  .hero img{
+    width:100%; border-radius:10px;
+    margin-top:16px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.3);
+  }
+  .hero h1{
+    font-size:22px; font-weight:bold; margin-bottom:8px;
+  }
+  .hero p.catch{
+    font-size:15px; color:#ffe9a8;
+    margin-bottom:6px;
+  }
+  .star{
+    color:var(--sub-color); font-size:18px; letter-spacing:2px;
+  }
+
+  section{
+    padding:32px 16px;
+  }
+  .section-title{
+    text-align:center; font-size:20px; font-weight:bold;
+    margin-bottom:20px; color:var(--main-color);
+    position:relative;
+  }
+  .section-title:after{
+    content:""; display:block; width:40px; height:3px;
+    background:var(--sub-color); margin:10px auto 0;
+  }
+
+  /* イチオシ */
+  .osusume{
+    background:var(--white);
+  }
+  .osusume-badge{
+    display:inline-block; background:var(--sub-color); color:var(--white);
+    font-weight:bold; font-size:13px; padding:5px 12px; border-radius:20px;
+    margin-bottom:10px;
+  }
+  .osusume-card{
+    background:var(--light-bg); border:2px solid var(--sub-color);
+    border-radius:14px; padding:18px; margin-top:10px;
+  }
+  .osusume-card img{
+    border-radius:10px; margin-bottom:14px;
+  }
+  .osusume-card h3{
+    color:var(--main-color); font-size:18px; margin-bottom:8px;
+  }
+  .osusume-card p{
+    font-size:14px; margin-bottom:6px;
+  }
+  .osusume-list{
+    list-style:none; margin-top:12px;
+  }
+  .osusume-list li{
+    font-size:14px; padding:8px 0 8px 26px; position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .osusume-list li:before{
+    content:"✓"; position:absolute; left:0; color:var(--main-color); font-weight:bold;
+  }
+  .cta-inline{
+    display:block; text-align:center; background:var(--main-color); color:var(--white);
+    font-weight:bold; padding:14px; border-radius:8px; margin-top:16px; font-size:15px;
+  }
+
+  /* 強み */
+  .strengths{
+    background:var(--light-bg);
+  }
+  .strength-item{
+    display:flex; gap:14px; background:var(--white); border-radius:10px;
+    padding:14px; margin-bottom:14px; box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .strength-icon{
+    font-size:26px; flex-shrink:0;
+  }
+  .strength-item h4{
+    font-size:15px; color:var(--main-color); margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13px; color:#444;
+  }
+
+  /* 店長 */
+  .owner{
+    background:var(--white);
+  }
+  .owner-box{
+    background:var(--light-bg); border-radius:14px; padding:18px;
+    display:flex; gap:14px; align-items:flex-start;
+  }
+  .owner-box img{
+    width:90px; height:90px; object-fit:cover; border-radius:50%;
+    flex-shrink:0; border:3px solid var(--sub-color);
+  }
+  .owner-box .text p{
+    font-size:13px; margin-bottom:8px;
+  }
+  .owner-name{
+    font-weight:bold; color:var(--main-color); margin-bottom:6px; font-size:15px;
+  }
+
+  /* クチコミ */
+  .review{
+    background:var(--light-bg);
+  }
+  .review-card{
+    background:var(--white); border-radius:10px; padding:16px; margin-bottom:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .review-card .star{
+    display:block; margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13px; color:#333;
+  }
+
+  /* 店舗情報 */
+  .shopinfo{
+    background:var(--white);
+  }
+  table.info-table{
+    width:100%; border-collapse:collapse; font-size:14px;
+  }
+  table.info-table th, table.info-table td{
+    padding:10px 8px; border-bottom:1px solid #e0e0e0; text-align:left;
+  }
+  table.info-table th{
+    width:30%; color:var(--main-color); white-space:nowrap; font-size:13px;
+  }
+  .map-wrap{
+    margin-top:16px; border-radius:10px; overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%; height:220px; border:0;
+  }
+  .sns-links{
+    display:flex; gap:10px; margin-top:14px;
+  }
+  .sns-links a{
+    background:var(--main-color); color:var(--white); padding:8px 16px;
+    border-radius:20px; font-size:13px;
+  }
+
+  /* CTA */
+  .cta-section{
+    background:linear-gradient(135deg, var(--main-color), #063d27);
+    color:var(--white); text-align:center;
+  }
+  .cta-section h2{
+    font-size:19px; margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13px; margin-bottom:18px; color:#e6f3ec;
+  }
+  .cta-button{
+    display:block; background:var(--sub-color); color:var(--white);
+    font-weight:bold; padding:16px; border-radius:8px; font-size:16px;
+  }
+
+  /* 固定フッターナビ */
+  .bottom-nav{
+    position:fixed; bottom:0; left:0; right:0; z-index:100;
+    display:flex; background:var(--white); box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+  }
+  .bottom-nav a{
+    flex:1; text-align:center; padding:12px 4px; font-size:12px; font-weight:bold;
+  }
+  .bottom-nav .nav-tel{
+    background:var(--sub-color); color:var(--white);
+  }
+  .bottom-nav .nav-map{
+    background:var(--main-color); color:var(--white);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">スポーツのニシヒロ己斐店</div>
+  <a href="tel:0822717211" class="tel-btn">📞 電話する</a>
+</header>
+<div class="header-spacer"></div>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <p class="catch">サッカー・ラグビースパイクのご相談は広島唯一の専門店へ</p>
+  <h1>スポーツのニシヒロ己斐店</h1>
+  <div class="star">★★★★★</div>
+  <img src="images/hero_main.jpg" alt="スポーツのニシヒロ己斐店 店舗外観">
+</div>
+
+<!-- イチオシ -->
+<section class="osusume">
+  <div class="section-title">イチオシのサービス</div>
+  <span class="osusume-badge">店長イチオシ</span>
+  <div class="osusume-card">
+    <img src="images/osusume_wear.jpg" alt="デザインウェアの提案">
+    <h3>デザインウェアのご提案</h3>
+    <p>チームのユニフォームやオリジナルデザインウェア、実は当店が一番力を入れているサービスです。</p>
+    <ul class="osusume-list">
+      <li>チームカラー・ロゴを活かしたオリジナルデザイン</li>
+      <li>サッカー・ラグビーはもちろん、あらゆるチームウェアに対応</li>
+      <li>スパイク選びと合わせてトータルでご相談いただけます</li>
+    </ul>
+    <a href="tel:0822717211" class="cta-inline">デザインウェアを相談する</a>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="strength-item">
+    <div class="strength-icon">⚽</div>
+    <div>
+      <h4>スパイク選びのプロによる接客</h4>
+      <p>サッカー・ラグビー用スパイクを店頭で実際に履き比べて選べる、広島でも数少ないお店です。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-icon">👟</div>
+    <div>
+      <h4>解けない靴紐の結び方も伝授</h4>
+      <p>試合中に靴紐が解ける心配なくプレーに集中できる、店長直伝のテクニックが評判です。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-icon">🎽</div>
+    <div>
+      <h4>チームウェア・オリジナルデザインも対応</h4>
+      <p>チームウェアやオリジナルデザインのご相談も承っております。お気軽にどうぞ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店長紹介 -->
+<section class="owner">
+  <div class="section-title">店長からのメッセージ</div>
+  <div class="owner-box">
+    <img src="images/owner_photo.jpg" alt="店長 田頭さん">
+    <div class="text">
+      <p class="owner-name">店長　田頭（たがしら）</p>
+      <p>己斐店１階サッカー・バドミントンコーナーを主に担当しております。サッカースパイクでお悩みの方、相談してみると良いアドバイスがもらえますよ！また、チームウェアやオリジナルデザインのご相談も是非！！</p>
+      <p>Ｊリーグ開幕時からのサンフレッチェサポーターで、個人的にはアンジュヴィオレ広島やコカ・コーラ　レッドスパークスの選手の皆さんと仲良しです♪</p>
+      <p>ちなみに、己斐店に通い続けて常連さんになって店長と仲良くなると、アメちゃんが貰えるようになります（笑）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section class="review">
+  <div class="section-title">お客様の声</div>
+  <div class="review-card">
+    <span class="star">★★★★★</span>
+    <p>先日、サッカーのスパイク購入のために訪れました。私自身サッカーをしており、ミズノの『モレリア』シリーズを愛用しています。今履いている靴が古くなったこともあり、新しい試合用のスパイクを買いに行きました。店内を回っていると、店長さんが気さくに声を掛けて下さりスパイクの選び方のレクチャーを受けました。そこで教えていただいたのが、解けない靴紐の結び方！！練習でも、毎週の試合でも結び方を変えてから1度も紐が解けたことがありません！おかげさまでプレーに集中することができています！次にスパイクを買うときもニシヒロで買おうと思います！</p>
+  </div>
+  <div class="review-card">
+    <span class="star">★★★★★</span>
+    <p>先日、息子のラグビー用スパイク購入のため訪れました。最近はネットショッピングが便利ですが、ラグビー用スパイクを直接店頭で履き比べて買うことができる広島唯一のお店のようです。店員さんにいろいろと教えてもらいながら安心して購入することができました。サッカースパイクのように、よりどりみどりとはいきませんでしたが、息子は納得の買い物ができたようです。ありがとうございました。</p>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shopinfo">
+  <div class="section-title">店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>スポーツのニシヒロ己斐店</td></tr>
+    <tr><th>会社名</th><td>株式会社ニシヒロ</td></tr>
+    <tr><th>代表者</th><td>山縣　浩一</td></tr>
+    <tr><th>住所</th><td>広島県広島市西区己斐本町１丁目９−２０</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0822717211">082-271-7211</a></td></tr>
+    <tr><th>定休日</th><td>不定休</td></tr>
+    <tr><th>HP</th><td><a href="http://www.sportsnishihiro.com/" target="_blank">www.sportsnishihiro.com</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@nishihiro.ne.jp">info@nishihiro.ne.jp</a></td></tr>
+  </table>
+  <div class="sns-links">
+    <a href="https://x.com/Nishihiro012" target="_blank">X（旧Twitter）</a>
+  </div>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=広島県広島市西区己斐本町１丁目９−２０&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>スパイク選びもデザインウェアも、まずはご相談ください</h2>
+  <p>店長が親身にアドバイスいたします。お気軽にお電話ください。</p>
+  <a href="tel:0822717211" class="cta-button">📞 082-271-7211 に電話する</a>
+</section>
+
+<!-- 固定ナビ -->
+<div class="bottom-nav">
+  <a href="tel:0822717211" class="nav-tel">📞 電話</a>
+  <a href="https://www.google.com/maps?q=広島県広島市西区己斐本町１丁目９−２０" target="_blank" class="nav-map">📍 地図</a>
+</div>
+
+</body>
+</html>
