@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スペシャライズド 和歌山｜あなたにぴったりのロードバイクを見つけよう</title>
+<style>
+  :root{
+    --main-color:#e6002d;
+    --dark:#1a1a1a;
+    --gray:#666;
+    --light-bg:#f7f7f7;
+    --accent:#f5c400;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark);
+    line-height:1.7;
+    background:#fff;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--main-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    width:100%;
+  }
+  .hero img{
+    width:100%;
+    height:60vh;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    color:#fff;
+    padding:30px 16px 20px;
+  }
+  .hero-overlay .catch{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:6px;
+    line-height:1.4;
+  }
+  .hero-overlay .sub{
+    font-size:13px;
+    opacity:0.9;
+  }
+
+  section{
+    padding:40px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:8px;
+    color:var(--main-color);
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--gray);
+    font-weight:normal;
+    margin-top:4px;
+  }
+
+  /* Featured Product */
+  .featured{
+    background:var(--dark);
+    color:#fff;
+  }
+  .featured .section-title{color:var(--accent);}
+  .featured .section-title span{color:#ccc;}
+  .product-card{
+    background:#2a2a2a;
+    border-radius:12px;
+    overflow:hidden;
+    margin-top:20px;
+  }
+  .product-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .product-card .body{
+    padding:20px;
+  }
+  .product-card h3{
+    font-size:18px;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  .product-card p{
+    font-size:14px;
+    color:#ddd;
+    margin-bottom:16px;
+  }
+  .badge-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .badge{
+    background:var(--main-color);
+    color:#fff;
+    font-size:12px;
+    padding:5px 10px;
+    border-radius:14px;
+    font-weight:bold;
+  }
+  .cta-button{
+    display:block;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:16px;
+  }
+
+  /* Strengths */
+  .strengths{
+    background:var(--light-bg);
+  }
+  .strength-item{
+    background:#fff;
+    border-radius:10px;
+    padding:20px;
+    margin-top:16px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    border-left:4px solid var(--main-color);
+  }
+  .strength-item h4{
+    font-size:15px;
+    margin-bottom:8px;
+    color:var(--dark);
+  }
+  .strength-item p{
+    font-size:13.5px;
+    color:var(--gray);
+  }
+
+  /* Story */
+  .story{
+    background:#fff;
+  }
+  .story img{
+    border-radius:12px;
+    margin-bottom:20px;
+    height:200px;
+    object-fit:cover;
+    width:100%;
+  }
+  .story p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:14px;
+  }
+  .persona-list{
+    background:var(--light-bg);
+    border-radius:10px;
+    padding:16px 20px;
+    margin-top:16px;
+  }
+  .persona-list li{
+    list-style:none;
+    font-size:13.5px;
+    padding:6px 0;
+    position:relative;
+    padding-left:20px;
+  }
+  .persona-list li::before{
+    content:"✓";
+    color:var(--main-color);
+    font-weight:bold;
+    position:absolute;
+    left:0;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:var(--light-bg);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-top:16px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .stars{
+    color:var(--accent);
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* Shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:16px;
+    font-size:13.5px;
+  }
+  .shop-info th{
+    background:var(--light-bg);
+    text-align:left;
+    padding:12px 10px;
+    width:30%;
+    color:var(--main-color);
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .shop-info td{
+    padding:12px 10px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .map-frame{
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:12px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    margin-bottom:20px;
+    opacity:0.95;
+  }
+  .final-cta .cta-button{
+    background:#fff;
+    color:var(--main-color);
+  }
+  .final-cta .sub-button{
+    display:block;
+    text-align:center;
+    background:transparent;
+    border:2px solid #fff;
+    color:#fff;
+    padding:12px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+    margin-top:12px;
+  }
+
+  /* Bottom Nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--gray);
+    gap:4px;
+  }
+  .bottom-nav a.primary{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    font-size:18px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">スペシャライズド 和歌山</div>
+  <a href="tel:0736606892" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="スペシャライズド和歌山 ロードバイク">
+  <div class="hero-overlay">
+    <div class="catch">サイクリング王国・和歌山で、<br>あなただけの一台と出会う。</div>
+    <div class="sub">岩出市根来 | ロードバイク専門スタッフが徹底サポート</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title">イチオシ商品<span>FEATURED PRODUCT</span></div>
+  <div class="product-card">
+    <img src="images/roadbike.jpg" alt="ロードバイク">
+    <div class="body">
+      <h3>ロードバイク</h3>
+      <div class="badge-list">
+        <span class="badge">軽量設計</span>
+        <span class="badge">扱いやすい</span>
+        <span class="badge">初心者OK</span>
+      </div>
+      <p>「軽くて、とても扱いやすい」とお客様からも大好評。北の葛城山、東の高野山、南の生石高原など、和歌山県北部にはヒルクライムに最適なコースが豊富にあります。あなたの体力・目的に合わせて、経験豊富なスタッフが最適な一台をご提案します。都会では味わえない、恵まれたサイクリング環境をぜひロードバイクで満喫してください。</p>
+      <a href="tel:0736606892" class="cta-button">ロードバイクのご相談はこちら</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">選ばれる理由<span>OUR STRENGTHS</span></div>
+  <div class="strength-item">
+    <h4>🚴 サイクリング王国・和歌山の恵まれた環境</h4>
+    <p>和歌山県全体で取り組む「WAKAYAMA800」事業が示すように、和歌山は「サイクリング王国」として豊富なロケーションに恵まれています。県北部には、北の葛城山、東の高野山、南の生石高原など、ヒルクライムに最適なコースが数多く揃っています。</p>
+  </div>
+  <div class="strength-item">
+    <h4>🔧 信頼のアフターサポート</h4>
+    <p>落車で曲がってしまったブラケットの修理など、購入後のトラブルにも親身に対応。いつも親切なアドバイスをもらえると評判で、2台目の購入もこちらのお店で、というお客様も多数いらっしゃいます。</p>
+  </div>
+  <div class="strength-item">
+    <h4>🏆 岩出市内トップクラスのロードバイク品揃え</h4>
+    <p>岩出市内にあるサイクルショップの中でもロードバイク周りが充実。専門知識を持ったスタッフが、あなたのレベルや目的に合わせて最適な一台とパーツをご提案します。</p>
+  </div>
+</section>
+
+<section class="story">
+  <div class="section-title">私たちの想い<span>OUR STORY</span></div>
+  <img src="images/store.jpg" alt="スペシャライズド和歌山 店舗">
+  <p>スペシャライズド 和歌山はスポーツバイクを通じて健康を促進し、人とのつながりを広げ、豊かな人生を実現できる店舗です。私たちは、自転車を単なる移動手段ではなく、「楽しむための道具」として活用し、皆さまが充実した時間を過ごせるようサポートしています。</p>
+  <p>自転車は環境に優しく、全身運動として健康維持にも最適です。こんな方にぜひおすすめです。</p>
+  <ul class="persona-list">
+    <li>運動不足を解消したい方</li>
+    <li>フィットネスクラブに通うのはハードルが高いと感じる方</li>
+    <li>新しいスポーツの趣味を持ちたい方</li>
+    <li>一人で始めるのは不安な方</li>
+  </ul>
+  <p style="margin-top:16px;">ぜひ、私たちと一緒にサイクリングライフを始めてみませんか？</p>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声<span>CUSTOMER REVIEWS</span></div>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>サドルについて参考になりました。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>近くをサイクリングしてるときに落車しまして、、、曲がったブラケットを直してもらいました。いつもとても親切にアドバイスしてくれるので信頼しています。2台目はもちろんこちらで購入しました！おススメしてくださったバイクは、軽くて、とても扱いやすく、大満足です。またこれからもよろしくお願いします！岩出市内にあるサイクルショップの中でもロードバイク周りが充実していて心躍ります。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報<span>SHOP INFO</span></div>
+  <table>
+    <tr><th>店名</th><td>スペシャライズド 和歌山</td></tr>
+    <tr><th>定休日</th><td>月曜日・火曜日</td></tr>
+    <tr><th>住所</th><td>和歌山県岩出市根来 130-1</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0736606892">0736-60-6892</a></td></tr>
+    <tr><th>HP</th><td><a href="http://brestbike.com/" target="_blank" rel="noopener">brestbike.com</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://specialized-store.jp/wakayama/access/#contact" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=和歌山県岩出市根来130-1&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>あなたにぴったりの一台を見つけよう</h2>
+  <p>ロードバイクのご相談、お気軽にお問い合わせください。</p>
+  <a href="tel:0736606892" class="cta-button">📞 電話で相談する</a>
+  <a href="https://specialized-store.jp/wakayama/access/#contact" target="_blank" rel="noopener" class="sub-button">お問い合わせフォームへ</a>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0736606892" class="primary"><span class="icon">📞</span>電話する</a>
+  <a href="https://maps.google.com/maps?q=和歌山県岩出市根来130-1" target="_blank" rel="noopener"><span class="icon">📍</span>地図</a>
+  <a href="https://specialized-store.jp/wakayama/access/#contact" target="_blank" rel="noopener"><span class="icon">✉️</span>お問い合わせ</a>
+  <a href="http://brestbike.com/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
