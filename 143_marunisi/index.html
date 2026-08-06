@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>つり具のマルニシ 和歌山バイパス店｜船釣り・磯釣り用品専門店</title>
+<style>
+  :root{
+    --blue-deep:#0b3d62;
+    --blue-main:#1565a8;
+    --blue-light:#4fa3d1;
+    --accent:#ff7a00;
+    --accent-dark:#e65f00;
+    --bg-light:#f4f9fc;
+    --text-dark:#1a2632;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:linear-gradient(90deg,var(--blue-deep),var(--blue-main));
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:8px 12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  .header .shop-name{font-size:14px;font-weight:bold;line-height:1.3;}
+  .header .shop-name span{display:block;font-size:11px;font-weight:normal;opacity:0.85;}
+  .header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+    display:flex;align-items:center;gap:4px;
+  }
+  .header-spacer{height:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--blue-deep) 0%,var(--blue-main) 60%);
+    color:#fff;
+    text-align:center;
+    padding:36px 16px 44px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;bottom:0;left:0;right:0;height:24px;
+    background:#fff;
+    border-radius:50% 50% 0 0 / 100% 100% 0 0;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:0.05em;
+  }
+  .hero h1{
+    font-size:24px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:10px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.3);
+  }
+  .hero h1 .highlight{
+    color:#ffe08a;
+    font-size:28px;
+  }
+  .hero p.lead{
+    font-size:14px;
+    opacity:0.95;
+    margin-bottom:20px;
+  }
+  .hero .hero-img{
+    width:100%;
+    max-width:420px;
+    margin:0 auto 18px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.35);
+    border:3px solid rgba(255,255,255,0.4);
+  }
+  .hero .cta-row{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .hero .cta-btn{
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:15px;
+    padding:13px 22px;
+    border-radius:30px;
+    box-shadow:0 4px 12px rgba(255,122,0,0.5);
+  }
+
+  /* Section common */
+  .section{padding:40px 16px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--blue-deep);
+    margin-bottom:6px;
+    position:relative;
+  }
+  .section-title .en{
+    display:block;
+    font-size:11px;
+    letter-spacing:0.15em;
+    color:var(--blue-light);
+    font-weight:normal;
+    margin-bottom:4px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:#556;
+    margin-bottom:26px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:linear-gradient(180deg,var(--bg-light) 0%,#fff 100%);
+    position:relative;
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 6px 20px rgba(11,61,98,0.15);
+    overflow:hidden;
+    border:2px solid var(--blue-light);
+    margin-bottom:20px;
+  }
+  .featured-card .ribbon{
+    background:var(--accent);
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    font-size:14px;
+    padding:8px;
+    letter-spacing:0.05em;
+  }
+  .featured-card img{
+    width:100%;
+    height:auto;
+  }
+  .featured-card .body{
+    padding:18px 16px 20px;
+  }
+  .featured-card h3{
+    font-size:18px;
+    color:var(--blue-deep);
+    margin-bottom:10px;
+    font-weight:bold;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#333;
+    margin-bottom:10px;
+  }
+  .featured-list{
+    list-style:none;
+    margin:12px 0 16px;
+  }
+  .featured-list li{
+    font-size:13.5px;
+    padding:8px 0 8px 26px;
+    position:relative;
+    border-bottom:1px dashed #dde6ee;
+  }
+  .featured-list li:last-child{border-bottom:none;}
+  .featured-list li::before{
+    content:"🎣";
+    position:absolute;
+    left:0;top:7px;
+    font-size:15px;
+  }
+  .featured-card .mini-cta{
+    display:block;
+    text-align:center;
+    background:var(--blue-main);
+    color:#fff;
+    font-weight:bold;
+    font-size:14px;
+    padding:12px;
+    border-radius:10px;
+    margin-top:8px;
+  }
+
+  /* Strengths */
+  .strengths{background:#fff;}
+  .strength-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:var(--bg-light);
+    border-radius:12px;
+    padding:16px;
+    border-left:4px solid var(--accent);
+  }
+  .strength-item .icon{
+    font-size:26px;
+    flex-shrink:0;
+    width:42px;
+    height:42px;
+    display:flex;align-items:center;justify-content:center;
+    background:#fff;
+    border-radius:50%;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  }
+  .strength-item .txt h4{
+    font-size:15px;
+    color:var(--blue-deep);
+    margin-bottom:4px;
+    font-weight:bold;
+  }
+  .strength-item .txt p{
+    font-size:13px;
+    color:#444;
+  }
+
+  /* Gallery */
+  .gallery{background:var(--bg-light);}
+  .gallery-img{
+    border-radius:12px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.12);
+    margin-bottom:16px;
+  }
+
+  /* Reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--bg-light);
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    position:relative;
+  }
+  .review-card .stars{
+    color:var(--accent);
+    font-size:15px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#333;
+  }
+  .review-card::before{
+    content:"“";
+    font-size:40px;
+    color:var(--blue-light);
+    opacity:0.4;
+    position:absolute;
+    top:0;
+    right:12px;
+    font-family:Georgia,serif;
+  }
+
+  /* Shop info */
+  .shopinfo{background:var(--bg-light);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    font-size:13.5px;
+  }
+  .info-table th,.info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #e6edf3;
+    text-align:left;
+  }
+  .info-table th{
+    background:var(--blue-deep);
+    color:#fff;
+    width:30%;
+    font-weight:bold;
+    font-size:12.5px;
+    white-space:nowrap;
+  }
+  .info-table tr:last-child th,.info-table tr:last-child td{border-bottom:none;}
+  .info-table a{color:var(--blue-main);font-weight:bold;text-decoration:underline;}
+  .map-wrap{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block;}
+
+  .sns-row{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .sns-row a{
+    background:var(--blue-main);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    padding:10px 18px;
+    border-radius:24px;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:linear-gradient(135deg,var(--blue-deep),var(--blue-main));
+    color:#fff;
+    text-align:center;
+    padding:40px 16px 46px;
+  }
+  .cta-section h2{
+    font-size:20px;
+    margin-bottom:10px;
+    font-weight:bold;
+  }
+  .cta-section p{
+    font-size:13.5px;
+    opacity:0.9;
+    margin-bottom:22px;
+  }
+  .cta-section .big-tel{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    padding:16px 30px;
+    border-radius:36px;
+    box-shadow:0 6px 16px rgba(0,0,0,0.3);
+    margin-bottom:12px;
+  }
+  .cta-section .hours{
+    font-size:12.5px;
+    opacity:0.85;
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#889;
+    padding:18px 10px 70px;
+    background:#fff;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:1000;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px 10px;
+    font-size:11px;
+    font-weight:bold;
+    color:var(--blue-deep);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav a .nav-icon{font-size:18px;}
+
+  @media (min-width:480px){
+    .hero h1{font-size:26px;}
+    .hero h1 .highlight{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="shop-name">つり具のマルニシ<span>和歌山バイパス店</span></div>
+  <a href="tel:0734640024" class="tel-btn">📞 073-464-0024</a>
+</div>
+<div class="header-spacer"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">和歌山バイパス店 ★年中無休★</div>
+  <h1>船釣り・磯釣りの<span class="highlight">釣り用品</span>なら<br>ここで決まり！</h1>
+  <p class="lead">針・ハリス・仕掛けの品揃え No.1／ベテランスタッフが親身にアドバイス</p>
+  <img src="./images/hero.jpg" alt="つり具のマルニシ 和歌山バイパス店 店内・釣り用品" class="hero-img">
+  <div class="cta-row">
+    <a href="tel:0734640024" class="cta-btn">📞 今すぐ電話で相談</a>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCT -->
+<section class="section featured">
+  <div class="section-title"><span class="en">RECOMMEND</span>イチオシ商品</div>
+  <div class="section-sub">船釣り道具・針・ハリスなら、まずはご相談ください</div>
+
+  <div class="featured-card">
+    <div class="ribbon">🎣 イチオシ｜釣り用品フルライン</div>
+    <img src="./images/product.jpg" alt="釣り用品 針・ハリス・仕掛け 品揃え">
+    <div class="body">
+      <h3>船釣り道具・針・ハリスを買うならここ</h3>
+      <p>高仕掛けや擬似餌のビニールは、カットタイプから一枚ビニールまで幅広く揃います。磯釣り用品のご相談もいつも当店で承っております。</p>
+      <ul class="featured-list">
+        <li>船釣り用の針・ハリス・仕掛けを豊富に取扱い</li>
+        <li>高仕掛け・擬似餌ビニールはカット済〜一枚まで対応</li>
+        <li>磯釣り用品も知識豊富なスタッフがしっかり相談対応</li>
+        <li>年に4〜5回、うれしい売り出し（セール）を実施</li>
+      </ul>
+      <a href="tel:0734640024" class="mini-cta">📞 商品について電話で聞く</a>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section class="section strengths">
+  <div class="section-title"><span class="en">STRONG POINT</span>選ばれる理由</div>
+  <div class="section-sub">和歌山バイパス店が支持される4つのポイント</div>
+  <div class="strength-grid">
+    <div class="strength-item">
+      <div class="icon">🎣</div>
+      <div class="txt">
+        <h4>船釣り・磯釣り用品の品揃えNo.1</h4>
+        <p>針・ハリスから仕掛け、擬似餌ビニールまで、細かなニーズに応える豊富な在庫が魅力です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="icon">👨‍🔧</div>
+      <div class="txt">
+        <h4>ベテランスタッフの丁寧な接客</h4>
+        <p>スタッフは皆さんベテラン感があり、色々なアドバイスをいただけて気持ちの良い買い物ができます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="icon">🅿️</div>
+      <div class="txt">
+        <h4>広々とした駐車場</h4>
+        <p>駐車場が広く、お車でのご来店もスムーズ。買い物帰りの積み込みもしやすい環境です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="icon">🏷️</div>
+      <div class="txt">
+        <h4>年4〜5回のお得な売り出し</h4>
+        <p>最近は売り出しの機会も戻ってきました。お得なタイミングを見逃さずチェックしてください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery">
+  <div class="section-title"><span class="en">GALLERY</span>店内・店頭のご紹介</div>
+  <div class="section-sub">和歌山バイパス店の様子</div>
+  <img src="./images/shop.jpg" alt="つり具のマルニシ 和歌山バイパス店 店頭外観" class="gallery-img">
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews">
+  <div class="section-title"><span class="en">REVIEW</span>お客様の声</div>
+  <div class="section-sub">実際にご来店されたお客様からの口コミ</div>
+
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>品揃えはいいけど、最近、少し売り出しが戻って来た。年に4〜5回売り出しが有ります。駐車場も広くスタッフの方々は皆さんベテラン感があり、親切丁寧な対応をしてくれましたよ。色々アドバイスを頂け気持ちの良い買い物が出来ました。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>船釣り道具、針、ハリスを買うならここです。高仕掛け、擬似餌のビニールはカットか一枚ビニールまで揃います。磯釣り用品の相談はいつも此処です❗️店員さんの知識も豊富で、助かります☺️</p>
+  </div>
+</section>
+
+<!-- SHOP INFO -->
+<section class="section shopinfo">
+  <div class="section-title"><span class="en">SHOP INFO</span>店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>つり具のマルニシ 和歌山バイパス店</td></tr>
+    <tr><th>会社名</th><td>株式会社 つり具のマルニシ</td></tr>
+    <tr><th>代表者</th><td>西 雅和</td></tr>
+    <tr><th>住所</th><td>和歌山県和歌山市楠本250</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0734640024">073-464-0024</a></td></tr>
+    <tr><th>定休日</th><td>年中無休</td></tr>
+    <tr><th>公式HP</th><td><a href="http://www.f-marunishi.com/" target="_blank" rel="noopener">www.f-marunishi.com</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://f-marunishi.com/contact" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+  </table>
+
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%B8%82%E6%A5%A0%E6%9C%AC250&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <div class="sns-row">
+    <a href="https://x.com/marunishi024" target="_blank" rel="noopener">𝕏 公式X</a>
+    <a href="https://www.youtube.com/channel/UCDUfXRoRc-1cKR-Ql7beJgg/featured" target="_blank" rel="noopener">▶ YouTube</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>釣り用品のご相談はお気軽に</h2>
+  <p>船釣り・磯釣りのことなら、経験豊富なスタッフがしっかりお応えします</p>
+  <a href="tel:0734640024" class="big-tel">📞 073-464-0024</a>
+  <div class="hours">年中無休で営業中｜和歌山県和歌山市楠本250</div>
+</section>
+
+<footer>
+  © つり具のマルニシ 和歌山バイパス店
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0734640024" class="call"><span class="nav-icon">📞</span>電話</a>
+  <a href="https://f-marunishi.com/contact" target="_blank" rel="noopener"><span class="nav-icon">✉️</span>お問い合わせ</a>
+  <a href="http://www.f-marunishi.com/" target="_blank" rel="noopener"><span class="nav-icon">🌐</span>公式HP</a>
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><span class="nav-icon">⬆️</span>トップへ</a>
+</div>
+
+</body>
+</html>
