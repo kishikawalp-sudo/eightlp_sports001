@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フィッシング＆レジャー ナニワ｜和歌山県田辺市の釣具専門店</title>
+<style>
+  :root{
+    --main:#0a3d62;
+    --accent:#e67e22;
+    --sub:#1e6091;
+    --bg:#f4f8fb;
+    --text:#222;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.6;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:var(--main);
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 14px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shopname{
+    font-size:15px;
+    font-weight:bold;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  main{padding-top:52px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, rgba(10,61,98,0.75), rgba(10,61,98,0.55));
+  }
+  .hero img{
+    width:100%;
+    height:56vw;
+    max-height:340px;
+    object-fit:cover;
+    opacity:0.9;
+  }
+  .hero-text{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    padding:16px;
+    background:linear-gradient(0deg, rgba(0,0,0,0.65), transparent);
+    color:#fff;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.4;
+    text-shadow:1px 1px 4px rgba(0,0,0,0.6);
+  }
+  .hero-text .sub{
+    font-size:13px;
+    margin-top:6px;
+    opacity:0.95;
+  }
+  .stars{
+    color:#ffd447;
+    font-size:16px;
+    margin-top:6px;
+  }
+
+  /* section common */
+  section{
+    padding:32px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent);
+    letter-spacing:2px;
+    margin-bottom:4px;
+  }
+  .section-desc{
+    text-align:center;
+    font-size:14px;
+    color:#555;
+    margin-bottom:20px;
+  }
+
+  /* featured product - push hard */
+  .featured{
+    background:linear-gradient(135deg, var(--main), var(--sub));
+    color:#fff;
+    padding:36px 16px;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-title span{color:#ffd447;}
+  .featured-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .featured-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+  }
+  .featured-card .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 10px;
+    border-radius:12px;
+    margin:14px 14px 0;
+  }
+  .featured-card .fc-body{
+    padding:10px 16px 20px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:14px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .featured-list li{
+    font-size:13.5px;
+    padding:6px 0 6px 24px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .featured-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-weight:bold;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px;
+    border-radius:10px;
+    margin-top:6px;
+  }
+
+  /* strengths */
+  .strengths-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .strength-item{
+    background:#fff;
+    border-left:5px solid var(--accent);
+    border-radius:8px;
+    padding:16px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .strength-item h4{
+    color:var(--main);
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .strength-item p{
+    font-size:13.5px;
+    color:#555;
+  }
+
+  /* reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--bg);
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  }
+  .review-card .stars{color:#f0a500;font-size:15px;margin-bottom:8px;}
+  .review-card p{font-size:13.5px;color:#444;white-space:pre-line;}
+
+  /* shop info */
+  .shopinfo table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    font-size:13.5px;
+  }
+  .shopinfo th,.shopinfo td{
+    padding:12px 10px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+  }
+  .shopinfo th{
+    background:var(--main);
+    color:#fff;
+    width:32%;
+    font-weight:normal;
+  }
+  .shopinfo iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    margin-top:16px;
+    border-radius:8px;
+  }
+
+  /* final cta */
+  .final-cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+  .final-cta .cta-btn{
+    background:var(--accent);
+  }
+  .final-cta .cta-sub{
+    margin-top:12px;
+  }
+  .final-cta .cta-sub a{
+    color:#ffd447;
+    font-size:13px;
+    text-decoration:underline;
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.tel{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav a .icon{
+    display:block;
+    font-size:16px;
+    margin-bottom:2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">フィッシング＆レジャー ナニワ</div>
+  <a href="tel:0739260728" class="tel-btn">📞 電話する</a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="images/naniwa_hero.jpg" alt="フィッシング＆レジャー ナニワ 店舗外観">
+    <div class="hero-text">
+      <div class="catch">釣り具のことなら、何でも揃う。<br>田辺のフィッシングショップ</div>
+      <div class="sub">株式会社ナニワ｜和歌山県田辺市高雄</div>
+      <div class="stars">★★★★☆ 地元で愛される親切対応</div>
+    </div>
+  </div>
+
+  <!-- FEATURED PRODUCT -->
+  <section class="featured">
+    <div class="section-title"><span>ICHIOSHI</span>イチオシ商品</div>
+    <div class="section-desc" style="color:#eaf2f8;">釣り用品ならナニワにお任せください</div>
+    <div class="featured-card">
+      <img src="images/naniwa_tackle.jpg" alt="釣り用品 イチオシ商品">
+      <div class="badge">当店イチオシ</div>
+      <div class="fc-body">
+        <h3>釣り用品フルライン取扱い</h3>
+        <p>ロッド・リール・仕掛け・エサまで、初心者からベテランまで必要なものが全て揃います。サビキセットなど手軽に始められる商品も充実。</p>
+        <ul class="featured-list">
+          <li>ロッド・リールの品揃え豊富</li>
+          <li>サビキ釣りセットなど初心者向け商品あり</li>
+          <li>スタッフが丁寧に選び方をアドバイス</li>
+          <li>竿の修理・持ち込み相談も対応可能</li>
+        </ul>
+        <a href="tel:0739260728" class="cta-btn">📞 商品について電話で相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section>
+    <div class="section-title"><span>STRENGTH</span>選ばれる理由</div>
+    <div class="strengths-grid">
+      <div class="strength-item">
+        <h4>① 店員さんが親切・丁寧</h4>
+        <p>必要なものが全て揃う品揃えと、初心者にも分かりやすい丁寧な接客が好評です。</p>
+      </div>
+      <div class="strength-item">
+        <h4>② オンライン注文も安心対応</h4>
+        <p>通販での手続きトラブルにも電話で親切・丁寧に対応。地方から全国のお客様に支持されています。</p>
+      </div>
+      <div class="strength-item">
+        <h4>③ 竿の修理も持ち込みOK</h4>
+        <p>修理方法の選択肢を提示してくれ、その場でスピーディーに対応してもらえます。</p>
+      </div>
+      <div class="strength-item">
+        <h4>④ 看板犬がお出迎え</h4>
+        <p>とても可愛い看板犬（従業員）がいることでも話題。お店に行く楽しみのひとつです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="section-title"><span>REVIEW</span>お客様の声</div>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>店員さんがみんな親切。必要なものは全て揃っている。いつもありがとぉぅ！！！！！ 時々利用しています。サビキセットされた物を2個購入しました（他4点も）。サビキ1点、数回落とし込みしたところ根掛かり、魚かかっていませんでしたが、ナスカン下から解けてしまいました(>_<) 購入後は結び目を確認した方が良いかと思います。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>オンラインでお世話になりました。手続きでトラブルがありましたが電話で問い合わせそしたら親切に対応頂きました。何度も電話やり取りをする事になりましたが、常に親切、丁寧に対応頂け感謝です。個人的に専用品（釣具など）は実店舗をお持ちの通販が安心感があります。値段もお値打ちで大満足です。地方でこのように頑張ってる会社、好きです。持ち込みで、竿の修理をお願いしたところ、選択肢を2つほど提示してくれて、すぐに修理してくれました。あと、とても可愛い従業員（犬）がいるので行ってみる価値があります。</p>
+    </div>
+  </section>
+
+  <!-- SHOP INFO -->
+  <section class="shopinfo">
+    <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+    <table>
+      <tr><th>店名</th><td>フィッシング＆レジャー ナニワ</td></tr>
+      <tr><th>会社名</th><td>株式会社ナニワ</td></tr>
+      <tr><th>代表者</th><td>浪花 健司</td></tr>
+      <tr><th>住所</th><td>和歌山県田辺市高雄2丁目35番25号</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0739260728">0739-26-0728</a></td></tr>
+      <tr><th>定休日</th><td>不定休</td></tr>
+      <tr><th>HP</th><td><a href="http://www.nanki728.com/" target="_blank">www.nanki728.com</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://www.nanki728.com/ssl/contact/" target="_blank">お問い合わせフォーム</a></td></tr>
+      <tr><th>メール</th><td>naniwa728@nanki728.com</td></tr>
+    </table>
+    <iframe src="https://maps.google.com/maps?q=和歌山県田辺市高雄2丁目35番25号&output=embed" allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>釣り具のご相談はお気軽に</h2>
+    <p>初心者からベテランまで、スタッフが丁寧にご案内します。<br>お電話・お問い合わせフォームからどうぞ。</p>
+    <a href="tel:0739260728" class="cta-btn">📞 0739-26-0728</a>
+    <div class="cta-sub">
+      <a href="https://www.nanki728.com/ssl/contact/" target="_blank">お問い合わせフォームはこちら ＞</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="tel:0739260728" class="tel"><span class="icon">📞</span>電話</a>
+  <a href="https://www.nanki728.com/" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="https://www.nanki728.com/ssl/contact/" target="_blank"><span class="icon">✉️</span>問い合わせ</a>
+  <a href="https://maps.google.com/maps?q=和歌山県田辺市高雄2丁目35番25号" target="_blank"><span class="icon">📍</span>地図</a>
+</div>
+
+</body>
+</html>
