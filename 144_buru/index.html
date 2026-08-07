@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLUE∞LIFE（ブルーライフ）｜和歌山・白浜のスキューバダイビングショップ</title>
+<style>
+  :root{
+    --sea-deep:#003a5c;
+    --sea:#0077b6;
+    --sea-light:#48cae4;
+    --sand:#fff8ec;
+    --accent:#ffb703;
+    --text:#1b2b34;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--sand);
+    padding-top:56px;
+    padding-bottom:64px;
+    line-height:1.7;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:linear-gradient(90deg,var(--sea-deep),var(--sea));
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  header .shop-name{
+    color:#fff;font-weight:bold;font-size:15px;letter-spacing:.5px;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#1b2b34;
+    font-weight:bold;
+    font-size:13px;
+    padding:8px 14px;
+    border-radius:30px;
+    display:flex;align-items:center;gap:4px;
+    white-space:nowrap;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    background:url('images/hero.jpg') center/cover no-repeat;
+    min-height:78vw;
+    max-height:520px;
+    display:flex;
+    align-items:flex-end;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,58,92,.15) 0%,rgba(0,20,35,.75) 100%);
+  }
+  .hero-inner{
+    position:relative;z-index:1;
+    padding:24px 20px 28px;
+    color:#fff;
+    width:100%;
+  }
+  .hero-catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 2px 6px rgba(0,0,0,.5);
+    margin-bottom:10px;
+  }
+  .hero-sub{
+    font-size:13px;
+    background:rgba(255,255,255,.15);
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .hero-shopname{
+    font-size:15px;
+    letter-spacing:1px;
+    opacity:.9;
+  }
+
+  /* 共通セクション */
+  section{padding:36px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--sea-deep);
+    margin-bottom:22px;
+    position:relative;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--sea);
+    font-weight:normal;
+    letter-spacing:2px;
+    margin-bottom:4px;
+  }
+
+  /* イチオシ商品 */
+  .push{
+    background:linear-gradient(180deg,#eaf7fb,var(--sand));
+  }
+  .push-badge{
+    background:var(--accent);
+    color:#1b2b34;
+    font-weight:bold;
+    font-size:13px;
+    display:inline-block;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .push-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,58,92,.12);
+  }
+  .push-card img{width:100%;height:auto;}
+  .push-card-body{padding:18px;}
+  .push-card-body h3{
+    font-size:19px;
+    color:var(--sea-deep);
+    margin-bottom:10px;
+  }
+  .push-card-body p{font-size:14px;margin-bottom:14px;}
+  .push-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .push-list li{
+    font-size:14px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .push-list li::before{
+    content:"✓";
+    position:absolute;left:0;top:0;
+    color:var(--sea);
+    font-weight:bold;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:var(--text);
+    font-weight:bold;
+    font-size:16px;
+    padding:14px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(255,183,3,.4);
+  }
+  .cta-btn.outline{
+    background:#fff;
+    border:2px solid var(--sea);
+    color:var(--sea-deep);
+    box-shadow:none;
+  }
+
+  /* 強み */
+  .strengths{background:var(--sea-deep);color:#fff;}
+  .strengths .section-title{color:#fff;}
+  .strengths .section-title span{color:var(--sea-light);}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    margin-bottom:22px;
+    align-items:flex-start;
+  }
+  .strength-num{
+    flex:0 0 auto;
+    width:36px;height:36px;
+    background:var(--sea-light);
+    color:var(--sea-deep);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+  }
+  .strength-text h4{font-size:15px;margin-bottom:4px;}
+  .strength-text p{font-size:13px;color:#dbeefc;}
+
+  /* 代表紹介 */
+  .founder{
+    background:#fff;
+  }
+  .founder-wrap{
+    display:flex;
+    gap:16px;
+    align-items:center;
+    margin-bottom:16px;
+  }
+  .founder-wrap img{
+    width:110px;height:110px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid var(--sea-light);
+    flex-shrink:0;
+  }
+  .founder-name{font-size:15px;font-weight:bold;color:var(--sea-deep);}
+  .founder-role{font-size:12px;color:var(--sea);margin-bottom:6px;}
+  .founder-text{font-size:14px;}
+
+  /* 口コミ */
+  .review{background:#eaf7fb;}
+  .review-card{
+    background:#fff;
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 4px 12px rgba(0,58,92,.08);
+  }
+  .review-stars{color:var(--accent);font-size:16px;margin-bottom:10px;letter-spacing:2px;}
+  .review-text{font-size:13.5px;color:#333;white-space:pre-line;}
+
+  /* 店舗情報 */
+  .info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .info th,.info td{
+    text-align:left;
+    padding:12px 10px;
+    border-bottom:1px solid #e3eef2;
+    vertical-align:top;
+  }
+  .info th{
+    width:88px;
+    background:#f2faff;
+    color:var(--sea-deep);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info td a{color:var(--sea);text-decoration:underline;}
+  .map-wrap{margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,58,92,.1);}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+    justify-content:center;
+  }
+  .sns-links a{
+    background:var(--sea-deep);
+    color:#fff;
+    font-size:13px;
+    padding:10px 16px;
+    border-radius:24px;
+    font-weight:bold;
+  }
+
+  /* 最終CTA */
+  .final-cta{
+    background:linear-gradient(180deg,var(--sea),var(--sea-deep));
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta .section-title{color:#fff;}
+  .final-cta .section-title span{color:var(--sea-light);}
+  .final-cta p{font-size:14px;margin-bottom:20px;color:#e4f5fb;}
+  .final-cta .cta-btn{margin-bottom:12px;}
+
+  /* フッター簡易 */
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#7d8b92;
+    padding:18px;
+    background:var(--sand);
+  }
+
+  /* 固定フッターナビ */
+  .fixed-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    height:64px;
+    z-index:1000;
+    box-shadow:0 -2px 10px rgba(0,0,0,.15);
+  }
+  .fixed-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:bold;
+    gap:2px;
+  }
+  .fixed-nav .nav-tel{background:var(--sea-deep);color:#fff;}
+  .fixed-nav .nav-form{background:var(--accent);color:var(--text);}
+  .fixed-nav .nav-insta{background:#e1306c;color:#fff;}
+  .fixed-nav .icon{font-size:18px;}
+
+  @media (min-width:480px){
+    .hero{min-height:340px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">BLUE∞LIFE｜ブルーライフ</div>
+  <a href="tel:0739339618" class="tel-btn">📞 電話で問合せ</a>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-sub">和歌山・白浜発 ダイビングショップ</div>
+    <div class="hero-catch">人生、楽しんだもん勝ち。<br>南紀の海で、はじめての一歩を。</div>
+    <div class="hero-shopname">BLUE∞LIFE（ブルーライフ）</div>
+  </div>
+</div>
+
+<section class="push">
+  <div class="section-title"><span>PUSH ITEM</span>イチオシはこれ！</div>
+  <div class="push-badge">★ 一番人気 ★</div>
+  <div class="push-card">
+    <img src="images/scuba_main.jpg" alt="スキューバダイビングの様子">
+    <div class="push-card-body">
+      <h3>スキューバダイビング</h3>
+      <p>初心者から経験者まで、和歌山・白浜と田辺の海を知り尽くしたインストラクターが、お一人お一人のペースに合わせてご案内します。耳抜きが苦手な方も、寒がりな方も大丈夫。安心して水中の世界を楽しんでください。</p>
+      <ul class="push-list">
+        <li>耳抜きが苦手な方・ブランクのある方も丁寧にサポート</li>
+        <li>寒い時期はフードベストなど装備の貸出サービスあり</li>
+        <li>ウミガメや珊瑚礁など南紀の豊かな生態系に出会える</li>
+        <li>水中写真・動画の撮影サービスも充実</li>
+        <li>ステップアップのアドバンス講習にも対応</li>
+      </ul>
+      <a href="tel:0739339618" class="cta-btn">📞 電話で予約・相談する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title"><span>STRENGTH</span>選ばれる理由</div>
+  <div class="strength-item">
+    <div class="strength-num">1</div>
+    <div class="strength-text">
+      <h4>初心者でも安心のペース配分</h4>
+      <p>耳抜きが苦手な方やブランクがある方も、無理なく潜れるようにその場でペースを調整。不安な気持ちに寄り添った案内が好評です。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">2</div>
+    <div class="strength-text">
+      <h4>スキューバ×フリーダイビングの二刀流</h4>
+      <p>代表の加藤琴子は両方のインストラクター資格を保有。幅広いスタイルの潜り方や水中撮影のノウハウを惜しみなく伝授します。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">3</div>
+    <div class="strength-text">
+      <h4>南紀ならではの豊かな海</h4>
+      <p>田辺・白浜エリアは透明度の高い砂地やウミガメとの遭遇率も高く、沖縄とはひと味違う海の魅力を体感できます。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">4</div>
+    <div class="strength-text">
+      <h4>思い出に残る写真・動画サービス</h4>
+      <p>水中撮影が得意なインストラクターが、潜っている間の様子をたくさん撮影。ツアー後の楽しみもたっぷりです。</p>
+    </div>
+  </div>
+</section>
+
+<section class="founder">
+  <div class="section-title"><span>OWNER</span>代表紹介</div>
+  <div class="founder-wrap">
+    <img src="images/owner.jpg" alt="代表 加藤琴子">
+    <div>
+      <div class="founder-name">加藤 琴子</div>
+      <div class="founder-role">スキューバ／フリーダイビング インストラクター</div>
+    </div>
+  </div>
+  <p class="founder-text">"人生楽しんだもん勝ち！"をモットーに、お客様との時間も弾けるように楽しみます。水中にいるのがとにかく好きで、水中撮影も得意。気になることは何でも聞いてください、出し惜しみなくお伝えします♪</p>
+</section>
+
+<section class="review">
+  <div class="section-title"><span>REVIEW</span>お客様の声</div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <div class="review-text">四国からの来訪です。和歌山でダイビングがしたくてネットで探して、こちらのお店にお願いすることにしました。
+まだダイビングを始めたばかりの2人なので、ご迷惑をおかけするかも…と不安でしたが、耳抜きの下手な私たちのペースに合わせてくれ安心して潜ることができました。水温が低くて寒がってた私たちにフードベストをサービスで貸してくれたり、たくさんの生き物を紹介してくれたり。すごく気さくで明るい方で、地元の美味しいお店やバーなども紹介して頂き、とっても楽しい2日間でした！
+
+今回は田辺で潜ったのですが、沖縄の海とは全然違う海の中の様子に新鮮な感動もあり、またぜひ和歌山でダイビングしたいと思いました。教え方もわかりやすく丁寧だったので、アドバンスの講習もこちらでお願いしたいなと思ってます。また遊びに行ける日を楽しみにしてます☺️
+
+スキンダイビングツアーで初めてお世話になりました。串本では何度か潜った事がありますが初めてあんなに亀に会えました！！珊瑚も魚ももりもり、透明度も良く砂地も綺麗でインストラクターのことこちゃんは知識もサービス精神も豊富で陸でも海でもずっと笑っていました⭐︎沢山素敵な写真や動画も撮っていただいて大満足です。</div>
+  </div>
+</section>
+
+<section class="info">
+  <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+  <table>
+    <tr><th>店名</th><td>BLUE∞LIFE（ブルーライフ）</td></tr>
+    <tr><th>代表者</th><td>加藤 琴子</td></tr>
+    <tr><th>住所</th><td>〒649-2211<br>和歌山県西牟婁郡白浜町1332-13</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0739339618">0739-33-9618</a></td></tr>
+    <tr><th>定休日</th><td>不定休</td></tr>
+    <tr><th>HP</th><td><a href="https://www.diving-bluelife.com/" target="_blank" rel="noopener">https://www.diving-bluelife.com/</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@diving-bluelife.com">info@diving-bluelife.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E8%A5%BF%E7%89%9F%E5%A9%A5%E9%83%A1%E7%99%BD%E6%B5%9C%E7%94%BA1332-13&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <div class="sns-links">
+    <a href="https://www.instagram.com/bluelife_diving/" target="_blank" rel="noopener">📷 Instagram</a>
+    <a href="https://www.diving-bluelife.com/contact-6" target="_blank" rel="noopener">✉️ お問い合わせフォーム</a>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="section-title"><span>CONTACT</span>南紀の海へ、一緒に潜りましょう</div>
+  <p>はじめてのダイビングも、久しぶりのブランクも大歓迎。<br>お気軽にお電話・フォームからご相談ください。</p>
+  <a href="tel:0739339618" class="cta-btn">📞 0739-33-9618 に電話する</a>
+  <a href="https://www.diving-bluelife.com/contact-6" class="cta-btn outline" target="_blank" rel="noopener">✉️ WEBから問い合わせる</a>
+</section>
+
+<footer>
+  © BLUE∞LIFE（ブルーライフ） All Rights Reserved.
+</footer>
+
+<nav class="fixed-nav">
+  <a href="tel:0739339618" class="nav-tel"><span class="icon">📞</span>電話</a>
+  <a href="https://www.diving-bluelife.com/contact-6" class="nav-form" target="_blank" rel="noopener"><span class="icon">✉️</span>フォーム</a>
+  <a href="https://www.instagram.com/bluelife_diving/" class="nav-insta" target="_blank" rel="noopener"><span class="icon">📷</span>Instagram</a>
+</nav>
+
+</body>
+</html>
