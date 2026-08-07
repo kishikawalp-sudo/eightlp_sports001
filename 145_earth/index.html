@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>EARTH MATE（アースメイト）| 田辺湾シーカヤックガイドツアー</title>
+<style>
+  :root{
+    --sea-deep:#0a3d5c;
+    --sea:#0e6ba8;
+    --sea-light:#3fa9d6;
+    --sand:#f6efe1;
+    --sun:#f7a600;
+    --white:#ffffff;
+    --text:#22333b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    color:var(--text);
+    background:var(--sand);
+    padding-bottom:64px;
+    line-height:1.7;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--sea-deep);
+    color:var(--white);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  header .shopname{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:0.5px;
+  }
+  header .shopname small{
+    display:block;
+    font-size:10px;
+    font-weight:normal;
+    opacity:0.8;
+  }
+  header .tel-btn{
+    background:var(--sun);
+    color:var(--sea-deep);
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-space{height:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    margin-top:56px;
+    color:var(--white);
+    text-align:center;
+  }
+  .hero img{
+    width:100%;
+    height:62vw;
+    max-height:420px;
+    object-fit:cover;
+    filter:brightness(0.65);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text .catch-small{
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+  }
+  .hero-text h1{
+    font-size:26px;
+    line-height:1.5;
+    text-shadow:0 2px 8px rgba(0,0,0,0.7);
+    margin-bottom:14px;
+  }
+  .hero-text .sub{
+    font-size:14px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.7);
+  }
+
+  section{
+    padding:40px 18px;
+  }
+  .sec-title{
+    text-align:center;
+    margin-bottom:26px;
+  }
+  .sec-title .en{
+    display:block;
+    color:var(--sea-light);
+    font-size:12px;
+    letter-spacing:3px;
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .sec-title .ja{
+    font-size:21px;
+    font-weight:bold;
+    color:var(--sea-deep);
+    position:relative;
+    display:inline-block;
+    padding-bottom:10px;
+  }
+  .sec-title .ja::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    width:40px;height:3px;
+    background:var(--sun);
+  }
+
+  /* Featured product */
+  .featured{
+    background:linear-gradient(180deg, var(--sea-deep), var(--sea));
+    color:var(--white);
+  }
+  .featured .sec-title .en{color:var(--sun);}
+  .featured .sec-title .ja{color:var(--white);}
+  .osusume-badge{
+    display:inline-block;
+    background:var(--sun);
+    color:var(--sea-deep);
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 18px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .featured-card{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:14px;
+    overflow:hidden;
+    margin-top:10px;
+  }
+  .featured-card img{
+    width:100%;
+    height:52vw;
+    max-height:280px;
+    object-fit:cover;
+  }
+  .featured-card .body{
+    padding:20px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    margin-bottom:12px;
+    color:var(--sun);
+  }
+  .featured-card p{
+    font-size:14px;
+    margin-bottom:10px;
+  }
+  .point-list{
+    list-style:none;
+    margin-top:16px;
+  }
+  .point-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    font-size:13.5px;
+    margin-bottom:10px;
+  }
+  .point-list li::before{
+    content:"波";
+    flex-shrink:0;
+    background:var(--sun);
+    color:var(--sea-deep);
+    font-weight:bold;
+    font-size:11px;
+    width:20px;height:20px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .cta-inline{
+    display:block;
+    text-align:center;
+    background:var(--sun);
+    color:var(--sea-deep);
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    margin-top:20px;
+    font-size:15px;
+  }
+
+  /* Strengths */
+  .strengths p{
+    font-size:14.5px;
+    margin-bottom:14px;
+  }
+  .strengths .highlight-box{
+    background:var(--white);
+    border-left:4px solid var(--sun);
+    padding:16px;
+    border-radius:6px;
+    font-size:14px;
+    margin-top:18px;
+  }
+  .strengths .highlight-box b{color:var(--sea-deep);}
+
+  /* Guide profile */
+  .guide{
+    background:var(--white);
+  }
+  .guide-card{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    background:var(--sand);
+    padding:16px;
+    border-radius:10px;
+  }
+  .guide-card img{
+    width:90px;height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+    border:3px solid var(--sea-light);
+  }
+  .guide-card .name{
+    font-weight:bold;
+    font-size:16px;
+    color:var(--sea-deep);
+    margin-bottom:6px;
+  }
+  .guide-card .desc{
+    font-size:12.5px;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:var(--sea-deep);
+    color:var(--white);
+  }
+  .reviews .sec-title .en{color:var(--sun);}
+  .reviews .sec-title .ja{color:var(--white);}
+  .review-card{
+    background:rgba(255,255,255,0.08);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+  }
+  .stars{
+    color:var(--sun);
+    font-size:16px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13px;
+    line-height:1.8;
+  }
+
+  /* Shop info */
+  .shopinfo table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    background:var(--white);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .shopinfo th,.shopinfo td{
+    padding:12px 10px;
+    border-bottom:1px solid #e2d9c5;
+    text-align:left;
+  }
+  .shopinfo th{
+    width:28%;
+    background:var(--sand);
+    color:var(--sea-deep);
+    font-weight:bold;
+    vertical-align:top;
+  }
+  .shopinfo tr:last-child th,.shopinfo tr:last-child td{border-bottom:none;}
+  .map-frame{
+    margin-top:16px;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid #ddd;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg, var(--sun), #ffbf40);
+    text-align:center;
+    color:var(--sea-deep);
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    margin-bottom:20px;
+  }
+  .final-cta .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .btn-tel,.btn-web{
+    display:block;
+    padding:15px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .btn-tel{
+    background:var(--sea-deep);
+    color:var(--white);
+  }
+  .btn-web{
+    background:var(--white);
+    color:var(--sea-deep);
+    border:2px solid var(--sea-deep);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    z-index:100;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px 4px;
+    font-size:12.5px;
+    font-weight:bold;
+  }
+  .bottom-nav a.tel{
+    background:var(--sea-deep);
+    color:var(--white);
+  }
+  .bottom-nav a.web{
+    background:var(--sun);
+    color:var(--sea-deep);
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:#8a8a8a;
+    background:var(--sand);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">EARTH MATE
+    <small>アースメイト / 田辺湾シーカヤックガイド</small>
+  </div>
+  <a href="tel:09039906226" class="tel-btn">📞 電話予約</a>
+</header>
+<div class="header-space"></div>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="田辺湾シーカヤックツアーの様子">
+  <div class="hero-text">
+    <div class="catch-small">和歌山県田辺湾 × 神島 × シーカヤック</div>
+    <h1>海抜0ｍの目線で、<br>田辺湾の自然に漕ぎ出そう。</h1>
+    <div class="sub">経験豊富なガイドが安全に案内するシーカヤックガイドツアー</div>
+  </div>
+</div>
+
+<!-- Featured Product -->
+<section class="featured" id="tour">
+  <div class="sec-title">
+    <span class="en">OUR BEST TOUR</span>
+    <span class="ja">イチオシ｜シーカヤックガイドツアー</span>
+  </div>
+  <div style="text-align:center;">
+    <span class="osusume-badge">★ EARTH MATE 一押しプラン ★</span>
+  </div>
+  <div class="featured-card">
+    <img src="images/tour.jpg" alt="シーカヤックガイドツアーの様子">
+    <div class="body">
+      <h3>田辺湾シーカヤックガイドツアー</h3>
+      <p>南紀田辺～南紀白浜に広がる田辺湾で、ガイド同行のシーカヤックツアーを開催。複雑な地形と黒潮の恩恵を受けた美しい海を、自分の力で漕ぎ進みながら体感できます。</p>
+      <p>国の天然記念物「神島」をはじめ、田辺湾ならではのジオ・エコ・文化を、知識豊富なガイドの解説とともにお楽しみいただけます。</p>
+      <ul class="point-list">
+        <li>不慣れな初心者にも丁寧に指導。女子会・グループ利用も安心</li>
+        <li>ダイビングガイド経験者による安全管理・マリーナメンテナンス実施</li>
+        <li>国天然記念物「神島」の自然保護の歴史や逸話も解説</li>
+        <li>1日コースでランチ付き。時間を忘れて楽しめる充実の内容</li>
+      </ul>
+      <a href="tel:09039906226" class="cta-inline">📞 このツアーを電話で問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="strengths" id="strength">
+  <div class="sec-title">
+    <span class="en">WHY EARTH MATE</span>
+    <span class="ja">アースメイトの強み</span>
+  </div>
+  <p>和歌山県の南紀田辺～南紀白浜にわたり広がる田辺湾で、シーカヤックガイドツアーを開催しています。シーカヤックとは、デッキが塞がったカヌーの一種で、ダブルブレードのパドルを使って漕ぐ、海で使用するカヤックのことです。</p>
+  <p>ここ田辺湾は、自然が作った複雑な地形と、世界を代表する暖流・黒潮の恩恵を受けた大変素晴らしい海。さらに素晴らしいジオ・エコ・文化を持ち、特に国の天然記念物「神島」は手つかずの自然が残る、田辺湾随一のパワースポットです。</p>
+  <p>最低限の補助具であるシーカヤックを使い、自分たちの力で自然界へ漕ぎ出すことで、その素晴らしいジオ・エコ・文化を肌で感じていただけます。海抜0ｍからの眺めとともに、ガイドが同行し丁寧にご案内いたします。</p>
+  <div class="highlight-box">
+    <b>是非、一緒に自然界に漕ぎ出しましょう！</b><br>
+    経験者はもちろん、シーカヤック初体験の方も安心してご参加いただけます。
+  </div>
+</section>
+
+<!-- Guide profile -->
+<section class="guide">
+  <div class="sec-title">
+    <span class="en">OUR GUIDE</span>
+    <span class="ja">ガイド紹介</span>
+  </div>
+  <div class="guide-card">
+    <img src="images/guide.jpg" alt="ガイド 大島克也さん">
+    <div>
+      <div class="name">代表ガイド　大島 克也</div>
+      <div class="desc">ダイビングガイドの経験があり、マリーナのメンテナンスも担当。安全管理を徹底したうえで、田辺湾の自然・歴史・文化を分かりやすく解説するガイディングに定評があります。</div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+  <div class="sec-title">
+    <span class="en">VOICE</span>
+    <span class="ja">お客様の口コミ</span>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>仲良し女子会で、初体験しました。不慣れな私達をとても丁寧に指導してくださり、こんな私でもとっても楽しく体験できました。前日、突然に電話で問い合わせした時から応対も◎。次も、アースメイトさんにお願いしたい！又、友達にも推薦したい！そんな素敵な方がやってますよ。知識豊富なお話も◎。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>シーカヤックどこでするか、迷われてるならお勧めです。経験者2名、1日コースでお世話になりました。大島さんのガイドはとても丁寧で、知識や話題も豊富でした。ダイビングのガイド経験があり、マリーナのメンテナンスもされているとのことで、安全管理もきちんとされています。当日は透明度が非常に高く、西表島と変わらないような美しい海でした。神島の自然保護の歴史や南方熊楠と昭和天皇との交流なども分かりやすくお話しいただき、とても親切で、港周辺の様々な方と良い関係を築かれているようでした。その信頼があるから私たちゲストも安全に安心して漕げるのだと思います。シーカヤックはとても扱いやすい舟で、何の不安もなく1日があっという間でした。ランチも美味しかったです。また漕ぎに来ます。</p>
+  </div>
+</section>
+
+<!-- Shop info -->
+<section class="shopinfo" id="info">
+  <div class="sec-title">
+    <span class="en">SHOP INFO</span>
+    <span class="ja">店舗情報</span>
+  </div>
+  <table>
+    <tr><th>店名</th><td>EARTH MATE（アースメイト）</td></tr>
+    <tr><th>代表者</th><td>大島 克也</td></tr>
+    <tr><th>住所</th><td>和歌山県田辺市新庄町3143−8</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:09039906226">090-3990-6226</a>（大島）</td></tr>
+    <tr><th>ホームページ</th><td><a href="http://earthmate.jp/" target="_blank" rel="noopener">http://earthmate.jp/</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@earthmate.jp">info@earthmate.jp</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%94%B0%E8%BE%BA%E5%B8%82%E6%96%B0%E5%BA%84%E7%94%BA3143-8&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <h2>田辺湾の海へ、漕ぎ出そう。</h2>
+  <p>お問い合わせ・ご予約はお気軽にどうぞ。<br>シーカヤックが初めての方も大歓迎です。</p>
+  <div class="btn-group">
+    <a href="tel:09039906226" class="btn-tel">📞 電話で予約・問い合わせ（大島）</a>
+    <a href="http://earthmate.jp/" target="_blank" rel="noopener" class="btn-web">🌐 公式サイトを見る</a>
+  </div>
+</section>
+
+<footer>
+  &copy; EARTH MATE（アースメイト）
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:09039906226" class="tel">📞 電話予約</a>
+  <a href="#info" class="web">📍 アクセス</a>
+  <a href="http://earthmate.jp/" target="_blank" rel="noopener" class="web">🌐 公式サイト</a>
+</div>
+
+</body>
+</html>
