@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>辻井スポーツ｜スタッフ募集（パート）</title>
+<style>
+  :root{
+    --main-color:#0b4d2c;
+    --sub-color:#e8b800;
+    --accent-color:#d92027;
+    --bg-light:#f7f7f2;
+    --text-dark:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+  }
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:14px;
+    white-space:nowrap;
+  }
+  .header-space{height:56px;}
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    height:60vw;
+    max-height:420px;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,0.75));
+    color:#fff;
+    padding:30px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:1px 1px 3px rgba(0,0,0,0.6);
+  }
+  .hero-overlay .sub{
+    font-size:13px;
+    margin-top:6px;
+    color:var(--sub-color);
+    font-weight:bold;
+  }
+
+  section{
+    padding:36px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:24px;
+  }
+  .section-title span{
+    display:block;
+    font-size:13px;
+    color:var(--accent-color);
+    font-weight:bold;
+    margin-bottom:6px;
+    letter-spacing:2px;
+  }
+
+  /* 待遇イチオシセクション */
+  .push-section{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .push-section .section-title{color:#fff;}
+  .push-section .section-title span{color:var(--sub-color);}
+  .push-box{
+    background:#fff;
+    color:var(--text-dark);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+  }
+  .push-box img{
+    height:56vw;
+    max-height:320px;
+    object-fit:cover;
+  }
+  .push-box .push-content{
+    padding:18px;
+  }
+  .push-box .push-content h3{
+    font-size:20px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .push-box .push-content .discount{
+    font-size:34px;
+    font-weight:bold;
+    color:var(--accent-color);
+    text-align:center;
+    margin:10px 0;
+  }
+  .push-box .push-content .discount small{
+    font-size:14px;
+    color:var(--text-dark);
+    display:block;
+    font-weight:normal;
+  }
+  .push-box .push-content p{
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px;
+    border-radius:8px;
+  }
+
+  /* 仕事内容 */
+  .job-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .job-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:var(--bg-light);
+    border-radius:10px;
+    padding:16px;
+    border-left:5px solid var(--main-color);
+    font-size:15px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  .job-item .icon{
+    font-size:24px;
+  }
+  .job-note{
+    text-align:center;
+    margin-top:18px;
+    font-size:15px;
+    font-weight:bold;
+    color:var(--accent-color);
+  }
+
+  /* 募集要項テーブル */
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  .info-table th, .info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:32%;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table a{
+    color:var(--accent-color);
+    font-weight:bold;
+    text-decoration:underline;
+  }
+
+  /* 店舗写真 */
+  .shop-photo{
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .shop-photo img{
+    height:50vw;
+    max-height:280px;
+    object-fit:cover;
+  }
+
+  .map-wrap{
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:260px;
+    border:0;
+  }
+
+  /* 会社概要セクション */
+  .company-section{
+    background:var(--bg-light);
+  }
+
+  /* 最終CTA */
+  .final-cta{
+    background:var(--accent-color);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:22px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  .final-cta .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .final-cta .btn{
+    display:block;
+    padding:16px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .final-cta .btn.tel{
+    background:#fff;
+    color:var(--accent-color);
+  }
+  .final-cta .btn.form{
+    background:var(--main-color);
+    color:#fff;
+    border:2px solid #fff;
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:#777;
+    padding:20px;
+  }
+
+  /* 固定フッターナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    z-index:100;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.2);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px 4px;
+    font-size:14px;
+    font-weight:bold;
+    color:#fff;
+  }
+  .bottom-nav a.tel{background:var(--main-color);}
+  .bottom-nav a.form{background:var(--accent-color);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">辻井スポーツ｜スタッフ募集</div>
+  <a href="tel:0598267488" class="tel-btn">📞 電話する</a>
+</header>
+<div class="header-space"></div>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <img src="images/staff_hero.jpg" alt="辻井スポーツ 店舗スタッフ募集">
+  <div class="hero-overlay">
+    <div class="catch">スポーツ好き、集まれ！<br>パートスタッフ募集中</div>
+    <div class="sub">松阪市の野球用品専門店｜辻井スポーツ</div>
+  </div>
+</div>
+
+<!-- イチオシ待遇 -->
+<section class="push-section">
+  <div class="section-title"><span>BENEFIT</span>うれしい待遇</div>
+  <div class="push-box">
+    <img src="images/goods.jpg" alt="スポーツ用品 社員割引">
+    <div class="push-content">
+      <h3>社員割引で30%OFF！</h3>
+      <div class="discount">30<span style="font-size:20px;">%OFF</span><small>店内商品が社員価格でお得に</small></div>
+      <p>大好きなスポーツ用品をお得にゲットできるのも辻井スポーツで働く魅力のひとつ。ご自身の趣味や競技に活かせる商品を、スタッフ価格で購入いただけます。</p>
+      <a href="tel:0598267488" class="cta-btn">今すぐお電話で応募・相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- 仕事内容 -->
+<section>
+  <div class="section-title"><span>JOB DETAIL</span>お仕事内容</div>
+  <div class="job-list">
+    <div class="job-item"><span class="icon">🛍️</span>販売補助</div>
+    <div class="job-item"><span class="icon">📦</span>入荷商品の検品</div>
+    <div class="job-item"><span class="icon">🏷️</span>商品への値付けや品出し</div>
+    <div class="job-item"><span class="icon">🗂️</span>売り場陳列</div>
+  </div>
+  <p class="job-note">未経験の方も大歓迎！お気軽にご相談ください！！</p>
+</section>
+
+<!-- 募集要項 -->
+<section class="company-section">
+  <div class="section-title"><span>RECRUIT INFO</span>募集要項</div>
+  <table class="info-table">
+    <tr><th>雇用形態</th><td>パート</td></tr>
+    <tr><th>シフト</th><td>週3日～4日程度（要相談）</td></tr>
+    <tr><th>勤務時間帯</th><td>12:00～18:00 または 13:00～19:00 の間で4時間程度</td></tr>
+    <tr><th>店舗営業時間</th><td>平日　11:00～20:00<br>土日祝　10:00～19:00</td></tr>
+    <tr><th>定休日</th><td>水曜日</td></tr>
+    <tr><th>福利厚生</th><td>社員割引あり（30%OFF）</td></tr>
+    <tr><th>勤務地</th><td>辻井スポーツ<br>三重県松阪市大黒田町719-1</td></tr>
+  </table>
+</section>
+
+<!-- 店舗紹介 -->
+<section>
+  <div class="section-title"><span>ABOUT SHOP</span>辻井スポーツについて</div>
+  <div class="shop-photo">
+    <img src="images/shop.jpg" alt="辻井スポーツ 店内の様子">
+  </div>
+  <p style="font-size:14px;">初心者からプロ志向の方まで、お客様の目標達成をサポートする野球用品専門店です。アットホームな雰囲気の中で、スポーツ好きなスタッフと一緒に働きませんか？</p>
+</section>
+
+<!-- 会社情報＋地図 -->
+<section class="company-section">
+  <div class="section-title"><span>COMPANY</span>会社情報</div>
+  <table class="info-table">
+    <tr><th>会社名</th><td>有限会社辻井スポーツ</td></tr>
+    <tr><th>代表者</th><td>稲垣 裕芳</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0598267488">0598-26-7488</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:tsujisp-hanaoka@nifty.com">tsujisp-hanaoka@nifty.com</a></td></tr>
+    <tr><th>ホームページ</th><td><a href="http://www.tsujiisports.com/" target="_blank" rel="noopener">www.tsujiisports.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E6%9D%BE%E9%98%AA%E5%B8%82%E5%A4%A7%E9%BB%92%E7%94%B0%E7%94%BA719-1&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="final-cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>「話だけ聞いてみたい」も大歓迎！<br>お電話・お問い合わせフォームからどうぞ。</p>
+  <div class="btn-group">
+    <a href="tel:0598267488" class="btn tel">📞 0598-26-7488 に電話する</a>
+    <a href="https://tsujiisports.com/contact.php" target="_blank" rel="noopener" class="btn form">✉️ お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<footer>
+  © 有限会社辻井スポーツ
+</footer>
+
+<!-- 固定フッターナビ -->
+<div class="bottom-nav">
+  <a href="tel:0598267488" class="tel">📞 電話する</a>
+  <a href="https://tsujiisports.com/contact.php" target="_blank" rel="noopener" class="form">✉️ お問い合わせ</a>
+</div>
+
+</body>
+</html>
