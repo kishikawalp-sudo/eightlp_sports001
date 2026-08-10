@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>桑名スポーツ 本店｜三重県桑名市の野球用品専門スポーツ店</title>
+<style>
+  :root{
+    --main:#0b4d2e;
+    --main-dark:#083a22;
+    --accent:#e0392b;
+    --accent-dark:#b82c20;
+    --sub:#f2b90c;
+    --bg:#faf9f5;
+    --text:#232323;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:var(--main);
+    color:#fff;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shopname{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  header .shopname small{
+    display:block;
+    font-size:10px;
+    font-weight:normal;
+    opacity:.85;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .spacer{height:58px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+    width:100%;
+  }
+  .hero img{
+    width:100%;
+    height:56vh;
+    object-fit:cover;
+    filter:brightness(0.7);
+  }
+  .hero-text{
+    position:absolute;
+    bottom:20px;left:0;right:0;
+    text-align:center;
+    color:#fff;
+    padding:0 16px;
+  }
+  .hero-text .badge{
+    display:inline-block;
+    background:var(--sub);
+    color:var(--main-dark);
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:14px;
+    margin-bottom:10px;
+  }
+  .hero-text h1{
+    font-size:24px;
+    font-weight:bold;
+    text-shadow:0 2px 6px rgba(0,0,0,.6);
+    line-height:1.5;
+  }
+  .hero-text p{
+    font-size:13px;
+    margin-top:8px;
+    text-shadow:0 2px 6px rgba(0,0,0,.6);
+  }
+
+  .section{
+    padding:40px 18px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:6px;
+  }
+  .section-title span{
+    display:block;
+    font-size:11px;
+    color:var(--accent);
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:#666;
+    margin-bottom:28px;
+  }
+
+  /* featured product */
+  .featured{
+    background:linear-gradient(180deg,#0b4d2e 0%, #0d5c37 100%);
+    color:#fff;
+    padding:40px 18px 46px;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-title span{color:var(--sub);}
+  .featured-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-card .body{
+    padding:18px 18px 22px;
+  }
+  .featured-card .tag{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:11px;
+    font-weight:bold;
+    padding:4px 10px;
+    border-radius:10px;
+    margin-bottom:8px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:13.5px;
+    color:#444;
+    margin-bottom:16px;
+  }
+  .featured-card ul{
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .featured-card ul li{
+    font-size:13px;
+    padding-left:20px;
+    position:relative;
+    margin-bottom:6px;
+  }
+  .featured-card ul li::before{
+    content:"⚾";
+    position:absolute;
+    left:0;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:15px;
+    padding:14px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+  }
+  .cta-btn.outline{
+    background:#fff;
+    color:var(--main);
+    border:2px solid var(--main);
+  }
+
+  /* strengths */
+  .strengths-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .strength-item{
+    background:#fff;
+    border-left:5px solid var(--main);
+    border-radius:8px;
+    padding:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main);
+    margin-bottom:6px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .strength-item h4::before{
+    content:"✓";
+    background:var(--main);
+    color:#fff;
+    border-radius:50%;
+    width:20px;height:20px;
+    display:inline-flex;
+    align-items:center;justify-content:center;
+    font-size:12px;
+    flex-shrink:0;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#555;
+  }
+
+  /* brands */
+  .brands{
+    background:#fff;
+    padding:40px 18px;
+  }
+  .brand-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+  }
+  .brand-list span{
+    background:var(--bg);
+    border:1px solid #ddd;
+    font-size:12px;
+    padding:6px 12px;
+    border-radius:16px;
+    color:#444;
+  }
+
+  /* reviews */
+  .reviews{
+    background:var(--bg);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .review-card .stars{
+    color:var(--sub);
+    font-size:15px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* photo gallery within strengths */
+  .photo-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:24px;
+  }
+  .photo-row img{
+    width:100%;
+    height:130px;
+    object-fit:cover;
+    border-radius:10px;
+  }
+
+  /* story */
+  .story{
+    background:#fff;
+    padding:40px 18px;
+  }
+  .story .box{
+    background:var(--bg);
+    border-radius:12px;
+    padding:20px;
+    font-size:13.5px;
+    color:#444;
+  }
+  .story .box strong{
+    color:var(--main);
+  }
+
+  /* shop info */
+  .shop-info{
+    padding:40px 18px;
+  }
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  table.info-table th,
+  table.info-table td{
+    text-align:left;
+    padding:12px 14px;
+    font-size:13px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  table.info-table th{
+    background:var(--bg);
+    color:var(--main);
+    width:26%;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  table.info-table tr:last-child th,
+  table.info-table tr:last-child td{
+    border-bottom:none;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* final cta */
+  .final-cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+    padding:46px 18px;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13px;
+    margin-bottom:22px;
+    opacity:.9;
+  }
+  .final-cta .cta-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .final-cta .cta-btn.outline{
+    background:transparent;
+    color:#fff;
+    border:2px solid #fff;
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#888;
+    padding:20px;
+    background:var(--bg);
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,.1);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 0 7px;
+    font-size:11px;
+    color:var(--main);
+    font-weight:bold;
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.tel{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav a .ic{
+    display:block;
+    font-size:16px;
+    margin-bottom:2px;
+  }
+
+  @media(min-width:600px){
+    .strengths-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">桑名スポーツ 本店<small>三重県桑名市 野球用品専門店</small></div>
+  <a href="tel:0594232321" class="tel-btn">📞 電話する</a>
+</header>
+<div class="spacer"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="images/hero.jpg" alt="桑名スポーツ本店 外観">
+  <div class="hero-text">
+    <span class="badge">昭和23年創業 地域最古参のスポーツ専門店</span>
+    <h1>北勢で一番信頼できる<br>野球用品店</h1>
+    <p>グローブの型付け・修理からラケットのガット張りまで、何でも相談できるお店</p>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCT -->
+<section class="featured">
+  <div class="section-title"><span>ICHIOSHI ITEM</span>イチオシ商品</div>
+  <div class="section-sub">創業以来こだわり続けてきた、野球用品の専門知識と品揃え</div>
+  <div class="featured-card">
+    <img src="images/glove.jpg" alt="野球用グローブ">
+    <div class="body">
+      <span class="tag">野球用品専門</span>
+      <h3>硬式・軟式グローブ／バット／プロテクター</h3>
+      <p>ミズノ・アシックス・ゼット・久保田スラッガー・ローリングスなど、名門ブランドを豊富に取扱い。お子様の体格やプレースタイルに合わせて、スタッフが一つひとつ丁寧にご説明しながらお選びします。</p>
+      <ul>
+        <li>グローブの型付け・修理も対応</li>
+        <li>お値打ちな商品もしっかりご案内</li>
+        <li>少年野球から高校野球まで幅広くサポート</li>
+      </ul>
+      <a href="tel:0594232321" class="cta-btn">📞 まずは電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section class="section">
+  <div class="section-title"><span>WHY US</span>桑名スポーツが選ばれる理由</div>
+  <div class="photo-row">
+    <img src="images/shop_interior.jpg" alt="店内の様子">
+    <img src="images/glove.jpg" alt="野球用グローブ">
+  </div>
+  <div class="strengths-grid">
+    <div class="strength-item">
+      <h4>何でも相談できる安心感</h4>
+      <p>北勢地域で一番信頼できると口コミでも評判。商品選びから修理まで、親身に相談に乗ってくれます。</p>
+    </div>
+    <div class="strength-item">
+      <h4>1階は野球、2階は多彩なスポーツ</h4>
+      <p>1階はほぼ野球関連商品、2階にはバレーボール・バドミントン・卓球・水泳用品も充実しています。</p>
+    </div>
+    <div class="strength-item">
+      <h4>スピード対応も柔軟に</h4>
+      <p>バドミントンのガット張りなど、事情に合わせて対応を早めてくれるなど、店主の心意気が光ります。</p>
+    </div>
+    <div class="strength-item">
+      <h4>地元に愛される個人経営店</h4>
+      <p>本店という大きな名前ながら、地域に根付いたアットホームな雰囲気のスポーツ用品店です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands">
+  <div class="section-title"><span>BRANDS</span>取扱いブランド</div>
+  <div class="brand-list">
+    <span>ミズノ</span><span>アシックス</span><span>デサント</span><span>ゼット</span>
+    <span>レワード</span><span>ザナックス</span><span>ローリングス</span><span>久保田スラッガー</span>
+    <span>玉澤</span><span>アンダーアーマー</span><span>ウィルソン</span><span>ジームス</span>
+    <span>ナイキ</span><span>アディダス</span><span>ヨネックス</span><span>カンタベリー</span>
+    <span>ヘリーハンセン</span><span>mont-bell</span><span>OGAWA CAMPAL</span><span>Danner</span>
+    <span>MAMMUT</span><span>ブリヂストン</span><span>マンシング</span><span>ミエコウエサコ</span>
+    <span>ダンロップ</span><span>ルコック</span><span>カッター＆バック</span>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews">
+  <div class="section-title"><span>REVIEWS</span>お客様の口コミ</div>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>桑名でというよりは北勢で一番信頼のおける、スポーツやさんですね。何でも相談できるし、捜してくれますよ🍀 野球（硬式）のグローブ購入しました。いろいろ説明してくださり、お値打ちな商品を勧められました。安心安全なお店ですよ。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>本店とあったので大きいかと思えば、個人経営のような地元に愛されるスポーツ用品店でした。1階はほぼ野球関連商品、2階にはバレーボールやバドミントン、卓球や水泳などの商品も。バドミントンラケットのガット張りを、事情をお伝えすると1日早めてくださり大変助かりました。店主の心意気に感激し星5です。青色のグローブ修理もありがとうございました！ソフトボール、高校県総体準優勝、中日本大会に行けることになりました！</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="section-title"><span>STORY</span>創業者ストーリー</div>
+  <div class="box">
+    <strong>昭和23年創業。</strong>桑名市にてスポーツショップをしています。現在は、ベースボールを中心に、スポーツ用品全般を取り扱っています。長年の経験と知識で、地域のスポーツライフを支え続けます。
+  </div>
+</section>
+
+<!-- SHOP INFO -->
+<section class="shop-info">
+  <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>桑名スポーツ 本店</td></tr>
+    <tr><th>住所</th><td>三重県桑名市寿町3-60</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0594232321">0594-23-2321</a></td></tr>
+    <tr><th>定休日</th><td>水曜日</td></tr>
+    <tr><th>HP</th><td><a href="https://kuwana-sports.jimdo.com/" target="_blank" rel="noopener">https://kuwana-sports.jimdo.com/</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://kuwana-sports.jimdofree.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener">お問い合わせフォームへ</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://x.com/intent/post?text=%E3%83%9B%E3%83%BC%E3%83%A0&url=https%3A%2F%2Fkuwana-sports.jimdofree.com%2F" target="_blank" rel="noopener">Xでシェアする</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E6%A1%91%E5%90%8D%E5%B8%82%E5%AF%BF%E7%94%BA3-60&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>野球用品のことなら、まずはご相談ください</h2>
+  <p>グローブ選び・型付け・修理も、桑名スポーツ本店にお任せください。</p>
+  <div class="cta-group">
+    <a href="tel:0594232321" class="cta-btn">📞 0594-23-2321 に電話する</a>
+    <a href="https://kuwana-sports.jimdofree.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener" class="cta-btn outline">お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<footer>
+  © 桑名スポーツ 本店｜三重県桑名市寿町3-60
+</footer>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><span class="ic">🏠</span>トップ</a>
+  <a href="#shop-info" onclick="document.querySelector('.shop-info').scrollIntoView({behavior:'smooth'});return false;"><span class="ic">📍</span>店舗情報</a>
+  <a href="tel:0594232321" class="tel"><span class="ic">📞</span>電話する</a>
+</nav>
+
+</body>
+</html>
