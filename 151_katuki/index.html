@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プロショップかつき｜三重県名張市の釣具総合専門店</title>
+<style>
+  :root{
+    --navy:#0b3d62;
+    --deep:#072a45;
+    --accent:#ff8c1a;
+    --accent-dark:#e0740a;
+    --wave:#1e6fa8;
+    --bg:#f6f9fb;
+    --text:#233;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--navy);
+    color:#fff;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  header .shopname{
+    font-size:16px;
+    font-weight:bold;
+    letter-spacing:0.5px;
+  }
+  header .shopname span{
+    display:block;
+    font-size:10px;
+    font-weight:normal;
+    opacity:0.8;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  body{padding-top:56px;padding-bottom:60px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--deep) 0%,var(--navy) 60%,var(--wave) 100%);
+    color:#fff;
+    text-align:center;
+    padding:36px 16px 30px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;bottom:0;left:0;right:0;height:40px;
+    background:var(--bg);
+    border-radius:50% 50% 0 0 / 100% 100% 0 0;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:10px;
+    line-height:1.5;
+  }
+  .hero h1 em{
+    display:block;
+    color:var(--accent);
+    font-style:normal;
+    font-size:15px;
+    margin-top:6px;
+  }
+  .hero p{
+    font-size:13px;
+    opacity:0.9;
+    margin-bottom:18px;
+  }
+  .hero img{
+    width:100%;
+    max-width:420px;
+    margin:0 auto 18px;
+    border-radius:10px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.35);
+    border:3px solid rgba(255,255,255,0.15);
+  }
+  .hero-cta{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    position:relative;
+    z-index:2;
+  }
+  .btn{
+    display:inline-block;
+    padding:13px 22px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:14px;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#fff;
+    box-shadow:0 4px 12px rgba(255,140,26,0.4);
+  }
+  .btn-outline{
+    background:#fff;
+    color:var(--navy);
+    border:2px solid #fff;
+  }
+
+  /* Section common */
+  section{padding:34px 16px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--navy);
+    margin-bottom:6px;
+    position:relative;
+  }
+  .section-title small{
+    display:block;
+    font-size:11px;
+    color:var(--wave);
+    font-weight:normal;
+    letter-spacing:2px;
+    margin-bottom:4px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:#556;
+    margin-bottom:24px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:linear-gradient(180deg,#fff 0%,#eef5fa 100%);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(11,61,98,0.12);
+    border:1px solid #e2ecf2;
+  }
+  .featured-card img{
+    width:100%;
+    height:auto;
+  }
+  .featured-ribbon{
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:6px 16px;
+    display:inline-block;
+    border-radius:0 0 10px 0;
+  }
+  .featured-body{padding:18px;}
+  .featured-body h3{
+    font-size:18px;
+    color:var(--navy);
+    margin-bottom:10px;
+  }
+  .featured-body p{
+    font-size:13.5px;
+    color:#445;
+    margin-bottom:14px;
+  }
+  .feature-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .feature-tags span{
+    background:#eaf2f8;
+    color:var(--navy);
+    font-size:11.5px;
+    padding:6px 10px;
+    border-radius:16px;
+    font-weight:bold;
+  }
+
+  /* Strengths */
+  .strengths{background:var(--bg);}
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-item{
+    background:#fff;
+    border-radius:12px;
+    padding:16px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 3px 10px rgba(11,61,98,0.08);
+    border-left:4px solid var(--accent);
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:34px;height:34px;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:14px;
+  }
+  .strength-item h4{
+    font-size:14.5px;
+    color:var(--navy);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:12.5px;
+    color:#556;
+  }
+
+  /* Gallery */
+  .gallery{background:#fff;}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:10px;
+    height:130px;
+    object-fit:cover;
+    width:100%;
+  }
+  .gallery-grid .full{grid-column:1/3;height:170px;}
+
+  /* Reviews */
+  .reviews{background:linear-gradient(180deg,#eef5fa 0%,#fff 100%);}
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 3px 10px rgba(11,61,98,0.08);
+  }
+  .stars{color:var(--accent);font-size:15px;margin-bottom:8px;letter-spacing:2px;}
+  .review-card p{font-size:13px;color:#445;}
+
+  /* Company info */
+  .info{background:var(--bg);}
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(11,61,98,0.08);
+    font-size:13px;
+  }
+  .info-table tr{border-bottom:1px solid #eef1f4;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:#eaf2f8;
+    color:var(--navy);
+    text-align:left;
+    padding:12px;
+    width:88px;
+    font-weight:bold;
+    vertical-align:top;
+    white-space:nowrap;
+  }
+  .info-table td{
+    padding:12px;
+    color:#334;
+    word-break:break-all;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(11,61,98,0.08);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(180deg,var(--wave) 0%,var(--deep) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:19px;
+    margin-bottom:8px;
+  }
+  .final-cta p{
+    font-size:13px;
+    opacity:0.9;
+    margin-bottom:20px;
+  }
+  .final-cta .btn-primary{
+    display:block;
+    width:100%;
+    max-width:320px;
+    margin:0 auto 12px;
+    font-size:16px;
+    padding:15px;
+  }
+  .final-cta .btn-outline{
+    display:block;
+    width:100%;
+    max-width:320px;
+    margin:0 auto;
+  }
+
+  footer{
+    text-align:center;
+    padding:18px;
+    font-size:11px;
+    color:#889;
+    background:var(--bg);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -3px 12px rgba(0,0,0,0.12);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px 8px;
+    font-size:11px;
+    color:var(--navy);
+    font-weight:bold;
+    border-right:1px solid #eef1f4;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:16px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero h1{font-size:28px;}
+    section{padding:48px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">プロショップかつき<span>PRO SHOP KATSUKI</span></div>
+  <a href="tel:0595642789" class="tel-btn">📞 電話する</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">創業60年 釣具総合専門店</div>
+  <h1>渓流釣りからエギング・船釣りまで<br>三重県名張市の釣具はかつきへ
+    <em>豊富な品揃えとスタッフの丁寧な説明で、初めての方も安心</em>
+  </h1>
+  <img src="images/hero.jpg" alt="プロショップかつき 店内 釣り用具">
+  <p>三重県名張市夏見３０１｜アオリイカ・鮎釣り・渓流釣り・船釣り・アウトドア用品まで</p>
+  <div class="hero-cta">
+    <a href="tel:0595642789" class="btn btn-primary">📞 今すぐ電話</a>
+    <a href="#info" class="btn btn-outline">📍 アクセスを見る</a>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCT -->
+<section class="featured">
+  <div class="section-title"><small>OUR RECOMMEND</small>イチオシ商品</div>
+  <p class="section-sub">釣具のプロが厳選する、こだわりの釣り用具ラインナップ</p>
+  <div class="featured-card">
+    <span class="featured-ribbon">STAFF'S PICK</span>
+    <img src="images/product.jpg" alt="かつき イチオシ釣り用具">
+    <div class="featured-body">
+      <h3>釣り用具｜あらゆるジャンルを網羅した圧倒的品揃え</h3>
+      <p>鮎釣り、アオリイカのエギング、マルイカ（アカイカ）、船釣り・磯釣り、ロッド＆リール、カワハギ釣り、渓流釣りまで。用途に合わせたラインナップをスタッフが丁寧にご案内します。初めての一本選びも、かつきにお任せください。</p>
+      <div class="feature-tags">
+        <span>鮎釣り用品</span>
+        <span>エギング</span>
+        <span>渓流釣り</span>
+        <span>船釣り・磯釣り</span>
+        <span>ロッド＆リール</span>
+      </div>
+      <a href="tel:0595642789" class="btn btn-primary" style="width:100%;text-align:center;">📞 在庫・商品について問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section class="strengths">
+  <div class="section-title"><small>WHY CHOOSE US</small>かつきが選ばれる理由</div>
+  <div class="strength-list">
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div>
+        <h4>創業60年、実店舗の安心感</h4>
+        <p>長年地域で愛され続ける釣具の総合専門店。実店舗ならではの相談のしやすさが強みです。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div>
+        <h4>釣りからアウトドアまで幅広い品揃え</h4>
+        <p>鮎釣り・エギング・船釣り・渓流釣り用品はもちろん、ゴアテックスのレインウェア、ノースフェース、ヘリーハンセン、モンベル、ジャックウルフスキンなどアウトドア・トレッキング用品も充実。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div>
+        <h4>通販ネットショップも展開</h4>
+        <p>実店舗に加えてネットショップ、カツキネットヤフー店もご用意。お近くにお住まいでない方もご利用いただけます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">4</div>
+      <div>
+        <h4>スタッフの丁寧な説明</h4>
+        <p>「困っている時にすぐ声をかけてくれた」「優しく分かりやすい説明」と評判。わからないことは気軽にご相談いただけます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="section-title"><small>SHOP GALLERY</small>店内のご紹介</div>
+  <div class="gallery-grid">
+    <img class="full" src="images/shop1.jpg" alt="プロショップかつき 店内1">
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="section-title"><small>VOICE</small>お客様の口コミ</div>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>初めて行ったけど!わかりやすい場所で良かった。小さめのお店なので、商品の陳列棚を高めにしてありますが、渓流釣りの品揃えが充実しているように感じました。また、寄ってみたいです。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>なかなかの品揃えです。店員さんも丁寧な説明してくださいます。入店した時に「いらっしゃいませ」と元気な声が聞こえてきて雰囲気が良く、品揃えも良くすごく買い物がしやすい店でした！私が困っている時にすぐに声をかけてくれました！優しく分かりやすい説明をしていただけるので、かつきに行った際わからない事があれば気軽に声かけてみてください！また、来店させていただきます！</p>
+  </div>
+</section>
+
+<!-- COMPANY INFO -->
+<section class="info" id="info">
+  <div class="section-title"><small>SHOP INFO</small>店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>プロショップかつき</td></tr>
+    <tr><th>会社名</th><td>有限会社かつき</td></tr>
+    <tr><th>代表者</th><td>勝木　祥文</td></tr>
+    <tr><th>住所</th><td>〒518-0007　三重県名張市夏見３０１</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0595642789">059-564-2789</a></td></tr>
+    <tr><th>HP</th><td><a href="http://www.ps-katsuki.co.jp/" target="_blank" rel="noopener">www.ps-katsuki.co.jp</a></td></tr>
+    <tr><th>お問合せ</th><td><a href="https://www.ps-katsuki.co.jp/toiawase.php" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://www.facebook.com/people/%E3%83%97%E3%83%AD%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E3%81%8B%E3%81%A4%E3%81%8D/100057340904512/" target="_blank" rel="noopener">Facebookはこちら</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E5%90%8D%E5%BC%B5%E5%B8%82%E5%A4%8F%E8%A6%8B301&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>釣具のことなら、かつきにお任せください</h2>
+  <p>渓流釣りからアウトドア用品まで、経験豊富なスタッフが丁寧にご案内します</p>
+  <a href="tel:0595642789" class="btn btn-primary">📞 059-564-2789 に電話する</a>
+  <a href="https://www.ps-katsuki.co.jp/toiawase.php" target="_blank" rel="noopener" class="btn btn-outline">✉️ お問い合わせフォームへ</a>
+</section>
+
+<footer>
+  © プロショップかつき（有限会社かつき） All Rights Reserved.
+</footer>
+
+<nav class="bottom-nav">
+  <a href="#info"><span class="icon">📍</span>アクセス</a>
+  <a href="http://www.ps-katsuki.co.jp/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+  <a href="tel:0595642789" class="call"><span class="icon">📞</span>電話する</a>
+</nav>
+
+</body>
+</html>
