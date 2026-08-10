@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サンキャビン 四日市店｜サッカー用品専門店・足に合わせたフィッティング</title>
+<style>
+  :root {
+    --pitch-green: #1e5631;
+    --pitch-green-dark: #123a20;
+    --line-white: #f7f5ef;
+    --accent-orange: #e8641a;
+    --text-dark: #23281f;
+    --text-sub: #5a5f52;
+    --card-bg: #ffffff;
+    --gold-star: #f0a500;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+    color: var(--text-dark);
+    background: var(--line-white);
+    line-height: 1.7;
+    padding-bottom: 64px; /* space for fixed bottom nav */
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { text-decoration: none; color: inherit; }
+
+  .container { max-width: 480px; margin: 0 auto; padding: 0 20px; }
+
+  /* ===== Header ===== */
+  .header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--pitch-green-dark);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .header-shop {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .header-tel {
+    background: var(--accent-orange);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .header-tel .num {
+    font-size: 14px;
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    margin-top: 52px;
+    position: relative;
+    background: linear-gradient(160deg, var(--pitch-green) 0%, var(--pitch-green-dark) 100%);
+    color: #fff;
+    padding: 36px 20px 40px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -40px; right: -60px;
+    width: 220px; height: 220px;
+    border: 3px dashed rgba(255,255,255,0.15);
+    border-radius: 50%;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--accent-orange);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .hero-title span {
+    color: #ffe08a;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: #e3ede3;
+    margin-bottom: 20px;
+  }
+
+  .hero-img {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+  }
+
+  .hero-img img { width: 100%; height: auto; }
+
+  .hero-stars {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+
+  .hero-stars .stars { color: var(--gold-star); font-size: 16px; letter-spacing: 1px; }
+
+  .hero-cta {
+    display: block;
+    margin-top: 22px;
+    background: var(--accent-orange);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 6px 16px rgba(232,100,26,0.4);
+  }
+
+  /* ===== Section common ===== */
+  .section { padding: 44px 20px; }
+  .section-alt { background: #fff; }
+
+  .section-eyebrow {
+    color: var(--accent-orange);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: 21px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  /* ===== Featured product (soccer) ===== */
+  .featured {
+    background: var(--pitch-green-dark);
+    color: #fff;
+    position: relative;
+  }
+
+  .featured .section-eyebrow { color: #ffe08a; }
+
+  .featured-img {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  .featured-list {
+    list-style: none;
+    margin-bottom: 24px;
+  }
+
+  .featured-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .featured-list li:last-child { border-bottom: none; }
+
+  .featured-list .check {
+    color: var(--accent-orange);
+    font-weight: 900;
+    font-size: 16px;
+  }
+
+  .featured-note {
+    background: rgba(255,255,255,0.08);
+    border-left: 3px solid var(--accent-orange);
+    padding: 14px 16px;
+    font-size: 13px;
+    border-radius: 4px;
+  }
+
+  /* ===== Strengths ===== */
+  .strengths-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .strength-card {
+    background: var(--card-bg);
+    border: 1px solid #e4e1d6;
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .strength-num {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    background: var(--pitch-green);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+  }
+
+  .strength-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .strength-body p {
+    font-size: 13px;
+    color: var(--text-sub);
+  }
+
+  /* ===== Reviews ===== */
+  .review-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+  }
+
+  .review-stars {
+    color: var(--gold-star);
+    font-size: 16px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  .review-text {
+    font-size: 13.5px;
+    color: var(--text-dark);
+    line-height: 1.85;
+  }
+
+  .review-text strong {
+    background: linear-gradient(transparent 60%, #ffe08a 60%);
+    font-weight: 700;
+  }
+
+  /* ===== Access / Shop info ===== */
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+    font-size: 13.5px;
+  }
+
+  .info-table th, .info-table td {
+    text-align: left;
+    padding: 14px 14px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+  }
+
+  .info-table tr:last-child th, .info-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .info-table th {
+    width: 92px;
+    color: #fff;
+    background: var(--pitch-green);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .info-table a { color: var(--accent-orange); font-weight: 700; }
+
+  .map-wrap {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+  }
+
+  .map-wrap iframe {
+    width: 100%;
+    height: 220px;
+    border: 0;
+    display: block;
+  }
+
+  /* ===== CTA section ===== */
+  .cta-section {
+    background: linear-gradient(160deg, var(--pitch-green) 0%, var(--pitch-green-dark) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 44px 20px;
+  }
+
+  .cta-section h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  .cta-section p {
+    font-size: 13.5px;
+    color: #e3ede3;
+    margin-bottom: 22px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary {
+    background: var(--accent-orange);
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 6px 16px rgba(232,100,26,0.4);
+  }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 11.5px;
+    color: var(--text-sub);
+    background: var(--line-white);
+  }
+
+  /* ===== Fixed bottom nav ===== */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+  }
+
+  .bottom-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 4px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  .bottom-nav a.call {
+    background: var(--accent-orange);
+    color: #fff;
+  }
+
+  .bottom-nav a.map {
+    background: var(--pitch-green);
+    color: #fff;
+  }
+
+  .bottom-nav .icon {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 2px;
+  }
+
+  @media (min-width: 480px) {
+    .hero-title { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="header-shop">サンキャビン 四日市店</div>
+    <a href="tel:0593517812" class="header-tel">📞 <span class="num">059-351-7812</span></a>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge">四日市市 諏訪栄町</span>
+      <h1 class="hero-title">足のサイズにぴったり合う<br><span>サッカー用品</span>を、この街で。</h1>
+      <p class="hero-sub">諏訪神社すぐ隣。デポより断然お得と評判のサッカー用品専門コーナー。</p>
+
+      <div class="hero-img">
+        <img src="images/hero.jpg" alt="サンキャビン四日市店の店内サッカー用品コーナー">
+      </div>
+
+      <div class="hero-stars">
+        <span class="stars">★★★★★</span>
+        <span>お客様からの口コミ評価</span>
+      </div>
+
+      <a href="tel:0593517812" class="hero-cta">📞 電話で問い合わせる（059-351-7812）</a>
+    </div>
+  </section>
+
+  <!-- ===== Featured Product: サッカー用品 ===== -->
+  <section class="section featured">
+    <div class="container">
+      <div class="section-eyebrow">ICHIOSHI ITEM</div>
+      <h2 class="section-title">イチオシは、サッカー用品。<br>「サイズ選びの確かさ」が違います。</h2>
+
+      <div class="featured-img">
+        <img src="images/soccer.jpg" alt="サンキャビン四日市店のサッカー用品・スパイク棚">
+      </div>
+
+      <ul class="featured-list">
+        <li><span class="check">✓</span>スパイク・トレシュー・ウェアまで幅広い品揃え</li>
+        <li><span class="check">✓</span>学校指定シューズの取り扱いにも対応</li>
+        <li><span class="check">✓</span>お子さまの足に合わせたフィッティング提案</li>
+        <li><span class="check">✓</span>大型店より断然お得な価格設定</li>
+      </ul>
+
+      <div class="featured-note">
+        「デポなどに行くよりもここで買った方が断然お得。自分の足に合わせてオススメしてくれるからとてもいいお店」— 実際にご来店いただいたお客様の声より
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Strengths ===== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-eyebrow">STRENGTHS</div>
+      <h2 class="section-title">選ばれる理由</h2>
+
+      <div class="strengths-grid">
+        <div class="strength-card">
+          <div class="strength-num">1</div>
+          <div class="strength-body">
+            <h3>足に合わせたフィッティング</h3>
+            <p>お子さまから大人まで、実際の足のサイズに合わせて最適な一足を提案。サイズ選びで失敗しません。</p>
+          </div>
+        </div>
+        <div class="strength-card">
+          <div class="strength-num">2</div>
+          <div class="strength-body">
+            <h3>大型店よりお値打ち価格</h3>
+            <p>「デポに行くよりもここで買った方がお得」という口コミの通り、価格面でも安心して選べます。</p>
+          </div>
+        </div>
+        <div class="strength-card">
+          <div class="strength-num">3</div>
+          <div class="strength-body">
+            <h3>アクセス良好・駐車場あり</h3>
+            <p>四日市中心部、1号線沿い諏訪神社のすぐ隣。店前に2台分の駐車スペースをご用意しています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Reviews ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-eyebrow">VOICE</div>
+      <h2 class="section-title">お客様の口コミ</h2>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          四日市中心部、1号線沿いの諏訪神社の鳥居のすぐ隣辺りにあります。店の前に2台駐車可。子どもの学校指定のシューズを買いに行ったけど、店内に<strong>サッカー用品を中心に色々商品があってお値打ちな物</strong>もありそうでした。<br><br>
+          <strong>ここで靴を買うとかなり安くしてくれるからとてもいい。</strong>デポなどに行くよりもここで買った方が断然お得だと思う。そして、<strong>自分の靴のサイズにも合わせてオススメしてくれる</strong>からとてもいいお店です。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Access / Shop info ===== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-eyebrow">ACCESS</div>
+      <h2 class="section-title">店舗情報</h2>
+
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=三重県四日市市諏訪栄町22-36&output=embed" loading="lazy" allowfullscreen></iframe>
+      </div>
+
+      <table class="info-table">
+        <tr><th>店舗名</th><td>サンキャビン 四日市店</td></tr>
+        <tr><th>会社名</th><td>株式会社サンキャビン</td></tr>
+        <tr><th>住所</th><td>三重県四日市市諏訪栄町22-36</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0593517812">059-351-7812</a></td></tr>
+        <tr><th>駐車場</th><td>店舗前2台分あり</td></tr>
+        <tr><th>公式HP</th><td><a href="https://suncabin.wixsite.com/sssnet" target="_blank" rel="noopener">https://suncabin.wixsite.com/sssnet</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://suncabin.wixsite.com/sssnet/contact-us" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>お子さまの足に合う一足、<br>見つけませんか？</h2>
+      <p>サッカー用品のご相談・シューズのフィッティングはお気軽に。<br>お電話またはフォームからお問い合わせください。</p>
+      <div class="cta-buttons">
+        <a href="tel:0593517812" class="btn-primary">📞 電話で問い合わせる</a>
+        <a href="https://suncabin.wixsite.com/sssnet/contact-us" target="_blank" rel="noopener" class="btn-secondary">✉️ フォームで問い合わせる</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>株式会社サンキャビン｜サンキャビン 四日市店</p>
+    <p>三重県四日市市諏訪栄町22-36</p>
+  </footer>
+
+  <!-- ===== Fixed Bottom Nav ===== -->
+  <nav class="bottom-nav">
+    <a href="https://maps.google.com/maps?q=三重県四日市市諏訪栄町22-36" target="_blank" rel="noopener" class="map">
+      <span class="icon">📍</span>地図
+    </a>
+    <a href="https://suncabin.wixsite.com/sssnet" target="_blank" rel="noopener">
+      <span class="icon">🌐</span>HP
+    </a>
+    <a href="tel:0593517812" class="call">
+      <span class="icon">📞</span>電話する
+    </a>
+  </nav>
+
+</body>
+</html>
