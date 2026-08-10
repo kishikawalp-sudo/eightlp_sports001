@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エバーラケット｜三重県伊勢市のバドミントン・テニス専門店</title>
+<style>
+  :root{
+    --main:#0b3d91;
+    --accent:#ffb400;
+    --dark:#12203c;
+    --light:#f5f7fb;
+    --text:#1a1a1a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:64px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:600px;margin:0 auto;padding:0 16px;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+  }
+  header .shopname{
+    font-size:16px;font-weight:bold;color:var(--main);
+    letter-spacing:.5px;
+  }
+  header .shopname span{
+    display:block;font-size:10px;color:#888;font-weight:normal;
+  }
+  header .tel-btn{
+    background:var(--main);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* hero */
+  .hero{
+    margin-top:56px;
+    position:relative;
+  }
+  .hero img{width:100%;height:64vw;max-height:340px;object-fit:cover;}
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(11,61,145,.15) 0%,rgba(11,61,145,.75) 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:20px;
+  }
+  .hero-overlay .catch{
+    color:#fff;
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 2px 6px rgba(0,0,0,.4);
+  }
+  .hero-overlay .catch em{
+    display:inline-block;
+    color:var(--accent);
+    font-style:normal;
+    font-size:26px;
+  }
+  .hero-overlay .sub{
+    color:#fff;
+    font-size:13px;
+    margin-top:8px;
+    opacity:.95;
+  }
+
+  /* section common */
+  section{padding:36px 0;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:6px;
+    position:relative;
+  }
+  .section-title small{
+    display:block;
+    font-size:11px;
+    color:var(--accent);
+    letter-spacing:2px;
+    font-weight:bold;
+    margin-bottom:4px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:13px;
+    color:#555;
+    margin-bottom:24px;
+  }
+
+  /* featured product */
+  .featured{
+    background:var(--dark);
+    color:#fff;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-lead{color:#cdd7ef;}
+  .featured-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,.3);
+    margin-bottom:18px;
+  }
+  .featured-card img{width:100%;height:220px;object-fit:cover;}
+  .featured-card .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--dark);
+    font-weight:bold;
+    font-size:12px;
+    padding:4px 12px;
+    border-radius:0 0 8px 0;
+    margin-top:-4px;
+  }
+  .featured-card .body{padding:16px 18px 20px;}
+  .featured-card h3{
+    font-size:17px;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .featured-card p{font-size:13.5px;color:#444;}
+  .featured-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:14px;
+  }
+  .featured-points span{
+    background:#eef2fb;
+    color:var(--main);
+    font-size:12px;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:20px;
+  }
+  .featured-cta{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:var(--dark);
+    font-weight:bold;
+    font-size:15px;
+    padding:14px;
+    border-radius:10px;
+    margin-top:8px;
+  }
+
+  /* strengths */
+  .strengths{background:var(--light);}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+  }
+  .strength-item .num{
+    flex:0 0 auto;
+    width:36px;height:36px;
+    background:var(--main);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .strength-item h4{
+    font-size:14.5px;
+    color:var(--main);
+    margin-bottom:4px;
+  }
+  .strength-item p{font-size:13px;color:#555;}
+
+  /* founder story */
+  .story{
+    background:#fff;
+  }
+  .story-box{
+    background:var(--light);
+    border-left:4px solid var(--accent);
+    padding:18px;
+    border-radius:0 10px 10px 0;
+    font-size:13px;
+    color:#444;
+  }
+  .story-box .rep{
+    margin-top:14px;
+    font-size:12.5px;
+    font-weight:bold;
+    color:var(--main);
+    text-align:right;
+  }
+  .pillars{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:16px;
+  }
+  .pillars div{
+    background:#fff;
+    border:1px solid #e2e6ef;
+    border-radius:10px;
+    padding:12px 10px;
+    font-size:12px;
+    text-align:center;
+    color:var(--main);
+    font-weight:bold;
+  }
+
+  /* reviews */
+  .reviews{background:var(--light);}
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+  }
+  .review-card .stars{
+    color:var(--accent);
+    font-size:15px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{font-size:13px;color:#444;}
+
+  /* photo gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .gallery img{
+    width:100%;height:130px;object-fit:cover;border-radius:10px;
+  }
+
+  /* shop info */
+  .shopinfo table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  .shopinfo th,.shopinfo td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #e5e5e5;
+    vertical-align:top;
+  }
+  .shopinfo th{
+    color:var(--main);
+    width:88px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+  }
+  .map-frame iframe{width:100%;height:220px;border:0;}
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+  }
+  .sns-links a{
+    flex:1;
+    text-align:center;
+    background:var(--main);
+    color:#fff;
+    padding:10px;
+    border-radius:8px;
+    font-size:12.5px;
+    font-weight:bold;
+  }
+
+  /* cta section */
+  .cta-final{
+    background:linear-gradient(135deg,var(--main),#164a9e);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-final h2{font-size:20px;margin-bottom:10px;}
+  .cta-final p{font-size:13px;margin-bottom:20px;color:#dbe4f7;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .cta-buttons a{
+    display:block;
+    padding:15px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-buttons .tel{background:var(--accent);color:var(--dark);}
+  .cta-buttons .line{background:#fff;color:var(--main);}
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:20px 0 10px;
+  }
+
+  /* fixed bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,.12);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px 8px;
+    font-size:11px;
+    font-weight:bold;
+    color:var(--main);
+  }
+  .bottom-nav a.main{
+    background:var(--main);
+    color:#fff;
+  }
+  .bottom-nav a .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (max-width:360px){
+    .hero-overlay .catch{font-size:19px;}
+    .hero-overlay .catch em{font-size:22px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">エバーラケット
+    <span>三重県伊勢市 / バドミントン・テニス専門店</span>
+  </div>
+  <a href="tel:0596290600" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="エバーラケット バドミントン・テニス用品専門店">
+  <div class="hero-overlay">
+    <div class="catch">初心者もベテランも。<br><em>バドミントン・テニス</em>のことなら何でも相談を。</div>
+    <div class="sub">シューズのフィッティングからガット張りまで、店員が一つひとつ丁寧にご案内します</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="container">
+    <div class="section-title"><small>ICHIOSHI PRODUCT</small>イチオシ商品</div>
+    <div class="section-lead">バドミントン・テニス用品、豊富な品揃え</div>
+    <div class="featured-card">
+      <img src="images/racket.jpg" alt="バドミントン・テニスラケット">
+      <div class="badge">専門店だからできる提案力</div>
+      <div class="body">
+        <h3>バドミントン・テニス用品</h3>
+        <p>専門店ならではの豊富な品揃えから、レベルやプレースタイルに合わせて最適な一本をご提案。ラケット選びはもちろん、シューズの試着、ガット張りまでワンストップで対応します。</p>
+        <div class="featured-points">
+          <span>✓ 初心者にも丁寧な説明</span>
+          <span>✓ シューズ試着OK</span>
+          <span>✓ ガット張り対応</span>
+          <span>✓ 隣接体育館でシャトルも安心</span>
+        </div>
+        <a href="tel:0596290600" class="featured-cta">まずはお気軽にご相談ください</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="container">
+    <div class="section-title"><small>OUR STRENGTH</small>選ばれる理由</div>
+    <div class="strength-item">
+      <div class="num">1</div>
+      <div>
+        <h4>専門知識をもったスタッフが対応</h4>
+        <p>ラケット選びやシューズのサイズ合わせなど、一人ひとりに合わせて丁寧に教えてくれると評判です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">2</div>
+      <div>
+        <h4>初心者も安心のフィッティング</h4>
+        <p>シューズの試着や子供用マスクのサイズ選びなど、細かな相談にも親身に対応。連れて行った友人にも好評です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">3</div>
+      <div>
+        <h4>隣にバドミントン専用体育館</h4>
+        <p>練習中にシャトルが無くなってもすぐ購入可能。練習環境と一体になった立地が強みです。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">4</div>
+      <div>
+        <h4>経済産業省「はばたく中小企業・小規模事業者300社」選定</h4>
+        <p>ITを活用した業務効率改善が評価され選定。地域活性化とお客様満足の両立に取り組んでいます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="container">
+    <div class="section-title"><small>OUR STORY</small>私たちの想い</div>
+    <div class="story-box">
+      私たちが目指すのは、お客様に喜びと感動を提供すること。創意工夫を凝らした商品やサービスを通じ、お客様の再来店を心から願っています。社員一人ひとりの幸せも大切に、お互いを支え合い共に成長する文化を育んでいます。
+      <div class="rep">代表取締役　宮田 典明</div>
+    </div>
+    <div class="pillars">
+      <div>お客様に<br>喜んでいただく</div>
+      <div>社員の幸福</div>
+      <div>会社の永続性</div>
+      <div>働きやすい<br>環境の実現</div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <div class="section-title"><small>VOICE</small>お客さまの声</div>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>専門店なので初心者には敷居が高いかなと思いましたが、思い切って話しかけてみて良かったです。シューズも試着させていただき、ラケットを買うときも丁寧に教えていただきました。店員さん、きっとバドミントン上手なんだろうなといつも思っています。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>店員さんがとても優しく、靴のサイズもしっかり合わせてくれます。初心者の友達と行きましたが、分かりやすく教えていただき「対応が良かった」と喜んでいました。店も大きく、隣にバドミントン専用体育館もある最強の店です。</p>
+    </div>
+    <div class="gallery">
+      <img src="images/shop1.jpg" alt="エバーラケット 店内の様子">
+      <img src="images/shop2.jpg" alt="エバーラケット 商品陳列の様子">
+    </div>
+  </div>
+</section>
+
+<section class="shopinfo">
+  <div class="container">
+    <div class="section-title"><small>SHOP INFO</small>店舗情報</div>
+    <table>
+      <tr><th>店名</th><td>エバーラケット（エバーラケット株式会社）</td></tr>
+      <tr><th>代表者</th><td>宮田 典明</td></tr>
+      <tr><th>住所</th><td>〒516-0025　三重県伊勢市神久２丁目１−４６</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0596290600">0596-29-0600</a></td></tr>
+      <tr><th>定休日</th><td>無し（臨時休業の場合がございます）</td></tr>
+      <tr><th>HP</th><td><a href="http://www.ever-racket.com/" target="_blank" rel="noopener">www.ever-racket.com</a></td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E4%BC%8A%E5%8B%A2%E5%B8%82%E7%A5%9E%E4%B9%852%E4%B8%81%E7%9B%AE1%EF%BC%8D46&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="sns-links">
+      <a href="https://x.com/everracket" target="_blank" rel="noopener">X（旧Twitter）</a>
+      <a href="https://www.youtube.com/channel/UCOMgT4UmZ6fWuOVMlhJFUww" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2>まずはお気軽にご来店・お問い合わせを</h2>
+    <p>初心者から上級者まで、スタッフが一人ひとりに合わせてご案内します</p>
+    <div class="cta-buttons">
+      <a href="tel:0596290600" class="tel">📞 電話で相談する（0596-29-0600）</a>
+      <a href="https://page.line.me/xat.0000179706.kp9" class="line" target="_blank" rel="noopener">💬 LINEで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; エバーラケット株式会社
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0596290600"><span class="icon">📞</span>電話</a>
+  <a href="https://page.line.me/xat.0000179706.kp9" target="_blank" rel="noopener"><span class="icon">💬</span>問い合わせ</a>
+  <a href="http://www.ever-racket.com/" target="_blank" rel="noopener" class="main"><span class="icon">🏸</span>公式HP</a>
+</nav>
+
+</body>
+</html>
