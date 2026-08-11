@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>モリタスポーツ｜奈良県橿原市の野球用品・学生服専門店</title>
+<style>
+  :root{
+    --navy:#1a3a5c;
+    --navy-dark:#0f2540;
+    --red:#c8352d;
+    --gold:#e8a93c;
+    --cream:#faf6ee;
+    --gray:#666;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color:#222;
+    background:#fff;
+    padding-bottom:64px; /* for fixed bottom nav */
+    line-height:1.7;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:600px;margin:0 auto;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--navy);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  .header .shopname{font-size:16px;font-weight:bold;letter-spacing:1px;}
+  .header .tel-btn{
+    background:var(--red);color:#fff;font-size:13px;font-weight:bold;
+    padding:8px 12px;border-radius:6px;white-space:nowrap;
+  }
+  .header-space{height:52px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{width:100%;height:auto;}
+  .hero-overlay{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,.75));
+    color:#fff;padding:30px 16px 18px;
+  }
+  .hero-overlay .catch{
+    font-size:22px;font-weight:bold;line-height:1.5;
+    text-shadow:0 2px 4px rgba(0,0,0,.5);
+  }
+  .hero-overlay .sub{font-size:13px;margin-top:6px;opacity:.9;}
+
+  .badge-row{
+    display:flex;gap:8px;flex-wrap:wrap;
+    padding:14px 16px;background:var(--cream);
+    justify-content:center;
+  }
+  .badge{
+    background:var(--navy);color:#fff;font-size:12px;font-weight:bold;
+    padding:6px 12px;border-radius:20px;
+  }
+  .badge.gold{background:var(--gold);color:#3a2a00;}
+
+  /* Section common */
+  .section{padding:36px 16px;}
+  .section.alt{background:var(--cream);}
+  .section-title{
+    text-align:center;font-size:20px;font-weight:bold;color:var(--navy);
+    margin-bottom:6px;
+  }
+  .section-title span{
+    display:block;font-size:12px;color:var(--gold);letter-spacing:2px;font-weight:bold;margin-bottom:4px;
+  }
+  .section-lead{
+    text-align:center;font-size:13px;color:var(--gray);margin-bottom:24px;
+  }
+
+  /* Featured product (Ichioshi) */
+  .ichioshi{
+    background:linear-gradient(135deg,var(--navy) 0%, var(--navy-dark) 100%);
+    color:#fff;padding:40px 16px;
+  }
+  .ichioshi-tag{
+    display:inline-block;background:var(--red);color:#fff;font-size:13px;font-weight:bold;
+    padding:6px 16px;border-radius:20px;margin-bottom:14px;
+  }
+  .ichioshi-title{font-size:24px;font-weight:bold;line-height:1.5;margin-bottom:16px;}
+  .ichioshi-img{border-radius:10px;overflow:hidden;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.4);}
+  .ichioshi-desc{font-size:14px;line-height:1.9;background:rgba(255,255,255,.08);padding:16px;border-radius:8px;margin-bottom:20px;}
+  .ichioshi-list{list-style:none;margin-bottom:20px;}
+  .ichioshi-list li{
+    font-size:14px;padding:10px 0 10px 28px;position:relative;
+    border-bottom:1px solid rgba(255,255,255,.15);
+  }
+  .ichioshi-list li:before{
+    content:"⚾";position:absolute;left:0;top:9px;font-size:15px;
+  }
+  .ichioshi-list li:last-child{border-bottom:none;}
+  .cta-btn{
+    display:block;background:var(--red);color:#fff;text-align:center;
+    font-size:16px;font-weight:bold;padding:16px;border-radius:8px;
+    box-shadow:0 4px 12px rgba(200,53,45,.4);
+  }
+  .cta-btn.gold{background:var(--gold);color:#3a2a00;}
+  .cta-sub{text-align:center;font-size:12px;margin-top:8px;opacity:.85;}
+
+  /* Strengths */
+  .strength-item{
+    display:flex;gap:14px;margin-bottom:22px;align-items:flex-start;
+    background:#fff;padding:16px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .strength-num{
+    flex-shrink:0;width:38px;height:38px;border-radius:50%;
+    background:var(--navy);color:#fff;font-weight:bold;font-size:16px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .strength-body h3{font-size:15px;color:var(--navy);margin-bottom:6px;}
+  .strength-body p{font-size:13px;color:var(--gray);}
+
+  /* Owner story */
+  .owner-box{
+    display:flex;gap:12px;align-items:center;margin-bottom:16px;
+  }
+  .owner-box img{
+    width:80px;height:80px;border-radius:50%;object-fit:cover;
+    border:3px solid var(--gold);flex-shrink:0;
+  }
+  .owner-box .owner-name{font-size:15px;font-weight:bold;color:var(--navy);}
+  .owner-box .owner-role{font-size:12px;color:var(--gray);}
+  .owner-story{
+    font-size:13px;background:#fff;padding:16px;border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);white-space:pre-line;
+  }
+
+  /* Reviews */
+  .review-card{
+    background:#fff;padding:16px;border-radius:8px;margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);border-left:4px solid var(--gold);
+  }
+  .stars{color:var(--gold);font-size:15px;margin-bottom:8px;letter-spacing:2px;}
+  .review-card p{font-size:13px;color:#333;}
+
+  /* Shop info */
+  .info-table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+  .info-table th,.info-table td{
+    padding:14px 12px;font-size:13px;text-align:left;border-bottom:1px solid #eee;
+  }
+  .info-table th{
+    background:var(--cream);color:var(--navy);width:30%;font-weight:bold;white-space:nowrap;
+  }
+  .info-table tr:last-child th, .info-table tr:last-child td{border-bottom:none;}
+  .map-wrap{margin-top:16px;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  .sns-row{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap;}
+  .sns-btn{
+    background:#fff;border:1px solid var(--navy);color:var(--navy);
+    font-size:12px;font-weight:bold;padding:10px 14px;border-radius:6px;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--navy-dark);color:#fff;text-align:center;padding:40px 16px;
+  }
+  .final-cta h2{font-size:20px;margin-bottom:10px;}
+  .final-cta p{font-size:13px;opacity:.85;margin-bottom:22px;}
+
+  footer{
+    text-align:center;font-size:11px;color:#999;padding:20px 16px;background:#f4f4f4;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;background:#fff;border-top:1px solid #ddd;
+    box-shadow:0 -2px 8px rgba(0,0,0,.1);z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;text-align:center;padding:9px 4px;font-size:11px;color:var(--navy);font-weight:bold;
+  }
+  .bottom-nav a.call{background:var(--red);color:#fff;}
+  .bottom-nav a.form{background:var(--gold);color:#3a2a00;}
+  .bottom-nav .icon{font-size:18px;display:block;margin-bottom:2px;}
+
+  @media (min-width:601px){
+    .hero-overlay .catch{font-size:26px;}
+    .ichioshi-title{font-size:28px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="shopname">モリタスポーツ</div>
+  <a href="tel:0744-24-1556" class="tel-btn">📞 0744-24-1556</a>
+</div>
+<div class="header-space"></div>
+
+<div class="wrap">
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="モリタスポーツ 店舗外観">
+    <div class="hero-overlay">
+      <div class="catch">昭和53年創業、45年以上<br>地域に愛され続けるスポーツ用品店</div>
+      <div class="sub">奈良県橿原市土橋町｜野球用品・学生服・グラブ修理</div>
+    </div>
+  </div>
+
+  <div class="badge-row">
+    <span class="badge gold">創業45周年</span>
+    <span class="badge">ATOMS取扱店</span>
+    <span class="badge">口コミ★4.5以上</span>
+    <span class="badge">校区内公立小中学校指定</span>
+  </div>
+
+  <!-- Ichioshi Featured Product -->
+  <div class="ichioshi">
+    <span class="ichioshi-tag">イチオシサービス</span>
+    <div class="ichioshi-title">グラブ修理 ＆ 地域小学校制服販売</div>
+    <div class="ichioshi-img">
+      <img src="images/glove_repair.jpg" alt="グラブ修理サービス">
+    </div>
+    <div class="ichioshi-desc">
+      長年使い込んだ大切なグラブも、モリタスポーツなら丁寧に修理して蘇らせます。野球少年を見守ってきた確かな目利きと技術で、お子様の愛用品を長く使えるようサポートします。また、真菅小学校・大成中学校など校区内の公立小中学校の制服・体操服も豊富に取り揃えており、地域の子育て世帯から厚い信頼をいただいています。
+    </div>
+    <ul class="ichioshi-list">
+      <li>使い込んだグラブを職人の手で修理・型直し</li>
+      <li>校区内公立小中学校の制服・体操服が揃う</li>
+      <li>野球用品を中心に各種競技用品を豊富に品揃え</li>
+      <li>お求めやすい価格設定で地域の家計にやさしい</li>
+    </ul>
+    <a href="tel:0744-24-1556" class="cta-btn">📞 まずはお電話でご相談 0744-24-1556</a>
+    <div class="cta-sub">定休日：月曜日｜お気軽にお問い合わせください</div>
+  </div>
+
+  <!-- Strengths -->
+  <div class="section">
+    <div class="section-title"><span>STRENGTH</span>選ばれる理由</div>
+    <div class="section-lead">昭和53年の創業から今日まで、地域と共に歩んできました</div>
+
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div class="strength-body">
+        <h3>創業45年以上の実績と信頼</h3>
+        <p>昭和53年9月の創業以来、地元の皆様に愛され続け、今日まで営業を続けています。長年培った経験と知識で、確かな商品選びをサポートします。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div class="strength-body">
+        <h3>野球用品を中心に幅広い品揃え</h3>
+        <p>メインの野球用品をはじめ、各種競技のスポーツ用品、学生服、学校用品までお求めやすい価格で販売しています。ATOMS取扱店としても知られています。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div class="strength-body">
+        <h3>地域密着型の学校グッズ専門店</h3>
+        <p>校区内の公立小中学校の制服・体操服などの学校用品もここで揃います。子供の頃から通っているというお客様も多い、地元に根差したお店です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">4</div>
+      <div class="strength-body">
+        <h3>親切・丁寧な接客</h3>
+        <p>「親切な店長さんでした」「頭が下がります」といった声をいただくほど、お客様一人ひとりに寄り添った接客を大切にしています。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Owner story -->
+  <div class="section alt">
+    <div class="section-title"><span>OWNER</span>代表者ご挨拶</div>
+    <div class="owner-box">
+      <img src="images/owner.jpg" alt="代表 中井賢二">
+      <div>
+        <div class="owner-name">代表　中井 賢二</div>
+        <div class="owner-role">同志社大学経済学部卒業（体育会出身）／真菅小学校元PTA会長／大成中学校元PTA会長</div>
+      </div>
+    </div>
+    <div class="owner-story">大手スポーツメーカーでの営業職を経て、2005年よりモリタスポーツの代表を務めております。
+
+モリタスポーツは昭和53年9月創業で、地元の皆様に愛されてきました。おかげさまで45周年となります。
+
+これからも地域の皆様や子供たちのために力になれるようなお店づくりを目指して、頑張りたいと考えております。メインの野球用品をはじめ、各種競技のスポーツ用品、学校制服、学校用品をお求めやすい価格で販売しております。ぜひご利用ください。お待ちしております！</div>
+  </div>
+
+  <!-- Reviews -->
+  <div class="section">
+    <div class="section-title"><span>VOICE</span>お客様の声</div>
+    <div class="review-card">
+      <div class="stars">★★★★</div>
+      <p>親切な店長さんでした。ATOMS取り扱い店！ 親切なご主人さんには、頭が下がります。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>地域密着型の小中学校の制服屋、野球用品店。校区内の公立小学校中学校グッズはここで揃います。私が子供の頃から営業されている、地元に愛されるスポーツ用品店です。野球少年には特に人気のお店！学校の制服や体操服なども取り扱われています。</p>
+    </div>
+  </div>
+
+  <!-- Shop info -->
+  <div class="section alt">
+    <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>モリタスポーツ</td></tr>
+      <tr><th>代表者</th><td>中井 賢二</td></tr>
+      <tr><th>住所</th><td>奈良県橿原市土橋町170−9</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0744-24-1556">0744-24-1556</a></td></tr>
+      <tr><th>定休日</th><td>月曜日</td></tr>
+      <tr><th>公式HP</th><td><a href="https://morita-sports.com/" target="_blank">https://morita-sports.com/</a></td></tr>
+      <tr><th>メール</th><td>info@morita-sports.com</td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E6%A9%BF%E5%8E%9F%E5%B8%82%E5%9C%9F%E6%A9%8B%E7%94%BA170-9&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="sns-row">
+      <a href="https://morita-sports.com/toiawase/" target="_blank" class="sns-btn">✉ お問い合わせフォーム</a>
+      <a href="https://www.youtube.com/channel/UCEXLa-O5Vt-bjva5_KkI5-w" target="_blank" class="sns-btn">▶ YouTube</a>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div class="final-cta">
+    <h2>グラブ修理・学校用品のご相談はお気軽に</h2>
+    <p>お電話・お問い合わせフォームよりお待ちしております</p>
+    <a href="tel:0744-24-1556" class="cta-btn">📞 0744-24-1556 に電話する</a>
+  </div>
+
+  <footer>
+    © モリタスポーツ　奈良県橿原市土橎町170−9
+  </footer>
+
+</div>
+
+<div class="bottom-nav">
+  <a href="tel:0744-24-1556" class="call"><span class="icon">📞</span>電話する</a>
+  <a href="https://morita-sports.com/toiawase/" target="_blank" class="form"><span class="icon">✉</span>お問い合わせ</a>
+  <a href="https://morita-sports.com/" target="_blank"><span class="icon">🌐</span>公式HP</a>
+</div>
+
+</body>
+</html>
