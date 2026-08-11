@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>ワンステップスポーツショップ｜卓球・バドミントン用品専門店 - 奈良県橿原市</title>
+<meta name="description" content="奈良県橿原市の卓球・バドミントン用品専門店ワンステップスポーツショップ。初心者にも分かりやすく丁寧な接客が評判。ラケット選びはお任せください。">
+<style>
+  :root{
+    --ink:#1c2b3a;
+    --navy:#20344a;
+    --paddle-red:#d5432c;
+    --court-green:#2f7a5c;
+    --cream:#f7f4ee;
+    --line:#e2ddd0;
+    --gold:#e8a13c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Sans","Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.75;
+    padding-bottom:64px; /* space for fixed bottom nav */
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+
+  .disp{
+    font-family:"Yumin","YuMincho","Hiragino Mincho ProN",serif;
+    font-weight:700;
+    letter-spacing:.02em;
+  }
+
+  /* ===== Header ===== */
+  .site-header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    color:#fff;
+    padding:10px 16px;
+    display:flex;align-items:center;justify-content:space-between;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+  }
+  .site-header .brand{
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:.03em;
+  }
+  .site-header .brand span{
+    display:block;
+    font-size:10px;
+    color:var(--gold);
+    font-weight:400;
+    letter-spacing:.15em;
+    margin-top:2px;
+  }
+  .header-tel{
+    background:var(--paddle-red);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .header-tel small{display:block;font-size:9px;font-weight:400;opacity:.9;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    background:var(--navy);
+    color:#fff;
+    padding:38px 20px 56px;
+    overflow:hidden;
+    text-align:center;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-60px;right:-60px;
+    width:220px;height:220px;
+    border:2px dashed rgba(255,255,255,.18);
+    border-radius:50%;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:-90px;left:-70px;
+    width:260px;height:260px;
+    border:2px dashed rgba(255,255,255,.12);
+    border-radius:50%;
+  }
+  .hero-eyebrow{
+    position:relative;
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:.2em;
+    color:var(--gold);
+    border:1px solid rgba(232,161,60,.5);
+    padding:4px 14px;
+    border-radius:20px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    position:relative;
+    font-size:26px;
+    line-height:1.5;
+    margin-bottom:14px;
+  }
+  .hero h1 em{
+    display:block;
+    font-style:normal;
+    color:var(--gold);
+    font-size:15px;
+    letter-spacing:.1em;
+    margin-bottom:8px;
+    font-weight:400;
+  }
+  .hero p.lead{
+    position:relative;
+    font-size:14px;
+    opacity:.9;
+    max-width:320px;
+    margin:0 auto 26px;
+  }
+  .hero-img{
+    position:relative;
+    margin:0 auto 26px;
+    max-width:340px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+    border:4px solid rgba(255,255,255,.08);
+  }
+  .hero-cta{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:300px;
+    margin:0 auto;
+  }
+  .btn{
+    display:block;
+    padding:15px 20px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:15px;
+    text-align:center;
+  }
+  .btn-primary{
+    background:var(--paddle-red);
+    color:#fff;
+    box-shadow:0 8px 18px rgba(213,67,44,.4);
+  }
+  .btn-secondary{
+    background:transparent;
+    border:1.5px solid rgba(255,255,255,.5);
+    color:#fff;
+  }
+
+  /* ===== Section shared ===== */
+  section{padding:48px 20px;}
+  .section-head{text-align:center;margin-bottom:30px;}
+  .section-head .eyebrow{
+    font-size:11px;
+    letter-spacing:.25em;
+    color:var(--court-green);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-size:21px;
+    line-height:1.5;
+  }
+  .section-head h2 small{
+    display:block;
+    font-size:12px;
+    color:#8a8578;
+    font-weight:400;
+    margin-top:6px;
+  }
+  .rally-divider{
+    width:100%;
+    height:20px;
+    margin:0 auto 4px;
+    display:block;
+  }
+
+  /* ===== Featured product ===== */
+  .featured{
+    background:var(--navy);
+    color:#fff;
+    position:relative;
+  }
+  .featured .eyebrow{color:var(--gold);}
+  .featured-badge{
+    position:absolute;
+    top:22px;left:20px;
+    background:var(--paddle-red);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    padding:6px 14px;
+    border-radius:20px;
+    letter-spacing:.05em;
+  }
+  .featured-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:18px;
+  }
+  .featured-card img{width:100%;}
+  .featured-card .body{padding:20px;}
+  .featured-card h3{
+    font-size:18px;
+    margin-bottom:10px;
+    color:var(--gold);
+  }
+  .featured-card p{
+    font-size:13.5px;
+    opacity:.9;
+    margin-bottom:14px;
+  }
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .tag{
+    font-size:11px;
+    border:1px solid rgba(255,255,255,.3);
+    padding:4px 10px;
+    border-radius:16px;
+    opacity:.85;
+  }
+
+  /* ===== Strengths ===== */
+  .strengths{background:var(--cream);}
+  .strength-list{display:flex;flex-direction:column;gap:16px;}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px;
+  }
+  .strength-num{
+    flex:0 0 auto;
+    width:40px;height:40px;
+    border-radius:50%;
+    background:var(--court-green);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;
+    font-size:15px;
+  }
+  .strength-item h3{font-size:15px;margin-bottom:6px;color:var(--navy);}
+  .strength-item p{font-size:13px;color:#5a564c;}
+
+  /* ===== Review ===== */
+  .review-section{
+    background:#fff;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .review-card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+    position:relative;
+  }
+  .stars{color:var(--gold);font-size:18px;letter-spacing:2px;margin-bottom:12px;}
+  .review-card p{
+    font-size:13.5px;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+  .review-author{
+    font-size:12px;
+    color:#8a8578;
+    text-align:right;
+  }
+  .review-photo{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+
+  /* ===== Shop info ===== */
+  .shopinfo{background:var(--navy);color:#fff;}
+  .shopinfo .eyebrow{color:var(--gold);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.04);
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:22px;
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:14px 16px;
+    font-size:13.5px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+    vertical-align:top;
+  }
+  .info-table tr:last-child th,.info-table tr:last-child td{border-bottom:none;}
+  .info-table th{
+    width:88px;
+    color:var(--gold);
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .info-table a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.4);}
+  .map-wrap{
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.15);
+    margin-bottom:22px;
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block;}
+
+  /* ===== Final CTA ===== */
+  .final-cta{
+    text-align:center;
+    background:linear-gradient(180deg,var(--cream),#efe9db);
+  }
+  .final-cta h2{font-size:20px;margin-bottom:10px;color:var(--navy);}
+  .final-cta p{font-size:13.5px;color:#5a564c;margin-bottom:24px;}
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .btn-outline{
+    background:#fff;
+    border:1.5px solid var(--navy);
+    color:var(--navy);
+  }
+
+  footer{
+    text-align:center;
+    padding:24px 20px 90px;
+    font-size:11px;
+    color:#a49f92;
+    background:var(--cream);
+  }
+
+  /* ===== Fixed bottom nav ===== */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    z-index:60;
+    box-shadow:0 -4px 14px rgba(0,0,0,.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px 4px 10px;
+    font-size:12px;
+    font-weight:700;
+    color:#fff;
+  }
+  .bottom-nav a span{display:block;font-size:16px;margin-bottom:2px;}
+  .bottom-nav .nav-tel{background:var(--paddle-red);}
+  .bottom-nav .nav-map{background:var(--court-green);}
+  .bottom-nav .nav-form{background:var(--navy);}
+
+  @media (min-width:600px){
+    .hero h1{font-size:30px;}
+    section{padding:64px 40px;}
+    .strength-list{flex-direction:row;flex-wrap:wrap;}
+    .strength-item{flex:1 1 45%;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="brand">ワンステップ<br>スポーツショップ<span>ONE STEP SPORTS SHOP</span></div>
+  <a href="tel:08024500763" class="header-tel">📞 電話する<small>080-2450-0763</small></a>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-eyebrow">奈良県橿原市 卓球・バドミントン専門店</div>
+  <h1><em>初めてのラケット選びも、もう迷わない。</em>丁寧な接客で<br>あなたに合った一本が見つかるお店</h1>
+  <p class="lead">卓球用品・バドミントン用品を専門に取り扱うワンステップスポーツショップ。初心者の方にも分かりやすく、気軽に相談できると評判です。</p>
+  <div class="hero-img">
+    <img src="images/1.jpg" alt="ワンステップスポーツショップ 店内の卓球・バドミントン用品棚">
+  </div>
+  <div class="hero-cta">
+    <a href="tel:08024500763" class="btn btn-primary">📞 今すぐ電話で相談する</a>
+    <a href="#access" class="btn btn-secondary">📍 アクセス・営業時間を見る</a>
+  </div>
+</section>
+
+<!-- Featured product -->
+<section class="featured">
+  <div class="featured-badge">ISHIOSHI｜イチオシ</div>
+  <div class="section-head" style="margin-top:22px;">
+    <div class="eyebrow">FEATURED ITEM</div>
+    <h2>卓球用品・バドミントン用品<small>初心者から経験者まで、一人ひとりに合わせてご提案</small></h2>
+  </div>
+
+  <div class="featured-card">
+    <img src="images/2.jpg" alt="卓球ラケットとバドミントンラケットの品揃え">
+    <div class="body">
+      <h3>卓球ラケット・バドミントン用品の選び方、お任せください</h3>
+      <div class="tag-row">
+        <span class="tag">初心者向け相談OK</span>
+        <span class="tag">ラケット選び</span>
+        <span class="tag">丁寧な説明</span>
+      </div>
+      <p>「初めてで何を選べばいいか分からない」という方こそ大歓迎。プレースタイルやレベル、目的をお伺いしながら、ラバー・グリップまで含めてぴったりの一本をご提案します。バドミントン用品も豊富に取り揃え、シャトルやシューズのご相談も承っています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="strengths">
+  <div class="section-head">
+    <div class="eyebrow">WHY US</div>
+    <h2>選ばれる理由</h2>
+  </div>
+  <div class="strength-list">
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div>
+        <h3>初心者にも分かりやすい丁寧な接客</h3>
+        <p>専門用語を並べるだけでなく、初めての方の目線に立って分かりやすく説明。気軽に何でも聞ける雰囲気づくりを大切にしています。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div>
+        <h3>卓球・バドミントン専門店ならではの品揃え</h3>
+        <p>ラケット・ラバー・シューズ・シャトルまで、専門店だからこそ揃う豊富なラインナップから比較検討いただけます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div>
+        <h3>買った後も気軽に相談できる安心感</h3>
+        <p>「これからも利用したい」というお客様の声が示す通り、購入後も長く付き合えるお店を目指しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Review -->
+<section class="review-section">
+  <div class="section-head">
+    <div class="eyebrow">VOICE</div>
+    <h2>お客様の声</h2>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>初めての卓球ラケットを買いに行きました。店員さんが、とても感じ良く、初心者の私にも分かりやすく丁寧に説明して下さいました。お陰様で、満足のいく買い物が出来ました。ありがとうございました！</p>
+    <p>優しく丁寧に対応してくださって、とても助かりました。説明がわかりやすく、気軽になんでも聞けるのでとても頼もしかったです。これからも利用したいと思いました。</p>
+    <div class="review-author">― ご来店されたお客様より</div>
+    <div class="review-photo">
+      <img src="images/3.jpg" alt="ワンステップスポーツショップ 店頭の様子">
+    </div>
+  </div>
+</section>
+
+<!-- Shop info -->
+<section class="shopinfo" id="access">
+  <div class="section-head">
+    <div class="eyebrow">SHOP INFO</div>
+    <h2>店舗情報</h2>
+  </div>
+  <table class="info-table">
+    <tr>
+      <th>店名</th>
+      <td>ワンステップスポーツショップ</td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td>奈良県橿原市内膳町4丁目4−5</td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><a href="tel:08024500763">080-2450-0763</a></td>
+    </tr>
+    <tr>
+      <th>定休日</th>
+      <td>月曜日</td>
+    </tr>
+    <tr>
+      <th>取扱商品</th>
+      <td>卓球用品、バドミントン用品</td>
+    </tr>
+    <tr>
+      <th>HP</th>
+      <td><a href="http://www.onestep-nara.com/" target="_blank" rel="noopener">www.onestep-nara.com</a></td>
+    </tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E6%A9%BF%E5%8E%9F%E5%B8%82%E5%86%85%E8%86%B3%E7%94%BA4%E4%B8%81%E7%9B%AE4%EF%BC%8D5&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>ラケット選びに迷ったら、電話でもお問い合わせフォームでもお気軽にどうぞ。<br>初心者の方も安心してご来店ください。</p>
+  <div class="cta-buttons">
+    <a href="tel:08024500763" class="btn btn-primary">📞 電話で相談する</a>
+    <a href="https://www.onestep-nara.com/contact/" target="_blank" rel="noopener" class="btn btn-outline">✉️ お問い合わせフォーム</a>
+  </div>
+</section>
+
+<footer>
+  © ワンステップスポーツショップ｜奈良県橿原市内膳町4丁目4−5
+</footer>
+
+<!-- Fixed bottom nav -->
+<nav class="bottom-nav">
+  <a href="tel:08024500763" class="nav-tel"><span>📞</span>電話</a>
+  <a href="#access" class="nav-map"><span>📍</span>アクセス</a>
+  <a href="https://www.onestep-nara.com/contact/" target="_blank" rel="noopener" class="nav-form"><span>✉️</span>お問合せ</a>
+</nav>
+
+</body>
+</html>
