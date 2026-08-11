@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>バドミントンプロショップ山田研究所｜四日市のバドミントン専門店</title>
+<style>
+  :root{
+    --main:#0b3d91;
+    --accent:#ffb400;
+    --dark:#1a1a2e;
+    --light:#f7f8fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark);
+    background:var(--light);
+    line-height:1.7;
+    padding-bottom:60px; /* for fixed bottom nav */
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:#fff;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 12px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  }
+  header .shopname{
+    font-size:14px;
+    font-weight:bold;
+    color:var(--main);
+    line-height:1.3;
+  }
+  header .tel-btn{
+    background:var(--main);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-spacer{height:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(rgba(11,61,145,0.55),rgba(11,61,145,0.55)), url('images/hero.jpg') center/cover no-repeat;
+    color:#fff;
+    padding:60px 20px 40px;
+    text-align:center;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--dark);
+    font-weight:bold;
+    font-size:12px;
+    padding:4px 12px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:10px;
+    line-height:1.5;
+  }
+  .hero p{
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  .hero .cta-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--dark);
+    font-weight:bold;
+    padding:14px 30px;
+    border-radius:40px;
+    font-size:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
+  }
+
+  section{
+    padding:40px 18px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:#666;
+    margin-bottom:24px;
+  }
+
+  /* 一押し商品 */
+  .featured{
+    background:#fff;
+  }
+  .featured-box{
+    border:2px solid var(--accent);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  }
+  .featured-box img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-content{
+    padding:18px;
+  }
+  .featured-content .tag{
+    display:inline-block;
+    background:var(--main);
+    color:#fff;
+    font-size:12px;
+    padding:3px 10px;
+    border-radius:14px;
+    margin-bottom:10px;
+    font-weight:bold;
+  }
+  .featured-content h3{
+    font-size:19px;
+    color:var(--dark);
+    margin-bottom:10px;
+  }
+  .featured-content p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:16px;
+  }
+  .featured-points{
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .featured-points li{
+    font-size:13.5px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .featured-points li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--main);
+    font-weight:bold;
+  }
+  .featured .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--main);
+    color:#fff;
+    font-weight:bold;
+    padding:14px;
+    border-radius:40px;
+    font-size:15px;
+  }
+
+  /* 強み */
+  .strengths{
+    background:var(--light);
+  }
+  .strength-card{
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .strength-card .icon{
+    font-size:26px;
+    flex-shrink:0;
+  }
+  .strength-card h4{
+    font-size:15px;
+    color:var(--main);
+    margin-bottom:6px;
+  }
+  .strength-card p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* 創業者ストーリー */
+  .story{
+    background:#fff;
+  }
+  .story-box{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:var(--light);
+    border-radius:12px;
+    padding:18px;
+  }
+  .story-box img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+  }
+  .story-box .story-text p{
+    font-size:13.5px;
+    margin-bottom:8px;
+  }
+  .story-box .story-text strong{
+    color:var(--main);
+  }
+
+  /* クチコミ */
+  .reviews{
+    background:var(--light);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .review-card .stars{
+    color:var(--accent);
+    font-size:15px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* 店舗情報 */
+  .shopinfo{
+    background:#fff;
+  }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .info-table th, .info-table td{
+    border-bottom:1px solid #ddd;
+    padding:12px 6px;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:90px;
+    color:var(--main);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table a{
+    color:var(--main);
+    text-decoration:underline;
+    word-break:break-all;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* 最終CTA */
+  .final-cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+  .final-cta .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .final-cta .btn{
+    display:block;
+    padding:14px;
+    border-radius:40px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .final-cta .btn.tel{
+    background:var(--accent);
+    color:var(--dark);
+  }
+  .final-cta .btn.form{
+    background:#fff;
+    color:var(--main);
+    border:2px solid #fff;
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:12px;
+    color:#999;
+    background:var(--dark);
+    color:#ccc;
+  }
+
+  /* 固定ボトムナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.12);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main);
+  }
+  .bottom-nav a.tel{
+    background:var(--main);
+    color:#fff;
+  }
+  .bottom-nav a.form{
+    background:var(--accent);
+    color:var(--dark);
+  }
+
+  @media (min-width:600px){
+    .story-box{align-items:center;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">バドミントンプロショップ<br>山田研究所</div>
+  <a href="tel:0593617720" class="tel-btn">📞 059-361-7720</a>
+</header>
+<div class="header-spacer"></div>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <span class="badge">四日市のバドミントン専門店</span>
+  <h1>あなたに本当に合うラケット、<br>プロが一緒に見つけます。</h1>
+  <p>国際大会経験のあるスタッフが常駐。<br>ガット張り専門店として道具へのこだわりをお聞かせください。</p>
+  <a href="tel:0593617720" class="cta-btn">今すぐ電話で相談する</a>
+</div>
+
+<!-- イチオシ商品 -->
+<section class="featured">
+  <div class="section-title">イチオシサービス</div>
+  <div class="section-sub">こだわりと誇りをもって、毎日取り組んでいます</div>
+  <div class="featured-box">
+    <img src="images/gut-service.jpg" alt="ガット張りサービス">
+    <div class="featured-content">
+      <span class="tag">ガット張り専門店</span>
+      <h3>ガット張り専門店だからできる、確かな仕上がり</h3>
+      <p>当店は国際大会でのストリング経験のある所長をはじめ、国体・インターハイ・インカレ優勝校出身のスタッフが在籍。お一人おひとりのプレースタイルに合わせたガット選び・張り上げをご提案します。</p>
+      <ul class="featured-points">
+        <li>国際大会レベルのストリング経験を持つ所長が対応</li>
+        <li>国体・インターハイ・インカレ優勝校出身スタッフ在籍</li>
+        <li>戦術や道具のこだわりも気軽にご相談いただけます</li>
+      </ul>
+      <a href="tel:0593617720" class="cta-btn">ガット張りを相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="section-sub">バドミントンライフを本気でサポートします</div>
+
+  <div class="strength-card">
+    <div class="icon">🏆</div>
+    <div>
+      <h4>実績豊富なプロスタッフ</h4>
+      <p>国際大会でのストリング経験のある所長をはじめ、国体・インターハイ・インカレ優勝校出身のスタッフが在籍しています。</p>
+    </div>
+  </div>
+
+  <div class="strength-card">
+    <div class="icon">🎯</div>
+    <div>
+      <h4>豊富な品揃え</h4>
+      <p>バドミントン商品は他店にないほど取り揃えております。ラケットやシューズなど、自分に合った一台がきっと見つかります。</p>
+    </div>
+  </div>
+
+  <div class="strength-card">
+    <div class="icon">💬</div>
+    <div>
+      <h4>丁寧な相談対応</h4>
+      <p>戦術や道具のアドバイス、道具へのこだわりのサポートもぜひお聞かせください。初めての方にも分かりやすくご案内します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 創業者ストーリー -->
+<section class="story">
+  <div class="section-title">店主のご紹介</div>
+  <div class="story-box">
+    <img src="images/owner.jpg" alt="店主">
+    <div class="story-text">
+      <p><strong>モットー：</strong>いつも優しく前向きに</p>
+      <p><strong>趣味：</strong>バドミントンとおいしい料理作り</p>
+      <p><strong>実績：</strong>東京オリンピック2020の審判として参加。</p>
+      <p>バドミントン商品は他店にないほど取り揃えております。ガット張りは、こだわりと誇りをもって毎日取り組んでいます。是非ご来店ください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>顧客それぞれに適したラケットなど、相談に乗って頂けます。またその指摘が中々的確に感じます。行くまでの道中、そこそこ狭い道を通りますが、曲がるべき交差点の電柱に案内看板を出してくださっており、初めてでも到着できました。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>四日市にあるバドミントン専門店です。店主さんもバドミントンを良くされるのでラケット選びなどアドバイスを良くしてくださいます。色んなバドミントンラケットやシューズがあって、自分にあったものを選んでくれました。とても良かったです。</p>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shopinfo">
+  <div class="section-title">店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>バドミントンプロショップ山田研究所</td></tr>
+    <tr><th>住所</th><td>〒510-8102　三重県四日市市大矢知町１５３６</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0593617720">059-361-7720</a></td></tr>
+    <tr><th>定休日</th><td>火曜日　※試合等で臨時休業する場合があります</td></tr>
+    <tr><th>HP</th><td><a href="https://www.bps-yamaken.com/" target="_blank">https://www.bps-yamaken.com/</a></td></tr>
+    <tr><th>お問合せ</th><td><a href="https://www.bps-yamaken.com/contact/" target="_blank">お問い合わせフォーム</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://x.com/kaien70?mx=2" target="_blank">X（旧Twitter）</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E5%9B%9B%E6%97%A5%E5%B8%82%E5%B8%82%E5%A4%A7%E7%9F%A2%E7%9F%A5%E7%94%BA1536&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="final-cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>ラケット選びからガット張りまで、経験豊富なスタッフが丁寧にサポートします。</p>
+  <div class="btn-group">
+    <a href="tel:0593617720" class="btn tel">📞 電話で相談する（059-361-7720）</a>
+    <a href="https://www.bps-yamaken.com/contact/" target="_blank" class="btn form">お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<footer>
+  © バドミントンプロショップ山田研究所
+</footer>
+
+<!-- 固定ボトムナビ -->
+<div class="bottom-nav">
+  <a href="tel:0593617720" class="tel">📞 電話</a>
+  <a href="https://www.bps-yamaken.com/contact/" target="_blank" class="form">✉️ お問合せ</a>
+  <a href="https://www.bps-yamaken.com/" target="_blank">🌐 HP</a>
+</div>
+
+</body>
+</html>
