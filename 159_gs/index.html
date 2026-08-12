@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G.Sスポーツ｜奈良県御所市のスポーツ用品店</title>
+<style>
+  :root{
+    --main:#0b3d91;
+    --accent:#ff6b00;
+    --bg:#f7f8fa;
+    --text:#222;
+    --white:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    background:var(--main);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shop-name{
+    font-size:16px;
+    font-weight:bold;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  main{margin-top:52px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:60vw;
+    max-height:420px;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0));
+    color:#fff;
+    padding:30px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.5;
+  }
+  .hero-overlay .sub{
+    font-size:13px;
+    margin-top:6px;
+    opacity:.9;
+  }
+
+  /* section common */
+  section{
+    padding:32px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:20px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--accent);
+    margin:10px auto 0;
+  }
+
+  /* featured product */
+  .featured{
+    background:var(--white);
+  }
+  .featured-card{
+    background:linear-gradient(135deg,#0b3d91,#1a5fd9);
+    border-radius:16px;
+    overflow:hidden;
+    color:#fff;
+    box-shadow:0 8px 20px rgba(11,61,145,.25);
+  }
+  .featured-card .badge{
+    background:var(--accent);
+    display:inline-block;
+    padding:6px 16px;
+    border-radius:0 0 12px 0;
+    font-weight:bold;
+    font-size:13px;
+  }
+  .featured-card img{
+    width:100%;
+    height:56vw;
+    max-height:320px;
+    object-fit:cover;
+  }
+  .featured-card .content{
+    padding:18px;
+  }
+  .featured-card h3{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14px;
+    opacity:.95;
+  }
+  .featured-cta{
+    display:block;
+    margin:16px auto 0;
+    background:var(--accent);
+    color:#fff;
+    text-align:center;
+    padding:14px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:16px;
+    max-width:320px;
+  }
+
+  /* strengths */
+  .strengths{
+    background:var(--bg);
+  }
+  .strengths .lead{
+    text-align:center;
+    font-size:15px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:16px;
+  }
+  .strengths p.desc{
+    font-size:14px;
+    background:#fff;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+
+  /* review */
+  .review{
+    background:var(--white);
+  }
+  .review-box{
+    background:#fff8ed;
+    border:1px solid #ffe0b3;
+    border-radius:12px;
+    padding:18px;
+  }
+  .stars{
+    color:#ffb400;
+    font-size:20px;
+    margin-bottom:8px;
+  }
+  .review-box p{
+    font-size:14px;
+  }
+
+  /* shop info */
+  .shop-info{
+    background:var(--bg);
+  }
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  table.info-table th,
+  table.info-table td{
+    padding:12px 14px;
+    font-size:14px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+  }
+  table.info-table th{
+    background:#eef2fa;
+    color:var(--main);
+    width:30%;
+    white-space:nowrap;
+  }
+  table.info-table a{
+    color:var(--main);
+    text-decoration:underline;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:260px;
+    border:0;
+  }
+
+  /* shop photo section */
+  .gallery{
+    background:var(--white);
+  }
+  .gallery img{
+    width:100%;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+  }
+
+  /* final cta */
+  .cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:20px;
+    margin-bottom:14px;
+  }
+  .cta .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:340px;
+    margin:0 auto;
+  }
+  .cta .btn{
+    display:block;
+    padding:14px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .btn.tel{background:var(--accent);color:#fff;}
+  .btn.mail{background:#fff;color:var(--main);}
+  .btn.hp{background:transparent;color:#fff;border:1px solid #fff;}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,.12);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.tel{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:16px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">G.Sスポーツ</div>
+  <a class="tel-btn" href="tel:0745631684">📞 0745-63-1684</a>
+</header>
+
+<main>
+
+  <!-- hero -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="G.Sスポーツ 店舗外観">
+    <div class="hero-overlay">
+      <div class="catch">ライフスタイルにスポーツを、<br>スポーツをライフスタイルに。</div>
+      <div class="sub">奈良県御所市 G.Sスポーツ｜地域密着で何でも相談できるスポーツ用品店</div>
+    </div>
+  </div>
+
+  <!-- featured product -->
+  <section class="featured">
+    <div class="section-title">イチオシ商品</div>
+    <div class="featured-card">
+      <span class="badge">PICK UP</span>
+      <img src="images/wear.jpg" alt="スポーツウェア">
+      <div class="content">
+        <h3>スポーツウェア</h3>
+        <p>動きやすさとデザイン性を兼ね備えたスポーツウェアを豊富に取り揃え。学校の体操服や運動靴も取り扱っているので、お子様の学校用品探しにもぴったりです。サイズ選びやコーディネートまで、スタッフが親身にご相談に応じます。</p>
+      </div>
+    </div>
+    <a class="featured-cta" href="tel:0745631684">📞 ウェアのご相談はこちら</a>
+  </section>
+
+  <!-- strengths -->
+  <section class="strengths">
+    <div class="section-title">私たちの強み</div>
+    <div class="lead">「ライフスタイルにスポーツを、スポーツをライフスタイルに」</div>
+    <p class="desc">
+      G.Sスポーツは、地域を活性化させる事業を展開するとともに、お客様にご満足いただけるプロダクトとサービスを追求・提供できる企業への発展を目指しています。スポーツウェアはもちろん、学校の体操服や運動靴の取り扱いもあり、何でも真摯にご相談いただける町のスポーツ用品店です。
+    </p>
+  </section>
+
+  <!-- review -->
+  <section class="review">
+    <div class="section-title">お客様の声</div>
+    <div class="review-box">
+      <div class="stars">★★★★★</div>
+      <p>何でも真摯に相談にのってくれる良いお店です。学校の体操服や運動靴も取り扱っているみたいです。</p>
+    </div>
+  </section>
+
+  <!-- gallery -->
+  <section class="gallery">
+    <div class="section-title">店舗紹介</div>
+    <img src="images/shop.jpg" alt="G.Sスポーツ 店内の様子">
+  </section>
+
+  <!-- shop info -->
+  <section class="shop-info">
+    <div class="section-title">店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>G.Sスポーツ</td></tr>
+      <tr><th>代表者</th><td>辻川 準一</td></tr>
+      <tr><th>住所</th><td>奈良県御所市竹田２６−１０</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0745631684">0745-63-1684</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:gssports.nara@gmail.com">gssports.nara@gmail.com</a></td></tr>
+      <tr><th>HP</th><td><a href="https://gssports.shopinfo.jp/" target="_blank" rel="noopener">https://gssports.shopinfo.jp/</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%BE%A1%E6%89%80%E5%B8%82%E7%AB%B9%E7%94%B0%EF%BC%92%EF%BC%96%E2%88%921%EF%BC%90&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- final cta -->
+  <section class="cta">
+    <h2>まずはお気軽にご相談ください</h2>
+    <div class="btn-group">
+      <a class="btn tel" href="tel:0745631684">📞 電話でお問い合わせ</a>
+      <a class="btn mail" href="mailto:gssports.nara@gmail.com">✉️ メールでお問い合わせ</a>
+      <a class="btn hp" href="https://gssports.shopinfo.jp/" target="_blank" rel="noopener">🌐 公式HPを見る</a>
+    </div>
+  </section>
+
+</main>
+
+<div class="bottom-nav">
+  <a class="tel" href="tel:0745631684"><span class="icon">📞</span>電話</a>
+  <a href="mailto:gssports.nara@gmail.com"><span class="icon">✉️</span>メール</a>
+  <a href="https://gssports.shopinfo.jp/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+</div>
+
+<footer>© G.Sスポーツ</footer>
+
+</body>
+</html>
