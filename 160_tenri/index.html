@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天理スポーツ社｜天理応援グッズなら天理スポーツ社</title>
+<style>
+  :root {
+    --main-color: #0a4d92;
+    --accent-color: #e63946;
+    --sub-color: #f1c40f;
+    --bg-light: #f7f9fb;
+    --text-dark: #222;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: var(--text-dark);
+    background: #fff;
+    line-height: 1.6;
+    padding-bottom: 60px; /* for fixed bottom nav */
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 600px; margin: 0 auto; }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+  }
+  header .shop-name {
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--main-color);
+  }
+  header .tel-btn {
+    background: var(--accent-color);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(135deg, var(--main-color), #06355f);
+    color: #fff;
+    padding: 30px 16px 24px;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: var(--sub-color);
+    color: #222;
+    font-weight: bold;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .hero h1 {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  .hero h1 span {
+    color: var(--sub-color);
+  }
+  .hero p.lead {
+    font-size: 14px;
+    margin-bottom: 16px;
+    opacity: 0.95;
+  }
+  .hero img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  }
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .cta-btn {
+    display: block;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+  }
+  .cta-btn.primary {
+    background: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(230,57,70,0.4);
+  }
+  .cta-btn.secondary {
+    background: #fff;
+    color: var(--main-color);
+    border: 2px solid #fff;
+  }
+
+  /* Section common */
+  section {
+    padding: 32px 16px;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--main-color);
+    margin-bottom: 6px;
+    position: relative;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+  .section-sub {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 22px;
+  }
+
+  /* Featured product (イチオシ) */
+  .featured {
+    background: #fff8ea;
+    border: 3px solid var(--sub-color);
+    border-radius: 16px;
+    padding: 22px 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .featured .ribbon {
+    position: absolute;
+    top: 14px;
+    left: -34px;
+    background: var(--accent-color);
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 4px 40px;
+    transform: rotate(-40deg);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .featured img {
+    border-radius: 10px;
+    margin-bottom: 14px;
+  }
+  .featured h3 {
+    font-size: 19px;
+    color: var(--main-color);
+    margin-bottom: 8px;
+    font-weight: 900;
+  }
+  .featured p {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  .featured ul {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+  .featured ul li {
+    font-size: 14px;
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .featured ul li::before {
+    content: "⚽";
+    position: absolute;
+    left: 0;
+  }
+
+  /* Strengths */
+  .strengths-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .strength-card {
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 16px 10px;
+    text-align: center;
+  }
+  .strength-card .icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .strength-card h4 {
+    font-size: 13px;
+    color: var(--main-color);
+    margin-bottom: 4px;
+  }
+  .strength-card p {
+    font-size: 11px;
+    color: #555;
+  }
+
+  /* Reviews */
+  .review-box {
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 18px;
+    position: relative;
+  }
+  .stars {
+    color: var(--sub-color);
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .review-box p {
+    font-size: 14px;
+    color: #333;
+  }
+  .review-box .reviewer {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888;
+    text-align: right;
+  }
+
+  /* Gallery image */
+  .gallery img {
+    border-radius: 12px;
+  }
+
+  /* Shop info table */
+  table.shop-info {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  table.shop-info th, table.shop-info td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 6px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.shop-info th {
+    width: 30%;
+    color: var(--main-color);
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  .map-wrap {
+    margin-top: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .map-wrap iframe {
+    width: 100%;
+    height: 220px;
+    border: 0;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    background: var(--main-color);
+    color: #fff;
+    text-align: center;
+  }
+  .final-cta h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .final-cta p {
+    font-size: 13px;
+    margin-bottom: 18px;
+    opacity: 0.9;
+  }
+
+  /* Fixed bottom nav */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    z-index: 200;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .bottom-nav a.tel { background: var(--accent-color); }
+  .bottom-nav a.contact { background: var(--main-color); }
+  .bottom-nav a span.icon {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    padding: 20px 16px 30px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">天理スポーツ社</div>
+  <a href="tel:0743632229" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="container">
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="badge">奈良県天理市の地域密着スポーツ店</span>
+    <h1>天理を応援するなら<br><span>天理スポーツ社</span></h1>
+    <p class="lead">地元で愛され続けて数十年。天理応援グッズ・トレパンなど豊富な品揃えでお待ちしています。</p>
+    <img src="images/tenri_hero.jpg" alt="天理スポーツ社 店舗外観">
+    <div class="cta-buttons">
+      <a href="tel:0743632229" class="cta-btn primary">📞 今すぐ電話で問い合わせる</a>
+      <a href="https://r.goope.jp/tenrisports/contact" class="cta-btn secondary">✉️ フォームで問い合わせる</a>
+    </div>
+  </section>
+
+  <!-- イチオシ商品 -->
+  <section>
+    <div class="featured">
+      <div class="ribbon">イチオシ</div>
+      <h3>天理応援グッズ 好評販売中！</h3>
+      <img src="images/tenri_goods.jpg" alt="天理応援グッズ">
+      <p>天理をこよなく愛する皆さまへ。天理スポーツ社では、地元を盛り上げる天理応援グッズを豊富にラインナップ。学生からファミリーまで、天理シャツを愛用する皆さまに支持されています。</p>
+      <ul>
+        <li>天理シャツをはじめとした応援ウェアが充実</li>
+        <li>トレーニングパンツなどの定番アイテムも豊富</li>
+        <li>お子様からご家族まで楽しめるサイズ展開</li>
+      </ul>
+      <a href="tel:0743632229" class="cta-btn primary">📞 在庫・サイズを電話で確認</a>
+    </div>
+  </section>
+
+  <!-- 選ばれる理由 -->
+  <section>
+    <div class="section-title">選ばれる理由</div>
+    <div class="section-sub">天理の皆さまに長く愛されてきた理由があります</div>
+    <div class="strengths-grid">
+      <div class="strength-card">
+        <div class="icon">🏆</div>
+        <h4>豊富な品揃え</h4>
+        <p>天理応援グッズから日用スポーツ用品まで幅広く対応</p>
+      </div>
+      <div class="strength-card">
+        <div class="icon">🤝</div>
+        <h4>地域密着</h4>
+        <p>天理市に根ざした地元スポーツ店として長年営業</p>
+      </div>
+      <div class="strength-card">
+        <div class="icon">😆</div>
+        <h4>親しみやすい接客</h4>
+        <p>お子様連れでも安心の温かい接客が評判</p>
+      </div>
+      <div class="strength-card">
+        <div class="icon">📅</div>
+        <h4>定休日なし</h4>
+        <p>特になしなので、いつでも気軽にご来店いただけます</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口コミ -->
+  <section>
+    <div class="section-title">お客様の声</div>
+    <div class="review-box">
+      <div class="stars">★★★★★</div>
+      <p>息子が🤗天理シャツファンです😆🎵🎵 … 天理スポーツでトレパン買いました。</p>
+      <div class="reviewer">― ご利用者様の口コミより</div>
+    </div>
+  </section>
+
+  <!-- ギャラリー -->
+  <section class="gallery">
+    <div class="section-title">店内のご紹介</div>
+    <img src="images/tenri_shop.jpg" alt="天理スポーツ社 店内の様子">
+  </section>
+
+  <!-- 店舗情報 -->
+  <section>
+    <div class="section-title">店舗情報</div>
+    <table class="shop-info">
+      <tr><th>店名</th><td>天理スポーツ社</td></tr>
+      <tr><th>会社名</th><td>株式会社天理スポーツ社</td></tr>
+      <tr><th>代表者名</th><td>西野　勇</td></tr>
+      <tr><th>住所</th><td>奈良県天理市川原城町383</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0743632229">0743-63-2229</a></td></tr>
+      <tr><th>定休日</th><td>特になし</td></tr>
+      <tr><th>HP</th><td><a href="http://ameblo.jp/tensupo/" target="_blank" rel="noopener">ameblo.jp/tensupo</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe
+        src="https://maps.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A4%A9%E7%90%86%E5%B8%82%E5%B7%9D%E5%8E%9F%E5%9F%8E%E7%94%BA383&output=embed"
+        loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="final-cta">
+    <h2>天理応援グッズのことなら<br>天理スポーツ社へ</h2>
+    <p>ご不明な点はお気軽にお電話・フォームからお問い合わせください。</p>
+    <div class="cta-buttons">
+      <a href="tel:0743632229" class="cta-btn primary">📞 0743-63-2229 に電話する</a>
+      <a href="https://r.goope.jp/tenrisports/contact" class="cta-btn secondary">✉️ お問い合わせフォームへ</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 株式会社天理スポーツ社
+  </footer>
+</div>
+
+<!-- 固定フッターナビ -->
+<div class="bottom-nav">
+  <a href="tel:0743632229" class="tel">
+    <span class="icon">📞</span>電話で相談
+  </a>
+  <a href="https://r.goope.jp/tenrisports/contact" class="contact">
+    <span class="icon">✉️</span>フォームで相談
+  </a>
+</div>
+
+</body>
+</html>
