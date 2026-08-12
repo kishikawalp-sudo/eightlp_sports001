@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>トラックアンドフィールド｜奈良の陸上用品専門店</title>
+<style>
+  :root{
+    --main-color:#e8501f;
+    --dark-color:#1a1a1a;
+    --sub-color:#f5f2ec;
+    --accent-color:#0f7a4a;
+    --text-color:#333;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-color);
+    background:#fff;
+    padding-bottom:60px;
+    padding-top:56px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:480px;margin:0 auto;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--dark-color);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 14px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  .header .shopname{
+    color:#fff;font-size:15px;font-weight:bold;letter-spacing:1px;
+  }
+  .header .tel-btn{
+    background:var(--main-color);
+    color:#fff;
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;align-items:center;gap:4px;
+  }
+
+  /* Hero */
+  .hero{position:relative;}
+  .hero img{width:100%;height:340px;object-fit:cover;}
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.65) 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:24px 20px;
+  }
+  .hero-catch{
+    color:#fff;font-size:24px;font-weight:bold;line-height:1.4;
+    text-shadow:0 2px 6px rgba(0,0,0,0.5);
+    margin-bottom:8px;
+  }
+  .hero-sub{
+    color:#f0e8d8;font-size:13px;letter-spacing:2px;
+  }
+
+  /* Section common */
+  section{padding:36px 20px;}
+  .section-title{
+    text-align:center;font-size:20px;font-weight:bold;
+    margin-bottom:6px;color:var(--dark-color);
+  }
+  .section-title span{
+    display:block;font-size:11px;color:var(--main-color);
+    letter-spacing:3px;margin-bottom:6px;font-weight:bold;
+  }
+  .section-lead{
+    text-align:center;font-size:13px;color:#666;margin-bottom:26px;line-height:1.7;
+  }
+
+  /* Featured product */
+  .featured{background:var(--dark-color);color:#fff;}
+  .featured .section-title{color:#fff;}
+  .featured .section-lead{color:#ccc;}
+  .featured-card{
+    background:#fff;color:var(--text-color);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,0.35);
+  }
+  .featured-card img{width:100%;height:220px;object-fit:cover;}
+  .featured-card .badge{
+    display:inline-block;
+    background:var(--main-color);
+    color:#fff;font-size:12px;font-weight:bold;
+    padding:5px 14px;border-radius:20px;
+    margin:16px 0 10px 16px;
+  }
+  .featured-card h3{
+    font-size:19px;padding:0 16px;margin-bottom:10px;color:var(--dark-color);
+  }
+  .featured-card p{
+    font-size:13.5px;line-height:1.9;padding:0 16px 20px;color:#555;
+  }
+  .featured-list{
+    list-style:none;padding:0 16px 22px;
+  }
+  .featured-list li{
+    font-size:13.5px;padding:8px 0 8px 26px;position:relative;
+    border-top:1px dashed #ddd;
+  }
+  .featured-list li:before{
+    content:"✓";position:absolute;left:0;color:var(--main-color);font-weight:bold;
+  }
+
+  /* Strengths */
+  .strengths{background:var(--sub-color);}
+  .strength-item{
+    display:flex;gap:14px;
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .strength-num{
+    flex:0 0 auto;
+    width:38px;height:38px;
+    background:var(--main-color);
+    color:#fff;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;font-size:16px;
+  }
+  .strength-text h4{font-size:15px;margin-bottom:5px;color:var(--dark-color);}
+  .strength-text p{font-size:13px;line-height:1.7;color:#555;}
+
+  /* Reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--sub-color);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    position:relative;
+  }
+  .review-stars{color:#f5a623;font-size:15px;margin-bottom:8px;letter-spacing:2px;}
+  .review-card p{font-size:13px;line-height:1.85;color:#444;white-space:pre-line;}
+  .review-card .quote-mark{
+    position:absolute;top:8px;right:14px;font-size:34px;color:#e0dccd;font-weight:bold;
+  }
+
+  /* Photo gallery mini */
+  .gallery{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;
+  }
+  .gallery img{border-radius:8px;height:120px;object-fit:cover;}
+
+  /* Shop info */
+  .shopinfo{background:var(--sub-color);}
+  .info-table{
+    width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .info-table th,.info-table td{
+    text-align:left;padding:14px 12px;font-size:13px;border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .info-table th{
+    background:#faf7f2;color:var(--dark-color);width:26%;white-space:nowrap;font-weight:bold;
+  }
+  .info-table tr:last-child th,.info-table tr:last-child td{border-bottom:none;}
+  .map-wrap{margin-top:16px;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block;}
+
+  /* CTA section */
+  .cta{
+    background:linear-gradient(135deg,var(--main-color),#c9390f);
+    text-align:center;color:#fff;
+  }
+  .cta h2{font-size:20px;margin-bottom:10px;}
+  .cta p{font-size:13px;margin-bottom:22px;opacity:0.95;line-height:1.7;}
+  .cta-btn{
+    display:inline-block;background:#fff;color:var(--main-color);
+    font-weight:bold;font-size:15px;
+    padding:14px 36px;border-radius:30px;
+    box-shadow:0 6px 16px rgba(0,0,0,0.25);
+  }
+  .cta-sub{margin-top:14px;font-size:12px;opacity:0.85;}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #e5e5e5;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.08);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;text-align:center;padding:10px 4px;font-size:11px;color:var(--dark-color);
+    display:flex;flex-direction:column;align-items:center;gap:3px;
+  }
+  .bottom-nav a.call{
+    background:var(--main-color);color:#fff;
+  }
+  .bottom-nav .icon{font-size:18px;}
+
+  footer{
+    text-align:center;padding:24px 16px 80px;font-size:11px;color:#999;background:var(--dark-color);
+  }
+  footer .fname{color:#ccc;font-size:12px;margin-bottom:6px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="shopname">トラックアンドフィールド</div>
+  <a href="tel:0742249199" class="tel-btn">📞 0742-24-9199</a>
+</div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="images/158_toraku_hero.jpg" alt="トラックアンドフィールド 店舗外観">
+    <div class="hero-overlay">
+      <div class="hero-catch">陸上を愛するあなたへ、<br>本物のアドバイスを。</div>
+      <div class="hero-sub">奈良市 高天市町 ｜ 陸上用品専門店</div>
+    </div>
+  </div>
+
+  <!-- FEATURED PRODUCT -->
+  <section class="featured">
+    <div class="section-title"><span>ICHIOSHI</span>陸上用品</div>
+    <p class="section-lead">奈良マラソンをはじめ、地域のランナーに30年以上寄り添ってきた専門店だからこそ提案できる一足があります。</p>
+    <div class="featured-card">
+      <img src="images/158_toraku_shoes.jpg" alt="陸上用品・ランニングシューズ">
+      <div class="badge">店長イチオシ</div>
+      <h3>あなたの足に、本気で向き合うシューズ選び</h3>
+      <p>陸上競技用スパイクからマラソン用ランニングシューズまで、豊富な品揃え。店長自らが一人ひとりの足の形や走り方を見極め、本当に合う一足を提案します。</p>
+      <ul class="featured-list">
+        <li>陸上競技スパイク・ランニングシューズ多数取扱い</li>
+        <li>足の特徴に合わせたフィッティングアドバイス</li>
+        <li>奈良マラソン開催期間はお得な特別価格でご提供</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section class="strengths">
+    <div class="section-title"><span>STRENGTH</span>選ばれる理由</div>
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div class="strength-text">
+        <h4>創業から30年以上の信頼</h4>
+        <p>地域のランナーと長年にわたり付き合いを重ね、世代を超えて通い続けるお客様も多数。奈良の陸上文化を支え続けてきたお店です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div class="strength-text">
+        <h4>良し悪しをはっきり伝える誠実さ</h4>
+        <p>商品の良い点・悪い点を正直に区別して評価し、お客様に本当に必要なものだけをお伝えします。売って終わりにしない姿勢が信頼の理由です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div class="strength-text">
+        <h4>店長の情熱と豊富な知識</h4>
+        <p>陸上用品への深い知識と情熱をもって、一人ひとりに向き合った接客を実施。お客様第一のCS向上に日々努めています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="section-title"><span>VOICE</span>お客様の声</div>
+    <div class="review-card">
+      <div class="quote-mark">”</div>
+      <div class="review-stars">★★★★</div>
+      <p>奈良マラソン終了後立ち寄り、店長さんに色々シューズのアドバイスいただきました。ありがとうございます。</p>
+    </div>
+    <div class="review-card">
+      <div class="quote-mark">”</div>
+      <div class="review-stars">★★★★★</div>
+      <p>奈良マラソン開催中はかなりお得に販売されます。エキスポの大手さんよりも破格です。
+２年連続でシューズを買いました。去年初めてお世話になり、前日受付前に立ち寄ったところおじさんも私の事を覚えていてくれました。また来年もお邪魔します。このお店は30年以上付き合っているいいお店です。
+靴などいいもの悪いものをはっきり区別して評価してお客さんに教えてくれます。店長の情熱がいつも溢れています。知識も豊富で売ったらおしまいと言うお店ではありません。お客さんのことを第一に考えCS向上に努めています。</p>
+    </div>
+    <div class="gallery">
+      <img src="images/158_toraku_shoes.jpg" alt="陸上用品コーナー">
+      <img src="images/158_toraku_hero.jpg" alt="店舗の様子">
+    </div>
+  </section>
+
+  <!-- SHOP INFO -->
+  <section class="shopinfo">
+    <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>トラックアンドフィールド</td></tr>
+      <tr><th>住所</th><td>奈良県奈良市高天市町１９−１</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0742249199">0742-24-9199</a></td></tr>
+      <tr><th>定休日</th><td>不定休</td></tr>
+      <tr><th>HP</th><td><a href="http://tandf.boo.jp/index.html/" target="_blank">tandf.boo.jp</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:tandf@m5.kcn.ne.jp">tandf@m5.kcn.ne.jp</a></td></tr>
+      <tr><th>イチオシ</th><td>陸上用品</td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A5%88%E8%89%AF%E5%B8%82%E9%AB%98%E5%A4%A9%E5%B8%82%E7%94%BA%EF%BC%91%EF%BC%99%E2%88%921&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>まずはお気軽にご来店・お問合せください</h2>
+    <p>陸上用品のことなら何でもご相談を。<br>あなたにぴったりの一足を店長が一緒に探します。</p>
+    <a href="tel:0742249199" class="cta-btn">📞 電話でお問合せ</a>
+    <div class="cta-sub">受付時間はお電話にてご確認ください</div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="fname">トラックアンドフィールド</div>
+  奈良県奈良市高天市町１９−１｜0742-24-9199
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0742249199" class="call"><span class="icon">📞</span>電話する</a>
+  <a href="https://maps.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A5%88%E8%89%AF%E5%B8%82%E9%AB%98%E5%A4%A9%E5%B8%82%E7%94%BA%EF%BC%91%EF%BC%99%E2%88%921" target="_blank"><span class="icon">📍</span>アクセス</a>
+  <a href="http://tandf.boo.jp/index.html/" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="mailto:tandf@m5.kcn.ne.jp"><span class="icon">✉️</span>メール</a>
+</div>
+
+</body>
+</html>
