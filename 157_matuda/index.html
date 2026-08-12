@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マツダスポーツ｜グローブ専門店 大和高田市</title>
+<style>
+  :root{
+    --main:#1a3c6e;
+    --accent:#e8562c;
+    --sub:#f2b705;
+    --bg:#f7f8fa;
+    --text:#222;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    padding-bottom:64px;
+    line-height:1.6;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--main);color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 12px;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shopname{font-size:16px;font-weight:bold;}
+  header .telbtn{
+    background:var(--accent);color:#fff;
+    padding:8px 14px;border-radius:20px;
+    font-size:13px;font-weight:bold;
+    white-space:nowrap;
+  }
+  main{padding-top:52px;}
+
+  /* hero */
+  .hero{position:relative;text-align:center;background:#000;}
+  .hero img{width:100%;height:auto;opacity:.92;}
+  .hero .catch{
+    position:absolute;bottom:14px;left:0;right:0;
+    color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.8);
+    padding:0 16px;
+  }
+  .hero .catch .small{
+    display:inline-block;background:var(--accent);
+    padding:4px 12px;border-radius:4px;font-size:13px;font-weight:bold;margin-bottom:8px;
+  }
+  .hero .catch .big{
+    font-size:22px;font-weight:bold;line-height:1.4;
+  }
+
+  section{padding:32px 16px;}
+  .section-title{
+    text-align:center;font-size:20px;font-weight:bold;
+    color:var(--main);margin-bottom:20px;position:relative;
+  }
+  .section-title:after{
+    content:"";display:block;width:40px;height:3px;background:var(--accent);
+    margin:8px auto 0;
+  }
+
+  /* push - featured product */
+  .push{background:linear-gradient(180deg,#fff,#f0f4fa);}
+  .push-badge{
+    background:var(--accent);color:#fff;display:inline-block;
+    padding:6px 16px;border-radius:20px;font-weight:bold;font-size:14px;
+    margin-bottom:12px;
+  }
+  .push-title{font-size:24px;font-weight:bold;color:var(--main);margin-bottom:12px;}
+  .push img{border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.15);margin-bottom:16px;}
+  .push-desc{font-size:15px;margin-bottom:16px;}
+  .care-box{
+    background:#fff;border:2px solid var(--sub);border-radius:10px;
+    padding:16px;margin-top:12px;
+  }
+  .care-box .care-title{
+    font-weight:bold;color:var(--accent);font-size:16px;margin-bottom:6px;
+    display:flex;align-items:center;gap:6px;
+  }
+
+  /* strengths */
+  .strengths{background:#fff;}
+  .strength-list{display:flex;flex-direction:column;gap:14px;}
+  .strength-item{
+    display:flex;gap:12px;background:var(--bg);border-radius:10px;padding:14px;
+    border-left:4px solid var(--main);
+  }
+  .strength-item .num{
+    font-size:22px;font-weight:bold;color:var(--main);min-width:32px;
+  }
+  .strength-item .txt-title{font-weight:bold;font-size:15px;margin-bottom:4px;}
+  .strength-item .txt-body{font-size:13.5px;color:#444;}
+
+  /* gallery */
+  .gallery{background:var(--bg);}
+  .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .gallery-grid img{border-radius:8px;}
+
+  /* reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--bg);border-radius:10px;padding:16px;margin-bottom:14px;
+    position:relative;
+  }
+  .review-stars{color:var(--sub);font-size:16px;margin-bottom:8px;letter-spacing:2px;}
+  .review-text{font-size:13.5px;color:#333;}
+
+  /* CTA mid */
+  .cta-mid{
+    background:var(--main);color:#fff;text-align:center;padding:28px 16px;
+  }
+  .cta-mid p{margin-bottom:14px;font-size:15px;font-weight:bold;}
+  .cta-mid .btn{
+    display:inline-block;background:var(--accent);color:#fff;
+    padding:14px 28px;border-radius:30px;font-weight:bold;font-size:16px;
+  }
+
+  /* shop info */
+  .shopinfo{background:#fff;}
+  table.info-table{width:100%;border-collapse:collapse;font-size:14px;}
+  table.info-table th{
+    background:var(--bg);color:var(--main);text-align:left;
+    padding:10px 8px;width:28%;border-bottom:1px solid #ddd;vertical-align:top;
+    font-weight:bold;
+  }
+  table.info-table td{
+    padding:10px 8px;border-bottom:1px solid #ddd;vertical-align:top;
+  }
+  table.info-table a{color:var(--main);text-decoration:underline;}
+  .map-wrap{margin-top:16px;border-radius:8px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+  .sns-links{display:flex;gap:10px;margin-top:16px;justify-content:center;}
+  .sns-links a{
+    background:var(--main);color:#fff;padding:10px 16px;border-radius:20px;
+    font-size:13px;font-weight:bold;
+  }
+
+  /* footer cta */
+  .cta-final{
+    background:var(--accent);color:#fff;text-align:center;padding:32px 16px;
+  }
+  .cta-final .big{font-size:19px;font-weight:bold;margin-bottom:14px;}
+  .cta-final .btn{
+    display:inline-block;background:#fff;color:var(--accent);
+    padding:14px 30px;border-radius:30px;font-weight:bold;font-size:16px;
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;z-index:100;
+    display:flex;background:#fff;box-shadow:0 -2px 8px rgba(0,0,0,.15);
+  }
+  .bottom-nav a{
+    flex:1;text-align:center;padding:10px 4px;font-size:12px;font-weight:bold;
+    color:var(--main);border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;background:var(--accent);color:#fff;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">マツダスポーツ</div>
+  <a href="tel:0742305800" class="telbtn">📞 電話で相談</a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="images/hero_glove.jpg" alt="マツダスポーツ グローブ">
+    <div class="catch">
+      <span class="small">大和高田市の野球専門店</span>
+      <div class="big">豊富な品揃えとグローブケアで<br>あなたにぴったりの1本が見つかる</div>
+    </div>
+  </div>
+
+  <!-- PUSH PRODUCT: グローブ -->
+  <section class="push">
+    <span class="push-badge">イチオシ商品</span>
+    <div class="push-title">グローブ</div>
+    <img src="images/glove_lineup.jpg" alt="グローブ品揃え">
+    <p class="push-desc">
+      トップモデルを中心に、豊富なラインナップを取り揃えています。試打・試着でお子様にぴったりの1本を一緒に探せるのが専門店の強みです。人気ブランドの取扱いも充実しており、量販店にはない品揃えをぜひ店頭でお確かめください。
+    </p>
+    <div class="care-box">
+      <div class="care-title">🧤 購入後のグローブケアが無料付帯</div>
+      <div>マツダスポーツでグローブをご購入いただくと、揉む・叩くなどのケアを施してお渡しします。買ったその日から使いやすい状態でスタートできます。</div>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section class="strengths">
+    <div class="section-title">マツダスポーツの強み</div>
+    <div class="strength-list">
+      <div class="strength-item">
+        <div class="num">01</div>
+        <div>
+          <div class="txt-title">豊富な品揃え・お求めやすい価格</div>
+          <div class="txt-body">ユニフォーム等ウエア類やメンテナンス用品の品揃えが豊富。店舗販売の中でも最安レベルの価格帯で提供しています。バラ売り対応や木製バットの取扱いも充実。</div>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">02</div>
+        <div>
+          <div class="txt-title">グラブ・スパイク・ユニフォーム・バットの修理対応</div>
+          <div class="txt-body">その他の用品も含め、修理を承っております。お困りのことがあれば、なんなりとお問合せください。</div>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">03</div>
+        <div>
+          <div class="txt-title">購入後のグローブケアサービス</div>
+          <div class="txt-body">グローブご購入時に揉む・叩くなどのケアを行ってお渡し。専門店ならではの丁寧な仕上げで満足度の高いお声を多数いただいています。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="section-title">店内のご紹介</div>
+    <div class="gallery-grid">
+      <img src="images/store_front.jpg" alt="マツダスポーツ 店舗">
+      <img src="images/uniform_ware.jpg" alt="ユニフォーム・ウエア類">
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="section-title">お客様のクチコミ</div>
+    <div class="review-card">
+      <div class="review-stars">★★★★</div>
+      <div class="review-text">
+        ユニフォーム等ウエア類とメンテナンス用品の品揃えが豊富で、店舗販売のなかでは最安レベルに安いです。左投げのグローブの品数は少なめですが、バラ売りや木のバットも豊富で助かります。
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">
+        隣市ですが品揃えの良さで訪問しました。息子も気に入ったグローブがあり、サービスで柔らかくしてもらえて大満足です！トップモデルもほとんど置いてあり、ミズノのモレリアも扱っていてとても嬉しかったです。店員さんの接客もとても丁寧で心地よかったです。
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA MID -->
+  <section class="cta-mid">
+    <p>グローブ選びは専門店のマツダスポーツへ</p>
+    <a href="tel:0742305800" class="btn">📞 0742-30-5800</a>
+  </section>
+
+  <!-- SHOP INFO -->
+  <section class="shopinfo">
+    <div class="section-title">店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>マツダスポーツ</td></tr>
+      <tr><th>会社名</th><td>株式会社マツダスポーツ</td></tr>
+      <tr><th>住所</th><td>大和高田市本郷町7番13号</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0742305800">0742-30-5800</a></td></tr>
+      <tr><th>定休日</th><td>水曜日（祝日の場合翌日）</td></tr>
+      <tr><th>公式HP</th><td><a href="http://www.matsudasports.com/" target="_blank">www.matsudasports.com</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="http://www.matsudasports.com/contact/" target="_blank">お問い合わせフォーム</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe loading="lazy" src="https://maps.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A4%A7%E5%92%8C%E9%AB%98%E7%94%B0%E5%B8%82%E6%9C%AC%E9%83%B7%E7%94%BA7%E7%AA%AA13%E5%8F%B7&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+    <div class="sns-links">
+      <a href="https://www.instagram.com/matsudanara2012/" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@matsudasp1950" target="_blank">YouTube</a>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-final">
+    <div class="big">グローブのご相談・ケアも<br>マツダスポーツにお任せください</div>
+    <a href="tel:0742305800" class="btn">今すぐ電話する</a>
+  </section>
+
+</main>
+
+<nav class="bottom-nav">
+  <a href="http://www.matsudasports.com/" target="_blank">公式HP</a>
+  <a href="http://www.matsudasports.com/contact/" target="_blank">お問い合わせ</a>
+  <a href="tel:0742305800">電話する</a>
+</nav>
+
+</body>
+</html>
