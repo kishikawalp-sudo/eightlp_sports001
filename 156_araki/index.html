@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スポーツシティアラキ｜奈良県桜井市 バッティングセンター＆野球用品専門店</title>
+<style>
+  :root{
+    --main-color:#0b3d91;
+    --accent-color:#e63329;
+    --sub-color:#f7b500;
+    --bg-light:#f5f7fa;
+    --text-dark:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px; /* for fixed bottom nav */
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:640px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;right:0;
+    background:#fff;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 12px;
+  }
+  .header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  .header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header .tel-btn .tel-num{
+    font-size:15px;
+  }
+  .header-spacer{height:58px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    text-align:center;
+    background:var(--main-color);
+  }
+  .hero img{
+    width:100%;
+    height:auto;
+    opacity:0.85;
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    color:#fff;
+  }
+  .hero-text .catch-sub{
+    font-size:14px;
+    background:var(--sub-color);
+    color:#333;
+    display:inline-block;
+    padding:4px 14px;
+    border-radius:20px;
+    font-weight:bold;
+    margin-bottom:10px;
+  }
+  .hero-text h1{
+    font-size:26px;
+    font-weight:bold;
+    text-shadow:2px 2px 6px rgba(0,0,0,0.6);
+    line-height:1.4;
+  }
+  .hero-text .shop-title{
+    margin-top:10px;
+    font-size:18px;
+    text-shadow:1px 1px 4px rgba(0,0,0,0.6);
+  }
+
+  /* Section common */
+  section{padding:40px 0;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title span{
+    display:block;
+    font-size:13px;
+    color:var(--accent-color);
+    font-weight:bold;
+    margin-bottom:6px;
+    letter-spacing:2px;
+  }
+  .section-desc{
+    text-align:center;
+    font-size:14px;
+    margin-bottom:28px;
+    color:#555;
+  }
+
+  /* Featured product */
+  .featured{
+    background:linear-gradient(135deg,#fff8e6,#fff);
+    border:3px solid var(--sub-color);
+    border-radius:16px;
+    padding:24px 16px;
+    margin:0 16px;
+  }
+  .featured-badge{
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:14px;
+    display:inline-block;
+    padding:6px 18px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .featured img{
+    border-radius:10px;
+    margin-bottom:16px;
+  }
+  .featured h3{
+    font-size:20px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured p{
+    font-size:15px;
+    margin-bottom:16px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .featured-list li{
+    padding:8px 0 8px 28px;
+    position:relative;
+    font-size:14px;
+    border-bottom:1px dashed #ddd;
+  }
+  .featured-list li::before{
+    content:"⚾";
+    position:absolute;
+    left:0;
+    top:8px;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:17px;
+    padding:16px;
+    border-radius:10px;
+    box-shadow:0 4px 0 #b71f17;
+  }
+  .cta-btn.sub{
+    background:var(--main-color);
+    box-shadow:0 4px 0 #06265c;
+    margin-top:12px;
+  }
+
+  /* Strengths */
+  .strengths{
+    background:var(--bg-light);
+  }
+  .strength-grid{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .strength-num{
+    flex:0 0 auto;
+    width:38px;height:38px;
+    background:var(--main-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .strength-item h4{
+    font-size:16px;
+    color:var(--main-color);
+    margin-bottom:6px;
+  }
+  .strength-item p{
+    font-size:14px;
+    color:#444;
+  }
+
+  /* Gallery */
+  .gallery img{
+    border-radius:10px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--bg-light);
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:16px;
+    border-left:5px solid var(--sub-color);
+  }
+  .review-stars{
+    color:var(--sub-color);
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:#333;
+  }
+
+  /* Shop info */
+  .shop-info{background:var(--bg-light);}
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom:20px;
+  }
+  .info-table tr{border-bottom:1px solid #eee;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:var(--main-color);
+    color:#fff;
+    font-size:13px;
+    padding:12px 10px;
+    width:30%;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:12px 10px;
+    font-size:14px;
+    vertical-align:top;
+  }
+  .map-frame{
+    width:100%;
+    height:250px;
+    border:0;
+    border-radius:10px;
+  }
+  .sns-links{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-top:18px;
+  }
+  .sns-links a{
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:30px;
+    padding:10px 20px;
+    font-size:14px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:22px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:14px;
+    margin-bottom:24px;
+    opacity:0.9;
+  }
+  .final-cta .cta-btn{
+    background:var(--accent-color);
+    box-shadow:0 4px 0 #b71f17;
+  }
+  .final-cta .cta-btn.sub{
+    background:#fff;
+    color:var(--main-color);
+    box-shadow:0 4px 0 #ccc;
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:#888;
+    padding:24px 16px;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main-color);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.primary{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:641px){
+    .strength-grid{flex-direction:row;flex-wrap:wrap;}
+    .strength-item{flex:1 1 45%;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<div class="header">
+  <div class="shop-name">スポーツシティアラキ</div>
+  <a href="tel:0744437110" class="tel-btn">📞 <span class="tel-num">0744-43-7110</span></a>
+</div>
+<div class="header-spacer"></div>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="スポーツシティアラキ バッティングセンター＆野球用品">
+  <div class="hero-text">
+    <span class="catch-sub">奈良県桜井市｜バッティングセンター併設 野球用品専門店</span>
+    <h1>楽しく打って、本気の一本に出会う。</h1>
+    <div class="shop-title">スポーツシティアラキ</div>
+  </div>
+</div>
+
+<!-- イチオシ商品セクション -->
+<section>
+  <div class="container">
+    <div class="section-title"><span>ICHIOSHI</span>バッティングセンター＆野球用品</div>
+    <p class="section-desc">お子様の練習から本格志向まで、ここに来れば全部そろう。</p>
+
+    <div class="featured">
+      <div class="featured-badge">当店イチオシ！</div>
+      <img src="images/batting.jpg" alt="バッティングセンター">
+      <h3>普通のバッティングセンターとは、ひと味違う。</h3>
+      <p>桜井市に拠点を置くスポーツショップが運営するバッティングセンター。野球用品専門店ならではの目線で設備を整え、お子様の練習にもぴったりな環境をご用意しています。</p>
+      <ul class="featured-list">
+        <li>併設の野球ショップですぐに用品チェック＆買い足しOK</li>
+        <li>インスタフォロー＆LINE友だち登録でバッティング1回分プレゼント</li>
+        <li>ユニフォーム作成・グローブオーダー＆グローブ修理も対応</li>
+      </ul>
+      <a href="tel:0744437110" class="cta-btn">📞 電話で問い合わせる</a>
+      <a href="https://www.sp-araki.jp/contact/" class="cta-btn sub">お問い合わせフォームはこちら</a>
+    </div>
+  </div>
+</section>
+
+<!-- 選ばれる理由 -->
+<section class="strengths">
+  <div class="container">
+    <div class="section-title"><span>POINT</span>選ばれる理由</div>
+    <div class="strength-grid">
+      <div class="strength-item">
+        <div class="strength-num">1</div>
+        <div>
+          <h4>バッティングセンター併設の野球専門店</h4>
+          <p>打つ楽しさと専門店の安心感、両方を一度に体験できます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">2</div>
+        <div>
+          <h4>フォロー＆友だち登録特典あり</h4>
+          <p>カウンターでインスタグラムのフォローとLINE友だち登録をすると、それぞれバッティングセンターのカード1回分をプレゼント。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">3</div>
+        <div>
+          <h4>ユニフォーム・グローブのオーダー対応</h4>
+          <p>野球用品専門店として、ユニフォームなどの作成やグローブ製作を承ります。グローブの修理も可能です。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">4</div>
+        <div>
+          <h4>お子様の練習にも安心</h4>
+          <p>野球を頑張るお子様の練習の場として、何度も通いたくなる環境です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ギャラリー -->
+<section class="gallery">
+  <div class="container">
+    <div class="section-title"><span>GALLERY</span>店内の様子</div>
+    <img src="images/glove.jpg" alt="野球用品・グローブ">
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section class="reviews">
+  <div class="container">
+    <div class="section-title"><span>VOICE</span>お客様のクチコミ</div>
+    <div class="review-card">
+      <div class="review-stars">★★★★</div>
+      <p>従来のバッティングセンターとは少し違って楽しめる所です♪ 運営は桜井市に拠点を置くスポーツショップさんがやってる様です。</p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>バッティングセンター併設の野球ショップですね。カウンターでインスタグラムのフォローとLINEの友だち登録をするとバッティングセンターのカード1回分をそれぞれもらえます。子供の野球の練習にまた連れて行きたいです。野球用品専門店で、ユニフォームなどの作成もお願いできますよ。もちろん、グローブも作っていただけます（グローブの修理もしてます）。バッティングセンターも楽しめます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shop-info">
+  <div class="container">
+    <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>スポーツシティアラキ</td></tr>
+      <tr><th>会社名</th><td>株式会社スポーツシティアラキ</td></tr>
+      <tr><th>代表者</th><td>越出 育子</td></tr>
+      <tr><th>住所</th><td>奈良県桜井市大泉155-1</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0744437110">0744-43-7110</a></td></tr>
+      <tr><th>定休日</th><td>月曜日</td></tr>
+      <tr><th>HP</th><td><a href="http://www.sp-araki.jp/" target="_blank" rel="noopener">www.sp-araki.jp</a></td></tr>
+    </table>
+    <iframe class="map-frame" loading="lazy" src="https://www.google.com/maps?q=奈良県桜井市大泉155-1&output=embed"></iframe>
+    <div class="sns-links">
+      <a href="https://www.instagram.com/ninestars9.arakisp/" target="_blank" rel="noopener">📷 Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>お子様の野球の練習に、本気の一本探しに。</h2>
+    <p>バッティングセンター＆野球用品専門店　スポーツシティアラキへ、ぜひお越しください。</p>
+    <a href="tel:0744437110" class="cta-btn">📞 0744-43-7110 に電話する</a>
+    <a href="https://www.sp-araki.jp/contact/" class="cta-btn sub">お問い合わせフォーム</a>
+  </div>
+</section>
+
+<footer>
+  <p>株式会社スポーツシティアラキ｜奈良県桜井市大泉155-1</p>
+</footer>
+
+<!-- 固定フッターナビ -->
+<div class="bottom-nav">
+  <a href="tel:0744437110" class="primary"><span class="icon">📞</span>電話する</a>
+  <a href="https://www.sp-araki.jp/contact/"><span class="icon">✉️</span>お問い合わせ</a>
+  <a href="https://www.instagram.com/ninestars9.arakisp/" target="_blank" rel="noopener"><span class="icon">📷</span>Instagram</a>
+</div>
+
+</body>
+</html>
