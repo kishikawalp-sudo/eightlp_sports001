@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スポーツ館ハラヤ｜奈良県橿原市のスポーツ用品専門店</title>
+<style>
+  :root{
+    --main-color:#0b3d91;
+    --accent-color:#e8562e;
+    --sub-color:#f5a623;
+    --bg-light:#f7f8fa;
+    --text-dark:#222;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:480px;margin:0 auto;background:#fff;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    z-index:100;
+    max-width:480px;
+    margin:0 auto;
+  }
+  header .logo{font-size:15px;font-weight:bold;color:var(--main-color);}
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+  }
+  .header-spacer{height:56px;}
+
+  /* hero */
+  .hero{position:relative;}
+  .hero img{width:100%;height:340px;object-fit:cover;}
+  .hero-text{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(11,61,145,0.9), rgba(11,61,145,0));
+    color:#fff;
+    padding:30px 16px 16px;
+  }
+  .hero-text .catch{font-size:22px;font-weight:bold;line-height:1.4;text-shadow:1px 1px 4px rgba(0,0,0,0.5);}
+  .hero-text .sub{font-size:13px;margin-top:6px;opacity:0.95;}
+
+  section{padding:32px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:22px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent-color);
+    margin:8px auto 0;
+  }
+
+  /* featured product */
+  .featured{
+    background:var(--bg-light);
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .featured-title{
+    font-size:24px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:14px;
+  }
+  .featured-img{
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  }
+  .featured-desc{
+    font-size:15px;
+    margin-bottom:18px;
+  }
+  .featured-points{
+    list-style:none;
+    margin-bottom:20px;
+  }
+  .featured-points li{
+    background:#fff;
+    border-left:4px solid var(--accent-color);
+    padding:12px 14px;
+    margin-bottom:10px;
+    border-radius:4px;
+    font-size:14px;
+    font-weight:bold;
+  }
+  .cta-btn{
+    display:block;
+    background:var(--accent-color);
+    color:#fff;
+    text-align:center;
+    padding:16px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(232,86,46,0.4);
+  }
+
+  /* strengths */
+  .strengths-text{
+    font-size:15px;
+    background:var(--bg-light);
+    padding:20px;
+    border-radius:10px;
+    border-left:5px solid var(--main-color);
+  }
+
+  /* reviews */
+  .review-box{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:10px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .stars{color:#f5a623;font-size:20px;margin-bottom:10px;}
+  .review-text{font-size:14px;color:#444;}
+
+  /* shop info */
+  .shop-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .shop-table th, .shop-table td{
+    padding:12px 8px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-table th{
+    width:90px;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .map-frame iframe{width:100%;height:220px;border:0;}
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+  }
+  .sns-links a{
+    flex:1;
+    text-align:center;
+    padding:10px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:bold;
+  }
+  .sns-links .insta{background:#e1306c;color:#fff;}
+  .sns-links .hp{background:var(--main-color);color:#fff;}
+
+  /* final CTA */
+  .final-cta{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta .section-title{color:#fff;}
+  .final-cta .section-title::after{background:var(--sub-color);}
+  .final-cta p{font-size:14px;margin-bottom:20px;opacity:0.95;}
+  .final-cta .cta-btn{background:var(--sub-color);color:var(--text-dark);}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    max-width:480px;
+    margin:0 auto;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px 0;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main-color);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;}
+  .bottom-nav a.tel{background:var(--accent-color);color:#fff;}
+  .bottom-nav a.form{background:var(--sub-color);color:#fff;}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="logo">スポーツ館ハラヤ</div>
+    <a href="tel:0744279818" class="tel-btn">📞 電話する</a>
+  </header>
+  <div class="header-spacer"></div>
+
+  <!-- hero -->
+  <div class="hero">
+    <img src="C:\Users\user\Pictures\eightLP\sports\164_haraya\images\hero.jpg" alt="スポーツ館ハラヤ 店舗外観">
+    <div class="hero-text">
+      <div class="catch">選手人生に、長く寄り添える一着を。</div>
+      <div class="sub">奈良県橿原市のスポーツ用品専門店｜オーダーユニフォーム承ります</div>
+    </div>
+  </div>
+
+  <!-- 口コミ -->
+  <section>
+    <div class="section-title">お客様の声</div>
+    <div class="review-box">
+      <div class="stars">★★★★★</div>
+      <div class="review-text">
+        丁寧に対応してくれて出来上がりも早いし良かったです。卓球のラバーを張替えしてくださってありがとうございました。
+      </div>
+    </div>
+  </section>
+
+  <!-- イチオシ商品 -->
+  <section class="featured">
+    <span class="featured-badge">スポーツ館ハラヤ イチオシ</span>
+    <div class="featured-title">オーダーユニフォーム</div>
+    <div class="featured-img">
+      <img src="C:\Users\user\Pictures\eightLP\sports\164_haraya\images\uniform.jpg" alt="オーダーユニフォーム">
+    </div>
+    <p class="featured-desc">
+      チーム・選手一人ひとりの想いを形にする、完全オーダーメイドのユニフォーム。デザインから素材選び、サイズ調整まで、経験豊富なスタッフが丁寧にサポートします。
+    </p>
+    <ul class="featured-points">
+      <li>✓ デザイン・カラーを自由にカスタマイズ</li>
+      <li>✓ チーム単位でのまとめ注文にも対応</li>
+      <li>✓ 選手の体型に合わせた細やかなサイズ提案</li>
+    </ul>
+    <a href="https://www.haraya-sports.com/contact.html" class="cta-btn">オーダーユニフォームを相談する</a>
+  </section>
+
+  <!-- 強み -->
+  <section>
+    <div class="section-title">私たちの想い</div>
+    <div class="strengths-text">
+      選手にとってスポーツ用品は絶対に信頼のおける相棒でなければならない。その想いから、選手人生で長く寄り添える、本当にいいものをご提供させていただいております。<br><br>
+      これからも、ひとりでも多くのお客様に「スポーツ館HARAYAにお願いしてよかった」と言っていただけるよう、社員一同真摯に向き合ってまいります。今後とも格別のご支援、ご愛顧を賜りますようよろしくお願い申し上げます。
+    </div>
+  </section>
+
+  <!-- 店舗写真 -->
+  <section>
+    <div class="section-title">店内のご紹介</div>
+    <div class="featured-img">
+      <img src="C:\Users\user\Pictures\eightLP\sports\164_haraya\images\shop.jpg" alt="スポーツ館ハラヤ 店内">
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section>
+    <div class="section-title">店舗情報</div>
+    <table class="shop-table">
+      <tr><th>店名</th><td>スポーツ館ハラヤ</td></tr>
+      <tr><th>住所</th><td>奈良県橿原市久米町５７２−２</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0744279818">0744-27-9818</a></td></tr>
+      <tr><th>定休日</th><td>水曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://haraya-sports.com/" target="_blank">https://haraya-sports.com/</a></td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps?q=奈良県橿原市久米町５７２−２&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="sns-links">
+      <a class="insta" href="https://www.instagram.com/haraya_sports/" target="_blank">Instagram</a>
+      <a class="hp" href="https://haraya-sports.com/" target="_blank">公式HP</a>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="final-cta">
+    <div class="section-title">お気軽にご相談ください</div>
+    <p>オーダーユニフォームのご相談、ラケット・ラバーの張替えなど、まずはお気軽にお問い合わせください。</p>
+    <a href="tel:0744279818" class="cta-btn">📞 0744-27-9818 に電話する</a>
+  </section>
+
+</div>
+
+<!-- bottom nav -->
+<div class="bottom-nav">
+  <a class="tel" href="tel:0744279818">📞 電話</a>
+  <a class="form" href="https://www.haraya-sports.com/contact.html" target="_blank">✉️ お問い合わせ</a>
+  <a href="https://www.instagram.com/haraya_sports/" target="_blank">📷 Instagram</a>
+</div>
+
+</body>
+</html>
