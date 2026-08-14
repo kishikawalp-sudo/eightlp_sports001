@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三木スポーツ商会｜天理市の地域密着スポーツ店 オリジナルユニフォーム承ります</title>
+<style>
+  :root{
+    --main:#0b5ea8;
+    --main-dark:#083f73;
+    --accent:#ff7a00;
+    --bg:#f5f8fb;
+    --text:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-bottom:64px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:480px;margin:0 auto;background:#fff;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--main);
+    color:#fff;
+    padding:10px 14px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+  }
+  header .shopname{
+    font-size:15px;
+    font-weight:bold;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,.75));
+    color:#fff;
+    padding:30px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 1px 4px rgba(0,0,0,.5);
+  }
+  .hero-overlay .sub{
+    font-size:13px;
+    margin-top:6px;
+    opacity:.95;
+  }
+
+  .stars{
+    background:#fff6e0;
+    text-align:center;
+    padding:10px;
+    font-size:14px;
+    color:#b8860b;
+    font-weight:bold;
+  }
+  .stars span{color:#ffb300;font-size:18px;}
+
+  /* Section common */
+  section{padding:32px 18px;}
+  .sec-title{
+    text-align:center;
+    font-size:19px;
+    font-weight:bold;
+    color:var(--main-dark);
+    margin-bottom:6px;
+  }
+  .sec-title small{
+    display:block;
+    font-size:11px;
+    color:var(--accent);
+    letter-spacing:2px;
+    margin-bottom:4px;
+  }
+  .sec-lead{
+    text-align:center;
+    font-size:13px;
+    color:#555;
+    margin-bottom:20px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:linear-gradient(135deg,#0b5ea8,#083f73);
+    color:#fff;
+  }
+  .featured .sec-title{color:#fff;}
+  .featured .sec-title small{color:#ffd27a;}
+  .featured .sec-lead{color:#dce9f7;}
+  .badge-ichioshi{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:4px;
+    margin-bottom:10px;
+  }
+  .product-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);
+  }
+  .product-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .product-card .card-body{padding:18px;}
+  .product-card h3{
+    font-size:17px;
+    color:var(--main-dark);
+    margin-bottom:8px;
+  }
+  .product-card p{
+    font-size:13.5px;
+    color:#444;
+    margin-bottom:14px;
+  }
+  .product-points{
+    list-style:none;
+    margin-bottom:14px;
+  }
+  .product-points li{
+    font-size:13px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:6px;
+    color:#333;
+  }
+  .product-points li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--main);
+    font-weight:bold;
+  }
+  .btn-primary{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+
+  /* Strengths */
+  .strengths-lead{
+    background:#eef5fc;
+    border-left:4px solid var(--main);
+    padding:16px;
+    border-radius:6px;
+    font-size:13.5px;
+    color:#333;
+    margin-bottom:20px;
+  }
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-item{
+    display:flex;
+    gap:12px;
+    background:var(--bg);
+    padding:14px;
+    border-radius:10px;
+    align-items:flex-start;
+  }
+  .strength-item .num{
+    background:var(--main);
+    color:#fff;
+    min-width:30px;
+    height:30px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:14px;
+  }
+  .strength-item h4{
+    font-size:14.5px;
+    color:var(--main-dark);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:12.5px;
+    color:#555;
+  }
+
+  /* Gallery */
+  .gallery-sec{background:#fff;}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .gallery-grid img{
+    width:100%;
+    height:130px;
+    object-fit:cover;
+    border-radius:8px;
+  }
+
+  /* Review */
+  .review-sec{background:#fff8ee;}
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    border:1px solid #f0e0c0;
+  }
+  .review-stars{
+    color:#ffb300;
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#444;
+    margin-bottom:8px;
+  }
+  .review-card .voice-name{
+    font-size:12px;
+    color:#999;
+    text-align:right;
+  }
+
+  /* Shop info */
+  .info-sec{background:#fff;}
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  table.info-table th,
+  table.info-table td{
+    padding:12px 8px;
+    border-bottom:1px solid #e3e8ee;
+    text-align:left;
+    vertical-align:top;
+  }
+  table.info-table th{
+    width:88px;
+    color:var(--main-dark);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  table.info-table a{color:var(--main);text-decoration:underline;}
+  .map-frame{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid #e0e0e0;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta-sec{
+    background:var(--main-dark);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-sec .sec-title{color:#fff;}
+  .cta-sec .sec-lead{color:#cfe0f2;}
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:10px;
+  }
+  .cta-buttons a{
+    padding:15px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-tel{background:var(--accent);color:#fff;}
+  .cta-form{background:#fff;color:var(--main-dark);}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    box-shadow:0 -2px 8px rgba(0,0,0,.1);
+    z-index:200;
+    max-width:480px;
+    margin:0 auto;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px 8px;
+    font-size:11px;
+    color:var(--main-dark);
+    font-weight:bold;
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    font-size:19px;
+    display:block;
+    margin-bottom:2px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:20px 10px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="shopname">三木スポーツ商会</div>
+    <a href="tel:0743660138" class="tel-btn">📞 電話する</a>
+  </header>
+
+  <div class="hero">
+    <img src="images/miki_hero.jpg" alt="三木スポーツ商会 店舗外観">
+    <div class="hero-overlay">
+      <div class="catch">地域のスポーツライフを、<br>まるごと応援します。</div>
+      <div class="sub">奈良県天理市｜地域密着のスポーツ用品店</div>
+    </div>
+  </div>
+
+  <div class="stars">
+    <span>★★★★★</span> 地域の方々から高評価をいただいています
+  </div>
+
+  <!-- 強み -->
+  <section class="strengths-sec">
+    <div class="sec-title"><small>OUR STRENGTH</small>三木スポーツ商会の強み</div>
+    <div class="strengths-lead">
+      三木スポーツ商会は、地域のみなさんの楽しいスポーツライフを応援して、地域の元気と健康に貢献できる企業を目指します！！
+    </div>
+    <div class="strength-list">
+      <div class="strength-item">
+        <div class="num">1</div>
+        <div>
+          <h4>融通が利く、頼れる地域のお店</h4>
+          <p>「無くてはならないお店」と地域の方に言っていただける、親身な対応が自慢です。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">2</div>
+        <div>
+          <h4>先代からの想いを受け継ぐ接客</h4>
+          <p>「使う方の立場に立って、できる限り安くしてあげなさい」——先代から受け継がれた想いを大切に、お客様一人ひとりに寄り添います。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">3</div>
+        <div>
+          <h4>お得な価格でご案内</h4>
+          <p>対象商品の値引き対応など、できる限りお求めやすい価格でご提供しています。まずはお気軽にご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- イチオシ商品 -->
+  <section class="featured">
+    <span class="badge-ichioshi">当店イチオシ</span>
+    <div class="sec-title"><small>SPECIAL PRODUCT</small>オリジナルユニフォーム</div>
+    <div class="sec-lead">チーム・クラブの想いをカタチに。お名前・番号入れも承ります。</div>
+    <div class="product-card">
+      <img src="images/miki_uniform.jpg" alt="オリジナルユニフォーム">
+      <div class="card-body">
+        <h3>あなたのチームだけの一着を、三木スポーツ商会で。</h3>
+        <p>デザインの相談から、サイズ選び、名前・背番号のマーキングまで、地域のスポーツ店ならではの丁寧な対応でサポートします。</p>
+        <ul class="product-points">
+          <li>チーム・クラブ単位でのオーダーに対応</li>
+          <li>名前入れ・番号入れなどの加工も相談可能</li>
+          <li>地域密着だからこそできる柔軟な対応</li>
+        </ul>
+        <a href="tel:0743660138" class="btn-primary">オリジナルユニフォームを相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ギャラリー -->
+  <section class="gallery-sec">
+    <div class="sec-title"><small>GALLERY</small>店内のご紹介</div>
+    <div class="gallery-grid">
+      <img src="images/miki_shop1.jpg" alt="三木スポーツ商会 店内の様子1">
+      <img src="images/miki_shop2.jpg" alt="三木スポーツ商会 店内の様子2">
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="review-sec">
+    <div class="sec-title"><small>VOICE</small>お客様の声</div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>地域のスポーツ店として、いつも融通を利かせていただいています。無くてはならないお店です。他店より断然お得な価格で名前入りマーカーを作っていただけると知り、次回からはこちらでお願いしようと思いました。</p>
+      <div class="voice-name">地域のお客様より</div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="info-sec">
+    <div class="sec-title"><small>SHOP INFO</small>店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>三木スポーツ商会</td></tr>
+      <tr><th>住所</th><td>奈良県天理市兵庫町451-2</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0743660138">0743-66-0138</a></td></tr>
+      <tr><th>定休日</th><td>不定休</td></tr>
+      <tr><th>HP</th><td><a href="https://mikispo.com/" target="_blank" rel="noopener">https://mikispo.com/</a></td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A4%A9%E7%90%86%E5%B8%82%E5%85%B5%E5%BA%AB%E7%94%BA451-2&output=embed" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-sec">
+    <div class="sec-title">まずはお気軽にご相談ください</div>
+    <div class="sec-lead">オリジナルユニフォームのご相談・お見積りも大歓迎です</div>
+    <div class="cta-buttons">
+      <a href="tel:0743660138" class="cta-tel">📞 電話で相談する（0743-66-0138）</a>
+      <a href="https://mikispo.com/contact/" target="_blank" rel="noopener" class="cta-form">✉️ フォームで問い合わせる</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 三木スポーツ商会
+  </footer>
+
+</div>
+
+<nav class="bottom-nav">
+  <a href="tel:0743660138" class="call"><span class="icon">📞</span>電話する</a>
+  <a href="https://mikispo.com/contact/" target="_blank" rel="noopener"><span class="icon">✉️</span>問い合わせ</a>
+  <a href="https://mikispo.com/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+  <a href="https://www.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A4%A9%E7%90%86%E5%B8%82%E5%85%B5%E5%BA%AB%E7%94%BA451-2" target="_blank" rel="noopener"><span class="icon">📍</span>地図</a>
+</nav>
+
+</body>
+</html>
