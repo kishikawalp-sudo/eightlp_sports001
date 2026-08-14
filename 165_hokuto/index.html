@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北斗武道具｜純国産の剣道具専門店 奈良県生駒郡斑鳩町</title>
+<style>
+  :root{
+    --navy:#0f1f3d;
+    --navy-deep:#0a1428;
+    --gold:#c9a24b;
+    --gold-light:#e5c778;
+    --cream:#faf6ee;
+    --red:#8c2f2f;
+    --text:#2b2b2b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.7;
+    padding-bottom:64px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--navy-deep);
+    color:#fff;
+    z-index:1000;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
+  }
+  header .shopname{
+    font-size:16px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  header .tel-btn{
+    background:var(--gold);
+    color:var(--navy-deep);
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .spacer-header{height:52px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(rgba(10,20,40,.55),rgba(10,20,40,.65)), url('images/hero.jpg') center/cover no-repeat;
+    color:#fff;
+    padding:70px 20px 50px;
+    text-align:center;
+  }
+  .hero .catch-sub{
+    font-size:13px;
+    letter-spacing:3px;
+    color:var(--gold-light);
+    margin-bottom:10px;
+  }
+  .hero h1{
+    font-size:26px;
+    line-height:1.5;
+    font-weight:bold;
+    margin-bottom:16px;
+    text-shadow:0 2px 6px rgba(0,0,0,.5);
+  }
+  .hero p.desc{
+    font-size:14px;
+    margin-bottom:24px;
+    color:#f0ecdf;
+  }
+  .hero-cta{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy-deep);
+    padding:14px 32px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.3);
+  }
+
+  section{padding:44px 18px;}
+  .section-title{
+    text-align:center;
+    margin-bottom:30px;
+  }
+  .section-title .en{
+    display:block;
+    font-size:11px;
+    letter-spacing:3px;
+    color:var(--gold);
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:22px;
+    color:var(--navy);
+    font-weight:bold;
+    position:relative;
+    display:inline-block;
+    padding-bottom:12px;
+  }
+  .section-title h2::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    width:40px;height:3px;
+    background:var(--gold);
+  }
+
+  /* Featured product - main push */
+  .featured{
+    background:var(--navy);
+    color:#fff;
+  }
+  .featured .section-title h2{color:#fff;}
+  .featured-card{
+    background:var(--navy-deep);
+    border:1px solid rgba(201,162,75,.4);
+    border-radius:8px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .featured-card img{width:100%;height:auto;}
+  .featured-card .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy-deep);
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 14px;
+    margin:16px 0 0 16px;
+    border-radius:20px;
+  }
+  .featured-card .body{padding:16px;}
+  .featured-card h3{
+    font-size:19px;
+    color:var(--gold-light);
+    margin-bottom:10px;
+    line-height:1.5;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#e6e2d6;
+    margin-bottom:14px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:14px;
+  }
+  .featured-list li{
+    font-size:13.5px;
+    padding-left:20px;
+    position:relative;
+    margin-bottom:8px;
+    color:#e6e2d6;
+  }
+  .featured-list li::before{
+    content:"◆";
+    position:absolute;left:0;top:0;
+    color:var(--gold);
+    font-size:11px;
+  }
+  .featured-cta{
+    display:block;
+    text-align:center;
+    background:var(--gold);
+    color:var(--navy-deep);
+    padding:13px;
+    border-radius:6px;
+    font-weight:bold;
+    font-size:14px;
+  }
+
+  /* Strengths */
+  .strengths{background:var(--cream);}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border-radius:8px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    border-left:4px solid var(--gold);
+  }
+  .strength-item .num{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--gold);
+    font-family:Georgia,serif;
+    flex-shrink:0;
+  }
+  .strength-item h3{
+    font-size:15px;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#555;
+  }
+
+  /* Gallery */
+  .gallery{background:#fff;}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:6px;
+    height:130px;
+    width:100%;
+    object-fit:cover;
+  }
+  .gallery-grid .full{grid-column:1/3;height:180px;}
+
+  /* Review */
+  .review{
+    background:var(--navy);
+    color:#fff;
+  }
+  .review .section-title h2{color:#fff;}
+  .review-card{
+    background:var(--navy-deep);
+    border-radius:8px;
+    padding:20px 16px;
+    border:1px solid rgba(201,162,75,.3);
+  }
+  .stars{
+    color:var(--gold);
+    font-size:18px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+  }
+  .review-card .from{
+    font-size:12px;
+    color:var(--gold-light);
+    margin-bottom:14px;
+  }
+  .review-text{
+    font-size:13.5px;
+    color:#e6e2d6;
+    white-space:pre-line;
+  }
+  .review-text.collapsed{
+    max-height:180px;
+    overflow:hidden;
+    position:relative;
+  }
+  .review-text.collapsed::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:60px;
+    background:linear-gradient(transparent,var(--navy-deep));
+  }
+  .review-more{
+    display:block;
+    text-align:center;
+    margin-top:14px;
+    color:var(--gold);
+    font-size:13px;
+    font-weight:bold;
+    border:1px solid var(--gold);
+    border-radius:20px;
+    padding:8px;
+  }
+
+  /* Shop info */
+  .shopinfo{background:var(--cream);}
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  table.info-table th,table.info-table td{
+    text-align:left;
+    padding:14px;
+    font-size:13.5px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  table.info-table th{
+    background:#f4efe3;
+    color:var(--navy);
+    width:26%;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  table.info-table tr:last-child th,
+  table.info-table tr:last-child td{border-bottom:none;}
+  table.info-table a{color:var(--red);text-decoration:underline;}
+  .map-wrap{margin-top:16px;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block;}
+  .sns-links{
+    display:flex;gap:10px;margin-top:16px;
+  }
+  .sns-links a{
+    flex:1;
+    text-align:center;
+    padding:12px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:bold;
+  }
+  .sns-links a.fb{background:#3b5998;color:#fff;}
+  .sns-links a.hp{background:var(--navy);color:#fff;}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(rgba(10,20,40,.7),rgba(10,20,40,.8)), url('images/hero.jpg') center/cover no-repeat;
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13px;
+    color:#e6e2d6;
+    margin-bottom:22px;
+  }
+  .final-cta .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .final-cta a{
+    padding:15px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .final-cta a.tel{background:var(--gold);color:var(--navy-deep);}
+  .final-cta a.form{background:transparent;border:1px solid var(--gold-light);color:var(--gold-light);}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:var(--navy-deep);
+    box-shadow:0 -2px 8px rgba(0,0,0,.3);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:11px 4px;
+    color:#e6e2d6;
+    font-size:11px;
+  }
+  .bottom-nav a.main{
+    background:var(--gold);
+    color:var(--navy-deep);
+    font-weight:bold;
+  }
+  .bottom-nav a .ico{
+    display:block;
+    font-size:16px;
+    margin-bottom:2px;
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:#999;
+    background:var(--navy-deep);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">北斗武道具</div>
+  <a href="tel:0745700000" class="tel-btn">📞 電話で相談</a>
+</header>
+<div class="spacer-header"></div>
+
+<!-- Hero -->
+<div class="hero">
+  <span class="catch-sub">純国産 剣道具専門店</span>
+  <h1>数多くの有名指導者も通う<br>本物の剣道具、ここにあります</h1>
+  <p class="desc">奈良県生駒郡斑鳩町｜甲手・防具・垂名札の別注承ります</p>
+  <a href="#featured" class="hero-cta">イチオシ商品を見る ▼</a>
+</div>
+
+<!-- Featured Product -->
+<section class="featured" id="featured">
+  <div class="section-title">
+    <span class="en">FEATURED ITEM</span>
+    <h2>イチオシの剣道具</h2>
+  </div>
+  <div class="featured-card">
+    <img src="images/product.jpg" alt="東京正武堂 8ミリミシン刺し総織刺し甲手">
+    <span class="badge">職人の想いが宿る逸品</span>
+    <div class="body">
+      <h3>東京正武堂謹製<br>8ミリミシン刺し総織刺し甲手</h3>
+      <p>数ある剣道具の中でも特にお客様からご支持をいただいているのが、この甲手です。手に吸い付くようなフィット感と、しっかりと衝撃を吸収する仕立てで、稽古はもちろん試合の緊張感ある場面でも安心してお使いいただけます。</p>
+      <ul class="featured-list">
+        <li>細やかな8ミリピッチのミシン刺しで耐久性と美しさを両立</li>
+        <li>総織刺し仕立てにより手の内へのなじみが抜群</li>
+        <li>純国産にこだわった確かなクオリティ</li>
+        <li>初心者から有段者まで幅広く対応、店頭でじっくり試着可能</li>
+      </ul>
+      <a href="tel:0745700000" class="featured-cta">この商品について電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="strengths">
+  <div class="section-title">
+    <span class="en">STRENGTH</span>
+    <h2>北斗武道具が選ばれる理由</h2>
+  </div>
+  <div class="strength-item">
+    <div class="num">01</div>
+    <div>
+      <h3>純国産の安心品質</h3>
+      <p>海外産の剣道具が主流となる中、北斗武道具では純国産にこだわった剣道具をご用意。品質へのこだわりが多くの剣道愛好家から支持されています。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="num">02</div>
+    <div>
+      <h3>丁寧かつ迅速な別注対応</h3>
+      <p>垂名札などの別注品も、通常2ヶ月ほどかかる工程を丁寧かつ迅速に対応。遠方のお客様からも高い評価をいただいています。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="num">03</div>
+    <div>
+      <h3>初心者にもやさしい接客</h3>
+      <p>剣道愛好家から著名な指導者まで、どなたにもフレンドリーで丁寧な対応が魅力。剣道が初めての方も安心してご相談いただけます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <div class="section-title">
+    <span class="en">GALLERY</span>
+    <h2>店舗の様子</h2>
+  </div>
+  <div class="gallery-grid">
+    <img src="images/gallery1.jpg" alt="店内の様子1">
+    <img src="images/gallery2.jpg" alt="店内の様子2">
+  </div>
+</section>
+
+<!-- Review -->
+<section class="review">
+  <div class="section-title">
+    <span class="en">VOICE</span>
+    <h2>お客様の声</h2>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <div class="from">愛知県からご来店のお客様</div>
+    <div class="review-text collapsed" id="reviewText">愛知県から行かせて頂きました。
+垂名札の注文をさせて頂き、2ヶ月ほどかかる予定でしたが丁寧で迅速な対応で1ヶ月ほどで届きました。この度はありがとうございます。
+また機会がありましたらよろしくお願いします。私は剣道を全て北斗武道具でお願いしております。
+はじめは現在代表を務められておられる豊田大さんの剣道を拝見し、とてもかっこよかったので、大さんに思い切って声をかけたのがきっかけだと記憶しております。
+大さんと交流を深め、剣道、剣道具に対する思い、知識を多く勉強させていただきました。
+今回ご紹介させていただく剣道具は東京正武堂さんの8ミリミシン刺し総織刺しの甲手になります。
+なんとこの甲手、製作者が豊田大さんなんです！！
+私の尊敬する方に作っていただいた事もあり、ここぞ！という場面で使わせていただいております。
+私の手にすごく馴染み、更にかつて防具と称されていた事もあり、打たれても痛くありません！
+現在の剣道具は海外産の剣道具がほとんどですが、北斗武道具は純国産ですので安心ですね。
+やはり、数多くの有名な先生方が来店されるのもよくわかります。
+しかも、私の様なただの剣道愛好家にも優しくフレンドリーに対応してくださいますので、どの様な方でもお店に行きやすいと思います。
+これからもよろしくお願い致します！！</div>
+    <a class="review-more" id="reviewMoreBtn">続きを読む ▼</a>
+  </div>
+</section>
+
+<!-- Shop Info -->
+<section class="shopinfo">
+  <div class="section-title">
+    <span class="en">SHOP INFO</span>
+    <h2>店舗情報</h2>
+  </div>
+  <table class="info-table">
+    <tr><th>店名</th><td>北斗武道具</td></tr>
+    <tr><th>定休日</th><td>毎週水曜・第1・第3火曜・盆・正月</td></tr>
+    <tr><th>住所</th><td>奈良県生駒郡斑鳩町興留２丁目５−１</td></tr>
+    <tr><th>HP</th><td><a href="https://www.hokuto-budougu.com/" target="_blank">www.hokuto-budougu.com</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://www.hokuto-budougu.com/" target="_blank">お問い合わせフォームはこちら</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E7%94%9F%E9%A7%92%E9%83%A1%E6%96%91%E9%B3%A9%E7%94%BA%E8%88%88%E7%95%99%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%95%EF%BC%8D%EF%BC%91&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <div class="sns-links">
+    <a class="fb" href="https://www.facebook.com/people/%E5%8C%97%E6%96%97%E6%AD%A6%E9%81%93%E5%85%B7/100063552524674/?ref=embed_page#" target="_blank">Facebook</a>
+    <a class="hp" href="https://www.hokuto-budougu.com/" target="_blank">公式サイト</a>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <h2>剣道具のご相談は北斗武道具へ</h2>
+  <p>甲手・防具・垂名札の別注まで、まずはお気軽にお電話ください</p>
+  <div class="btn-group">
+    <a href="tel:0745700000" class="tel">📞 今すぐ電話で相談する</a>
+    <a href="https://www.hokuto-budougu.com/" target="_blank" class="form">お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 北斗武道具
+</footer>
+
+<!-- Bottom Nav -->
+<div class="bottom-nav">
+  <a href="#featured"><span class="ico">🥋</span>イチオシ商品</a>
+  <a href="tel:0745700000" class="main"><span class="ico">📞</span>電話で相談</a>
+  <a href="https://www.hokuto-budougu.com/" target="_blank"><span class="ico">🌐</span>公式サイト</a>
+</div>
+
+<script>
+  document.getElementById('reviewMoreBtn').addEventListener('click', function(){
+    var el = document.getElementById('reviewText');
+    el.classList.toggle('collapsed');
+    this.textContent = el.classList.contains('collapsed') ? '続きを読む ▼' : '閉じる ▲';
+  });
+</script>
+
+</body>
+</html>
