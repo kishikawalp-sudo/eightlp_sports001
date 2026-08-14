@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yosemite｜奈良県橿原市のアウトドア専門店</title>
+<style>
+  :root{
+    --main:#2f4a3c;
+    --sub:#c96b3a;
+    --bg:#f7f5f0;
+    --text:#2b2b2b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-bottom:64px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    z-index:100;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  header .shop-name{font-size:18px;font-weight:bold;color:var(--main);letter-spacing:1px;}
+  header .tel-btn{
+    background:var(--sub);color:#fff;padding:8px 14px;border-radius:24px;
+    font-size:13px;font-weight:bold;white-space:nowrap;
+  }
+  .header-spacer{height:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    height:70vh;
+    min-height:420px;
+    background:url('images/hero.jpg') center/cover no-repeat;
+    display:flex;align-items:flex-end;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.05) 60%);
+  }
+  .hero-content{position:relative;z-index:2;padding:24px 20px 32px;color:#fff;}
+  .hero-content .catch{
+    font-size:15px;letter-spacing:2px;color:#ffd9a8;font-weight:bold;margin-bottom:8px;
+  }
+  .hero-content h1{
+    font-size:26px;line-height:1.5;font-weight:bold;text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  }
+  .hero-content .sub{margin-top:10px;font-size:14px;opacity:0.9;}
+
+  section{padding:40px 18px;}
+  .section-title{
+    text-align:center;font-size:20px;color:var(--main);font-weight:bold;margin-bottom:24px;
+    position:relative;
+  }
+  .section-title span{
+    display:block;font-size:12px;color:var(--sub);letter-spacing:2px;margin-bottom:6px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--main);
+    color:#fff;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-title span{color:#ffd9a8;}
+  .featured-card{
+    background:#fff;color:var(--text);
+    border-radius:12px;overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  }
+  .featured-card img{width:100%;height:220px;object-fit:cover;}
+  .featured-card .body{padding:20px;}
+  .featured-card h3{font-size:18px;color:var(--main);margin-bottom:10px;}
+  .featured-card p{font-size:14px;color:#444;margin-bottom:16px;}
+  .featured-card .btn{
+    display:block;text-align:center;background:var(--sub);color:#fff;
+    padding:12px;border-radius:8px;font-weight:bold;font-size:14px;
+  }
+
+  /* Strengths */
+  .strengths .items{display:flex;flex-direction:column;gap:16px;}
+  .strength-item{
+    background:#fff;border-radius:10px;padding:18px;
+    display:flex;gap:14px;align-items:flex-start;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    border-left:4px solid var(--sub);
+  }
+  .strength-item .num{
+    font-size:22px;font-weight:bold;color:var(--sub);flex-shrink:0;
+  }
+  .strength-item h4{font-size:15px;color:var(--main);margin-bottom:6px;}
+  .strength-item p{font-size:13px;color:#555;}
+
+  /* Gallery */
+  .gallery{padding:0 18px 40px;}
+  .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .gallery-grid img{border-radius:8px;height:150px;object-fit:cover;width:100%;}
+
+  /* Reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--bg);border-radius:10px;padding:18px;margin-bottom:16px;
+    border:1px solid #e5e0d5;
+  }
+  .review-card .stars{color:#e0a52c;font-size:15px;margin-bottom:8px;letter-spacing:2px;}
+  .review-card p{font-size:13px;color:#444;white-space:pre-line;}
+
+  /* Shop info */
+  .shop-info table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+  .shop-info th,.shop-info td{padding:12px 14px;text-align:left;border-bottom:1px solid #eee;}
+  .shop-info th{background:var(--bg);color:var(--main);width:32%;font-weight:bold;white-space:nowrap;}
+  .shop-info td a{color:var(--sub);word-break:break-all;}
+  .map-wrap{margin-top:16px;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+  .map-wrap iframe{width:100%;height:260px;border:0;}
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(135deg,var(--main),#1e332a);
+    color:#fff;text-align:center;
+  }
+  .cta h2{font-size:20px;margin-bottom:10px;}
+  .cta p{font-size:13px;opacity:0.9;margin-bottom:20px;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .cta-buttons a{
+    padding:14px;border-radius:8px;font-weight:bold;font-size:15px;
+  }
+  .cta-buttons .tel{background:var(--sub);color:#fff;}
+  .cta-buttons .web{background:#fff;color:var(--main);}
+
+  footer{text-align:center;padding:20px;font-size:11px;color:#888;background:var(--bg);}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;z-index:100;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a{
+    flex:1;text-align:center;padding:12px 4px;font-size:12px;font-weight:bold;color:#fff;
+  }
+  .bottom-nav .n1{background:var(--main);}
+  .bottom-nav .n2{background:var(--sub);}
+
+  @media (min-width:600px){
+    .gallery-grid{grid-template-columns:repeat(3,1fr);}
+    .hero-content h1{font-size:32px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">Yosemite</div>
+  <a href="tel:0744234730" class="tel-btn">📞 電話する</a>
+</header>
+<div class="header-spacer"></div>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="catch">奈良県橿原市の山道具・アウトドア専門店</div>
+    <h1>山を歩く人へ。<br>本気で選ぶ道具が、ここにある。</h1>
+    <div class="sub">セレクトされたアウトドアギアと、心地よい接客距離感。</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title"><span>OSUSUME ITEM</span>イチオシのアウトドア用品</div>
+  <div class="featured-card">
+    <img src="images/product.jpg" alt="イチオシのアウトドア用品">
+    <div class="body">
+      <h3>厳選ブランドのアウトドアギア</h3>
+      <p>ザック・シューズ・帽子・小物まで、店主が本当に良いと感じたブランドだけをセレクト。ハロコモディティー、ルナサンダル、アルトラなど、通好みのラインナップが所狭しと並びます。</p>
+      <a href="tel:0744234730" class="btn">在庫・詳細をお電話で問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="gallery-grid">
+    <img src="images/shop1.jpg" alt="Yosemite 店内の様子1">
+    <img src="images/shop2.jpg" alt="Yosemite 店内の様子2">
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title"><span>STRENGTH</span>Yosemiteが選ばれる理由</div>
+  <div class="items">
+    <div class="strength-item">
+      <div class="num">01</div>
+      <div>
+        <h4>通好みのセレクト品揃え</h4>
+        <p>山を歩いたり走ったりするための道具が、他では見つからないブランドまで幅広く揃います。長居注意なほど楽しいお店です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">02</div>
+      <div>
+        <h4>ほどよい距離感の接客</h4>
+        <p>商品選びの最中にしつこく声をかけられることはなく、聞きたい時にはしっかり丁寧に教えてもらえる。気持ちよく買い物ができます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">03</div>
+      <div>
+        <h4>専門知識に基づくアドバイス</h4>
+        <p>シューズのサイズ選びから足指のストレッチ方法まで、専門的な知識に基づいたアドバイスがもらえると評判です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title"><span>REVIEW</span>お客様の口コミ</div>
+
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>通販でゴッサマーズギアのザックを購入✨✨今日は葛城山予定でしたが雨で初めてヨセミテへ行ってみました。
+欲しかったハロコモディティーのメッシュ帽と山バッチ、キーホルダーを購入☺️セレクトされた山用品がたくさんあっていい感じ💯💯
+店員さんの対応も良かったですよ。
+商品をセレクト中に声をかけられるよりもほっといてほしいので気持ち良く買い物ができました。パパも同様な感じ。
+山を歩いたり走ったりするための素敵な道具が所狭しと並んでいて楽しすぎるので長居すると危険なお店です。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>ルナサンダルに挑戦しようと訪れました。店員のお姉さんに相談しましたが、親切丁寧な説明をしてくれました。
+無事ルナサンダルをゲット‼︎ 良い雰囲気とアイテムのお店で、またお邪魔したいと思います。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>アルトラの靴が欲しくてサイズを聞きましたが、とても丁寧にいろいろ教えてくれました。足指のストレッチの仕方も教わり、効果が楽しみです。
+アウトドアグッズ好きにはたまらない品揃えのカッコいいお店です。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+  <table>
+    <tr><th>店名</th><td>Yosemite</td></tr>
+    <tr><th>会社名</th><td>株式会社zeroday.</td></tr>
+    <tr><th>代表者</th><td>豊田祥大</td></tr>
+    <tr><th>住所</th><td>奈良県橿原市葛本町147−3</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0744234730">0744-23-4730</a></td></tr>
+    <tr><th>定休日</th><td>火曜日、水曜日</td></tr>
+    <tr><th>HP</th><td><a href="http://yosemite-store.com/" target="_blank">yosemite-store.com</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@yosemite-store.com">info@yosemite-store.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E6%A9%BF%E5%8E%9F%E5%B8%82%E8%91%9B%E6%9C%AC%E7%94%BA147-3&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>お気に入りの一品を探しに</h2>
+  <p>在庫状況やブランド取扱いのご相談はお電話・HPからお気軽にどうぞ。</p>
+  <div class="cta-buttons">
+    <a href="tel:0744234730" class="tel">📞 0744-23-4730 に電話する</a>
+    <a href="http://yosemite-store.com/" target="_blank" class="web">🌐 公式サイトを見る</a>
+  </div>
+</section>
+
+<footer>
+  © Yosemite / zeroday.Co.,Ltd.
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0744234730" class="n1">📞 電話する</a>
+  <a href="http://yosemite-store.com/" target="_blank" class="n2">🌐 HPを見る</a>
+</div>
+
+</body>
+</html>
