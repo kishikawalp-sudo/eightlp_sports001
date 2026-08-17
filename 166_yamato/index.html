@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヤマトグラブ工房｜奈良発・国産オーダーメイドグローブ専門店</title>
+<style>
+  :root{
+    --main:#1b3a2b;
+    --accent:#c8952c;
+    --accent-light:#f4e3bd;
+    --text:#222;
+    --bg:#fdfaf3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    padding-bottom:64px;
+    line-height:1.7;
+  }
+  img{width:100%;display:block;object-fit:cover;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--main);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shop-name{font-size:15px;font-weight:bold;}
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{position:relative;}
+  .hero img{height:56vw;max-height:420px;}
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.65) 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:20px 16px;
+    color:#fff;
+  }
+  .hero-catch{font-size:22px;font-weight:bold;line-height:1.5;text-shadow:0 2px 6px rgba(0,0,0,.5);}
+  .hero-sub{margin-top:8px;font-size:13px;background:var(--accent);display:inline-block;padding:4px 10px;border-radius:4px;font-weight:bold;}
+
+  section{padding:36px 16px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent);
+    letter-spacing:2px;
+    margin-bottom:4px;
+    font-weight:normal;
+  }
+  .section-lead{text-align:center;font-size:13px;color:#555;margin-bottom:24px;}
+
+  /* Featured product */
+  .featured{
+    background:var(--main);
+    color:#fff;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-title span{color:var(--accent-light);}
+  .feat-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 16px rgba(0,0,0,.3);
+  }
+  .feat-card img{height:52vw;max-height:340px;}
+  .feat-body{padding:18px;}
+  .feat-badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 10px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .feat-body h3{font-size:19px;color:var(--main);margin-bottom:10px;}
+  .feat-body p{font-size:14px;margin-bottom:8px;}
+  .feat-list{margin-top:12px;}
+  .feat-list li{
+    list-style:none;
+    font-size:13.5px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .feat-list li::before{
+    content:"✓";
+    position:absolute;left:0;top:0;
+    color:var(--accent);
+    font-weight:bold;
+  }
+  .feat-cta{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    padding:13px;
+    margin-top:16px;
+    border-radius:8px;
+    font-size:15px;
+  }
+
+  /* Strengths */
+  .strengths-grid{display:flex;flex-direction:column;gap:14px;}
+  .strength-card{
+    background:#fff;
+    border:1px solid #eadcb8;
+    border-left:5px solid var(--accent);
+    border-radius:8px;
+    padding:16px;
+  }
+  .strength-card h4{font-size:15px;color:var(--main);margin-bottom:6px;}
+  .strength-card p{font-size:13px;color:#444;}
+
+  /* Founder */
+  .founder{background:#fff;}
+  .founder-box{
+    background:var(--accent-light);
+    border-radius:10px;
+    padding:18px;
+    font-size:13.5px;
+  }
+  .founder-box .name{font-weight:bold;color:var(--main);font-size:15px;margin-bottom:8px;}
+
+  /* Photo gallery */
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .gallery img{border-radius:8px;height:32vw;max-height:200px;}
+
+  /* Reviews */
+  .reviews{background:var(--accent-light);}
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .stars{color:var(--accent);font-size:16px;margin-bottom:8px;letter-spacing:2px;}
+  .review-card p{font-size:13.5px;color:#333;}
+
+  /* Shop info */
+  .info-table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #e2d8c0;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:26%;
+    color:var(--main);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table a{color:var(--accent);font-weight:bold;word-break:break-all;}
+  .map-wrap{margin-top:16px;border-radius:10px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  .sns-row{display:flex;gap:10px;margin-top:16px;}
+  .sns-btn{
+    flex:1;
+    text-align:center;
+    padding:11px 0;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:bold;
+    color:#fff;
+  }
+  .sns-fb{background:#3b5998;}
+  .sns-yt{background:#c4302b;}
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{font-size:20px;margin-bottom:10px;}
+  .final-cta p{font-size:13px;margin-bottom:20px;color:#e3dcc9;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .btn-primary{
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    padding:15px;
+    border-radius:8px;
+    font-size:16px;
+  }
+  .btn-secondary{
+    background:#fff;
+    color:var(--main);
+    font-weight:bold;
+    padding:15px;
+    border-radius:8px;
+    font-size:16px;
+    border:2px solid var(--accent);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    box-shadow:0 -2px 10px rgba(0,0,0,.1);
+    z-index:200;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 0 8px;
+    font-size:11px;
+    color:var(--main);
+    font-weight:bold;
+  }
+  .bottom-nav a.primary{background:var(--accent);color:#fff;}
+  .bottom-nav .icon{display:block;font-size:18px;margin-bottom:2px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">ヤマトグラブ工房</div>
+  <a href="tel:0743521405" class="tel-btn">📞 電話で相談</a>
+</header>
+
+<div class="hero">
+  <img src="images/main.jpg" alt="ヤマトグラブ工房 店舗外観">
+  <div class="hero-overlay">
+    <div class="hero-catch">奈良の地場産業を守る、<br>たった一人のための国産オーダーグローブ。</div>
+    <div class="hero-sub">手のサイズ・握力測定からつくる、独創的な型付けグラブ</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title"><span>OUR BEST SERVICE</span>イチオシは「グローブメンテナンス」</div>
+  <div class="section-lead">買って終わりじゃない。長く使えるグラブに育てます。</div>
+  <div class="feat-card">
+    <img src="images/glove.jpg" alt="グローブメンテナンスの様子">
+    <div class="feat-body">
+      <span class="feat-badge">クチコミで大好評</span>
+      <h3>職人によるグローブメンテナンス指導</h3>
+      <p>「長く使えるglove、メンテナンス指導も素晴らしい」とお客様からも高評価。型付けから日々のお手入れ方法まで、グラブ専門店ならではの知識をその場でしっかりお伝えします。</p>
+      <ul class="feat-list">
+        <li>手のサイズ・握力・ポジションに合わせた型付け</li>
+        <li>購入後すぐキャッチボールできる状態に仕上げ</li>
+        <li>お子様の成長に合わせた長期的なメンテナンス相談</li>
+        <li>特許出願・特許取得の独自技術を活かしたグラブ調整</li>
+      </ul>
+      <a href="tel:0743521405" class="feat-cta">メンテナンスのご相談はこちら 📞</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title"><span>WHY YAMATO GLOVE</span>選ばれる理由</div>
+  <div class="strengths-grid">
+    <div class="strength-card">
+      <h4>国産グラブの復興を目指して</h4>
+      <p>奈良県はグラブの地場産業。日本のものづくりを次世代へ啓蒙・継承しています。</p>
+    </div>
+    <div class="strength-card">
+      <h4>一人ひとりの手に合わせたオーダーメイド</h4>
+      <p>手のサイズ・握力をはかり、独創的な型付けグラブを手間ひまかけて一つひとつ製作。</p>
+    </div>
+    <div class="strength-card">
+      <h4>選手の潜在能力を引き出す研究開発</h4>
+      <p>国産グラブ・スパイク・バット・インソール・ソックスなどを研究開発しています。</p>
+    </div>
+    <div class="strength-card">
+      <h4>野球ひじ・野球肩を予防するグラブ（特許出願中）</h4>
+      <p>ケガをしにくいグラブ設計を独自に考案し、特許出願しています。</p>
+    </div>
+    <div class="strength-card">
+      <h4>コントロールが変わる投手用グラブ（特許取得）</h4>
+      <p>投球フォームや操作性にこだわった投手専用グラブは特許取得済みです。</p>
+    </div>
+  </div>
+</section>
+
+<section class="founder">
+  <div class="section-title"><span>OUR STORY</span>創業者ストーリー</div>
+  <div class="founder-box">
+    <div class="name">代表　梅原伸宏</div>
+    <p>同志社大学卒業後、家業のミカサスポーツ（現・ヤマトグラブ工房）を継承。高校3年生の時に初代社長（父・梅原宏）を亡くし、大学4年間は学生ながらグラブショップの販売・修理を手伝う。大学卒業後は地元の合気道の専門家に師事し、回内動作の未知なる可能性を学び、それをグラブづくりに融合しています。</p>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="section-title"><span>GALLERY</span>工房のようす</div>
+  <div class="gallery">
+    <img src="images/main.jpg" alt="店舗外観">
+    <img src="images/glove.jpg" alt="グローブメンテナンス風景">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title"><span>VOICE</span>お客様の声</div>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>長く使えるgloveで、メンテナンス指導も素晴らしいです。プロならではの丁寧な対応に満足しています。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>子供の身長やポジション、手のサイズまでオーダーメイドで作ってもらえました！型つけまでしてもらえて、買ってすぐキャッチボールができました。特許のグローブができたらしいのでまた子供と行きます！さすがにグラブの知識は素晴らしく、話を聞くだけでも勉強になります。家の息子3人は、皆ここでグラブを購入しました。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>ヤマトグラブ工房</td></tr>
+    <tr><th>会社名</th><td>umehara&co（ヤマトグラブ工房）</td></tr>
+    <tr><th>代表者</th><td>梅原伸宏</td></tr>
+    <tr><th>住所</th><td>奈良県大和郡山市朝日町2−239−6</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0743521405">0743-52-1405</a></td></tr>
+    <tr><th>定休日</th><td>水曜・木曜</td></tr>
+    <tr><th>HP</th><td><a href="http://www.bba.co.jp/" target="_blank" rel="noopener">www.bba.co.jp</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://thebase.com/inquiry/bbayamato-base-shop" target="_blank" rel="noopener">問い合わせフォームはこちら</a></td></tr>
+  </table>
+
+  <div class="map-wrap">
+    <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A4%A7%E5%92%8C%E9%83%A1%E5%B1%B1%E5%B8%82%E6%9C%9D%E6%97%A5%E7%94%BA%EF%BC%92%EF%BC%8D%EF%BC%92%EF%BC%93%EF%BC%99%EF%BC%8D%EF%BC%96&output=embed">
+    </iframe>
+  </div>
+
+  <div class="sns-row">
+    <a class="sns-btn sns-fb" href="https://www.facebook.com/bbaglovestudio/" target="_blank" rel="noopener">Facebook</a>
+    <a class="sns-btn sns-yt" href="https://www.youtube.com/user/bbaacademy/videos" target="_blank" rel="noopener">YouTube</a>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>あなただけの一つを、ヤマトグラブ工房で。</h2>
+  <p>グローブメンテナンス・オーダーメイドグラブのご相談はお気軽に</p>
+  <div class="cta-buttons">
+    <a href="tel:0743521405" class="btn-primary">📞 今すぐ電話で相談する</a>
+    <a href="https://thebase.com/inquiry/bbayamato-base-shop" target="_blank" rel="noopener" class="btn-secondary">✉️ フォームで問い合わせる</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0743521405"><span class="icon">📞</span>電話</a>
+  <a href="https://thebase.com/inquiry/bbayamato-base-shop" target="_blank" rel="noopener"><span class="icon">✉️</span>問い合わせ</a>
+  <a href="https://www.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A4%A7%E5%92%8C%E9%83%A1%E5%B1%B1%E5%B8%82%E6%9C%9D%E6%97%A5%E7%94%BA%EF%BC%92%EF%BC%8D%EF%BC%92%EF%BC%93%EF%BC%99%EF%BC%8D%EF%BC%96" target="_blank" rel="noopener"><span class="icon">📍</span>地図</a>
+  <a href="tel:0743521405" class="primary"><span class="icon">💬</span>相談する</a>
+</nav>
+
+</body>
+</html>
