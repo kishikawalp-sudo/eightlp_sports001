@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>ダイビングスクール ヘッドスラップ｜奈良県 初心者ダイバー認定数No.1</title>
+<meta name="description" content="創業26年、認定実績1,300名以上。奈良県で初心者ダイバー認定数No.1のダイビングスクール ヘッドスラップ。少人数制・充実の講習時間で安心して潜れるスキルを身につけられます。">
+<style>
+  :root{
+    --sea-deep:#003b5c;
+    --sea-blue:#0077a8;
+    --sea-light:#3fb8e0;
+    --sea-pale:#eaf7fc;
+    --sun:#ffb703;
+    --sun-dark:#fb8500;
+    --ink:#1a2a33;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:64px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:680px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:var(--sea-deep);
+    color:#fff;
+    height:56px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+  .header .shopname{
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:.02em;
+  }
+  .header .shopname span{
+    display:block;
+    font-size:10px;
+    font-weight:normal;
+    color:var(--sea-light);
+  }
+  .header .tel-btn{
+    background:var(--sun);
+    color:var(--sea-deep);
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    color:#fff;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero img{
+    width:100%;
+    height:78vw;
+    max-height:480px;
+    object-fit:cover;
+    filter:brightness(.62);
+  }
+  .hero-inner{
+    position:absolute;
+    top:0;left:0;right:0;bottom:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  }
+  .hero-badge{
+    background:var(--sun);
+    color:var(--sea-deep);
+    font-weight:bold;
+    font-size:12px;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:.05em;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:900;
+    line-height:1.5;
+    text-shadow:0 2px 10px rgba(0,0,0,.5);
+    margin-bottom:10px;
+  }
+  .hero h1 em{
+    display:block;
+    font-style:normal;
+    color:var(--sun);
+    font-size:30px;
+  }
+  .hero p.sub{
+    font-size:14px;
+    text-shadow:0 1px 6px rgba(0,0,0,.5);
+    margin-bottom:20px;
+  }
+  .hero-stats{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:22px;
+  }
+  .hero-stats div{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(2px);
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:10px;
+    padding:8px 12px;
+    font-size:11px;
+    line-height:1.4;
+  }
+  .hero-stats strong{
+    display:block;
+    font-size:18px;
+    color:var(--sun);
+  }
+  .hero-cta{
+    display:flex;
+    gap:10px;
+    width:100%;
+    max-width:340px;
+  }
+  .btn-primary{
+    flex:1;
+    background:var(--sun-dark);
+    color:#fff;
+    font-weight:bold;
+    font-size:15px;
+    padding:14px 8px;
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,.3);
+  }
+  .btn-secondary{
+    flex:1;
+    background:#fff;
+    color:var(--sea-deep);
+    font-weight:bold;
+    font-size:15px;
+    padding:14px 8px;
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,.3);
+  }
+
+  /* Section common */
+  section{padding:44px 0;}
+  .section-title{
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .section-title .en{
+    display:block;
+    font-size:11px;
+    color:var(--sea-blue);
+    letter-spacing:.15em;
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:21px;
+    font-weight:900;
+    color:var(--sea-deep);
+  }
+  .section-title h2 span{
+    color:var(--sun-dark);
+  }
+
+  /* Featured product */
+  .featured{
+    background:linear-gradient(180deg,var(--sea-pale) 0%, #fff 100%);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,59,92,.12);
+    border:2px solid var(--sea-light);
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-ribbon{
+    background:var(--sun-dark);
+    color:#fff;
+    display:inline-block;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:0 0 8px 0;
+    margin-top:-1px;
+  }
+  .featured-body{padding:20px;}
+  .featured-body h3{
+    font-size:19px;
+    color:var(--sea-deep);
+    font-weight:900;
+    margin-bottom:10px;
+  }
+  .featured-body p{
+    font-size:14px;
+    color:#3a4a52;
+    margin-bottom:16px;
+  }
+  .compare-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:18px;
+    font-size:13px;
+  }
+  .compare-table th,.compare-table td{
+    border:1px solid #dceaf0;
+    padding:10px 8px;
+    text-align:center;
+  }
+  .compare-table th{
+    background:var(--sea-deep);
+    color:#fff;
+    font-weight:bold;
+    font-size:12px;
+  }
+  .compare-table td.us{
+    background:#fff6e5;
+    color:var(--sun-dark);
+    font-weight:bold;
+  }
+  .compare-table td:first-child{
+    text-align:left;
+    background:#f6fafc;
+    font-weight:bold;
+    color:var(--sea-deep);
+  }
+  .featured-body .btn-primary{width:100%;}
+
+  /* Strengths */
+  .strengths{background:var(--sea-deep);color:#fff;}
+  .strengths .section-title .en{color:var(--sea-light);}
+  .strengths .section-title h2{color:#fff;}
+  .strength-list{display:flex;flex-direction:column;gap:14px;}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:12px;
+    padding:16px;
+  }
+  .strength-num{
+    flex:0 0 auto;
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--sun);
+    color:var(--sea-deep);
+    font-weight:900;
+    font-size:16px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .strength-item h4{
+    font-size:15px;
+    margin-bottom:4px;
+    color:var(--sun);
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#dceaf2;
+  }
+
+  /* Story */
+  .story{background:#fff;}
+  .story-box{
+    background:var(--sea-pale);
+    border-radius:14px;
+    padding:22px;
+    font-size:14px;
+    color:#2c3e46;
+  }
+  .story-box .name{
+    text-align:right;
+    margin-top:14px;
+    font-size:13px;
+    font-weight:bold;
+    color:var(--sea-deep);
+  }
+
+  /* Reviews */
+  .reviews{background:var(--sea-pale);}
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 4px 14px rgba(0,59,92,.08);
+  }
+  .review-stars{
+    color:var(--sun-dark);
+    font-size:18px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#3a4a52;
+    margin-bottom:10px;
+  }
+  .review-card .reviewer{
+    font-size:12px;
+    color:var(--sea-blue);
+    font-weight:bold;
+    text-align:right;
+  }
+
+  /* Gallery */
+  .gallery{background:#fff;}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    width:100%;
+    height:130px;
+    object-fit:cover;
+    border-radius:10px;
+  }
+
+  /* Shop info */
+  .info{background:var(--sea-pale);}
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,59,92,.08);
+    font-size:13.5px;
+  }
+  .info-table tr{border-bottom:1px solid #e6eef1;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:var(--sea-deep);
+    color:#fff;
+    text-align:left;
+    padding:12px;
+    width:88px;
+    font-weight:bold;
+    font-size:12.5px;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:12px;
+    color:#2c3e46;
+  }
+  .info-table a{color:var(--sea-blue);font-weight:bold;text-decoration:underline;}
+  .map-wrap{
+    margin-top:14px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,59,92,.08);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block;}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg,var(--sea-blue),var(--sea-deep));
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:22px;
+    font-weight:900;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    color:#dceaf2;
+    margin-bottom:22px;
+  }
+  .final-cta .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .final-cta .btn-primary,.final-cta .btn-secondary{
+    padding:16px;
+    font-size:15px;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:1000;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,.12);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:8px 0;
+    font-size:11px;
+    font-weight:bold;
+    color:var(--sea-deep);
+    gap:2px;
+  }
+  .bottom-nav a.call{
+    background:var(--sun-dark);
+    color:#fff;
+  }
+  .bottom-nav a .icon{font-size:18px;}
+
+  @media (min-width:700px){
+    .hero img{height:420px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="shopname">ダイビングスクール ヘッドスラップ<span>奈良県奈良市 六条西</span></div>
+  <a href="tel:0742437909" class="tel-btn">📞 電話する</a>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="ヘッドスラップ ダイビングスクール 海中講習の様子">
+  <div class="hero-inner">
+    <div class="hero-badge">奈良県 初心者ダイバー認定数No.1</div>
+    <h1>不安を自信に変える<em>ダイビングスクール</em></h1>
+    <p class="sub">創業26年 / 認定実績1,300名以上 / 少人数制で安心の講習</p>
+    <div class="hero-stats">
+      <div><strong>26年</strong>創業の実績</div>
+      <div><strong>1,300名+</strong>認定実績</div>
+      <div><strong>2倍以上</strong>の練習時間</div>
+    </div>
+    <div class="hero-cta">
+      <a href="tel:0742437909" class="btn-primary">📞 電話で相談</a>
+      <a href="https://ds-headslap.com/contact-us/" class="btn-secondary">無料説明会を予約</a>
+    </div>
+  </div>
+</div>
+
+<!-- Featured Product -->
+<section class="featured">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">FEATURED SERVICE</span>
+      <h2>イチオシは<span>ライセンス取得コース</span></h2>
+    </div>
+    <div class="featured-card">
+      <img src="images/lesson.jpg" alt="ヘッドスラップ ライセンス講習の様子">
+      <span class="featured-ribbon">奈良県最安値・最短</span>
+      <div class="featured-body">
+        <h3>初心者でも200％楽しめる、確実なスキル習得</h3>
+        <p>短期間でもしっかり潜れるように、学科・プール・海洋実習を通じて<strong>一般スクールの2倍以上の練習時間</strong>を確保。少人数制でインストラクターが一人ひとりに丁寧に指導するから、初めての方でも安心してライセンスを取得できます。</p>
+        <table class="compare-table">
+          <tr><th>項目</th><th>一般的なスクール</th><th>ヘッドスラップ</th></tr>
+          <tr><td>水中スキル練習時間</td><td>標準</td><td class="us">2倍以上</td></tr>
+          <tr><td>指導体制</td><td>大人数制も多い</td><td class="us">少人数制で丁寧指導</td></tr>
+          <tr><td>取得後のツアー料金</td><td>通常価格</td><td class="us">奈良県内最安値</td></tr>
+        </table>
+        <a href="tel:0742437909" class="btn-primary">📞 まずは無料説明会に申し込む</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="strengths">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">OUR STRENGTHS</span>
+      <h2>選ばれる<span>3つの理由</span></h2>
+    </div>
+    <div class="strength-list">
+      <div class="strength-item">
+        <div class="strength-num">1</div>
+        <div>
+          <h4>一般スクールの2倍以上の練習時間</h4>
+          <p>学科・プール・海洋実習を通じてしっかり練習時間を確保。短期間でも確実にスキルアップできます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">2</div>
+        <div>
+          <h4>少人数制の丁寧な指導</h4>
+          <p>インストラクターが一人ひとりに向き合い、水中でのサインや対処法まで分かりやすくレクチャー。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">3</div>
+        <div>
+          <h4>取得後も安心のファンダイブ環境</h4>
+          <p>ライセンス取得後は奈良県内最安値でファンダイブツアーを開催。継続的にダイビングを楽しめます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="story">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">OUR STORY</span>
+      <h2>26年、変わらぬ<span>指導への想い</span></h2>
+    </div>
+    <div class="story-box">
+      <p>当スクールは26年間、数多くのダイバーを指導・認定してきました。奈良県最安値・最短でライセンス取得コースを開催し、奈良県では年間初心者ダイバー認定No.1の実績を誇っています。さらに、全国的にも少ないダイビングインストラクターを養成するプロコースを自店で開催できるのは奈良県では当店だけです。</p>
+      <p style="margin-top:12px;">未経験者からプロを目指したいすべての方に「正しい知識、正しいスキル」を高品質の講習で短期間、しかもリーズナブルに身に付けていただけるダイビングスクール。あなたがダイビングで体験したいことの全てを、ヘッドスラップが全力で指導します。</p>
+      <div class="name">代表　川下 禎巳</div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">VOICE</span>
+      <h2>お客様の<span>口コミ</span></h2>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>初めてのダイビングで不安もありましたが、ヘッドスラップさんの丁寧な指導とアットホームな雰囲気のおかげで、安心して楽しむことができました。機材の使い方から海中での動き方まで、一つひとつ丁寧に教えてくださいました。</p>
+      <p>特に印象的だったのは、インストラクターさんの安全意識の高さ。初心者の私にもわかりやすいように、水中でのサインや対処法をしっかりとレクチャーしてくださり、実際の海でも落ち着いて潜ることができました。施設も清潔感があり、更衣室やシャワールームもきれいで使いやすかったです。</p>
+      <div class="reviewer">奈良市内で講習を受けたお客様</div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">GALLERY</span>
+      <h2>スクールの<span>様子</span></h2>
+    </div>
+    <div class="gallery-grid">
+      <img src="images/shop1.jpg" alt="ヘッドスラップ 店内の様子">
+      <img src="images/shop2.jpg" alt="ヘッドスラップ 海洋実習の様子">
+    </div>
+  </div>
+</section>
+
+<!-- Shop Info -->
+<section class="info">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">SHOP INFO</span>
+      <h2>店舗<span>情報</span></h2>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>ダイビングスクール ヘッドスラップ</td></tr>
+      <tr><th>会社名</th><td>株式会社MarisStella88</td></tr>
+      <tr><th>代表者</th><td>川下 禎巳</td></tr>
+      <tr><th>住所</th><td>奈良県奈良市六条西4丁目1-30 2F</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0742437909">0742-43-7909</a></td></tr>
+      <tr><th>定休日</th><td>火曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://www.ds-headslap.com/" target="_blank" rel="noopener">https://www.ds-headslap.com/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://ds-headslap.com/contact-us/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.instagram.com/ds_headslap/" target="_blank" rel="noopener">Instagram</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A5%88%E8%89%AF%E5%B8%82%E5%85%AD%E6%9D%A1%E8%A5%BF4%E4%B8%81%E7%9B%AE1-30&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>まずは無料説明会へ</h2>
+    <p>お一人でも安心して始められるサポート体制です。<br>あなたのダイビングデビューを全力で応援します。</p>
+    <div class="btn-group">
+      <a href="tel:0742437909" class="btn-primary">📞 0742-43-7909 に電話する</a>
+      <a href="https://ds-headslap.com/contact-us/" class="btn-secondary">無料説明会に申し込む</a>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom nav -->
+<nav class="bottom-nav">
+  <a href="tel:0742437909" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://ds-headslap.com/contact-us/"><span class="icon">📝</span>お問い合わせ</a>
+  <a href="https://www.instagram.com/ds_headslap/"><span class="icon">📷</span>Instagram</a>
+  <a href="https://www.ds-headslap.com/"><span class="icon">🌐</span>公式HP</a>
+</nav>
+
+</body>
+</html>
