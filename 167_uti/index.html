@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>うっちーのガット張り工房｜奈良のガット張り専門店</title>
+<style>
+  :root{
+    --main:#1a3c8c;
+    --accent:#e8590c;
+    --sub:#f7941d;
+    --bg-light:#f7f8fb;
+    --text:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    line-height:1.7;
+    background:#fff;
+    padding-bottom:64px; /* space for fixed bottom nav */
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:640px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:8px 12px;
+  }
+  header .shopname{
+    font-size:14px;font-weight:bold;color:var(--main);
+    line-height:1.3;
+  }
+  header .tel-btn{
+    background:var(--accent);color:#fff;
+    font-size:13px;font-weight:bold;
+    padding:8px 14px;border-radius:24px;
+    display:flex;align-items:center;gap:4px;
+    white-space:nowrap;
+  }
+  header .tel-btn .num{font-size:15px;}
+  main{padding-top:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(135deg,var(--main),#274b9e);
+    color:#fff;
+    text-align:center;
+    padding:36px 16px 30px;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--sub);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 14px;
+    border-radius:14px;
+    margin-bottom:12px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:24px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero h1 span{
+    color:var(--sub);
+    font-size:28px;
+  }
+  .hero p{
+    font-size:14px;
+    opacity:0.95;
+    margin-bottom:18px;
+  }
+  .hero img{
+    border-radius:12px;
+    margin:0 auto 18px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .hero-cta{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  }
+  .btn-secondary{
+    background:#fff;
+    color:var(--main);
+    font-weight:bold;
+    font-size:15px;
+    padding:12px;
+    border-radius:8px;
+    border:2px solid #fff;
+  }
+
+  /* Section titles */
+  .section{padding:40px 16px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:6px;
+  }
+  .section-title small{
+    display:block;
+    font-size:12px;
+    color:var(--accent);
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:#666;
+    margin-bottom:26px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--bg-light);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    border:2px solid var(--sub);
+  }
+  .featured-card img{width:100%;}
+  .featured-card .body{padding:20px;}
+  .featured-card .tag{
+    display:inline-block;
+    background:var(--main);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 10px;
+    border-radius:4px;
+    margin-bottom:10px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main);
+    margin-bottom:10px;
+    line-height:1.5;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:14px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .featured-list li{
+    font-size:13.5px;
+    padding:8px 0 8px 26px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .featured-list li:before{
+    content:"✔";
+    position:absolute;left:0;top:8px;
+    color:var(--accent);
+    font-weight:bold;
+  }
+
+  /* Strengths */
+  .strengths .container{max-width:640px;}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    border-left:4px solid var(--main);
+  }
+  .strength-num{
+    flex:0 0 auto;
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--main);
+    color:#fff;
+    font-weight:bold;
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;
+  }
+  .strength-text h4{
+    font-size:15px;
+    color:var(--main);
+    margin-bottom:4px;
+  }
+  .strength-text p{
+    font-size:13px;
+    color:#555;
+  }
+
+  /* Story */
+  .story{background:var(--bg-light);}
+  .story-box{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .story-box p{
+    font-size:13.5px;
+    color:#444;
+    margin-bottom:10px;
+  }
+  .story-box .signature{
+    text-align:right;
+    font-size:13px;
+    color:var(--main);
+    font-weight:bold;
+  }
+
+  /* Reviews */
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    border:1px solid #eee;
+  }
+  .stars{
+    color:#f5a623;
+    font-size:15px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* Shop info */
+  .shopinfo{background:var(--bg-light);}
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom:20px;
+    font-size:13.5px;
+  }
+  .info-table tr{border-bottom:1px solid #eee;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:#f0f2f7;
+    color:var(--main);
+    text-align:left;
+    padding:12px 10px;
+    width:92px;
+    white-space:nowrap;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:12px 10px;
+    color:#333;
+  }
+  .info-table a{color:var(--main);text-decoration:underline;}
+  .map-wrap{
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block;}
+
+  /* CTA section */
+  .cta-section{
+    background:linear-gradient(135deg,var(--main),#274b9e);
+    color:#fff;
+    text-align:center;
+    padding:40px 16px;
+  }
+  .cta-section h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13.5px;
+    opacity:0.95;
+    margin-bottom:22px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    z-index:100;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px 4px;
+    font-size:13px;
+    font-weight:bold;
+    color:#fff;
+  }
+  .bottom-nav .nav-tel{background:var(--main);}
+  .bottom-nav .nav-form{background:var(--accent);}
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:18px 16px 70px;
+  }
+
+  @media (min-width:480px){
+    .hero h1{font-size:26px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">うっちーの<br>ガット張り工房</div>
+  <a href="tel:0742415514" class="tel-btn">📞<span class="num">0742-41-5514</span></a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge">奈良 学園前 ガット張り専門店</span>
+      <h1>あなたの理想の一打へ。<br><span>ガット張り、承ります。</span></h1>
+      <img src="images/hero_main.jpg" alt="うっちーのガット張り工房 店内でガット張りをする様子">
+      <p>「好き」だけで選んだガットが、実はあなたに合っていないかもしれません。<br>
+      職人「うっちー」が、理想のプレイに近づく一本をご提案します。</p>
+      <div class="hero-cta">
+        <a href="tel:0742415514" class="btn-primary">📞 今すぐ電話で相談する</a>
+        <a href="#shopinfo" class="btn-secondary">アクセス・営業時間を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="section featured" id="featured">
+    <div class="container">
+      <div class="section-title">
+        <small>ICHIOSHI SERVICE</small>
+        当店イチオシ｜ガット張り専門サービス
+      </div>
+      <p class="section-sub">「なんとなく」で選ばない。あなたに本当に合うガットを一緒に見つけます。</p>
+
+      <div class="featured-card">
+        <img src="images/service_stringing.jpg" alt="ガット張り作業の様子">
+        <div class="body">
+          <span class="tag">ガット張り専門店</span>
+          <h3>「どんなボールを打ちたいか」から選ぶ、オーダーメイドのガット張り</h3>
+          <p>
+            多くの方は「好きだから」「なんとなく理想だから」という理由でガット・ラケットを選び、テンションを指定して終わりがち。
+            でも実際は、体格やプレースタイルに合っていないケースがほとんどです。
+            当店ではお客様のご意見・ご要望をしっかり伺いながら、ピッタリの一本を一緒に選びます。
+          </p>
+          <ul class="featured-list">
+            <li>ご要望をヒアリングしながらガットを選定</li>
+            <li>「打ちたいボール」からテンションをご提案</li>
+            <li>無理なお願いにも快く対応（即日張りの実績多数）</li>
+            <li>仕上がりのクオリティに定評、丁寧な説明付き</li>
+          </ul>
+          <a href="tel:0742415514" class="btn-primary" style="display:block;text-align:center;">📞 ガット張りの相談をする</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section class="section strengths">
+    <div class="container">
+      <div class="section-title">
+        <small>WHY CHOOSE US</small>
+        選ばれる理由
+      </div>
+      <p class="section-sub">職人「うっちー」がこだわり抜く、ガット張り工房の強み</p>
+
+      <div class="strength-item">
+        <div class="strength-num">01</div>
+        <div class="strength-text">
+          <h4>ゴールから逆算するガット選び</h4>
+          <p>「どんなボールを打ちたいか」というゴールに向けて、理想のプレイに一歩でも近づくお手伝いをします。せっかくのラケット性能や技術を、ガット選びのミスマッチで殺しません。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">02</div>
+        <div class="strength-text">
+          <h4>無理を言っても快く対応</h4>
+          <p>初めてのご利用でも、即日張りなど無理なお願いを快く受けていただけると評判。仕上がりのクオリティにもご満足いただいています。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">03</div>
+        <div class="strength-text">
+          <h4>親しみやすい接客と丁寧な説明</h4>
+          <p>店員の愛想がよく、説明も丁寧と口コミでも高評価。価格面でのご相談にも柔軟に対応しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section story">
+    <div class="container">
+      <div class="section-title">
+        <small>OUR STORY</small>
+        店名に込めた想い
+      </div>
+      <div class="story-box">
+        <p>店長である僕のニックネームが「うっちー」。親しみやすいお店にしたいと思い、店名にしました。</p>
+        <p>ガット張りは日本でしか使わない呼び方で、海外では「ストリンギング」といいます。でも日本では「ガット張り」のほうがわかりやすい。そう考え、あえてストリンギングではなく「ガット張り」としました。</p>
+        <p>いろんな名前を考えた末に残ったのが「工房」という言葉。僕はガット張りにこだわる「職人」なので、「工房」がぴったりだと思いました。こうした想いをつなげて、「うっちーのガット張り工房」が誕生しました。</p>
+        <p class="signature">代表　内山　浩一</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section reviews">
+    <div class="container">
+      <div class="section-title">
+        <small>VOICE</small>
+        お客様の声
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★</div>
+        <p>親切な説明ありがとうございました。また、安くして頂きありがとうございます^ ^ ガット張りは、毎回お願いしています。</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>初めて利用したところに、無理言って即張りまでお願いしたにも関わらず快く受けていただきました。仕上がりもすごく良きです。ガット代ストリング代はそれなりに取られます涙　店員の愛想も良くてサービスが良いので満足ですけど…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP INFO -->
+  <section class="section shopinfo" id="shopinfo">
+    <div class="container">
+      <div class="section-title">
+        <small>SHOP INFO</small>
+        店舗情報
+      </div>
+      <table class="info-table">
+        <tr><th>店名</th><td>うっちーのガット張り工房</td></tr>
+        <tr><th>代表者</th><td>内山　浩一</td></tr>
+        <tr><th>住所</th><td>奈良県奈良市学園北１丁目８−８ サンライトビル</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0742415514">0742-41-5514</a></td></tr>
+        <tr><th>定休日</th><td>月曜日</td></tr>
+        <tr><th>HP</th><td><a href="http://www.u-gatt.com/" target="_blank" rel="noopener">www.u-gatt.com</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://www.u-gatt.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+      </table>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A5%88%E8%89%AF%E5%B8%82%E5%AD%A6%E5%9C%92%E5%8C%97%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%98%E2%88%92%EF%BC%98%20%E3%82%B5%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%88%E3%83%93%E3%83%AB&output=embed" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>まずはお気軽にご相談ください</h2>
+      <p>「今のガットが合っているかわからない」という方も大歓迎。<br>
+      あなたの理想の一打に近づくお手伝いをします。</p>
+      <div class="cta-buttons">
+        <a href="tel:0742415514" class="btn-primary">📞 電話で相談する（0742-41-5514）</a>
+        <a href="https://www.u-gatt.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener" class="btn-secondary">✉️ お問い合わせフォームへ</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © うっちーのガット張り工房
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0742415514" class="nav-tel">📞 電話で相談</a>
+  <a href="https://www.u-gatt.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener" class="nav-form">✉️ お問い合わせ</a>
+</nav>
+
+</body>
+</html>
