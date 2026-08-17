@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EURO WORKS（ユーロワークス）｜奈良県斑鳩町のロードバイク専門店</title>
+<style>
+  :root{
+    --main:#0b2e4f;
+    --accent:#e0782a;
+    --accent-dark:#c9601a;
+    --bg:#f7f5f1;
+    --text:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-bottom:64px; /* for fixed bottom nav */
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:480px;margin:0 auto;background:#fff;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shopname{
+    font-size:15px;
+    font-weight:bold;
+    line-height:1.3;
+  }
+  header .shopname small{
+    display:block;
+    font-size:10px;
+    font-weight:normal;
+    opacity:.8;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 12px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-spacer{height:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(11,46,79,.92), rgba(11,46,79,0));
+    color:#fff;
+    padding:40px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 1px 4px rgba(0,0,0,.5);
+  }
+  .hero-overlay .sub{
+    font-size:13px;
+    margin-top:6px;
+    opacity:.9;
+  }
+
+  /* Section common */
+  section{
+    padding:32px 16px;
+  }
+  .sec-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:6px;
+  }
+  .sec-title span{
+    display:block;
+    font-size:11px;
+    color:var(--accent);
+    letter-spacing:2px;
+    font-weight:normal;
+    margin-bottom:4px;
+  }
+  .sec-lead{
+    text-align:center;
+    font-size:13px;
+    color:#555;
+    margin-bottom:24px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--main);
+    color:#fff;
+  }
+  .featured .sec-title{color:#fff;}
+  .featured .sec-title span{color:var(--accent);}
+  .featured .sec-lead{color:#cfd9e3;}
+  .featured-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-card .body{
+    padding:18px;
+  }
+  .featured-card .tag{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:11px;
+    font-weight:bold;
+    padding:4px 10px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .featured-card p{
+    font-size:13.5px;
+    color:#444;
+    margin-bottom:14px;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    font-size:15px;
+    box-shadow:0 4px 10px rgba(224,120,42,.4);
+  }
+  .cta-btn:active{background:var(--accent-dark);}
+
+  /* Strength */
+  .strength-box{
+    background:#fff;
+    border:1px solid #e6e0d4;
+    border-radius:10px;
+    padding:20px;
+    font-size:13.5px;
+    color:#444;
+  }
+  .strength-box .num{
+    color:var(--accent);
+    font-weight:bold;
+    font-size:13px;
+  }
+
+  /* Reviews */
+  .reviews{background:#f1ede5;}
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,.06);
+  }
+  .review-card .stars{
+    color:#f0a500;
+    font-size:15px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13px;
+    color:#444;
+    white-space:pre-line;
+  }
+
+  /* Shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  .shop-info th{
+    background:#f1ede5;
+    color:var(--main);
+    text-align:left;
+    padding:12px 10px;
+    width:80px;
+    vertical-align:top;
+    border-bottom:1px solid #e6e0d4;
+    white-space:nowrap;
+  }
+  .shop-info td{
+    padding:12px 10px;
+    border-bottom:1px solid #e6e0d4;
+    word-break:break-all;
+  }
+  .shop-info td a{color:var(--accent);text-decoration:underline;}
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid #e6e0d4;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13px;
+    color:#cfd9e3;
+    margin-bottom:20px;
+  }
+  .final-cta .cta-btn{margin-bottom:12px;}
+  .final-cta .sub-btn{
+    display:block;
+    text-align:center;
+    background:transparent;
+    border:1px solid #fff;
+    color:#fff;
+    font-weight:bold;
+    padding:12px;
+    border-radius:8px;
+    font-size:14px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:20px 16px 80px;
+    background:#fff;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    max-width:480px;
+    margin:0 auto;
+    display:flex;
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:#fff;
+  }
+  .bottom-nav a.tel{background:var(--main);}
+  .bottom-nav a.form{background:var(--accent);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">EURO WORKS
+    <small>ユーロワークス｜奈良県生駒郡斑鳩町</small>
+  </div>
+  <a href="tel:0000000000" class="tel-btn">📞 電話する</a>
+</header>
+<div class="header-spacer"></div>
+
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="EURO WORKS 店舗外観">
+    <div class="hero-overlay">
+      <div class="catch">私が組んだバイク1台1台を<br>ずっと大切にします。</div>
+      <div class="sub">商談から組立・納車・アフターフォローまで、すべて一人の職人が対応</div>
+    </div>
+  </div>
+
+  <!-- Featured product -->
+  <section class="featured">
+    <div class="sec-title"><span>EURO WORKS イチオシ</span>ロードバイク</div>
+    <p class="sec-lead">購入後も一生涯サポート。あなたの1台に本気で向き合います。</p>
+    <div class="featured-card">
+      <img src="images/roadbike.jpg" alt="ロードバイク">
+      <div class="body">
+        <span class="tag">最優先対応・完全アフターフォロー</span>
+        <h3>あなたの相棒になる、一台を。</h3>
+        <p>当店でご購入いただいたお客様のバイクは、修理・調整すべて最優先でご対応。商談から組立、納車、アフターフォローまで責任を持って一人の職人が担当するから、細かなクセや好みまで熟知した状態でメンテナンスができます。ジロ・デ・イタリア完走選手も通う、確かな技術力の店です。</p>
+        <a href="tel:0000000000" class="cta-btn">ロードバイクの相談をする</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strength -->
+  <section>
+    <div class="sec-title"><span>選ばれる理由</span>EURO WORKSの強み</div>
+    <div class="strength-box">
+      <p><span class="num">01.</span> 商談から組立、納車、アフターフォローまで全て一人の職人が対応。誰に相談しても「いつもの人」が答えてくれる安心感。</p>
+      <br>
+      <p><span class="num">02.</span> ご購入いただいたお客様のバイクは最優先でご要望にお応え。飛び込みの修理にも柔軟に対応しています。</p>
+      <br>
+      <p><span class="num">03.</span> ジロ・デ・イタリア完走の山本選手も通う実力派ショップ。店内にはジャージや自転車も展示。</p>
+      <br>
+      <p><span class="num">04.</span> お子様の自転車から本格ロードバイクまで、成長やレベルに合わせて長く付き合えるお店です。</p>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <div class="sec-title"><span>お客様の声</span>口コミ</div>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>いつも飛び込みで修理して貰っています。
+ジロ完走の山本選手も来るそうで、ジャージと自転車飾ってあったります。子供の自転車としてヨツバサイクルの自転車を購入。
+本日、補助輪を外してスタンドをつけてもらいました😁
+閉店間近でしたが素早く対応してくださいました。ありがとうございます。
+子供の成長とともに通いたいお店です😁
+ちょっと、朴訥とされていますが無礼や不快ではないですよ😁
+子供の自転車購入先としてオススメです😁</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>なかなかよい店です。メンテもしっかりしているし、乗り方も丁寧に教えてくれます。何時も相談にのってもらって、色々な情報も頂けます。</p>
+    </div>
+  </section>
+
+  <!-- Shop info -->
+  <section class="shop-info">
+    <div class="sec-title"><span>SHOP INFO</span>店舗案内</div>
+    <table>
+      <tr><th>店名</th><td>EURO WORKS（ユーロワークス）</td></tr>
+      <tr><th>住所</th><td>奈良県生駒郡斑鳩町龍田3-2-34</td></tr>
+      <tr><th>定休日</th><td>毎週水曜日、土日祝のレース・イベント日</td></tr>
+      <tr><th>HP</th><td><a href="https://euro-works.net/" target="_blank" rel="noopener">https://euro-works.net/</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.facebook.com/EuroWorks/" target="_blank" rel="noopener">Facebook</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=奈良県生駒郡斑鳩町龍田3-2-34&z=16&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>ロードバイクのご購入・修理・メンテナンス、<br>お子様の自転車選びまで何でもお任せください。</p>
+    <a href="tel:0000000000" class="cta-btn">📞 電話で相談する</a>
+    <a href="https://euro-works.net/2017/form/" target="_blank" rel="noopener" class="sub-btn">フォームで問い合わせる</a>
+  </section>
+
+  <footer>
+    &copy; EURO WORKS（ユーロワークス）
+  </footer>
+
+</div>
+
+<div class="bottom-nav">
+  <a href="tel:0000000000" class="tel">📞 電話で相談</a>
+  <a href="https://euro-works.net/2017/form/" target="_blank" rel="noopener" class="form">📩 フォーム相談</a>
+</div>
+
+</body>
+</html>
