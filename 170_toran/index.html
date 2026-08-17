@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>トランジット｜奈良市富雄 SURLY取扱いのスポーツバイク専門店</title>
+<style>
+  :root{
+    --main:#1a3c2e;
+    --accent:#e07a3f;
+    --cream:#faf6ef;
+    --dark:#222;
+    --line:#e2ddd0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark);
+    background:var(--cream);
+    padding-top:56px;
+    padding-bottom:60px;
+    line-height:1.7;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header.fixed-header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--main);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 14px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  }
+  header.fixed-header .shop-name{
+    font-size:17px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  header.fixed-header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    color:#fff;
+    text-align:center;
+  }
+  .hero img{
+    width:100%;
+    height:64vw;
+    max-height:420px;
+    object-fit:cover;
+    filter:brightness(0.55);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text .catch-small{
+    font-size:13px;
+    letter-spacing:2px;
+    border:1px solid #fff;
+    display:inline-block;
+    padding:3px 12px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .hero-text h1{
+    font-size:26px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 2px 8px rgba(0,0,0,0.5);
+  }
+  .hero-text .sub{
+    margin-top:10px;
+    font-size:14px;
+    opacity:0.95;
+  }
+
+  section{
+    padding:40px 20px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .section-title-en{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:3px;
+    color:var(--accent);
+    margin-bottom:24px;
+    font-weight:bold;
+  }
+
+  /* イチオシ商品 */
+  .featured{
+    background:var(--main);
+    color:#fff;
+  }
+  .featured .section-title{color:#fff;}
+  .featured-badge{
+    background:var(--accent);
+    color:#fff;
+    display:inline-block;
+    padding:6px 18px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    margin:0 auto 16px;
+    display:block;
+    width:fit-content;
+  }
+  .featured-img{
+    border-radius:8px;
+    overflow:hidden;
+    margin-bottom:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  }
+  .featured p.lead{
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:12px;
+    text-align:center;
+  }
+  .featured p.desc{
+    font-size:14px;
+    opacity:0.95;
+  }
+  .featured-points{
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .featured-points .point{
+    background:rgba(255,255,255,0.08);
+    border-left:3px solid var(--accent);
+    padding:12px 14px;
+    font-size:13px;
+    border-radius:4px;
+  }
+  .featured-points .point b{
+    display:block;
+    color:var(--accent);
+    font-size:13px;
+    margin-bottom:4px;
+  }
+
+  /* 強み */
+  .strengths .item{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:20px;
+    margin-bottom:16px;
+  }
+  .strengths .item h3{
+    color:var(--main);
+    font-size:16px;
+    margin-bottom:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .strengths .item h3 .num{
+    background:var(--main);
+    color:#fff;
+    width:24px;height:24px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    flex-shrink:0;
+  }
+  .strengths .item p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* 店舗写真 */
+  .shop-photo{
+    padding:0 20px 40px;
+  }
+  .shop-photo img{
+    border-radius:8px;
+  }
+  .shop-photo .caption{
+    text-align:center;
+    font-size:12px;
+    color:#888;
+    margin-top:8px;
+  }
+
+  /* クチコミ */
+  .review{
+    background:#fff;
+  }
+  .review-box{
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:20px;
+    position:relative;
+  }
+  .review-box .stars{
+    color:#f5a623;
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .review-box p{
+    font-size:13.5px;
+    color:#333;
+  }
+  .review-box .quote-mark{
+    font-size:40px;
+    color:var(--line);
+    position:absolute;
+    top:6px;
+    right:14px;
+    font-family:Georgia,serif;
+  }
+
+  /* 店舗情報 */
+  .info table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    font-size:13.5px;
+  }
+  .info table tr{
+    border-bottom:1px solid var(--line);
+  }
+  .info table tr:last-child{border-bottom:none;}
+  .info table th{
+    background:#f1ece1;
+    color:var(--main);
+    text-align:left;
+    padding:12px 10px;
+    width:28%;
+    font-weight:bold;
+    vertical-align:top;
+  }
+  .info table td{
+    padding:12px 10px;
+    vertical-align:top;
+  }
+  .info table td a{
+    color:var(--accent);
+    font-weight:bold;
+  }
+  .map-wrap{
+    margin-top:18px;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:230px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(135deg,var(--main),#254f3c);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta p{
+    font-size:13.5px;
+    opacity:0.9;
+    margin-bottom:24px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-buttons a{
+    padding:16px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-buttons .tel{
+    background:var(--accent);
+    color:#fff;
+  }
+  .cta-buttons .web{
+    background:#fff;
+    color:var(--main);
+    border:1px solid #fff;
+  }
+
+  /* フッター簡易 */
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:20px;
+  }
+
+  /* 下部固定ナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    height:58px;
+    background:#fff;
+    border-top:1px solid var(--line);
+    z-index:100;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.08);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main);
+    gap:2px;
+  }
+  .bottom-nav a.highlight{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    font-size:18px;
+  }
+</style>
+</head>
+<body>
+
+<header class="fixed-header">
+  <div class="shop-name">トランジット</div>
+  <a href="tel:0742813090" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="./images/hero.jpg" alt="トランジット 店舗外観">
+  <div class="hero-text">
+    <span class="catch-small">奈良市富雄 SURLY取扱店</span>
+    <h1>本当は普通の<br>町の自転車屋さん。</h1>
+    <p class="sub">クロモリフレームが好きな人も、日常の一台も。<br>富雄北で、あなたの自転車をお任せください。</p>
+  </div>
+</div>
+
+<section class="featured">
+  <p class="section-title-en">RECOMMEND</p>
+  <h2 class="section-title">イチオシ｜自転車</h2>
+  <span class="featured-badge">SURLY / ALL-CITY 取扱店</span>
+  <div class="featured-img">
+    <img src="./images/bike.jpg" alt="トランジットの自転車">
+  </div>
+  <p class="lead">クロモリフレームの魅力を、この街で。</p>
+  <p class="desc">
+    SURLYやALL-CITYなど、主にクロモリフレームの自転車を専門的に取り扱う本店。
+    完成車の販売はもちろん、フレームセットからの一台組み上げまで、
+    あなたの理想の自転車づくりをお手伝いします。
+  </p>
+  <div class="featured-points">
+    <div class="point">
+      <b>完成車販売</b>
+      SURLY・ALL-CITYをはじめ、こだわりの完成車をラインナップ。
+    </div>
+    <div class="point">
+      <b>フレームセットからの組み上げ</b>
+      パーツ選びから相談OK。あなただけの一台を一緒に作り上げます。
+    </div>
+    <div class="point">
+      <b>迅速な修理対応</b>
+      パンク修理・チューブ交換・ブレーキシュー交換など、作業時間目安30分。お出かけの合間に対応可能。
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <p class="section-title-en">STRENGTH</p>
+  <h2 class="section-title">トランジットの強み</h2>
+
+  <div class="item">
+    <h3><span class="num">1</span>2011年創業のスポーツバイク専門店</h3>
+    <p>2011年4月に本店を開業し、2021年4月には別館もオープン。長年培った知識と経験で、あらゆる自転車のご相談にお応えします。</p>
+  </div>
+  <div class="item">
+    <h3><span class="num">2</span>SURLY・ALL-CITY取扱いのクロモリ専門</h3>
+    <p>本店ではSURLYやALL-CITYなど、主にクロモリフレームの自転車を取り扱い。完成車の販売からフレームセットの組み上げまでお任せいただけます。</p>
+  </div>
+  <div class="item">
+    <h3><span class="num">3</span>丁寧・迅速な修理対応</h3>
+    <p>パンク修理（チューブ交換）やブレーキシュー交換も、作業時間目安30分。買い物や用事を済ませている間に仕上がるので、お忙しい方にも好評です。</p>
+  </div>
+</section>
+
+<div class="shop-photo">
+  <img src="./images/shop.jpg" alt="トランジット 店内の様子">
+  <p class="caption">富雄北の本店。親切丁寧な接客でお迎えします。</p>
+</div>
+
+<section class="review">
+  <p class="section-title-en">REVIEW</p>
+  <h2 class="section-title">お客様の声</h2>
+  <div class="review-box">
+    <div class="quote-mark">”</div>
+    <div class="stars">★★★★★</div>
+    <p>
+      富雄周辺で、自転車のパンク修理（チューブ交換）やブレーキシュー交換をしてくれる貴重なお店。もう何度もお世話になってます。親切丁寧で、サービスも最高です。
+      チューブ交換とブレーキシュー交換の作業時間も30分。富雄駅周辺で買い物をして、用事を済ませて、取りに行けば、もう作業が終わってるので、とても助かります‼️
+      東京に戻る前に母の自転車をちゃんとしてもらわないとと思って探していたら、こちらを見つけました。素晴らしいサービスで、お兄さんも優しく、何かあったらこちらに来るよう母にも伝えておきました。
+    </p>
+  </div>
+</section>
+
+<section class="info">
+  <p class="section-title-en">SHOP INFO</p>
+  <h2 class="section-title">店舗情報</h2>
+  <table>
+    <tr><th>店名</th><td>トランジット</td></tr>
+    <tr><th>代表者</th><td>向井健太</td></tr>
+    <tr><th>住所</th><td>奈良県奈良市富雄北1-1-5</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0742813090">0742-81-3090</a></td></tr>
+    <tr><th>定休日</th><td>毎週水曜・第二火曜日<br>※ほぼ毎週火曜日も休業／臨時休業有</td></tr>
+    <tr><th>HP</th><td><a href="http://www.bc-transit.com/" target="_blank" rel="noopener">www.bc-transit.com</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:transit@transit.m001.jp">transit@transit.m001.jp</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A5%88%E8%89%AF%E5%B8%82%E5%AF%8C%E9%9B%84%E5%8C%971-1-5&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>あなたの一台を、トランジットで。</h2>
+  <p>お電話・ホームページから、お気軽にお問い合わせください。</p>
+  <div class="cta-buttons">
+    <a href="tel:0742813090" class="tel">📞 0742-81-3090 に電話する</a>
+    <a href="http://www.bc-transit.com/" target="_blank" rel="noopener" class="web">🌐 ホームページを見る</a>
+  </div>
+</section>
+
+<footer>
+  © トランジット
+</footer>
+
+<nav class="bottom-nav">
+  <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+    <span class="icon">🏠</span>トップ
+  </a>
+  <a href="#" onclick="document.querySelector('.featured').scrollIntoView({behavior:'smooth'});return false;">
+    <span class="icon">🚲</span>イチオシ
+  </a>
+  <a href="#" onclick="document.querySelector('.info').scrollIntoView({behavior:'smooth'});return false;">
+    <span class="icon">📍</span>店舗情報
+  </a>
+  <a href="tel:0742813090" class="highlight">
+    <span class="icon">📞</span>電話する
+  </a>
+</nav>
+
+</body>
+</html>
