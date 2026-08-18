@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中山スポーツ｜滋賀県大津市のランニングシューズ専門店</title>
+<style>
+  :root{
+    --main-color:#0b5e3c;
+    --sub-color:#f7a600;
+    --dark:#1a1a1a;
+    --light-bg:#f5f7f5;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Meiryo",sans-serif;
+    color:var(--dark);
+    line-height:1.7;
+    background:var(--white);
+    padding-bottom:64px; /* for fixed bottom nav */
+  }
+  img{max-width:100%; display:block;}
+  a{text-decoration:none; color:inherit;}
+  .container{max-width:640px; margin:0 auto; padding:0 16px;}
+
+  /* Header */
+  .header{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    background:var(--white);
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 16px;
+  }
+  .header .shop-name{
+    font-size:16px; font-weight:bold; color:var(--main-color);
+  }
+  .header .tel-btn{
+    background:var(--sub-color); color:var(--white);
+    font-size:13px; font-weight:bold;
+    padding:8px 12px; border-radius:20px;
+    white-space:nowrap;
+  }
+  .header-spacer{height:52px;}
+
+  /* Hero */
+  .hero{position:relative;}
+  .hero img{width:100%; height:280px; object-fit:cover;}
+  .hero-overlay{
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    color:var(--white); padding:24px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:22px; font-weight:bold; line-height:1.5;
+  }
+  .hero-overlay .sub{
+    font-size:13px; margin-top:6px; opacity:0.9;
+  }
+
+  /* Section common */
+  section{padding:36px 0;}
+  .section-title{
+    text-align:center; font-size:22px; font-weight:bold;
+    color:var(--main-color); margin-bottom:8px;
+  }
+  .section-title span{
+    display:block; font-size:12px; color:var(--sub-color); font-weight:bold;
+    letter-spacing:2px; margin-bottom:4px;
+  }
+  .section-lead{
+    text-align:center; font-size:13px; color:#555; margin-bottom:24px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:linear-gradient(135deg, var(--main-color), #084430);
+    color:var(--white);
+  }
+  .featured .section-title, .featured .section-title span{color:var(--white);}
+  .featured .section-lead{color:#d5e8dd;}
+  .featured-card{
+    background:var(--white); color:var(--dark);
+    border-radius:12px; overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+  }
+  .featured-card img{width:100%; height:220px; object-fit:cover;}
+  .featured-badge{
+    display:inline-block; background:var(--sub-color); color:var(--white);
+    font-size:12px; font-weight:bold; padding:4px 12px; border-radius:16px;
+    margin:16px 16px 0;
+  }
+  .featured-card h3{
+    font-size:19px; padding:8px 16px 0; color:var(--main-color);
+  }
+  .featured-card p{
+    font-size:14px; padding:8px 16px 16px; color:#444;
+  }
+  .featured-points{
+    display:flex; flex-wrap:wrap; gap:8px; padding:0 16px 16px;
+  }
+  .featured-points span{
+    background:var(--light-bg); font-size:12px; font-weight:bold;
+    color:var(--main-color); padding:6px 10px; border-radius:6px;
+    border:1px solid var(--main-color);
+  }
+  .featured-cta{
+    display:block; text-align:center; background:var(--sub-color); color:var(--white);
+    font-weight:bold; font-size:15px; padding:14px; margin:0 16px 16px; border-radius:8px;
+  }
+
+  /* Strengths */
+  .strengths{background:var(--light-bg);}
+  .strength-item{
+    background:var(--white); border-radius:10px; padding:18px;
+    margin-bottom:14px; box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    border-left:4px solid var(--sub-color);
+  }
+  .strength-item h4{
+    font-size:15px; color:var(--main-color); margin-bottom:6px;
+  }
+  .strength-item p{font-size:13px; color:#444;}
+  .story-box{
+    margin-top:20px; background:var(--white); border-radius:10px;
+    padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .story-box h4{font-size:15px; color:var(--main-color); margin-bottom:8px;}
+  .story-box p{font-size:13px; color:#444;}
+
+  /* Reviews */
+  .review-card{
+    background:var(--white); border:1px solid #e5e5e5; border-radius:10px;
+    padding:16px; margin-bottom:16px;
+  }
+  .stars{color:var(--sub-color); font-size:15px; margin-bottom:8px; letter-spacing:2px;}
+  .review-card p{font-size:13px; color:#333; white-space:pre-line;}
+
+  /* Gallery image within strengths */
+  .img-block{margin:20px 0; border-radius:10px; overflow:hidden;}
+  .img-block img{width:100%; height:200px; object-fit:cover;}
+  .img-caption{
+    text-align:center; font-size:12px; color:#777; margin-top:6px;
+  }
+
+  /* Shop info */
+  .shop-info{background:var(--light-bg);}
+  .info-table{
+    width:100%; background:var(--white); border-radius:10px; overflow:hidden;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .info-table tr{border-bottom:1px solid #eee;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    width:96px; text-align:left; font-size:12px; color:var(--main-color);
+    background:#eef5f0; padding:12px 10px; vertical-align:top; font-weight:bold;
+  }
+  .info-table td{
+    font-size:13px; padding:12px 10px; color:#333; word-break:break-all;
+  }
+  .map-wrap{margin-top:16px; border-radius:10px; overflow:hidden;}
+  .map-wrap iframe{width:100%; height:220px; border:0;}
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--main-color); color:var(--white); text-align:center;
+  }
+  .final-cta h2{font-size:20px; margin-bottom:10px;}
+  .final-cta p{font-size:13px; margin-bottom:20px; color:#d5e8dd;}
+  .cta-buttons{display:flex; flex-direction:column; gap:12px;}
+  .cta-buttons a{
+    display:block; padding:16px; border-radius:8px; font-weight:bold; font-size:15px;
+  }
+  .cta-tel{background:var(--sub-color); color:var(--white);}
+  .cta-web{background:var(--white); color:var(--main-color); border:2px solid var(--white);}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed; bottom:0; left:0; right:0; z-index:1000;
+    display:flex; background:var(--white); box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+  }
+  .bottom-nav a{
+    flex:1; text-align:center; padding:10px 4px; font-size:12px; font-weight:bold;
+  }
+  .bottom-nav .nav-tel{background:var(--sub-color); color:var(--white);}
+  .bottom-nav .nav-web{background:var(--main-color); color:var(--white);}
+  .bottom-nav .nav-map{background:#333; color:var(--white);}
+
+  @media (min-width:640px){
+    .hero img{height:340px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="shop-name">中山スポーツ</div>
+  <a href="tel:0775342525" class="tel-btn">📞 077-534-2525</a>
+</div>
+<div class="header-spacer"></div>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="images/main.jpg" alt="中山スポーツ 店舗外観">
+  <div class="hero-overlay">
+    <div class="catch">足の悩みは、靴選びで変わる。</div>
+    <div class="sub">5,000人以上の実績。滋賀県大津市の靴選びプロ集団「ナカスポ」</div>
+  </div>
+</div>
+
+<!-- Featured Product -->
+<section class="featured">
+  <div class="container">
+    <div class="section-title"><span>ICHIOSHI PRODUCT</span>イチオシ商品</div>
+    <p class="section-lead">あなたの足に本当に合う一足を、専門スタッフが徹底サポート</p>
+    <div class="featured-card">
+      <img src="images/shoes.jpg" alt="ランニングシューズ アルトラ ローンピーク7">
+      <span class="featured-badge">お客様満足度★★★★</span>
+      <h3>ランニングシューズ</h3>
+      <p>「アルトラのローンピーク7が気になって滋賀県内で探し、中山スポーツさんに飛び込みました」——丁寧な接客で何足も試し履きができ、ご要望にぴったりの一足に出会えたとお喜びの声をいただいています。レアなブランドの取り扱いや、足裏のマメ（肉刺）に悩む方向けの専門的なフィッティングにも対応。</p>
+      <div class="featured-points">
+        <span>豊富な試し履き対応</span>
+        <span>レアブランド取扱い</span>
+        <span>マメ解消専門店</span>
+        <span>シューズ専門店併設</span>
+      </div>
+      <a href="tel:0775342525" class="featured-cta">今すぐ電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="strengths">
+  <div class="container">
+    <div class="section-title"><span>OUR STRENGTH</span>中山スポーツの強み</div>
+    <p class="section-lead">1970年創業。滋賀・大津の地で信頼を築いてきたスポーツ店です</p>
+
+    <div class="strength-item">
+      <h4>足の悩み・トラブルを靴選びからサポート</h4>
+      <p>お医者さんではありませんが、靴選びのプロとして5,000人以上のお客様をサポート。お客様の足や靴、歩き方を見て痛みの原因を探り、徹底的に改善のお手伝いをいたします。</p>
+    </div>
+
+    <div class="strength-item">
+      <h4>滋賀県内唯一の高地トレーニング設備</h4>
+      <p>関西でも珍しい高地トレーニング設備を完備。科学的なトレーニングで日本一になったボート選手も。お子様の加圧式トレーニングにも対応しており、野球をされているお子様の保護者様からも高評価をいただいています。</p>
+    </div>
+
+    <div class="img-block">
+      <img src="images/training.jpg" alt="高地トレーニングスタジオ">
+    </div>
+    <div class="img-caption">目の前には美しい瀬田川。2021年からはSUP体験教室もスタート</div>
+
+    <div class="strength-item">
+      <h4>何でも揃う総合スポーツショップ</h4>
+      <p>スポーツ用品なら何でも取り扱い、店頭にない商品もカタログで注文可能。シューズ専門店も併設し、ビル内には塾や歯科医院も入る便利な立地です。</p>
+    </div>
+
+    <div class="story-box">
+      <h4>創業者ストーリー</h4>
+      <p>中山スポーツは1970年、唐橋の西岸にて創業。その10年後、現在の大津市千町に移転し現在に至ります。創業当初より多くの官公庁・学校様とお取引をいただき、外商営業を中心に信頼を築いてまいりました。近年はウォーキング部門の新設や高地トレーニングスタジオの運営など、時代のニーズに応えるスポーツ店として日々進化を続けています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+  <div class="container">
+    <div class="section-title"><span>REVIEW</span>お客様の声</div>
+
+    <div class="review-card">
+      <div class="stars">★★★★</div>
+      <p>アルトラのシューズが気になり、滋賀県の取り扱い店を調べたら中山スポーツさんが見つかり飛び込みました。丁寧な接客対応のお陰で、沢山のシューズを試し履きすることができ、私の要望に沿った結果ローンピーク7を購入。商品にも大変満足しております。ありがとうございました！なんでもある。スポーツ用品で無いものはカタログで頼める。シューズ専門店もある。ビル内に塾、歯科医院などがある。けど、剣道用品は置いていない。</p>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>社長さんはじめ、スタッフのみなさんとても親切です。うちの息子は野球をしていますが、加圧式トレーニングでお世話になっています。関西では珍しい高地トレーニング設備を置いておられます。おそらく滋賀ではここだけ、京都にもないんじゃないでしょうか？この高地トレーニングで科学的にトレーニングをされて、日本一になられたボート選手もおられるようです。目の前には美しい瀬田川が流れています。2021年からSUP体験教室も始められるとのこと、とても楽しみです。新しいことをどんどん取り入れされている、とても素晴らしいスポーツショップです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Shop Info -->
+<section class="shop-info">
+  <div class="container">
+    <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>中山スポーツ（株式会社中山スポーツ）</td></tr>
+      <tr><th>代表者</th><td>中山 博識</td></tr>
+      <tr><th>住所</th><td>滋賀県大津市千町１丁目２５−２５ なかやまビル 1F</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0775342525">077-534-2525</a></td></tr>
+      <tr><th>定休日</th><td>毎週水曜日</td></tr>
+      <tr><th>HP</th><td><a href="http://www.nakaspo.jp/" target="_blank">http://www.nakaspo.jp/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://nakaspo.jp/contact" target="_blank">お問い合わせフォームはこちら</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@nakaspo.com">info@nakaspo.com</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E6%BB%8B%E8%B3%80%E7%9C%8C%E5%A4%A7%E6%B4%A5%E5%B8%82%E5%8D%83%E7%94%BA%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%95%EF%BC%8D%EF%BC%92%EF%BC%95&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>あなたに合う一足を、一緒に見つけませんか？</h2>
+    <p>足のお悩み・靴選びのご相談はお気軽に中山スポーツへ</p>
+    <div class="cta-buttons">
+      <a href="tel:0775342525" class="cta-tel">📞 電話で相談する（077-534-2525）</a>
+      <a href="https://nakaspo.jp/contact" class="cta-web" target="_blank">✉️ お問い合わせフォームはこちら</a>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom Nav -->
+<div class="bottom-nav">
+  <a href="tel:0775342525" class="nav-tel">📞 電話</a>
+  <a href="http://www.nakaspo.jp/" class="nav-web" target="_blank">🌐 HP</a>
+  <a href="https://maps.google.com/?q=滋賀県大津市千町１丁目２５−２５" class="nav-map" target="_blank">📍 地図</a>
+</div>
+
+</body>
+</html>
