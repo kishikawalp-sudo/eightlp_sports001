@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中島スポーツ 本店｜滋賀県甲賀市の総合スポーツ用品店</title>
+<style>
+  :root{
+    --main-color:#0b3d91;
+    --accent-color:#ff7a00;
+    --bg-light:#f5f7fa;
+    --text-dark:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    line-height:1.7;
+    background:#fff;
+    padding-bottom:60px; /* for fixed bottom nav */
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{max-width:500px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:#fff;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .header-spacer{height:56px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+  }
+  .hero-text{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+    padding:22px 16px;
+  }
+  .hero-text h1{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:8px;
+  }
+  .hero-text p{
+    font-size:14px;
+    opacity:0.9;
+  }
+  .badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:4px;
+    margin-bottom:10px;
+  }
+
+  section{
+    padding:36px 0;
+  }
+  .section-title{
+    text-align:center;
+    font-size:19px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:20px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--accent-color);
+    margin:8px auto 0;
+  }
+
+  /* Featured product */
+  .featured{
+    background:linear-gradient(135deg,#fff7ed,#ffe8d1);
+    border:2px solid var(--accent-color);
+    border-radius:12px;
+    margin:0 16px;
+    padding:20px 16px;
+  }
+  .featured .push-label{
+    background:var(--accent-color);
+    color:#fff;
+    display:inline-block;
+    font-size:13px;
+    font-weight:bold;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .featured h2{
+    font-size:22px;
+    color:var(--main-color);
+    margin-bottom:10px;
+    line-height:1.4;
+  }
+  .featured img{
+    border-radius:10px;
+    margin:14px 0;
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured p{
+    font-size:14.5px;
+  }
+  .featured ul{
+    margin:14px 0 4px 0;
+    padding-left:0;
+    list-style:none;
+  }
+  .featured ul li{
+    background:#fff;
+    border-left:4px solid var(--accent-color);
+    padding:10px 12px;
+    margin-bottom:8px;
+    font-size:14px;
+    border-radius:4px;
+  }
+
+  /* Strengths */
+  .strengths .container p{
+    font-size:14.5px;
+    white-space:pre-line;
+    background:var(--bg-light);
+    padding:16px;
+    border-radius:10px;
+  }
+
+  /* Story */
+  .story{
+    background:var(--bg-light);
+  }
+  .story .container p{
+    font-size:14px;
+    white-space:pre-line;
+  }
+
+  /* Reviews */
+  .review-card{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  }
+  .stars{
+    color:#ffb400;
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:14px;
+    white-space:pre-line;
+  }
+
+  /* Shop info table */
+  table.shop-info{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  table.shop-info th,
+  table.shop-info td{
+    padding:12px 8px;
+    border-bottom:1px solid #e0e0e0;
+    text-align:left;
+    vertical-align:top;
+  }
+  table.shop-info th{
+    width:30%;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  table.shop-info a{
+    color:var(--main-color);
+    text-decoration:underline;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13.5px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    padding:0 20px;
+  }
+  .cta-buttons a{
+    display:block;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .btn-tel{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .btn-form{
+    background:#fff;
+    color:var(--main-color);
+  }
+
+  /* Fixed bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px 0;
+    font-size:14px;
+    font-weight:bold;
+    color:#fff;
+  }
+  .bottom-nav .nav-tel{background:var(--accent-color);}
+  .bottom-nav .nav-form{background:var(--main-color);}
+
+  @media (max-width:340px){
+    .featured h2{font-size:19px;}
+    header .shop-name{font-size:13px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">中島スポーツ 本店</div>
+  <a href="tel:0748622624" class="tel-btn">📞 0748-62-2624</a>
+</header>
+<div class="header-spacer"></div>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="中島スポーツ本店 外観">
+  <div class="hero-text">
+    <span class="badge">滋賀県甲賀市 創業43年</span>
+    <h1>各種競技用品を豊富に取り揃え<br>専門的アドバイスでお応えします</h1>
+    <p>テニスのガット張り・野球スパイクのP皮加工・ユニフォームオーダーまで、何でもご相談ください</p>
+  </div>
+</div>
+
+<!-- Featured Product -->
+<section class="featured-section">
+  <div class="section-title">イチオシ商品</div>
+  <div class="featured container">
+    <span class="push-label">店主イチオシ</span>
+    <h2>グローブ</h2>
+    <img src="images/glove.jpg" alt="イチオシのグローブ">
+    <p>豊富な品揃えの中から、お客様の競技レベル・ポジション・手のサイズに合わせて店主が丁寧にご提案。購入後のメンテナンスや型付けのご相談も大歓迎です。</p>
+    <ul>
+      <li>✔ 各メーカーのグローブを豊富にラインナップ</li>
+      <li>✔ 専門知識を持ったスタッフが選び方を丁寧にアドバイス</li>
+      <li>✔ 購入後の手入れ・調整相談もお任せください</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="strengths">
+  <div class="container">
+    <div class="section-title">企業の強み</div>
+    <p>各種競技用品を豊富に取り揃えています。
+専門的アドバイスでお客様のご要望や細かなニーズにもお応えします！
+テニスラケットのガット張り、野球スパイクのP皮加工なども即時対応。
+あらゆるスポーツのユニフォームオーダーはもちろん、世界にたった一品のオリジナルシャツ、バッグなど、お気軽にご相談ください。
+刺繍・圧着・フルカラープリントまで、何でも対応いたします！</p>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="story">
+  <div class="container">
+    <div class="section-title">創業者ストーリー</div>
+    <p>中島スポーツも皆様にご愛顧頂いて今年で（法人化1976年）43周年になります。
+ここ数年前から大型店の出店が続いていますが、今後も地元のスポーツ発展になくてはならない存在になるべく、より専門競技に特化したフロアとして商品の充実と競技のプロとして、アドバイスできるスタッフの育成に努めて参ります。
+店舗、外商と地元の方に愛されるようアクティブに行動し、フットワークをきかせ、お客様に選ばれる企業となる為に商品並び人材を提供していきます。
+何より働いている社員が、スポーツに関われる事を幸せと感じお客様とスポーツの楽しさ、感動、感謝を共有していきたいと思います。</p>
+    <p style="margin-top:10px;font-weight:bold;color:var(--main-color);">代表者：中島 一登</p>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+  <div class="container">
+    <div class="section-title">お客様の口コミ</div>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>店主さんがとても親切丁寧な対応でした。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>パーカーとロンTに刺繍していただきました。
+丁寧に対応頂いて大満足です！
+次回も是非利用したいです。駐車場は広く、アクセスはし易かった。
+店内は品数こそ少ないが、基本取り寄せで注文するタイプの私には十分でした。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Shop Info -->
+<section class="shop-info-section">
+  <div class="container">
+    <div class="section-title">店舗情報</div>
+    <table class="shop-info">
+      <tr><th>店名</th><td>中島スポーツ 本店</td></tr>
+      <tr><th>会社名</th><td>株式会社 中島スポーツ</td></tr>
+      <tr><th>代表者</th><td>中島 一登</td></tr>
+      <tr><th>住所</th><td>滋賀県甲賀市水口町東名坂287-2</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0748622624">0748-62-2624</a></td></tr>
+      <tr><th>定休日</th><td>不定休</td></tr>
+      <tr><th>HP</th><td><a href="https://nakajimasp.com/" target="_blank" rel="noopener">https://nakajimasp.com/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://nakajimasp.com/contact.htm" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=滋賀県甲賀市水口町東名坂287-2&z=16&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>お気軽にご相談ください</h2>
+    <p>グローブ選びからガット張り、ユニフォームオーダーまで<br>専門スタッフが丁寧にお応えします</p>
+    <div class="cta-buttons">
+      <a href="tel:0748622624" class="btn-tel">📞 電話で相談する</a>
+      <a href="https://nakajimasp.com/contact.htm" target="_blank" rel="noopener" class="btn-form">✉ お問い合わせフォーム</a>
+    </div>
+  </div>
+</section>
+
+<!-- Fixed bottom nav -->
+<div class="bottom-nav">
+  <a href="tel:0748622624" class="nav-tel">📞 電話をかける</a>
+  <a href="https://nakajimasp.com/contact.htm" target="_blank" rel="noopener" class="nav-form">✉ お問い合わせ</a>
+</div>
+
+</body>
+</html>
