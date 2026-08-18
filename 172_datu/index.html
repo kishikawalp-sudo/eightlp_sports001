@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ダーツカフェガーデン奈良生駒｜奈良市宝来町のダーツカフェ</title>
+<style>
+  :root{
+    --main-color:#1b1f3b;
+    --accent-color:#ff6b35;
+    --accent-dark:#e8531f;
+    --bg-light:#f7f5f0;
+    --text-dark:#232323;
+    --gold:#ffc93c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:var(--bg-light);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  .header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main-color);
+    color:#fff;
+    height:56px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  .header .shopname{font-size:14px;font-weight:bold;letter-spacing:.5px;}
+  .header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;align-items:center;gap:4px;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{width:100%;height:56vh;object-fit:cover;filter:brightness(0.55);}
+  .hero-text{
+    position:absolute;top:0;left:0;right:0;bottom:0;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:0 20px;
+  }
+  .hero-text .catch-sub{
+    font-size:13px;
+    background:var(--accent-color);
+    padding:4px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:1px;
+  }
+  .hero-text h1{
+    font-size:26px;
+    font-weight:900;
+    line-height:1.5;
+    text-shadow:0 2px 8px rgba(0,0,0,.6);
+    margin-bottom:16px;
+  }
+  .hero-text h1 span{color:var(--gold);}
+  .hero-text .stars{
+    font-size:20px;
+    color:var(--gold);
+    margin-bottom:6px;
+  }
+  .hero-cta{
+    display:inline-block;
+    margin-top:10px;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    padding:14px 34px;
+    border-radius:30px;
+    font-size:16px;
+    box-shadow:0 4px 14px rgba(255,107,53,.5);
+    animation:pulse 1.8s infinite;
+  }
+  @keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+  }
+
+  /* セクション共通 */
+  section{padding:40px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:900;
+    margin-bottom:8px;
+    color:var(--main-color);
+  }
+  .section-title small{
+    display:block;
+    font-size:12px;
+    color:var(--accent-color);
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:14px;
+    color:#555;
+    margin-bottom:28px;
+  }
+
+  /* イチオシ商品セクション */
+  .feature{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .feature .section-title{color:#fff;}
+  .feature-card{
+    background:#fff;
+    color:var(--text-dark);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,.35);
+  }
+  .feature-card img{width:100%;height:220px;object-fit:cover;}
+  .feature-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:20px;
+    margin:16px 0 8px 16px;
+  }
+  .feature-card h3{
+    font-size:20px;
+    padding:0 16px;
+    margin-bottom:10px;
+    color:var(--main-color);
+  }
+  .feature-card p{
+    font-size:14px;
+    padding:0 16px 20px;
+    color:#444;
+  }
+  .feature-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:0 16px 20px;
+  }
+  .feature-points span{
+    background:var(--bg-light);
+    border:1px solid #ddd;
+    font-size:12px;
+    padding:6px 12px;
+    border-radius:20px;
+    color:var(--main-color);
+    font-weight:bold;
+  }
+  .feature-cta{
+    display:block;
+    text-align:center;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    padding:14px;
+    font-size:15px;
+  }
+
+  /* 強みセクション */
+  .strengths{background:#fff;}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    margin-bottom:24px;
+    align-items:flex-start;
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:38px;height:38px;
+    background:var(--accent-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;
+    font-size:16px;
+  }
+  .strength-item h4{
+    font-size:15px;
+    margin-bottom:4px;
+    color:var(--main-color);
+  }
+  .strength-item p{font-size:13px;color:#555;}
+
+  /* クチコミ */
+  .reviews{background:var(--bg-light);}
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+    border-left:4px solid var(--accent-color);
+  }
+  .review-stars{color:var(--gold);font-size:16px;margin-bottom:8px;}
+  .review-card p{font-size:13.5px;color:#444;white-space:pre-line;}
+
+  /* 店舗情報 */
+  .shopinfo{background:#fff;}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .info-table th,.info-table td{
+    padding:12px 8px;
+    border-bottom:1px solid #e5e5e5;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:26%;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table a{color:var(--accent-color);font-weight:bold;word-break:break-all;}
+  .map-wrap{margin-top:20px;border-radius:12px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+  }
+  .sns-links a{
+    flex:1;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    padding:12px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:bold;
+  }
+
+  /* 最終CTA */
+  .final-cta{
+    background:linear-gradient(135deg,var(--main-color),#2c3160);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:22px;
+    margin-bottom:14px;
+    font-weight:900;
+  }
+  .final-cta p{font-size:13.5px;margin-bottom:22px;color:#dcdcf0;}
+  .final-cta .btn-group{display:flex;flex-direction:column;gap:12px;}
+  .final-cta .btn{
+    display:block;
+    padding:16px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .btn-tel{background:var(--accent-color);color:#fff;}
+  .btn-form{background:#fff;color:var(--main-color);}
+
+  /* フッター固定ナビ */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main-color);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;background:var(--accent-color);color:#fff;}
+  .bottom-nav .nav-icon{font-size:18px;display:block;margin-bottom:2px;}
+
+  footer{
+    text-align:center;
+    padding:24px 16px 30px;
+    background:var(--main-color);
+    color:#aaa;
+    font-size:11px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="shopname">ダーツカフェガーデン奈良生駒</div>
+  <a href="tel:0742536821" class="tel-btn">📞 今すぐ電話</a>
+</div>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="ダーツカフェガーデン奈良生駒 店内">
+  <div class="hero-text">
+    <div class="catch-sub">生駒市唯一の DARTSLIVE 設置店</div>
+    <h1>誰でも気軽に楽しめる<br><span>「ダーツカフェ」</span>という新しい居場所</h1>
+    <div class="stars">★★★★★</div>
+    <a href="tel:0742536821" class="hero-cta">📞 電話で問い合わせる</a>
+  </div>
+</div>
+
+<section class="feature">
+  <div class="section-title"><small>PICK UP</small>イチオシは「ダーツカフェ」という空間そのもの</div>
+  <p class="section-lead">「ダーツバー」ではなく、あえての「ダーツカフェ」。<br>放っておいてほしい人も、仲間が欲しい人も、ちょうど良い距離感で楽しめます。</p>
+  <div class="feature-card">
+    <img src="images/main.jpg" alt="ダーツカフェガーデン ダーツを楽しむお客様">
+    <span class="feature-badge">当店イチオシ</span>
+    <h3>ダーツカフェ ガーデン</h3>
+    <p>「たくさんの人にダーツを楽しんでほしい」という想いから生まれたダーツカフェ。ガーデンで出会ったお客様やスタッフが、ダーツ仲間として一緒に楽しい時間を過ごせる、そんな空間づくりを大切にしています。オーナーの人柄の良さと、程よく放っておいてくれる居心地の良さが常連さんに愛される理由です。</p>
+    <div class="feature-points">
+      <span>生駒市唯一 DARTSLIVE設置</span>
+      <span>年中無休</span>
+      <span>初心者・一人歓迎</span>
+      <span>アットホームな雰囲気</span>
+    </div>
+  </div>
+  <a href="tel:0742536821" class="feature-cta" style="border-radius:30px;margin-top:16px;">📞 電話で空き状況を聞く</a>
+</section>
+
+<section class="strengths">
+  <div class="section-title"><small>STRENGTH</small>ガーデンが選ばれる理由</div>
+  <div class="strength-item">
+    <div class="strength-num">1</div>
+    <div>
+      <h4>「バー」じゃなく「カフェ」</h4>
+      <p>一人でふらっと立ち寄りやすい、カフェ感覚のダーツスペース。話しかけられすぎるのが苦手な方も安心です。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">2</div>
+    <div>
+      <h4>生駒市で唯一のDARTSLIVE設置店</h4>
+      <p>本格的にダーツを楽しみたい方にも満足していただける環境が整っています。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">3</div>
+    <div>
+      <h4>オーナーの人柄とアットホームな空間</h4>
+      <p>お客さん同士も親しみやすく、初めての方でも自然と馴染める温かい雰囲気です。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">4</div>
+    <div>
+      <h4>年中無休で通いやすい</h4>
+      <p>いつでもふらっと立ち寄れる、生活の一部になるダーツカフェを目指しています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title"><small>REVIEW</small>お客様の口コミ</div>
+  <div class="review-card">
+    <div class="review-stars">★★★★☆</div>
+    <p>ある程度、放置してくれるので、気楽…
+ダーツの台がいつも人気で、あまり空かないのが、少し辛いかな
+もう少し、店員さん主導でお客さん同士マッチングさせてあげたら、遊びやすいかも
+まぁ、でも、あまりガッツリ話されるのが嫌な人も多いので、ちょうど良い距離感なのかも
+生駒市で唯一、ダーツライブ置いてるダーツバーなので、頑張って欲しい (*´ω｀*)</p>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p>オーナーがただただいい人。
+お客さんも親しみやすくてアットホーム。
+誰でも楽しめるお店。</p>
+  </div>
+</section>
+
+<section class="shopinfo">
+  <div class="section-title"><small>SHOP INFO</small>店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>ダーツカフェガーデン奈良生駒</td></tr>
+    <tr><th>定休日</th><td>年中無休</td></tr>
+    <tr><th>住所</th><td>奈良県奈良市宝来町928-1 宝来ビル4F</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0742536821">0742-53-6821</a></td></tr>
+    <tr><th>HP</th><td><a href="http://www.darts-garden.com/" target="_blank" rel="noopener">www.darts-garden.com</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://darts-garden.com/form" target="_blank" rel="noopener">問い合わせフォームはこちら</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=奈良県奈良市宝来町928-1&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <div class="sns-links">
+    <a href="https://www.instagram.com/dartscafe_garden_nara/?igshid=15r4v8gzoze5g" target="_blank" rel="noopener">📷 Instagram</a>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>気軽に、あなたのペースで。</h2>
+  <p>放っておいてほしい日も、仲間と盛り上がりたい日も。<br>生駒市唯一のDARTSLIVE設置店で、あなたらしくダーツを楽しみませんか？</p>
+  <div class="btn-group">
+    <a href="tel:0742536821" class="btn btn-tel">📞 電話で問い合わせる</a>
+    <a href="https://darts-garden.com/form" target="_blank" rel="noopener" class="btn btn-form">✉️ フォームで問い合わせる</a>
+  </div>
+</section>
+
+<footer>
+  © ダーツカフェガーデン奈良生駒
+</footer>
+
+<div class="bottom-nav">
+  <a href="#shopinfo-anchor" onclick="document.querySelector('.shopinfo').scrollIntoView({behavior:'smooth'});return false;"><span class="nav-icon">📍</span>アクセス</a>
+  <a href="https://www.instagram.com/dartscafe_garden_nara/?igshid=15r4v8gzoze5g" target="_blank" rel="noopener"><span class="nav-icon">📷</span>Instagram</a>
+  <a href="tel:0742536821"><span class="nav-icon">📞</span>電話する</a>
+</div>
+
+</body>
+</html>
