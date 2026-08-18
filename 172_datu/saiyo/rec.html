@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スタッフ募集｜ダーツカフェガーデン奈良生駒</title>
+<style>
+  :root{
+    --main-color:#1b1f3b;
+    --accent-color:#ff6b35;
+    --accent-dark:#e8531f;
+    --bg-light:#f7f5f0;
+    --text-dark:#232323;
+    --gold:#ffc93c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:var(--bg-light);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main-color);
+    color:#fff;
+    height:56px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  .header .shopname{font-size:13px;font-weight:bold;letter-spacing:.5px;}
+  .header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;align-items:center;gap:4px;
+  }
+
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{width:100%;height:56vh;object-fit:cover;filter:brightness(0.5);}
+  .hero-text{
+    position:absolute;top:0;left:0;right:0;bottom:0;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:0 20px;
+  }
+  .hero-text .catch-sub{
+    font-size:13px;
+    background:var(--accent-color);
+    padding:4px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:1px;
+  }
+  .hero-text h1{
+    font-size:26px;
+    font-weight:900;
+    line-height:1.5;
+    text-shadow:0 2px 8px rgba(0,0,0,.6);
+    margin-bottom:16px;
+  }
+  .hero-text h1 span{color:var(--gold);}
+  .hero-text .sub-copy{
+    font-size:14px;
+    margin-bottom:18px;
+    text-shadow:0 1px 4px rgba(0,0,0,.6);
+  }
+  .hero-cta{
+    display:inline-block;
+    margin-top:6px;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    padding:14px 34px;
+    border-radius:30px;
+    font-size:16px;
+    box-shadow:0 4px 14px rgba(255,107,53,.5);
+    animation:pulse 1.8s infinite;
+  }
+  @keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+  }
+
+  section{padding:40px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:900;
+    margin-bottom:8px;
+    color:var(--main-color);
+  }
+  .section-title small{
+    display:block;
+    font-size:12px;
+    color:var(--accent-color);
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:14px;
+    color:#555;
+    margin-bottom:28px;
+  }
+
+  /* 求人ポイント（イチオシ） */
+  .feature{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .feature .section-title{color:#fff;}
+  .feature-card{
+    background:#fff;
+    color:var(--text-dark);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,.35);
+    margin-bottom:18px;
+  }
+  .feature-card img{width:100%;height:180px;object-fit:cover;}
+  .feature-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:20px;
+    margin:16px 0 8px 16px;
+  }
+  .feature-card h3{
+    font-size:19px;
+    padding:0 16px;
+    margin-bottom:10px;
+    color:var(--main-color);
+  }
+  .feature-card p{
+    font-size:14px;
+    padding:0 16px 20px;
+    color:#444;
+  }
+
+  /* 働くスタッフ紹介 */
+  .staff{background:#fff;}
+  .staff-visual{
+    border-radius:16px;
+    overflow:hidden;
+    margin-bottom:20px;
+    box-shadow:0 4px 16px rgba(0,0,0,.1);
+  }
+  .staff-visual img{width:100%;height:220px;object-fit:cover;}
+  .staff-stats{
+    display:flex;
+    gap:12px;
+    margin-bottom:20px;
+  }
+  .staff-stat{
+    flex:1;
+    background:var(--bg-light);
+    border-radius:12px;
+    padding:16px 10px;
+    text-align:center;
+  }
+  .staff-stat .num{
+    font-size:24px;
+    font-weight:900;
+    color:var(--accent-color);
+  }
+  .staff-stat .label{font-size:12px;color:#555;margin-top:4px;}
+  .staff p.desc{font-size:13.5px;color:#555;text-align:center;}
+
+  /* 募集要項テーブル */
+  .jobinfo{background:var(--bg-light);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+  }
+  .info-table th,.info-table td{
+    padding:14px 10px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:30%;
+    color:var(--main-color);
+    font-weight:bold;
+    background:#f2f0ea;
+    white-space:nowrap;
+  }
+  .info-table td{white-space:pre-line;}
+
+  /* 働く魅力 */
+  .strengths{background:#fff;}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    margin-bottom:24px;
+    align-items:flex-start;
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:38px;height:38px;
+    background:var(--accent-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;
+    font-size:16px;
+  }
+  .strength-item h4{
+    font-size:15px;
+    margin-bottom:4px;
+    color:var(--main-color);
+  }
+  .strength-item p{font-size:13px;color:#555;}
+
+  /* 店舗情報 */
+  .shopinfo{background:#fff;}
+  .shop-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .shop-table th,.shop-table td{
+    padding:12px 8px;
+    border-bottom:1px solid #e5e5e5;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-table th{
+    width:26%;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .shop-table a{color:var(--accent-color);font-weight:bold;word-break:break-all;}
+  .map-wrap{margin-top:20px;border-radius:12px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+  }
+  .sns-links a{
+    flex:1;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    padding:12px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:bold;
+  }
+
+  /* 最終CTA */
+  .final-cta{
+    background:linear-gradient(135deg,var(--main-color),#2c3160);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:22px;
+    margin-bottom:14px;
+    font-weight:900;
+  }
+  .final-cta p{font-size:13.5px;margin-bottom:22px;color:#dcdcf0;}
+  .final-cta .btn-group{display:flex;flex-direction:column;gap:12px;}
+  .final-cta .btn{
+    display:block;
+    padding:16px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .btn-tel{background:var(--accent-color);color:#fff;}
+  .btn-form{background:#fff;color:var(--main-color);}
+
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main-color);
+    border-right:1px solid #eee;
+  }
+  .bottom-nav a:last-child{border-right:none;background:var(--accent-color);color:#fff;}
+  .bottom-nav .nav-icon{font-size:18px;display:block;margin-bottom:2px;}
+
+  footer{
+    text-align:center;
+    padding:24px 16px 30px;
+    background:var(--main-color);
+    color:#aaa;
+    font-size:11px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="shopname">スタッフ募集｜ダーツカフェガーデン</div>
+  <a href="tel:0742536821" class="tel-btn">📞 電話</a>
+</div>
+
+<div class="hero">
+  <img src="../images/hero.jpg" alt="ダーツカフェガーデン奈良生駒 店内">
+  <div class="hero-text">
+    <div class="catch-sub">ダーツ・接客 未経験OK</div>
+    <h1>好きな空間で、<br><span>自分らしく</span>働こう。</h1>
+    <p class="sub-copy">週1日・1日3時間〜／学生・フリーター活躍中</p>
+    <a href="tel:0742536821" class="hero-cta">📞 電話で応募する</a>
+  </div>
+</div>
+
+<section class="feature">
+  <div class="section-title"><small>POINT</small>この求人のイチオシポイント</div>
+  <p class="section-lead">「ダーツバー」ではなく「ダーツカフェ」。お客様との心地よい距離感を大切にする、アットホームな職場です。</p>
+  <div class="feature-card">
+    <img src="../images/main.jpg" alt="ダーツカフェガーデンで働くスタッフ">
+    <span class="feature-badge">当店イチオシ</span>
+    <h3>未経験からでも安心のアットホームな職場</h3>
+    <p>ダーツも接客も未経験でOK。オーナーの人柄の良さそのままに、スタッフものびのびと働ける雰囲気です。お客様と適度な距離感でコミュニケーションを取りながら、ダーツ仲間として一緒に楽しい時間を作っていく、そんな働き方ができます。</p>
+  </div>
+</section>
+
+<section class="staff">
+  <div class="section-title"><small>STAFF</small>働いているスタッフ紹介</div>
+  <div class="staff-visual">
+    <img src="../images/main.jpg" alt="ダーツカフェガーデン スタッフの様子">
+  </div>
+  <div class="staff-stats">
+    <div class="staff-stat">
+      <div class="num">6名</div>
+      <div class="label">現在の従業員数<br>男性4名・女性2名</div>
+    </div>
+    <div class="staff-stat">
+      <div class="num">19〜28歳</div>
+      <div class="label">学生・フリーター<br>幅広く活躍中</div>
+    </div>
+  </div>
+  <p class="desc">年齢の近いスタッフが多く、シフトの相談もしやすい環境です。通勤も自動車・バイク・自転車・電車・徒歩と、ライフスタイルに合わせて選べます。</p>
+</section>
+
+<section class="jobinfo">
+  <div class="section-title"><small>JOB INFO</small>募集要項</div>
+  <table class="info-table">
+    <tr><th>勤務時間</th><td>月〜木　17:30〜25:30
+金・土　17:30〜28:30
+日　　　12:30〜25:30
+各日シフト制</td></tr>
+    <tr><th>シフト</th><td>週1日からOK
+1週間ごとのシフト対応可</td></tr>
+    <tr><th>業務内容</th><td>お客様とのコミュニケーション
+ドリンク・軽食類の調理・提供 等</td></tr>
+    <tr><th>応募資格</th><td>ダーツ・接客未経験OK
+明るく元気な方歓迎</td></tr>
+    <tr><th>通勤方法</th><td>自動車・バイク・自転車・電車・徒歩</td></tr>
+  </table>
+</section>
+
+<section class="strengths">
+  <div class="section-title"><small>WHY US</small>この職場で働く魅力</div>
+  <div class="strength-item">
+    <div class="strength-num">1</div>
+    <div>
+      <h4>未経験から安心スタート</h4>
+      <p>ダーツも接客も知識ゼロでOK。丁寧にフォローするので初めてのアルバイトにもおすすめです。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">2</div>
+    <div>
+      <h4>週1日・シフト自由</h4>
+      <p>学業やプライベートと両立しやすい、1週間ごとの柔軟なシフト対応。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">3</div>
+    <div>
+      <h4>年齢の近い仲間と楽しく</h4>
+      <p>19歳〜28歳の学生・フリーターが中心。職場の雰囲気も明るくアットホームです。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">4</div>
+    <div>
+      <h4>好きな空間で働ける</h4>
+      <p>ダーツやカフェ空間が好きな方にとって、仕事自体が楽しい時間になります。</p>
+    </div>
+  </div>
+</section>
+
+<section class="shopinfo">
+  <div class="section-title"><small>SHOP INFO</small>店舗情報</div>
+  <table class="shop-table">
+    <tr><th>店名</th><td>ダーツカフェガーデン奈良生駒</td></tr>
+    <tr><th>定休日</th><td>年中無休</td></tr>
+    <tr><th>住所</th><td>奈良県奈良市宝来町928-1 宝来ビル4F</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0742536821">0742-53-6821</a></td></tr>
+    <tr><th>HP</th><td><a href="http://www.darts-garden.com/" target="_blank" rel="noopener">www.darts-garden.com</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://darts-garden.com/form" target="_blank" rel="noopener">問い合わせフォームはこちら</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=奈良県奈良市宝来町928-1&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <div class="sns-links">
+    <a href="https://www.instagram.com/dartscafe_garden_nara/?igshid=15r4v8gzoze5g" target="_blank" rel="noopener">📷 Instagram</a>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>まずは気軽にお問い合わせを</h2>
+  <p>未経験の方も大歓迎。<br>あなたも「ダーツカフェガーデン」の仲間になりませんか？</p>
+  <div class="btn-group">
+    <a href="tel:0742536821" class="btn btn-tel">📞 電話で応募する</a>
+    <a href="https://darts-garden.com/form" target="_blank" rel="noopener" class="btn btn-form">✉️ フォームで応募する</a>
+  </div>
+</section>
+
+<footer>
+  © ダーツカフェガーデン奈良生駒 スタッフ募集
+</footer>
+
+<div class="bottom-nav">
+  <a href="#" onclick="document.querySelector('.jobinfo').scrollIntoView({behavior:'smooth'});return false;"><span class="nav-icon">📋</span>募集要項</a>
+  <a href="#" onclick="document.querySelector('.shopinfo').scrollIntoView({behavior:'smooth'});return false;"><span class="nav-icon">📍</span>アクセス</a>
+  <a href="tel:0742536821"><span class="nav-icon">📞</span>電話する</a>
+</div>
+
+</body>
+</html>
