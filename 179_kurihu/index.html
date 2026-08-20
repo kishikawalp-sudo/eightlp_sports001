@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>CLIFF SIDE（クリフサイド）｜滋賀県近江八幡市のサーフ・ボードショップ</title>
+<style>
+  :root{
+    --navy:#0a2540;
+    --deep-blue:#123a5e;
+    --ocean:#1a6fa8;
+    --aqua:#2fb6c9;
+    --sand:#f6f1e7;
+    --white:#ffffff;
+    --accent:#ff7a3d;
+    --text:#1c2b36;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--sand);
+    line-height:1.7;
+    padding-top:60px;
+    padding-bottom:64px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{max-width:640px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:60px;
+    background:var(--navy);
+    color:var(--white);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 16px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  header .logo{
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:1px;
+  }
+  header .logo span{color:var(--aqua);}
+  header .tel-btn{
+    background:var(--accent);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--deep-blue), var(--ocean));
+    color:var(--white);
+    text-align:center;
+    padding:40px 20px 30px;
+    overflow:hidden;
+  }
+  .hero img{
+    width:100%;
+    border-radius:12px;
+    margin:18px 0;
+    box-shadow:0 8px 24px rgba(0,0,0,0.3);
+  }
+  .hero .catch{
+    font-size:15px;
+    letter-spacing:2px;
+    color:var(--aqua);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:800;
+    line-height:1.5;
+    margin-bottom:6px;
+  }
+  .hero .sub{
+    font-size:14px;
+    opacity:0.9;
+    margin-bottom:10px;
+  }
+  .stars{
+    color:#ffd24c;
+    font-size:18px;
+    margin:10px 0 4px;
+  }
+  .review-line{
+    font-size:13px;
+    opacity:0.9;
+  }
+  .hero-cta{
+    display:inline-block;
+    margin-top:16px;
+    background:var(--accent);
+    color:var(--white);
+    padding:14px 32px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:16px;
+    box-shadow:0 4px 14px rgba(255,122,61,0.4);
+  }
+
+  /* Section common */
+  section{padding:44px 0;}
+  .section-title{
+    text-align:center;
+    margin-bottom:24px;
+  }
+  .section-title .en{
+    display:block;
+    font-size:12px;
+    letter-spacing:3px;
+    color:var(--ocean);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:22px;
+    font-weight:800;
+    color:var(--navy);
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--navy);
+    color:var(--white);
+  }
+  .featured .section-title .en{color:var(--aqua);}
+  .featured .section-title h2{color:var(--white);}
+  .featured-card{
+    background:var(--deep-blue);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .featured-card img{width:100%;}
+  .featured-card .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--white);
+    font-size:12px;
+    font-weight:700;
+    padding:5px 14px;
+    border-radius:20px;
+    margin:16px 0 10px 16px;
+  }
+  .featured-card .body{padding:0 20px 24px;}
+  .featured-card h3{
+    font-size:19px;
+    font-weight:800;
+    margin-bottom:10px;
+    color:var(--white);
+  }
+  .featured-card p{
+    font-size:14px;
+    opacity:0.92;
+    margin-bottom:10px;
+  }
+  .featured-card ul{
+    margin:14px 0 18px;
+    padding-left:0;
+    list-style:none;
+  }
+  .featured-card ul li{
+    font-size:13.5px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+    opacity:0.95;
+  }
+  .featured-card ul li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--aqua);
+    font-weight:900;
+  }
+  .featured-card .cta{
+    display:block;
+    text-align:center;
+    background:var(--aqua);
+    color:var(--navy);
+    font-weight:800;
+    padding:14px;
+    border-radius:10px;
+    font-size:15px;
+  }
+
+  /* Strengths */
+  .strengths .container{}
+  .strength-item{
+    display:flex;
+    gap:16px;
+    background:var(--white);
+    border-radius:14px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 10px rgba(10,37,64,0.08);
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--ocean);
+    color:var(--white);
+    font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+  }
+  .strength-item h3{
+    font-size:15.5px;
+    color:var(--navy);
+    margin-bottom:6px;
+    font-weight:800;
+  }
+  .strength-item p{
+    font-size:13.5px;
+    color:#3c4a55;
+  }
+
+  /* Gallery image within strengths */
+  .gallery-img{
+    border-radius:14px;
+    overflow:hidden;
+    margin:20px 0;
+    box-shadow:0 4px 16px rgba(10,37,64,0.15);
+  }
+
+  /* Reviews */
+  .reviews{background:var(--sand);}
+  .review-card{
+    background:var(--white);
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 2px 10px rgba(10,37,64,0.08);
+    border-left:4px solid var(--accent);
+  }
+  .review-card .stars{color:#f5a623;font-size:16px;margin-bottom:8px;}
+  .review-card p{font-size:14px;color:#333;}
+  .review-card .from{
+    margin-top:10px;
+    font-size:12px;
+    color:#888;
+    text-align:right;
+  }
+
+  /* Shop info */
+  .shop-info{background:var(--white);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  .info-table th, .info-table td{
+    padding:14px 10px;
+    border-bottom:1px solid #e5ddd0;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:90px;
+    color:var(--ocean);
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .info-table a{color:var(--ocean);font-weight:700;}
+  .map-frame{
+    width:100%;
+    height:220px;
+    border:0;
+    border-radius:12px;
+    margin-top:10px;
+  }
+  .sns-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:6px;
+    background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+    color:var(--white);
+    padding:8px 16px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:linear-gradient(180deg, var(--ocean), var(--deep-blue));
+    color:var(--white);
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:21px;
+    font-weight:800;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:14px;
+    opacity:0.9;
+    margin-bottom:22px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .btn{
+    display:block;
+    padding:16px;
+    border-radius:10px;
+    font-weight:800;
+    font-size:15px;
+  }
+  .btn-primary{background:var(--accent);color:var(--white);}
+  .btn-secondary{background:var(--white);color:var(--navy);}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:64px;
+    background:var(--white);
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--navy);
+    font-weight:700;
+    gap:4px;
+  }
+  .bottom-nav a.primary{
+    background:var(--accent);
+    color:var(--white);
+  }
+  .bottom-nav .icon{font-size:18px;}
+
+  @media (min-width:480px){
+    .hero h1{font-size:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">CLIFF<span>SIDE</span></div>
+  <a href="tel:0748266355" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <div class="container">
+    <div class="catch">滋賀県近江八幡市 サーフ・ボードショップ</div>
+    <h1>あなたに本当に合う一枚が、<br>ここで見つかる。</h1>
+    <p class="sub">経験豊富なスタッフが体格・レベル・スタイルから最適なボードをご提案します</p>
+    <img src="images/hero.jpg" alt="CLIFF SIDE 店内とボードラインナップ">
+    <div class="stars">★★★★★</div>
+    <div class="review-line">「品揃えが素晴らしく親切」の声多数</div>
+    <a href="#featured" class="hero-cta">イチオシ商品を見る</a>
+  </div>
+</div>
+
+<section class="featured" id="featured">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">RECOMMENDED</span>
+      <h2>イチオシ：ボード用品</h2>
+    </div>
+    <div class="featured-card">
+      <img src="images/board1.jpg" alt="サーフボード・スノーボード用品">
+      <span class="badge">スタッフ厳選</span>
+      <div class="body">
+        <h3>「自分に合う一枚」が上達の近道です</h3>
+        <p>身長・体重・現在のレベル・ライディングスタイルを総合的に判断し、最適なボードをスタッフがご提案。サイズ選びに迷ったら、まずはご相談ください。</p>
+        <ul>
+          <li>サーフボードは店頭で実際に触って長さ・厚みを確認できます</li>
+          <li>ご自身の体重・レベルに合った一枚を一緒に選定</li>
+          <li>オルタナティブからハイパフォーマンスまで幅広く在庫</li>
+        </ul>
+        <a href="tel:0748266355" class="cta">📞 在庫・相談はお電話で</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">STRENGTH</span>
+      <h2>CLIFF SIDEが選ばれる理由</h2>
+    </div>
+
+    <div class="strength-item">
+      <div class="num">1</div>
+      <div>
+        <h3>経験豊富なスタッフによる総合提案</h3>
+        <p>身長・体重・レベル・ライディングスタイルなど、あらゆる要素を踏まえて本当に合うボードをご提案します。</p>
+      </div>
+    </div>
+
+    <div class="strength-item">
+      <div class="num">2</div>
+      <div>
+        <h3>店頭で実物を確認できる安心感</h3>
+        <p>サーフボードは実際に手に取り、長さ・厚みをその場でチェック。写真だけではわからない感覚を大切にしています。</p>
+      </div>
+    </div>
+
+    <div class="gallery-img">
+      <img src="images/board2.jpg" alt="アパレル・ボード用品の店内ディスプレイ">
+    </div>
+
+    <div class="strength-item">
+      <div class="num">3</div>
+      <div>
+        <h3>アパレルも充実のラインナップ</h3>
+        <p>ボードだけでなく、いい感じのアパレルも豊富に取り揃え。トータルコーディネートも相談できます。</p>
+      </div>
+    </div>
+
+    <div class="strength-item">
+      <div class="num">4</div>
+      <div>
+        <h3>サイズ選びに迷ったらすぐ相談</h3>
+        <p>ボードのサイズと自分自身のバランスがわからない方も、遠慮なくスタッフへご相談ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">VOICE</span>
+      <h2>お客様の声</h2>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>品揃えが素晴らしく、親切に対応してもらえます。オルタナティブからハイパフォーマンスまで揃っていて、アパレルもいい感じでした。</p>
+      <div class="from">— 来店者様の口コミより</div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">SHOP INFO</span>
+      <h2>店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr>
+        <th>店名</th>
+        <td>CLIFF SIDE（クリフサイド）</td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td>滋賀県近江八幡市北元町３３</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><a href="tel:0748266355">0748-26-6355</a></td>
+      </tr>
+      <tr>
+        <th>HP</th>
+        <td><a href="https://cliffside.jp" target="_blank" rel="noopener">https://cliffside.jp</a></td>
+      </tr>
+      <tr>
+        <th>SNS</th>
+        <td><a href="https://www.instagram.com/cliffsidegram/" target="_blank" rel="noopener" class="sns-btn">📷 Instagram</a></td>
+      </tr>
+    </table>
+    <iframe class="map-frame" loading="lazy" allowfullscreen
+      src="https://maps.google.com/maps?q=%E6%BB%8B%E8%B3%80%E7%9C%8C%E8%BF%91%E6%B1%9F%E5%85%AB%E5%B9%A1%E5%B8%82%E5%8C%97%E5%85%83%E7%94%BA%EF%BC%93%EF%BC%93&t=&z=15&ie=UTF8&iwloc=&output=embed">
+    </iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>まずはご相談ください</h2>
+    <p>あなたにぴったりの一枚を、スタッフが一緒に見つけます</p>
+    <div class="cta-buttons">
+      <a href="tel:0748266355" class="btn btn-primary">📞 電話で問い合わせる</a>
+      <a href="https://cliffside.jp/mail/index.html" target="_blank" rel="noopener" class="btn btn-secondary">✉️ フォームで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0748266355" class="primary">
+    <span class="icon">📞</span>電話
+  </a>
+  <a href="https://cliffside.jp/mail/index.html" target="_blank" rel="noopener">
+    <span class="icon">✉️</span>お問い合わせ
+  </a>
+  <a href="https://www.instagram.com/cliffsidegram/" target="_blank" rel="noopener">
+    <span class="icon">📷</span>Instagram
+  </a>
+  <a href="https://cliffside.jp" target="_blank" rel="noopener">
+    <span class="icon">🌐</span>HP
+  </a>
+</nav>
+
+</body>
+</html>
