@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burn Freely | 滋賀・東近江のアウトドアガレージブランドショップ</title>
+<style>
+  :root{
+    --main-color:#d9541e;
+    --dark-color:#2b2320;
+    --sub-color:#f4ede4;
+    --accent-color:#7a9e7e;
+    --text-color:#2b2320;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-color);
+    background:#fff;
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;width:100%;
+    background:var(--dark-color);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    z-index:1000;
+    height:56px;
+  }
+  header .shop-name{
+    font-size:16px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  header .tel-btn{
+    background:var(--main-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    width:100%;
+    height:70vh;
+    min-height:420px;
+    overflow:hidden;
+  }
+  .hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%);
+  }
+  .hero-text{
+    position:absolute;
+    bottom:24px;
+    left:0;width:100%;
+    text-align:center;
+    color:#fff;
+    z-index:2;
+    padding:0 16px;
+  }
+  .hero-text .catch{
+    font-size:15px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+    color:#f4d9c4;
+  }
+  .hero-text h1{
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:10px;
+    text-shadow:0 2px 8px rgba(0,0,0,0.5);
+  }
+  .hero-text p{
+    font-size:14px;
+    opacity:0.9;
+  }
+  .scroll-badge{
+    position:absolute;
+    top:16px;left:16px;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.5);
+    color:#fff;
+    font-size:11px;
+    padding:5px 10px;
+    border-radius:20px;
+    z-index:2;
+  }
+
+  /* 共通セクション */
+  section{
+    padding:50px 20px;
+  }
+  .section-title{
+    text-align:center;
+    margin-bottom:30px;
+  }
+  .section-title .sub{
+    font-size:12px;
+    color:var(--main-color);
+    letter-spacing:3px;
+    font-weight:bold;
+  }
+  .section-title h2{
+    font-size:22px;
+    margin-top:6px;
+    color:var(--dark-color);
+  }
+
+  /* イチオシ商品 */
+  .osusume{
+    background:var(--dark-color);
+    color:#fff;
+  }
+  .osusume .section-title h2{color:#fff;}
+  .osusume-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    color:var(--text-color);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  }
+  .osusume-card .img-wrap{
+    position:relative;
+  }
+  .osusume-card .img-wrap img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .osusume-card .badge{
+    position:absolute;
+    top:12px;left:12px;
+    background:var(--main-color);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:6px 14px;
+    border-radius:20px;
+    letter-spacing:1px;
+  }
+  .osusume-card .content{
+    padding:20px;
+  }
+  .osusume-card h3{
+    font-size:19px;
+    margin-bottom:10px;
+    color:var(--main-color);
+  }
+  .osusume-card p{
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .osusume-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .osusume-tags span{
+    background:var(--sub-color);
+    color:var(--dark-color);
+    font-size:12px;
+    padding:5px 12px;
+    border-radius:20px;
+    font-weight:bold;
+  }
+  .btn-primary{
+    display:block;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+
+  /* 強み */
+  .strength{
+    background:var(--sub-color);
+  }
+  .strength-lead{
+    text-align:center;
+    font-size:14px;
+    margin-bottom:26px;
+    white-space:pre-wrap;
+    color:var(--dark-color);
+  }
+  .strength-grid{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 4px 14px rgba(0,0,0,0.06);
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:38px;height:38px;
+    background:var(--main-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+  }
+  .strength-item h4{
+    font-size:15px;
+    margin-bottom:6px;
+    color:var(--dark-color);
+  }
+  .strength-item p{
+    font-size:13.5px;
+    color:#4a4238;
+  }
+
+  /* 創業者ストーリー */
+  .story{
+    background:#fff;
+  }
+  .story-box{
+    background:var(--sub-color);
+    border-radius:14px;
+    padding:24px;
+    position:relative;
+  }
+  .story-box::before{
+    content:"“";
+    position:absolute;
+    top:-6px;left:14px;
+    font-size:60px;
+    color:var(--main-color);
+    opacity:0.35;
+    font-family:serif;
+  }
+  .story-box p{
+    font-size:13.5px;
+    white-space:pre-wrap;
+    position:relative;
+    z-index:1;
+  }
+  .story-sign{
+    text-align:right;
+    margin-top:14px;
+    font-size:13px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+
+  /* 口コミ */
+  .review{
+    background:#fff;
+  }
+  .review-card{
+    background:var(--sub-color);
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:18px;
+  }
+  .review-card:last-child{margin-bottom:0;}
+  .review-stars{
+    color:#e8a733;
+    font-size:16px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    white-space:pre-wrap;
+    color:#4a4238;
+  }
+
+  /* 店舗情報 */
+  .info{
+    background:var(--sub-color);
+  }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .info-table th, .info-table td{
+    text-align:left;
+    padding:14px 12px;
+    font-size:13.5px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:90px;
+    background:#fbf6f0;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table tr:last-child th, .info-table tr:last-child td{
+    border-bottom:none;
+  }
+  .map-frame{
+    width:100%;
+    height:220px;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:6px;
+  }
+  .map-frame iframe{
+    width:100%;height:100%;border:0;
+  }
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+  }
+  .sns-links a{
+    flex:1;
+    text-align:center;
+    background:var(--dark-color);
+    color:#fff;
+    padding:12px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:bold;
+  }
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(135deg, var(--main-color), #b93e12);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta p{
+    font-size:13.5px;
+    margin-bottom:24px;
+    opacity:0.95;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-buttons a{
+    background:#fff;
+    color:var(--main-color);
+    font-weight:bold;
+    padding:15px;
+    border-radius:8px;
+    font-size:15px;
+  }
+  .cta-buttons a.outline{
+    background:transparent;
+    color:#fff;
+    border:1px solid #fff;
+  }
+
+  /* フッター簡易 */
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:20px;
+    background:var(--dark-color);
+    color:#bbb;
+  }
+
+  /* 固定ボトムナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;width:100%;
+    display:flex;
+    z-index:1000;
+    box-shadow:0 -4px 12px rgba(0,0,0,0.15);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:12px 4px;
+    font-size:12px;
+    font-weight:bold;
+  }
+  .bottom-nav .nav-tel{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .bottom-nav .nav-map{
+    background:var(--dark-color);
+    color:#fff;
+  }
+  .bottom-nav .nav-contact{
+    background:var(--accent-color);
+    color:#fff;
+  }
+
+  @media (min-width:768px){
+    .osusume-card{max-width:500px;margin:0 auto;}
+    .story-box{max-width:600px;margin:0 auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">Burn Freely</div>
+  <a href="tel:0748488123" class="tel-btn">📞 0748-48-8123</a>
+</header>
+
+<div class="hero">
+  <span class="scroll-badge">滋賀県東近江市 五個荘</span>
+  <img src="images/hero.jpg" alt="Burn Freely 店舗外観">
+  <div class="hero-text">
+    <div class="catch">火を、楽しむ。滋賀のアウトドアガレージ</div>
+    <h1>Burn Freely</h1>
+    <p>ゼインアーツ・WHAT WE WANT取扱｜関西で唯一の品揃え</p>
+  </div>
+</div>
+
+<section class="osusume">
+  <div class="section-title">
+    <div class="sub">ICHIOSHI ITEM</div>
+    <h2>今、一番おすすめしたいのは</h2>
+  </div>
+  <div class="osusume-card">
+    <div class="img-wrap">
+      <img src="images/camp-goods.jpg" alt="キャンプグッズ">
+      <span class="badge">イチオシ</span>
+    </div>
+    <div class="content">
+      <h3>キャンプグッズ</h3>
+      <p>ゼインアーツをはじめ、県内でも珍しいマニアックなブランドのキャンプギアが充実。1階には小物、2階にはテント・クーラーボックスなど大型アイテムがずらりと並び、見ているだけで時間を忘れてしまうラインナップです。ネットで注文する前に、ぜひ実際に見て、触って、自分にぴったりの一品を選んでください。</p>
+      <div class="osusume-tags">
+        <span>ゼインアーツ取扱</span>
+        <span>関西唯一 WHAT WE WANT</span>
+        <span>1F/2F 大型陳列</span>
+      </div>
+      <a href="tel:0748488123" class="btn-primary">お電話で在庫を確認する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strength">
+  <div class="section-title">
+    <div class="sub">CONCEPT</div>
+    <h2>火を楽しむ、というコンセプト</h2>
+  </div>
+  <p class="strength-lead">炎には心を和ませる不思議な魅力があります。家族が集まり、自然と会話が弾む。そんなほっこりとした時間が大好きです。あなたの大切なFamilyと忙しい日常を忘れ、自然と共にゆっくりとした時間を過ごす、そんなお手伝いが出来ればと思います。</p>
+  <div class="strength-grid">
+    <div class="strength-item">
+      <div class="num">1</div>
+      <div>
+        <h4>関西で唯一、WHAT WE WANT取扱</h4>
+        <p>数あるアウトドアガレージブランドの中でも、関西で唯一の取り扱いを誇ります。兵庫や他府県からもわざわざ足を運ぶお客様が絶えません。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">2</div>
+      <div>
+        <h4>マニアックなブランドが集結</h4>
+        <p>ゼインアーツなど、定番だけでは物足りない方に向けたラインナップ。普段見かけないような珍しいギアと出会えます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">3</div>
+      <div>
+        <h4>SUNWORKS・特注カスタムも同敷地内</h4>
+        <p>ハイクオリティエンジニア集団SUNWORKSの工場が同じ敷地に。アメリカ・カリフォルニア産電動自転車のカスタム販売や、特注ヒッチ・トレーラーなどオリジナルカスタムにも対応しています。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">4</div>
+      <div>
+        <h4>愛想よく親切なスタッフ</h4>
+        <p>お店の雰囲気も良く、何時間でも居たくなる空間。スタッフが親身に相談に乗ってくれると評判です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="section-title">
+    <div class="sub">OUR STORY</div>
+    <h2>創業者ストーリー</h2>
+  </div>
+  <div class="story-box">
+    <p>はじめまして。Burn Freely代表の出路と申します。
+
+この度、滋賀の中心に位置する東近江市にてアウトドアショップをOPENすることになりました。僕自身アウトドア、またアウトドアギヤが大好きで、よく県外まで足を運んでいましたが、「楽しいショップがもっと近くに欲しい」そんな思いから始まった今回のアウトドアショップ。
+
+世の中にはまだまだ知らない、便利でかっこいいアイテムがたくさん存在します。そんなアイテムを少しでも皆さんにご紹介できればと思います。楽しみにご来店くださいね。</p>
+    <div class="story-sign">Burn Freely 代表 出路</div>
+  </div>
+</section>
+
+<section class="review">
+  <div class="section-title">
+    <div class="sub">VOICE</div>
+    <h2>お客様の口コミ</h2>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★</div>
+    <p>実際の感想は、何でここなの？と思いました。もっと中心街でも人来るのに…と心でつぶやいてしまいました。当然余計なお世話だよ！と言われそうですが…とにかく中々のレアモノもゴロゴロしてたりしますので、ネットで注文しないで、実際に見て触って賢く買うことをおすすめします。
+
+お店の雰囲気も良くて、品物は多く何時間でも居れそうでした♪ この日は美人のお姉さんが2人で接客されており、ついつい余計な買い物もしてしまいました。
+
+因みに駐車場はお店の斜め前なので、そちらに止めてから道路を渡ってお店に入った方がいいです。写真の左側の店舗なので、クルマをカスタムしたい方は右をおすすめします。
+
+アウトドアガレージブランドを滋賀で探すならココは間違いないです♪ 何度か伺っています。兵庫からなのでなかなか距離的に走りごたえある所にあるのですが、それを走ってでも行きたくなるお店です。店員さんも愛想よくて親切です。色々なブランドを取り揃えられていますが、自分的には関西で唯一WHAT WE WANT製品を取り扱っているところが最大の魅力です。またイベントも伺います。</p>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p>キャンプグッズいっぱい。ゼインアーツやその他のマニアックなメーカーの商品がたくさんある。同じ敷地でSUNWORKSというハイクオリティエンジニアの工場がある。アメリカカリフォルニア産の電動自転車をカスタム販売している。特注ヒッチやトレーラーなどのオリジナルカスタムをしていて珍しいお店でした。
+
+電動自転車は試乗してみましたが、どこまでもこがなくても行けてしまいそうな楽ちんな走り。3時間充電で、約50キロは走れるとか。バイクは無理な中高生から乗れるらしい。
+
+滋賀県で人気のマニアックなキャンプギアが揃うショップ！こんなとこに？と思うほど住宅街にポツンとあります。ベタなメーカーは取扱がなく、マニアなメーカーが揃っていて、普段見かけないようなギアが購入できます。ゼインアーツの取扱店。1階は細かいもの、2階はテント、クーラーなど大型品が陳列されています。欲しいものがたくさんあって、見てるだけでも楽しかったです。ゼクーMのインナーテントを購入しました！</p>
+  </div>
+</section>
+
+<section class="info">
+  <div class="section-title">
+    <div class="sub">SHOP INFO</div>
+    <h2>店舗情報</h2>
+  </div>
+  <table class="info-table">
+    <tr><th>店名</th><td>Burn Freely（バーンフリーリー）</td></tr>
+    <tr><th>住所</th><td>滋賀県東近江市五個荘七里町102-1</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0748488123">0748-48-8123</a></td></tr>
+    <tr><th>定休日</th><td>水曜・木曜</td></tr>
+    <tr><th>HP</th><td><a href="https://burnfreely.com/" target="_blank">https://burnfreely.com/</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=滋賀県東近江市五個荘七里町102-1&z=16&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <div class="sns-links">
+    <a href="https://www.instagram.com/burn_freely/" target="_blank">Instagram</a>
+    <a href="https://burnfreely.com/contact/" target="_blank">お問い合わせフォーム</a>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>実際に見て、触って、選んでほしい</h2>
+  <p>レアなアウトドアギアとの出会いが、ここにはあります。<br>お気軽にお立ち寄りください。</p>
+  <div class="cta-buttons">
+    <a href="tel:0748488123">📞 電話で問い合わせる</a>
+    <a href="https://burnfreely.com/contact/" target="_blank" class="outline">お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<footer>
+  © Burn Freely
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0748488123" class="nav-tel">📞 電話</a>
+  <a href="#info" class="nav-map">📍 地図</a>
+  <a href="https://burnfreely.com/contact/" target="_blank" class="nav-contact">✉ お問い合わせ</a>
+</div>
+
+</body>
+</html>
