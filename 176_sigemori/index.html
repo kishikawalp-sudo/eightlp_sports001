@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>重森スポーツ｜滋賀県東近江市の野球用品専門店</title>
+<style>
+  :root{
+    --main-color:#1b4d3e;
+    --sub-color:#e8b923;
+    --accent-color:#d63b2f;
+    --bg-light:#f7f5ee;
+    --text-dark:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--main-color);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shop-name{
+    color:#fff;font-weight:bold;font-size:15px;
+  }
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;align-items:center;gap:4px;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, rgba(27,77,62,.75), rgba(27,77,62,.85)), url('images/hero.jpg') center/cover no-repeat;
+    color:#fff;
+    padding:50px 20px 40px;
+    text-align:center;
+  }
+  .hero .catch-sub{
+    font-size:14px;
+    letter-spacing:2px;
+    color:var(--sub-color);
+    font-weight:bold;
+    margin-bottom:10px;
+  }
+  .hero h1{
+    font-size:26px;
+    line-height:1.5;
+    margin-bottom:16px;
+  }
+  .hero p.desc{
+    font-size:14px;
+    margin-bottom:24px;
+    opacity:.95;
+  }
+  .hero .cta-buttons{
+    display:flex;flex-direction:column;gap:12px;
+    max-width:320px;margin:0 auto;
+  }
+  .btn-primary{
+    background:var(--accent-color);
+    color:#fff;
+    padding:16px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:16px;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+  }
+  .btn-secondary{
+    background:#fff;
+    color:var(--main-color);
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+
+  section{padding:40px 20px;}
+  .section-title{
+    text-align:center;
+    margin-bottom:30px;
+  }
+  .section-title .en{
+    display:block;
+    color:var(--sub-color);
+    font-size:13px;
+    letter-spacing:3px;
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:22px;
+    color:var(--main-color);
+    position:relative;
+    padding-bottom:12px;
+  }
+  .section-title h2::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    width:40px;height:3px;
+    background:var(--accent-color);
+  }
+
+  /* イチオシ商品セクション */
+  .feature-section{
+    background:var(--bg-light);
+  }
+  .feature-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:12px;
+  }
+  .feature-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    border:2px solid var(--sub-color);
+  }
+  .feature-card img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+  }
+  .feature-card .content{
+    padding:20px;
+  }
+  .feature-card h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .feature-card p{
+    font-size:14px;
+    margin-bottom:16px;
+  }
+  .feature-list{
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .feature-list li{
+    font-size:14px;
+    padding:8px 0 8px 26px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .feature-list li::before{
+    content:"⚾";
+    position:absolute;left:0;top:8px;
+  }
+  .feature-list li:last-child{border-bottom:none;}
+
+  /* 強み */
+  .strengths{
+    display:flex;flex-direction:column;gap:20px;
+  }
+  .strength-item{
+    display:flex;gap:14px;
+    background:#fff;
+    border-left:4px solid var(--main-color);
+    padding:16px;
+    border-radius:6px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .strength-item .num{
+    font-size:24px;
+    font-weight:bold;
+    color:var(--sub-color);
+    min-width:36px;
+  }
+  .strength-item h3{
+    font-size:16px;
+    color:var(--main-color);
+    margin-bottom:6px;
+  }
+  .strength-item p{font-size:13.5px;}
+
+  /* 店舗写真 */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery img{
+    border-radius:8px;
+    aspect-ratio:1/1;
+    object-fit:cover;
+  }
+  .gallery .full{
+    grid-column:1/3;
+    aspect-ratio:16/9;
+  }
+
+  /* 口コミ */
+  .reviews-section{background:var(--bg-light);}
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .review-card .stars{
+    color:var(--sub-color);
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#333;
+  }
+
+  /* ストーリー */
+  .story-section{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .story-section .section-title h2{color:#fff;}
+  .story-section .section-title .en{color:var(--sub-color);}
+  .story-section p{
+    font-size:14px;
+    margin-bottom:14px;
+    opacity:.95;
+  }
+  .story-section .rep{
+    text-align:right;
+    font-size:13px;
+    margin-top:16px;
+    color:var(--sub-color);
+    font-weight:bold;
+  }
+
+  /* 店舗情報 */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .shop-info th,.shop-info td{
+    padding:12px 10px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-info th{
+    width:88px;
+    color:var(--main-color);
+    white-space:nowrap;
+    font-weight:bold;
+  }
+  .shop-info td a{color:var(--accent-color);text-decoration:underline;}
+  .map-wrap{
+    margin-top:20px;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid #ddd;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* 最終CTA */
+  .cta-section{
+    background:linear-gradient(135deg, var(--main-color), #123a2e);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:21px;
+    margin-bottom:14px;
+  }
+  .cta-section p{
+    font-size:14px;
+    margin-bottom:24px;
+    opacity:.9;
+  }
+  .cta-section .cta-buttons{
+    display:flex;flex-direction:column;gap:12px;
+    max-width:320px;margin:0 auto;
+  }
+
+  /* フッターナビ */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    height:60px;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-size:11px;
+    color:var(--main-color);
+    gap:2px;
+  }
+  .bottom-nav a.call{
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+  }
+  .bottom-nav .icon{font-size:18px;}
+
+  footer.copyright{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:16px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">重森スポーツ</div>
+  <a href="tel:0748220664" class="tel-btn">📞 0748-22-0664</a>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="catch-sub">大正10年創業　100年続く地域の野球専門店</div>
+  <h1>その一球に、<br>本気で応える。<br>重森スポーツの野球用品</h1>
+  <p class="desc">グラブの縫い修理からスパイクのP革交換まで、<br>ご要望以上の仕上がりでお応えします。</p>
+  <div class="cta-buttons">
+    <a href="tel:0748220664" class="btn-primary">📞 今すぐ電話で相談する</a>
+    <a href="https://shigemorisports.com/" class="btn-secondary">🌐 公式サイトを見る</a>
+  </div>
+</section>
+
+<!-- イチオシ商品 -->
+<section class="feature-section">
+  <div class="section-title">
+    <span class="en">RECOMMEND</span>
+    <h2>イチオシ｜野球用品</h2>
+  </div>
+  <div class="feature-card">
+    <img src="images/feature.jpg" alt="重森スポーツの野球用品コーナー">
+    <div class="content">
+      <span class="feature-badge">口コミで評判の対応力</span>
+      <h3>豊富な品揃えと、確かな修理・加工技術</h3>
+      <p>「いい意味で期待を裏切る品揃えの多さ」と評判の重森スポーツ。グラブの縫い修理やスパイクの縫いP加工など、細かなご要望にも丁寧に対応します。</p>
+      <ul class="feature-list">
+        <li>硬式・軟式グラブ／各種取り揃え</li>
+        <li>グラブ縫い修理・型崩れ直し</li>
+        <li>スパイク　縫いP革交換</li>
+        <li>店頭にない商品もしっかり取り寄せ対応</li>
+      </ul>
+      <a href="tel:0748220664" class="btn-primary" style="display:block;text-align:center;">📞 野球用品について相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="strengths-section">
+  <div class="section-title">
+    <span class="en">STRENGTH</span>
+    <h2>重森スポーツが選ばれる理由</h2>
+  </div>
+  <div class="strengths">
+    <div class="strength-item">
+      <div class="num">01</div>
+      <div>
+        <h3>期待を超える品揃え</h3>
+        <p>スポーツ道具など充実したラインナップ。ないものはしっかり取り寄せてくれると評判です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">02</div>
+      <div>
+        <h3>要望を上回る仕上がり</h3>
+        <p>グラブの縫い修理やスパイクの加工など、「要望通り」どころか時に「要望以上」の仕上がりで驚かれるお客様が多数。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">03</div>
+      <div>
+        <h3>スタッフの手厚い対応</h3>
+        <p>丁寧で親切な接客が口コミでも高く評価されています。初めての方でも安心してご相談いただけます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">04</div>
+      <div>
+        <h3>創業100年を超える信頼</h3>
+        <p>大正10年の創業以来、地域に根差し、子どもたちの健全な成長をスポーツを通じて支え続けています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗写真ギャラリー -->
+<section class="gallery-section">
+  <div class="section-title">
+    <span class="en">GALLERY</span>
+    <h2>店舗紹介</h2>
+  </div>
+  <div class="gallery">
+    <img class="full" src="images/shop.jpg" alt="重森スポーツ店内">
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="reviews-section">
+  <div class="section-title">
+    <span class="en">REVIEW</span>
+    <h2>お客様の声</h2>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>いい意味で期待を裏切る品揃えの多さと、スタッフの手厚さに驚きました。みなさん、丁寧に親切に対応していただけます☺️</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>最近では野球グラブの縫い修理とか、スパイクの縫いPとかでお世話になりました。要望通りの仕上がりで満足してます。ときどき要望を上回るので驚きます。めっちゃいいですよ！スポーツ道具など充実してます！ない場合はしっかり取り寄せしてくれるのでいつもたすかってます。きになるかたは一度行ってみてください。</p>
+  </div>
+</section>
+
+<!-- 創業者ストーリー -->
+<section class="story-section">
+  <div class="section-title">
+    <span class="en">STORY</span>
+    <h2>創業100年の想い</h2>
+  </div>
+  <p>大正10年の創業以来、皆様に育てて頂き100年を迎えることが出来ました。これからも未来を担う子供たちの健全な育成にスポーツは大きな貢献が出来ると信じています。</p>
+  <p>身体を動かす楽しさは、健康なからだを作り、他者との関わりやルールへの学びは社会性を育み、達成の喜びは努力の大切さを教えてくれます。</p>
+  <p>スポーツに親しむ子どもたちが未来を創る担い手になっていくまでの道のりを私たちは支え、あらゆる世代がスポーツに親しめる社会の実現のお手伝いが出来ることを望みます。</p>
+  <p>これらを信条に人と人との繋がりを大切にし地域に貢献出来るスポーツ店を目指します。</p>
+  <div class="rep">代表　宮原ゆかり</div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shop-info">
+  <div class="section-title">
+    <span class="en">INFORMATION</span>
+    <h2>店舗情報</h2>
+  </div>
+  <table>
+    <tr><th>店名</th><td>重森スポーツ</td></tr>
+    <tr><th>会社名</th><td>株式会社重森スポーツ</td></tr>
+    <tr><th>代表者</th><td>宮原ゆかり</td></tr>
+    <tr><th>住所</th><td>滋賀県東近江市八日市上之町2-2</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0748220664">0748-22-0664</a></td></tr>
+    <tr><th>HP</th><td><a href="https://shigemorisports.com/" target="_blank" rel="noopener">https://shigemorisports.com/</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://www.instagram.com/p/DPYGkbIkin0/" target="_blank" rel="noopener">Instagram</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E6%BB%8B%E8%B3%80%E7%9C%8C%E6%9D%B1%E8%BF%91%E6%B1%9F%E5%B8%82%E5%85%AB%E6%97%A5%E5%B8%82%E4%B8%8A%E4%B9%8B%E7%94%BA2-2&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="cta-section">
+  <h2>グラブの修理も、道具選びも。<br>まずはお気軽にご相談ください</h2>
+  <p>創業100年の重森スポーツが、あなたの「その一球」をサポートします。</p>
+  <div class="cta-buttons">
+    <a href="tel:0748220664" class="btn-primary">📞 電話で相談する</a>
+    <a href="https://shigemorisports.com/" class="btn-secondary">🌐 お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<footer class="copyright">
+  &copy; 株式会社重森スポーツ All Rights Reserved.
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0748220664" class="call"><span class="icon">📞</span>電話</a>
+  <a href="#shop-info"><span class="icon">📍</span>アクセス</a>
+  <a href="https://shigemorisports.com/"><span class="icon">🌐</span>公式HP</a>
+  <a href="https://www.instagram.com/p/DPYGkbIkin0/"><span class="icon">📷</span>Instagram</a>
+</nav>
+
+</body>
+</html>
