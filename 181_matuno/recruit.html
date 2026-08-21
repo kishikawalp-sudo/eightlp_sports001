@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スタッフ募集｜琵琶湖サップ 松の浦 SUP</title>
+<style>
+  :root{
+    --main-color:#0077b6;
+    --sub-color:#00b4d8;
+    --accent-color:#ff9f1c;
+    --light-bg:#f0faff;
+    --dark-text:#1a3c4c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark-text);
+    line-height:1.7;
+    background:#fff;
+    padding-top:60px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{max-width:680px;margin:0 auto;padding:0 16px;}
+
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  header .shop-name{
+    font-size:14px;font-weight:bold;color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;align-items:center;gap:5px;
+  }
+
+  .hero{position:relative;}
+  .hero img{width:100%;height:60vh;object-fit:cover;}
+  .hero-overlay{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(0,40,60,0.85), rgba(0,40,60,0));
+    padding:40px 20px 20px;
+    color:#fff;
+  }
+  .hero-overlay .badge{
+    display:inline-block;
+    background:var(--accent-color);
+    font-size:13px;font-weight:bold;
+    padding:5px 14px;border-radius:20px;
+    margin-bottom:12px;
+  }
+  .hero-overlay .catch{
+    font-size:22px;font-weight:bold;line-height:1.5;
+    text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  }
+  .hero-overlay .sub{font-size:14px;margin-top:8px;opacity:0.95;}
+
+  section{padding:40px 0;}
+  .section-title{
+    text-align:center;font-size:22px;font-weight:bold;
+    color:var(--main-color);margin-bottom:24px;position:relative;
+  }
+  .section-title::after{
+    content:"";display:block;width:50px;height:3px;
+    background:var(--accent-color);margin:10px auto 0;
+  }
+
+  /* Season work */
+  .season-grid{
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .season-card{
+    display:flex;gap:14px;
+    background:#fff;
+    border:1px solid #e5f2f8;
+    border-radius:12px;
+    padding:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.04);
+    align-items:flex-start;
+  }
+  .season-icon{
+    flex-shrink:0;
+    width:48px;height:48px;
+    background:var(--sub-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:20px;font-weight:bold;
+  }
+  .season-card h4{font-size:15px;color:var(--main-color);margin-bottom:4px;}
+  .season-card p{font-size:13.5px;color:#444;}
+
+  /* Job info table */
+  .job-table{width:100%;border-collapse:collapse;font-size:14px;}
+  .job-table th, .job-table td{
+    text-align:left;padding:14px 10px;
+    border-bottom:1px solid #e0e0e0;vertical-align:top;
+  }
+  .job-table th{
+    width:100px;color:var(--main-color);white-space:nowrap;
+    font-size:13.5px;
+  }
+  .job-table td{white-space:pre-line;}
+
+  /* Highlights */
+  .highlight-box{
+    background:var(--light-bg);
+    border-radius:14px;
+    padding:20px;
+    margin-top:20px;
+  }
+  .highlight-box h4{
+    color:var(--main-color);
+    font-size:15.5px;
+    margin-bottom:10px;
+  }
+  .highlight-tags{
+    display:flex;flex-wrap:wrap;gap:8px;
+  }
+  .highlight-tags span{
+    background:#fff;
+    color:var(--main-color);
+    font-size:12.5px;font-weight:bold;
+    padding:6px 12px;border-radius:20px;
+    border:1px solid var(--sub-color);
+  }
+
+  /* Fit for */
+  .fit-list{
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .fit-item{
+    display:flex;align-items:center;gap:12px;
+    background:#fff;
+    border:1px solid #e5f2f8;
+    border-radius:12px;
+    padding:14px 16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.04);
+    font-size:14.5px;
+    font-weight:bold;
+    color:var(--dark-text);
+  }
+  .fit-item .mark{
+    color:var(--accent-color);
+    font-size:20px;
+  }
+
+  /* Photos */
+  .photo-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .photo-grid img{
+    width:100%;height:150px;object-fit:cover;border-radius:10px;
+  }
+
+  /* CTA */
+  .cta-section{
+    background:linear-gradient(135deg, var(--main-color), var(--sub-color));
+    color:#fff;text-align:center;
+  }
+  .cta-section h2{font-size:21px;margin-bottom:10px;}
+  .cta-section p{font-size:14px;margin-bottom:24px;opacity:0.95;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .cta-btn{display:block;padding:16px;border-radius:30px;font-weight:bold;font-size:15.5px;}
+  .cta-btn.primary{background:var(--accent-color);color:#fff;}
+  .cta-btn.secondary{background:#fff;color:var(--main-color);}
+
+  .shop-info{background:var(--light-bg);}
+  .sns-links{margin-top:16px;display:flex;gap:12px;}
+  .sns-links a{
+    background:var(--main-color);color:#fff;
+    font-size:13px;font-weight:bold;
+    padding:8px 16px;border-radius:20px;
+  }
+
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;height:60px;
+    background:#fff;display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    font-size:11.5px;font-weight:bold;color:var(--main-color);
+  }
+  .bottom-nav a.tel{background:var(--accent-color);color:#fff;}
+  .bottom-nav a .icon{font-size:18px;margin-bottom:2px;}
+
+  @media (min-width:500px){.hero img{height:65vh;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">琵琶湖サップ 松の浦 SUP｜スタッフ募集</div>
+  <a href="tel:050-3613-0622" class="tel-btn">📞 応募相談</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="琵琶湖でのアウトドアワーク">
+  <div class="hero-overlay">
+    <span class="badge">STAFF募集中</span>
+    <div class="catch">自然の中で働く毎日を、<br>琵琶湖で始めよう。</div>
+    <div class="sub">週2OK・友達同士OK・かけもちOK｜滋賀県高島市 松の浦キャンプ場</div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-title" style="margin-top:0;">四季を通じて働けるお仕事</div>
+    <div class="season-grid">
+      <div class="season-card">
+        <div class="season-icon">春〜秋</div>
+        <div>
+          <h4>カヌー・サップ・サイクリングガイド</h4>
+          <p>琵琶湖のアクティビティをお客様と一緒に楽しみながらサポートするお仕事です。</p>
+        </div>
+      </div>
+      <div class="season-card">
+        <div class="season-icon">冬</div>
+        <div>
+          <h4>スノーシュー／雪山トレッキング</h4>
+          <p>冬は雪山のガイドスタッフとして活躍。季節ごとに違うフィールドで働けます。</p>
+        </div>
+      </div>
+      <div class="season-card">
+        <div class="season-icon">通年</div>
+        <div>
+          <h4>ゲストハウス清掃スタッフ</h4>
+          <p>季節を問わず募集中。体を動かすお仕事で、屋内外どちらも選べます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="container">
+    <div class="section-title">募集要項</div>
+    <table class="job-table">
+      <tr><th>給与</th><td>時給：1,250〜1,750円以上
+日給：10,000〜14,000円以上（研修期間変動あり）</td></tr>
+      <tr><th>勤務時間</th><td>8:00〜17:00（変動あり）</td></tr>
+      <tr><th>待遇</th><td>交通費支給（上限あり）
+髪型・服装自由</td></tr>
+      <tr><th>働き方</th><td>週2でもOK！友達同士もOK！かけもちOK！
+社会人可・土日祝のみガイドも可
+主婦10-15時も可
+（契約社員同時募集！）</td></tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>こんな働き方ができます</h4>
+      <div class="highlight-tags">
+        <span>週2〜OK</span>
+        <span>友達同士OK</span>
+        <span>かけもちOK</span>
+        <span>社会人OK</span>
+        <span>主婦(10-15時)OK</span>
+        <span>土日祝のみガイドOK</span>
+        <span>契約社員も募集</span>
+        <span>髪型・服装自由</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">こんな方に向いています</div>
+    <div class="fit-list">
+      <div class="fit-item"><span class="mark">✓</span>自然、外が好きな方</div>
+      <div class="fit-item"><span class="mark">✓</span>人と接するのが好きな方</div>
+      <div class="fit-item"><span class="mark">✓</span>仕事もプライベートもアウトドアを楽しみたい方</div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="container">
+    <div class="section-title">現場の様子</div>
+    <div class="photo-grid">
+      <img src="images/sup1.jpg" alt="琵琶湖でのSUPガイドの様子">
+      <img src="images/hero.jpg" alt="琵琶湖の風景">
+    </div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="container">
+    <div class="section-title">勤務地情報</div>
+    <table class="job-table">
+      <tr><th>店名</th><td>琵琶湖サップ 松の浦 SUP</td></tr>
+      <tr><th>住所</th><td>滋賀県高島市勝野750</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:050-3613-0622">050-3613-0622</a></td></tr>
+      <tr><th>HP</th><td><a href="https://www.goodtimes88.jp/biwako-sup/" target="_blank" rel="noopener">公式サイトはこちら</a></td></tr>
+    </table>
+    <div class="sns-links">
+      <a href="https://www.instagram.com/goodtimes88.jp/?hl=ja" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.goodtimes88.jp/contact/" target="_blank" rel="noopener">お問い合わせ</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>一緒に琵琶湖で働きませんか？</h2>
+    <p>週2〜、友達同士、かけもちもOK。まずはお気軽にお問い合わせください。</p>
+    <div class="cta-buttons">
+      <a href="tel:050-3613-0622" class="cta-btn primary">📞 電話で応募・相談する</a>
+      <a href="https://www.goodtimes88.jp/contact/" target="_blank" rel="noopener" class="cta-btn secondary">✉️ フォームで応募する</a>
+    </div>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:050-3613-0622" class="tel">
+    <span class="icon">📞</span>電話する
+  </a>
+  <a href="https://www.goodtimes88.jp/contact/" target="_blank" rel="noopener">
+    <span class="icon">✉️</span>応募する
+  </a>
+  <a href="https://www.instagram.com/goodtimes88.jp/?hl=ja" target="_blank" rel="noopener">
+    <span class="icon">📷</span>Instagram
+  </a>
+  <a href="https://www.goodtimes88.jp/biwako-sup/" target="_blank" rel="noopener">
+    <span class="icon">🌐</span>公式HP
+  </a>
+</nav>
+
+</body>
+</html>
