@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フィッシングハウスOZATOYA 祇園店｜滋賀県長浜市の釣具専門店</title>
+<style>
+  :root{
+    --navy:#0b3d5c;
+    --deep:#062b44;
+    --accent:#ff8c1a;
+    --accent-dark:#e8730a;
+    --light-blue:#eaf4fb;
+    --gray:#555;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    color:#222;
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+    background:#fff;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;height:56px;
+    background:var(--deep);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 14px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shopname{
+    color:#fff;font-size:14px;font-weight:bold;
+    letter-spacing:.5px;
+  }
+  header .tel-btn{
+    background:var(--accent);color:#fff;
+    padding:8px 14px;border-radius:20px;
+    font-size:13px;font-weight:bold;
+    display:flex;align-items:center;gap:5px;
+    white-space:nowrap;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--navy) 0%,var(--deep) 100%);
+    color:#fff;
+    text-align:center;
+    padding:38px 20px 34px;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:16px;
+    margin-bottom:14px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:24px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero p.sub{
+    font-size:14px;
+    opacity:.9;
+    margin-bottom:20px;
+  }
+  .hero-img{
+    width:100%;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:18px;
+    box-shadow:0 4px 14px rgba(0,0,0,.3);
+  }
+  .hero-img img{width:100%;height:auto;}
+  .stars{
+    color:#ffd23f;
+    font-size:18px;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .hero .review-note{
+    font-size:12px;
+    opacity:.85;
+  }
+  .cta-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px 30px;
+    border-radius:30px;
+    box-shadow:0 4px 10px rgba(255,140,26,.4);
+  }
+
+  section{padding:40px 20px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--navy);
+    margin-bottom:8px;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent-dark);
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:13px;
+    color:var(--gray);
+    margin-bottom:26px;
+  }
+
+  /* featured product */
+  .featured{
+    background:var(--light-blue);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
+    border:2px solid var(--accent);
+  }
+  .featured-card img{width:100%;height:auto;}
+  .featured-card .body{padding:20px;}
+  .featured-card h3{
+    color:var(--navy);
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:var(--gray);
+    margin-bottom:14px;
+  }
+  .featured-tags{
+    display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;
+  }
+  .featured-tags span{
+    background:var(--light-blue);
+    color:var(--navy);
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 10px;
+    border-radius:14px;
+  }
+  .featured-card .cta-btn{
+    display:block;
+    text-align:center;
+    width:100%;
+  }
+
+  /* strengths */
+  .strengths-list{
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border:1px solid #e3e8ed;
+    border-radius:12px;
+    padding:16px;
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:38px;height:38px;
+    background:var(--navy);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .strength-item h4{
+    color:var(--navy);
+    font-size:15px;
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:var(--gray);
+  }
+
+  /* gallery */
+  .gallery{
+    background:var(--light-blue);
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:10px;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    width:100%;
+  }
+  .gallery-grid .full{grid-column:1/3;aspect-ratio:16/9;}
+
+  /* reviews */
+  .review-card{
+    background:#fff;
+    border:1px solid #e3e8ed;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:14px;
+  }
+  .review-card .stars{color:#ffb400;font-size:15px;margin-bottom:8px;}
+  .review-card p{font-size:13px;color:#333;white-space:pre-line;}
+
+  /* shop info */
+  .shop-info{background:#fff;}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  .info-table th{
+    background:var(--light-blue);
+    color:var(--navy);
+    text-align:left;
+    padding:12px 10px;
+    width:30%;
+    white-space:nowrap;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .map-wrap{
+    margin-top:18px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  /* final cta */
+  .final-cta{
+    background:linear-gradient(180deg,var(--navy) 0%,var(--deep) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{font-size:20px;margin-bottom:10px;}
+  .final-cta p{font-size:13px;opacity:.9;margin-bottom:22px;}
+  .final-cta-buttons{
+    display:flex;flex-direction:column;gap:12px;
+    max-width:320px;margin:0 auto;
+  }
+  .final-cta .btn-outline{
+    border:2px solid #fff;
+    color:#fff;
+    padding:12px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:14px;
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:#999;
+    background:#f7f7f7;
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #e0e0e0;
+    box-shadow:0 -2px 8px rgba(0,0,0,.08);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 0 7px;
+    font-size:11px;
+    color:var(--navy);
+    display:flex;flex-direction:column;align-items:center;gap:2px;
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+  }
+  .bottom-nav .icon{font-size:18px;}
+
+  @media (min-width:600px){
+    .hero h1{font-size:28px;}
+    section{padding:56px 40px;}
+    .info-table th{width:20%;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">フィッシングハウス OZATOYA 祇園店</div>
+  <a href="tel:0749625365" class="tel-btn">📞 電話する</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="badge">滋賀県長浜市 釣具専門店</span>
+  <h1>あなたの一竿に、<br>とことん向き合う釣具店</h1>
+  <p class="sub">フィッシングハウス OZATOYA 祇園店</p>
+
+  <div class="hero-img">
+    <img src="images/hero_shopfront.jpg" alt="フィッシングハウスOZATOYA祇園店 外観">
+  </div>
+
+  <div class="stars">★★★★☆</div>
+  <p class="review-note">お客様の口コミより（Googleクチコミ抜粋）</p>
+  <br>
+  <a href="tel:0749625365" class="cta-btn">📞 今すぐ電話で相談する</a>
+</div>
+
+<!-- FEATURED PRODUCT -->
+<section class="featured">
+  <div class="section-title">
+    <span>ICHIOSHI</span>
+    イチオシ｜釣り用具
+  </div>
+  <p class="section-lead">古い竿の適合穂先探しからボート選びまで、<br>豊富な品揃えと専門知識でお応えします</p>
+
+  <div class="featured-card">
+    <img src="images/featured_tackle.jpg" alt="釣り用具 品揃え">
+    <div class="body">
+      <h3>「その一本」に応える品揃えと提案力</h3>
+      <p>
+        竿・リールはもちろん、ワーム・仕掛けなどの消耗品まで幅広く在庫。
+        現物の竿をお持ちいただければ、適合する穂先やパーツをその場でご提案。
+        思い入れのある道具を長く使いたい方にこそ選ばれています。
+        ボート（ジョイクラフト取扱い）やメンテナンス用品もご相談いただけます。
+      </p>
+      <div class="featured-tags">
+        <span>穂先・パーツ適合相談</span>
+        <span>ワーム・仕掛け</span>
+        <span>ボート取扱い</span>
+      </div>
+      <a href="tel:0749625365" class="cta-btn">在庫・適合について電話で聞く</a>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section class="strengths">
+  <div class="section-title">
+    <span>STRENGTH</span>
+    選ばれる理由
+  </div>
+
+  <div class="strengths-list">
+    <div class="strength-item">
+      <div class="num">1</div>
+      <div>
+        <h4>古い竿でも適合パーツを提案</h4>
+        <p>メーカーで対応していない古い竿でも、現物をお持ちいただければ即座に適合する穂先をご提案。大切な一本を諦めずに済みます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">2</div>
+      <div>
+        <h4>ジョイクラフトのボートも安心して相談できる</h4>
+        <p>ボート本体からメンテナンス用品まで取扱い。実店舗ならではの相談のしやすさが、県外のお客様からも支持されています。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">3</div>
+      <div>
+        <h4>長浜港からすぐの好立地</h4>
+        <p>長浜港に近く、ボートを牽引しての来店にも便利。周辺にはコンビニもあり、釣り帰り・釣り前の立ち寄りにも最適です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">4</div>
+      <div>
+        <h4>豊富な品揃えと清潔な店内</h4>
+        <p>釣り用品からボート関連まで幅広い品揃え。店内・トイレも清潔に保たれており、快適にお買い物いただけます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="section-title">
+    <span>GALLERY</span>
+    店内のご紹介
+  </div>
+  <div class="gallery-grid">
+    <img src="images/gallery_interior1.jpg" alt="店内の様子1">
+    <img src="images/gallery_interior2.jpg" alt="店内の様子2">
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="section-title">
+    <span>VOICE</span>
+    お客様の声
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>HPでは適合していない古い竿のオリジナル穂先を求めて行きました。
+現物（竿）を持参したら即、適合する＃を勧められ購入。
+想いのある竿なので感謝、感謝でした。ワームと針購入。
+品揃えよく、店内もトイレも綺麗で良かったです。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>ジョイクラフトのボートを買うならここで良かったと今のところ思います😊
+ネットでも購入できる商品ですが、実店舗のここが通えるエリアにあったことがラッキーだと思います。
+長浜港に近くて助かります。ボート用品やメンテナンスなども行なっているようで、品数は結構あり店員の方の愛想は良いお店でした。また利用します。</p>
+  </div>
+</section>
+
+<!-- SHOP INFO -->
+<section class="shop-info">
+  <div class="section-title">
+    <span>SHOP INFO</span>
+    店舗情報
+  </div>
+
+  <table class="info-table">
+    <tr><th>店名</th><td>フィッシングハウス OZATOYA 祇園店</td></tr>
+    <tr><th>会社名</th><td>有限会社大郷屋</td></tr>
+    <tr><th>代表者</th><td>中川　浩邦</td></tr>
+    <tr><th>住所</th><td>滋賀県長浜市祇園町281-15</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0749625365">0749-62-5365</a></td></tr>
+    <tr><th>定休日</th><td>毎週日曜日</td></tr>
+    <tr><th>HP</th><td><a href="http://www.ozatoya.co.jp/" target="_blank" rel="noopener">www.ozatoya.co.jp</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@ozatoya.co.jp">info@ozatoya.co.jp</a></td></tr>
+  </table>
+
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E6%BB%8B%E8%B3%80%E7%9C%8C%E9%95%B7%E6%B5%9C%E5%B8%82%E7%A5%87%E5%9C%92%E7%94%BA281-15&z=16&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>大切な一竿、まずはご相談ください</h2>
+  <p>穂先の適合からボート選びまで、経験豊富なスタッフが丁寧にお応えします。</p>
+  <div class="final-cta-buttons">
+    <a href="tel:0749625365" class="cta-btn">📞 電話で相談する</a>
+    <a href="https://ozatoya.co.jp/pages/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" target="_blank" rel="noopener" class="btn-outline">お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 有限会社大郷屋 フィッシングハウスOZATOYA 祇園店
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0749625365" class="call"><span class="icon">📞</span>電話</a>
+  <a href="#"><span class="icon">🎣</span>イチオシ</a>
+  <a href="https://ozatoya.co.jp/pages/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" target="_blank" rel="noopener"><span class="icon">✉️</span>お問合せ</a>
+  <a href="http://www.ozatoya.co.jp/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+</div>
+
+</body>
+</html>
