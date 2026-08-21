@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>かんとりーはーばー｜滋賀・近江八幡のウインドサーフィン＆SUPショップ</title>
+<style>
+  :root{
+    --sea-blue:#0077b6;
+    --deep-blue:#03045e;
+    --sand:#fdf6e9;
+    --sun:#ffb703;
+    --white:#ffffff;
+    --text:#2b2b2b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif;
+    color:var(--text);
+    background:var(--sand);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:var(--deep-blue);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  header .shop-name{
+    color:#fff;
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:0.5px;
+  }
+  header .tel-btn{
+    background:var(--sun);
+    color:#3a2b00;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+    height:80vh;
+    min-height:420px;
+    background:url('images/hero_windsurfing.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:flex-end;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(3,4,94,0.15) 0%, rgba(3,4,94,0.75) 100%);
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    padding:24px 20px 32px;
+    color:#fff;
+  }
+  .hero-badge{
+    display:inline-block;
+    background:var(--sun);
+    color:#3a2b00;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 12px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:900;
+    line-height:1.5;
+    text-shadow:0 2px 8px rgba(0,0,0,0.4);
+    margin-bottom:10px;
+  }
+  .hero p.sub{
+    font-size:14px;
+    opacity:0.95;
+  }
+  .hero-cta{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+  }
+  .btn-primary{
+    flex:1;
+    background:var(--sun);
+    color:#3a2b00;
+    text-align:center;
+    padding:14px 10px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:14px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
+  }
+  .btn-outline{
+    flex:1;
+    border:2px solid #fff;
+    color:#fff;
+    text-align:center;
+    padding:12px 10px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:14px;
+  }
+
+  section{
+    padding:44px 20px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:900;
+    color:var(--deep-blue);
+    margin-bottom:8px;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--sea-blue);
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-desc{
+    text-align:center;
+    font-size:13px;
+    color:#555;
+    margin-bottom:28px;
+  }
+
+  /* featured / イチオシ */
+  .featured{
+    background:linear-gradient(180deg,#e8f4fb 0%, var(--sand) 100%);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,50,100,0.12);
+    border:2px solid var(--sun);
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-card-body{
+    padding:22px 18px;
+  }
+  .featured-label{
+    display:inline-block;
+    background:var(--deep-blue);
+    color:#fff;
+    font-size:11px;
+    font-weight:bold;
+    padding:4px 10px;
+    border-radius:4px;
+    margin-bottom:10px;
+  }
+  .featured-card-body h3{
+    font-size:20px;
+    color:var(--deep-blue);
+    margin-bottom:10px;
+    font-weight:900;
+  }
+  .featured-card-body p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:16px;
+  }
+  .featured-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .featured-points li{
+    list-style:none;
+    background:#eef6fb;
+    color:var(--sea-blue);
+    font-size:12px;
+    font-weight:bold;
+    padding:6px 12px;
+    border-radius:20px;
+  }
+
+  /* strengths */
+  .strengths{
+    background:var(--deep-blue);
+    color:#fff;
+  }
+  .strengths .section-title{color:#fff;}
+  .strengths .section-title span{color:var(--sun);}
+  .strengths .section-desc{color:#cfe0ee;}
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    background:rgba(255,255,255,0.07);
+    border-left:4px solid var(--sun);
+    border-radius:8px;
+    padding:16px 16px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .strength-num{
+    font-size:24px;
+    font-weight:900;
+    color:var(--sun);
+    min-width:36px;
+  }
+  .strength-item h4{
+    font-size:15px;
+    margin-bottom:5px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#dce8f2;
+  }
+
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:24px;
+  }
+  .gallery img{
+    border-radius:10px;
+    height:140px;
+    object-fit:cover;
+    width:100%;
+  }
+
+  /* reviews */
+  .reviews{background:var(--sand);}
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  }
+  .stars{
+    color:var(--sun);
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13px;
+    color:#333;
+    white-space:pre-line;
+  }
+
+  /* shop info */
+  .shop-info{background:#fff;}
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+    margin-bottom:20px;
+  }
+  table.info-table th{
+    background:#eef6fb;
+    color:var(--deep-blue);
+    text-align:left;
+    padding:12px 10px;
+    width:28%;
+    vertical-align:top;
+    font-weight:bold;
+    border-bottom:1px solid #ddd;
+  }
+  table.info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #ddd;
+    word-break:break-all;
+  }
+  .map-wrap{
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+  .sns-links{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-top:10px;
+  }
+  .sns-links a{
+    background:var(--sea-blue);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    padding:10px 18px;
+    border-radius:24px;
+  }
+
+  /* final cta */
+  .cta-final{
+    background:linear-gradient(135deg, var(--sea-blue), var(--deep-blue));
+    color:#fff;
+    text-align:center;
+  }
+  .cta-final h2{
+    font-size:22px;
+    font-weight:900;
+    margin-bottom:10px;
+  }
+  .cta-final p{
+    font-size:13px;
+    color:#dce8f2;
+    margin-bottom:22px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-buttons a{
+    padding:16px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-call{background:var(--sun);color:#3a2b00;}
+  .cta-form{background:#fff;color:var(--deep-blue);}
+  .cta-mail{border:2px solid #fff;color:#fff;}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--deep-blue);
+    gap:2px;
+  }
+  .bottom-nav a.emphasis{
+    background:var(--sun);
+    color:#3a2b00;
+    font-weight:bold;
+  }
+  .bottom-nav .icon{font-size:18px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">かんとりーはーばー</div>
+  <a href="tel:0748366565" class="tel-btn">📞 電話する</a>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">関西最古参・創業45年</span>
+    <h1>琵琶湖の風と戯れる。<br>ウインドサーフィン専門ショップ</h1>
+    <p class="sub">近江八幡のプライベートビーチで、極上のマリンスポーツ体験を。</p>
+    <div class="hero-cta">
+      <a href="tel:0748366565" class="btn-primary">今すぐ電話で相談</a>
+      <a href="#info" class="btn-outline">アクセスを見る</a>
+    </div>
+  </div>
+</section>
+
+<section class="featured">
+  <h2 class="section-title"><span>ICHIOSHI</span>イチオシサービス</h2>
+  <p class="section-desc">45年の歴史が育んだ、本格ウインドサーフィン体験</p>
+  <div class="featured-card">
+    <img src="images/featured_windsurf.jpg" alt="ウインドサーフィン体験">
+    <div class="featured-card-body">
+      <span class="featured-label">ウインドサーフィンショップ</span>
+      <h3>関西で最も歴史あるウインドサーフィンショップ</h3>
+      <p>ショップ前のゲレンデは風が吹く確率が高く、まるでプライベートビーチのような特別な空間。広い砂浜と木陰、遠浅の地形で、初心者から経験者まで安心して楽しめます。</p>
+      <ul class="featured-points">
+        <li>創業45年の実績</li>
+        <li>プライベートビーチ環境</li>
+        <li>遠浅で安心</li>
+        <li>SUP体験も可能</li>
+      </ul>
+      <a href="tel:0748366565" class="btn-primary" style="display:block;">電話でお問い合わせ</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title"><span>STRENGTH</span>選ばれる理由</h2>
+  <p class="section-desc">サーフミュージックが流れる、ゆったりとした時間</p>
+  <div class="strength-list">
+    <div class="strength-item">
+      <div class="strength-num">01</div>
+      <div>
+        <h4>創業45年、関西最古参の歴史</h4>
+        <p>ウインドサーフィンショップを始めて45年。関西エリアで最も長い歴史を持つショップとしての知識と経験があります。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">02</div>
+      <div>
+        <h4>充実した新しい設備</h4>
+        <p>店舗は新しく、男女別シャワールーム・水洗トイレ・休憩所など設備が充実。快適に過ごせます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">03</div>
+      <div>
+        <h4>風が吹くプライベートビーチ空間</h4>
+        <p>ショップ前のゲレンデは風の吹く確率が高く、広い砂浜と木陰もある遠浅の海。安心して楽しめます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">04</div>
+      <div>
+        <h4>サーフミュージック＆ゆったりした時間</h4>
+        <p>店内にはサーフミュージックが流れ、日常を忘れてゆっくりとした時間を過ごせる空間です。</p>
+      </div>
+    </div>
+  </div>
+  <div class="gallery">
+    <img src="images/gallery_sup.jpg" alt="SUP体験の様子">
+    <img src="images/gallery_beach.jpg" alt="プライベートビーチ空間">
+  </div>
+</section>
+
+<section class="reviews">
+  <h2 class="section-title"><span>VOICE</span>お客様の声</h2>
+  <p class="section-desc">実際にご利用いただいたお客様からの口コミ</p>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>SUP体験できるところを探していたら、アサイーボウル屋さんの隣のお店でSUPできるよって教えていただき、本日初めてのSUPを体験してみました‼️
+丁寧に教えてもらい、初心者の私でも楽しむことができました！
+ワンちゃんと一緒にできるということだったので、次は一緒に体験しようと思います✨🐶</p>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>以前隣のアサイーボウルのお店に伺った際、併設のこちらでSUPやウィンドウサーフィンの体験ができると知って、ずっとやりたかったSUPを体験させていただきました‼️
+丁寧に教えていただきありがとうございました！
+また是非次は夏にウィンドウサーフィンを挑戦してみたいと思います！
+わんちゃん🐶も一緒にSUP体験していただけるとのことなので、友達にも紹介します‼️</p>
+  </div>
+</section>
+
+<section class="shop-info" id="info">
+  <h2 class="section-title"><span>INFO</span>店舗情報</h2>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=滋賀県近江八幡市佐波江町472-1&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <table class="info-table">
+    <tr><th>店名</th><td>かんとりーはーばー</td></tr>
+    <tr><th>住所</th><td>滋賀県近江八幡市佐波江町472-1</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0748366565">0748-36-6565</a></td></tr>
+    <tr><th>公式HP</th><td><a href="http://www.country-h.co.jp/" target="_blank">www.country-h.co.jp</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@country-h.co.jp">info@country-h.co.jp</a></td></tr>
+  </table>
+  <div class="sns-links">
+    <a href="https://www.instagram.com/countryharbour/" target="_blank">📷 Instagram</a>
+    <a href="https://www.country-h.co.jp/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank">✉️ お問い合わせフォーム</a>
+  </div>
+</section>
+
+<section class="cta-final">
+  <h2>さあ、風を感じに行こう。</h2>
+  <p>初心者も大歓迎。まずはお気軽にお問い合わせください。</p>
+  <div class="cta-buttons">
+    <a href="tel:0748366565" class="cta-call">📞 電話で問い合わせる（0748-36-6565）</a>
+    <a href="https://www.country-h.co.jp/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" class="cta-form">✉️ お問い合わせフォームへ</a>
+    <a href="mailto:info@country-h.co.jp" class="cta-mail">📩 メールで問い合わせる</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0748366565" class="emphasis"><span class="icon">📞</span>電話</a>
+  <a href="#info"><span class="icon">📍</span>アクセス</a>
+  <a href="https://www.instagram.com/countryharbour/" target="_blank"><span class="icon">📷</span>Instagram</a>
+  <a href="https://www.country-h.co.jp/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank"><span class="icon">✉️</span>問い合わせ</a>
+</nav>
+
+</body>
+</html>
