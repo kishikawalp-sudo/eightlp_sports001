@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>琵琶湖サップ 松の浦 SUP｜滋賀県高島市で楽しむSUP体験</title>
+<style>
+  :root{
+    --main-color:#0077b6;
+    --sub-color:#00b4d8;
+    --accent-color:#ff9f1c;
+    --light-bg:#f0faff;
+    --dark-text:#1a3c4c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark-text);
+    line-height:1.7;
+    background:#fff;
+    padding-top:60px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{max-width:680px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  header .shop-name{
+    font-size:15px;font-weight:bold;color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;align-items:center;gap:5px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    margin-top:0;
+  }
+  .hero img{
+    width:100%;
+    height:60vh;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(0,40,60,0.85), rgba(0,40,60,0));
+    padding:40px 20px 20px;
+    color:#fff;
+  }
+  .hero-overlay .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  }
+  .hero-overlay .sub{
+    font-size:14px;
+    margin-top:8px;
+    opacity:0.95;
+  }
+
+  section{
+    padding:40px 0;
+  }
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:24px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:50px;height:3px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--light-bg);
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:13px;
+    padding:5px 16px;
+    border-radius:20px;
+    margin-bottom:12px;
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,120,180,0.15);
+  }
+  .featured-card img{
+    width:100%;
+    height:auto;
+  }
+  .featured-card .body{
+    padding:20px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14.5px;
+    color:#333;
+  }
+  .featured-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:14px;
+  }
+  .featured-points span{
+    background:var(--light-bg);
+    color:var(--main-color);
+    font-size:12.5px;
+    font-weight:bold;
+    padding:6px 12px;
+    border-radius:20px;
+    border:1px solid var(--sub-color);
+  }
+
+  /* Strengths */
+  .strengths-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border:1px solid #e5f2f8;
+    border-radius:12px;
+    padding:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.04);
+  }
+  .strength-icon{
+    flex-shrink:0;
+    width:42px;height:42px;
+    background:var(--sub-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:18px;
+  }
+  .strength-item h4{
+    font-size:15.5px;
+    color:var(--main-color);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:var(--light-bg);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    margin-bottom:16px;
+  }
+  .review-stars{
+    color:var(--accent-color);
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:#333;
+    white-space:pre-line;
+  }
+
+  /* Shop info */
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .info-table th, .info-table td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #e0e0e0;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:90px;
+    color:var(--main-color);
+    white-space:nowrap;
+  }
+  .map-wrap{
+    margin-top:20px;
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:250px;
+    border:0;
+  }
+  .sns-links{
+    margin-top:16px;
+    display:flex;
+    gap:12px;
+  }
+  .sns-links a{
+    background:var(--main-color);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    padding:8px 16px;
+    border-radius:20px;
+  }
+
+  /* CTA */
+  .cta-section{
+    background:linear-gradient(135deg, var(--main-color), var(--sub-color));
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:21px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:14px;
+    margin-bottom:24px;
+    opacity:0.95;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-btn{
+    display:block;
+    padding:16px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15.5px;
+  }
+  .cta-btn.primary{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .cta-btn.secondary{
+    background:#fff;
+    color:var(--main-color);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11.5px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  .bottom-nav a.tel{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .bottom-nav a .icon{
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:500px){
+    .hero img{height:65vh;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">琵琶湖サップ 松の浦 SUP</div>
+  <a href="tel:050-3613-0622" class="tel-btn">📞 電話で相談</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="琵琶湖でSUPを楽しむ様子">
+  <div class="hero-overlay">
+    <div class="catch">澄んだ琵琶湖の上を、<br>あなたも滑るように進む。</div>
+    <div class="sub">初心者も安心のインストラクター同行制｜滋賀県高島市 松の浦キャンプ場発着</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="container">
+    <div class="featured-badge">イチオシ</div>
+    <div class="section-title" style="margin-top:0;">琵琶湖でSUP体験</div>
+    <div class="featured-card">
+      <img src="images/sup1.jpg" alt="琵琶湖SUP体験の様子1">
+      <div class="body">
+        <h3>初めてでも大丈夫。琵琶湖の絶景を、水の上から。</h3>
+        <p>
+          サップ（SUP）はスタンドアップパドルボードの略で、大きなボードとパドルで水面を進むウォーターアクティビティ。サーフボードより安定性があるので、初心者でも比較的簡単に楽しめます。体幹も鍛えられ、エクササイズとしても人気です。
+          事前に陸上での講習を受けていただき、ツアー中もインストラクターが同行するので安心。松の浦キャンプ場から出発し、きれいなスポットまで案内してもらえます。SUPのあとはビーチで過ごすこともでき、一日中琵琶湖で遊べます。
+        </p>
+        <div class="featured-points">
+          <span>初心者歓迎</span>
+          <span>インストラクター同行</span>
+          <span>ワンちゃんもOK</span>
+          <span>友達と参加OK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="container">
+    <div class="section-title">選ばれる理由</div>
+    <div class="strengths-list">
+      <div class="strength-item">
+        <div class="strength-icon">1</div>
+        <div>
+          <h4>安定性の高いボードで初心者も安心</h4>
+          <p>サーフボードより安定したボードを使用するので、SUPが初めての方でも比較的簡単に楽しめます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-icon">2</div>
+        <div>
+          <h4>陸上講習＋インストラクター同行で安心サポート</h4>
+          <p>ツアー前に陸上でしっかり講習を受けられ、ツアー中もインストラクターが同行するので安心してSUPを楽しめます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-icon">3</div>
+        <div>
+          <h4>松の浦キャンプ場発、一日中遊べる環境</h4>
+          <p>SUPのあとはビーチで過ごすこともでき、琵琶湖で一日中遊べます。友達やワンちゃんとの参加も大歓迎です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <div class="section-title">お客様の声</div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>サップに興味を持ち始め、今回体験クラスを受けることに😊友達とワンコたちと参加しました♪教えてくれた女性の方がとても親切にわかりやすく教えてくれて。きれいなスポットまで連れて行ってくれて私も友達も大満足でした。ワンコたちにもとても優しく接して頂いてありがとうございました！サップ体験するなら絶対オススメです😁</p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>毎年夏の恒例の琵琶湖遊び✨️今年はSUPに初挑戦！スタッフさんも付いてくれて丁寧に指導してくれました。子どもたちの適応能力は素晴らしく、景色も水も綺麗で、終わってからも楽しく泳げました。</p>
+    </div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="container">
+    <div class="section-title">店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>琵琶湖サップ 松の浦 SUP</td></tr>
+      <tr><th>住所</th><td>滋賀県高島市勝野750</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:050-3613-0622">050-3613-0622</a></td></tr>
+      <tr><th>HP</th><td><a href="https://www.goodtimes88.jp/biwako-sup/" target="_blank" rel="noopener">公式サイトはこちら</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E6%BB%8B%E8%B3%80%E7%9C%8C%E9%AB%98%E5%B3%B6%E5%B8%82%E5%8B%9D%E9%87%8E750&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+    </div>
+    <div class="sns-links">
+      <a href="https://www.instagram.com/goodtimes88.jp/?hl=ja" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.goodtimes88.jp/contact/" target="_blank" rel="noopener">お問い合わせ</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>この夏、琵琶湖でSUPデビュー</h2>
+    <p>初心者も、友達とも、ワンちゃんとも。安心のインストラクター同行で琵琶湖を満喫しませんか？</p>
+    <div class="cta-buttons">
+      <a href="tel:050-3613-0622" class="cta-btn primary">📞 電話で予約・相談する</a>
+      <a href="https://www.goodtimes88.jp/contact/" target="_blank" rel="noopener" class="cta-btn secondary">✉️ フォームで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:050-3613-0622" class="tel">
+    <span class="icon">📞</span>電話する
+  </a>
+  <a href="https://www.goodtimes88.jp/contact/" target="_blank" rel="noopener">
+    <span class="icon">✉️</span>問い合わせ
+  </a>
+  <a href="https://www.instagram.com/goodtimes88.jp/?hl=ja" target="_blank" rel="noopener">
+    <span class="icon">📷</span>Instagram
+  </a>
+  <a href="https://www.goodtimes88.jp/biwako-sup/" target="_blank" rel="noopener">
+    <span class="icon">🌐</span>公式HP
+  </a>
+</nav>
+
+</body>
+</html>
