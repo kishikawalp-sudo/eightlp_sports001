@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>卓球専門店 山本 山卓｜滋賀県彦根市</title>
+<style>
+  :root{
+    --main:#c0392b;
+    --main-dark:#962c20;
+    --sub:#1a2a4a;
+    --gold:#e0a02c;
+    --bg:#faf7f2;
+    --text:#2c2c2c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--sub);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shopname{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  header .tel-btn{
+    background:var(--gold);
+    color:#2c2c2c;
+    font-weight:bold;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg, var(--sub) 0%, #2f4468 100%);
+    color:#fff;
+    padding:36px 20px 32px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-40px;right:-40px;
+    width:160px;height:160px;
+    border:6px solid var(--gold);
+    border-radius:50%;
+    opacity:0.3;
+  }
+  .hero .catch-sub{
+    font-size:13px;
+    color:var(--gold);
+    letter-spacing:2px;
+    margin-bottom:8px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:900;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero p.lead{
+    font-size:14px;
+    color:#dfe4ee;
+    margin-bottom:20px;
+  }
+  .hero-img{
+    width:100%;
+    border-radius:10px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.3);
+    margin-bottom:18px;
+    aspect-ratio:16/10;
+    object-fit:cover;
+  }
+  .hero-cta{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+  }
+  .btn{
+    display:block;
+    padding:13px 18px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:14px;
+    text-align:center;
+  }
+  .btn-primary{
+    background:var(--gold);
+    color:#2c2c2c;
+    flex:1;
+  }
+  .btn-outline{
+    background:transparent;
+    border:1px solid #fff;
+    color:#fff;
+    flex:1;
+  }
+
+  section{
+    padding:40px 20px;
+  }
+  .section-title{
+    text-align:center;
+    margin-bottom:26px;
+  }
+  .section-title .en{
+    font-size:11px;
+    color:var(--main);
+    letter-spacing:2px;
+    font-weight:bold;
+  }
+  .section-title h2{
+    font-size:21px;
+    margin-top:4px;
+    font-weight:900;
+    color:var(--sub);
+  }
+  .section-title .bar{
+    width:40px;height:3px;
+    background:var(--main);
+    margin:10px auto 0;
+  }
+
+  /* イチオシ Featured */
+  .featured{
+    background:#fff;
+  }
+  .featured-card{
+    border:2px solid var(--main);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(192,57,43,0.15);
+    margin-bottom:20px;
+  }
+  .featured-badge{
+    background:var(--main);
+    color:#fff;
+    font-weight:bold;
+    font-size:13px;
+    text-align:center;
+    padding:8px;
+    letter-spacing:1px;
+  }
+  .featured-card img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+  }
+  .featured-body{
+    padding:18px;
+  }
+  .featured-body h3{
+    font-size:18px;
+    color:var(--sub);
+    margin-bottom:10px;
+    font-weight:900;
+  }
+  .featured-body p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:12px;
+  }
+  .featured-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .featured-tags span{
+    background:#fbe9e7;
+    color:var(--main-dark);
+    font-size:12px;
+    padding:5px 10px;
+    border-radius:16px;
+    font-weight:bold;
+  }
+
+  /* Strengths */
+  .strengths{
+    background:var(--bg);
+  }
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 3px 10px rgba(0,0,0,0.06);
+    border-left:4px solid var(--gold);
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:34px;height:34px;
+    border-radius:50%;
+    background:var(--sub);
+    color:#fff;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--sub);
+    margin-bottom:6px;
+    font-weight:bold;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#555;
+  }
+
+  /* Gallery */
+  .gallery{
+    background:#fff;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:8px;
+  }
+
+  /* Review */
+  .review{
+    background:var(--sub);
+    color:#fff;
+  }
+  .review .section-title h2{color:#fff;}
+  .review-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:12px;
+    padding:20px;
+  }
+  .stars{
+    color:var(--gold);
+    font-size:18px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:#444;
+  }
+  .review-card .reviewer{
+    margin-top:12px;
+    font-size:12px;
+    color:#888;
+    text-align:right;
+  }
+
+  /* Shop info */
+  .shopinfo table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,0.06);
+  }
+  .shopinfo th{
+    background:#f3ede4;
+    color:var(--sub);
+    text-align:left;
+    padding:12px 10px;
+    width:30%;
+    white-space:nowrap;
+    font-weight:bold;
+    border-bottom:1px solid #eee;
+  }
+  .shopinfo td{
+    padding:12px 10px;
+    border-bottom:1px solid #eee;
+  }
+  .shopinfo tr:last-child th,
+  .shopinfo tr:last-child td{
+    border-bottom:none;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    display:block;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg, var(--main) 0%, var(--main-dark) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+    font-weight:900;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    margin-bottom:22px;
+    color:#ffe9e6;
+  }
+  .final-cta .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .final-cta .btn-white{
+    background:#fff;
+    color:var(--main);
+    font-weight:bold;
+    padding:15px;
+    border-radius:8px;
+    font-size:15px;
+  }
+  .final-cta .btn-line{
+    background:var(--gold);
+    color:#2c2c2c;
+    font-weight:bold;
+    padding:15px;
+    border-radius:8px;
+    font-size:15px;
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:#999;
+    background:var(--bg);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--sub);
+    font-weight:bold;
+    gap:2px;
+  }
+  .bottom-nav a.highlight{
+    background:var(--main);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    font-size:18px;
+  }
+
+  @media (min-width:480px){
+    .hero h1{font-size:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">卓球専門店 山本 山卓</div>
+  <a href="tel:0749235591" class="tel-btn">📞 電話する</a>
+</header>
+
+<section class="hero">
+  <div class="catch-sub">TABLE TENNIS SPECIALTY SHOP</div>
+  <h1>選び抜かれた一本が、<br>あなたの一打を変える。</h1>
+  <p class="lead">滋賀県彦根市の卓球専門店「山本 山卓」<br>ラケット・ラバー選定から卓球教室まで</p>
+  <img src="images/hero.jpg" alt="山本山卓 店内・卓球用品" class="hero-img">
+  <div class="hero-cta">
+    <a href="tel:0749235591" class="btn btn-primary">📞 電話で相談</a>
+    <a href="http://tts-yamamoto.jp/contact" class="btn btn-outline">お問い合わせ</a>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="section-title">
+    <div class="en">RECOMMEND</div>
+    <h2>イチオシ商品・サービス</h2>
+    <div class="bar"></div>
+  </div>
+
+  <div class="featured-card">
+    <div class="featured-badge">★ ラケット・ラバー選定 ★</div>
+    <img src="images/item1.jpg" alt="卓球ラケットとラバー">
+    <div class="featured-body">
+      <h3>卓球用品｜あなたに合った一本を</h3>
+      <p>シェイクハンド・ペンホルダーを問わず、プレースタイルや予算に合わせて最適なラケット・ラバーをご提案。両面のラバー貼替えやサイドテープの仕上げまで丁寧に対応します。</p>
+      <div class="featured-tags">
+        <span>ラケット選定</span>
+        <span>ラバー貼替え</span>
+        <span>予算に応じた提案</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="featured-card">
+    <div class="featured-badge">★ 卓球教室・ジュニアチーム ★</div>
+    <img src="images/item2.jpg" alt="卓球教室の様子">
+    <div class="featured-body">
+      <h3>卓球教室｜基礎から本格指導まで</h3>
+      <p>用品の販売だけでなく、卓球教室とジュニアチームの運営も行っています。お子様の初心者指導から競技志向のプレイヤーまで、経験豊富なスタッフがサポートします。</p>
+      <div class="featured-tags">
+        <span>卓球教室</span>
+        <span>ジュニアチーム運営</span>
+        <span>初心者歓迎</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">
+    <div class="en">STRENGTH</div>
+    <h2>選ばれる理由</h2>
+    <div class="bar"></div>
+  </div>
+  <div class="strength-list">
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div>
+        <h4>用品選びのプロによる的確な提案</h4>
+        <p>ラケット・ラバーの豊富な知識をもとに、プレースタイルや予算に合わせた最適な組み合わせをご提案します。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div>
+        <h4>卓球教室・ジュニアチームを自社運営</h4>
+        <p>販売だけにとどまらず、教室運営とジュニアチームの指導まで一貫して行う専門店ならではの体制です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div>
+        <h4>地域密着、彦根で愛されるお店</h4>
+        <p>滋賀県彦根市京町にて、地域の卓球愛好者からお子様まで幅広い層に長くご利用いただいています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-title">
+    <div class="en">GALLERY</div>
+    <h2>店内・用品紹介</h2>
+    <div class="bar"></div>
+  </div>
+  <div class="gallery-grid">
+    <img src="images/hero.jpg" alt="店内の様子">
+    <img src="images/item1.jpg" alt="卓球ラケット">
+  </div>
+</section>
+
+<section class="review">
+  <div class="section-title">
+    <div class="en">REVIEW</div>
+    <h2>お客様の声</h2>
+    <div class="bar"></div>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>卓球シェイクハンドのラバー両面の選定と貼替えをお願いしました。yasaka RAKZA7 黒厚と、YASAKA XTEND 赤厚とサイドテープで予算内に収めてくださいました。とても打ち心地が良くて満足しています。</p>
+    <div class="reviewer">- ご利用者様の口コミより</div>
+  </div>
+</section>
+
+<section class="shopinfo">
+  <div class="section-title">
+    <div class="en">SHOP INFO</div>
+    <h2>店舗情報</h2>
+    <div class="bar"></div>
+  </div>
+  <table>
+    <tr><th>店名</th><td>卓球専門店 山本 山卓</td></tr>
+    <tr><th>住所</th><td>滋賀県彦根市京町１丁目４−１５</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0749235591">0749-23-5591</a></td></tr>
+    <tr><th>定休日</th><td>木曜日<br><span style="font-size:12px;color:#888;">※木曜以外に不定休の場合がございます</span></td></tr>
+    <tr><th>HP</th><td><a href="http://tts-yamamoto.jp/" style="color:var(--main);word-break:break-all;">http://tts-yamamoto.jp/</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=滋賀県彦根市京町１丁目４−１５&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>ラケット・ラバー選び、卓球教室のご案内など<br>お電話・お問い合わせフォームにて承っております</p>
+  <div class="btn-group">
+    <a href="tel:0749235591" class="btn-white">📞 0749-23-5591 に電話する</a>
+    <a href="http://tts-yamamoto.jp/contact" class="btn-line">✉️ お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 卓球専門店 山本 山卓
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0749235591">
+    <span class="icon">📞</span>電話
+  </a>
+  <a href="http://tts-yamamoto.jp/" class="highlight">
+    <span class="icon">🏓</span>HP
+  </a>
+  <a href="http://tts-yamamoto.jp/contact">
+    <span class="icon">✉️</span>お問合せ
+  </a>
+</nav>
+
+</body>
+</html>
