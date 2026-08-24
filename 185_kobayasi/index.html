@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スポーツコバヤシ｜福井県敦賀市の野球用品専門店</title>
+<style>
+  :root{
+    --main-color:#0b3d91;
+    --accent-color:#e8590c;
+    --sub-color:#f5a623;
+    --bg-light:#f7f8fa;
+    --text-dark:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;top:0;left:0;width:100%;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:8px 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name{
+    font-size:16px;font-weight:bold;
+  }
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    background:#000;
+  }
+  .hero img{
+    width:100%;
+    height:auto;
+    opacity:0.85;
+  }
+  .hero-text{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,0.75));
+    color:#fff;
+    padding:24px 16px 18px;
+    text-align:center;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:1px 1px 4px rgba(0,0,0,0.8);
+  }
+  .hero-text .sub{
+    font-size:14px;
+    margin-top:6px;
+    color:#f5f5f5;
+  }
+
+  section{
+    padding:36px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:24px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:50px;height:4px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+    border-radius:2px;
+  }
+
+  /* イチオシ商品 */
+  .feature{
+    background:var(--bg-light);
+  }
+  .feature-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:14px;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .feature-box{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.1);
+    margin-bottom:20px;
+  }
+  .feature-box img{
+    width:100%;
+  }
+  .feature-box .content{
+    padding:18px;
+  }
+  .feature-box h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .feature-box p{
+    font-size:15px;
+  }
+  .feature-list{
+    margin-top:16px;
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+  }
+  .feature-list li{
+    list-style:none;
+    padding:10px 0 10px 30px;
+    position:relative;
+    font-size:15px;
+    border-bottom:1px dashed #ddd;
+  }
+  .feature-list li:last-child{border-bottom:none;}
+  .feature-list li::before{
+    content:"⚾";
+    position:absolute;
+    left:0;top:8px;
+    font-size:18px;
+  }
+
+  /* 強み・沿革 */
+  .strengths{
+    background:#fff;
+  }
+  .history-box{
+    background:var(--bg-light);
+    border-left:5px solid var(--main-color);
+    padding:18px;
+    border-radius:8px;
+    font-size:14.5px;
+    margin-bottom:20px;
+  }
+  .history-box .gen{
+    font-weight:bold;
+    color:var(--main-color);
+    display:block;
+    margin-bottom:4px;
+  }
+  .strength-cards{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-card{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:10px;
+    padding:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .strength-card h4{
+    color:var(--accent-color);
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .strength-card p{
+    font-size:14.5px;
+  }
+
+  /* 口コミ */
+  .reviews{
+    background:var(--bg-light);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .stars{
+    color:var(--sub-color);
+    font-size:18px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:#444;
+    white-space:pre-line;
+  }
+
+  /* 店舗情報 */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14.5px;
+  }
+  .shop-info th,.shop-info td{
+    padding:12px 10px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-info th{
+    width:30%;
+    color:var(--main-color);
+    white-space:nowrap;
+    font-weight:bold;
+  }
+  .map-wrap{
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:260px;
+    border:0;
+  }
+  .sns-link{
+    display:inline-block;
+    margin-top:8px;
+    color:#c13584;
+    font-weight:bold;
+  }
+
+  /* CTA */
+  .cta{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:20px;
+    margin-bottom:16px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:340px;
+    margin:0 auto;
+  }
+  .cta-buttons a{
+    display:block;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .btn-tel{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .btn-web{
+    background:#fff;
+    color:var(--main-color);
+  }
+  .btn-contact{
+    background:var(--sub-color);
+    color:#fff;
+  }
+
+  /* フッターナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;width:100%;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    color:var(--main-color);
+    font-weight:bold;
+  }
+  .bottom-nav a.highlight{
+    background:var(--accent-color);
+    color:#fff;
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:#888;
+    padding:20px 16px 70px;
+    background:#fafafa;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">スポーツ コバヤシ</div>
+  <a href="tel:0770220204" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="スポーツコバヤシ 店舗外観">
+  <div class="hero-text">
+    <div class="catch">元プロ野球選手が創業<br>敦賀の野球用品専門店</div>
+    <div class="sub">スポーツ コバヤシ｜昭和26年創業 有限会社スポーツコバヤシ</div>
+  </div>
+</div>
+
+<section class="feature">
+  <div class="section-title">イチオシ商品</div>
+  <div class="feature-badge">当店イチオシ</div>
+  <div class="feature-box">
+    <img src="images/baseball.jpg" alt="野球用品コーナー">
+    <div class="content">
+      <h3>野球用品</h3>
+      <p>創業以来こだわり続けてきた野球コーナー。オリジナル商品や店舗別注品を含む珍しい野球道具を多数取り揃え、グローブの型付けや修理も承っております。地元の高校球児からプロ野球選手も輩出しており、様々な選手を用品面から応援してまいりました。</p>
+    </div>
+  </div>
+  <div class="feature-list">
+    <li>オリジナル商品・店舗別注の野球道具が豊富</li>
+    <li>グローブ修理・薬指リング加工などの細やかな対応</li>
+    <li>地元高校球児からプロ選手まで幅広くサポート</li>
+    <li>バドミントン・卓球用品も取扱い、シューズの品揃えも充実</li>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">スポーツコバヤシの強み</div>
+  <div class="history-box">
+    <span class="gen">初代 小林利蔵（昭和26年創業）</span>
+    元プロ野球選手として名古屋金鯱（現・中日ドラゴンズ）で活躍した小林利蔵が、引退後に地元敦賀へ戻り「小林商店」としてスポーツ用品・文房具の販売を開始。冬にはスキー用品も扱っていました。
+  </div>
+  <div class="history-box">
+    <span class="gen">二代目 小林利一（昭和57年〜）</span>
+    店名を「スポーツ小林」に改め、スポーツ用品専門店として、特に野球関連に力を入れて展開。市内の高校からもプロ野球選手を輩出するなど、地域の選手たちを用品面から支え続けています。
+  </div>
+  <div class="strength-cards">
+    <div class="strength-card">
+      <h4>野球コーナーへのこだわり</h4>
+      <p>オリジナル商品や店舗別注品が多く、他店にはない珍しい野球道具を数多く取り揃えています。</p>
+    </div>
+    <div class="strength-card">
+      <h4>細やかなカスタマイズ対応</h4>
+      <p>グローブの薬指リング加工など、選手一人ひとりの要望に応じた丁寧な対応が評判です。</p>
+    </div>
+    <div class="strength-card">
+      <h4>バドミントン・卓球用品も充実</h4>
+      <p>バドミントンシューズは大型店に匹敵する品数を誇り、部活帰りの学生にも人気です。</p>
+    </div>
+    <div class="strength-card">
+      <h4>営業時間20時までゆっくり買い物</h4>
+      <p>表記は17時までですが実際は20時まで営業。学校や部活帰りでも余裕を持って来店できます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の口コミ</div>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>バドミントンと卓球用品を目的に行くので、他の売り場はよく分かりませんが、卓球用品は狭めで必要最低限といった感じ。野球用品が大半かな。バドミントンはシューズの種類が多いと思います。バドミントンシューズに関してはスポーツデポなどの大きな店舗と品数は変わらないかも。
+ネット販売もしてるのですが、何故かネットの方が安い！うちの息子(陸上部)のお気に入りのお店のひとつ😄
+夕方、営業時間17時までとなってますが・・・20時まで営業しているので、部活帰りでも、ゆっくり買い物に行けます✨</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>野球コーナーのこだわりが素晴らしい。オリジナル商品や店舗別注が多く、珍しい野球道具がたくさんあります。グローブ薬指リングお願いいたしました。素晴らしい出来だと思います。上手くなったような気がします 笑 この度はありがとうございました。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <table>
+    <tr><th>店名</th><td>スポーツ コバヤシ</td></tr>
+    <tr><th>会社名</th><td>有限会社 スポーツコバヤシ</td></tr>
+    <tr><th>代表者名</th><td>小林 利一</td></tr>
+    <tr><th>住所</th><td>福井県敦賀市神楽町1-3-23</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0770220204">0770-22-0204</a></td></tr>
+    <tr><th>定休日</th><td>火曜日</td></tr>
+    <tr><th>HP</th><td><a href="https://spokoba.jp/" target="_blank" rel="noopener">https://spokoba.jp/</a></td></tr>
+    <tr><th>メール</th><td>info@spokoba.jp</td></tr>
+    <tr><th>SNS</th><td><a class="sns-link" href="https://www.instagram.com/spokobaseball/" target="_blank" rel="noopener">Instagram @spokobaseball</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=福井県敦賀市神楽町1-3-23&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>野球用品のご相談は<br>スポーツコバヤシへ</h2>
+  <div class="cta-buttons">
+    <a class="btn-tel" href="tel:0770220204">📞 電話で問い合わせる</a>
+    <a class="btn-web" href="https://spokoba.jp/" target="_blank" rel="noopener">🌐 公式サイトを見る</a>
+    <a class="btn-contact" href="https://spokoba.jp/contact/" target="_blank" rel="noopener">✉️ お問い合わせフォーム</a>
+  </div>
+</section>
+
+<footer>
+  © 有限会社スポーツコバヤシ｜福井県敦賀市神楽町1-3-23
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0770220204">📞 電話</a>
+  <a href="https://spokoba.jp/" target="_blank" rel="noopener">🌐 HP</a>
+  <a class="highlight" href="https://spokoba.jp/contact/" target="_blank" rel="noopener">✉️ お問合せ</a>
+  <a href="https://www.instagram.com/spokobaseball/" target="_blank" rel="noopener">📷 Instagram</a>
+</nav>
+
+</body>
+</html>
