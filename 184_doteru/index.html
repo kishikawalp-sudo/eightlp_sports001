@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自転車処どてるし｜滋賀・大津 ロードバイク専門店</title>
+<style>
+  :root{
+    --main-color:#1a3c5e;
+    --accent-color:#e8622c;
+    --bg-light:#f7f5f1;
+    --text-dark:#242424;
+    --text-sub:#5c5c5c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:600px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--main-color);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 16px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header .shop-name{
+    color:#fff;font-size:15px;font-weight:bold;letter-spacing:0.5px;
+  }
+  .header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    padding:8px 14px;
+    border-radius:20px;
+    display:flex;align-items:center;gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    width:100%;
+    height:70vw;
+    max-height:420px;
+    overflow:hidden;
+  }
+  .hero img{width:100%;height:100%;object-fit:cover;}
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:24px 20px;
+  }
+  .hero-catch{
+    color:#fff;
+    font-size:23px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  }
+  .hero-sub{
+    color:#f0e6d8;
+    font-size:13px;
+    margin-top:10px;
+  }
+  .hero-loc{
+    display:inline-block;
+    margin-top:14px;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    font-size:12px;
+    padding:5px 12px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,0.4);
+  }
+
+  /* Section common */
+  section{padding:44px 0;}
+  .section-label{
+    text-align:center;
+    color:var(--accent-color);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:8px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:21px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:30px;
+  }
+
+  /* Featured product (イチオシ) */
+  .featured{
+    background:linear-gradient(180deg,#1a3c5e 0%,#0f2740 100%);
+    color:#fff;
+    padding:48px 0 44px;
+  }
+  .featured .section-label{color:#e8b98c;}
+  .featured .section-title{color:#fff;}
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 16px;
+    border-radius:16px;
+    margin-bottom:14px;
+  }
+  .featured-img-wrap{
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:20px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.35);
+  }
+  .featured-heading{
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:14px;
+    line-height:1.4;
+  }
+  .featured-heading span{color:var(--accent-color);}
+  .featured-text{
+    font-size:14.5px;
+    color:#dfe6ee;
+    margin-bottom:22px;
+  }
+  .featured-points{
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:12px;
+    padding:18px 20px;
+    margin-bottom:24px;
+  }
+  .featured-points li{
+    list-style:none;
+    display:flex;
+    gap:10px;
+    font-size:14px;
+    padding:8px 0;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .featured-points li:last-child{border-bottom:none;}
+  .featured-points li::before{
+    content:"✓";
+    color:var(--accent-color);
+    font-weight:bold;
+    flex-shrink:0;
+  }
+  .btn-primary{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    padding:16px;
+    border-radius:10px;
+    box-shadow:0 4px 14px rgba(232,98,44,0.4);
+  }
+  .btn-sub{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:transparent;
+    color:#fff;
+    font-size:14px;
+    font-weight:bold;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.5);
+    margin-top:10px;
+  }
+
+  /* Strengths */
+  .strengths{background:var(--bg-light);}
+  .strength-item{
+    background:#fff;
+    border-radius:12px;
+    padding:22px 20px;
+    margin-bottom:16px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  }
+  .strength-item h3{
+    font-size:16px;
+    color:var(--main-color);
+    margin-bottom:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .strength-item h3::before{
+    content:"";
+    width:6px;height:6px;
+    background:var(--accent-color);
+    border-radius:50%;
+    display:inline-block;
+  }
+  .strength-item p{font-size:13.5px;color:var(--text-sub);}
+
+  .shop-photo{
+    border-radius:12px;
+    overflow:hidden;
+    margin:24px 0;
+    box-shadow:0 4px 16px rgba(0,0,0,0.1);
+  }
+  .caption{
+    text-align:center;
+    font-size:12px;
+    color:var(--text-sub);
+    margin-top:8px;
+  }
+
+  /* Reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--bg-light);
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:18px;
+    position:relative;
+  }
+  .review-stars{
+    color:#f2a53d;
+    font-size:15px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+  }
+  .review-text{
+    font-size:13.5px;
+    color:var(--text-dark);
+    white-space:pre-line;
+  }
+
+  /* Shop info */
+  .shop-info{background:var(--bg-light);}
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  }
+  .info-table tr{border-bottom:1px solid #eee;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    width:96px;
+    text-align:left;
+    font-size:12.5px;
+    color:#fff;
+    background:var(--main-color);
+    padding:14px 12px;
+    vertical-align:top;
+    font-weight:bold;
+  }
+  .info-table td{
+    font-size:13.5px;
+    padding:14px 12px;
+    vertical-align:top;
+    color:var(--text-dark);
+    word-break:break-all;
+  }
+  .info-table td a{color:var(--accent-color);font-weight:bold;}
+  .map-wrap{margin-top:18px;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.06);}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  /* CTA section */
+  .cta{
+    background:linear-gradient(135deg,var(--accent-color),#c9491d);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{font-size:20px;margin-bottom:10px;}
+  .cta p{font-size:13.5px;margin-bottom:24px;color:#ffe9de;}
+  .cta .btn-primary{background:#fff;color:var(--accent-color);box-shadow:0 4px 14px rgba(0,0,0,0.2);}
+  .cta .btn-sub{border-color:rgba(255,255,255,0.6);}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #e5e5e5;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.08);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 0 8px;
+    font-size:11px;
+    color:var(--main-color);
+    font-weight:bold;
+  }
+  .bottom-nav a.tel{background:var(--accent-color);color:#fff;}
+  .bottom-nav .icon{font-size:18px;display:block;margin-bottom:2px;}
+
+  footer{
+    background:var(--main-color);
+    color:#cdd8e2;
+    text-align:center;
+    font-size:11px;
+    padding:24px 0;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="shop-name">自転車処どてるし</div>
+  <a href="tel:0775765010" class="tel-btn">📞 電話する</a>
+</header>
+
+<section class="hero">
+  <img src="images/hero.jpg" alt="自転車処どてるし ロードバイク">
+  <div class="hero-overlay">
+    <span class="hero-loc">滋賀県大津市小野 ｜ 湖周道路沿い</span>
+    <div class="hero-catch">あなたと自転車の<br>パフォーマンスを最大限に引き上げる。</div>
+    <div class="hero-sub">上質さと楽しさにこだわるスポーツ自転車専門店</div>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="container">
+    <div class="section-label">FEATURED ITEM</div>
+    <div class="section-title">イチオシ商品</div>
+    <span class="featured-badge">ROAD BIKE</span>
+    <div class="featured-heading">あなたの体に、<br><span>本当に合う</span>一台を。<br>ロードバイク</div>
+    <div class="featured-img-wrap">
+      <img src="images/roadbike.jpg" alt="ロードバイク イチオシ商品">
+    </div>
+    <p class="featured-text">
+      通信販売や大量販売の大型店では得られない、体格や柔軟性に合わせた本当のフィッティング。
+      既製品であっても最適な状態に組み替え、良い自転車を、より良い状態で、より長く、より楽しく乗れる一台に仕上げてご提供します。
+    </p>
+    <div class="featured-points">
+      <ul>
+        <li>体格・柔軟性に合わせたオーダー並みのフィッティング調整</li>
+        <li>ロード・クロス・MTB・グラベル・ツーリング・eBikeまで幅広く対応</li>
+        <li>購入後も技術面・イベント面・スキルアップ面で長くサポート</li>
+      </ul>
+    </div>
+    <a href="tel:0775765010" class="btn-primary">📞 電話でロードバイクの相談をする</a>
+    <a href="https://spokoba.jp/contact/" class="btn-sub">お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="container">
+    <div class="section-label">STRENGTH</div>
+    <div class="section-title">選ばれる理由</div>
+
+    <div class="strength-item">
+      <h3>専門技術と専門知識</h3>
+      <p>各種レース・自転車旅・サイクリングイベントに合わせた車体・パーツ・カスタムチューニングをご提供。確実さ・丁寧さ・安全性を優先し、時間をかけて組立・修理を行います（要予約）。</p>
+    </div>
+    <div class="strength-item">
+      <h3>上質さと楽しさへの、こだわり</h3>
+      <p>常に上質な製品とサービスを追求しながら、楽しさも同じだけ大切に。ユルくて真面目なスタッフが、全力で楽しいスポーツバイクライフをサポートします。</p>
+    </div>
+    <div class="strength-item">
+      <h3>買った後も、ずっと頼れる店</h3>
+      <p>技術面・イベントやお楽しみ面・スキルアップ面まで、気軽にご相談いただける立ち位置で末永くサポート。だからこそ「ここで買えばよかった」と言われないお店を目指しています。</p>
+    </div>
+
+    <div class="shop-photo">
+      <img src="images/shop.jpg" alt="自転車処どてるし 店舗外観">
+    </div>
+    <p class="caption">琵琶湖大橋の少し北側、JR小野駅の下にあるお店です</p>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <div class="section-label">VOICE</div>
+    <div class="section-title">お客様の声</div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <div class="review-text">ビワイチ中、雨に振られてチェーンルブが全て流れてしまいました。
+たまたま近くにあったこちらのお店でチェーンオイルを購入したところ、とても気持ちのいい接客をしていただけました。
+「すぐ塗布したい」と伝えるとパッケージを剥いてゴミも回収してくださり、「拭き取り用のウエスも要りますよね」と店の奥から出してくださいました。
+サイクリスト目線の心遣いに感謝です。</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">車に輪行する際にパンクに気づき、福井へ向かう途中で立ち寄りチューブ交換をお願いしました。
+快く作業していただき、パンクの原因まで調べていただき大変ありがたかったです。
+家から少し遠いですが、今度はメンテナンスもお願いしたいと思います。</div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="container">
+    <div class="section-label">SHOP INFO</div>
+    <div class="section-title">店舗情報</div>
+
+    <table class="info-table">
+      <tr><th>店名</th><td>自転車処どてるし</td></tr>
+      <tr><th>住所</th><td>滋賀県大津市小野３５０−３</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0775765010">0775-76-5010</a></td></tr>
+      <tr><th>定休日</th><td>毎週 火・水曜日</td></tr>
+      <tr><th>HP</th><td><a href="http://www.doterushi.com/" target="_blank">www.doterushi.com</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://spokoba.jp/contact/" target="_blank">お問い合わせフォーム</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@doterushi.com">info@doterushi.com</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.facebook.com/doterushi" target="_blank">Facebook</a></td></tr>
+    </table>
+
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=滋賀県大津市小野350-3&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>ロードバイク・クロスバイク・MTB・グラベルロード・ツーリング車・eBikeまで、あなたにぴったりの一台をご提案します。</p>
+    <a href="tel:0775765010" class="btn-primary">📞 0775-76-5010 に電話する</a>
+    <a href="https://spokoba.jp/contact/" class="btn-sub">お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<footer>
+  © 自転車処どてるし
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0775765010" class="tel"><span class="icon">📞</span>電話</a>
+  <a href="https://spokoba.jp/contact/"><span class="icon">✉️</span>お問合せ</a>
+  <a href="https://maps.google.com/maps?q=滋賀県大津市小野350-3" target="_blank"><span class="icon">📍</span>地図</a>
+  <a href="http://www.doterushi.com/" target="_blank"><span class="icon">🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
