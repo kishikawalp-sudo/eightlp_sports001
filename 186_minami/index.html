@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ミナミ卓球用品｜福井県越前市の卓球専門店</title>
+<style>
+  :root{
+    --main:#c8102e;
+    --main-dark:#96001f;
+    --accent:#003399;
+    --bg:#fff8f4;
+    --text:#222;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    padding-top:60px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main);
+    color:#fff;
+    height:60px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shopname{
+    font-size:16px;font-weight:bold;
+  }
+  header .tel-btn{
+    background:#fff;color:var(--main);
+    padding:8px 14px;border-radius:24px;
+    font-weight:bold;font-size:14px;
+    display:flex;align-items:center;gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;height:320px;object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,0.75));
+    color:#fff;padding:24px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:22px;font-weight:bold;line-height:1.4;
+    margin-bottom:8px;
+    text-shadow:0 2px 4px rgba(0,0,0,0.5);
+  }
+  .hero-overlay .stars{
+    color:#ffd700;font-size:18px;
+  }
+  .hero-badge{
+    position:absolute;top:16px;right:16px;
+    background:var(--accent);color:#fff;
+    padding:8px 12px;border-radius:8px;
+    font-size:13px;font-weight:bold;
+    line-height:1.5;
+    box-shadow:0 2px 6px rgba(0,0,0,0.3);
+  }
+
+  section{
+    padding:32px 16px;
+  }
+  .section-title{
+    text-align:center;font-size:22px;font-weight:bold;
+    color:var(--main);margin-bottom:20px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";display:block;width:50px;height:3px;
+    background:var(--main);margin:10px auto 0;
+  }
+
+  /* Featured */
+  .featured{
+    background:#fff;
+  }
+  .featured-box{
+    border:3px solid var(--main);
+    border-radius:12px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  }
+  .featured-box img{
+    width:100%;height:220px;object-fit:cover;
+  }
+  .featured-content{
+    padding:18px;
+  }
+  .featured-content h3{
+    color:var(--main-dark);font-size:19px;margin-bottom:10px;
+  }
+  .featured-content p{
+    font-size:15px;line-height:1.8;margin-bottom:14px;
+  }
+  .featured-tags{
+    display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;
+  }
+  .featured-tags span{
+    background:#ffecec;color:var(--main-dark);
+    font-size:13px;font-weight:bold;
+    padding:6px 12px;border-radius:20px;
+  }
+  .cta-btn{
+    display:block;text-align:center;
+    background:var(--main);color:#fff;
+    font-size:17px;font-weight:bold;
+    padding:14px;border-radius:8px;
+    box-shadow:0 4px 10px rgba(200,16,46,0.4);
+  }
+
+  /* Strengths */
+  .strengths-list{
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .strength-item{
+    background:#fff;border-radius:10px;
+    padding:16px;display:flex;gap:14px;align-items:flex-start;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .strength-num{
+    background:var(--main);color:#fff;
+    width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;font-size:16px;flex-shrink:0;
+  }
+  .strength-text h4{
+    font-size:16px;color:var(--main-dark);margin-bottom:4px;
+  }
+  .strength-text p{
+    font-size:14px;line-height:1.7;color:#444;
+  }
+
+  /* Gallery */
+  .gallery{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  }
+  .gallery img{
+    border-radius:8px;width:100%;height:130px;object-fit:cover;
+  }
+  .gallery .full{
+    grid-column:span 2;height:180px;
+  }
+
+  /* Reviews */
+  .review-box{
+    background:#fff;border-left:4px solid var(--main);
+    border-radius:8px;padding:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .review-box .stars{color:#ffb400;font-size:18px;margin-bottom:8px;}
+  .review-box p{font-size:14.5px;line-height:1.8;color:#333;}
+
+  /* Shop info */
+  .shop-info{
+    background:#fff;
+  }
+  .info-table{
+    width:100%;border-collapse:collapse;
+    background:#fff;border-radius:8px;overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .info-table th,.info-table td{
+    padding:12px 10px;font-size:14px;
+    border-bottom:1px solid #eee;text-align:left;
+  }
+  .info-table th{
+    background:#fff3f3;color:var(--main-dark);
+    width:30%;white-space:nowrap;
+  }
+  .map-wrap{
+    margin-top:16px;border-radius:8px;overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .map-wrap iframe{
+    width:100%;height:220px;border:0;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--main);color:#fff;text-align:center;
+  }
+  .final-cta h2{font-size:21px;margin-bottom:10px;}
+  .final-cta p{font-size:14px;margin-bottom:20px;line-height:1.7;}
+  .final-cta .btn-group{
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .final-cta .btn{
+    background:#fff;color:var(--main);
+    padding:14px;border-radius:8px;font-weight:bold;font-size:16px;
+  }
+  .final-cta .btn.outline{
+    background:transparent;color:#fff;border:2px solid #fff;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;height:60px;
+    background:#fff;box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    font-size:12px;font-weight:bold;color:var(--main-dark);
+    gap:2px;
+  }
+  .bottom-nav a.call{
+    background:var(--main);color:#fff;
+  }
+  .bottom-nav .icon{font-size:18px;}
+
+  @media (min-width:600px){
+    .hero img{height:400px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">ミナミ卓球用品</div>
+  <a href="tel:0778223733" class="tel-btn">📞 0778-22-3733</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="ミナミ卓球用品 店舗外観">
+  <div class="hero-badge">日本代表選手も<br>使用する卓球用品</div>
+  <div class="hero-overlay">
+    <div class="stars">★★★★★</div>
+    <div class="catch">福井県越前市の卓球専門店<br>ミナミ卓球用品</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title">イチオシ</div>
+  <div class="featured-box">
+    <img src="images/product.jpg" alt="卓球用品・卓球教室">
+    <div class="featured-content">
+      <h3>卓球用品＆卓球教室</h3>
+      <p>日本代表選手も使用する本格卓球用品を豊富に取り揃える専門店。店内には卓球台8台を完備した卓球場も併設し、夜には子どもたちが練習に励んでいます。用具選びから練習環境まで、卓球のことなら何でもお任せください。スクールも開催中です♪</p>
+      <div class="featured-tags">
+        <span>代表選手使用モデルあり</span>
+        <span>卓球台8台完備</span>
+        <span>卓球スクール開催中</span>
+      </div>
+      <a href="tel:0778223733" class="cta-btn">📞 まずはお電話でご相談</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="strengths-list">
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div class="strength-text">
+        <h4>日本代表選手も使用する専門用品</h4>
+        <p>トップレベルの選手が実際に使用するラケット・ラバーなど、本格的な卓球用品を取り扱う専門店です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div class="strength-text">
+        <h4>卓球台8台の卓球場を併設</h4>
+        <p>店舗内に卓球台を8台完備。購入した用具をその場で試し打ちできるほか、夜は子どもたちの練習の場としても賑わっています。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div class="strength-text">
+        <h4>卓球スクールを開催</h4>
+        <p>初心者からジュニアまで対応するスクールを開催中。基本から丁寧に指導するので、これから卓球を始めたい方にもおすすめです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="section-title">店内のご紹介</div>
+  <div class="gallery">
+    <img class="full" src="images/court.jpg" alt="卓球場・卓球台8台">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="review-box">
+    <div class="stars">★★★★★</div>
+    <p>日本代表選手も使用する卓球用品がある専門店で、卓球場もあり卓球台は8台。夜は子どもたちが練習していて、地域に根差した卓球専門店だと感じました。スクールもやっているので家族で通っています。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>ミナミ卓球用品</td></tr>
+    <tr><th>住所</th><td>福井県越前市本保町25-2</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0778223733">0778-22-3733</a></td></tr>
+    <tr><th>定休日</th><td>毎週月曜日</td></tr>
+    <tr><th>ホームページ</th><td><a href="http://minamilabo.com/" target="_blank">minamilabo.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E7%A6%8F%E4%BA%95%E7%9C%8C%E8%B6%8A%E5%89%8D%E5%B8%82%E6%9C%AC%E4%BF%9D%E7%94%BA25-2&z=16&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>卓球のことなら何でもご相談ください</h2>
+  <p>用具選びから卓球教室のお問い合わせまで、お気軽にご連絡ください。</p>
+  <div class="btn-group">
+    <a href="tel:0778223733" class="btn">📞 電話で問い合わせる</a>
+    <a href="https://minamilabo.com/inquiry/" target="_blank" class="btn outline">✉️ フォームで問い合わせる</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0778223733" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://minamilabo.com/inquiry/" target="_blank"><span class="icon">✉️</span>問い合わせ</a>
+  <a href="http://minamilabo.com/" target="_blank"><span class="icon">🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
