@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブルーアース｜福井市の登山・アウトドア専門店</title>
+<style>
+  :root{
+    --main-color:#0d3b66;
+    --accent-color:#ee9b00;
+    --bg-light:#f7f9fb;
+    --text-dark:#1a1a1a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name{font-size:16px;font-weight:bold;}
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{width:100%;height:60vw;max-height:420px;object-fit:cover;filter:brightness(0.6);}
+  .hero-text{
+    position:absolute;top:0;left:0;right:0;bottom:0;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    padding:0 20px;
+  }
+  .hero-text .catch{
+    font-size:22px;font-weight:bold;line-height:1.5;
+    text-shadow:0 2px 8px rgba(0,0,0,0.6);
+    margin-bottom:12px;
+  }
+  .hero-text .sub{
+    font-size:14px;
+    background:rgba(0,0,0,0.4);
+    padding:6px 14px;
+    border-radius:20px;
+  }
+
+  /* Section common */
+  section{padding:40px 20px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:8px;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent-color);
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:14px;
+    color:#555;
+    margin-bottom:28px;
+  }
+
+  /* Featured Product */
+  .featured{
+    background:linear-gradient(180deg, var(--bg-light) 0%, #fff 100%);
+  }
+  .featured-card{
+    background:#fff;
+    border:2px solid var(--accent-color);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  }
+  .featured-card img{width:100%;height:220px;object-fit:cover;}
+  .featured-card .badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:0 0 8px 0;
+  }
+  .featured-card .body{padding:18px;}
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14px;
+    line-height:1.8;
+    color:#333;
+    margin-bottom:16px;
+  }
+  .featured-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .featured-tags span{
+    background:var(--bg-light);
+    color:var(--main-color);
+    font-size:12px;
+    padding:5px 10px;
+    border-radius:16px;
+    border:1px solid #d8e2ea;
+  }
+  .cta-inline{
+    display:block;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+
+  /* Strengths */
+  .strengths{background:#fff;}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    margin-bottom:24px;
+    align-items:flex-start;
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:40px;height:40px;
+    background:var(--main-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main-color);
+    margin-bottom:6px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#555;
+    line-height:1.7;
+  }
+
+  /* Gallery */
+  .gallery{background:var(--bg-light);}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    width:100%;height:140px;object-fit:cover;border-radius:8px;
+  }
+  .gallery-grid .full{grid-column:1 / -1;height:180px;}
+
+  /* Reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--bg-light);
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:16px;
+  }
+  .review-stars{color:var(--accent-color);font-size:15px;margin-bottom:8px;}
+  .review-card p{
+    font-size:13px;
+    line-height:1.8;
+    color:#333;
+  }
+
+  /* Shop info */
+  .shop-info{background:var(--bg-light);}
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .info-table tr{border-bottom:1px solid #eee;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    width:90px;
+    text-align:left;
+    background:#eef3f7;
+    color:var(--main-color);
+    font-size:13px;
+    padding:12px 10px;
+    vertical-align:top;
+  }
+  .info-table td{
+    font-size:13px;
+    padding:12px 10px;
+    line-height:1.6;
+    word-break:break-all;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  /* CTA section */
+  .cta-section{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{font-size:19px;margin-bottom:10px;}
+  .cta-section p{font-size:13px;margin-bottom:20px;opacity:0.9;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .cta-buttons a{
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-buttons .primary{background:var(--accent-color);color:#fff;}
+  .cta-buttons .secondary{background:#fff;color:var(--main-color);}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    font-size:11px;
+    color:var(--main-color);
+    gap:2px;
+  }
+  .bottom-nav a.tel{background:var(--accent-color);color:#fff;}
+  .bottom-nav .icon{font-size:18px;}
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:#999;
+    background:#fff;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">ブルーアース</div>
+  <a href="tel:0776975585" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="ブルーアース 店内">
+  <div class="hero-text">
+    <div class="catch">登山アイテムに特化した<br>福井の本格アウトドアショップ</div>
+    <div class="sub">アークテリクス・ノローナ取扱店</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title"><span>PICK UP</span>イチオシ商品</div>
+  <div class="section-lead">オーナー厳選、本格アウトドア用品</div>
+  <div class="featured-card">
+    <div class="badge">オーナー厳選</div>
+    <img src="images/product.jpg" alt="アウトドア用品">
+    <div class="body">
+      <h3>アウトドア用品（登山・キャンプギア）</h3>
+      <p>広くはない店内に、各ジャンルの厳選された商品をぎゅっと凝縮。アークテリクスやノローナといったハイブランドも取り扱い、価格に見合う確かな品質をご提供しています。経験豊富なオーナーが、あなたの山行スタイルに合わせて最適な一着・一品をご提案します。</p>
+      <div class="featured-tags">
+        <span>ARC'TERYX取扱</span>
+        <span>NORRØNA取扱</span>
+        <span>登山アイテム専門</span>
+      </div>
+      <a href="tel:0776975585" class="cta-inline">📞 まずはお電話でご相談</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title"><span>STRENGTH</span>選ばれる理由</div>
+  <div class="strength-item">
+    <div class="strength-num">1</div>
+    <div>
+      <h4>厳選された品揃え</h4>
+      <p>広すぎない店内だからこそ、各ジャンルで本当に良いものだけを厳選。迷わず自分に合った商品にたどり着けます。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">2</div>
+    <div>
+      <h4>ハイブランドの本格ラインナップ</h4>
+      <p>アークテリクス、ノローナなど海外ハイブランドを取り扱い。価格以上のしっかりとした品質をご体感いただけます。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">3</div>
+    <div>
+      <h4>頼れるオーナーのアドバイス</h4>
+      <p>感じの良いオーナーが、経験豊富なアドバイザーとして親身に対応。コアな話も楽しめる、山好きが集う一軒です。</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-title"><span>GALLERY</span>店内・商品紹介</div>
+  <div class="gallery-grid">
+    <img src="images/hero.jpg" alt="ブルーアース 店内の様子">
+    <img src="images/product.jpg" alt="取扱商品">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title"><span>VOICE</span>お客様の声</div>
+  <div class="review-card">
+    <div class="review-stars">★★★★</div>
+    <p>登山アイテムに特化して、広くはない店内に各ジャンル厳選された商品が並んでいる感じ。オーナーさんが感じ良くて、アドバイザーとしても経験豊富そうで頼りになります。</p>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p>アークテリクスやノローナなどハイブランドを扱ってお値段もしますが、それだけしっかりしていてオーナー様とのコアな話も聞けます。一見さんには出入りしづらいかもしれませんが、入ってみれば優しく対応してくれますよ🎶 アークテリクスとノローナ2代ブランド!! コアな話も出来て良いお店です。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>ブルーアース</td></tr>
+    <tr><th>代表者</th><td>角野嘉昭</td></tr>
+    <tr><th>住所</th><td>福井県福井市江守中１丁目１０１ 江守センタービル103</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0776975585">0776-97-5585</a></td></tr>
+    <tr><th>HP</th><td><a href="https://www.blueearth.tv/" target="_blank">https://www.blueearth.tv/</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@blueearth.tv">info@blueearth.tv</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://x.com/BlueEarth1" target="_blank">X（旧Twitter）</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E7%A6%8F%E4%BA%95%E7%9C%8C%E7%A6%8F%E4%BA%95%E5%B8%82%E6%B1%9F%E5%AE%88%E4%B8%AD%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%90%EF%BC%91&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>まずはお気軽にご来店・ご相談を</h2>
+  <p>アークテリクス・ノローナをはじめ、本格アウトドア用品を厳選してご用意しています</p>
+  <div class="cta-buttons">
+    <a href="tel:0776975585" class="primary">📞 電話で問い合わせる</a>
+    <a href="https://www.blueearth.tv/" target="_blank" class="secondary">🌐 公式サイトを見る</a>
+  </div>
+</section>
+
+<footer>
+  &copy; ブルーアース
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0776975585" class="tel"><span class="icon">📞</span>電話</a>
+  <a href="#shop-info"><span class="icon">📍</span>アクセス</a>
+  <a href="https://www.blueearth.tv/" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="https://x.com/BlueEarth1" target="_blank"><span class="icon">✕</span>SNS</a>
+</nav>
+
+</body>
+</html>
