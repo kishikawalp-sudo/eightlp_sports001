@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ミツウマスポーツ | 京都府福知山市の野球・ソフトボール専門店</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for crisp typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #b91c1c 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-red-600 selection:text-white">
+
+    <!-- ヘッダー / ナビゲーション -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="bg-red-600 text-white font-black px-3 py-1 rounded-lg text-lg tracking-wider">ミツウマ</span>
+                <span class="font-bold text-slate-900 text-lg sm:text-xl">ミツウマスポーツ</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="#feature" class="hover:text-red-600 transition">イチオシ商品</a>
+                <a href="#about" class="hover:text-red-600 transition">選ばれる理由</a>
+                <a href="#reviews" class="hover:text-red-600 transition">お客様の声</a>
+                <a href="#access" class="hover:text-red-600 transition">店舗情報</a>
+            </div>
+            <div>
+                <a href="tel:0773222665" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-xl text-sm shadow-md transition flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>0773-222-665</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション（ファーストビュー） -->
+    <section class="hero-gradient text-white py-16 sm:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-red-500/30 border border-red-400/30 text-red-200 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                    <i class="fa-solid fa-medal"></i> 京都府福知山市の野球・ソフトボール専門店
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+                    本物を知るプレイヤーへ。<br>
+                    <span class="text-amber-300">専門的で確かな道具</span>と、<br>プロのフィッティング。
+                </h1>
+                <p class="text-slate-200 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+                    野球用品を中心に、専門的で良いものだけを厳選。豊富な品揃えと丁寧なアドバイスで、あなたのパフォーマンスを最大限に引き出します。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                    <a href="#feature" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-black px-8 py-4 rounded-2xl shadow-lg transition text-center text-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-baseball-bat-ball"></i> イチオシ野球用品を見る
+                    </a>
+                    <a href="#access" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-6 py-4 rounded-2xl transition text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-location-dot"></i> アクセス・営業時間
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="relative w-full max-w-md rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-slate-900">
+                    <img src="images/store_front.jpg" alt="ミツウマスポーツ 店舗外観" class="w-full h-80 sm:h-96 object-cover" onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Mitsuuma+Sports'">
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
+                        <span class="text-xs uppercase tracking-widest text-amber-300 font-bold">Mitsuuma Sports</span>
+                        <p class="text-lg font-bold">京都府福知山市駅南町２丁目２９１</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最大限の訴求：イチオシ商品・サービスセクション -->
+    <section id="feature" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-red-600 font-extrabold tracking-wider text-sm uppercase">FEATURED PRODUCTS & SERVICES</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900">こだわり抜いた「野球・ソフトボール用品」</h2>
+                <div class="w-16 h-1.5 bg-red-600 mx-auto rounded-full"></div>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    「薄っぺらくない」本気のアドバイスと豊富な品揃え。グラブ、バット、スパイクなど、あなたにぴったりの逸品が見つかります。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-50">
+                    <img src="images/baseball_gear.jpg" alt="野球用品グラブ・バット" class="w-full h-72 sm:h-96 object-cover hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/ef4444/ffffff?text=Baseball+Gear+%26+Equipment'">
+                </div>
+                <div class="space-y-6">
+                    <div class="inline-block bg-red-100 text-red-700 px-4 py-1.5 rounded-full text-sm font-bold">専門店クオリティ</div>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-snug">
+                        プロも納得の品揃えと、妥協のない専門アドバイス
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        ミツウマスポーツでは、初心者から上級者まで満足できる本格的な野球・ソフトボール用品を取り揃えています。道具のメンテナンス、型付け、ポジションに合わせた選び方まで、スタッフが親身になって丁寧にご説明いたします。
+                    </p>
+                    <ul class="space-y-3 font-medium text-slate-700">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-red-600 text-xl"></i>
+                            <span>専門知識に基づいた的確で丁寧なアドバイス</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-red-600 text-xl"></i>
+                            <span>初心者でも気さくに相談できる安心の接客</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-red-600 text-xl"></i>
+                            <span>商品入れ替え時期の掘り出し物やお得なチャンスも！</span>
+                        </li>
+                    </ul>
+                    <div class="pt-4">
+                        <a href="tel:0773222665" class="inline-flex items-center gap-3 bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-2xl shadow-lg transition">
+                            <i class="fa-solid fa-phone-volume text-amber-400"></i>
+                            <span>在庫状況・ご相談はお電話で！</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- クチコミ・お客様の声セクション -->
+    <section id="reviews" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-red-600 font-extrabold tracking-wider text-sm uppercase">CUSTOMER REVIEWS</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900">お客様から寄せられた嬉しいクチコミ</h2>
+                <div class="w-16 h-1.5 bg-red-600 mx-auto rounded-full"></div>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    実際にご来店いただいたお客様からの温かいお言葉をご紹介します。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- クチコミ1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-400 text-lg space-x-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-base sm:text-lg italic leading-relaxed">
+                            「野球用品を中心に、専門的で良いものを置いておられます。アドバイスも薄っぺらくない！商品入れ替え時期は安くなっていて狙い目。野球とソフトボール用品の専門店です。品揃えが豊富で接客も丁寧に説明をしてくださいます。掘り出し物もあります。オススメします。」
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">野球愛好家のお客様</p>
+                            <p class="text-xs text-slate-500">Googleクチコミ評価 ★★★★☆</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- クチコミ2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-400 text-lg space-x-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-base sm:text-lg italic leading-relaxed">
+                            「初めてお邪魔しましたが、気さくに相談も出来て仕事も丁寧で安心してお任せ出来る良いショップです」
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">初めてご来店されたお客様</p>
+                            <p class="text-xs text-slate-500">Googleクチコミ評価 ★★★★★</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 選ばれる理由 / バナー画像セクション -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-red-600 font-extrabold tracking-wider text-sm uppercase">WHY CHOOSE US</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900">
+                    福知山で信頼され続ける、<br>地域密着のスポーツ店
+                </h2>
+                <p class="text-slate-600 leading-relaxed">
+                    ミツウマスポーツは、プレイヤー一人ひとりの悩みやプレースタイルに寄り添った丁寧な接客を大切にしています。ただ商品を売るだけでなく、長く愛用できるメンテナンスやアドバイスまでトータルでサポート。
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-2">
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <i class="fa-solid fa-face-smile text-red-600 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-slate-900 text-sm">気さくな相談対応</h4>
+                        <p class="text-xs text-slate-500 mt-1">初心者の方も安心してお気軽にご相談ください。</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <i class="fa-solid fa-tags text-red-600 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-slate-900 text-sm">掘り出し物・セール</h4>
+                        <p class="text-xs text-slate-500 mt-1">商品入れ替え時期はお得な狙い目です！</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+                    <img src="images/shop_interior.jpg" alt="ミツウマスポーツ 店内風景" class="w-full h-80 sm:h-96 object-cover" onerror="this.src='https://placehold.co/600x400/334155/ffffff?text=Store+Interior'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 店舗情報 / アクセスセクション -->
+    <section id="access" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-red-400 font-extrabold tracking-wider text-sm uppercase">STORE INFORMATION</span>
+                <h2 class="text-3xl sm:text-4xl font-black">店舗概要・アクセス</h2>
+                <div class="w-16 h-1.5 bg-red-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-slate-800/60 p-8 sm:p-12 rounded-3xl border border-slate-700 shadow-2xl">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-amber-300">株式会社美津馬 ミツウマスポーツ</h3>
+                    <ul class="space-y-4 text-slate-300 text-sm sm:text-base">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-red-500 text-xl mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-white block">住所</span>
+                                <span>〒620-0934 京都府福知山市駅南町２丁目２９１</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-red-500 text-xl mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-white block">電話番号</span>
+                                <a href="tel:0773222665" class="hover:text-amber-300 transition underline">0773-222-665</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-calendar-days text-red-500 text-xl mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-white block">定休日</span>
+                                <span>火曜日・第二木曜日</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-red-500 text-xl mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-white block">メールアドレス</span>
+                                <a href="mailto:mitsuuma@mitsuuma.jp" class="hover:text-amber-300 transition underline">mitsuuma@mitsuuma.jp</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-globe text-red-500 text-xl mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-white block">公式サイト</span>
+                                <a href="https://mitsuumasports.com/" target="_blank" rel="noopener noreferrer" class="hover:text-amber-300 transition underline">https://mitsuumasports.com/</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col justify-center space-y-6">
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-700 text-center space-y-4">
+                        <h4 class="text-xl font-bold">野球・ソフトボールのご相談ならお気軽に！</h4>
+                        <p class="text-slate-400 text-sm">
+                            ご来店前のお問い合わせや商品在庫の確認など、いつでもお気軽にお電話ください。
+                        </p>
+                        <a href="tel:0773222665" class="block w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl shadow-lg transition text-lg">
+                            <i class="fa-solid fa-phone mr-2"></i> 0773-222-665 に発信
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-slate-950 text-slate-500 py-8 text-center text-xs sm:text-sm border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <p class="font-bold text-slate-300">株式会社美津馬 ミツウマスポーツ</p>
+            <p>&copy; Mitsuuma Sports All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
