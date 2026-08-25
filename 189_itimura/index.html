@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ラケットショップ イチムラ｜京都のテニス・バドミントン専門店</title>
+<style>
+  :root{
+    --main:#0b4d3a;
+    --accent:#e8a13c;
+    --dark:#1a1a1a;
+    --light:#f7f5ef;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark);
+    background:var(--light);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{width:100%;display:block;object-fit:cover;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--main);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shopname{font-size:15px;font-weight:bold;}
+  header .call-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* hero */
+  .hero{position:relative;}
+  .hero img{height:56vw;max-height:340px;}
+  .hero-overlay{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,.75));
+    color:#fff;
+    padding:30px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:22px;font-weight:bold;line-height:1.4;
+    text-shadow:0 1px 4px rgba(0,0,0,.5);
+  }
+  .hero-overlay .sub{font-size:13px;margin-top:6px;opacity:.9;}
+
+  section{padding:36px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:22px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent);
+    margin:10px auto 0;
+  }
+
+  /* featured */
+  .featured{background:#fff;}
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:14px;
+    margin-bottom:10px;
+  }
+  .featured-box{
+    background:var(--light);
+    border:2px solid var(--main);
+    border-radius:12px;
+    padding:18px;
+    margin-top:16px;
+  }
+  .featured-box img{border-radius:8px;margin-bottom:14px;}
+  .featured-box h3{
+    color:var(--main);
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .featured-box p{font-size:14.5px;}
+  .featured-box .price-tag{
+    margin-top:14px;
+    text-align:center;
+    font-weight:bold;
+    color:var(--main);
+    font-size:14px;
+    background:#fff;
+    border:1px dashed var(--accent);
+    padding:10px;
+    border-radius:8px;
+  }
+
+  /* founder story */
+  .story{background:var(--main);color:#fff;}
+  .story .section-title{color:#fff;}
+  .story .section-title::after{background:var(--accent);}
+  .story p{font-size:14.5px;white-space:pre-line;}
+  .story .signature{margin-top:16px;text-align:right;font-size:13px;opacity:.85;}
+
+  /* strengths */
+  .strengths{background:#fff;}
+  .strength-item{
+    display:flex;
+    gap:12px;
+    background:var(--light);
+    border-radius:10px;
+    padding:14px;
+    margin-bottom:14px;
+    align-items:flex-start;
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:34px;height:34px;
+    border-radius:50%;
+    background:var(--main);
+    color:#fff;
+    font-weight:bold;
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;
+  }
+  .strength-item p{font-size:14px;}
+
+  /* reviews */
+  .reviews{background:var(--light);}
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:16px;
+    box-shadow:0 2px 6px rgba(0,0,0,.06);
+  }
+  .stars{color:var(--accent);font-size:16px;margin-bottom:8px;letter-spacing:2px;}
+  .review-card p{font-size:13.5px;white-space:pre-line;}
+
+  /* shop image gallery */
+  .gallery{background:#fff;}
+  .gallery img{border-radius:10px;}
+
+  /* shop info */
+  .shopinfo{background:#fff;}
+  table.info{width:100%;border-collapse:collapse;font-size:14px;}
+  table.info th{
+    background:var(--light);
+    color:var(--main);
+    width:28%;
+    text-align:left;
+    padding:12px 10px;
+    border-bottom:1px solid #ddd;
+    vertical-align:top;
+  }
+  table.info td{
+    padding:12px 10px;
+    border-bottom:1px solid #ddd;
+    vertical-align:top;
+  }
+  .map-wrap{margin-top:18px;border-radius:10px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  /* CTA */
+  .cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{font-size:20px;margin-bottom:10px;}
+  .cta p{font-size:14px;margin-bottom:20px;opacity:.9;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;}
+  .cta-buttons a{
+    display:block;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-buttons .tel{background:var(--accent);color:#fff;}
+  .cta-buttons .web{background:#fff;color:var(--main);}
+  .cta-buttons .form{background:transparent;color:#fff;border:1px solid #fff;}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    display:flex;
+    border-top:1px solid #ddd;
+    z-index:100;
+    box-shadow:0 -2px 6px rgba(0,0,0,.08);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main);
+    gap:2px;
+  }
+  .bottom-nav a.tel-btn{background:var(--accent);color:#fff;font-weight:bold;}
+  .bottom-nav .icon{font-size:18px;}
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#888;
+    padding:16px;
+    background:var(--light);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">ラケットショップ イチムラ</div>
+  <a href="tel:0758416018" class="call-btn">📞 今すぐ電話</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="ラケットショップイチムラ 外観">
+  <div class="hero-overlay">
+    <div class="catch">創業45年、京都のトータルラケットショップ</div>
+    <div class="sub">店主自らプレーするからこそ分かる、あなたに本当に合う一本を。</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="featured-badge">イチオシ</div>
+  <div class="section-title">ラケット選び＆ガット張りなら当店へ</div>
+  <div class="featured-box">
+    <img src="images/racket.jpg" alt="テニス・バドミントンラケット">
+    <h3>あなたのレベル・目的に合わせたラケット提案</h3>
+    <p>
+      初心者から経験者まで、店主自らがテニスプレーヤーとして培った実践的な視点でラケット選びをサポート。
+      量販店にはない、一人ひとりに向き合った懇切丁寧なアドバイスが自慢です。
+      ヨネックス製品を中心に、テニス・バドミントンに特化した豊富な品揃え。
+      店頭にない商品もお取り寄せ可能で、初心者から経験者まで満足いただける一本が見つかります。
+    </p>
+    <div class="price-tag">
+      ガットの即日張り替えなど、急なご依頼にも柔軟に対応します
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="strength-item">
+    <div class="num">1</div>
+    <p>長年の経験と実績で、初心者から経験者まで幅広い層をサポート。一人ひとりのレベルや目的に合わせた商品をご提案します。</p>
+  </div>
+  <div class="strength-item">
+    <div class="num">2</div>
+    <p>ガットの即日張り替えなど急なご依頼にも柔軟に対応。お客様が求める張り具合にも細やかにお応えします。</p>
+  </div>
+  <div class="strength-item">
+    <div class="num">3</div>
+    <p>テニス・バドミントンに特化しているからこその豊富な品揃え。店頭にない商品もお取り寄せ対応で、幅広いご要望にお応えします。</p>
+  </div>
+</section>
+
+<section class="story">
+  <div class="section-title">創業者ストーリー</div>
+  <p>私たちの店舗は1978年にこの京都の地に産声をあげ、45年を経過した現在もトータルラケットショップとして皆様のご活躍をお手伝いさせていただいております。
+
+こうして続けてこられたのは、開業当時のお客様が親になり子や孫も連れてきていただいている事と、お客様が当店をお勧めしていただいている事、更にネットを通じ海外からもたくさんお越しいただいている事に他なりません。
+
+私たちはこうしたお客様のご要望を知識とし、経験を積み重ねることでスペシャルなプロショップに成長してきました。
+
+これからも50年60年と益々進化して参りますので、ご愛顧よろしくお願いいたします。</p>
+  <div class="signature">代表者　市村 俊也</div>
+</section>
+
+<section class="gallery">
+  <div class="section-title">店内のご紹介</div>
+  <img src="images/shop.jpg" alt="ラケットショップイチムラ 店内の様子">
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>店主自らテニスをされ、懇切丁寧なアドバイスの元でラケット他の商品を購入出来る。今の量販店には無い貴重なお店。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>週の真ん中で練習中にガットが切れてしまい、次の日に量販店で頼もうとしたら、予約がいっぱいで仕上がりは自分の必要なタイミングに間に合わないと。致し方ないことではあるものの、何とかしてくれるお店はないかと探して巡り会えたのが、イチムラさんでした!!
+
+即日対応だけでも有難いのに、当日仕事押して予定よりもお店にお伺いするのも遅れてしまったんですが、それでもきてくださいと快く対応してくださいました。
+
+ガット仕上がりの時間もとてもスピーディーで、技術の高さが伺えました。
+
+お店を営まれているご主人と奥様の2人とも親切丁寧ですし、バドミントンが好きな人ならきっとお気に入りのお店になると思います!
+
+感謝感謝です。次回は、ゆとりを持ってお伺いしたいです。店員さんもフレンドリーで英語も通じますので、ヨネックス好きには特にオススメのラケットがたくさんあります。</p>
+  </div>
+</section>
+
+<section class="shopinfo">
+  <div class="section-title">店舗情報</div>
+  <table class="info">
+    <tr><th>店名</th><td>ラケットショップ イチムラ</td></tr>
+    <tr><th>代表者</th><td>市村 俊也</td></tr>
+    <tr><th>定休日</th><td>日曜日</td></tr>
+    <tr><th>住所</th><td>京都府京都市中京区西ノ京上平町１７</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0758416018">075-841-6018</a></td></tr>
+    <tr><th>HP</th><td><a href="https://ichimura-kyoto.jp/" target="_blank" rel="noopener">https://ichimura-kyoto.jp/</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=京都府京都市中京区西ノ京上平町17&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>ラケット選びのご相談はお気軽に</h2>
+  <p>電話・お問い合わせフォームからも受け付けております</p>
+  <div class="cta-buttons">
+    <a href="tel:0758416018" class="tel">📞 075-841-6018 に電話する</a>
+    <a href="https://ichimura-kyoto.jp/" target="_blank" rel="noopener" class="web">公式サイトを見る</a>
+    <a href="https://ichimura-kyoto.jp/contact/" target="_blank" rel="noopener" class="form">お問い合わせフォーム</a>
+  </div>
+</section>
+
+<footer>&copy; ラケットショップ イチムラ</footer>
+
+<div class="bottom-nav">
+  <a href="tel:0758416018" class="tel-btn"><span class="icon">📞</span>電話</a>
+  <a href="https://ichimura-kyoto.jp/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+  <a href="https://ichimura-kyoto.jp/contact/" target="_blank" rel="noopener"><span class="icon">✉️</span>問合せ</a>
+  <a href="#shopinfo"><span class="icon">📍</span>アクセス</a>
+</div>
+
+</body>
+</html>
