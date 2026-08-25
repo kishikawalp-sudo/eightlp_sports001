@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.ball京都店｜バスケットボール用品専門店</title>
+<style>
+  :root {
+    --main-color: #ff6b00;
+    --dark-color: #1a1a2e;
+    --accent-color: #0f3460;
+    --bg-light: #f7f7f9;
+    --text-dark: #222;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    color: var(--text-dark);
+    background: #fff;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    line-height: 1.7;
+  }
+  a { text-decoration:none; color:inherit; }
+  img { max-width:100%; display:block; }
+
+  /* Header */
+  header {
+    position: fixed;
+    top:0; left:0; right:0;
+    height:60px;
+    background: var(--dark-color);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 0 15px;
+    z-index:1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name {
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+  }
+  header .tel-btn {
+    background: var(--main-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+
+  /* Hero */
+  .hero {
+    position:relative;
+    background: linear-gradient(135deg, var(--dark-color), var(--accent-color));
+    color:#fff;
+    text-align:center;
+    padding: 40px 20px 30px;
+  }
+  .hero .catch {
+    font-size: 22px;
+    font-weight:bold;
+    margin-bottom: 10px;
+    line-height:1.5;
+  }
+  .hero .catch span {
+    color: var(--main-color);
+    font-size: 26px;
+  }
+  .hero .sub {
+    font-size:14px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+  .hero img {
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  }
+
+  section {
+    padding: 40px 18px;
+  }
+  .section-title {
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom: 25px;
+    position:relative;
+  }
+  .section-title::after {
+    content:"";
+    display:block;
+    width:50px;
+    height:3px;
+    background: var(--main-color);
+    margin: 10px auto 0;
+  }
+
+  /* Featured Product */
+  .featured {
+    background: var(--bg-light);
+  }
+  .featured-box {
+    background:#fff;
+    border-radius: 14px;
+    overflow:hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 2px solid var(--main-color);
+  }
+  .featured-box img {
+    width:100%;
+  }
+  .featured-content {
+    padding: 20px;
+  }
+  .featured-content .badge {
+    display:inline-block;
+    background: var(--main-color);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding: 4px 12px;
+    border-radius: 15px;
+    margin-bottom:10px;
+  }
+  .featured-content h3 {
+    font-size:19px;
+    margin-bottom:10px;
+    color: var(--dark-color);
+  }
+  .featured-content p {
+    font-size:14px;
+    margin-bottom:15px;
+  }
+  .featured-list {
+    list-style:none;
+    margin-bottom: 15px;
+  }
+  .featured-list li {
+    font-size:14px;
+    padding-left: 22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .featured-list li::before {
+    content:"✔";
+    color: var(--main-color);
+    position:absolute;
+    left:0;
+    font-weight:bold;
+  }
+  .cta-btn {
+    display:block;
+    text-align:center;
+    background: var(--main-color);
+    color:#fff;
+    font-weight:bold;
+    padding: 14px;
+    border-radius: 8px;
+    font-size:16px;
+    box-shadow: 0 4px 10px rgba(255,107,0,0.4);
+  }
+
+  /* Strengths */
+  .strengths-grid {
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .strength-card {
+    background:#fff;
+    border-radius: 10px;
+    padding: 18px;
+    border-left: 5px solid var(--main-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .strength-card h4 {
+    font-size:16px;
+    margin-bottom:8px;
+    color: var(--accent-color);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .strength-card h4 .num {
+    background: var(--accent-color);
+    color:#fff;
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    flex-shrink:0;
+  }
+  .strength-card p {
+    font-size:14px;
+  }
+
+  .gallery-img {
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow:hidden;
+  }
+
+  /* Reviews */
+  .reviews {
+    background: var(--bg-light);
+  }
+  .review-card {
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .review-stars {
+    color:#ffb400;
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p {
+    font-size:14px;
+  }
+
+  /* Shop info table */
+  .shop-info table {
+    width:100%;
+    border-collapse: collapse;
+    font-size:14px;
+  }
+  .shop-info th, .shop-info td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #ddd;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-info th {
+    width: 100px;
+    color: var(--accent-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-wrap {
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  .map-wrap iframe {
+    width:100%;
+    height:250px;
+    border:0;
+  }
+  .sns-links {
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+  }
+  .sns-links a {
+    background: var(--accent-color);
+    color:#fff;
+    padding:10px 16px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    background: linear-gradient(135deg, var(--dark-color), var(--accent-color));
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2 {
+    font-size:20px;
+    margin-bottom:15px;
+  }
+  .final-cta .cta-btn {
+    margin-top:10px;
+  }
+  .final-cta .sub-btn {
+    display:block;
+    text-align:center;
+    background:transparent;
+    border: 2px solid #fff;
+    color:#fff;
+    font-weight:bold;
+    padding: 12px;
+    border-radius: 8px;
+    font-size:15px;
+    margin-top:12px;
+  }
+
+  /* Fixed bottom nav */
+  .bottom-nav {
+    position:fixed;
+    bottom:0; left:0; right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+    z-index:1000;
+  }
+  .bottom-nav a {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color: var(--dark-color);
+    font-weight:bold;
+  }
+  .bottom-nav a.call {
+    background: var(--main-color);
+    color:#fff;
+  }
+  .bottom-nav .icon {
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width: 600px) {
+    .strengths-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">B.ball京都店</div>
+  <a href="tel:0753523905" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <div class="catch">バスケ用品を買うなら<br><span>B.ball京都店</span>で決まり！</div>
+  <div class="sub">京都市下京区 ｜ バスケットシューズ・ウェア品揃え豊富</div>
+  <img src="images/hero.jpg" alt="B.ball京都店 店内バスケットボール用品">
+</div>
+
+<section class="featured">
+  <div class="section-title">イチオシ商品</div>
+  <div class="featured-box">
+    <img src="images/product.jpg" alt="バスケットボール用品 シューズ">
+    <div class="featured-content">
+      <span class="badge">イチオシ</span>
+      <h3>バスケットボール用品</h3>
+      <p>豊富な品揃えの中から、あなたにぴったりの一足をスタッフが丁寧にご提案します。</p>
+      <ul class="featured-list">
+        <li>バスケットシューズの品揃えが充実</li>
+        <li>1万円以上のご購入でオリジナルシューズケースをプレゼント</li>
+        <li>店長・スタッフによる親身な靴選びアドバイス</li>
+      </ul>
+      <a href="tel:0753523905" class="cta-btn">今すぐ電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="strengths-grid">
+    <div class="strength-card">
+      <h4><span class="num">1</span>豊富な品揃え</h4>
+      <p>バスケットシューズを中心に種類豊富な商品を取り揃えており、じっくり選べると評判です。</p>
+    </div>
+    <div class="strength-card">
+      <h4><span class="num">2</span>丁寧な接客</h4>
+      <p>店長をはじめスタッフが優しく丁寧に対応。安心してバスケ用品選びができます。</p>
+    </div>
+    <div class="strength-card">
+      <h4><span class="num">3</span>購入特典</h4>
+      <p>1万円以上のお買い上げでオリジナルシューズケースをプレゼントしています。</p>
+    </div>
+    <div class="strength-card">
+      <h4><span class="num">4</span>便利な駐車場</h4>
+      <p>3,000円以上のお買い物で駐車場1時間無料。お車でのご来店も安心です。</p>
+    </div>
+  </div>
+  <div class="gallery-img">
+    <img src="images/store.jpg" alt="B.ball京都店 店内の様子">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="review-card">
+    <div class="review-stars">★★★★☆</div>
+    <p>バスケットシューズの品揃えが良く、靴選びのアドバイスも役立ちました。量販店より少し高めですが、一万円以上の靴を買うとオリジナルシューズケースが付いてくるのは嬉しいです。たくさん種類があり人気です。うちの子も1時間ぐらいかけて買い物してました。3,000円以上買えば1時間無料になる駐車場があります。</p>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p>バスケ用品買うならここですなぁ、店員も優しくて良かったです！娘のバッシュ購入の際、店長さんに助けていただきました。丁寧でありがたい対応で、安心してバスケができます！</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <table>
+    <tr><th>店名</th><td>B.ball京都店</td></tr>
+    <tr><th>会社名</th><td>株式会社アサイ</td></tr>
+    <tr><th>代表者</th><td>淺井俊郎</td></tr>
+    <tr><th>住所</th><td>〒600-8143<br>京都府京都市下京区五条通 塩竈町374</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0753523905">075-352-3905</a></td></tr>
+    <tr><th>定休日</th><td>毎週火曜日（祝日は除く）</td></tr>
+    <tr><th>HP</th><td><a href="http://www.bball-asai.com/" target="_blank">www.bball-asai.com</a></td></tr>
+    <tr><th>お問合せ</th><td><a href="https://bball-asai.com/contact/index.html" target="_blank">お問い合わせフォーム</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=京都府京都市下京区五条通塩竈町374&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <div class="sns-links">
+    <a href="https://www.instagram.com/b.ballkyoto/?hl=ja" target="_blank">Instagram</a>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>バスケ用品選びは<br>B.ball京都店にお任せください</h2>
+  <a href="tel:0753523905" class="cta-btn">📞 075-352-3905</a>
+  <a href="https://bball-asai.com/contact/index.html" target="_blank" class="sub-btn">お問い合わせフォームはこちら</a>
+</section>
+
+<div class="bottom-nav">
+  <a href="tel:0753523905" class="call"><span class="icon">📞</span>電話</a>
+  <a href="#shop-info-anchor" onclick="document.querySelector('.shop-info').scrollIntoView({behavior:'smooth'});return false;"><span class="icon">📍</span>アクセス</a>
+  <a href="https://bball-asai.com/contact/index.html" target="_blank"><span class="icon">✉️</span>問合せ</a>
+  <a href="https://www.instagram.com/b.ballkyoto/?hl=ja" target="_blank"><span class="icon">📷</span>Instagram</a>
+</div>
+
+</body>
+</html>
