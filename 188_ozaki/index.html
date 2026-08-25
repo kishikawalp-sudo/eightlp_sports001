@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オザキスポーツ 大野店｜福井県大野市のスポーツ用品専門店</title>
+<style>
+  :root {
+    --main-color: #0b5ed7;
+    --accent-color: #ff7a00;
+    --dark-color: #1a2233;
+    --light-bg: #f4f7fb;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    color: var(--dark-color);
+    line-height: 1.7;
+    background: var(--white);
+    padding-top: 56px;
+    padding-bottom: 60px;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 56px;
+    background: var(--dark-color);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .header .shop-name {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .header .tel-btn {
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+  }
+  .hero img {
+    width: 100%;
+    height: 62vw;
+    max-height: 420px;
+    object-fit: cover;
+  }
+  .hero-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    color: var(--white);
+    padding: 30px 16px 16px;
+  }
+  .hero-overlay .catch {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-overlay .stars {
+    color: #ffcc00;
+    font-size: 14px;
+  }
+
+  section { padding: 32px 16px; }
+  .section-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .section-title span {
+    display: inline-block;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 6px;
+  }
+
+  /* Featured product */
+  .featured {
+    background: linear-gradient(135deg, #0b5ed7, #063e97);
+    color: var(--white);
+  }
+  .featured .section-title span { border-bottom-color: var(--accent-color); color: var(--white); }
+  .featured-badge {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px 14px;
+    border-radius: 16px;
+    margin-bottom: 14px;
+  }
+  .featured-box {
+    background: var(--white);
+    color: var(--dark-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+  .featured-box img {
+    width: 100%;
+    height: 55vw;
+    max-height: 320px;
+    object-fit: cover;
+  }
+  .featured-box-body {
+    padding: 18px;
+  }
+  .featured-box-body h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--main-color);
+  }
+  .featured-box-body p {
+    font-size: 14px;
+  }
+  .featured-cta {
+    display: block;
+    text-align: center;
+    background: var(--accent-color);
+    color: var(--white);
+    font-weight: bold;
+    padding: 14px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  /* Strengths */
+  .strengths-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .strength-item {
+    background: var(--light-bg);
+    border-left: 5px solid var(--main-color);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .strength-item .num {
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  .strength-item p {
+    font-size: 14.5px;
+  }
+
+  /* Story */
+  .story {
+    background: var(--light-bg);
+  }
+  .story p {
+    font-size: 14px;
+    white-space: pre-line;
+    margin-bottom: 12px;
+  }
+  .story .founder {
+    text-align: right;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  /* Reviews */
+  .review-card {
+    background: var(--white);
+    border: 1px solid #e2e6ee;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  .review-card .stars {
+    color: #ffb400;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .review-card p {
+    font-size: 14px;
+  }
+
+  /* Shop info table */
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .info-table th, .info-table td {
+    border-bottom: 1px solid #e2e6ee;
+    padding: 12px 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .info-table th {
+    width: 30%;
+    color: var(--main-color);
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  .map-wrap {
+    margin-top: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .map-wrap iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+  }
+
+  /* CTA section */
+  .cta-section {
+    background: var(--dark-color);
+    color: var(--white);
+    text-align: center;
+  }
+  .cta-section .section-title span { color: var(--white); }
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .cta-buttons a {
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .btn-tel { background: var(--accent-color); color: var(--white); }
+  .btn-form { background: var(--white); color: var(--dark-color); border: 2px solid var(--white); }
+  .btn-web { background: transparent; color: var(--white); border: 2px solid var(--white); }
+
+  /* Bottom nav */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 60px;
+    background: var(--white);
+    display: flex;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+  }
+  .bottom-nav a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--dark-color);
+  }
+  .bottom-nav a.highlight {
+    background: var(--accent-color);
+    color: var(--white);
+  }
+  .bottom-nav .icon {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="shop-name">オザキスポーツ 大野店</div>
+    <a href="tel:0779662257" class="tel-btn">📞 電話する</a>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="images/main.jpg" alt="オザキスポーツ 大野店 外観">
+    <div class="hero-overlay">
+      <div class="catch">地域密着45年以上。<br>学生さんからお年寄りまで、何でも気軽に相談できるスポーツ用品店。</div>
+      <div class="stars">★★★★☆ 地域のお客様から高評価</div>
+    </div>
+  </div>
+
+  <!-- Featured product -->
+  <section class="featured">
+    <div class="featured-badge">冬季イチオシ</div>
+    <h2 class="section-title"><span>スキー＆スノーボード用品</span></h2>
+    <div class="featured-box">
+      <img src="images/ski.jpg" alt="スキー＆スノーボード用品">
+      <div class="featured-box-body">
+        <h3>冬の入口はオザキスポーツへ</h3>
+        <p>大野店では冬期になるとスキー・スノーボード用品を豊富に取り揃えます。板やブーツ選びはもちろん、サイズ合わせやメンテナンスのご相談も、経験豊富な店員が丁寧にサポート。初めての方もベテランの方も、安心してお選びいただけます。</p>
+      </div>
+    </div>
+    <a href="tel:0779662257" class="featured-cta">冬季用品のご相談はお電話で 0779-66-2257</a>
+  </section>
+
+  <!-- Strengths -->
+  <section class="strengths">
+    <h2 class="section-title"><span>選ばれる理由</span></h2>
+    <div class="strengths-list">
+      <div class="strength-item">
+        <div class="num">STRENGTH 01</div>
+        <p>冬期はスキー＆スノーボード用品も取り扱っております！サイズ選びからメンテナンスまでお任せください。</p>
+      </div>
+      <div class="strength-item">
+        <div class="num">STRENGTH 02</div>
+        <p>大野市内の小・中・高の体操服・制服・指定ズックも取り扱い。学生さんの学校用品もオザキスポーツで揃います。</p>
+      </div>
+      <div class="strength-item">
+        <div class="num">STRENGTH 03</div>
+        <p>地域密着をモットーに、学生さんからお年寄りまで、何でも気軽に相談していただける環境を目指しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder story -->
+  <section class="story">
+    <h2 class="section-title"><span>私たちの想い</span></h2>
+    <p>昨今のスポーツ用品販売界は、価格競争が顕著化されている状況です。しかし弊社では価格以外の付加価値、各メーカーの商品に込められた熱い想いと商品知識、情報をお客様に伝え、アドバイスなどを通じた交流こそが、弊社の責務だと自負しております。</p>
+    <p>そして、スポーツ施設関連事業を通して、地域のスポーツ文化の支援も重要な業務の一つと考えております。長寿･高齢化社会を迎えた今、今後は医療費削減に向けた高齢者へのスポーツ推進･提案にも力を入れてまいります。</p>
+    <p>異業種との交流にも積極的に取り組み、皆様に愛される“運動具屋”として、今まで以上に地域に貢献していく所存です。</p>
+    <div class="founder">株式会社オザキスポーツ　代表取締役　室谷 隆夫</div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <h2 class="section-title"><span>お客様の声</span></h2>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>店員さんの対応も良いです。品揃えは色々なスポーツ用品を広く浅くって感じです。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>商品の豊富さはもちろんですが、店員さんが商品に詳しいことです。店員さんが親しみやすくていいです。</p>
+    </div>
+  </section>
+
+  <!-- Shop info -->
+  <section class="shop-info">
+    <h2 class="section-title"><span>店舗情報</span></h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>オザキスポーツ 大野店</td></tr>
+      <tr><th>会社名</th><td>株式会社オザキスポーツ</td></tr>
+      <tr><th>代表者</th><td>室谷 隆夫</td></tr>
+      <tr><th>住所</th><td>〒912-0000 福井県大野市鍬掛7-43</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0779662257">0779-66-2257</a></td></tr>
+      <tr><th>定休日</th><td>第1水曜日・第3水曜日</td></tr>
+      <tr><th>ホームページ</th><td><a href="http://www.ozaki-sports.co.jp/oono/" target="_blank">www.ozaki-sports.co.jp/oono/</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=福井県大野市鍬掛7-43&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 class="section-title"><span>お気軽にご相談ください</span></h2>
+    <p>冬季のスキー・スノーボード用品はもちろん、学校用品や各種スポーツ用品のご相談もお待ちしております。</p>
+    <div class="cta-buttons">
+      <a href="tel:0779662257" class="btn-tel">📞 電話で問い合わせる</a>
+      <a href="https://www.ozaki-sports.co.jp/contact/" target="_blank" class="btn-form">✉️ 問い合わせフォーム</a>
+      <a href="http://www.ozaki-sports.co.jp/oono/" target="_blank" class="btn-web">🌐 公式サイトを見る</a>
+    </div>
+  </section>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav">
+    <a href="tel:0779662257" class="highlight"><span class="icon">📞</span>電話</a>
+    <a href="https://www.ozaki-sports.co.jp/contact/" target="_blank"><span class="icon">✉️</span>問合せ</a>
+    <a href="http://www.ozaki-sports.co.jp/oono/" target="_blank"><span class="icon">🌐</span>HP</a>
+    <a href="https://www.google.com/maps?q=福井県大野市鍬掛7-43" target="_blank"><span class="icon">📍</span>地図</a>
+  </nav>
+
+</body>
+</html>
