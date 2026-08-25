@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ゴトウスポーツ｜関西随一の水泳用品専門店</title>
+<style>
+  :root{
+    --blue-deep:#003c71;
+    --blue-main:#0077c8;
+    --blue-light:#e8f4fb;
+    --aqua:#00b4d8;
+    --accent:#ff6b35;
+    --text:#222;
+    --gray:#666;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    line-height:1.7;
+    background:#fff;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--blue-deep);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  .header .shopname{
+    font-size:16px;
+    font-weight:bold;
+  }
+  .header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-main) 100%);
+    color:#fff;
+    text-align:center;
+    padding:32px 16px 24px;
+  }
+  .hero img{
+    width:100%;
+    border-radius:12px;
+    margin-top:16px;
+    box-shadow:0 4px 16px rgba(0,0,0,0.3);
+  }
+  .hero .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:8px;
+  }
+  .hero .catch span{
+    color:#ffe066;
+  }
+  .hero .sub{
+    font-size:14px;
+    opacity:0.9;
+  }
+
+  /* Section common */
+  .section{
+    padding:36px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--blue-deep);
+    margin-bottom:24px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--accent);
+    margin:8px auto 0;
+  }
+
+  /* Featured product (イチオシ) */
+  .featured{
+    background:var(--blue-light);
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:16px;
+    margin-bottom:12px;
+  }
+  .featured-box{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  }
+  .featured-box img{
+    width:100%;
+  }
+  .featured-content{
+    padding:20px;
+  }
+  .featured-content h3{
+    font-size:19px;
+    color:var(--blue-deep);
+    margin-bottom:10px;
+  }
+  .featured-content p{
+    font-size:14px;
+    color:var(--gray);
+    margin-bottom:14px;
+  }
+  .brand-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .brand-tags span{
+    background:var(--blue-main);
+    color:#fff;
+    font-size:12px;
+    padding:5px 10px;
+    border-radius:6px;
+  }
+  .cta-button{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px;
+    border-radius:8px;
+  }
+
+  /* Strengths */
+  .strengths-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:10px;
+    padding:16px;
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:36px;
+    height:36px;
+    background:var(--blue-main);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--blue-deep);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:var(--gray);
+  }
+
+  /* Founder story */
+  .story{
+    background:var(--blue-deep);
+    color:#fff;
+  }
+  .story .section-title{
+    color:#fff;
+  }
+  .story .section-title::after{
+    background:var(--accent);
+  }
+  .story p{
+    font-size:14px;
+    margin-bottom:12px;
+    opacity:0.95;
+  }
+  .story-highlight{
+    background:rgba(255,255,255,0.1);
+    border-left:4px solid var(--accent);
+    padding:12px 16px;
+    margin-top:16px;
+    font-size:13px;
+  }
+
+  /* Reviews */
+  .review-box{
+    background:#fff9e6;
+    border-radius:12px;
+    padding:20px;
+    border:1px solid #ffe8a3;
+  }
+  .stars{
+    color:#ffb400;
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .review-box p{
+    font-size:14px;
+    color:var(--text);
+  }
+  .review-name{
+    text-align:right;
+    font-size:12px;
+    color:var(--gray);
+    margin-top:10px;
+  }
+
+  /* Shop info */
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .info-table th,.info-table td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+  }
+  .info-table th{
+    background:var(--blue-light);
+    color:var(--blue-deep);
+    width:30%;
+    white-space:nowrap;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg, var(--accent), #ff9166);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:14px;
+    margin-bottom:20px;
+    opacity:0.95;
+  }
+  .final-cta .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .btn-white{
+    background:#fff;
+    color:var(--accent);
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    font-size:16px;
+  }
+  .btn-outline{
+    border:2px solid #fff;
+    color:#fff;
+    font-weight:bold;
+    padding:12px;
+    border-radius:8px;
+    font-size:15px;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    border-top:1px solid #ddd;
+    display:flex;
+    z-index:100;
+    box-shadow:0 -2px 6px rgba(0,0,0,0.1);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--blue-deep);
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero .catch{font-size:26px;}
+    .section{padding:48px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="shopname">ゴトウスポーツ</div>
+  <a href="tel:0752216366" class="tel-btn">📞 075-221-6366</a>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="catch">水泳用品なら、<span>関西随一の品揃え</span>ゴトウスポーツへ</div>
+  <div class="sub">arena・speedo・MIZUNO…競泳用からフィットネス用まで在庫豊富</div>
+  <img src="images/hero.jpg" alt="ゴトウスポーツ 店舗外観">
+</div>
+
+<!-- Featured product -->
+<div class="section featured">
+  <div class="section-title">イチオシ商品</div>
+  <div class="featured-badge">水泳用品 専門コーナー</div>
+  <div class="featured-box">
+    <img src="images/swim_goods.jpg" alt="水泳用品コーナー">
+    <div class="featured-content">
+      <h3>競泳用水着の品揃えは関西No.1クラス</h3>
+      <p>arena、speedo、MIZUNOなど多彩なメーカーの水着を取り扱い。水着だけでなく、ゴーグルやキャップなどの小物、練習用具まで幅広くラインナップ。競泳用・フィットネス用、目的に合わせてしっかり選べます。在庫も豊富なので、急な買い替えにも安心です。</p>
+      <div class="brand-tags">
+        <span>arena</span>
+        <span>speedo</span>
+        <span>MIZUNO</span>
+        <span>ゴーグル</span>
+        <span>練習道具</span>
+      </div>
+      <a href="tel:0752216366" class="cta-button">水泳用品について電話で相談する</a>
+    </div>
+  </div>
+</div>
+
+<!-- Strengths -->
+<div class="section">
+  <div class="section-title">選ばれる理由</div>
+  <div class="strengths-list">
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div>
+        <h4>競泳用水着の品揃えは負けません</h4>
+        <p>水泳道具を扱うお店が少ない中、関西随一の品揃えを誇るスポーツショップ。競泳用・フィットネス用など目的別にしっかり選べます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div>
+        <h4>水泳用品以外も割引価格でお取り寄せ</h4>
+        <p>スイム用品以外のスポーツ用品も、割引価格にてお取り寄せ可能。お気軽にご相談ください。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div>
+        <h4>1957年創業、京都で60年以上の実績</h4>
+        <p>京都河原町通りで長年愛されてきたスポーツ用品店。豊富な経験と知識で、あなたに合った1着をご提案します。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Founder story -->
+<div class="section story">
+  <div class="section-title">創業者ストーリー</div>
+  <p>1957年以来、京都河原町通りでスポーツ用品を扱ってきたゴトウスポーツ。</p>
+  <p>2015年11月より店舗営業は、スイム用品専用の「およぎ屋」とバレーボール用品専門の「ばれー屋」に生まれ変わりました。</p>
+  <div class="story-highlight">
+    ゴトウスポーツは、外商・およぎ屋・ばれー屋で創業60周年を迎えました！代表 後藤 康輔が、これからも地域の皆さまのスポーツライフを支えます。
+  </div>
+</div>
+
+<!-- Reviews -->
+<div class="section">
+  <div class="section-title">お客様の声</div>
+  <div class="review-box">
+    <div class="stars">★★★★★</div>
+    <p>水泳道具が取り扱っているお店はまだまだ少ないので助かります。ここは、arena、speedo、MIZUNOなど様々なメーカーの取り扱いがあり水着以外にも小物や練習道具も置いてあるので水泳用品をお求めの方にはおすすめのお店です。在庫も豊富！対応もいいです(^ー^)</p>
+    <div class="review-name">- ご来店のお客様</div>
+  </div>
+</div>
+
+<!-- Shop info -->
+<div class="section">
+  <div class="section-title">店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>ゴトウスポーツ</td></tr>
+    <tr><th>代表者</th><td>後藤 康輔</td></tr>
+    <tr><th>住所</th><td>〒602-0873 京都府京都市上京区伊勢屋町</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0752216366">075-221-6366</a></td></tr>
+    <tr><th>定休日</th><td>毎週火曜日</td></tr>
+    <tr><th>公式HP</th><td><a href="https://palette-goto.co.jp/index/" target="_blank">palette-goto.co.jp</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%8A%E4%BA%AC%E5%8C%BA%E4%BC%8A%E5%8B%A2%E5%B1%8B%E7%94%BA&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- Final CTA -->
+<div class="section final-cta">
+  <h2>まずはお気軽にお問い合わせください</h2>
+  <p>水泳用品のご相談、在庫確認もお電話・フォームで承ります</p>
+  <div class="btn-group">
+    <a href="tel:0752216366" class="btn-white">📞 電話で相談する（075-221-6366）</a>
+    <a href="https://palette-goto.co.jp/index/?page_id=2" target="_blank" class="btn-outline">お問い合わせフォームはこちら</a>
+  </div>
+</div>
+
+<!-- Bottom nav -->
+<div class="bottom-nav">
+  <a href="tel:0752216366" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://palette-goto.co.jp/index/?page_id=2" target="_blank"><span class="icon">✉️</span>お問い合わせ</a>
+  <a href="https://palette-goto.co.jp/index/" target="_blank"><span class="icon">🌐</span>公式HP</a>
+</div>
+
+</body>
+</html>
