@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スポーツアクト 本店｜京都トップクラスの野球・ソフトボール用品専門店</title>
+<style>
+  :root{
+    --main:#0b3d2e;
+    --accent:#e8622c;
+    --sub:#f4b400;
+    --bg:#faf7f2;
+    --text:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-top:60px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:60px;
+    background:var(--main);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 14px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .logo{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+    color:#fff;
+    text-align:center;
+    padding:70px 20px 50px;
+    background:linear-gradient(rgba(11,61,46,0.75),rgba(11,61,46,0.85)),url("images/hero.jpg") center/cover no-repeat;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--sub);
+    color:#222;
+    font-weight:bold;
+    font-size:12px;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:12px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.3);
+  }
+  .hero p{
+    font-size:14px;
+    opacity:0.95;
+    margin-bottom:20px;
+  }
+  .hero-cta{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    padding:14px 34px;
+    border-radius:30px;
+    font-size:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  section{
+    padding:44px 20px;
+  }
+  .section-title{
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .section-title .en{
+    display:block;
+    font-size:12px;
+    color:var(--accent);
+    letter-spacing:2px;
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:21px;
+    font-weight:bold;
+    color:var(--main);
+  }
+
+  /* featured product - イチオシ */
+  .featured{
+    background:#fff;
+  }
+  .featured-card{
+    background:var(--bg);
+    border:2px solid var(--sub);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 6px 16px rgba(0,0,0,0.08);
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-card .body{
+    padding:22px;
+  }
+  .featured-card .tag{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:14px;
+    margin-bottom:10px;
+  }
+  .featured-card h3{
+    font-size:20px;
+    color:var(--main);
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14px;
+    margin-bottom:16px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .featured-list li{
+    font-size:13.5px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .featured-list li::before{
+    content:"⚾";
+    position:absolute;
+    left:0;
+  }
+  .featured-card .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--main);
+    color:#fff;
+    font-weight:bold;
+    padding:14px;
+    border-radius:10px;
+    font-size:15px;
+  }
+
+  /* strengths */
+  .strengths{
+    background:var(--main);
+    color:#fff;
+  }
+  .strengths .section-title h2{color:#fff;}
+  .strength-item{
+    background:rgba(255,255,255,0.08);
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:14px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .strength-item .num{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--sub);
+    flex-shrink:0;
+  }
+  .strength-item h4{
+    font-size:15px;
+    margin-bottom:6px;
+  }
+  .strength-item p{
+    font-size:13px;
+    opacity:0.9;
+  }
+
+  /* gallery */
+  .gallery{
+    background:#fff;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:10px;
+    height:130px;
+    object-fit:cover;
+    width:100%;
+  }
+
+  /* reviews */
+  .reviews{
+    background:var(--bg);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:16px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.06);
+  }
+  .review-card .stars{
+    color:var(--sub);
+    font-size:16px;
+    margin-bottom:10px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* info table */
+  .info{
+    background:#fff;
+  }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    margin-bottom:20px;
+  }
+  .info-table th,.info-table td{
+    padding:12px 10px;
+    border-bottom:1px solid #e5e0d8;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:88px;
+    color:var(--main);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-frame{
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* final CTA */
+  .final-cta{
+    background:linear-gradient(rgba(11,61,46,0.85),rgba(11,61,46,0.9)),url("images/glove.jpg") center/cover no-repeat;
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:14px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    margin-bottom:22px;
+    opacity:0.95;
+  }
+  .final-cta .cta-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    padding:15px 36px;
+    border-radius:30px;
+    font-size:16px;
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:bold;
+    color:var(--main);
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:20px;
+    background:var(--bg);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">スポーツアクト 本店</div>
+  <a href="tel:075-463-6556" class="tel-btn">📞 075-463-6556</a>
+</header>
+
+<div class="hero">
+  <span class="badge">京都府京都市北区</span>
+  <h1>京都トップクラスのグラブ品揃え<br>スポーツアクト 本店</h1>
+  <p>野球・ソフトボール用品なら、経験豊富なスタッフが<br>お子様の一本を親身に一緒に探します</p>
+  <a href="tel:075-463-6556" class="hero-cta">📞 今すぐ電話で相談する</a>
+</div>
+
+<section class="featured">
+  <div class="section-title">
+    <span class="en">RECOMMEND</span>
+    <h2>イチオシ｜野球用品</h2>
+  </div>
+  <div class="featured-card">
+    <img src="images/glove.jpg" alt="野球グローブ">
+    <div class="body">
+      <span class="tag">京都トップクラスの品揃え</span>
+      <h3>グラブ選びは、スポーツアクトへ</h3>
+      <p>硬式・軟式問わず、豊富なグラブの中からお子様の手の大きさやポジション、レベルに合わせて最適な一本をご提案。型付けサービスも充実しています。</p>
+      <ul class="featured-list">
+        <li>硬式・軟式グラブが京都トップクラスの品揃え</li>
+        <li>野球に詳しいスタッフがニーズに合わせて提案</li>
+        <li>平日はゆっくり相談できるのでおすすめ</li>
+        <li>初心者・お子様連れにも丁寧に対応</li>
+      </ul>
+      <a href="tel:075-463-6556" class="cta-btn">📞 グラブの相談をする</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">
+    <span class="en">STRENGTH</span>
+    <h2>選ばれる理由</h2>
+  </div>
+  <div class="strength-item">
+    <div class="num">01</div>
+    <div>
+      <h4>京都府全域をカバーする総合スポーツ用品店</h4>
+      <p>野球・ソフトボール用品をメインに、京都市を中心に京都府全域であらゆるスポーツ用品を取り扱っています。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="num">02</div>
+    <div>
+      <h4>学校への外商営業にも対応</h4>
+      <p>店舗販売だけでなく、学校をメインとした外商営業も展開。地域のスポーツ振興を支えています。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="num">03</div>
+    <div>
+      <h4>他店で断られても、親身に相談にのってくれる</h4>
+      <p>「即答できない」と門前払いされがちなご相談にも、じっくり時間をかけて一緒に探してくれると評判です。</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-title">
+    <span class="en">SHOP</span>
+    <h2>店舗のご紹介</h2>
+  </div>
+  <div class="gallery-grid">
+    <img src="images/shop1.jpg" alt="店舗外観">
+    <img src="images/shop2.jpg" alt="店内の様子">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">
+    <span class="en">VOICE</span>
+    <h2>お客様の口コミ</h2>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>中3で硬式野球をやっている孫が、高校に入る前に欲しいグローブを探しに来店。他のお店はどこも即答できないと門前払いだったのに、こちらは親身に探してくれました。店員さんも誠実そうで品揃えも良かったです。ありがとうございました。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>野球やソフトのグラブの品揃えは京都一ではないでしょうか。店員も野球に詳しくニーズに合ったグラブやシューズを薦めてくれます。土日は混むので平日がおすすめ。子供連れの初心者にも極めて丁寧に対応していただけます。</p>
+  </div>
+</section>
+
+<section class="info">
+  <div class="section-title">
+    <span class="en">ACCESS</span>
+    <h2>店舗情報</h2>
+  </div>
+  <table class="info-table">
+    <tr><th>店名</th><td>スポーツアクト 本店</td></tr>
+    <tr><th>会社名</th><td>株式会社スポーツアクト</td></tr>
+    <tr><th>代表者</th><td>安井 幸夫</td></tr>
+    <tr><th>住所</th><td>京都府京都市北区大将軍西町157−2</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:075-463-6556">075-463-6556</a></td></tr>
+    <tr><th>定休日</th><td>年末年始</td></tr>
+    <tr><th>HP</th><td><a href="http://sportsact.co.jp/" target="_blank">sportsact.co.jp</a></td></tr>
+    <tr><th>お問合せ</th><td><a href="https://sportsact.co.jp/contact" target="_blank">お問い合わせフォームはこちら</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E5%8C%97%E5%8C%BA%E5%A4%A7%E5%B0%86%E8%BB%8D%E8%A5%BF%E7%94%BA157-2&t=&z=16&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>お子様にぴったりの一本を<br>一緒に見つけましょう</h2>
+  <p>グラブ選びで迷ったら、まずはお気軽にご相談ください</p>
+  <a href="tel:075-463-6556" class="cta-btn">📞 075-463-6556 に電話する</a>
+</section>
+
+<footer>
+  © スポーツアクト 本店
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:075-463-6556" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://sportsact.co.jp/contact" target="_blank"><span class="icon">✉️</span>お問合せ</a>
+  <a href="http://sportsact.co.jp/" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="https://maps.google.com/maps?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E5%8C%97%E5%8C%BA%E5%A4%A7%E5%B0%86%E8%BB%8D%E8%A5%BF%E7%94%BA157-2" target="_blank"><span class="icon">📍</span>地図</a>
+</div>
+
+</body>
+</html>
