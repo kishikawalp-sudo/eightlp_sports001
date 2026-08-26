@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山都スポーツ｜高山市の野球用品専門店・修理メンテナンス</title>
+<style>
+  :root{
+    --main-color:#1b4d3e;
+    --sub-color:#e8b23c;
+    --accent-color:#d94f3d;
+    --bg-light:#faf7f0;
+    --text-dark:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    padding-top:56px;
+    padding-bottom:64px;
+    line-height:1.7;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  header.fixed-header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header.fixed-header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+  }
+  header.fixed-header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('images/hero.jpg') center/cover no-repeat;
+    color:#fff;
+    text-align:center;
+    padding:70px 16px 60px;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--sub-color);
+    color:#222;
+    font-weight:bold;
+    font-size:13px;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:26px;
+    line-height:1.5;
+    margin-bottom:10px;
+    text-shadow:1px 1px 4px rgba(0,0,0,0.5);
+  }
+  .hero p{
+    font-size:15px;
+    margin-bottom:20px;
+  }
+  .hero .cta-btn{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    padding:14px 30px;
+    border-radius:30px;
+    font-size:16px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  section{
+    padding:40px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:21px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:8px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:#888;
+    margin-bottom:26px;
+  }
+
+  /* Featured Product */
+  .featured{
+    background:var(--bg-light);
+  }
+  .featured-card{
+    background:#fff;
+    border:2px solid var(--sub-color);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-card .ribbon{
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    text-align:center;
+    padding:10px;
+    font-size:16px;
+    letter-spacing:1px;
+  }
+  .featured-body{
+    padding:20px;
+  }
+  .featured-body h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-body p{
+    font-size:14.5px;
+    margin-bottom:16px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .featured-list li{
+    font-size:14px;
+    padding:8px 0 8px 26px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .featured-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--main-color);
+    font-weight:bold;
+    font-size:16px;
+  }
+  .featured-body .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    font-weight:bold;
+    padding:14px;
+    border-radius:30px;
+    font-size:15px;
+  }
+
+  /* Strengths */
+  .strengths{
+    background:#fff;
+  }
+  .strength-box{
+    background:var(--bg-light);
+    border-radius:12px;
+    padding:22px 18px;
+    margin-bottom:16px;
+  }
+  .strength-box h3{
+    color:var(--main-color);
+    font-size:16px;
+    margin-bottom:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .strength-box h3::before{
+    content:"⚾";
+    font-size:20px;
+  }
+  .strength-box p{
+    font-size:14px;
+  }
+  .strengths .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:20px;
+  }
+  .strengths .gallery img{
+    border-radius:10px;
+    height:130px;
+    object-fit:cover;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .reviews .section-title{color:#fff;}
+  .reviews .section-sub{color:#dcdcdc;}
+  .review-card{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:12px;
+    padding:20px;
+  }
+  .review-card .stars{
+    color:var(--sub-color);
+    font-size:18px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:14.5px;
+  }
+
+  /* Shop Info */
+  .shop-info{
+    background:#fff;
+  }
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  table.info-table th,table.info-table td{
+    border-bottom:1px solid #e5e5e5;
+    padding:12px 8px;
+    text-align:left;
+    vertical-align:top;
+  }
+  table.info-table th{
+    width:30%;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-wrap{
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:var(--accent-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  .cta-section .cta-btn{
+    display:inline-block;
+    background:#fff;
+    color:var(--accent-color);
+    font-weight:bold;
+    padding:14px 30px;
+    border-radius:30px;
+    font-size:16px;
+  }
+
+  /* Bottom Nav */
+  nav.bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+  }
+  nav.bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    color:var(--main-color);
+    font-weight:bold;
+  }
+  nav.bottom-nav a.call{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  nav.bottom-nav a .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero h1{font-size:32px;}
+    section{padding:60px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="fixed-header">
+  <div class="shop-name">山都スポーツ</div>
+  <a href="tel:0577343434" class="tel-btn">📞 電話する</a>
+</header>
+
+<section class="hero">
+  <span class="badge">岐阜県高山市の野球用品専門店</span>
+  <h1>選び方から手入れまで。<br>あなたの野球を、山都スポーツが支えます。</h1>
+  <p>子どもから大人まで、一人ひとりに合わせた用具選びと修理・メンテナンスをご提案</p>
+  <a href="tel:0577343434" class="cta-btn">📞 0577-34-3434</a>
+</section>
+
+<section class="featured">
+  <div class="section-title">イチオシサービス</div>
+  <div class="section-sub">FEATURED SERVICE</div>
+  <div class="featured-card">
+    <img src="images/repair.jpg" alt="野球用品の修理・メンテナンス">
+    <div class="ribbon">野球用品の修理・メンテナンス</div>
+    <div class="featured-body">
+      <h3>大切な道具、長く使えるように。</h3>
+      <p>グローブの型崩れ、スパイクの傷み、バットのグリップ劣化…。山都スポーツでは、経験豊富なスタッフが一つひとつの用具の状態を丁寧に確認し、最適な修理・メンテナンス方法をご提案します。</p>
+      <ul class="featured-list">
+        <li>グローブの型直し・ほつれ修理</li>
+        <li>スパイクの補修・お手入れ相談</li>
+        <li>お子様の成長や上達に合わせた買い替え相談も対応</li>
+      </ul>
+      <a href="tel:0577343434" class="cta-btn">修理・メンテナンスの相談をする</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">山都スポーツの強み</div>
+  <div class="section-sub">STRENGTH</div>
+  <div class="strength-box">
+    <h3>一人ひとりの目的に合わせた提案力</h3>
+    <p>野球をはじめようとする子どもたちから、グラウンドでひたすら汗を流す学生たち、そして家族や仲間との週末をエンジョイしたい大人たちまで。お客様の顔を見ながら、目的や個性に合わせて上達するための野球用品を、どう選び、どう使い、どう手入れするのかをアドバイスできるスタッフがいます。</p>
+  </div>
+  <div class="strength-box">
+    <h3>豊富な品揃え</h3>
+    <p>「品揃え豊富でした」とのお声をいただくほど、幅広いラインナップをご用意。初心者からプロ志向の方まで、きっとぴったりの一品が見つかります。</p>
+  </div>
+  <div class="strength-box">
+    <h3>遅くまで営業で通いやすい</h3>
+    <p>「遅くまで開いているので助かります」と地域のお客様にご好評。学校やお仕事帰りにも気軽にお立ち寄りいただけます。</p>
+  </div>
+  <div class="gallery">
+    <img src="images/shop.jpg" alt="山都スポーツ店内">
+    <img src="images/goods.jpg" alt="野球用品ラインナップ">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="section-sub">REVIEW</div>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>品揃え豊富でした。遅くまで開いているので助かります。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <div class="section-sub">SHOP INFO</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>山都スポーツ</td></tr>
+    <tr><th>会社名</th><td>株式会社山都</td></tr>
+    <tr><th>代表者</th><td>久保田　彰</td></tr>
+    <tr><th>住所</th><td>岐阜県高山市西之一色町３丁目１０８１−２</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0577343434">0577-34-3434</a></td></tr>
+    <tr><th>定休日</th><td>火曜日、水曜日</td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@santo-sports.co.jp">info@santo-sports.co.jp</a></td></tr>
+    <tr><th>HP</th><td><a href="https://santo-sports.co.jp/" target="_blank" rel="noopener">https://santo-sports.co.jp/</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%B2%90%E9%98%9C%E7%9C%8C%E9%AB%98%E5%B1%B1%E5%B8%82%E8%A5%BF%E4%B9%8B%E4%B8%80%E8%89%B2%E7%94%BA%EF%BC%93%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%90%EF%BC%98%EF%BC%91%EF%BC%8D%EF%BC%92&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>グローブの修理・メンテナンスから用具選びまで、山都スポーツのスタッフがお手伝いします。</p>
+  <a href="tel:0577343434" class="cta-btn">📞 0577-34-3434</a>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0577343434" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://maps.google.com/maps?q=%E5%B2%90%E9%98%9C%E7%9C%8C%E9%AB%98%E5%B1%B1%E5%B8%82%E8%A5%BF%E4%B9%8B%E4%B8%80%E8%89%B2%E7%94%BA%EF%BC%93%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%90%EF%BC%98%EF%BC%91%EF%BC%8D%EF%BC%92" target="_blank"><span class="icon">📍</span>地図</a>
+  <a href="mailto:info@santo-sports.co.jp"><span class="icon">✉️</span>メール</a>
+  <a href="https://santo-sports.co.jp/" target="_blank"><span class="icon">🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
