@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>楽山荘｜岐阜市の登山・アウトドア用品専門店</title>
+<style>
+  :root{
+    --forest-deep:#1c3527;
+    --forest:#2d4a37;
+    --moss:#5b7a5e;
+    --clay:#b5652a;
+    --clay-dark:#9a5220;
+    --cream:#f6f2e9;
+    --paper:#fffdf8;
+    --ink:#22281f;
+    --line:#dcd4c2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    padding-top:58px;
+    padding-bottom:64px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--forest-deep);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 14px;height:58px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+  }
+  .header .shopname{
+    font-size:16px;font-weight:700;letter-spacing:.03em;
+  }
+  .header .shopname span{
+    display:block;font-size:10px;font-weight:400;color:#c9d4c9;letter-spacing:.05em;
+  }
+  .header-tel{
+    background:var(--clay);
+    color:#fff;
+    padding:7px 14px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:700;
+    display:flex;align-items:center;gap:5px;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg,var(--forest-deep) 0%, var(--forest) 55%, var(--moss) 100%);
+    color:#fff;
+    padding:38px 20px 46px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-40px;bottom:-40px;
+    width:200px;height:200px;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:50%;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    right:20px;top:-30px;
+    width:120px;height:120px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:50%;
+  }
+  .hero-eyebrow{
+    font-size:12px;
+    letter-spacing:.15em;
+    color:#d7c9a3;
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:800;
+    line-height:1.5;
+    margin-bottom:14px;
+    position:relative;
+    z-index:2;
+  }
+  .hero h1 em{
+    display:block;
+    font-style:normal;
+    color:#f0d9b5;
+    font-size:22px;
+  }
+  .hero p.lead{
+    font-size:13.5px;
+    color:#e4ece2;
+    max-width:340px;
+    margin-bottom:20px;
+    position:relative;z-index:2;
+  }
+  .hero-stars{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    margin-bottom:22px;
+  }
+  .hero-stars .star{color:#f0c14b;letter-spacing:1px;}
+  .hero-img{
+    position:relative;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 14px 34px rgba(0,0,0,.35);
+    z-index:2;
+  }
+  .hero-img img{width:100%;height:220px;object-fit:cover;}
+  .hero-btn{
+    margin-top:20px;
+    display:block;
+    text-align:center;
+    background:var(--clay);
+    color:#fff;
+    font-weight:700;
+    padding:15px;
+    border-radius:10px;
+    font-size:15px;
+    box-shadow:0 8px 20px rgba(181,101,42,.4);
+    position:relative;z-index:2;
+  }
+
+  /* Section shared */
+  .section{padding:44px 20px;}
+  .section-tight{padding:30px 20px 44px;}
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:.15em;
+    font-weight:700;
+    color:var(--clay-dark);
+    margin-bottom:8px;
+  }
+  .sec-title{
+    font-size:21px;
+    font-weight:800;
+    color:var(--forest-deep);
+    margin-bottom:6px;
+    line-height:1.4;
+  }
+  .sec-sub{
+    font-size:13px;
+    color:#5a5f52;
+    margin-bottom:26px;
+  }
+
+  /* Featured product - Ichioshi */
+  .ichioshi{
+    background:var(--forest-deep);
+    color:#fff;
+    position:relative;
+  }
+  .ichioshi .eyebrow{color:#f0d9b5;}
+  .ichioshi .sec-title{color:#fff;}
+  .ichioshi .sec-sub{color:#cddbc9;}
+  .ichioshi-card{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 16px 30px rgba(0,0,0,.3);
+  }
+  .ichioshi-card img{width:100%;height:200px;object-fit:cover;}
+  .ichioshi-body{padding:22px 20px 24px;}
+  .ichioshi-tag{
+    display:inline-block;
+    background:var(--clay);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:6px;
+    margin-bottom:10px;
+  }
+  .ichioshi-body h3{
+    font-size:19px;
+    font-weight:800;
+    color:var(--forest-deep);
+    margin-bottom:10px;
+  }
+  .ichioshi-body p{
+    font-size:13.5px;
+    color:#454a3f;
+    margin-bottom:16px;
+  }
+  .ichioshi-list{list-style:none;margin-bottom:18px;}
+  .ichioshi-list li{
+    font-size:13px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+    color:#33392e;
+  }
+  .ichioshi-list li::before{
+    content:"✓";
+    position:absolute;left:0;top:0;
+    color:var(--clay);
+    font-weight:800;
+  }
+  .ichioshi-cta{
+    display:block;
+    text-align:center;
+    background:var(--forest);
+    color:#fff;
+    font-weight:700;
+    padding:14px;
+    border-radius:10px;
+    font-size:14.5px;
+  }
+
+  /* Strengths */
+  .strengths-grid{display:flex;flex-direction:column;gap:14px;}
+  .strength-item{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 18px 18px 60px;
+    position:relative;
+  }
+  .strength-item .num{
+    position:absolute;left:16px;top:18px;
+    width:32px;height:32px;
+    background:var(--forest);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;font-weight:800;
+  }
+  .strength-item h4{
+    font-size:15px;
+    font-weight:800;
+    color:var(--forest-deep);
+    margin-bottom:5px;
+  }
+  .strength-item p{font-size:12.5px;color:#54594c;}
+
+  /* Gallery photo */
+  .gallery-photo{
+    border-radius:14px;
+    overflow:hidden;
+    margin:26px 0;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+  }
+  .gallery-photo img{width:100%;height:190px;object-fit:cover;}
+
+  /* Reviews */
+  .reviews{background:#efe9d8;}
+  .review-card{
+    background:var(--paper);
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:16px;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+  }
+  .review-stars{color:#f0a93b;font-size:15px;letter-spacing:2px;margin-bottom:10px;}
+  .review-card p{font-size:13.5px;color:#3a3f33;}
+  .review-card .review-src{
+    margin-top:12px;
+    font-size:11px;
+    color:#8b8d7f;
+    font-weight:700;
+  }
+
+  /* Shop info */
+  .shopinfo table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--paper);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+  }
+  .shopinfo th, .shopinfo td{
+    text-align:left;
+    padding:14px 14px;
+    font-size:13px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  .shopinfo th{
+    width:92px;
+    color:var(--forest-deep);
+    font-weight:700;
+    background:#f1ece0;
+    white-space:nowrap;
+  }
+  .shopinfo tr:last-child th, .shopinfo tr:last-child td{border-bottom:none;}
+  .map-wrap{
+    margin-top:18px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+  }
+  .map-wrap iframe{width:100%;height:230px;border:0;display:block;}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(160deg,var(--forest-deep), var(--forest));
+    color:#fff;
+    text-align:center;
+    padding:46px 22px;
+  }
+  .final-cta h2{
+    font-size:21px;
+    font-weight:800;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13px;
+    color:#d7e0d2;
+    margin-bottom:24px;
+  }
+  .final-cta .btn-tel{
+    display:block;
+    background:var(--clay);
+    color:#fff;
+    font-weight:800;
+    font-size:16px;
+    padding:16px;
+    border-radius:10px;
+    margin-bottom:12px;
+    box-shadow:0 10px 22px rgba(181,101,42,.4);
+  }
+  .final-cta .btn-sub{
+    display:block;
+    border:1px solid rgba(255,255,255,.4);
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    padding:14px;
+    border-radius:10px;
+  }
+  .final-cta .hours-note{
+    margin-top:18px;
+    font-size:11.5px;
+    color:#b8c6b2;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    z-index:100;
+    display:flex;
+    background:#fff;
+    border-top:1px solid var(--line);
+    box-shadow:0 -3px 12px rgba(0,0,0,.08);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px 10px;
+    font-size:10.5px;
+    font-weight:700;
+    color:var(--forest-deep);
+  }
+  .bottom-nav a .ic{display:block;font-size:18px;margin-bottom:2px;}
+  .bottom-nav a.primary{
+    background:var(--clay);
+    color:#fff;
+  }
+
+  @media (min-width:480px){
+    .hero h1{font-size:29px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="shopname">楽山荘<span>岐阜市の登山・アウトドア用品店</span></div>
+  <a href="tel:0582403579" class="header-tel">📞 電話する</a>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-eyebrow">岐阜市 日野南 ／ 登山・アウトドア専門店</div>
+  <h1>山へ行く人の相談所。<em>本格アウトドア用品、ここにあります。</em></h1>
+  <p class="lead">スカルパ・ローバーの登山靴からアークテリクスなど量販店では出会えないブランドまで。試着してじっくり選べる専門店です。</p>
+  <div class="hero-stars"><span class="star">★★★★☆</span> 岐阜市の登山用品店として口コミ多数</div>
+  <div class="hero-img">
+    <img src="images/rakuzan_hero.jpg" alt="楽山荘 店内のアウトドア用品陳列">
+  </div>
+  <a href="tel:0582403579" class="hero-btn">📞 058-240-3579｜まずはお電話ください</a>
+</section>
+
+<!-- Featured Product -->
+<section class="ichioshi section">
+  <div class="eyebrow">ICHIOSHI ｜ イチオシ</div>
+  <h2 class="sec-title">本格アウトドア用品</h2>
+  <p class="sec-sub">見て回るだけでも楽しい、こだわりの品揃え</p>
+
+  <div class="ichioshi-card">
+    <img src="images/rakuzan_outdoor.jpg" alt="楽山荘のアウトドアウェアとシューズの品揃え">
+    <div class="ichioshi-body">
+      <span class="ichioshi-tag">当店イチオシ</span>
+      <h3>アウトドア用品</h3>
+      <p>ウェアもシューズも豊富に取り揃え。量販店ではあまり見かけないアークテリクスなどのブランドも取り扱っており、じっくり選べる本格派の品揃えが自慢です。</p>
+      <ul class="ichioshi-list">
+        <li>スカルパ・ローバーなど登山靴を豊富に取扱い</li>
+        <li>アークテリクスなど希少ブランドも入荷</li>
+        <li>試着OK。サイズ選びもしっかり相談できます</li>
+      </ul>
+      <a href="tel:0582403579" class="ichioshi-cta">📞 在庫について問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="section-tight">
+  <div class="eyebrow">STRENGTH ｜ 選ばれる理由</div>
+  <h2 class="sec-title">楽山荘が選ばれる理由</h2>
+  <p class="sec-sub">岐阜市で本格的な登山・アウトドア用品を探すなら</p>
+
+  <div class="strengths-grid">
+    <div class="strength-item">
+      <div class="num">1</div>
+      <h4>希少ブランドの品揃え</h4>
+      <p>アークテリクスなど、量販店ではなかなか出会えないブランドも取り扱っています。</p>
+    </div>
+    <div class="strength-item">
+      <div class="num">2</div>
+      <h4>納得いくまで試着できる</h4>
+      <p>スカルパやローバーの登山靴も、気になる商品はしっかり試着してから選べます。</p>
+    </div>
+    <div class="strength-item">
+      <div class="num">3</div>
+      <h4>ウェア・シューズが豊富</h4>
+      <p>本格的なアウトドアウェアからシューズまで、見て回るだけでも楽しい売場です。</p>
+    </div>
+  </div>
+
+  <div class="gallery-photo">
+    <img src="images/rakuzan_shoes.jpg" alt="楽山荘の登山靴コーナー">
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews section">
+  <div class="eyebrow">REVIEW ｜ お客様の声</div>
+  <h2 class="sec-title">口コミ・評判</h2>
+  <p class="sec-sub">実際にご来店されたお客様より</p>
+
+  <div class="review-card">
+    <div class="review-stars">★★★★☆</div>
+    <p>岐阜市にある登山用品店。スカルパやローバーなどを取り扱っています。特に問題なく試着させてもらえました。</p>
+    <div class="review-src">Google口コミより</div>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p>本格的なアウトドア用品を取り扱っています。ウェアやシューズも豊富で、量販店にあまり出ないようなブランド（例えばアークテリクスなど）も置いていて、見て回るだけでも楽しいです。</p>
+    <div class="review-src">Google口コミより</div>
+  </div>
+</section>
+
+<!-- Shop Info -->
+<section class="shopinfo section">
+  <div class="eyebrow">SHOP INFO ｜ 店舗情報</div>
+  <h2 class="sec-title">店舗情報</h2>
+
+  <table>
+    <tr><th>店名</th><td>楽山荘</td></tr>
+    <tr><th>会社名</th><td>株式会社　楽山荘</td></tr>
+    <tr><th>代表者</th><td>加納　良樹</td></tr>
+    <tr><th>住所</th><td>岐阜県岐阜市日野南５丁目１０−９ 楽山荘</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0582403579">058-240-3579</a></td></tr>
+    <tr><th>定休日</th><td>毎週火曜日</td></tr>
+    <tr><th>HP</th><td><a href="https://rakuzanso.com/" target="_blank" rel="noopener">https://rakuzanso.com/</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@rakuzanso.com">info@rakuzanso.com</a></td></tr>
+  </table>
+
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=%E5%B2%90%E9%98%9C%E7%9C%8C%E5%B2%90%E9%98%9C%E5%B8%82%E6%97%A5%E9%87%8E%E5%8D%97%EF%BC%95%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%90%E2%88%92%EF%BC%99%20%E6%A5%BD%E5%B1%B1%E8%8D%98&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <h2>まずはお気軽にご来店ください</h2>
+  <p>スカルパ・ローバーの登山靴からアークテリクスまで、<br>じっくり試着して選べます。</p>
+  <a href="tel:0582403579" class="btn-tel">📞 058-240-3579 に電話する</a>
+  <a href="https://rakuzanso.com/" target="_blank" rel="noopener" class="btn-sub">🌐 公式サイトを見る</a>
+  <p class="hours-note">定休日：毎週火曜日／岐阜県岐阜市日野南５丁目１０−９</p>
+</section>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+  <a href="tel:0582403579" class="primary"><span class="ic">📞</span>電話</a>
+  <a href="#shopinfo"><span class="ic">📍</span>地図</a>
+  <a href="https://rakuzanso.com/" target="_blank" rel="noopener"><span class="ic">🌐</span>HP</a>
+  <a href="mailto:info@rakuzanso.com"><span class="ic">✉️</span>メール</a>
+</nav>
+
+</body>
+</html>
