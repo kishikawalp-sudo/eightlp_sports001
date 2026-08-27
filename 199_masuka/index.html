@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ますかスポーツ｜岐阜の野球部御用達 野球・ソフト専門店</title>
+<style>
+  :root{
+    --main:#0b3d91;
+    --accent:#e63946;
+    --sub:#f4a300;
+    --bg:#f7f8fa;
+    --text:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--main);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name{
+    font-size:16px;
+    font-weight:bold;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(135deg,var(--main),#1c5cc0);
+    color:#fff;
+    text-align:center;
+    padding:32px 16px 24px;
+  }
+  .hero img{
+    width:100%;
+    border-radius:8px;
+    margin-top:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  }
+  .hero h1{
+    font-size:22px;
+    line-height:1.5;
+    margin-bottom:8px;
+  }
+  .hero .catch{
+    font-size:14px;
+    background:var(--sub);
+    color:#222;
+    display:inline-block;
+    padding:4px 12px;
+    border-radius:16px;
+    margin-bottom:12px;
+    font-weight:bold;
+  }
+  .hero .sub{
+    font-size:14px;
+    opacity:0.9;
+  }
+
+  /* Sections */
+  section{
+    padding:32px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:20px;
+    color:var(--main);
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--accent);
+    margin:8px auto 0;
+  }
+
+  /* Featured product */
+  .featured{
+    background:#fff;
+    border:3px solid var(--sub);
+    border-radius:12px;
+    padding:20px;
+    position:relative;
+    overflow:hidden;
+  }
+  .featured .badge{
+    position:absolute;
+    top:-2px;left:-2px;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 16px 6px 12px;
+    border-bottom-right-radius:12px;
+  }
+  .featured img{
+    border-radius:8px;
+    margin:16px 0;
+  }
+  .featured h3{
+    font-size:19px;
+    color:var(--main);
+    margin-bottom:8px;
+    margin-top:8px;
+  }
+  .featured p{
+    font-size:14px;
+  }
+  .featured ul{
+    margin-top:12px;
+    padding-left:0;
+    list-style:none;
+  }
+  .featured ul li{
+    font-size:14px;
+    padding:6px 0 6px 24px;
+    position:relative;
+  }
+  .featured ul li::before{
+    content:"⚾";
+    position:absolute;
+    left:0;
+  }
+
+  /* Strengths */
+  .strengths-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .strength-card{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .strength-card .icon{
+    font-size:28px;
+    flex-shrink:0;
+  }
+  .strength-card h4{
+    font-size:15px;
+    color:var(--main);
+    margin-bottom:4px;
+  }
+  .strength-card p{
+    font-size:13px;
+    color:#444;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:#fff;
+  }
+  .review-card{
+    background:var(--bg);
+    border-left:4px solid var(--sub);
+    border-radius:8px;
+    padding:16px;
+    margin-bottom:14px;
+  }
+  .review-card .stars{
+    color:var(--sub);
+    font-size:16px;
+    margin-bottom:6px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#333;
+  }
+
+  /* Shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .shop-info th, .shop-info td{
+    padding:12px 10px;
+    font-size:13.5px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-info th{
+    background:#eef2fb;
+    color:var(--main);
+    width:30%;
+    white-space:nowrap;
+  }
+  .shop-info img{
+    border-radius:8px;
+    margin-bottom:16px;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta-section{
+    background:linear-gradient(135deg,var(--main),#1c5cc0);
+    color:#fff;
+    text-align:center;
+    padding:36px 16px;
+  }
+  .cta-section h2{
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13.5px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .cta-btn{
+    display:block;
+    padding:14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-btn.primary{
+    background:var(--accent);
+    color:#fff;
+  }
+  .cta-btn.secondary{
+    background:#fff;
+    color:var(--main);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    border-top:1px solid #ddd;
+    display:flex;
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main);
+    gap:2px;
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav .nav-icon{
+    font-size:18px;
+  }
+
+  @media (min-width:600px){
+    .strengths-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">ますかスポーツ</div>
+  <a href="tel:0583923133" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <div class="catch">岐阜の野球部御用達</div>
+  <h1>野球・ソフト専門店<br>ますかスポーツ</h1>
+  <p class="sub">豊富な在庫と気さくなスタッフが、あなたの野球ライフを全力サポート</p>
+  <img src="images/hero.jpg" alt="ますかスポーツ 店舗">
+</div>
+
+<section class="featured-section">
+  <div class="section-title">イチオシ商品</div>
+  <div class="featured">
+    <div class="badge">イチオシ</div>
+    <img src="images/product.jpg" alt="野球用品">
+    <h3>野球用品｜グローブ・バット・スパイクまで全て揃う</h3>
+    <p>硬式・軟式を問わず、初心者からプロ志向の選手まで対応する豊富な品揃え。岐阜の野球部から長年愛されてきた確かな目利きで、一人ひとりに合った一本をご提案します。</p>
+    <ul>
+      <li>在庫豊富で選びやすい</li>
+      <li>地元の野球情報にも精通したスタッフ</li>
+      <li>お子様の成長に合わせた買い替え相談もお任せ</li>
+    </ul>
+  </div>
+</section>
+
+<section class="strengths-section">
+  <div class="section-title">選ばれる理由</div>
+  <div class="strengths-grid">
+    <div class="strength-card">
+      <div class="icon">🙋</div>
+      <div>
+        <h4>気さくで話しやすいスタッフ</h4>
+        <p>店員さんの応対の良さに定評あり。何でも気軽に相談できる雰囲気です。</p>
+      </div>
+    </div>
+    <div class="strength-card">
+      <div class="icon">📦</div>
+      <div>
+        <h4>豊富な在庫</h4>
+        <p>野球・ソフトボール用品を幅広く取り揃え、欲しいものがすぐ見つかります。</p>
+      </div>
+    </div>
+    <div class="strength-card">
+      <div class="icon">⚾</div>
+      <div>
+        <h4>地元野球情報に精通</h4>
+        <p>商品知識はもちろん、地元の野球事情にも詳しく、何を尋ねても明快な答えが返ってきます。</p>
+      </div>
+    </div>
+    <div class="strength-card">
+      <div class="icon">🏫</div>
+      <div>
+        <h4>長く付き合える安心感</h4>
+        <p>小学生から高校生まで、成長に合わせて長年お世話になれるお店です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>店員さんの応対が良いです。在庫も豊富でした。お店の方が気さくで話しやすかったです。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>何時もお世話になっております。子供が硬式野球を始めてからもう3年！色々お世話になりました。また、高校に入ってからも、お世話になります。宜しくです！岐阜の野球部御用達、野球・ソフト専門のスポーツ店。商品についてはもちろんのこと、地元の野球情報についても精通していて、何を尋ねても明快な答えが返ってきます。スタッフの方々も、気持ちのよい対応をしてくださり、いろいろな相談にのってもらえます。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <img src="images/shop.jpg" alt="ますかスポーツ 外観">
+  <table>
+    <tr><th>店名</th><td>ますかスポーツ</td></tr>
+    <tr><th>会社名</th><td>有限会社 ますかスポーツ</td></tr>
+    <tr><th>代表者名</th><td>五十住 友昭</td></tr>
+    <tr><th>住所</th><td>岐阜県羽島市竹鼻町丸の内3-34</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0583923133">058-392-3133</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@masuka-sports.com">info@masuka-sports.com</a></td></tr>
+    <tr><th>公式HP</th><td><a href="http://www.masuka-sports.com/" target="_blank" rel="noopener">www.masuka-sports.com</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://www.instagram.com/masukasports/?hl=ja" target="_blank" rel="noopener">Instagram</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E5%B2%90%E9%98%9C%E7%9C%8C%E7%BE%BD%E5%B3%B6%E5%B8%82%E7%AB%B9%E9%BC%BB%E7%94%BA%E4%B8%B8%E3%81%AE%E5%86%853-34&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>野球用品のことなら、地元岐阜のますかスポーツにお任せください。</p>
+  <div class="cta-buttons">
+    <a href="tel:0583923133" class="cta-btn primary">📞 電話で問い合わせる</a>
+    <a href="https://masuka.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener" class="cta-btn secondary">✉️ フォームで問い合わせる</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0583923133" class="call">
+    <span class="nav-icon">📞</span>電話
+  </a>
+  <a href="https://masuka.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener">
+    <span class="nav-icon">✉️</span>問い合わせ
+  </a>
+  <a href="http://www.masuka-sports.com/" target="_blank" rel="noopener">
+    <span class="nav-icon">🌐</span>HP
+  </a>
+  <a href="https://www.instagram.com/masukasports/?hl=ja" target="_blank" rel="noopener">
+    <span class="nav-icon">📷</span>Instagram
+  </a>
+</nav>
+
+</body>
+</html>
