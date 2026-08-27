@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>竹中スポーツ｜岐阜の野球用品専門店</title>
+<style>
+  :root{
+    --navy:#0f2440;
+    --navy-deep:#081627;
+    --red:#c8102e;
+    --red-deep:#9c0c22;
+    --cream:#fdf8ef;
+    --gold:#d9a441;
+    --gray:#6b6f76;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:#222;
+    background:var(--cream);
+    padding-top:56px;
+    padding-bottom:60px;
+    line-height:1.7;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--navy-deep);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.25);
+  }
+  .header .shopname{
+    color:#fff;font-size:15px;font-weight:700;letter-spacing:0.5px;
+  }
+  .header .tel-btn{
+    background:var(--red);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    padding:8px 14px;
+    border-radius:24px;
+    display:flex;align-items:center;gap:5px;
+  }
+  .header .tel-btn::before{content:"📞";}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:#fff;
+    padding:32px 20px 40px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:-40px;right:-40px;
+    width:180px;height:180px;
+    background:radial-gradient(circle, rgba(217,164,65,0.25) 0%, transparent 70%);
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy-deep);
+    font-size:12px;
+    font-weight:700;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:900;
+    line-height:1.5;
+    margin-bottom:10px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.3);
+  }
+  .hero h1 span{
+    color:var(--gold);
+  }
+  .hero p.sub{
+    font-size:14px;
+    color:#dbe2ee;
+    margin-bottom:22px;
+  }
+  .hero .hero-img{
+    width:100%;
+    max-width:420px;
+    margin:0 auto 22px;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+    border:3px solid rgba(255,255,255,0.15);
+  }
+  .hero .cta-btns{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:340px;
+    margin:0 auto;
+  }
+  .btn-primary{
+    background:var(--red);
+    color:#fff;
+    font-weight:700;
+    font-size:16px;
+    padding:16px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(200,16,46,0.4);
+  }
+  .btn-secondary{
+    background:transparent;
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    padding:14px;
+    border-radius:10px;
+    border:1.5px solid rgba(255,255,255,0.5);
+  }
+  .stars{color:var(--gold);font-size:15px;margin-top:6px;letter-spacing:2px;}
+
+  /* Section common */
+  section{
+    padding:40px 20px;
+  }
+  .section-title{
+    text-align:center;
+    margin-bottom:26px;
+  }
+  .section-title .en{
+    display:block;
+    font-size:12px;
+    color:var(--red);
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:21px;
+    font-weight:900;
+    color:var(--navy-deep);
+  }
+
+  /* Featured product - Ichioshi */
+  .featured{
+    background:linear-gradient(180deg,#fff 0%, var(--cream) 100%);
+    border-top:4px solid var(--red);
+    border-bottom:4px solid var(--red);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 6px 24px rgba(15,36,64,0.15);
+    border:1px solid #eee;
+  }
+  .featured-card .ribbon{
+    background:var(--red);
+    color:#fff;
+    text-align:center;
+    font-weight:900;
+    font-size:15px;
+    padding:10px;
+    letter-spacing:1px;
+  }
+  .featured-card img{
+    width:100%;
+    height:auto;
+  }
+  .featured-card .body{
+    padding:20px;
+  }
+  .featured-card h3{
+    font-size:18px;
+    color:var(--navy-deep);
+    margin-bottom:10px;
+    font-weight:900;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:16px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .featured-list li{
+    font-size:14px;
+    padding:8px 0 8px 26px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .featured-list li::before{
+    content:"⚾";
+    position:absolute;left:0;top:8px;
+  }
+  .featured-list li:last-child{border-bottom:none;}
+
+  /* Strengths */
+  .strengths{background:var(--navy-deep);color:#fff;}
+  .strengths .section-title h2{color:#fff;}
+  .strengths .section-title .en{color:var(--gold);}
+  .strength-grid{
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .strength-item{
+    background:rgba(255,255,255,0.06);
+    border-radius:12px;
+    padding:18px;
+    border-left:4px solid var(--gold);
+  }
+  .strength-item .num{
+    color:var(--gold);
+    font-weight:900;
+    font-size:13px;
+    margin-bottom:6px;
+    letter-spacing:1px;
+  }
+  .strength-item h4{
+    font-size:16px;
+    margin-bottom:8px;
+    font-weight:700;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#cdd6e4;
+  }
+
+  /* Owner story */
+  .owner{
+    background:#fff;
+  }
+  .owner-photo{
+    width:130px;height:130px;
+    border-radius:50%;
+    overflow:hidden;
+    margin:0 auto 16px;
+    border:4px solid var(--gold);
+    box-shadow:0 4px 14px rgba(0,0,0,0.15);
+  }
+  .owner-photo img{width:100%;height:100%;object-fit:cover;}
+  .owner .name-box{
+    text-align:center;
+    margin-bottom:20px;
+  }
+  .owner .name-box .role{
+    font-size:12px;color:var(--red);font-weight:700;
+  }
+  .owner .name-box .name{
+    font-size:19px;font-weight:900;color:var(--navy-deep);
+  }
+  .owner-text{
+    background:var(--cream);
+    border-radius:14px;
+    padding:20px;
+    font-size:14px;
+    color:#333;
+    white-space:pre-line;
+    box-shadow:inset 0 0 0 1px #eee;
+  }
+  .owner-text strong{color:var(--red);}
+
+  /* Reviews */
+  .reviews{background:var(--cream);}
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.06);
+    border:1px solid #eee;
+  }
+  .review-card .stars{margin-bottom:8px;}
+  .review-card p{font-size:13.5px;color:#333;}
+
+  /* Info table */
+  .info{background:#fff;}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    margin-bottom:20px;
+  }
+  .info-table th, .info-table td{
+    padding:12px 10px;
+    text-align:left;
+    border-bottom:1px solid #e5e5e5;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:88px;
+    color:var(--navy-deep);
+    font-weight:700;
+    white-space:nowrap;
+    background:#f7f4ec;
+  }
+  .info-table a{color:var(--red);font-weight:700;word-break:break-all;}
+  .map-frame{
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:20px;
+    box-shadow:0 3px 14px rgba(0,0,0,0.1);
+  }
+  .map-frame iframe{width:100%;height:220px;border:0;}
+  .sns-row{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .sns-row a{
+    background:var(--navy);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    padding:10px 16px;
+    border-radius:24px;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg, var(--red) 0%, var(--red-deep) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    margin-bottom:22px;
+    color:#ffe6e9;
+  }
+  .final-cta .btn-primary{
+    background:#fff;
+    color:var(--red-deep);
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+  }
+  .final-cta .hours{
+    margin-top:18px;
+    font-size:12.5px;
+    color:#ffd9de;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    border-top:1px solid #e2e2e2;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.08);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:700;
+    color:var(--navy-deep);
+    gap:3px;
+  }
+  .bottom-nav a.tel{
+    background:var(--red);
+    color:#fff;
+  }
+  .bottom-nav .icon{font-size:18px;}
+
+  @media (min-width:480px){
+    .hero h1{font-size:29px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="shopname">竹中スポーツ</div>
+    <a href="tel:0582642200" class="tel-btn">058-264-2200</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="badge">岐阜 野球用品専門店</span>
+    <h1>岐阜で選ぶなら、<br><span>竹中スポーツ</span>の野球用品</h1>
+    <p class="sub">たぶん岐阜で一番の品揃え。道具選びの答えがここにあります。</p>
+    <div class="hero-img">
+      <img src="images/hero.jpg" alt="竹中スポーツ 店内 野球用品">
+    </div>
+    <div class="cta-btns">
+      <a href="tel:0582642200" class="btn-primary">📞 電話で相談する</a>
+      <a href="#access" class="btn-secondary">アクセス・営業時間を見る</a>
+    </div>
+    <div class="stars">★★★★★ <span style="color:#fff;font-size:12px;">お客様の口コミより</span></div>
+  </section>
+
+  <!-- Featured (Ichioshi) -->
+  <section class="featured" id="ichioshi">
+    <div class="section-title">
+      <span class="en">OUR SPECIALTY</span>
+      <h2>イチオシは、野球用品</h2>
+    </div>
+    <div class="featured-card">
+      <div class="ribbon">★ 岐阜トップクラスの品揃え ★</div>
+      <img src="images/item.jpg" alt="竹中スポーツ 野球用品 グローブ バット">
+      <div class="body">
+        <h3>グローブもバットも、"納得の一本"がここに</h3>
+        <p>練習用バット・グローブなど、実際にお店で購入したものが選手に長く愛用されています。豊富な品揃えの中から、体格やレベル、プレースタイルに合わせて最適な一本をご提案します。</p>
+        <ul class="featured-list">
+          <li>グローブの型付け・お手入れ相談も対応</li>
+          <li>スパイク・バットなど野球用品全般を網羅</li>
+          <li>スポーツ量販店では手に入らない情報とアイテムも</li>
+          <li>野球好きなお子様も大満足のラインナップ</li>
+        </ul>
+        <a href="tel:0582642200" class="btn-primary" style="display:block;text-align:center;">野球用品について電話で相談</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section class="strengths">
+    <div class="section-title">
+      <span class="en">WHY US</span>
+      <h2>選ばれる理由</h2>
+    </div>
+    <div class="strength-grid">
+      <div class="strength-item">
+        <div class="num">STRENGTH 01</div>
+        <h4>岐阜トップクラスの品揃え</h4>
+        <p>野球用品専門店として、たぶん岐阜で一番の品揃え。グローブ・バット・スパイクなど幅広いアイテムから選べます。</p>
+      </div>
+      <div class="strength-item">
+        <div class="num">STRENGTH 02</div>
+        <h4>フレンドリーで丁寧なスタッフ対応</h4>
+        <p>いろいろな相談に親身に応じてくれると評判。道具選びの悩みも気軽に話せる雰囲気です。</p>
+      </div>
+      <div class="strength-item">
+        <div class="num">STRENGTH 03</div>
+        <h4>専門店ならではの情報と提案力</h4>
+        <p>スポーツ量販店にはない物や情報が得られると口コミでも高評価。野球好きなお子様にはたまらないお店です。</p>
+      </div>
+      <div class="strength-item">
+        <div class="num">STRENGTH 04</div>
+        <h4>近くに駐車場あり</h4>
+        <p>お店の近くに駐車場があるので、遠方からのご来店も安心です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Owner story -->
+  <section class="owner">
+    <div class="section-title">
+      <span class="en">OWNER'S STORY</span>
+      <h2>店主のご紹介</h2>
+    </div>
+    <div class="owner-photo">
+      <img src="images/owner.jpg" alt="竹中スポーツ 代表 竹中敏夫">
+    </div>
+    <div class="name-box">
+      <div class="role">代表</div>
+      <div class="name">竹中　敏夫</div>
+    </div>
+    <div class="owner-text">奈良の老舗 野球専門店で5年間、道具・型付け・接客のすべてを徹底的に学び、その後「竹中スポーツ」<strong>3代目</strong>として現場に立っています。
+
+野球がうまくなりたい。もっと楽しみたい。
+そんな想いを持つすべてのプレーヤーに、最適な「道具」と「答え」を届けるのが私の仕事です。
+
+用具の選び方、グラブの型付け、スパイクの悩み、バットの違い、体づくり…
+どんなことでも“野球目線”でご相談ください。
+
+自分自身もトレーニングに取り組み、日々最新の技術や理論を学び続けています。
+「まだ知られていない正解」を、ここ竹中スポーツから伝えていきたいと思っています。
+
+■ 好きなこと
+スニーカー収集と一番くじが小さな楽しみ。野球を離れた場所でも、好きなことに夢中になれる時間を大切にしています。
+
+■ メッセージ
+グラブを1つ選ぶことが、野球人生を大きく変えることもあります。
+小さな違和感、小さな悩みこそ、気軽に話してもらえたらうれしいです。
+「この人に相談してよかった」と思っていただけるよう、今日も本気でやってます。
+
+SNSやYouTube（タケスポch）でも情報発信中！</div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <div class="section-title">
+      <span class="en">VOICE</span>
+      <h2>お客様の口コミ</h2>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★</div>
+      <p>野球用品専門店です。たぶん岐阜で一番の品揃えだと思います。スタッフはフレンドリーな対応で、いろいろな相談にも応じてくれます。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>今まで行った野球専門店の中でもトップクラス。道具、品揃え豊富、スタッフも丁寧でした。野球好きな子どもにはたまらないお店のようで、岐阜へ行ったら必ず寄ります。スポーツ量販店にはない物や情報が得られる感じ。練習用のバットやグローブなど、こちらで購入したものをよく使っています。近くに駐車場もあります。</p>
+    </div>
+  </section>
+
+  <!-- Shop info -->
+  <section class="info" id="access">
+    <div class="section-title">
+      <span class="en">SHOP INFO</span>
+      <h2>店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>竹中スポーツ</td></tr>
+      <tr><th>代表者</th><td>竹中　敏夫</td></tr>
+      <tr><th>住所</th><td>岐阜県岐阜市玉宮町２丁目９</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0582642200">058-264-2200</a></td></tr>
+      <tr><th>定休日</th><td>毎週水曜日、第2・3火曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://www.takenaka-sports.com/?mode=pc" target="_blank" rel="noopener">https://www.takenaka-sports.com/?mode=pc</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@takenaka-sports.com">info@takenaka-sports.com</a></td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=%E5%B2%90%E9%98%9C%E7%9C%8C%E5%B2%90%E9%98%9C%E5%B8%82%E7%8E%89%E5%AE%AE%E7%94%BA%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%99&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen title="竹中スポーツ 地図"></iframe>
+    </div>
+    <div class="sns-row">
+      <a href="https://www.instagram.com/takenaka_sports/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCXCN8l8yRr36ZZ8s6MrmCDA" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2>野球用品のことなら、竹中スポーツへ</h2>
+    <p>グローブ選び・型付け・バット・スパイクのお悩み、お気軽にご相談ください。</p>
+    <a href="tel:0582642200" class="btn-primary">📞 058-264-2200 に電話する</a>
+    <div class="hours">定休日：毎週水曜日、第2・3火曜日</div>
+  </section>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav">
+    <a href="#ichioshi"><span class="icon">⚾</span>イチオシ</a>
+    <a href="#access"><span class="icon">📍</span>アクセス</a>
+    <a href="tel:0582642200" class="tel"><span class="icon">📞</span>電話する</a>
+  </nav>
+
+</body>
+</html>
