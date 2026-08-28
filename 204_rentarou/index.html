@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>れんたろう｜めいほうスキー場近く スキー・スノーボードレンタル</title>
+<style>
+  :root{
+    --main-color:#0d3b66;
+    --accent-color:#f4a300;
+    --snow-white:#ffffff;
+    --light-bg:#f5f8fc;
+    --text-dark:#222;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:var(--snow-white);
+    padding-top:56px;
+    padding-bottom:60px;
+    line-height:1.6;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;top:0;left:0;width:100%;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name{font-size:18px;font-weight:bold;}
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    filter:brightness(0.65);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:10px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+  }
+  .hero-text .sub{
+    font-size:15px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+  }
+  .hero-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 14px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+
+  section{
+    padding:30px 16px;
+  }
+  h2.section-title{
+    text-align:center;
+    font-size:20px;
+    color:var(--main-color);
+    margin-bottom:20px;
+    position:relative;
+    padding-bottom:10px;
+  }
+  h2.section-title::after{
+    content:"";
+    display:block;
+    width:50px;
+    height:3px;
+    background:var(--accent-color);
+    margin:8px auto 0;
+  }
+
+  /* イチオシ商品セクション */
+  .featured{
+    background:linear-gradient(180deg,var(--light-bg) 0%, #fff 100%);
+  }
+  .featured-card{
+    background:#fff;
+    border:2px solid var(--accent-color);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.1);
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-card .body{
+    padding:18px;
+  }
+  .featured-card .label{
+    display:inline-block;
+    background:var(--main-color);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 10px;
+    border-radius:4px;
+    margin-bottom:8px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .featured-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .featured-points span{
+    background:var(--light-bg);
+    color:var(--main-color);
+    font-size:12px;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:20px;
+    border:1px solid var(--main-color);
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px;
+    border-radius:30px;
+    box-shadow:0 4px 10px rgba(244,163,0,0.4);
+  }
+
+  /* 強みセクション */
+  .strengths{
+    background:#fff;
+  }
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    background:var(--light-bg);
+    border-radius:12px;
+    padding:14px;
+  }
+  .strength-item .icon{
+    flex-shrink:0;
+    width:40px;height:40px;
+    background:var(--main-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .strength-item .text h4{
+    font-size:15px;
+    color:var(--main-color);
+    margin-bottom:4px;
+  }
+  .strength-item .text p{
+    font-size:13px;
+  }
+
+  /* ギャラリー画像 */
+  .gallery{
+    background:var(--light-bg);
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:10px;
+    height:140px;
+    object-fit:cover;
+    width:100%;
+  }
+  .gallery-grid .full{
+    grid-column:1/3;
+    height:180px;
+  }
+
+  /* クチコミ */
+  .reviews{
+    background:#fff;
+  }
+  .review-card{
+    background:var(--light-bg);
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:16px;
+    position:relative;
+  }
+  .review-card .stars{
+    color:var(--accent-color);
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    white-space:pre-line;
+  }
+
+  /* 店舗情報 */
+  .shop-info{
+    background:var(--light-bg);
+  }
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .info-table tr{
+    border-bottom:1px solid #eee;
+  }
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:var(--main-color);
+    color:#fff;
+    font-size:13px;
+    text-align:left;
+    padding:12px;
+    width:90px;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:12px;
+    font-size:13.5px;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* 最終CTA */
+  .final-cta{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    color:#fff;
+  }
+  .final-cta h2.section-title::after{
+    background:var(--accent-color);
+  }
+  .final-cta p{
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  .final-cta .cta-btn{
+    margin-bottom:12px;
+  }
+  .final-cta .sub-btn{
+    display:block;
+    text-align:center;
+    background:transparent;
+    border:2px solid #fff;
+    color:#fff;
+    font-weight:bold;
+    font-size:15px;
+    padding:12px;
+    border-radius:30px;
+  }
+
+  /* フッターナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;
+    width:100%;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 0;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  .bottom-nav a.call{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .bottom-nav a.reserve{
+    background:var(--main-color);
+    color:#fff;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">れんたろう</div>
+  <a href="tel:0575872789" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="れんたろう スキー・スノーボードレンタル">
+  <div class="hero-text">
+    <div class="hero-badge">めいほうスキー場まで5分</div>
+    <div class="catch">安い・早い・豊富な在庫。<br>れんたろうのスキー＆スノーボードレンタル</div>
+    <div class="sub">バートンスノーボード正規取扱店／ジュニアサイズも充実</div>
+  </div>
+</div>
+
+<section class="featured">
+  <h2 class="section-title">イチオシ｜スキー・スノーボードレンタル</h2>
+  <div class="featured-card">
+    <img src="images/gear.jpg" alt="スキー・スノーボードレンタル用品">
+    <div class="body">
+      <span class="label">当店イチオシ</span>
+      <h3>めいほうスキー場のレンタルより約2割安い！</h3>
+      <p>WEB予約は前日15時まで受付。事前予約なら現地で並ばずスムーズに受け取れます。クレジットカードもご利用いただけます。バートンスノーボードの正規取扱店で、ジュニアサイズも豊富にご用意しています。</p>
+      <div class="featured-points">
+        <span>スキー場まで5分</span>
+        <span>バートン正規取扱店</span>
+        <span>ジュニアサイズ充実</span>
+        <span>WEB予約OK</span>
+        <span>クレジット利用可</span>
+      </div>
+      <a href="https://rentaro-meiho.com/contact.html" class="cta-btn">WEBで予約する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">れんたろうが選ばれる理由</h2>
+  <div class="strength-list">
+    <div class="strength-item">
+      <div class="icon">1</div>
+      <div class="text">
+        <h4>めいほうスキー場まで5分</h4>
+        <p>ゲレンデ直近だから移動もラクラク。時間を有効に使えます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="icon">2</div>
+      <div class="text">
+        <h4>バートンスノーボード正規取扱店</h4>
+        <p>本格ブランドのボードを安心してレンタルできます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="icon">3</div>
+      <div class="text">
+        <h4>ジュニアサイズが豊富</h4>
+        <p>お子様連れのファミリーでも安心してご利用いただけます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="icon">4</div>
+      <div class="text">
+        <h4>WEB事前予約で安心</h4>
+        <p>前日15時までWEB予約可能。予定が決まっているなら予約がおすすめです。返却も18時までなので時間に余裕があります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <h2 class="section-title">店舗の様子</h2>
+  <div class="gallery-grid">
+    <img class="full" src="images/shop.jpg" alt="れんたろう 店舗外観">
+    <img src="images/hero.jpg" alt="レンタル受付の様子">
+    <img src="images/gear.jpg" alt="スキー・スノーボード用品">
+  </div>
+</section>
+
+<section class="reviews">
+  <h2 class="section-title">お客様の口コミ</h2>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>めいほうスキー場のレンタル屋さんよりも2割くらい安くレンタルできます。祝日の8時前に到着しましたが、在庫十分にありそうでした。WEB予約も前日15時までできるので、予定が決まっているなら予約した方が確実です。クレジット利用可能。
+店員さんが「16時頃は道が混んでいて、町に降りるのに1時間かかるので、時間をずらした方が良い」とアドバイスをいただきました。地元の人じゃないとわからない情報を、さりげなく教えてくれるのは大変ありがたいです。
+返却は18時までなので、余裕があります。また利用したいなと思えるショップでした。予約してから行かないと、マイサイズは無いかもしれません。8：30時点で余剰在庫無しでした。
+店員が素敵な対応で、好感です。ウェアレンタルは作業着みたいでした（笑）。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>めいほうスキー場に近くファミリーで2日間のレンタルでしたが、WEBで事前予約して割引もあり助かりました。対応も迅速丁寧で、スキー場で並ぶことを考えると便利な気がします。最初はクールな店員さんだなと思いましたが、結構気さくに話しかけてくれました！いい店だと思います！</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <h2 class="section-title">店舗情報</h2>
+  <table class="info-table">
+    <tr><th>店名</th><td>れんたろう</td></tr>
+    <tr><th>住所</th><td>岐阜県郡上市明宝奥住3378-1</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0575872789">0575-87-2789</a></td></tr>
+    <tr><th>HP</th><td><a href="https://rentaro-meiho.com/" target="_blank">https://rentaro-meiho.com/</a></td></tr>
+    <tr><th>予約</th><td>WEB予約可（前日15時まで）／返却は18時まで</td></tr>
+    <tr><th>お支払い</th><td>クレジットカード利用可</td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://www.google.com/maps?q=岐阜県郡上市明宝奥住3378-1&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2 class="section-title">お得にレンタルするなら今すぐ予約</h2>
+  <p>スキー場のレンタルより約2割お得。<br>在庫があるうちにWEB予約がおすすめです。</p>
+  <a href="https://rentaro-meiho.com/contact.html" class="cta-btn">今すぐWEB予約する</a>
+  <a href="tel:0575872789" class="sub-btn">電話で問い合わせる</a>
+</section>
+
+<div class="bottom-nav">
+  <a href="tel:0575872789" class="call">📞 電話</a>
+  <a href="https://rentaro-meiho.com/" target="_blank">🌐 HP</a>
+  <a href="https://rentaro-meiho.com/contact.html" class="reserve">📝 WEB予約</a>
+</div>
+
+</body>
+</html>
