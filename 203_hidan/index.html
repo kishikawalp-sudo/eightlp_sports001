@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>飛騨スポーツ｜岐阜県飛騨市の卓球用品専門店</title>
+<style>
+  :root{
+    --main-color:#0b4f8a;
+    --accent-color:#ff7a00;
+    --dark:#1a1a1a;
+    --light-bg:#f5f8fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color:var(--dark);
+    line-height:1.7;
+    background:#fff;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;width:100%;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  .header .shop-name{font-size:16px;font-weight:bold;}
+  .header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:60vw;
+    max-height:420px;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;bottom:0;left:0;width:100%;
+    background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    color:#fff;padding:30px 16px 16px;
+  }
+  .hero-overlay h1{
+    font-size:22px;
+    margin-bottom:6px;
+    line-height:1.4;
+  }
+  .hero-overlay p{
+    font-size:13px;
+    opacity:0.95;
+  }
+
+  section{padding:36px 16px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:22px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:50px;height:3px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+  }
+
+  /* Featured Product */
+  .featured{
+    background:var(--light-bg);
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:14px;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .featured-box{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  }
+  .featured-box img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-content{
+    padding:20px;
+  }
+  .featured-content h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-content p{
+    font-size:14.5px;
+    margin-bottom:14px;
+  }
+  .featured-list{
+    list-style:none;
+  }
+  .featured-list li{
+    font-size:14px;
+    margin-bottom:8px;
+    padding-left:22px;
+    position:relative;
+  }
+  .featured-list li::before{
+    content:"✓";
+    color:var(--accent-color);
+    font-weight:bold;
+    position:absolute;
+    left:0;
+  }
+
+  /* Strengths */
+  .strengths-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .strength-card{
+    background:var(--light-bg);
+    border-left:4px solid var(--accent-color);
+    border-radius:8px;
+    padding:16px;
+  }
+  .strength-card h4{
+    color:var(--main-color);
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .strength-card p{
+    font-size:13.5px;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:var(--light-bg);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .stars{
+    color:#ffb400;
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:14px;
+  }
+
+  /* Gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .gallery img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:8px;
+  }
+
+  /* Shop Info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .shop-info th,.shop-info td{
+    padding:12px 10px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-info th{
+    width:30%;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA Section */
+  .cta-section{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:14px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .cta-btn{
+    display:block;
+    padding:14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-btn.tel{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .cta-btn.form{
+    background:#fff;
+    color:var(--main-color);
+  }
+  .cta-btn.hp{
+    background:transparent;
+    color:#fff;
+    border:1px solid #fff;
+  }
+
+  /* Bottom Nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;width:100%;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    font-weight:bold;
+  }
+  .bottom-nav a.tel{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .bottom-nav a.form{
+    background:var(--main-color);
+    color:#fff;
+  }
+  .bottom-nav a.hp{
+    background:var(--light-bg);
+    color:var(--main-color);
+  }
+
+  @media (min-width:600px){
+    .strengths-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="shop-name">飛騨スポーツ</div>
+  <a href="tel:0577734715" class="tel-btn">📞 電話する</a>
+</div>
+
+<div class="hero">
+  <img src="images/hida_hero.jpg" alt="飛騨スポーツ 店舗外観">
+  <div class="hero-overlay">
+    <h1>卓球用品のことなら飛騨スポーツへ<br>サッカー用品も抜群の品揃え</h1>
+    <p>岐阜県飛騨市古川町 地域密着のスポーツ用品専門店</p>
+  </div>
+</div>
+
+<section class="featured">
+  <span class="featured-badge">イチオシ商品</span>
+  <div class="section-title">卓球用品</div>
+  <div class="featured-box">
+    <img src="images/hida_product.jpg" alt="飛騨スポーツ 卓球用品">
+    <div class="featured-content">
+      <h3>ラケット・ラバー選びはお任せください</h3>
+      <p>飛騨スポーツでは、初心者から本格的に競技に取り組む方まで、一人ひとりのプレースタイルに合わせた卓球用品をご提案しています。実際に高校生のお客様からも「2階の卓球場を借りました」と嬉しいお声をいただくなど、店舗としての卓球への強みは地域でも評判です。</p>
+      <ul class="featured-list">
+        <li>豊富なラケット・ラバーの品揃え</li>
+        <li>お客様のレベルに合わせた丁寧な提案</li>
+        <li>店員による親身な対応</li>
+        <li>店舗2階の卓球場もご利用可能</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">飛騨スポーツの強み</div>
+  <div class="strengths-grid">
+    <div class="strength-card">
+      <h4>卓球用品への専門知識</h4>
+      <p>ラケット・ラバー選びから調整まで、卓球経験豊富なスタッフが丁寧にサポートします。</p>
+    </div>
+    <div class="strength-card">
+      <h4>サッカー用品も抜群の評判</h4>
+      <p>口コミでも高評価のサッカー用品コーナー。地域のサッカー少年少女にも支持されています。</p>
+    </div>
+    <div class="strength-card">
+      <h4>2階卓球場のレンタル対応</h4>
+      <p>店舗2階のスペースを卓球場として貸し出し。練習の場としてもご利用いただけます。</p>
+    </div>
+    <div class="strength-card">
+      <h4>丁寧で気持ちの良い接客</h4>
+      <p>お客様からの「店員さんの対応も大変良かった」という声の通り、親切な接客が自慢です。</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>サッカーに関しては、抜群です。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>高校生 2階の卓球場を借りました。店員さんの対応も大変良かったです。ありがとうございました。</p>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="section-title">店舗のご紹介</div>
+  <div class="gallery">
+    <img src="images/hida_hero.jpg" alt="飛騨スポーツ 店舗外観">
+    <img src="images/hida_product.jpg" alt="飛騨スポーツ 卓球用品">
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <table>
+    <tr><th>店名</th><td>飛騨スポーツ</td></tr>
+    <tr><th>代表者</th><td>谷辺智之</td></tr>
+    <tr><th>住所</th><td>岐阜県飛騨市古川町新栄町１０−２０</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0577734715">0577-73-4715</a></td></tr>
+    <tr><th>定休日</th><td>火曜日</td></tr>
+    <tr><th>HP</th><td><a href="https://www.hidasports.com/" target="_blank">https://www.hidasports.com/</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://www.google.com/maps?q=岐阜県飛騨市古川町新栄町10-20&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>卓球用品のご相談はお気軽に</h2>
+  <p>サッカー用品も含め、スポーツ用品のことなら飛騨スポーツへ</p>
+  <div class="cta-buttons">
+    <a href="tel:0577734715" class="cta-btn tel">📞 電話で問い合わせる</a>
+    <a href="https://thebase.com/inquiry/hidasports-base-shop?_gl=1*246dzd*_gcl_au*NjUzMjMyODc3LjE3NjEwOTU5NDY.*_ga*MTc4MzExODQ0Mi4xNzYxMDk1OTQ2*_ga_574HL6KGKQ*czE3NjEwOTU5NDYkbzEkZzEkdDE3NjEwOTYwNjQkajM5JGwwJGgw" target="_blank" class="cta-btn form">✉️ お問い合わせフォーム</a>
+    <a href="https://www.hidasports.com/" target="_blank" class="cta-btn hp">🌐 ホームページを見る</a>
+  </div>
+</section>
+
+<div class="bottom-nav">
+  <a href="tel:0577734715" class="tel">📞 電話</a>
+  <a href="https://thebase.com/inquiry/hidasports-base-shop?_gl=1*246dzd*_gcl_au*NjUzMjMyODc3LjE3NjEwOTU5NDY.*_ga*MTc4MzExODQ0Mi4xNzYxMDk1OTQ2*_ga_574HL6KGKQ*czE3NjEwOTU5NDYkbzEkZzEkdDE3NjEwOTYwNjQkajM5JGwwJGgw" target="_blank" class="form">✉️ 問合せ</a>
+  <a href="https://www.hidasports.com/" target="_blank" class="hp">🌐 HP</a>
+</div>
+
+</body>
+</html>
