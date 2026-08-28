@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>レンタル アース・ワーク｜郡上・ひるがののスノーボード・スキーレンタル</title>
+<meta name="description" content="岐阜県郡上市ひるがので選ばれるスキー・スノーボードレンタル専門店「レンタル アース・ワーク」。リーズナブルな料金と丁寧なメンテナンス、ネット予約対応。">
+<style>
+  :root{
+    --main-color:#0b4f8a;
+    --accent-color:#ff7a00;
+    --snow-color:#f5f9fc;
+    --dark-color:#1a2b3c;
+    --text-color:#333;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-color);
+    background:#fff;
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  .header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  .header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+  }
+  .header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,rgba(11,79,138,0.55),rgba(11,79,138,0.55)),url('images/hero_snowboard.jpg') center/cover no-repeat;
+    min-height:82vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    padding:32px 20px;
+  }
+  .hero .catch-sub{
+    font-size:15px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+    background:rgba(255,255,255,0.15);
+    padding:4px 14px;
+    border-radius:20px;
+  }
+  .hero h1{
+    font-size:28px;
+    font-weight:900;
+    line-height:1.5;
+    margin-bottom:16px;
+    text-shadow:0 2px 8px rgba(0,0,0,0.4);
+  }
+  .hero h1 span{
+    color:#ffd166;
+  }
+  .hero p.desc{
+    font-size:14px;
+    margin-bottom:24px;
+    opacity:0.95;
+  }
+  .hero .stars{
+    color:#ffd166;
+    font-size:18px;
+    margin-bottom:20px;
+  }
+  .cta-btn{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:16px 36px;
+    border-radius:50px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.3);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.04);}
+    100%{transform:scale(1);}
+  }
+
+  section{
+    padding:48px 20px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:900;
+    color:var(--main-color);
+    margin-bottom:8px;
+  }
+  .section-title .en{
+    display:block;
+    font-size:12px;
+    color:var(--accent-color);
+    letter-spacing:3px;
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:13px;
+    color:#666;
+    margin-bottom:32px;
+  }
+
+  /* featured product - snowboard rental */
+  .feature{
+    background:var(--dark-color);
+    color:#fff;
+  }
+  .feature .section-title{color:#fff;}
+  .feature-card{
+    background:#fff;
+    color:var(--text-color);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,0.3);
+    margin-bottom:20px;
+  }
+  .feature-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .feature-card .badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:0 0 10px 0;
+    margin-top:-1px;
+  }
+  .feature-card .body{
+    padding:20px;
+  }
+  .feature-card h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin:8px 0 12px;
+    font-weight:900;
+  }
+  .feature-card p{
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .feature-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .feature-list li{
+    font-size:13.5px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .feature-list li::before{
+    content:"✔";
+    position:absolute;
+    left:0;
+    color:var(--accent-color);
+    font-weight:bold;
+  }
+  .feature-card .cta-btn{
+    display:block;
+    text-align:center;
+    width:100%;
+  }
+
+  /* strengths */
+  .strengths{
+    background:var(--snow-color);
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    align-items:flex-start;
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main-color);
+    margin-bottom:6px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#555;
+  }
+  .strength-img{
+    margin-top:24px;
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .strength-img img{
+    height:200px;
+    object-fit:cover;
+  }
+
+  /* reviews */
+  .reviews{
+    background:#fff;
+  }
+  .review-card{
+    background:var(--snow-color);
+    border-left:4px solid var(--accent-color);
+    border-radius:8px;
+    padding:20px;
+  }
+  .review-card .stars{
+    color:#ffb300;
+    font-size:16px;
+    margin-bottom:10px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#444;
+  }
+  .review-card .from{
+    margin-top:14px;
+    font-size:12px;
+    color:#888;
+    text-align:right;
+  }
+
+  /* shop info */
+  .shop-info{
+    background:var(--snow-color);
+  }
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    margin-bottom:20px;
+  }
+  .info-table tr{
+    border-bottom:1px solid #eee;
+  }
+  .info-table tr:last-child{
+    border-bottom:none;
+  }
+  .info-table th{
+    background:var(--main-color);
+    color:#fff;
+    font-size:12.5px;
+    text-align:left;
+    padding:12px;
+    width:100px;
+    vertical-align:top;
+    white-space:nowrap;
+  }
+  .info-table td{
+    padding:12px;
+    font-size:13px;
+    word-break:break-all;
+  }
+  .info-table td a{
+    color:var(--main-color);
+    font-weight:bold;
+  }
+  .map-wrap{
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    display:block;
+  }
+  .sns-links{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-top:20px;
+  }
+  .sns-links a{
+    background:var(--main-color);
+    color:#fff;
+    font-size:12.5px;
+    font-weight:bold;
+    padding:10px 18px;
+    border-radius:24px;
+  }
+
+  /* final CTA */
+  .final-cta{
+    background:linear-gradient(135deg,var(--main-color),#083a66);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13px;
+    margin-bottom:24px;
+    opacity:0.9;
+  }
+  .final-cta .cta-btn{
+    margin-bottom:14px;
+  }
+  .final-cta .sub-link{
+    display:block;
+    font-size:12.5px;
+    text-decoration:underline;
+    color:#cfe3f7;
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    height:60px;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:bold;
+    color:var(--main-color);
+    gap:2px;
+  }
+  .bottom-nav a.primary{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    font-size:18px;
+  }
+
+  @media (min-width:600px){
+    .hero h1{font-size:34px;}
+    section{padding:64px 40px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="shop-name">レンタル アース・ワーク</div>
+  <a href="tel:08036494454" class="tel-btn">📞 電話する</a>
+</header>
+
+<section class="hero">
+  <div class="catch-sub">奥美濃・ひるがる高原</div>
+  <h1>兵庫県より断然リーズナブル！<br><span>スノーボードレンタル</span>で<br>今シーズンの滑走を始めよう</h1>
+  <p class="desc">気持ちの良い接客と、メンテナンスの行き届いた綺麗なレンタル用品。<br>ネット予約OKで当日も安心です。</p>
+  <div class="stars">★★★★★ <span style="font-size:13px;">お客様満足度も高評価</span></div>
+  <a href="tel:08036494454" class="cta-btn">📞 今すぐ電話で予約</a>
+</section>
+
+<section class="feature">
+  <div class="section-title">
+    <span class="en">RECOMMEND</span>
+    イチオシ｜スノーボードレンタル
+  </div>
+  <p class="section-lead" style="color:#cfe3f7;">初心者からベテランまで、安心して滑れる一式をご用意</p>
+
+  <div class="feature-card">
+    <img src="images/snowboard_rental.jpg" alt="スノーボードレンタル">
+    <span class="badge">WEB予約対応</span>
+    <div class="body">
+      <h3>子どもから大人まで、綺麗な用品で安心レンタル</h3>
+      <p>板・ブーツ・ウェアなど必要な用品をトータルでレンタル可能。スタッフが丁寧にメンテナンスした清潔な用品なので、初めての方やお子様連れでも安心してご利用いただけます。</p>
+      <ul class="feature-list">
+        <li>ネット予約で待ち時間なくスムーズ受け取り</li>
+        <li>お子様用サイズも豊富にご用意</li>
+        <li>メンテナンス済みのキレイな用品</li>
+        <li>奥美濃エリア随一のリーズナブル価格</li>
+      </ul>
+      <a href="tel:08036494454" class="cta-btn">📞 スノーボードレンタルを予約</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">
+    <span class="en">STRENGTH</span>
+    アース・ワークが選ばれる理由
+  </div>
+
+  <div class="strength-item">
+    <div class="num">1</div>
+    <div>
+      <h4>リーズナブルな料金設定</h4>
+      <p>兵庫県などの都市部エリアと比べても、比較にならないほどお値打ちな料金でレンタルいただけます。</p>
+    </div>
+  </div>
+
+  <div class="strength-item">
+    <div class="num">2</div>
+    <div>
+      <h4>気持ちの良い接客</h4>
+      <p>店主自らが親身に対応。お子様の体調不良などやむを得ないキャンセルにも快く対応する、温かい接客が評判です。</p>
+    </div>
+  </div>
+
+  <div class="strength-item">
+    <div class="num">3</div>
+    <div>
+      <h4>行き届いたメンテナンス</h4>
+      <p>レンタル用品は常に手入れが行き届いた清潔な状態。気持ちよく滑走を楽しんでいただけます。</p>
+    </div>
+  </div>
+
+  <div class="strength-item">
+    <div class="num">4</div>
+    <div>
+      <h4>ネット予約で便利＆夏は「まきばの森」も</h4>
+      <p>ネット予約対応で便利にご利用可能。夏季（5〜10月）は自然体験＆BBQスペース「まきばの森」も運営しています。</p>
+    </div>
+  </div>
+
+  <div class="strength-img">
+    <img src="images/shop_exterior.jpg" alt="レンタル アース・ワーク 店舗">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">
+    <span class="en">VOICE</span>
+    お客様の声
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>滑り納めの際、利用させて頂きました！本当に兵庫県とは比べ物にならないくらいリーズナブルなのに、気持ちの良い接客とメンテナンスの行き届いた綺麗なレンタル用品で本当にココを利用して良かったなと思いました。店主さんが本当に優しい方で、良くして頂き有難うございました。また奥美濃で滑る際は必ず利用させて頂きます！</p>
+    <p style="margin-top:14px;">子ども達のスキー用品レンタル時に利用させていただいております。ネットで予約できて便利です。レンタル予約後、子どもが熱を出したり怪我をしたりしてやむなくキャンセルしたことがありますが、その際も快く承諾していただき子どもの体調を気遣う言葉までいただきました。スタッフさんが本当に親切なので、これからも利用させていただきたいと思います。</p>
+    <div class="from">— ご利用者様の声より</div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">
+    <span class="en">SHOP INFO</span>
+    店舗情報
+  </div>
+
+  <table class="info-table">
+    <tr><th>店名</th><td>レンタル アース・ワーク</td></tr>
+    <tr><th>会社名</th><td>株式会社アース・ワーク</td></tr>
+    <tr><th>住所</th><td>岐阜県郡上市高鷲町ひるがの4670-856</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:08036494454">080-3649-4454</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:sachikatomo1113@gmail.com">sachikatomo1113@gmail.com</a></td></tr>
+    <tr><th>HP</th><td><a href="http://www.earthwork-gujo.co.jp/" target="_blank" rel="noopener">www.earthwork-gujo.co.jp</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="http://www.earthwork-gujo.co.jp/contact" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+  </table>
+
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=岐阜県郡上市高鷲町ひるがの4670-856&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+  <div class="sns-links">
+    <a href="https://ja-jp.facebook.com/r.earthwork/" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>今シーズンの滑走は<br>アース・ワークのレンタルで</h2>
+  <p>リーズナブル＆安心のスノーボード・スキーレンタル。<br>お気軽にお電話・ネットでご予約ください。</p>
+  <a href="tel:08036494454" class="cta-btn">📞 080-3649-4454 に電話する</a>
+  <a href="http://www.earthwork-gujo.co.jp/contact" target="_blank" rel="noopener" class="sub-link">Web予約・お問い合わせフォームはこちら</a>
+</section>
+
+<nav class="bottom-nav">
+  <a href="http://www.earthwork-gujo.co.jp/" target="_blank" rel="noopener">
+    <span class="icon">🌐</span>HP
+  </a>
+  <a href="https://ja-jp.facebook.com/r.earthwork/" target="_blank" rel="noopener">
+    <span class="icon">📘</span>Facebook
+  </a>
+  <a href="tel:08036494454" class="primary">
+    <span class="icon">📞</span>電話で予約
+  </a>
+</nav>
+
+</body>
+</html>
