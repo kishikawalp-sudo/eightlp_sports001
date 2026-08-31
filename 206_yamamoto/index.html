@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>やまもとスポーツ｜豊田市の野球用品専門店</title>
+<style>
+  :root{
+    --main-color:#0b3d91;
+    --accent-color:#e8590c;
+    --bg-light:#f7f8fa;
+    --text-dark:#1a1a1a;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:var(--bg-light);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  .header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:var(--main-color);
+    color:var(--white);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 16px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  .header .shop-name{
+    font-size:16px;
+    font-weight:bold;
+  }
+  .header .tel-btn{
+    background:var(--accent-color);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    color:var(--white);
+    padding:30px 16px 16px;
+  }
+  .hero-overlay .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.4;
+  }
+  .hero-overlay .sub{
+    font-size:13px;
+    margin-top:6px;
+    opacity:0.9;
+  }
+
+  /* Section common */
+  section{
+    padding:32px 16px;
+  }
+  .section-title{
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+    color:var(--main-color);
+    margin-bottom:20px;
+    position:relative;
+  }
+  .section-title:after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+  }
+
+  /* Featured product (イチオシ) */
+  .featured{
+    background:var(--main-color);
+    color:var(--white);
+  }
+  .featured .section-title{color:var(--white);}
+  .featured-box{
+    background:var(--white);
+    color:var(--text-dark);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+  }
+  .featured-box img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-content{
+    padding:20px;
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:var(--white);
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:14px;
+    margin-bottom:10px;
+  }
+  .featured-content h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-content p{
+    font-size:14px;
+  }
+  .featured-list{
+    margin-top:14px;
+    padding-left:0;
+    list-style:none;
+  }
+  .featured-list li{
+    font-size:14px;
+    padding:6px 0 6px 22px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .featured-list li:before{
+    content:"⚾";
+    position:absolute;
+    left:0;
+  }
+
+  /* Strengths */
+  .strengths-grid{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-card{
+    background:var(--white);
+    border-radius:10px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    border-left:5px solid var(--accent-color);
+  }
+  .strength-card h4{
+    font-size:16px;
+    color:var(--main-color);
+    margin-bottom:6px;
+  }
+  .strength-card p{
+    font-size:13.5px;
+    color:#333;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:#eef2f7;
+  }
+  .review-card{
+    background:var(--white);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .review-stars{
+    color:#f5a623;
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#333;
+    white-space:pre-line;
+  }
+
+  /* Shop info */
+  .shop-info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--white);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .shop-info-table th,
+  .shop-info-table td{
+    padding:12px 14px;
+    font-size:13.5px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .shop-info-table th{
+    background:#f0f3f7;
+    color:var(--main-color);
+    width:30%;
+    white-space:nowrap;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:var(--accent-color);
+    color:var(--white);
+    text-align:center;
+    padding:36px 16px;
+  }
+  .cta-section h2{
+    font-size:19px;
+    margin-bottom:14px;
+  }
+  .cta-button{
+    display:inline-block;
+    background:var(--white);
+    color:var(--accent-color);
+    font-weight:bold;
+    font-size:16px;
+    padding:14px 32px;
+    border-radius:30px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  }
+  .cta-sub{
+    font-size:12px;
+    margin-top:10px;
+    opacity:0.9;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:60px;
+    background:var(--white);
+    display:flex;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main-color);
+  }
+  .bottom-nav a.call{
+    background:var(--accent-color);
+    color:var(--white);
+  }
+  .bottom-nav .icon{
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:#888;
+    background:var(--bg-light);
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="shop-name">やまもとスポーツ</div>
+  <a href="tel:0565310530" class="tel-btn">📞 0565-31-0530</a>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="やまもとスポーツ 店舗外観">
+  <div class="hero-overlay">
+    <div class="catch">豊田市の野球用品専門店<br>やまもとスポーツ</div>
+    <div class="sub">初心者からベテランまで、丁寧な接客でお選びします</div>
+  </div>
+</div>
+
+<!-- 会社概要バー -->
+<section style="padding:20px 16px 0;">
+  <p style="text-align:center;font-size:13px;color:#555;">株式会社やまもと｜代表：山本 修一郎</p>
+</section>
+
+<!-- イチオシ商品 -->
+<section class="featured">
+  <div class="section-title">イチオシ商品</div>
+  <div class="featured-box">
+    <img src="images/product.jpg" alt="野球用品 グローブ">
+    <div class="featured-content">
+      <span class="featured-badge">専門店だからできる品揃え</span>
+      <h3>野球用品</h3>
+      <p>グローブ・バット・スパイクなど、野球用品を幅広く取り揃えています。取引メーカーの商品なら取り寄せも可能。お客様一人ひとりに合った一品をスタッフが丁寧にご案内します。</p>
+      <ul class="featured-list">
+        <li>グローブ・ミット各種取り扱い</li>
+        <li>メーカー取り寄せ対応</li>
+        <li>グローブ紐交換などの部分修理も対応（例：約20分・1,700円弱〜）</li>
+        <li>初心者の方も安心してご相談いただけます</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 選ばれる理由 -->
+<section>
+  <div class="section-title">選ばれる理由</div>
+  <div class="strengths-grid">
+    <div class="strength-card">
+      <h4>専門店ならではの知識と提案力</h4>
+      <p>野球用品を知り尽くしたスタッフが、お客様の目的やレベルに合わせて丁寧にご提案。初心者の方でも気兼ねなくご相談いただけます。</p>
+    </div>
+    <div class="strength-card">
+      <h4>メーカー取り寄せ対応</h4>
+      <p>取引のあるメーカーであれば、店頭にない商品もお取り寄せ可能。欲しい商品をしっかり見つけていただけます。</p>
+    </div>
+    <div class="strength-card">
+      <h4>修理・メンテナンスも安心</h4>
+      <p>グローブの紐が切れてしまった場合など、部分的な修理にも迅速に対応。仕事帰りにさっと立ち寄れる気軽さも好評です。</p>
+    </div>
+    <div class="strength-card">
+      <h4>お得なキャンペーンを随時開催</h4>
+      <p>お店に立ち寄るとつい手に取ってしまうような、様々なキャンペーンを実施しています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- お客様の声 -->
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+
+  <div class="review-card">
+    <div class="review-stars">★★★★</div>
+    <p>専門店なので助かっています。取引のあるメーカーなら取り寄せもしてくれますし、よく色々なキャンペーンをしているので買うつもりなかったのについつい手にとってしまいます。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p>ソフトボール用グローブが欲しく、知り合いにココ良いよと教えてもらったので行ってみました。他の方のレビューで接客対応について書かれてるのを見て心配していましたが、若い男性の店員様に丁寧に教えてもらえました。当方初心者な為、専門店という事に緊張してましたが、気兼ねなく行けます。値段については量販店と比べていないので分かりませんが、会計時に想像より安く済んだと感じています。仮に量販店より高かったとしても、専門店の方に教えてもらって選べましたので後悔はしません。初心者こそ専門店！買い替えやメンテナンスとかでまた是非訪ねたいと思いました。ありがとうございました。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p>グローブの紐が切れたので修理をお願いしました。部分修理20分程で紐代込みで1700円弱。自分で直す自信がなくて、仕事帰りにささっとやってもらえたので良かったです。</p>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section>
+  <div class="section-title">店舗情報</div>
+  <table class="shop-info-table">
+    <tr><th>店名</th><td>やまもとスポーツ</td></tr>
+    <tr><th>会社名</th><td>株式会社やまもと</td></tr>
+    <tr><th>代表者名</th><td>山本 修一郎</td></tr>
+    <tr><th>住所</th><td>愛知県豊田市西町２丁目８</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0565310530">0565-31-0530</a></td></tr>
+    <tr><th>定休日</th><td>毎週火曜日／第1・第3・第5月曜日</td></tr>
+    <tr><th>HP</th><td><a href="http://www.yamaspo.co.jp/" target="_blank" rel="noopener">www.yamaspo.co.jp</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@yamaspo.co.jp">info@yamaspo.co.jp</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E8%A5%BF%E7%94%BA%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%98&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>野球用品のことなら、まずはお気軽にご相談ください</h2>
+  <a href="tel:0565310530" class="cta-button">📞 0565-31-0530 に電話する</a>
+  <div class="cta-sub">定休日：毎週火曜日／第1・第3・第5月曜日</div>
+</section>
+
+<footer>
+  &copy; 株式会社やまもと（やまもとスポーツ）
+</footer>
+
+<!-- Bottom nav -->
+<div class="bottom-nav">
+  <a href="tel:0565310530" class="call">
+    <span class="icon">📞</span>電話する
+  </a>
+  <a href="http://www.yamaspo.co.jp/" target="_blank" rel="noopener">
+    <span class="icon">🌐</span>HP
+  </a>
+  <a href="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E8%A5%BF%E7%94%BA%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%98" target="_blank" rel="noopener">
+    <span class="icon">📍</span>地図
+  </a>
+  <a href="mailto:info@yamaspo.co.jp">
+    <span class="icon">✉️</span>メール
+  </a>
+</div>
+
+</body>
+</html>
