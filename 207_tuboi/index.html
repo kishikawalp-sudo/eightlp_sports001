@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ツボイスポーツ｜野球用品専門店 名古屋市中川区</title>
+<style>
+  :root {
+    --navy: #0d2f4b;
+    --navy-dark: #081f33;
+    --red: #c8102e;
+    --red-dark: #a10d25;
+    --cream: #f7f4ee;
+    --gold: #e0a638;
+    --gray: #666;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    color: #222;
+    background: var(--cream);
+    line-height: 1.7;
+    padding-top: 56px;
+    padding-bottom: 60px;
+  }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+
+  /* ヘッダー */
+  header.site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--navy);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  header.site-header .shop-name {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  header.site-header .tel-btn {
+    background: var(--red);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  /* ヒーロー */
+  .hero {
+    background: linear-gradient(rgba(8,31,51,0.75), rgba(8,31,51,0.85)), url('images/main.jpg') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 48px 20px 40px;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy-dark);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+  }
+  .hero h1 {
+    font-size: 26px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-weight: 800;
+  }
+  .hero h1 span {
+    color: var(--gold);
+  }
+  .hero p.sub {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  section { padding: 40px 20px; }
+  .section-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .section-title small {
+    display: block;
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .section-lead {
+    text-align: center;
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 28px;
+  }
+
+  /* イチオシ商品 */
+  .featured {
+    background: #fff;
+  }
+  .featured-card {
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--cream);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  }
+  .featured-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .featured-card .body {
+    padding: 20px;
+  }
+  .featured-card .tag {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .featured-card h3 {
+    font-size: 19px;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .featured-card p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 14px;
+  }
+  .featured-list {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+  .featured-list li {
+    font-size: 13.5px;
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  .featured-list li::before {
+    content: "⚾";
+    position: absolute;
+    left: 0;
+  }
+  .point-box {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13.5px;
+    margin-bottom: 16px;
+  }
+  .point-box b { color: var(--gold); }
+  .featured-cta {
+    display: block;
+    text-align: center;
+    background: var(--red);
+    color: #fff;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  /* 強み */
+  .strengths {
+    background: var(--navy);
+    color: #fff;
+  }
+  .strengths .section-title { color: #fff; }
+  .strengths .section-lead { color: #cfd9e2; }
+  .strength-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .strength-item {
+    background: rgba(255,255,255,0.07);
+    border-left: 3px solid var(--gold);
+    border-radius: 6px;
+    padding: 16px;
+  }
+  .strength-item h4 {
+    font-size: 15px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .strength-item p {
+    font-size: 13.5px;
+    color: #e6ebf0;
+  }
+
+  /* 店内・グラブ画像 */
+  .gallery {
+    background: #fff;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .gallery-grid img {
+    border-radius: 8px;
+    height: 130px;
+    object-fit: cover;
+  }
+
+  /* 口コミ */
+  .reviews {
+    background: var(--cream);
+  }
+  .review-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .review-card .stars {
+    color: var(--gold);
+    font-size: 15px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .review-card p {
+    font-size: 13.5px;
+    color: #333;
+    white-space: pre-line;
+  }
+
+  /* 店舗情報 */
+  .shop-info {
+    background: #fff;
+  }
+  table.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-bottom: 20px;
+  }
+  table.info-table th {
+    background: var(--navy);
+    color: #fff;
+    text-align: left;
+    padding: 10px 12px;
+    width: 30%;
+    font-weight: bold;
+    vertical-align: top;
+  }
+  table.info-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e2ddd1;
+    vertical-align: top;
+  }
+  .map-frame {
+    width: 100%;
+    height: 220px;
+    border: 0;
+    border-radius: 8px;
+  }
+
+  /* CTA最終 */
+  .final-cta {
+    background: linear-gradient(rgba(8,31,51,0.85), rgba(8,31,51,0.85)), url('images/gloves.jpg') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+  }
+  .final-cta h2 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    font-weight: 800;
+  }
+  .final-cta p {
+    font-size: 13.5px;
+    margin-bottom: 22px;
+    color: #e6ebf0;
+  }
+  .final-cta .btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 13px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  /* 固定フッターナビ */
+  nav.bottom-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+  }
+  nav.bottom-nav a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--navy);
+    font-weight: bold;
+  }
+  nav.bottom-nav a.call {
+    background: var(--red);
+    color: #fff;
+  }
+  nav.bottom-nav a .icon {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+
+  @media (min-width: 480px) {
+    .gallery-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shop-name">ツボイスポーツ</div>
+  <a href="tel:0523653633" class="tel-btn">📞 電話する</a>
+</header>
+
+<section class="hero">
+  <span class="badge">名古屋市中川区 野球用品専門店</span>
+  <h1>グラブの<span>湯もみ型付け</span>から<br>用具選びまで、<span>本気で相談</span>できる店</h1>
+  <p class="sub">グローブ・バット・スパイクなど野球用品を豊富に取り揃え。トレーニングウェアやランニングシューズ、サプリメントも充実。</p>
+  <a href="tel:0523653633" class="hero-cta">今すぐ電話で相談する</a>
+</section>
+
+<section class="featured">
+  <div class="section-title">
+    <small>ICHIOSHI</small>
+    店主イチオシ｜野球用品
+  </div>
+  <p class="section-lead">グラブ・バット・スパイクから型付けまでワンストップで対応</p>
+
+  <div class="featured-card">
+    <img src="images/gloves.jpg" alt="野球用品・グラブ型付け">
+    <div class="body">
+      <span class="tag">お客様満足度の高いサービス</span>
+      <h3>野球用品の品揃えと、他店では手に入らない「湯もみ型付け」</h3>
+      <p>各有名メーカーの新製品からお値打ち品まで幅広くご用意。持ち込みグラブの型付け加工にも対応しており、硬かったグラブも短期間でお子様の握力に合わせてしっかり閉じるように仕上げます。</p>
+      <ul class="featured-list">
+        <li>グローブ・バット・スパイクなど野球用品を豊富にラインナップ</li>
+        <li>他店購入グラブの持ち込み型付け（湯もみ加工）に対応</li>
+        <li>グラブの型に関する相談も一つひとつ丁寧にアドバイス</li>
+        <li>スライディングパンツなど素材・機能まで踏み込んだ商品説明</li>
+      </ul>
+      <div class="point-box">
+        ポイントカードで<b>3％還元</b>！<br>
+        50,000円のお買い上げで<b>1,500円分の金券</b>をプレゼント！
+      </div>
+      <a href="tel:0523653633" class="featured-cta">グラブの型付けを相談する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">
+    <small>STRENGTH</small>
+    ツボイスポーツが選ばれる理由
+  </div>
+  <p class="section-lead">豊富な品揃えと、素材まで理解したスタッフの提案力</p>
+  <div class="strength-grid">
+    <div class="strength-item">
+      <h4>有名メーカーの新製品からお値打ち品まで</h4>
+      <p>グローブ・バット・スパイクなどの野球用品はもちろん、トレーニングウェア・ランニングシューズ・サプリメントについても、各有名メーカーの新製品やお値打ち品を豊富にご用意しています。</p>
+    </div>
+    <div class="strength-item">
+      <h4>布製品にも精通した女性スタッフの提案力</h4>
+      <p>カタログを熟知した女性店員が、スライディングパンツの材質やキャッチャー用カップとの相性まで踏み込んで説明。他ではなかなか聞けない具体的なアドバイスがもらえます。</p>
+    </div>
+    <div class="strength-item">
+      <h4>持ち込みグラブの湯もみ型付けサービス</h4>
+      <p>他店で購入したグラブの持ち込みにも対応。約6日間でしっかり仕上げ、握力に合わせた閉じやすさに調整。他のグラブ型の相談にも丁寧に応じてもらえます。</p>
+    </div>
+    <div class="strength-item">
+      <h4>ポイントカードでお得に</h4>
+      <p>お買い物で3％のポイント還元。さらに50,000円購入ごとに1,500円分の金券をプレゼントする特典もご用意しています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-title">
+    <small>SHOP</small>
+    店内のご紹介
+  </div>
+  <div class="gallery-grid">
+    <img src="images/main.jpg" alt="ツボイスポーツ 店舗外観">
+    <img src="images/gloves.jpg" alt="野球用品・グラブコーナー">
+    <img src="images/shop.jpg" alt="ツボイスポーツ 店内の様子">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">
+    <small>VOICE</small>
+    お客様の口コミ
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>ザムストのサポーターが欲しくて行きました。野球用品が大半を占めるお店です。以前はバレー用品も扱っていたので大変お世話になりましたが、今は扱っておらず非常に残念です。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>他で購入したグラブを持ち込みで湯もみ型付けをお願いしました。
+6日間程度で仕上げて頂きました。
+最初、カチカチだったグラブが中学1年の握力で閉じれるくらいになっていました。
+子供も満足しています。
+他のグラブの型の相談も丁寧にアドバイスも頂けました。
+良いお店だと思います。
+
+私がここの店がすごいと思う事
+女性店員さんがありえないくらいカタログを熟知している！特に布製品！私が一番驚いたのはスライディングパンツの相談をすると商品のことを材質まで考えた説明をしてくれる！
+特にうちの子供はキャッチャーをしているので
+スライディングパンツとカップの相性
+そこまで話をしてくれる
+もう他の店全く打てません。
+ツボイスポーツさんいつもありがとう</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">
+    <small>ACCESS</small>
+    店舗情報
+  </div>
+  <table class="info-table">
+    <tr><th>店名</th><td>ツボイスポーツ</td></tr>
+    <tr><th>住所</th><td>愛知県名古屋市中川区澄池町20−11</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0523653633">052-365-3633</a></td></tr>
+    <tr><th>公式HP</th><td><a href="https://www.tsuboi-sports.com/" target="_blank" rel="noopener">https://www.tsuboi-sports.com/</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@tsuboi-sports.com">info@tsuboi-sports.com</a></td></tr>
+  </table>
+  <iframe class="map-frame" loading="lazy" allowfullscreen
+    src="https://www.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E5%B7%9D%E5%8C%BA%E6%BE%84%E6%B1%A0%E7%94%BA20%E2%88%9211&output=embed">
+  </iframe>
+</section>
+
+<section class="final-cta">
+  <h2>グラブの型付け・野球用品のご相談は<br>お気軽にどうぞ</h2>
+  <p>他店では聞けない材質まで踏み込んだ提案が、ツボイスポーツの強みです。</p>
+  <div class="btns">
+    <a href="tel:0523653633" class="btn-primary">📞 052-365-3633 に電話する</a>
+    <a href="https://tsuboi-sports.com/" target="_blank" rel="noopener" class="btn-secondary">お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0523653633" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://tsuboi-sports.com/" target="_blank" rel="noopener"><span class="icon">✉️</span>問い合わせ</a>
+  <a href="https://www.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E5%B7%9D%E5%8C%BA%E6%BE%84%E6%B1%A0%E7%94%BA20%E2%88%9211" target="_blank" rel="noopener"><span class="icon">📍</span>地図</a>
+  <a href="https://www.tsuboi-sports.com/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
