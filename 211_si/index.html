@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>至誠堂スポーツ｜マラソン用品専門　東海市の地域密着スポーツ店</title>
+<style>
+  :root{
+    --main-color:#1a5c3a;
+    --sub-color:#e8f5ee;
+    --accent-color:#ff6b35;
+    --dark-color:#1a1a1a;
+    --gray-color:#666;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark-color);
+    line-height:1.7;
+    background:#fff;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{width:100%;display:block;}
+  .container{max-width:600px;margin:0 auto;}
+
+  /* header */
+  .header{
+    position:fixed;top:0;left:0;right:0;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    z-index:100;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:10px 15px;
+  }
+  .header .shop-name{
+    font-size:16px;font-weight:bold;color:var(--main-color);
+  }
+  .header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    display:flex;align-items:center;gap:4px;
+  }
+  main{padding-top:56px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    height:280px;
+    object-fit:cover;
+  }
+  .hero-text{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+    padding:20px 15px;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+  }
+  .hero-text .sub{
+    font-size:14px;
+    margin-top:8px;
+    opacity:0.9;
+  }
+
+  /* section common */
+  section{
+    padding:40px 20px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:10px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:var(--gray-color);
+    margin-bottom:25px;
+  }
+
+  /* イチオシ */
+  .push-section{
+    background:var(--sub-color);
+  }
+  .push-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    padding:5px 16px;
+    border-radius:20px;
+    margin-bottom:12px;
+  }
+  .push-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    margin-top:10px;
+  }
+  .push-card img{
+    height:220px;
+    object-fit:cover;
+  }
+  .push-card-body{
+    padding:20px;
+  }
+  .push-card-body h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .push-card-body p{
+    font-size:14px;
+    color:var(--dark-color);
+  }
+  .push-points{
+    margin-top:15px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .push-point{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    font-size:14px;
+  }
+  .push-point .icon{
+    color:var(--accent-color);
+    font-weight:bold;
+    font-size:16px;
+  }
+
+  /* 強み */
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:#fafafa;
+    padding:16px;
+    border-radius:10px;
+    border-left:4px solid var(--main-color);
+  }
+  .strength-item .num{
+    font-size:24px;
+    font-weight:bold;
+    color:var(--main-color);
+    line-height:1;
+  }
+  .strength-item h4{
+    font-size:15px;
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:var(--gray-color);
+  }
+
+  /* 口コミ */
+  .review-section{
+    background:var(--sub-color);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:15px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .stars{
+    color:#ffb400;
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:var(--dark-color);
+  }
+
+  /* 店舗情報 */
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .info-table th,.info-table td{
+    padding:12px 8px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:90px;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-wrap{
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:230px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta-section{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section .section-title{color:#fff;}
+  .cta-section .section-title::after{background:#fff;}
+  .cta-section p{
+    font-size:14px;
+    margin-bottom:20px;
+    opacity:0.95;
+  }
+  .cta-btn{
+    display:block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    padding:16px;
+    border-radius:10px;
+    margin-bottom:12px;
+  }
+  .cta-sub-btn{
+    display:block;
+    background:#fff;
+    color:var(--main-color);
+    font-size:14px;
+    font-weight:bold;
+    padding:12px;
+    border-radius:10px;
+  }
+
+  /* footer nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.1);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 0;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  .bottom-nav a.call{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:var(--gray-color);
+    padding:20px;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="shop-name">至誠堂スポーツ</div>
+  <a href="tel:0562333366" class="tel-btn">📞 電話する</a>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+      <img src="images/hero.jpg" alt="至誠堂スポーツ　店舗外観">
+      <div class="hero-text">
+        <div class="catch">この冬のマラソン練習、<br>本気で応援します。</div>
+        <div class="sub">アシックス取扱い｜ガット張りも対応｜東海市 高横須賀町</div>
+      </div>
+    </div>
+
+    <!-- イチオシ：マラソン用品 -->
+    <section class="push-section">
+      <div class="push-badge">★ 至誠堂スポーツ イチオシ ★</div>
+      <h2 class="section-title">マラソン用品</h2>
+      <p class="section-sub">大会に向けて、あなたの一歩を支えるシューズとウェアを</p>
+
+      <div class="push-card">
+        <img src="images/marathon.jpg" alt="マラソン用品　シューズ売り場">
+        <div class="push-card-body">
+          <h3>アシックス取扱い　マラソンシューズ・ウェア</h3>
+          <p>初めての大会挑戦から自己ベスト更新を目指す方まで、目的や走り方に合わせてシューズをご提案。お財布に嬉しい価格でご案内できるのも至誠堂スポーツならではです。</p>
+          <div class="push-points">
+            <div class="push-point"><span class="icon">✓</span>アシックス用品がとても安いとお客様からも好評</div>
+            <div class="push-point"><span class="icon">✓</span>初心者にも分かりやすい丁寧な接客</div>
+            <div class="push-point"><span class="icon">✓</span>テニスのガット張りなど付随サービスも充実</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 強み -->
+    <section>
+      <h2 class="section-title">選ばれる理由</h2>
+      <p class="section-sub">地域のお客様に長く愛される理由があります</p>
+      <div class="strength-list">
+        <div class="strength-item">
+          <div class="num">01</div>
+          <div>
+            <h4>アシックス用品がお値打ち価格</h4>
+            <p>マラソンシューズをはじめ、アシックス製品をお求めやすい価格でご提供しています。</p>
+          </div>
+        </div>
+        <div class="strength-item">
+          <div class="num">02</div>
+          <div>
+            <h4>店員による丁寧な接客</h4>
+            <p>スタッフが一人ひとりのご要望をしっかり伺い、分かりやすく丁寧にご案内します。</p>
+          </div>
+        </div>
+        <div class="strength-item">
+          <div class="num">03</div>
+          <div>
+            <h4>ガット張りなど専門対応も充実</h4>
+            <p>テニスのガット張りをはじめ、きれいな仕上がりで定評があります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 口コミ -->
+    <section class="review-section">
+      <h2 class="section-title">お客様の声</h2>
+      <div class="review-card">
+        <div class="stars">★★★★</div>
+        <p>マラソン練習用のシューズを買いに来ました。アシックスの用品がとても安かったので購入させて頂きました！取り扱っている商品もよく、テニスのガットもきれいに張ってくれるのでとても良いです。</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>店員さんが丁寧に教えてくれますよ。</p>
+      </div>
+    </section>
+
+    <!-- 店舗情報 -->
+    <section>
+      <h2 class="section-title">店舗情報</h2>
+      <table class="info-table">
+        <tr><th>店名</th><td>至誠堂スポーツ</td></tr>
+        <tr><th>代表者</th><td>本田　聡</td></tr>
+        <tr><th>住所</th><td>愛知県東海市高横須賀町1-38　至誠堂ビル１Ｆ</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0562333366">0562-33-3366</a></td></tr>
+        <tr><th>定休日</th><td>毎週月曜日・火曜日</td></tr>
+        <tr><th>HP</th><td><a href="http://www.siseido-sp.com/index.html" target="_blank">www.siseido-sp.com</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:shop@siseido-sp.com">shop@siseido-sp.com</a></td></tr>
+      </table>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=愛知県東海市高横須賀町1-38&output=embed" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2 class="section-title">お気軽にお問い合わせください</h2>
+      <p>マラソン用品のご相談、在庫確認もお電話で承ります。</p>
+      <a href="tel:0562333366" class="cta-btn">📞 0562-33-3366</a>
+      <a href="mailto:shop@siseido-sp.com" class="cta-sub-btn">✉ メールでのお問い合わせ</a>
+    </section>
+
+    <footer>
+      &copy; 至誠堂スポーツ
+    </footer>
+
+  </div>
+</main>
+
+<nav class="bottom-nav">
+  <a href="tel:0562333366" class="call"><span class="icon">📞</span>電話</a>
+  <a href="mailto:shop@siseido-sp.com"><span class="icon">✉</span>メール</a>
+  <a href="http://www.siseido-sp.com/index.html" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="https://maps.google.com/maps?q=愛知県東海市高横須賀町1-38" target="_blank"><span class="icon">📍</span>地図</a>
+</nav>
+
+</body>
+</html>
