@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サトウスポーツ｜名古屋市中村区の地域密着スポーツ用品店</title>
+<style>
+  :root{
+    --main-color:#0b5ea8;
+    --sub-color:#f7a600;
+    --dark-color:#1a1a1a;
+    --bg-light:#f5f8fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark-color);
+    line-height:1.7;
+    background:#fff;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  header .shop-name{
+    font-size:16px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--sub-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+  }
+  .hero-text{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,0.75));
+    color:#fff;
+    padding:30px 16px 16px;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+  }
+  .hero-text .sub{
+    font-size:14px;
+    margin-top:6px;
+    opacity:0.9;
+  }
+
+  section{padding:36px 16px;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:24px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--sub-color);
+    margin:10px auto 0;
+  }
+
+  /* featured product */
+  .featured{
+    background:linear-gradient(135deg,#0b5ea8,#083f75);
+    color:#fff;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-title::after{background:var(--sub-color);}
+  .featured-badge{
+    display:inline-block;
+    background:var(--sub-color);
+    color:#fff;
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .featured-card{
+    background:#fff;
+    color:var(--dark-color);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-card .body{
+    padding:20px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14.5px;
+  }
+  .featured-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:16px;
+  }
+  .featured-points span{
+    background:var(--bg-light);
+    color:var(--main-color);
+    font-size:12.5px;
+    font-weight:bold;
+    padding:6px 12px;
+    border-radius:20px;
+    border:1px solid var(--main-color);
+  }
+
+  /* strengths */
+  .strengths{background:var(--bg-light);}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:36px;height:36px;
+    background:var(--main-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+  }
+  .strength-item p{font-size:14.5px;}
+
+  /* reviews */
+  .review-card{
+    background:#fff;
+    border:1px solid #e3e8ee;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+  }
+  .review-card .stars{
+    color:var(--sub-color);
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:#333;
+  }
+
+  /* shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14.5px;
+  }
+  .shop-info th, .shop-info td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #e3e8ee;
+    vertical-align:top;
+  }
+  .shop-info th{
+    width:90px;
+    color:var(--main-color);
+    white-space:nowrap;
+    font-weight:bold;
+  }
+  .map-wrap{
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:260px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta .section-title{color:#fff;}
+  .cta .section-title::after{background:var(--sub-color);}
+  .cta p{margin-bottom:20px;font-size:15px;}
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .cta-buttons a{
+    display:block;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-buttons .tel{background:var(--sub-color);color:#fff;}
+  .cta-buttons .web{background:#fff;color:var(--main-color);border:2px solid #fff;}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main-color);
+    gap:2px;
+  }
+  .bottom-nav a.emphasis{
+    background:var(--sub-color);
+    color:#fff;
+  }
+  .bottom-nav .icon{font-size:18px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">サトウスポーツ</div>
+  <a href="tel:0524114911" class="tel-btn">📞 052-411-4911</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="サトウスポーツ 店舗外観">
+  <div class="hero-text">
+    <div class="catch">地域密着40年以上<br>親しみやすい接客のスポーツ用品店</div>
+    <div class="sub">名古屋市中村区・地下鉄「中村公園駅」徒歩1分 | 日曜営業</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="featured-badge">イチオシ商品</div>
+  <h2 class="section-title">バドミントン用品</h2>
+  <div class="featured-card">
+    <img src="images/badminton.jpg" alt="バドミントン用品">
+    <div class="body">
+      <h3>初心者からプロ志向の方まで、幅広くご提案</h3>
+      <p>ラケット選びからガット張り替えまで、長年の専門知識を持つスタッフが丁寧にサポート。お客様の使い方やレベルに合わせた最適な一本をご提案します。購入後のメンテナンスも継続して承っております。</p>
+      <div class="featured-points">
+        <span>ガット張り替え対応</span>
+        <span>初心者向け相談OK</span>
+        <span>アフターケア充実</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">サトウスポーツの強み</h2>
+  <div class="strength-item">
+    <div class="num">1</div>
+    <p>長年培ってきたスポーツ各種の専門知識をもとに、初心者の方へのアドバイスから経験者の方からのご相談まで、幅広いお客さまのご要望に全力でお応えします。</p>
+  </div>
+  <div class="strength-item">
+    <div class="num">2</div>
+    <p>テニス、バドミントンのラケット張り替えなど、スポーツ用品のメンテナンスサービスも充実。商品を売るだけでなく、アフターケアも含めたサービスで末永くお付き合いいたします。</p>
+  </div>
+  <div class="strength-item">
+    <div class="num">3</div>
+    <p>Tシャツ・ユニフォーム、タオルやバッグなどのチームグッズの製作にも親切・丁寧に対応。大手スポーツショップにはない、地域に根差した経営が魅力です。</p>
+  </div>
+</section>
+
+<section class="reviews">
+  <h2 class="section-title">お客様の声</h2>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>23年ぶりにハンドボールシューズを買いに訪れました。昔と変わらず大変親しみやすく感じの良い接客でした。たまたま母校のユニフォームのカッティング作業をしていたようで懐かしかったです。大手スポーツショップが台頭する中、地域密着で経営されているのでお勧めのお店です。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>地下鉄東山線「中村公園駅」から徒歩1分ほどのところにある老舗のスポーツ用品店です。日曜日も営業しており、色々と相談に乗ってもらえる気さくなお店です。Tシャツ・ユニフォーム、タオルやバッグなどのチームグッズの製作も親切、丁寧に対応してくれます。駐車場は店舗裏にあります。40年前、中学の頃にサッカー用の靴下やスパイクを時々購入していたお店ですが、中学の娘が先日自分でお店を探してテニスラケットを購入したということで、久しぶりに当時の記憶を思い出しました。まだまだお店が健在だったのだなあと感慨深いです。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <h2 class="section-title">店舗情報</h2>
+  <table>
+    <tr><th>店名</th><td>サトウスポーツ</td></tr>
+    <tr><th>住所</th><td>愛知県名古屋市中村区豊国通1-17-2</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0524114911">052-411-4911</a></td></tr>
+    <tr><th>定休日</th><td>水曜日</td></tr>
+    <tr><th>HP</th><td><a href="http://www.sato-spo.com/" target="_blank" rel="noopener">www.sato-spo.com</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@sato-spo.com">info@sato-spo.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E8%B1%8A%E5%9B%BD%E9%80%9A1-17-2&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2 class="section-title">お気軽にお問い合わせください</h2>
+  <p>バドミントン用品のご相談も、その他スポーツ用品のご相談も、<br>お電話・ホームページよりお気軽にどうぞ。</p>
+  <div class="cta-buttons">
+    <a href="tel:0524114911" class="tel">📞 電話で問い合わせる</a>
+    <a href="http://www.sato-spo.com/" target="_blank" rel="noopener" class="web">🌐 ホームページを見る</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0524114911">
+    <span class="icon">📞</span>電話
+  </a>
+  <a href="#shop-info">
+    <span class="icon">📍</span>アクセス
+  </a>
+  <a href="http://www.sato-spo.com/" target="_blank" rel="noopener" class="emphasis">
+    <span class="icon">🌐</span>HP
+  </a>
+</nav>
+
+</body>
+</html>
