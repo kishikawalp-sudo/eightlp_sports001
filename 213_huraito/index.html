@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フライトスポーツ 本店｜陸上競技・バドミントン専門店</title>
+<style>
+  :root{
+    --main-color:#0b4f9e;
+    --accent-color:#ff7b00;
+    --dark-color:#1a1a2e;
+    --bg-light:#f5f8fc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark-color);
+    line-height:1.7;
+    background:#fff;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+    color:var(--main-color);
+  }
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* ヒーロー */
+  .hero{
+    background:linear-gradient(135deg,var(--main-color),#083a75);
+    color:#fff;
+    text-align:center;
+    padding:36px 16px 30px;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--accent-color);
+    padding:4px 14px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:12px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:900;
+    margin-bottom:8px;
+    letter-spacing:1px;
+  }
+  .hero p{
+    font-size:14px;
+    opacity:0.9;
+    margin-bottom:18px;
+  }
+  .hero .stars{
+    color:#ffd700;
+    font-size:20px;
+    margin-bottom:6px;
+  }
+  .hero img{
+    border-radius:12px;
+    margin-top:16px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  /* 共通セクション */
+  section{
+    padding:36px 16px;
+  }
+  .sec-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:6px;
+    color:var(--main-color);
+  }
+  .sec-sub{
+    text-align:center;
+    font-size:13px;
+    color:#666;
+    margin-bottom:24px;
+  }
+
+  /* イチオシ商品 */
+  .featured{
+    background:var(--bg-light);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    border:2px solid var(--accent-color);
+  }
+  .featured-card .ribbon{
+    background:var(--accent-color);
+    color:#fff;
+    text-align:center;
+    font-weight:900;
+    font-size:15px;
+    padding:8px;
+    letter-spacing:2px;
+  }
+  .featured-card img{
+    width:100%;
+  }
+  .featured-card .content{
+    padding:20px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+    font-weight:900;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:14px;
+  }
+  .feature-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .feature-list li{
+    font-size:13px;
+    padding:6px 0 6px 24px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .feature-list li::before{
+    content:"✔";
+    position:absolute;
+    left:0;
+    color:var(--accent-color);
+    font-weight:900;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:900;
+    font-size:16px;
+    padding:14px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(255,123,0,0.35);
+  }
+
+  /* 強み */
+  .strengths{
+    background:#fff;
+  }
+  .strength-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .strength-item{
+    background:var(--bg-light);
+    border-radius:12px;
+    padding:16px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .strength-item .icon{
+    font-size:26px;
+    flex-shrink:0;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main-color);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#555;
+  }
+
+  /* クチコミ */
+  .reviews{
+    background:var(--bg-light);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .review-card .stars{
+    color:#ffb400;
+    font-size:15px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13px;
+    color:#444;
+  }
+
+  /* 店舗ギャラリー */
+  .gallery{
+    background:#fff;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:10px;
+    height:130px;
+    object-fit:cover;
+    width:100%;
+  }
+  .gallery-grid .full{
+    grid-column:1/3;
+    height:180px;
+  }
+
+  /* 店舗情報 */
+  .shop-info{
+    background:var(--bg-light);
+  }
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom:20px;
+  }
+  .info-table tr{
+    border-bottom:1px solid #eee;
+  }
+  .info-table tr:last-child{
+    border-bottom:none;
+  }
+  .info-table th{
+    background:var(--main-color);
+    color:#fff;
+    font-size:12px;
+    text-align:left;
+    padding:12px;
+    width:90px;
+    vertical-align:top;
+    font-weight:700;
+  }
+  .info-table td{
+    padding:12px;
+    font-size:13px;
+    color:#333;
+  }
+  .info-table a{
+    color:var(--main-color);
+    font-weight:bold;
+    text-decoration:underline;
+  }
+  .map-frame{
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* SNSリンク */
+  .sns-links{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-top:18px;
+  }
+  .sns-links a{
+    background:var(--main-color);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+  }
+
+  /* 最終CTA */
+  .final-cta{
+    background:linear-gradient(135deg,var(--main-color),#083a75);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+    font-weight:900;
+  }
+  .final-cta p{
+    font-size:13px;
+    opacity:0.9;
+    margin-bottom:20px;
+  }
+  .final-cta .btn-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .btn-white{
+    background:#fff;
+    color:var(--main-color);
+    font-weight:900;
+    padding:14px;
+    border-radius:10px;
+    font-size:15px;
+  }
+  .btn-orange{
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:900;
+    padding:14px;
+    border-radius:10px;
+    font-size:15px;
+  }
+
+  /* 定休日注意書き */
+  .closed-note{
+    text-align:center;
+    font-size:12px;
+    color:#888;
+    margin-top:10px;
+  }
+
+  /* フッター固定ナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.12);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main-color);
+    font-weight:bold;
+    gap:2px;
+  }
+  .bottom-nav a.main{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .bottom-nav .nav-icon{
+    font-size:18px;
+  }
+
+  @media(min-width:480px){
+    .gallery-grid{grid-template-columns:1fr 1fr 1fr;}
+    .gallery-grid .full{grid-column:auto;height:130px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="shop-name">フライトスポーツ 本店</span>
+  <a class="tel-btn" href="tel:0000000000">📞 お問い合わせ</a>
+</header>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <span class="badge">陸上競技・バドミントン専門店</span>
+  <h1>フライトスポーツ<br>本店</h1>
+  <div class="stars">★★★★☆</div>
+  <p>専門家のアドバイスで、あなたに最適な一足が見つかる。</p>
+  <img src="images/hero.jpg" alt="フライトスポーツ本店 外観">
+</div>
+
+<!-- イチオシ商品 -->
+<section class="featured">
+  <div class="sec-title">イチオシ商品</div>
+  <div class="sec-sub">専門知識に基づいた確かなご提案</div>
+  <div class="featured-card">
+    <div class="ribbon">★ ICHIOSHI ★ ランニングシューズ</div>
+    <img src="images/shoes.jpg" alt="ランニングシューズ 品揃え">
+    <div class="content">
+      <h3>あなたの走りを支える、豊富なランニングシューズ</h3>
+      <p>陸上競技用品を専門に扱う当店だからこそ実現できる、面白いほど豊富な品揃え。初心者の方から記録更新を目指す競技者まで、足の形やレベルに合わせて専門スタッフが丁寧にフィッティングをご提案します。</p>
+      <ul class="feature-list">
+        <li>専門家による適切なアドバイス</li>
+        <li>初心者〜上級者まで幅広い品揃え</li>
+        <li>入学式や大会に間に合う迅速な対応</li>
+      </ul>
+      <a class="cta-btn" href="tel:0000000000">シューズ選びを相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="strengths">
+  <div class="sec-title">選ばれる理由</div>
+  <div class="sec-sub">陸上競技・バドミントンのプロショップ</div>
+  <div class="strength-grid">
+    <div class="strength-item">
+      <div class="icon">🏃</div>
+      <div>
+        <h4>陸上競技用品の専門店</h4>
+        <p>ランニングシューズをはじめ、陸上競技に特化した豊富な品揃え。「更に上を目指す方」に最適な一店です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="icon">🏸</div>
+      <div>
+        <h4>バドミントン用品も充実</h4>
+        <p>陸上競技だけでなく、バドミントン用品も専門的に取り扱っております。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="icon">🗣️</div>
+      <div>
+        <h4>専門家による親身な接客</h4>
+        <p>専門知識を持つスタッフが、お客様一人ひとりに合った商品選びをサポートします。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="icon">⚡</div>
+      <div>
+        <h4>迅速・丁寧な対応</h4>
+        <p>注文の翌日発送など、急ぎのご要望にも心を込めて素早く対応いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section class="reviews">
+  <div class="sec-title">お客様の声</div>
+  <div class="sec-sub">実際にご来店・ご利用いただいた方の口コミ</div>
+
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>陸上競技用品とバドミントン用品の専門店。専門家から適切なアドバイスも受けながら商品選択が出来ますので、更に上を目指す方には最適と思います。ランニングシューズの品揃えが面白かったです。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>昨日注文させてもらって、今日品物が届きました。入学式に間に合わないと思っていたのに、早々に送って頂きとても助かりました。対応の早さと心温まるコメントを頂きとても嬉しかったです。丁寧に教えてもらい、子どもに最適なシューズを買うことができました！また買いに行きます！</p>
+  </div>
+</section>
+
+<!-- 店舗ギャラリー -->
+<section class="gallery">
+  <div class="sec-title">店舗紹介</div>
+  <div class="sec-sub">豊富な品揃えの店内をぜひご覧ください</div>
+  <div class="gallery-grid">
+    <img class="full" src="images/interior.jpg" alt="フライトスポーツ本店 店内">
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shop-info">
+  <div class="sec-title">店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>フライトスポーツ 本店</td></tr>
+    <tr><th>住所</th><td>愛知県豊田市御幸本町２丁目２０３−５ ブルーム山之手</td></tr>
+    <tr><th>定休日</th><td>毎週火曜日、第1・第3水曜日</td></tr>
+    <tr><th>HP</th><td><a href="https://www.flight-sp.jp/" target="_blank" rel="noopener">https://www.flight-sp.jp/</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://www.flight-sp.jp/honten/contact.html" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://x.com/flightsp" target="_blank" rel="noopener">X（旧Twitter）@flightsp</a></td></tr>
+  </table>
+
+  <div class="map-frame">
+    <iframe src="https://www.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E5%BE%A1%E5%B9%B8%E6%9C%AC%E7%94%BA%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%90%EF%BC%93%E2%88%92%EF%BC%95&output=embed" loading="lazy"></iframe>
+  </div>
+
+  <div class="sns-links">
+    <a href="https://x.com/flightsp" target="_blank" rel="noopener">Xをフォロー</a>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="final-cta">
+  <h2>あなたにぴったりの一足を、<br>プロと一緒に見つけませんか？</h2>
+  <p>ランニングシューズのご相談、お気軽にどうぞ。</p>
+  <div class="btn-group">
+    <a class="btn-white" href="tel:0000000000">📞 電話で相談する</a>
+    <a class="btn-orange" href="https://www.flight-sp.jp/honten/contact.html" target="_blank" rel="noopener">✉️ フォームで問い合わせる</a>
+  </div>
+  <p class="closed-note">定休日：毎週火曜日、第1・第3水曜日</p>
+</section>
+
+<!-- 固定フッターナビ -->
+<div class="bottom-nav">
+  <a href="tel:0000000000"><span class="nav-icon">📞</span>電話</a>
+  <a href="#"><span class="nav-icon">🏃</span>イチオシ</a>
+  <a class="main" href="https://www.flight-sp.jp/honten/contact.html" target="_blank" rel="noopener"><span class="nav-icon">✉️</span>問い合わせ</a>
+  <a href="https://www.flight-sp.jp/" target="_blank" rel="noopener"><span class="nav-icon">🌐</span>HP</a>
+  <a href="https://x.com/flightsp" target="_blank" rel="noopener"><span class="nav-icon">🐦</span>SNS</a>
+</div>
+
+</body>
+</html>
