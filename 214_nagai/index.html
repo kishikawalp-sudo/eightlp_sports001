@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ナガイスポーツ店｜津島市の卓球用品専門店</title>
+<style>
+  :root{
+    --main-color:#1e5fa8;
+    --accent-color:#e8543e;
+    --dark-color:#1a2b3c;
+    --bg-light:#f4f7fb;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark-color);
+    background:var(--white);
+    line-height:1.6;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:var(--main-color);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  }
+  .header-name{
+    color:#fff;
+    font-size:15px;
+    font-weight:bold;
+  }
+  .header-tel{
+    background:var(--accent-color);
+    color:#fff;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--main-color) 0%, #123a68 100%);
+    color:#fff;
+    text-align:center;
+    padding:32px 16px 24px;
+  }
+  .hero-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    padding:4px 14px;
+    border-radius:16px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:12px;
+  }
+  .hero h1{
+    font-size:24px;
+    line-height:1.4;
+    margin-bottom:10px;
+  }
+  .hero p{
+    font-size:14px;
+    opacity:0.9;
+    margin-bottom:18px;
+  }
+  .hero img{
+    width:100%;
+    border-radius:12px;
+    box-shadow:0 6px 16px rgba(0,0,0,0.25);
+  }
+  .hero-cta{
+    margin-top:18px;
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    padding:14px 32px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
+  }
+  .access-line{
+    margin-top:14px;
+    font-size:13px;
+    background:rgba(255,255,255,0.15);
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:16px;
+  }
+
+  /* イチオシ商品セクション */
+  .featured{
+    background:var(--bg-light);
+    padding:36px 16px;
+  }
+  .section-title{
+    text-align:center;
+    margin-bottom:22px;
+  }
+  .section-title .en{
+    display:block;
+    color:var(--main-color);
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:2px;
+  }
+  .section-title .ja{
+    display:block;
+    font-size:22px;
+    font-weight:bold;
+    margin-top:4px;
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    border:2px solid var(--accent-color);
+  }
+  .featured-card img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+  }
+  .featured-ribbon{
+    background:var(--accent-color);
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    font-size:14px;
+    padding:8px;
+  }
+  .featured-body{
+    padding:18px;
+  }
+  .featured-body h3{
+    font-size:19px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-body p{
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .featured-list li{
+    font-size:13.5px;
+    padding:8px 0 8px 26px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .featured-list li:before{
+    content:"🏓";
+    position:absolute;
+    left:0;
+  }
+  .price-box{
+    background:var(--bg-light);
+    border-radius:10px;
+    padding:12px;
+    text-align:center;
+    font-size:14px;
+    margin-bottom:16px;
+  }
+  .price-box .price{
+    font-size:22px;
+    color:var(--accent-color);
+    font-weight:bold;
+  }
+  .featured-cta{
+    display:block;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    padding:14px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:15px;
+  }
+
+  /* 強みセクション */
+  .strengths{
+    padding:36px 16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:var(--bg-light);
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    align-items:flex-start;
+  }
+  .strength-icon{
+    font-size:28px;
+    flex-shrink:0;
+  }
+  .strength-item h4{
+    font-size:15.5px;
+    color:var(--main-color);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13.5px;
+  }
+
+  /* ギャラリー画像 */
+  .gallery{
+    padding:0 16px 36px;
+  }
+  .gallery img{
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* 口コミ */
+  .reviews{
+    background:var(--bg-light);
+    padding:36px 16px;
+  }
+  .review-card{
+    background:#fff;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.06);
+  }
+  .stars{
+    color:#f5a623;
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    white-space:pre-line;
+  }
+
+  /* 店舗情報 */
+  .shop-info{
+    padding:36px 16px;
+  }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .info-table th{
+    background:var(--main-color);
+    color:#fff;
+    padding:12px 10px;
+    width:28%;
+    text-align:left;
+    vertical-align:top;
+    border:1px solid #ddd;
+  }
+  .info-table td{
+    padding:12px 10px;
+    border:1px solid #ddd;
+    background:#fff;
+    word-break:break-all;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:260px;
+    border:0;
+  }
+
+  /* CTAセクション */
+  .cta-section{
+    background:linear-gradient(180deg,var(--main-color),#123a68);
+    color:#fff;
+    text-align:center;
+    padding:36px 16px;
+  }
+  .cta-section h3{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13.5px;
+    margin-bottom:20px;
+    opacity:0.9;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-btn{
+    display:block;
+    padding:16px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .cta-btn.tel{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .cta-btn.mail{
+    background:#fff;
+    color:var(--main-color);
+    border:2px solid #fff;
+  }
+
+  /* フッター簡易 */
+  footer{
+    text-align:center;
+    font-size:12px;
+    padding:20px 16px 90px;
+    color:#888;
+  }
+
+  /* 固定ボトムナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--dark-color);
+    gap:2px;
+  }
+  .bottom-nav a.tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    font-weight:bold;
+  }
+  .bottom-nav .icon{
+    font-size:20px;
+  }
+
+  @media (min-width:600px){
+    .hero h1{font-size:28px;}
+    .info-table th{width:22%;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-name">ナガイスポーツ店</div>
+  <a href="tel:0000000000" class="header-tel">📞 電話する</a>
+</header>
+
+<section class="hero">
+  <span class="hero-badge">名鉄津島駅 徒歩1分</span>
+  <h1>卓球用品なら地元で愛されて<br>ウン十年、ナガイスポーツ店へ</h1>
+  <p>ラケット・ラバーの品揃えは圧倒的。<br>ラバー張替えもその場でお任せください。</p>
+  <img src="images/hero_ttable.jpg" alt="ナガイスポーツ店 卓球用品売り場">
+  <div>
+    <a href="tel:0000000000" class="hero-cta">📞 今すぐ電話で相談する</a>
+  </div>
+  <div class="access-line">🚉 駅前立地／🅿️ 専用駐車場あり</div>
+</section>
+
+<section class="featured">
+  <div class="section-title">
+    <span class="en">RECOMMEND</span>
+    <span class="ja">イチオシ｜卓球用品</span>
+  </div>
+  <div class="featured-card">
+    <img src="images/ttable_room.jpg" alt="2階の卓球台とマシーン">
+    <div class="featured-ribbon">★ 卓球用品のラインナップは地域屈指 ★</div>
+    <div class="featured-body">
+      <h3>ラケット・ラバーが選び放題。<br>張替えもその場でOK！</h3>
+      <p>学生からベテランまで満足の品揃え。お気に入りのラケットに合わせて、最適なラバーをスタッフがご提案します。</p>
+      <ul class="featured-list">
+        <li>ラケット・ラバーの豊富な品揃え</li>
+        <li>ラバーの張替えサービス対応</li>
+        <li>2階に卓球台2台＋卓球マシーン完備</li>
+        <li>駅から近く学生にも通いやすい立地</li>
+      </ul>
+      <div class="price-box">
+        卓球台使用料<br>
+        <span class="price">1時間1台 500円</span><br>
+        ※人気のため電話予約がおすすめです
+      </div>
+      <a href="tel:0000000000" class="featured-cta">📞 卓球台の予約・用具のご相談はこちら</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">
+    <span class="en">STRENGTH</span>
+    <span class="ja">選ばれる理由</span>
+  </div>
+  <div class="strength-item">
+    <div class="strength-icon">🏓</div>
+    <div>
+      <h4>卓球用品に強い専門知識</h4>
+      <p>ラケット・ラバー選びからメンテナンスまで、経験豊富なスタッフが丁寧にサポートします。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-icon">🚉</div>
+    <div>
+      <h4>名鉄津島駅 徒歩1分</h4>
+      <p>駅前の便利な立地に加え、専用駐車場も完備。学生も車での来店も安心です。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-icon">⚾</div>
+    <div>
+      <h4>野球・テニス・サッカーも充実</h4>
+      <p>卓球だけでなく、幅広いスポーツ用品を取り揃えています。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-icon">😊</div>
+    <div>
+      <h4>アットホームな接客</h4>
+      <p>奥様をはじめ、気さくで温かいスタッフが対応。掘り出し物に出会えることも。</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <img src="images/shop_front.jpg" alt="ナガイスポーツ店 店舗外観">
+</section>
+
+<section class="reviews">
+  <div class="section-title">
+    <span class="en">REVIEW</span>
+    <span class="ja">お客様の声</span>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>地元にあるスポーツ店。奥様をはじめアットホーム。
+掘り出し物も有り、足を運ぶと良い物が見つかりますよ😍</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>ここの店で卓球用具をそろえたことがある。品揃えがとてもいい。ラバーの張替えまでやってくれるし、駅から近くて学生にはとても助かる。
+名鉄津島駅徒歩1分、野球・テニス・サッカー等に力を入れている感じ。専用の駐車場もあって便利。
+特に卓球にはとても力を入れられていて、用具はかなりのラインナップ。2階に卓球台が2台あり卓球マシーンも置いています。
+卓球台使用料は1時間1台500円。人気なので電話での予約がおすすめです。
+店員さんもとても気さくで、卓球をする方にはとても良い店だと思います❗</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">
+    <span class="en">SHOP INFO</span>
+    <span class="ja">店舗情報</span>
+  </div>
+  <table class="info-table">
+    <tr><th>店名</th><td>ナガイスポーツ店</td></tr>
+    <tr><th>住所</th><td>愛知県津島市錦町13番地</td></tr>
+    <tr><th>定休日</th><td>月曜定休</td></tr>
+    <tr><th>電話</th><td><a href="tel:0000000000">電話でお問い合わせ</a></td></tr>
+    <tr><th>メール</th><td>info@nagai-sports.jp</td></tr>
+    <tr><th>公式HP</th><td><a href="http://www.nagai-sports.jp/shop/index.html" target="_blank">www.nagai-sports.jp</a></td></tr>
+    <tr><th>アクセス</th><td>名鉄津島駅 徒歩1分／専用駐車場あり</td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=愛知県津島市錦町13番地&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h3>卓球用品のご相談・卓球台のご予約は</h3>
+  <p>お電話またはメールでお気軽にどうぞ。<br>スタッフが丁寧にご案内します。</p>
+  <div class="cta-buttons">
+    <a href="tel:0000000000" class="cta-btn tel">📞 電話で相談・予約する</a>
+    <a href="mailto:info@nagai-sports.jp" class="cta-btn mail">✉️ メールで問い合わせる</a>
+  </div>
+</section>
+
+<footer>
+  © ナガイスポーツ店 All Rights Reserved.
+</footer>
+
+<nav class="bottom-nav">
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+    <span class="icon">🏠</span>TOP
+  </a>
+  <a href="#" onclick="document.querySelector('.featured').scrollIntoView({behavior:'smooth'});return false;">
+    <span class="icon">🏓</span>イチオシ
+  </a>
+  <a href="#" onclick="document.querySelector('.shop-info').scrollIntoView({behavior:'smooth'});return false;">
+    <span class="icon">📍</span>店舗情報
+  </a>
+  <a href="tel:0000000000" class="tel-btn">
+    <span class="icon">📞</span>電話する
+  </a>
+</nav>
+
+</body>
+</html>
