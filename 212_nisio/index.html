@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ニシオスポーツ｜愛知県名古屋市 野球用品専門</title>
+<style>
+  :root {
+    --main-color: #003a7d;
+    --accent-color: #e8360f;
+    --sub-color: #f4a300;
+    --bg-light: #f7f9fc;
+    --text-dark: #222;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    color: var(--text-dark);
+    background: #fff;
+    padding-bottom: 64px;
+    padding-top: 56px;
+  }
+  a { text-decoration:none; color:inherit; }
+  img { max-width:100%; display:block; }
+
+  /* header */
+  .header {
+    position: fixed; top:0; left:0; right:0;
+    height: 56px;
+    background: #fff;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 0 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  .header .shopname {
+    font-size: 16px; font-weight:bold; color: var(--main-color);
+  }
+  .header .tel-btn {
+    background: var(--accent-color);
+    color:#fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight:bold;
+  }
+
+  /* hero */
+  .hero {
+    position: relative;
+  }
+  .hero img { width:100%; height: 340px; object-fit:cover; }
+  .hero-overlay {
+    position:absolute; bottom:0; left:0; right:0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.75));
+    color:#fff; padding: 30px 16px 20px;
+  }
+  .hero-overlay .catch {
+    font-size: 22px; font-weight:bold; line-height:1.4;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  }
+  .hero-overlay .sub {
+    font-size: 14px;
+    opacity: 0.95;
+  }
+
+  section { padding: 32px 16px; }
+  .section-title {
+    text-align:center;
+    font-size: 20px;
+    font-weight:bold;
+    color: var(--main-color);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .section-title::after {
+    content:"";
+    display:block;
+    width:40px; height:3px;
+    background: var(--accent-color);
+    margin: 8px auto 0;
+  }
+
+  /* featured product */
+  .featured {
+    background: var(--bg-light);
+  }
+  .featured-badge {
+    display:inline-block;
+    background: var(--accent-color);
+    color:#fff;
+    font-size: 13px;
+    font-weight:bold;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .featured-wrap {
+    text-align:center;
+  }
+  .featured img {
+    border-radius: 12px;
+    margin: 16px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .featured-name {
+    font-size: 19px;
+    font-weight:bold;
+    color: var(--main-color);
+    margin-bottom: 10px;
+  }
+  .featured-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align:left;
+    background:#fff;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+  }
+  .featured-points {
+    display:flex;
+    justify-content:space-between;
+    margin-top: 18px;
+    gap: 8px;
+  }
+  .featured-points div {
+    flex:1;
+    background:#fff;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    padding: 12px 6px;
+    font-size: 13px;
+    font-weight:bold;
+    color: var(--main-color);
+  }
+
+  /* strengths */
+  .strengths ul {
+    list-style:none;
+  }
+  .strengths li {
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    background: var(--bg-light);
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height:1.6;
+  }
+  .strengths li .num {
+    flex-shrink:0;
+    width:28px; height:28px;
+    background: var(--main-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:bold;
+    font-size:14px;
+  }
+
+  /* reviews */
+  .reviews {
+    background: var(--bg-light);
+  }
+  .review-card {
+    background:#fff;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  .review-stars {
+    color: var(--sub-color);
+    font-size: 16px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .review-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+  }
+
+  /* shop info */
+  .shop-info table {
+    width:100%;
+    border-collapse:collapse;
+    font-size: 14px;
+  }
+  .shop-info th, .shop-info td {
+    text-align:left;
+    padding: 12px 8px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .shop-info th {
+    width: 90px;
+    color: var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-wrap {
+    margin-top: 16px;
+    border-radius: 10px;
+    overflow:hidden;
+  }
+  .map-wrap iframe {
+    width:100%;
+    height: 220px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--main-color), #001f45);
+    color:#fff;
+    text-align:center;
+  }
+  .cta .section-title { color:#fff; }
+  .cta .section-title::after { background: var(--sub-color); }
+  .cta p {
+    font-size: 15px;
+    line-height:1.8;
+    margin-bottom: 20px;
+  }
+  .cta-buttons {
+    display:flex;
+    flex-direction:column;
+    gap: 12px;
+  }
+  .cta-buttons a {
+    padding: 14px;
+    border-radius: 30px;
+    font-weight:bold;
+    font-size: 16px;
+  }
+  .cta-tel {
+    background: var(--accent-color);
+    color:#fff;
+  }
+  .cta-form {
+    background:#fff;
+    color: var(--main-color);
+    border: 2px solid #fff;
+  }
+
+  /* bottom nav */
+  .bottom-nav {
+    position: fixed;
+    bottom:0; left:0; right:0;
+    display:flex;
+    background:#fff;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+    z-index: 100;
+  }
+  .bottom-nav a {
+    flex:1;
+    text-align:center;
+    padding: 10px 4px;
+    font-size: 12px;
+    font-weight:bold;
+    color: var(--main-color);
+    border-right: 1px solid #eee;
+  }
+  .bottom-nav a:last-child { border-right:none; }
+  .bottom-nav a.emph {
+    background: var(--accent-color);
+    color:#fff;
+  }
+  .bottom-nav .icon {
+    display:block;
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- header -->
+  <header class="header">
+    <div class="shopname">ニシオスポーツ</div>
+    <a href="tel:0529357876" class="tel-btn">📞 電話する</a>
+  </header>
+
+  <!-- hero -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="ニシオスポーツ 店舗外観">
+    <div class="hero-overlay">
+      <div class="catch">名古屋・大曽根で40年以上<br>愛される野球用品専門店</div>
+      <div class="sub">ニシオスポーツ｜株式会社ニシオスポーツ</div>
+    </div>
+  </div>
+
+  <!-- 会社概要簡易 -->
+  <section style="padding:24px 16px 0;">
+    <p style="font-size:14px; line-height:1.8; text-align:center; color:#444;">
+      愛知県名古屋市東区・大曽根エリアで長年営業を続ける、地域密着型のスポーツ用品店です。<br>
+      少数精鋭ならではの丁寧な接客と、豊富な野球用品の品揃えが自慢です。
+    </p>
+  </section>
+
+  <!-- 一押し商品 -->
+  <section class="featured">
+    <div class="section-title">イチオシ商品</div>
+    <div class="featured-wrap">
+      <span class="featured-badge">当店イチオシ</span>
+      <div class="featured-name">野球用品</div>
+      <img src="images/baseball.jpg" alt="野球用品 グローブ バット">
+      <div class="featured-desc">
+        グローブ・バット・スパイクなど野球用品を幅広く取り揃えています。お子様の少年野球デビューから、本格的に取り組む学生・社会人選手まで、レベルやご予算に合わせてぴったりの一品をご提案します。長年の経験を持つスタッフが、サイズ選びやお手入れ方法まで丁寧にアドバイスいたします。
+      </div>
+      <div class="featured-points">
+        <div>豊富な品揃え</div>
+        <div>親切な接客</div>
+        <div>丁寧な提案</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section class="strengths">
+    <div class="section-title">選ばれる理由</div>
+    <ul>
+      <li><span class="num">1</span>約40年にわたり地域のお客様に愛され続けてきた、大曽根の老舗スポーツ店です。</li>
+      <li><span class="num">2</span>コンビニのようにコンパクトながら、必要な野球用品が揃う少数精鋭のお店です。</li>
+      <li><span class="num">3</span>スタッフが親切・丁寧に対応。初めての方でも安心してご相談いただけます。</li>
+    </ul>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="reviews">
+    <div class="section-title">お客様の声</div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <div class="review-text">
+        良いですよ。店員さんも親切。私は岐阜市に住んでいますが、この前久しぶりに大曽根に行ったら、なんと西尾スポーツさんまだ営業しているのですね！約40年前に親戚が出来町に住んでいて、お正月になるとお年玉でよく西尾スポーツさんでスニーカーを買いました。当時の店員さんもとても優しかった思い出があります。近くの市民プールに行ったりと、本当に懐かしく思います。この時代背景の中、堅実な営業をされていて、影ながら応援しています。
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">
+        コンビニのような少数精鋭のスポーツ用品店です。
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="shop-info">
+    <div class="section-title">店舗情報</div>
+    <table>
+      <tr><th>店名</th><td>ニシオスポーツ</td></tr>
+      <tr><th>会社名</th><td>株式会社ニシオスポーツ</td></tr>
+      <tr><th>代表者</th><td>西尾 保宏</td></tr>
+      <tr><th>住所</th><td>愛知県名古屋市東区東大曽根町30−20</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0529357876">052-935-7876</a></td></tr>
+      <tr><th>定休日</th><td>日曜日・水曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://nishio-sports.co.jp/" target="_blank">https://nishio-sports.co.jp/</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=愛知県名古屋市東区東大曽根町30−20&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="section-title">お気軽にお問い合わせください</div>
+    <p>野球用品のことなら何でもご相談ください。<br>お電話・お問い合わせフォームからどうぞ。</p>
+    <div class="cta-buttons">
+      <a href="tel:0529357876" class="cta-tel">📞 052-935-7876 に電話する</a>
+      <a href="https://nishio-sports.co.jp/contact/store/" target="_blank" class="cta-form">✉ お問い合わせフォームへ</a>
+    </div>
+  </section>
+
+  <!-- bottom nav -->
+  <nav class="bottom-nav">
+    <a href="tel:0529357876"><span class="icon">📞</span>電話</a>
+    <a href="#"><span class="icon">⚾</span>イチオシ</a>
+    <a href="https://nishio-sports.co.jp/contact/store/" target="_blank" class="emph"><span class="icon">✉</span>お問い合わせ</a>
+    <a href="https://nishio-sports.co.jp/" target="_blank"><span class="icon">🌐</span>HP</a>
+  </nav>
+
+</body>
+</html>
