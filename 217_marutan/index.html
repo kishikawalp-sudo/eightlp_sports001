@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>丸丹スポーツ 栄東店｜名古屋・栄の野球用品専門店</title>
+<style>
+  :root{
+    --navy:#0d2b4e;
+    --navy-dark:#081b33;
+    --red:#d6293e;
+    --red-dark:#a91d2e;
+    --gold:#e8b84b;
+    --bg:#f6f7f9;
+    --white:#ffffff;
+    --text:#222831;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:64px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ===== Header ===== */
+  .header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--navy);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+  }
+  .header .shopname{
+    font-size:15px;font-weight:700;letter-spacing:.5px;
+  }
+  .header .call-btn{
+    background:var(--red);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:700;
+    display:flex;align-items:center;gap:6px;
+    white-space:nowrap;
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    text-align:center;
+    padding:34px 18px 40px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 0%, rgba(232,184,75,.18), transparent 60%);
+  }
+  .hero-badge{
+    position:relative;
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy-dark);
+    font-size:12px;
+    font-weight:700;
+    padding:4px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    position:relative;
+    font-size:24px;
+    font-weight:800;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero h1 span{color:var(--gold);}
+  .hero p.sub{
+    position:relative;
+    font-size:13px;
+    opacity:.85;
+    margin-bottom:20px;
+  }
+  .hero-img{
+    position:relative;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 28px rgba(0,0,0,.4);
+    margin:0 auto 20px;
+    max-width:480px;
+  }
+  .hero-ctas{
+    position:relative;
+    display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:13px 22px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:14px;
+  }
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 6px 16px rgba(214,41,62,.4);}
+  .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff;}
+
+  /* ===== Section common ===== */
+  section{padding:40px 18px;}
+  .section-title{
+    text-align:center;
+    margin-bottom:26px;
+  }
+  .section-title .en{
+    display:block;
+    font-size:11px;
+    letter-spacing:2px;
+    color:var(--red);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:20px;
+    font-weight:800;
+    color:var(--navy);
+  }
+
+  /* ===== Featured product (イチオシ) ===== */
+  .featured{
+    background:var(--white);
+  }
+  .featured-card{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    border-radius:18px;
+    color:#fff;
+    padding:22px;
+    box-shadow:0 12px 30px rgba(13,43,78,.25);
+    position:relative;
+    overflow:hidden;
+  }
+  .featured-card::after{
+    content:"ICHI OSHI";
+    position:absolute;
+    top:14px;right:-34px;
+    background:var(--gold);
+    color:var(--navy-dark);
+    font-size:10px;
+    font-weight:800;
+    padding:4px 40px;
+    transform:rotate(35deg);
+    letter-spacing:1px;
+  }
+  .featured-card .tag{
+    display:inline-block;
+    background:var(--red);
+    font-size:12px;
+    font-weight:700;
+    padding:4px 12px;
+    border-radius:20px;
+    margin-bottom:12px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    font-weight:800;
+    margin-bottom:12px;
+    line-height:1.5;
+  }
+  .featured-img{
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:14px;
+  }
+  .featured-card p{
+    font-size:13.5px;
+    opacity:.92;
+    margin-bottom:16px;
+  }
+  .featured-points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .featured-points div{
+    background:rgba(255,255,255,.08);
+    border-radius:10px;
+    padding:10px;
+    font-size:12px;
+    text-align:center;
+    font-weight:700;
+  }
+  .featured-card .btn-primary{
+    display:block;
+    text-align:center;
+    width:100%;
+  }
+
+  /* ===== Strengths ===== */
+  .strengths{background:var(--bg);}
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-item{
+    background:var(--white);
+    border-radius:14px;
+    padding:18px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 4px 14px rgba(13,43,78,.06);
+    border-left:4px solid var(--red);
+  }
+  .strength-item .num{
+    font-size:22px;
+    font-weight:800;
+    color:var(--red);
+    font-family:Georgia,serif;
+    flex-shrink:0;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--navy);
+    margin-bottom:4px;
+    font-weight:800;
+  }
+  .strength-item p{
+    font-size:12.5px;
+    color:#555;
+  }
+
+  /* ===== Story ===== */
+  .story{
+    background:var(--navy);
+    color:#fff;
+  }
+  .story .section-title h2{color:#fff;}
+  .story-box{
+    background:rgba(255,255,255,.06);
+    border-radius:14px;
+    padding:20px;
+    font-size:13px;
+    line-height:1.9;
+    border:1px solid rgba(255,255,255,.12);
+  }
+  .story-box .founded{
+    color:var(--gold);
+    font-weight:800;
+    font-size:14px;
+    margin-bottom:10px;
+    display:block;
+  }
+
+  /* ===== Reviews ===== */
+  .reviews{background:var(--white);}
+  .review-card{
+    background:var(--bg);
+    border-radius:14px;
+    padding:18px;
+    margin-bottom:14px;
+    box-shadow:0 4px 14px rgba(13,43,78,.05);
+  }
+  .stars{color:var(--gold);font-size:15px;margin-bottom:8px;letter-spacing:2px;}
+  .review-card p{font-size:13px;color:#333;white-space:pre-line;}
+  .review-img{
+    margin-top:12px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+
+  /* ===== Shop info ===== */
+  .info{background:var(--bg);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--white);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(13,43,78,.06);
+    font-size:13px;
+  }
+  .info-table tr{border-bottom:1px solid #eee;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:var(--navy);
+    color:#fff;
+    text-align:left;
+    padding:12px 14px;
+    width:30%;
+    font-weight:700;
+    font-size:12.5px;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:12px 14px;
+    color:#333;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(13,43,78,.06);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+  .sns-row{
+    display:flex;gap:10px;margin-top:16px;justify-content:center;
+  }
+  .sns-row a{
+    background:var(--navy);
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    padding:9px 16px;
+    border-radius:20px;
+  }
+
+  /* ===== CTA ===== */
+  .cta{
+    background:linear-gradient(160deg,var(--red) 0%,var(--red-dark) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:10px;
+  }
+  .cta p{
+    font-size:13px;
+    opacity:.92;
+    margin-bottom:22px;
+  }
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+  .cta-buttons .btn{
+    background:#fff;
+    color:var(--red-dark);
+    font-size:15px;
+    padding:15px;
+  }
+  .cta-buttons .btn.secondary{
+    background:transparent;
+    border:1px solid rgba(255,255,255,.6);
+    color:#fff;
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    background:var(--navy-dark);
+    color:rgba(255,255,255,.6);
+    text-align:center;
+    font-size:11px;
+    padding:20px;
+  }
+
+  /* ===== Bottom nav ===== */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;z-index:100;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,.12);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:11px;
+    font-weight:700;
+    color:var(--navy);
+    display:flex;flex-direction:column;align-items:center;gap:3px;
+  }
+  .bottom-nav a.call{
+    background:var(--red);
+    color:#fff;
+  }
+  .bottom-nav .icon{font-size:18px;}
+
+  @media (min-width:600px){
+    .hero h1{font-size:28px;}
+    section{padding:56px 40px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="shopname">丸丹スポーツ 栄東店</div>
+  <a href="tel:052-251-1717" class="call-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <span class="hero-badge">名古屋・栄 三越栄店1階</span>
+  <h1>野球用品なら、<span>プロの目利き</span>にお任せください</h1>
+  <p class="sub">丸丹スポーツ 栄東店｜親切丁寧なアドバイスで、あなたにぴったりの一品を</p>
+  <div class="hero-img">
+    <img src="images/hero_store.jpg" alt="丸丹スポーツ 栄東店 店内">
+  </div>
+  <div class="hero-ctas">
+    <a href="tel:052-251-1717" class="btn btn-primary">電話で問い合わせる</a>
+    <a href="#access" class="btn btn-outline">アクセスを見る</a>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title">
+    <span class="en">RECOMMEND</span>
+    <h2>イチオシは野球用品</h2>
+  </div>
+  <div class="featured-card">
+    <span class="tag">BASEBALL GOODS</span>
+    <h3>ミズノプロ・久保田スラッガーなど<br>豊富な品揃えと確かな接客力</h3>
+    <div class="featured-img">
+      <img src="images/glove_lineup.jpg" alt="野球用グローブの品揃え">
+    </div>
+    <p>グローブ・バット・キャッチャーミットまで、野球用品を幅広く取り揃えています。ミズノプロ、久保田スラッガーの品揃えは充実、キャッチャーミットはハタケヤマもおすすめ。お客様一人ひとりに合わせて色やモデルを丁寧にご提案します。</p>
+    <div class="featured-points">
+      <div>ミズノプロ<br>取扱い</div>
+      <div>久保田スラッガー<br>取扱い</div>
+      <div>ハタケヤマ<br>キャッチャーミット</div>
+      <div>丁寧な<br>色・モデル提案</div>
+    </div>
+    <a href="tel:052-251-1717" class="btn btn-primary">グローブの相談をする</a>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">
+    <span class="en">STRENGTH</span>
+    <h2>選ばれる理由</h2>
+  </div>
+  <div class="strength-list">
+    <div class="strength-item">
+      <div class="num">01</div>
+      <div>
+        <h4>野球用品の圧倒的な品揃え</h4>
+        <p>グローブ・バット・ミットなど、野球用品が豊富に揃っています。名古屋三越栄店1階という好立地で、お仕事帰りにも立ち寄りやすいお店です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">02</div>
+      <div>
+        <h4>親切丁寧なスタッフのアドバイス</h4>
+        <p>お客様の好みや用途をしっかりヒアリングし、色やモデルまで含めておすすめを提案。初めての方でも安心してご相談いただけます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">03</div>
+      <div>
+        <h4>マエケンモデルなど話題のグローブも</h4>
+        <p>プロ選手モデルのグローブなど、こだわりの一品にも出会えます。「いい品が手に入って大満足」の声をいただいています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="section-title">
+    <span class="en">OUR STORY</span>
+    <h2>創業者のストーリー</h2>
+  </div>
+  <div class="story-box">
+    <span class="founded">1947年創業 - 名古屋・栄</span>
+    丸丹スポーツ用品株式会社は、1947年に名古屋・栄に創業し、長らく地元企業の皆さまと手を取り合い、戦後の名古屋の復興に尽力してまいりました。
+    <br><br>
+    地域の皆さまがスポーツでつながり、そしてスポーツを通じて明るい未来を創出し、社会の中で幸せに暮らせるよう、貢献してまいります。
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">
+    <span class="en">VOICE</span>
+    <h2>お客様の口コミ</h2>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>野球用品が豊富に揃っていて、お店の方も親切丁寧にアドバイスしてくれます^_^
+ちなみに…
+この日、私が購入したのはマエケンモデルのグローブ。
+いい品が手に入って大満足‼️</p>
+    <div class="review-img">
+      <img src="images/customer_glove.jpg" alt="お客様が購入したグローブ">
+    </div>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>ミズノプロ、スラッガーの品揃えが充実しています！キャッチャーミットはハタケヤマがオススメです！ 接客態度がよく色とか言ったらおすすめしてくれました</p>
+  </div>
+</section>
+
+<section class="info" id="access">
+  <div class="section-title">
+    <span class="en">ACCESS</span>
+    <h2>店舗情報</h2>
+  </div>
+  <table class="info-table">
+    <tr><th>店名</th><td>丸丹スポーツ 栄東店</td></tr>
+    <tr><th>会社名</th><td>丸丹スポーツ用品株式会社</td></tr>
+    <tr><th>住所</th><td>愛知県名古屋市中区栄3-5-1<br>名古屋三越栄店1階（広小路通沿い）</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:052-251-1717">052-251-1717</a></td></tr>
+    <tr><th>定休日</th><td>不定休</td></tr>
+    <tr><th>HP</th><td><a href="http://www.marutansports.co.jp/" target="_blank" rel="noopener">www.marutansports.co.jp</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E5%8C%BA%E6%A0%843-5-1&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <div class="sns-row">
+    <a href="https://www.instagram.com/quest_nike/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.marutansports.co.jp/contact/" target="_blank" rel="noopener">お問い合わせ</a>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>グローブ選び・型付け・お手入れのご相談も大歓迎です。<br>名古屋三越栄店1階でお待ちしております。</p>
+  <div class="cta-buttons">
+    <a href="tel:052-251-1717" class="btn">📞 052-251-1717 に電話する</a>
+    <a href="https://www.marutansports.co.jp/contact/" target="_blank" rel="noopener" class="btn secondary">お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 丸丹スポーツ用品株式会社 丸丹スポーツ 栄東店
+</footer>
+
+<nav class="bottom-nav">
+  <a href="#access"><span class="icon">📍</span>アクセス</a>
+  <a href="tel:052-251-1717" class="call"><span class="icon">📞</span>電話する</a>
+  <a href="https://www.marutansports.co.jp/contact/" target="_blank" rel="noopener"><span class="icon">✉️</span>お問い合わせ</a>
+</nav>
+
+</body>
+</html>
