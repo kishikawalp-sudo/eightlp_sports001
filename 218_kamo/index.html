@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サッカーショップKAMO 名古屋店｜名古屋グランパスの地元で愛されるサッカー専門店</title>
+<style>
+  :root {
+    --main-color: #1b7a3d;
+    --main-dark: #0e4d24;
+    --accent: #e8a400;
+    --text-dark: #222;
+    --bg-light: #f7f9f6;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color: var(--text-dark);
+    background: #fff;
+    line-height: 1.7;
+    padding-top: 56px;
+    padding-bottom: 60px;
+  }
+  a { text-decoration:none; color:inherit; }
+  img { max-width:100%; display:block; }
+
+  /* Header */
+  .header {
+    position: fixed; top:0; left:0; right:0; height:56px;
+    background: var(--main-dark);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 12px; z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  .header .shop-name {
+    color:#fff; font-size:14px; font-weight:bold;
+  }
+  .header .tel-btn {
+    background: var(--accent); color:#fff; font-weight:bold;
+    padding:8px 14px; border-radius:20px; font-size:14px;
+    display:flex; align-items:center; gap:4px;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(rgba(0,30,10,0.55), rgba(0,30,10,0.65)), url('images/kamo_hero.jpg') center/cover no-repeat;
+    color:#fff; text-align:center; padding:70px 20px 50px;
+  }
+  .hero .badge {
+    display:inline-block; background:var(--accent); color:#fff;
+    padding:5px 16px; border-radius:20px; font-size:13px; font-weight:bold;
+    margin-bottom:14px;
+  }
+  .hero h1 {
+    font-size:26px; font-weight:900; line-height:1.5; margin-bottom:12px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  }
+  .hero p {
+    font-size:14px; margin-bottom:20px; opacity:0.95;
+  }
+  .hero .cta-btn {
+    display:inline-block; background:var(--accent); color:#fff; font-weight:bold;
+    padding:14px 34px; border-radius:30px; font-size:16px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  }
+  .stars { color:#ffd54a; font-size:16px; margin-bottom:6px; }
+
+  /* Section common */
+  section { padding:40px 18px; }
+  .sec-title {
+    text-align:center; font-size:21px; font-weight:900; color:var(--main-dark);
+    margin-bottom:8px;
+  }
+  .sec-sub {
+    text-align:center; font-size:13px; color:#666; margin-bottom:26px;
+  }
+
+  /* Featured product */
+  .featured {
+    background: var(--bg-light);
+  }
+  .featured-card {
+    background:#fff; border-radius:14px; overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08); margin-bottom:20px;
+  }
+  .featured-card img { width:100%; height:220px; object-fit:cover; }
+  .featured-card .body { padding:20px; }
+  .featured-card h3 {
+    font-size:18px; color:var(--main-dark); margin-bottom:10px; font-weight:900;
+  }
+  .featured-card p { font-size:14px; color:#444; margin-bottom:14px; }
+  .tag-list { display:flex; flex-wrap:wrap; gap:8px; }
+  .tag {
+    background:var(--main-color); color:#fff; font-size:12px; padding:5px 12px;
+    border-radius:14px;
+  }
+
+  /* Strengths */
+  .strengths { background:#fff; }
+  .strength-item {
+    display:flex; gap:14px; align-items:flex-start; margin-bottom:24px;
+    padding-bottom:24px; border-bottom:1px dashed #ddd;
+  }
+  .strength-item:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .strength-num {
+    flex-shrink:0; width:40px; height:40px; border-radius:50%;
+    background:var(--main-color); color:#fff; font-weight:900; font-size:18px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .strength-item h4 { font-size:15px; color:var(--main-dark); margin-bottom:6px; font-weight:900; }
+  .strength-item p { font-size:13.5px; color:#444; }
+
+  /* Gallery */
+  .gallery { background: var(--bg-light); }
+  .gallery-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:10px;
+  }
+  .gallery-grid img {
+    width:100%; height:140px; object-fit:cover; border-radius:10px;
+  }
+
+  /* Reviews */
+  .reviews { background:#fff; }
+  .review-card {
+    background: var(--bg-light); border-radius:12px; padding:18px;
+    margin-bottom:16px; position:relative;
+  }
+  .review-card .rstars { color:var(--accent); font-size:15px; margin-bottom:8px; }
+  .review-card p { font-size:13.5px; color:#333; }
+
+  /* Shop info */
+  .shopinfo { background: var(--bg-light); }
+  .info-table {
+    width:100%; background:#fff; border-radius:12px; overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06); margin-bottom:20px;
+  }
+  .info-table tr { border-bottom:1px solid #eee; }
+  .info-table tr:last-child { border-bottom:none; }
+  .info-table th {
+    background:var(--bg-light); color:var(--main-dark); font-size:13px;
+    text-align:left; padding:12px 10px; width:88px; vertical-align:top;
+    font-weight:900;
+  }
+  .info-table td { font-size:13.5px; padding:12px 10px; }
+  .map-frame {
+    width:100%; height:220px; border:0; border-radius:12px; overflow:hidden;
+  }
+  .sns-links { display:flex; gap:10px; margin-top:16px; flex-wrap:wrap; }
+  .sns-links a {
+    background:var(--main-color); color:#fff; font-size:13px; font-weight:bold;
+    padding:10px 16px; border-radius:20px;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    background: linear-gradient(135deg, var(--main-dark), var(--main-color));
+    color:#fff; text-align:center;
+  }
+  .final-cta h2 { font-size:20px; margin-bottom:10px; font-weight:900; }
+  .final-cta p { font-size:13.5px; margin-bottom:22px; opacity:0.95; }
+  .final-cta .cta-btn {
+    display:inline-block; background:var(--accent); color:#fff; font-weight:bold;
+    padding:14px 30px; border-radius:30px; font-size:15px; margin:6px;
+  }
+  .final-cta .cta-btn.outline {
+    background:transparent; border:2px solid #fff;
+  }
+
+  /* Bottom nav */
+  .bottom-nav {
+    position:fixed; bottom:0; left:0; right:0; height:60px;
+    background:#fff; display:flex; z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.12);
+  }
+  .bottom-nav a {
+    flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    font-size:11px; color:var(--main-dark); font-weight:bold; gap:2px;
+  }
+  .bottom-nav a.tel { background:var(--accent); color:#fff; }
+  .bottom-nav a.primary { background:var(--main-color); color:#fff; }
+  .icon { font-size:18px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="shop-name">⚽ サッカーショップKAMO 名古屋店</div>
+  <a href="tel:0522383688" class="tel-btn">📞 電話する</a>
+</header>
+
+<section class="hero">
+  <div class="stars">★★★★☆</div>
+  <div class="badge">名古屋グランパスの地元密着サッカー専門店</div>
+  <h1>子供も夢中になる、<br>本格サッカー用品がここに。</h1>
+  <p>栄駅すぐ｜選手サイン＆用品ディスプレイあり｜大阪店もある安心のショップ</p>
+  <a href="tel:0522383688" class="cta-btn">📞 今すぐ電話で問い合わせ</a>
+</section>
+
+<section class="featured">
+  <div class="sec-title">イチオシ｜サッカー用品</div>
+  <div class="sec-sub">スパイクからユニフォームまで、珍しいアイテムも充実</div>
+  <div class="featured-card">
+    <img src="images/kamo_product.jpg" alt="サッカー用品売場">
+    <div class="body">
+      <h3>他にはない品揃え。地下の専門売場でじっくり選べる。</h3>
+      <p>スパイク・シューズは地下の専門売場でご案内。名古屋グランパスゆかりの選手サインや用品もディスプレイされ、サッカーファンにはたまらない空間です。市場では見かけない珍しいアイテムも取り扱っています。</p>
+      <div class="tag-list">
+        <span class="tag">サッカースパイク</span>
+        <span class="tag">ユニフォーム</span>
+        <span class="tag">選手サイングッズ</span>
+        <span class="tag">アプリ会員特典</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="sec-title">選ばれる理由</div>
+  <div class="strength-item">
+    <div class="strength-num">1</div>
+    <div>
+      <h4>名古屋グランパスの地元ならではの空間</h4>
+      <p>選手のサインや使用用品がディスプレイされ、サッカー好きなお子様も大人も楽しめる店内です。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">2</div>
+    <div>
+      <h4>珍しいサッカー用品も見つかる品揃え</h4>
+      <p>定番アイテムはもちろん、他店では手に入りにくい珍しい商品も取り扱っており、こだわり派にも好評です。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">3</div>
+    <div>
+      <h4>アプリ会員登録でポイント＆クーポン特典</h4>
+      <p>会員登録をしておくとポイントやクーポンの特典が受けられます。スパイク売場は地下のため、初めての方は1Fでのご案内、または事前の会員登録がスムーズです。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">4</div>
+    <div>
+      <h4>丁寧で温かい接客対応</h4>
+      <p>初めての来店で緊張していても、スタッフの丁寧な対応で安心。お手数をおかけした際も嫌な顔せず対応してくれると評判です。</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="sec-title">店内の様子</div>
+  <div class="gallery-grid">
+    <img src="images/kamo_interior1.jpg" alt="サッカーショップKAMO店内1">
+    <img src="images/kamo_interior2.jpg" alt="サッカーショップKAMO店内2">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="sec-title">お客様の口コミ</div>
+  <div class="review-card">
+    <div class="rstars">★★★★☆</div>
+    <p>自分は良く分からないが、子供はここのショップが良いと言っている。大阪にも在るらしく、そこにも行ったらしい。サッカー用品で珍しいものもあるようです。名古屋グランパスの地元なので、選手のサインや用品もディスプレイされていた。</p>
+  </div>
+  <div class="review-card">
+    <div class="rstars">★★★★★</div>
+    <p>アプリの会員登録でポイントとかクーポンとか特典がありますが、スパイクなどは地下の売場なので、初めての来店される場合は1Fか事前に会員登録をしておいた方がスムーズです。地下のスパイクなどの売場はちょっと接客待ちになってしまうこともあるので時間には余裕をもって行くようにしています。お手数おかけした時にも嫌な顔せずやってくれてありがたかったです。初めて行ったので緊張していたのですがぜんぜん大丈夫でした。</p>
+  </div>
+</section>
+
+<section class="shopinfo">
+  <div class="sec-title">店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>サッカーショップKAMO 名古屋店</td></tr>
+    <tr><th>会社名</th><td>加茂商事株式会社（KAMO Trading Co., Ltd.）</td></tr>
+    <tr><th>住所</th><td>愛知県名古屋市中区栄3-15-4 サカイ栄ビル1F</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0522383688">052-238-3688</a></td></tr>
+    <tr><th>定休日</th><td>不定休</td></tr>
+    <tr><th>HP</th><td><a href="http://www.sskamo.co.jp/company/store/nagoya.html" target="_blank">公式サイトはこちら</a></td></tr>
+  </table>
+  <iframe class="map-frame" src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E5%8C%BA%E6%A0%843-15-4&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+  <div class="sns-links">
+    <a href="https://www.sskamo.co.jp/s/contact/contact.aspx" target="_blank">お問い合わせフォーム</a>
+    <a href="https://x.com/soccershop_kamo" target="_blank">公式X（旧Twitter）</a>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>サッカー用品のことなら、KAMOへ。</h2>
+  <p>スパイク選びも、ユニフォームも、珍しいアイテム探しも。<br>お気軽にお問い合わせください。</p>
+  <a href="tel:0522383688" class="cta-btn">📞 電話で問い合わせる</a>
+  <a href="http://www.sskamo.co.jp/company/store/nagoya.html" target="_blank" class="cta-btn outline">🌐 公式サイトを見る</a>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0522383688" class="tel">
+    <span class="icon">📞</span>電話する
+  </a>
+  <a href="https://www.sskamo.co.jp/s/contact/contact.aspx" target="_blank" class="primary">
+    <span class="icon">✉️</span>お問い合わせ
+  </a>
+  <a href="http://www.sskamo.co.jp/company/store/nagoya.html" target="_blank">
+    <span class="icon">🌐</span>公式サイト
+  </a>
+  <a href="https://x.com/soccershop_kamo" target="_blank">
+    <span class="icon">𝕏</span>SNS
+  </a>
+</nav>
+
+</body>
+</html>
