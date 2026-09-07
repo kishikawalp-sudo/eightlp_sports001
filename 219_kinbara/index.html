@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>きんばらスポーツ｜ハンドボール・フットサル・サッカー用品専門店</title>
+<style>
+  :root{
+    --main:#0b5ed7;
+    --main-dark:#083d94;
+    --accent:#ff7a00;
+    --bg:#f5f8fc;
+    --text:#222;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:var(--main);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  }
+  header .shopname{
+    font-size:16px;
+    font-weight:bold;
+  }
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:14px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    background:linear-gradient(135deg,var(--main) 0%,var(--main-dark) 100%);
+    color:#fff;
+    padding:36px 16px 40px;
+    text-align:center;
+  }
+  .hero .catch-sub{
+    font-size:13px;
+    letter-spacing:2px;
+    opacity:0.9;
+    margin-bottom:8px;
+  }
+  .hero h1{
+    font-size:26px;
+    line-height:1.4;
+    margin-bottom:14px;
+    font-weight:800;
+  }
+  .hero .hero-img{
+    width:100%;
+    border-radius:12px;
+    overflow:hidden;
+    margin:16px 0;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .hero .lead{
+    font-size:15px;
+    margin-top:10px;
+  }
+  .hero-cta{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#fff;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:16px;
+    display:block;
+  }
+  .btn-secondary{
+    background:#fff;
+    color:var(--main);
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:16px;
+    display:block;
+  }
+
+  section{
+    padding:36px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:21px;
+    font-weight:800;
+    margin-bottom:24px;
+    color:var(--main-dark);
+    position:relative;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent);
+    letter-spacing:2px;
+    margin-bottom:6px;
+    font-weight:700;
+  }
+
+  /* イチオシ商品 */
+  .featured{
+    background:#fff;
+  }
+  .featured-box{
+    background:linear-gradient(180deg,#fff8ef,#fff);
+    border:2px solid var(--accent);
+    border-radius:16px;
+    padding:20px;
+    position:relative;
+    margin-top:10px;
+  }
+  .featured-badge{
+    position:absolute;
+    top:-16px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--accent);
+    color:#fff;
+    padding:6px 20px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+    box-shadow:0 3px 8px rgba(0,0,0,0.2);
+  }
+  .featured-box img{
+    border-radius:10px;
+    margin:14px 0;
+  }
+  .featured-box h3{
+    font-size:19px;
+    color:var(--main-dark);
+    margin-bottom:10px;
+    text-align:center;
+  }
+  .featured-list{
+    list-style:none;
+    margin-top:14px;
+  }
+  .featured-list li{
+    padding:10px 0 10px 28px;
+    border-bottom:1px dashed #e0d3bd;
+    position:relative;
+    font-size:14.5px;
+  }
+  .featured-list li:last-child{border-bottom:none;}
+  .featured-list li::before{
+    content:"⚽";
+    position:absolute;
+    left:0;
+    top:9px;
+  }
+  .genre-tags{
+    display:flex;
+    gap:8px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:16px;
+  }
+  .genre-tags span{
+    background:var(--main);
+    color:#fff;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+  }
+
+  /* 強み */
+  .strengths{
+    background:var(--bg);
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    align-items:flex-start;
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--main);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+  }
+  .strength-item h4{
+    font-size:15.5px;
+    color:var(--main-dark);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13.5px;
+    color:#555;
+  }
+
+  /* 口コミ */
+  .reviews{
+    background:#fff;
+  }
+  .review-card{
+    background:var(--bg);
+    border-radius:12px;
+    padding:18px;
+    position:relative;
+  }
+  .review-stars{
+    color:#ffb400;
+    font-size:18px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:14.5px;
+    color:#333;
+  }
+  .review-card .review-from{
+    margin-top:12px;
+    font-size:12.5px;
+    color:#888;
+    text-align:right;
+  }
+
+  /* 店舗情報 */
+  .shopinfo{
+    background:var(--bg);
+  }
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .info-table tr{
+    border-bottom:1px solid #eee;
+  }
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:#eef4fc;
+    color:var(--main-dark);
+    font-size:13px;
+    text-align:left;
+    padding:12px 10px;
+    width:30%;
+    vertical-align:top;
+    white-space:nowrap;
+  }
+  .info-table td{
+    padding:12px 10px;
+    font-size:13.5px;
+    word-break:break-all;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta-section{
+    background:linear-gradient(135deg,var(--main) 0%,var(--main-dark) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13.5px;
+    margin-bottom:20px;
+    opacity:0.95;
+  }
+  .cta-section .btn-secondary{
+    max-width:320px;
+    margin:0 auto 12px;
+  }
+  .cta-section .btn-primary{
+    max-width:320px;
+    margin:0 auto;
+  }
+
+  /* フッター */
+  footer{
+    background:#1a1a1a;
+    color:#999;
+    text-align:center;
+    padding:20px 16px;
+    font-size:12px;
+  }
+  footer .company{
+    color:#ccc;
+    margin-bottom:6px;
+  }
+
+  /* 固定フッターナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.15);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main-dark);
+    font-weight:bold;
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav .icon{
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  @media (min-width:600px){
+    .hero h1{font-size:30px;}
+    section{padding:48px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">きんばらスポーツ</div>
+  <a href="tel:0533682926" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <div class="catch-sub">HANDBALL / FUTSAL / SOCCER SHOP</div>
+  <h1>ハンドボール・フットサル・<br>サッカー用品なら<br>きんばらスポーツへ</h1>
+  <div class="hero-img">
+    <img src="images/main.jpg" alt="きんばらスポーツ 店舗外観">
+  </div>
+  <p class="lead">愛知県蒲郡市で愛される地域密着のスポーツ用品店。<br>親切な店長が、あなたにぴったりの一品をご提案します。</p>
+  <div class="hero-cta">
+    <a href="tel:0533682926" class="btn-primary">📞 今すぐ電話で相談する</a>
+    <a href="#shopinfo" class="btn-secondary">📍 店舗情報を見る</a>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title"><span>OUR RECOMMEND</span>イチオシ商品</div>
+  <div class="featured-box">
+    <div class="featured-badge">★ 店長イチオシ ★</div>
+    <img src="images/item1.jpg" alt="ハンドボール・フットサル・サッカー用品">
+    <h3>専門知識で選ぶ、確かな一品</h3>
+    <ul class="featured-list">
+      <li>ハンドボール用品を豊富に取り揃え、初心者から経験者まで対応</li>
+      <li>フットサル用品はプレースタイルに合わせた提案が可能</li>
+      <li>サッカー用品はチーム利用・個人利用どちらもお気軽にご相談ください</li>
+    </ul>
+    <div class="genre-tags">
+      <span>ハンドボール用品</span>
+      <span>フットサル用品</span>
+      <span>サッカー用品</span>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title"><span>STRENGTH</span>きんばらスポーツの強み</div>
+  <div class="strength-item">
+    <div class="strength-num">1</div>
+    <div>
+      <h4>親切・丁寧な店長対応</h4>
+      <p>お客様一人ひとりに合わせて、感じのよい丁寧な接客を心がけています。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">2</div>
+    <div>
+      <h4>ネット注文もスピード配送</h4>
+      <p>ネットでのご注文にも迅速に対応。配達の早さはお客様からも高評価です。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">3</div>
+    <div>
+      <h4>専門用品を幅広くラインナップ</h4>
+      <p>ハンドボール・フットサル・サッカー用品を中心に、専門的なアイテムを取り揃えています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title"><span>VOICE</span>お客様の声</div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p>店長がとても親切で感じがいいです。ネット注文の際、配達がとても早く助かりました！</p>
+    <div class="review-from">− ご来店・ご利用いただいたお客様より</div>
+  </div>
+</section>
+
+<section class="shopinfo" id="shopinfo">
+  <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>きんばらスポーツ</td></tr>
+    <tr><th>会社名</th><td>有限会社 きんばらスポーツ</td></tr>
+    <tr><th>代表者</th><td>金原 紀昌</td></tr>
+    <tr><th>住所</th><td>愛知県蒲郡市元町１８−８</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0533682926">053-368-2926</a></td></tr>
+    <tr><th>定休日</th><td>火曜日</td></tr>
+    <tr><th>ホームページ</th><td><a href="http://www.kinbara-sports.com/" target="_blank">www.kinbara-sports.com</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@kinbara-sports.com">info@kinbara-sports.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%92%B2%E9%83%A1%E5%B8%82%E5%85%83%E7%94%BA%EF%BC%91%EF%BC%98%EF%BC%8D%EF%BC%98&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>ハンドボール・フットサル・サッカー用品のことなら<br>きんばらスポーツにお任せください</p>
+  <a href="tel:0533682926" class="btn-secondary">📞 053-368-2926</a>
+  <a href="mailto:info@kinbara-sports.com" class="btn-primary">✉️ メールで問い合わせる</a>
+</section>
+
+<footer>
+  <div class="company">有限会社 きんばらスポーツ</div>
+  <div>愛知県蒲郡市元町１８−８</div>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0533682926" class="call"><span class="icon">📞</span>電話</a>
+  <a href="#shopinfo"><span class="icon">📍</span>店舗情報</a>
+  <a href="mailto:info@kinbara-sports.com"><span class="icon">✉️</span>メール</a>
+  <a href="http://www.kinbara-sports.com/" target="_blank"><span class="icon">🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
