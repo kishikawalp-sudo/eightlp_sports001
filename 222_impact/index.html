@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>The Impact｜愛知県豊田市のスキー・スノーボードショップ</title>
+<meta name="description" content="愛知県豊田市御幸本町のスキー・スノーボードショップ「The Impact」。カスタムインソール、板・バインディング選びまで気さくに相談できるお店です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#0b1622;
+    --navy-900:#101f30;
+    --navy-800:#16293e;
+    --ice-100:#eef4f8;
+    --ice-200:#dbe9f2;
+    --ice-400:#9fc4dc;
+    --ice-accent:#4fa3d1;
+    --ember:#e8823c;
+    --ember-dark:#c96a2c;
+    --ink:#152130;
+    --paper:#f7f5f0;
+    --line: rgba(255,255,255,0.14);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    padding-top:58px;
+    padding-bottom:64px;
+  }
+
+  img{max-width:100%;display:block;}
+
+  a{color:inherit;text-decoration:none;}
+
+  .display{
+    font-family:'Oswald', 'Noto Sans JP', sans-serif;
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- Fixed header ---------- */
+  .site-header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:58px;
+    background:var(--navy-950);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 16px;
+    z-index:100;
+    border-bottom:1px solid var(--line);
+  }
+  .site-header .logo{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    color:var(--ice-100);
+    letter-spacing:0.04em;
+  }
+  .site-header .logo span{color:var(--ember);}
+  .header-tel{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:var(--ember);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:3px;
+    font-size:13px;
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .header-tel svg{width:14px;height:14px;flex-shrink:0;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--navy-950);
+    color:var(--ice-100);
+    overflow:hidden;
+    padding:52px 20px 60px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url('images/hero.jpg');
+    background-size:cover;
+    background-position:center 65%;
+    opacity:0.42;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(11,22,34,0.35) 0%, rgba(11,22,34,0.55) 45%, var(--navy-950) 100%);
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    max-width:520px;
+    margin:0 auto;
+  }
+  .hero-eyebrow{
+    font-size:13px;
+    color:var(--ice-400);
+    margin-bottom:14px;
+    line-height:1.6;
+  }
+  .hero h1{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(30px, 8vw, 40px);
+    line-height:1.25;
+    margin-bottom:18px;
+  }
+  .hero h1 em{
+    display:block;
+    font-style:normal;
+    color:var(--ember);
+  }
+  .hero-lead{
+    font-size:14.5px;
+    color:var(--ice-200);
+    max-width:38ch;
+    margin-bottom:28px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 22px;
+    border-radius:3px;
+    font-size:14.5px;
+    font-weight:700;
+    border:1px solid transparent;
+  }
+  .btn-primary{
+    background:var(--ember);
+    color:#fff;
+  }
+  .btn-outline{
+    background:transparent;
+    color:var(--ice-100);
+    border-color:rgba(255,255,255,0.4);
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:56px 20px;}
+  .section-inner{max-width:520px;margin:0 auto;}
+  .kicker{
+    font-family:'Oswald', sans-serif;
+    font-size:13px;
+    color:var(--ember-dark);
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  h2{
+    font-family:'Oswald', sans-serif;
+    font-size:24px;
+    font-weight:700;
+    line-height:1.35;
+    margin-bottom:16px;
+    color:var(--navy-950);
+  }
+  .lead-text{
+    font-size:14.5px;
+    color:#4a5563;
+    margin-bottom:8px;
+  }
+
+  /* ---------- Featured product (イチオシ) ---------- */
+  .feature{
+    background:var(--navy-950);
+    color:var(--ice-100);
+  }
+  .feature .kicker{color:var(--ice-400);}
+  .feature h2{color:#fff;}
+  .feature-photo{
+    border-radius:4px;
+    overflow:hidden;
+    margin:22px 0 24px;
+    border:1px solid var(--line);
+  }
+  .feature-photo img{width:100%;}
+  .feature-copy{
+    font-size:14.5px;
+    color:var(--ice-200);
+    margin-bottom:20px;
+  }
+  .feature-list{
+    list-style:none;
+    display:grid;
+    gap:10px;
+    margin-bottom:26px;
+  }
+  .feature-list li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    font-size:14px;
+    color:var(--ice-100);
+    padding:12px 14px;
+    background:var(--navy-800);
+    border-radius:3px;
+    border-left:3px solid var(--ember);
+  }
+
+  /* ---------- Strengths ---------- */
+  .strength-item{
+    padding:22px 0;
+    border-top:1px solid #dfe2e2;
+  }
+  .strength-item:first-of-type{border-top:none;}
+  .strength-item h3{
+    font-family:'Oswald', sans-serif;
+    font-size:16.5px;
+    font-weight:600;
+    color:var(--navy-900);
+    margin-bottom:8px;
+  }
+  .strength-item p{
+    font-size:14px;
+    color:#4a5563;
+  }
+
+  /* ---------- Review ---------- */
+  .review{
+    background:var(--ice-100);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:4px;
+    padding:26px 22px;
+    border:1px solid var(--ice-200);
+  }
+  .stars{
+    color:var(--ember);
+    font-size:17px;
+    letter-spacing:2px;
+    margin-bottom:14px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:#33404d;
+    margin-bottom:14px;
+  }
+  .review-quote{
+    font-size:14px;
+    color:var(--navy-900);
+    font-weight:500;
+    padding:14px 16px;
+    background:var(--ice-100);
+    border-left:3px solid var(--ice-accent);
+    border-radius:2px;
+    margin-top:16px;
+  }
+  .review-source{
+    margin-top:16px;
+    font-size:12.5px;
+    color:#8b95a1;
+  }
+
+  /* ---------- Owner ---------- */
+  .owner-photo{
+    border-radius:4px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+
+  /* ---------- Shop info ---------- */
+  .info{background:#fff;}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    margin-bottom:24px;
+  }
+  .info-table th, .info-table td{
+    text-align:left;
+    padding:14px 4px;
+    border-bottom:1px solid #e2e5e5;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:88px;
+    color:#7c8590;
+    font-weight:500;
+    white-space:nowrap;
+  }
+  .info-table td{color:var(--ink);}
+  .info-table a{color:var(--ice-accent);text-decoration:underline;}
+  .map-frame{
+    border-radius:4px;
+    overflow:hidden;
+    border:1px solid var(--ice-200);
+    margin-bottom:8px;
+  }
+  .map-frame iframe{width:100%;height:230px;border:0;display:block;}
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:linear-gradient(160deg, var(--navy-950), var(--navy-800));
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{color:#fff;}
+  .cta .lead-text{color:var(--ice-200);margin-bottom:26px;}
+  .cta-actions{display:grid;gap:12px;}
+  .cta .btn{width:100%;padding:16px 20px;font-size:15px;}
+
+  /* ---------- Bottom nav ---------- */
+  .bottom-nav{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    height:64px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    z-index:100;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.18);
+  }
+  .bottom-nav a{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:2px;
+    font-size:12.5px;
+    font-weight:700;
+    color:#fff;
+  }
+  .bottom-nav a svg{width:19px;height:19px;}
+  .bottom-nav .nav-tel{background:var(--ember);}
+  .bottom-nav .nav-map{background:var(--navy-900);}
+
+  @media (min-width:600px){
+    .hero{padding:76px 20px 84px;}
+    .hero h1{font-size:44px;}
+    section{padding:76px 20px;}
+    .cta-actions{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">THE <span>IMPACT</span></div>
+  <a class="header-tel" href="tel:0565244115">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    電話する
+  </a>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">愛知県豊田市 御幸本町 ｜ スキー＆スノーボードショップ</p>
+    <h1 class="display">滑る楽しさ、<em>ここから。</em></h1>
+    <p class="hero-lead">板もブーツも、あなたの足と滑り方に合わせて。The Impactは、一人ひとりに向き合うスキー・スノーボード専門店です。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="tel:0565244115">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0565-24-4115
+      </a>
+      <a class="btn btn-outline" href="#access">アクセス・営業日</a>
+    </div>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="section-inner">
+    <p class="kicker">ICHIOSHI — イチオシ</p>
+    <h2 class="display">スキー・スノーボード、<br>足に合う一台を見つける。</h2>
+    <div class="feature-photo">
+      <img src="images/snowboard.jpg" alt="The Impactの店内に並ぶスキー・スノーボード用品">
+    </div>
+    <p class="feature-copy">レベルや滑り方、目指すスタイルをじっくり聞いた上で、板・バインディング・ブーツをご提案。既製品では出せないフィット感を、カスタムインソールで仕上げます。板とバインを買いに来たお客様が「こういう店の方が安心できる」と言ってくださったのが、私たちの目指す接客そのものです。</p>
+    <ul class="feature-list">
+      <li>足型に合わせたカスタムインソール製作</li>
+      <li>スタイル・レベルに応じた板＆バインディング選び</li>
+      <li>初心者から社会人・既婚者まで、続けられるアドバイス</li>
+    </ul>
+  </div>
+</section>
+
+<section class="reviews-strengths">
+  <div class="section-inner">
+    <p class="kicker">STRENGTHS — 私たちが大切にしていること</p>
+    <h2 class="display">「ちょっとしたキッカケ」を、<br>お店から。</h2>
+    <p class="lead-text">スノーボードの原点は、楽しさ。スタイルは違っても、みんなが同じ趣味を持つ仲間です。</p>
+
+    <div class="strength-item">
+      <h3>すべての人が楽しめるスタイルの多様性</h3>
+      <p>スノーボードには様々なスタイルがあります。上手くなるキッカケを一つでも多くお渡しできるよう、日々お客様と向き合っています。</p>
+    </div>
+    <div class="strength-item">
+      <h3>長く滑り続けてほしいから</h3>
+      <p>スノーボード歴も年齢も性別も気にせず、できる限り、たとえ1シーズンでも長く滑り続けられるように。特に社会人・既婚者のお客様を応援しています。</p>
+    </div>
+    <div class="strength-item">
+      <h3>聞きたくても聞けなかったことを、ここで</h3>
+      <p>単なる物販の場ではなく、人と人とのつながりを大切に。質問・疑問・要望を遠慮なく聞きにきてください。より良いショップを、一緒につくっていきます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="review">
+  <div class="section-inner">
+    <p class="kicker">VOICE — お客様の声</p>
+    <h2 class="display">実際にご利用いただいた方から</h2>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>アルペンスノーボードブーツのカスタムインソールを作成してもらいました。既製品とは違い、自分の足型だと踏ん張れるし、何より疲れにくくて全てにおいて楽なんです。お値段は高いですが、それ相応だと思います。</p>
+      <p>お店は少し入りづらいかもしれませんが、とても気さくな方でした。</p>
+      <div class="review-quote">
+        「確かに少し高いかもしれないけど、こういう店の方がなんか安心できるよね」<br>
+        ―当日、板とバインを購入した友人の言葉です
+      </div>
+      <div class="review-source">The Impact ご利用のお客様</div>
+    </div>
+  </div>
+</section>
+
+<section class="owner">
+  <div class="section-inner">
+    <p class="kicker">OWNER — 代表より</p>
+    <h2 class="display">田口 勝浩</h2>
+    <div class="owner-photo">
+      <img src="images/shop.jpg" alt="The Impact 店舗の様子">
+    </div>
+    <p class="lead-text">スノーボードの原点であるべき楽しさを、ずっと提案し続けたい。そんなキッカケを、日々与えたいと感じています。今までにあるお店では聞きたくても聞けなかったことを、ぜひ聞きにきてください。</p>
+  </div>
+</section>
+
+<section class="info" id="access">
+  <div class="section-inner">
+    <p class="kicker">SHOP INFO — 店舗情報</p>
+    <h2 class="display">アクセス・営業案内</h2>
+
+    <table class="info-table">
+      <tr><th>店名</th><td>The Impact</td></tr>
+      <tr><th>代表者</th><td>田口 勝浩</td></tr>
+      <tr><th>住所</th><td>愛知県豊田市御幸本町2丁目204-1 SAビル1F</td></tr>
+      <tr><th>定休日</th><td>火曜日</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0565244115">0565-24-4115</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@impact-t.com">info@impact-t.com</a></td></tr>
+      <tr><th>HP</th><td><a href="https://www.impact-t.com/" target="_blank" rel="noopener">www.impact-t.com</a></td></tr>
+    </table>
+
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=愛知県豊田市御幸本町2丁目204-1&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="section-inner">
+    <h2 class="display">まずはお気軽にご相談ください</h2>
+    <p class="lead-text">板選びも、インソールも、まずはお電話で。</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="tel:0565244115">電話で相談する</a>
+      <a class="btn btn-outline" href="https://www.impact-t.com/" target="_blank" rel="noopener">ホームページを見る</a>
+    </div>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a class="nav-tel" href="tel:0565244115">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    電話する
+  </a>
+  <a class="nav-map" href="#access">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    アクセス
+  </a>
+</nav>
+
+</body>
+</html>
