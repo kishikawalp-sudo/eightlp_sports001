@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阪神スポーツ｜伊丹市の地域密着スポーツ専門店</title>
+<style>
+  :root{
+    --main:#0b3d91;
+    --accent:#ff6b00;
+    --dark:#1a1a1a;
+    --light:#f5f7fa;
+    --star:#ffb400;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark);
+    background:#fff;
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:600px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main);
+    color:#fff;
+    height:56px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 16px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name{font-size:16px;font-weight:bold;}
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{width:100%;height:56vw;max-height:340px;object-fit:cover;}
+  .hero-overlay{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    padding:24px 16px 16px;
+    color:#fff;
+  }
+  .hero-overlay .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.4;
+    text-shadow:0 1px 4px rgba(0,0,0,0.6);
+  }
+  .hero-overlay .sub{
+    font-size:14px;
+    margin-top:6px;
+    opacity:0.95;
+  }
+  .badge-row{
+    display:flex;gap:8px;flex-wrap:wrap;
+    margin-top:20px;
+  }
+  .badge{
+    background:var(--main);
+    color:#fff;
+    font-size:12px;
+    padding:6px 10px;
+    border-radius:4px;
+    font-weight:bold;
+  }
+
+  section{padding:36px 0;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:8px;
+    color:var(--main);
+    position:relative;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent);
+    letter-spacing:2px;
+    margin-bottom:4px;
+    font-weight:bold;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:14px;
+    color:#555;
+    margin-bottom:24px;
+  }
+
+  /* Featured product / イチオシ */
+  .featured{
+    background:linear-gradient(135deg,#0b3d91,#123a7a);
+    color:#fff;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-title span{color:var(--accent);}
+  .featured-img{
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  }
+  .featured-items{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+  }
+  .featured-item{
+    flex:1;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.3);
+    border-radius:10px;
+    padding:14px 8px;
+    text-align:center;
+  }
+  .featured-item .icon{font-size:26px;margin-bottom:6px;}
+  .featured-item .name{font-size:13px;font-weight:bold;}
+  .featured-desc{
+    margin-top:20px;
+    font-size:14px;
+    background:rgba(255,255,255,0.08);
+    padding:16px;
+    border-radius:10px;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:16px;
+    border-radius:8px;
+    margin-top:24px;
+    box-shadow:0 4px 12px rgba(255,107,0,0.4);
+  }
+
+  /* Strengths */
+  .strengths{background:var(--light);}
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    border-left:4px solid var(--accent);
+  }
+  .strength-card .num{
+    color:var(--accent);
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:4px;
+  }
+  .strength-card .title{
+    font-weight:bold;
+    font-size:15px;
+    margin-bottom:6px;
+    color:var(--main);
+  }
+  .strength-card .text{font-size:13px;color:#444;}
+
+  /* Story */
+  .story{
+    background:#fff;
+  }
+  .story-box{
+    display:flex;
+    gap:16px;
+    background:var(--light);
+    border-radius:12px;
+    padding:20px;
+    align-items:flex-start;
+  }
+  .story-img{
+    width:90px;height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+    border:3px solid var(--main);
+  }
+  .story-text{
+    font-size:13px;
+    color:#333;
+    white-space:pre-line;
+  }
+  .story-text .name{
+    font-weight:bold;
+    color:var(--main);
+    display:block;
+    margin-bottom:6px;
+    font-size:14px;
+  }
+
+  /* Reviews */
+  .reviews{background:var(--light);}
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .stars{color:var(--star);font-size:18px;margin-bottom:10px;letter-spacing:2px;}
+  .review-text{font-size:13.5px;color:#333;}
+  .review-text + .review-text{margin-top:14px;padding-top:14px;border-top:1px dashed #ddd;}
+
+  /* Shop info */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .shop-info th{
+    background:var(--main);
+    color:#fff;
+    text-align:left;
+    padding:12px 10px;
+    width:30%;
+    font-weight:bold;
+    font-size:13px;
+    vertical-align:top;
+  }
+  .shop-info td{
+    padding:12px 10px;
+    border-bottom:1px solid #e5e5e5;
+    background:#fff;
+  }
+  .shop-info tr:nth-child(even) td{background:#fafafa;}
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta .section-title{color:#fff;}
+  .final-cta p{font-size:14px;margin-bottom:20px;opacity:0.95;}
+  .final-cta .cta-btn{background:var(--accent);}
+  .final-cta .cta-btn.outline{
+    background:transparent;
+    border:2px solid #fff;
+    margin-top:12px;
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px;
+    font-size:11px;
+    color:var(--main);
+    font-weight:bold;
+  }
+  .bottom-nav a.tel{background:var(--accent);color:#fff;}
+  .bottom-nav a.map{background:var(--main);color:#fff;}
+  .bottom-nav .icon{font-size:18px;display:block;margin-bottom:2px;}
+
+  @media (min-width:601px){
+    .hero img{height:340px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">阪神スポーツ</div>
+  <a href="tel:0727722802" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="阪神スポーツ 店舗外観">
+  <div class="hero-overlay">
+    <div class="catch">創業半世紀以上。<br>地域密着の確かなスポーツ専門店</div>
+    <div class="sub">プロストリンガーが常駐 ─ 兵庫県伊丹市「阪神スポーツ」</div>
+    <div class="badge-row">
+      <span class="badge">★★★★★ 高評価口コミ</span>
+      <span class="badge">創業50年以上</span>
+      <span class="badge">専門スタッフ在籍</span>
+    </div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="container">
+    <div class="section-title"><span>ICHIOSHI ITEM</span>この秋、伸ばすならこの一本。</div>
+    <div class="section-lead">バドミントン・バレー・ランニング用品を専門知識でご提案</div>
+    <div class="featured-img">
+      <img src="images/product.jpg" alt="バドミントン・バレー・ランニング用品">
+    </div>
+    <div class="featured-items">
+      <div class="featured-item">
+        <div class="icon">🏸</div>
+        <div class="name">バドミントン</div>
+      </div>
+      <div class="featured-item">
+        <div class="icon">🏐</div>
+        <div class="name">バレーボール</div>
+      </div>
+      <div class="featured-item">
+        <div class="icon">👟</div>
+        <div class="name">ランニング</div>
+      </div>
+    </div>
+    <div class="featured-desc">
+      量販店やネット通販では得られない、専門店ならではの提案力。お子様のラケット選びから本格的なスパイク・シューズ選びまで、プロストリンガーと経験豊富なスタッフが一人ひとりに合った一足・一本をお選びします。学校割引にも対応しています。
+    </div>
+    <a href="tel:0727722802" class="cta-btn">📞 まずはお気軽にご相談ください</a>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="container">
+    <div class="section-title"><span>WHY US</span>選ばれる理由</div>
+    <div class="section-lead">地域密着、創業半世紀以上の信頼と実績</div>
+    <div class="strength-list">
+      <div class="strength-card">
+        <div class="num">STRENGTH 01</div>
+        <div class="title">プロストリンガーが常駐</div>
+        <div class="text">ガット張りなどの専門作業も安心してお任せいただけます。確かな技術で愛用品を長く使っていただけます。</div>
+      </div>
+      <div class="strength-card">
+        <div class="num">STRENGTH 02</div>
+        <div class="title">豊富な商品知識とアドバイス</div>
+        <div class="text">お客様一人ひとりのニーズに合わせて、専門的な知識に基づいたご提案をお約束します。</div>
+      </div>
+      <div class="strength-card">
+        <div class="num">STRENGTH 03</div>
+        <div class="title">品揃えの充実＆品質保証</div>
+        <div class="text">大手スポーツショップよりも良心的な価格で、確かな品質の商品をご用意しています。</div>
+      </div>
+      <div class="strength-card">
+        <div class="num">STRENGTH 04</div>
+        <div class="title">迅速丁寧な対応とアフターサービス</div>
+        <div class="text">購入後のメンテナンスやご相談にも、迅速かつ丁寧に対応いたします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="container">
+    <div class="section-title"><span>MESSAGE</span>店長よりご挨拶</div>
+    <div class="story-box">
+      <img src="images/staff.jpg" alt="阪神スポーツ 店長 末髙" class="story-img">
+      <div class="story-text">
+        <span class="name">店長 末髙</span>
+        こんにちは！当店の店長、末髙です！
+        阪神スポーツにお越しいただき、心より感謝を申し上げます。スポーツやフィットネスは私の人生の一部であり、ここでの仕事は私にとって大変喜ばしいと感じております。お客様のご要望に応え、最高の製品とサービスをご提供します。
+        ぜひ、どんなことでもお気軽にご相談ください。あなたのスポーツライフがより充実するよう、全力でサポートさせていただきます。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <div class="section-title"><span>VOICE</span>お客様の声</div>
+    <div class="review-card">
+      <div class="review-text">
+        <div class="stars">★★★★★</div>
+        娘のラケット選びについていきましたが、量販店やネットより買うよりも断然良かったです。専門店なのでお値段はそこそこするものばかりですが、説明も分かりやすいし、良いものが大手スポーツショップよりも良心的な価格で買えました。
+      </div>
+      <div class="review-text">
+        野球のスパイクを探し求めて…。品数は限られますが、AEONの中のスポーツ用品店より、断然安かったので、即決！学校によって割引があるようで、スパイクとスパイク入れを購入しても、一万円でお釣りがきた～！
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="container">
+    <div class="section-title"><span>SHOP INFO</span>店舗情報</div>
+    <table>
+      <tr><th>店名</th><td>阪神スポーツ</td></tr>
+      <tr><th>住所</th><td>兵庫県伊丹市西台３丁目９−１７</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0727722802">072-772-2802</a></td></tr>
+      <tr><th>定休日</th><td>月曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://hanshin-sports.com/" target="_blank" rel="noopener">https://hanshin-sports.com/</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=兵庫県伊丹市西台３丁目９−１７&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <div class="section-title"><span>CONTACT</span>まずはお気軽にご相談ください</div>
+    <p>バドミントン・バレー・ランニング用品のことなら阪神スポーツへ。<br>専門知識豊富なスタッフが皆さまのスポーツライフをサポートします。</p>
+    <a href="tel:0727722802" class="cta-btn">📞 072-772-2802 電話で相談する</a>
+    <a href="https://www.hanshin-sports.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener" class="cta-btn outline">✉️ お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0727722802" class="tel"><span class="icon">📞</span>電話</a>
+  <a href="https://www.hanshin-sports.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener"><span class="icon">✉️</span>問い合わせ</a>
+  <a href="https://hanshin-sports.com/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+  <a href="https://maps.google.com/?q=兵庫県伊丹市西台３丁目９−１７" target="_blank" rel="noopener" class="map"><span class="icon">📍</span>地図</a>
+</nav>
+
+</body>
+</html>
