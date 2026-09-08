@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ミチイスポーツ｜阪神武庫川駅徒歩15分の野球用品専門店</title>
+<style>
+  :root{
+    --navy:#0b2447;
+    --navy-dark:#081a33;
+    --red:#c8102e;
+    --red-dark:#a10d25;
+    --gold:#f5b301;
+    --cream:#fdf8ef;
+    --gray:#666;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:#222;
+    background:var(--cream);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:64px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  header.fixed-header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--navy);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header.fixed-header .shopname{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:.5px;
+  }
+  header.fixed-header .tel-btn{
+    background:var(--red);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;align-items:center;gap:4px;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+    text-align:center;
+  }
+  .hero img{
+    width:100%;
+    height:56vh;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    background:linear-gradient(0deg,rgba(11,36,71,.92) 10%,rgba(11,36,71,.2) 90%);
+    color:#fff;
+    padding:30px 16px 20px;
+  }
+  .hero-overlay .catch-sub{
+    font-size:13px;
+    color:var(--gold);
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:6px;
+  }
+  .hero-overlay h1{
+    font-size:24px;
+    font-weight:900;
+    line-height:1.4;
+    text-shadow:0 2px 6px rgba(0,0,0,.4);
+  }
+  .hero-overlay .location{
+    margin-top:10px;
+    font-size:13px;
+    color:#eee;
+  }
+
+  section{
+    padding:36px 18px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:900;
+    color:var(--navy);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--red);
+    margin:10px auto 0;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:13px;
+    color:var(--gray);
+    margin-bottom:24px;
+  }
+
+  /* featured product */
+  .featured{
+    background:var(--navy);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .featured::before{
+    content:"ICHIOSHI";
+    position:absolute;
+    top:10px;right:-30px;
+    background:var(--gold);
+    color:var(--navy-dark);
+    font-weight:900;
+    font-size:11px;
+    padding:4px 40px;
+    transform:rotate(30deg);
+    letter-spacing:1px;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-title::after{background:var(--gold);}
+  .featured-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,.3);
+    color:#222;
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-card .body{
+    padding:20px;
+  }
+  .featured-card .badge{
+    display:inline-block;
+    background:var(--red);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 10px;
+    border-radius:4px;
+    margin-bottom:10px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--navy);
+    margin-bottom:10px;
+    font-weight:900;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#333;
+    margin-bottom:14px;
+  }
+  .featured-points{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .featured-points li{
+    font-size:13.5px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:8px;
+    color:#333;
+  }
+  .featured-points li::before{
+    content:"⚾";
+    position:absolute;
+    left:0;top:0;
+  }
+  .featured .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--red);
+    color:#fff;
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    font-size:15px;
+  }
+
+  /* strengths */
+  .strengths-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .strength-item{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    border-left:4px solid var(--red);
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:36px;height:36px;
+    background:var(--navy);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;
+    font-size:15px;
+  }
+  .strength-item h3{
+    font-size:15.5px;
+    color:var(--navy);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:#555;
+  }
+
+  /* gallery */
+  .gallery{
+    background:#fff;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:8px;
+  }
+  .gallery-grid .full{
+    grid-column:1/3;
+    height:180px;
+  }
+
+  /* reviews */
+  .reviews{
+    background:var(--cream);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .review-card .stars{
+    color:var(--gold);
+    font-size:15px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#333;
+  }
+
+  /* shop info */
+  .shop-info{
+    background:#fff;
+  }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:88px;
+    color:var(--navy);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table a{
+    color:var(--red);
+    text-decoration:underline;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:260px;
+    border:0;
+    display:block;
+  }
+
+  /* cta section */
+  .cta-section{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13.5px;
+    color:#ddd;
+    margin-bottom:22px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-buttons a{
+    padding:15px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-buttons .call{
+    background:var(--red);
+    color:#fff;
+  }
+  .cta-buttons .web{
+    background:#fff;
+    color:var(--navy);
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:11.5px;
+    color:#999;
+    background:var(--navy-dark);
+  }
+  footer p{color:#aaa;}
+
+  /* bottom nav */
+  nav.bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:64px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,.12);
+    z-index:100;
+  }
+  nav.bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--navy);
+    gap:4px;
+  }
+  nav.bottom-nav a.call{
+    background:var(--red);
+    color:#fff;
+  }
+  nav.bottom-nav a .icon{
+    font-size:18px;
+  }
+
+  @media (min-width:600px){
+    .hero img{height:64vh;}
+    .strengths-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="fixed-header">
+  <div class="shopname">ミチイスポーツ</div>
+  <a href="tel:0664193576" class="tel-btn">📞 06-6419-3576</a>
+</header>
+
+<section class="hero">
+  <img src="images/hero.jpg" alt="ミチイスポーツ 店内">
+  <div class="hero-overlay">
+    <div class="catch-sub">兵庫県尼崎市・野球用品専門店</div>
+    <h1>グローブの品揃えは<br>驚きの豊富さ。<br>あなたにぴったりの一本を。</h1>
+    <div class="location">阪神武庫川駅から徒歩15分｜ミチイスポーツ</div>
+  </div>
+</section>
+
+<section class="featured">
+  <h2 class="section-title">イチオシ</h2>
+  <p class="section-lead">最大級の品揃えを誇る野球用品専門店</p>
+  <div class="featured-card">
+    <img src="images/glove.jpg" alt="豊富なグローブの品揃え">
+    <div class="body">
+      <span class="badge">グローブ在庫数No.1級</span>
+      <h3>お子様から本格志向まで、<br>圧倒的な品揃えのグローブ</h3>
+      <p>「グローブひとつにしても種類の多さにびっくりしました」とお客様も驚く豊富な在庫。軟式・硬式を問わず、あらゆるポジション・レベルに対応できるラインナップをご用意しています。</p>
+      <ul class="featured-points">
+        <li>好みの色・ポジションに合わせてスタッフが一緒に選定</li>
+        <li>じっくり検討できるよう、写真撮影OKの丁寧な対応</li>
+        <li>グローブ購入でスパイクをサービスすることも（要相談）</li>
+        <li>中学硬式グローブなど専門的なご相談にも対応</li>
+      </ul>
+      <a href="tel:0664193576" class="cta-btn">グローブ選びを相談する 📞</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">選ばれる理由</h2>
+  <p class="section-lead">初めての方も安心して通えるお店です</p>
+  <div class="strengths-grid">
+    <div class="strength-item">
+      <div class="num">1</div>
+      <div>
+        <h3>驚きのグローブ在庫数</h3>
+        <p>種類の多さはお客様も口を揃えて驚く、地域トップクラスの品揃え。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">2</div>
+      <div>
+        <h3>親身な接客</h3>
+        <p>少ないキーワードからでも要望を汲み取り、最適な商品をピックアップ。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">3</div>
+      <div>
+        <h3>野球初心者にも丁寧</h3>
+        <p>何を買えばよいか分からない方にも、一から丁寧にご案内します。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">4</div>
+      <div>
+        <h3>ポイントカードはお店で保管</h3>
+        <p>カードを持ち歩く必要なし。なくす心配もなく気軽に利用できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <h2 class="section-title">店内のようす</h2>
+  <div class="gallery-grid">
+    <img class="full" src="images/shop.jpg" alt="ミチイスポーツ 店内の様子">
+  </div>
+</section>
+
+<section class="reviews">
+  <h2 class="section-title">お客様の声</h2>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>初めて訪れましたが、グローブひとつにしても種類の多さにびっくりしました。店員さんも、親身になってお話を聞いてくださるのでとても嬉しかったです。ポイントカードは、お店で保管してくれるので助かります。若い女性の店員が色の好みやポジションなどを聞きながら合いそうな物を探し、次々と出して並べてくれました。結局決めきれず購入しなかったのですが、検討用に写真を撮って帰ってくださいと言ってもらえ感動しました。また来店し、ここで購入したいと思います。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>野球初心者（息子）なので何を買えば良いか分からなかった私たちに、丁寧に教えていただきました。グローブを買ったら、スパイクを無料で付けてくださいました。ホームページに書いてる最大級の品揃えは嘘じゃありません。中学硬式のグローブを買いに行きましたが、少ないキーワードで店員さんが数あるグローブから合いそうな商品をいくつかピックアップしてくれて、親切に説明してくれるから安心感も半端ないです。また絶対行きたいです。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <h2 class="section-title">店舗情報</h2>
+  <table class="info-table">
+    <tr><th>店名</th><td>ミチイスポーツ</td></tr>
+    <tr><th>代表者</th><td>道井 直之</td></tr>
+    <tr><th>住所</th><td>兵庫県尼崎市大島３丁目３２−２０</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0664193576">06-6419-3576</a></td></tr>
+    <tr><th>定休日</th><td>9月～1月：毎週火曜日、第一・第三水曜日<br>2月～8月：毎週火曜日、第三水曜日</td></tr>
+    <tr><th>HP</th><td><a href="http://www.michii-sports.com/" target="_blank" rel="noopener">www.michii-sports.com</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:michii@gaia.eonet.ne.jp">michii@gaia.eonet.ne.jp</a></td></tr>
+    <tr><th>SNS</th><td><a href="https://www.instagram.com/explore/locations/90771574/" target="_blank" rel="noopener">Instagram</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=兵庫県尼崎市大島３丁目３２−２０&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>あなたにぴったりの一本を、<br>ミチイスポーツで見つけよう</h2>
+  <p>グローブ選びはお気軽にご相談ください。写真を撮って持ち帰りの検討もOK！</p>
+  <div class="cta-buttons">
+    <a href="tel:0664193576" class="call">📞 今すぐ電話で相談する</a>
+    <a href="http://www.michii-sports.com/" target="_blank" rel="noopener" class="web">🌐 ホームページを見る</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; ミチイスポーツ｜兵庫県尼崎市大島３丁目３２−２０</p>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0664193576" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://www.google.com/maps?q=兵庫県尼崎市大島３丁目３２−２０"><span class="icon">📍</span>地図</a>
+  <a href="http://www.michii-sports.com/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+  <a href="https://www.instagram.com/explore/locations/90771574/" target="_blank" rel="noopener"><span class="icon">📷</span>Instagram</a>
+</nav>
+
+</body>
+</html>
