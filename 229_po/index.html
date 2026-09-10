@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ポッポヤ｜大正時代から続く西宮のスポーツ用品店</title>
+<style>
+  :root{
+    --main:#0b5d3b;
+    --main-dark:#083f28;
+    --accent:#e8a900;
+    --bg:#faf8f2;
+    --text:#242424;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:600px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;width:100%;
+    background:var(--main-dark);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:8px 14px;
+    z-index:1000;
+    height:56px;
+  }
+  header .shop-name{font-size:18px;font-weight:bold;letter-spacing:1px;}
+  header .tel-btn{
+    background:var(--accent);
+    color:#1a1a1a;
+    padding:8px 14px;
+    border-radius:24px;
+    font-weight:bold;
+    font-size:14px;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg, var(--main) 0%, var(--main-dark) 100%);
+    color:#fff;
+    text-align:center;
+    padding:36px 16px 28px;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#1a1a1a;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:16px;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero p{font-size:14px;opacity:.9;margin-bottom:20px;}
+  .hero-img{
+    width:100%;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+    margin-bottom:18px;
+  }
+  .cta-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#1a1a1a;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px 32px;
+    border-radius:30px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+  }
+
+  /* Section common */
+  section{padding:40px 0;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main-dark);
+    margin-bottom:8px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:#777;
+    margin-bottom:26px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:#fff;
+  }
+  .featured-card{
+    border:3px solid var(--accent);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 6px 16px rgba(0,0,0,.1);
+  }
+  .featured-card img{width:100%;}
+  .featured-tag{
+    background:var(--accent);
+    color:#1a1a1a;
+    text-align:center;
+    font-weight:bold;
+    font-size:15px;
+    padding:10px;
+    letter-spacing:1px;
+  }
+  .featured-body{padding:20px;}
+  .featured-body h3{
+    font-size:19px;
+    color:var(--main-dark);
+    margin-bottom:10px;
+  }
+  .featured-body p{font-size:14px;margin-bottom:16px;}
+  .featured-points{
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .featured-points li{
+    font-size:14px;
+    padding:8px 0 8px 28px;
+    position:relative;
+    border-bottom:1px dashed #ddd;
+  }
+  .featured-points li:before{
+    content:"⚾";
+    position:absolute;left:0;top:8px;
+  }
+  .featured-body .cta-btn{width:100%;text-align:center;display:block;}
+
+  /* Strengths */
+  .strengths{background:var(--bg);}
+  .strength-box{
+    background:#fff;
+    border-left:5px solid var(--main);
+    border-radius:8px;
+    padding:22px 18px;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+  }
+  .strength-box h3{
+    color:var(--main-dark);
+    font-size:17px;
+    margin-bottom:10px;
+  }
+  .strength-box p{font-size:14px;}
+  .history-strip{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+  }
+  .history-strip .num-box{
+    flex:1;
+    background:var(--main-dark);
+    color:#fff;
+    text-align:center;
+    border-radius:8px;
+    padding:14px 6px;
+  }
+  .history-strip .num-box .num{
+    font-size:20px;
+    font-weight:bold;
+    color:var(--accent);
+    display:block;
+  }
+  .history-strip .num-box .label{font-size:11px;}
+
+  /* Reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--bg);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 2px 6px rgba(0,0,0,.05);
+  }
+  .review-card .stars{color:var(--accent);font-size:16px;margin-bottom:8px;}
+  .review-card p{font-size:14px;}
+
+  /* Shop info */
+  .shopinfo{background:var(--bg);}
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+    margin-bottom:20px;
+  }
+  .info-table tr{border-bottom:1px solid #eee;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:var(--main);
+    color:#fff;
+    font-size:13px;
+    text-align:left;
+    padding:12px 10px;
+    width:30%;
+    vertical-align:top;
+    font-weight:normal;
+  }
+  .info-table td{
+    padding:12px 10px;
+    font-size:13.5px;
+  }
+  .map-wrap{
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  /* CTA section */
+  .cta-section{
+    background:linear-gradient(180deg, var(--main) 0%, var(--main-dark) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{font-size:20px;margin-bottom:10px;}
+  .cta-section p{font-size:13px;margin-bottom:22px;opacity:.9;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .cta-buttons a{
+    padding:14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-buttons .primary{background:var(--accent);color:#1a1a1a;}
+  .cta-buttons .secondary{background:#fff;color:var(--main-dark);}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;width:100%;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,.08);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px;
+    font-size:12px;
+    color:var(--main-dark);
+    font-weight:bold;
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:#1a1a1a;
+  }
+  .bottom-nav a.contact{
+    background:var(--main);
+    color:#fff;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">ポッポヤ</div>
+  <a href="tel:0798338888" class="tel-btn">📞 0798-33-8888</a>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <span class="badge">大正時代創業 ｜ 地域密着100年</span>
+    <h1>野球用品なら、ポッポヤへ。<br>長い歴史と経験が、あなたの「もっとうまくなりたい」を支えます。</h1>
+    <div class="hero-img">
+      <img src="images/hero.jpg" alt="ポッポヤ 店内 野球用品売り場">
+    </div>
+    <a href="tel:0798338888" class="cta-btn">📞 今すぐ電話で相談する</a>
+  </div>
+</section>
+
+<!-- Featured Product -->
+<section class="featured">
+  <div class="container">
+    <h2 class="section-title">イチオシ商品</h2>
+    <p class="section-sub">豊富な品揃えと確かな知識でお選びします</p>
+    <div class="featured-card">
+      <div class="featured-tag">⚾ 野球用品 ⚾</div>
+      <img src="images/baseball.jpg" alt="ポッポヤ 野球用品 グローブ バット">
+      <div class="featured-body">
+        <h3>グローブからバットまで、野球のことなら何でもご相談ください</h3>
+        <p>取り扱いメーカーも多く、広々とした店内でじっくり選んでいただけます。大正時代から地域のスポーツ活動を支えてきたポッポヤだからこそ、お客様一人ひとりに合った一品をご提案できます。</p>
+        <ul class="featured-points">
+          <li>豊富な取り扱いメーカーから比較検討できる</li>
+          <li>広々とした店内でゆっくり選べる</li>
+          <li>長年の経験に基づいた的確なアドバイス</li>
+          <li>野球用品以外の生活用品も充実</li>
+        </ul>
+        <a href="tel:0798338888" class="cta-btn">📞 野球用品について問い合わせる</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="strengths">
+  <div class="container">
+    <h2 class="section-title">ポッポヤの強み</h2>
+    <p class="section-sub">大正時代から続く、変わらない安心感</p>
+    <div class="strength-box">
+      <h3>大正時代から皆様のスポーツ活動を支援</h3>
+      <p>ポッポヤは大正時代の創業以来、長い歴史と経験を積み重ねてまいりました。その経験があるからこそ、お客様の「もっとうまくなりたい」という気持ちに寄り添い、最適な商品とアドバイスをご提供できます。</p>
+    </div>
+    <div class="history-strip">
+      <div class="num-box">
+        <span class="num">大正〜</span>
+        <span class="label">創業の歴史</span>
+      </div>
+      <div class="num-box">
+        <span class="num">多数</span>
+        <span class="label">取扱いメーカー</span>
+      </div>
+      <div class="num-box">
+        <span class="num">広々</span>
+        <span class="label">店内スペース</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+  <div class="container">
+    <h2 class="section-title">お客様の声</h2>
+    <p class="section-sub">地域の皆様から愛され続けています</p>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>取り扱いメーカーも多く店内も広々してるので居心地も良い👌</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>52歳ですが小学校高学年の時に友達とバトンを買いに行った想い出があります。昔からあるお店で前を通るたびに懐かしいです。閉店しないでずっと営業していて下さい！何でも置いてある店。スポーツ関係のものでなくても、このお店へ行けば、ちょっとした生活用品が置いてあります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Shop Info -->
+<section class="shopinfo">
+  <div class="container">
+    <h2 class="section-title">店舗情報</h2>
+    <p class="section-sub">お気軽にお立ち寄りください</p>
+    <table class="info-table">
+      <tr><th>店名</th><td>ポッポヤ</td></tr>
+      <tr><th>代表者</th><td>尾川　一郎</td></tr>
+      <tr><th>住所</th><td>兵庫県西宮市六湛寺町15-7</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0798338888">0798-33-8888</a></td></tr>
+      <tr><th>定休日</th><td>木曜日、年末年始</td></tr>
+      <tr><th>HP</th><td><a href="https://poppoya0427.com/" target="_blank" rel="noopener">https://poppoya0427.com/</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E8%A5%BF%E5%AE%AE%E5%B8%82%E5%85%AD%E6%B9%9B%E5%AF%BA%E7%94%BA15-7&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>野球用品のことなら、大正時代から続くポッポヤにお任せください</p>
+    <div class="cta-buttons">
+      <a href="tel:0798338888" class="primary">📞 電話で問い合わせる</a>
+      <a href="https://poppoya0427.com/contact/" target="_blank" rel="noopener" class="secondary">✉️ お問い合わせフォーム</a>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="tel:0798338888" class="call">📞 電話する</a>
+  <a href="https://poppoya0427.com/contact/" target="_blank" rel="noopener" class="contact">✉️ お問い合わせ</a>
+  <a href="https://poppoya0427.com/" target="_blank" rel="noopener">🌐 HPを見る</a>
+</nav>
+
+</body>
+</html>
