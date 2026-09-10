@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アウトドアショップテントス｜兵庫県西宮市のアウトドア専門店</title>
+<style>
+  :root{
+    --main-color:#2e5339;
+    --accent-color:#e8760c;
+    --bg-cream:#faf6ee;
+    --text-dark:#2b2b2b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:#fff;
+    line-height:1.7;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+  }
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  main{margin-top:52px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+    background:#111;
+  }
+  .hero img{
+    width:100%;
+    height:56vw;
+    max-height:420px;
+    object-fit:cover;
+    opacity:.85;
+  }
+  .hero-text{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    padding:20px 16px 24px;
+    background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0));
+    color:#fff;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.4;
+    text-shadow:0 1px 4px rgba(0,0,0,.5);
+  }
+  .hero-text .sub{
+    font-size:13px;
+    margin-top:6px;
+    opacity:.9;
+  }
+
+  /* section common */
+  section{
+    padding:36px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:24px;
+    position:relative;
+  }
+  .section-title:after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+  }
+
+  /* featured product */
+  .featured{
+    background:var(--bg-cream);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    border:2px solid var(--accent-color);
+  }
+  .featured-badge{
+    background:var(--accent-color);
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    padding:8px;
+    font-size:14px;
+    letter-spacing:2px;
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-body{
+    padding:18px;
+  }
+  .featured-body h3{
+    font-size:18px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-body p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:14px;
+  }
+  .featured-points{
+    list-style:none;
+  }
+  .featured-points li{
+    font-size:14px;
+    padding:6px 0 6px 24px;
+    position:relative;
+  }
+  .featured-points li:before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--accent-color);
+    font-weight:bold;
+  }
+
+  /* strengths */
+  .strengths-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:#fff;
+    border-left:4px solid var(--main-color);
+    padding:14px 16px;
+    border-radius:6px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .strength-num{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--accent-color);
+    min-width:32px;
+  }
+  .strength-text h4{
+    font-size:15px;
+    color:var(--main-color);
+    margin-bottom:4px;
+  }
+  .strength-text p{
+    font-size:13px;
+    color:#555;
+  }
+
+  /* reviews */
+  .reviews{
+    background:var(--bg-cream);
+  }
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .stars{
+    color:#f5a623;
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* gallery */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:8px;
+  }
+
+  /* shop info */
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #ddd;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:26%;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .map-wrap{
+    margin-top:20px;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section p{
+    font-size:14px;
+    margin-bottom:18px;
+    opacity:.9;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .cta-buttons a{
+    display:block;
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-tel{
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .cta-web{
+    background:#fff;
+    color:var(--main-color);
+    border:1px solid #fff;
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    z-index:100;
+    box-shadow:0 -2px 8px rgba(0,0,0,.1);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    color:var(--main-color);
+    font-weight:bold;
+  }
+  .bottom-nav a.call{
+    background:var(--accent-color);
+    color:#fff;
+  }
+
+  @media(min-width:480px){
+    .strengths-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">アウトドアショップ<br>テントス</div>
+  <a href="tel:0798483960" class="tel-btn">📞 電話する</a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="images/hero_outdoor.jpg" alt="アウトドアショップテントス 店舗外観">
+    <div class="hero-text">
+      <div class="catch">レアなキャンプ用品と、<br>丁寧な焚き火講座。</div>
+      <div class="sub">兵庫県西宮市｜アウトドアショップ テントス</div>
+    </div>
+  </div>
+
+  <!-- 店舗写真ギャラリー -->
+  <section>
+    <div class="section-title">お店のご紹介</div>
+    <div class="gallery-grid">
+      <img src="images/shop_interior.jpg" alt="テントス店内 豊富な品揃え">
+      <img src="images/gas_lineup.jpg" alt="テントス ガス缶の豊富な品揃え">
+    </div>
+  </section>
+
+  <!-- イチオシ -->
+  <section class="featured">
+    <div class="section-title">イチオシ商品・サービス</div>
+    <div class="featured-card">
+      <div class="featured-badge">★ イチオシ ★</div>
+      <img src="images/shop_interior.jpg" alt="テントスのアウトドア用品売場">
+      <div class="featured-body">
+        <h3>アウトドア用品</h3>
+        <p>大型テント・タープから、他店では見かけないレアなキャンプギアまで。ガスの種類も豊富に取り揃え、初めての焚き火道具選びもスタッフが一から丁寧にご案内します。</p>
+        <ul class="featured-points">
+          <li>大型アウトドア用品が充実</li>
+          <li>ガスの種類が豊富で安心</li>
+          <li>焚き火の始め方まで丁寧に説明</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section>
+    <div class="section-title">テントスが選ばれる理由</div>
+    <div class="strengths-grid">
+      <div class="strength-item">
+        <div class="strength-num">01</div>
+        <div class="strength-text">
+          <h4>レアなキャンプ用品</h4>
+          <p>他ではなかなか手に入らない品揃えが魅力の、アウトドア専門店です。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">02</div>
+        <div class="strength-text">
+          <h4>大型用品・ガス豊富</h4>
+          <p>大型テントなどの大型用品はもちろん、ガスの種類も豊富で助かると好評です。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">03</div>
+        <div class="strength-text">
+          <h4>丁寧な焚き火レクチャー</h4>
+          <p>閉店間際でも丁寧に対応。必要な道具や使い方まで分かりやすく説明します。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-num">04</div>
+        <div class="strength-text">
+          <h4>店前駐車場・好立地</h4>
+          <p>店前に3台駐車可能。武庫川サイクリングロードからも近く自転車で気軽に立ち寄れます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口コミ -->
+  <section class="reviews">
+    <div class="section-title">お客様の口コミ</div>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>レアなキャンプ用品がある。駐車場は店前に３台停めれる 品揃え豊富なアウトドアショップさんです。大型用品揃ってます。ガスの種類が豊富でたすかりますよ。自転車で武庫川サイクリングロードから近くで便利</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>焚き火を始めようと思い近所だったので初めて行かせていただきました。閉店間際にも関わらず、いろいろなアイテムの紹介、焚き火の仕方、どれが必要でいいものなのかとても丁寧に説明してくださいました。キャンプで焚き火をしたらまたお店の方に行かせていただきます。近くにこんないい店があるとは知りませんでした。これからちょこちょこお世話になると思います。お店の方の対応も親切で、説明も分かりやすく丁寧です。</p>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section>
+    <div class="section-title">店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>アウトドアショップ テントス</td></tr>
+      <tr><th>住所</th><td>兵庫県西宮市小曽根町３丁目８−２７</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0798483960">0798-48-3960</a></td></tr>
+      <tr><th>定休日</th><td>火曜・水曜</td></tr>
+      <tr><th>HP</th><td><a href="http://www5f.biglobe.ne.jp/~tentos/" target="_blank" rel="noopener">www5f.biglobe.ne.jp/~tentos/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:tentos@mta.biglobe.ne.jp">tentos@mta.biglobe.ne.jp</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=兵庫県西宮市小曽根町３丁目８−２７&z=16&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-title" style="color:#fff;">お気軽にお立ち寄りください</div>
+    <p>レアなアウトドア用品も、焚き火の始め方も。<br>スタッフが丁寧にご案内します。</p>
+    <div class="cta-buttons">
+      <a href="tel:0798483960" class="cta-tel">📞 電話で問い合わせる</a>
+      <a href="http://www5f.biglobe.ne.jp/~tentos/" target="_blank" rel="noopener" class="cta-web">🌐 ホームページを見る</a>
+    </div>
+  </section>
+
+</main>
+
+<nav class="bottom-nav">
+  <a href="tel:0798483960" class="call">📞 電話</a>
+  <a href="http://www5f.biglobe.ne.jp/~tentos/" target="_blank" rel="noopener">🌐 HP</a>
+  <a href="https://maps.google.com/maps?q=兵庫県西宮市小曽根町３丁目８−２７" target="_blank" rel="noopener">📍 地図</a>
+  <a href="mailto:tentos@mta.biglobe.ne.jp">✉️ メール</a>
+</nav>
+
+</body>
+</html>
