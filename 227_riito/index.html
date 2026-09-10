@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フラテッリイト｜尼崎のアウトドア専門店</title>
+<style>
+  :root{
+    --main-color:#2f4a3a;
+    --sub-color:#c9772e;
+    --accent-color:#e8b34a;
+    --bg-light:#f7f4ee;
+    --text-dark:#2b2b2b;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-dark);
+    background:var(--bg-light);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:var(--main-color);
+    color:var(--white);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  .header-logo{
+    font-size:16px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  .header-tel{
+    background:var(--sub-color);
+    color:var(--white);
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    height:78vw;
+    max-height:480px;
+    min-height:320px;
+    overflow:hidden;
+  }
+  .hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:20px 16px 28px;
+    color:var(--white);
+  }
+  .hero-catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:8px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  }
+  .hero-sub{
+    font-size:14px;
+    opacity:0.95;
+  }
+  .hero-badge{
+    display:inline-block;
+    background:var(--sub-color);
+    padding:4px 12px;
+    border-radius:4px;
+    font-size:12px;
+    margin-bottom:10px;
+    font-weight:bold;
+  }
+
+  section{
+    padding:40px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:8px;
+    position:relative;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--sub-color);
+    letter-spacing:2px;
+    margin-bottom:4px;
+    font-weight:normal;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:3px;
+    background:var(--accent-color);
+    margin:12px auto 0;
+  }
+
+  /* Featured Product */
+  .featured{
+    background:var(--main-color);
+    color:var(--white);
+  }
+  .featured .section-title{color:var(--white);}
+  .featured .section-title span{color:var(--accent-color);}
+  .featured-card{
+    background:var(--white);
+    color:var(--text-dark);
+    border-radius:12px;
+    overflow:hidden;
+    margin-top:24px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .featured-card img{
+    width:100%;
+    height:56vw;
+    max-height:280px;
+    object-fit:cover;
+  }
+  .featured-card-body{
+    padding:18px;
+  }
+  .featured-tag{
+    display:inline-block;
+    background:var(--sub-color);
+    color:var(--white);
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 10px;
+    border-radius:4px;
+    margin-bottom:10px;
+  }
+  .featured-card-body h3{
+    font-size:18px;
+    color:var(--main-color);
+    margin-bottom:10px;
+  }
+  .featured-card-body p{
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .featured-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .featured-points li{
+    list-style:none;
+    background:var(--bg-light);
+    border:1px solid var(--accent-color);
+    color:var(--main-color);
+    font-size:12px;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:16px;
+  }
+  .btn-cta{
+    display:block;
+    text-align:center;
+    background:var(--sub-color);
+    color:var(--white);
+    padding:14px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  /* Strengths */
+  .strengths-list{
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    background:var(--white);
+    border-radius:10px;
+    padding:18px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    border-left:4px solid var(--sub-color);
+  }
+  .strength-num{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--sub-color);
+    flex-shrink:0;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main-color);
+    margin-bottom:6px;
+  }
+  .strength-item p{
+    font-size:13px;
+  }
+
+  /* Gallery image */
+  .gallery-section{
+    padding-top:0;
+  }
+  .gallery-section img{
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+  }
+
+  /* Reviews */
+  .reviews{background:var(--bg-light);}
+  .review-card{
+    background:var(--white);
+    border-radius:10px;
+    padding:18px;
+    margin-top:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .review-stars{
+    color:var(--accent-color);
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13px;
+    white-space:pre-line;
+  }
+  .review-card p.short{
+    display:-webkit-box;
+    -webkit-line-clamp:5;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+
+  /* Shop info */
+  .shop-info table{
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+    background:var(--white);
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .shop-info td{
+    padding:14px 12px;
+    font-size:13px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .shop-info td:first-child{
+    width:88px;
+    color:var(--white);
+    background:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .shop-info a{
+    color:var(--sub-color);
+    font-weight:bold;
+    word-break:break-all;
+  }
+  .map-frame{
+    margin-top:16px;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  }
+  .map-frame iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg, var(--main-color), #1c3327);
+    color:var(--white);
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13px;
+    margin-bottom:22px;
+    opacity:0.9;
+  }
+  .final-cta .btn-cta{
+    background:var(--accent-color);
+    color:var(--main-color);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:60px;
+    background:var(--white);
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:bold;
+    color:var(--main-color);
+    gap:2px;
+  }
+  .bottom-nav a.call{
+    background:var(--sub-color);
+    color:var(--white);
+  }
+  .bottom-nav .icon{font-size:18px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-logo">フラテッリイト</div>
+  <a href="tel:0664993485" class="header-tel">📞 06-6499-3485</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="フラテッリイト 店内アウトドア用品">
+  <div class="hero-overlay">
+    <span class="hero-badge">尼崎のアウトドアセレクトショップ</span>
+    <div class="hero-catch">ファミリーキャンプから<br>ソロキャンプまで。<br>あなたの"沼"がここにある。</div>
+    <div class="hero-sub">量販店にはないワクワクするブランドと、店長との会話が魅力の専門店</div>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title">
+    <span>ICHIOSHI ITEM</span>
+    イチオシ｜アウトドア用品
+  </div>
+  <div class="featured-card">
+    <img src="images/item.jpg" alt="イチオシのアウトドア用品">
+    <div class="featured-card-body">
+      <span class="featured-tag">店長セレクト</span>
+      <h3>痒いところに手が届く、こだわりのギア</h3>
+      <p>量販店では出会えない、マニアックすぎない・でもワクワクするブランドを厳選。ヘキサタープやウインドシールドなど、あると一気にキャンプが快適になるアイテムを中心に取り揃えています。中級者にも手が届く価格帯が魅力です。</p>
+      <ul class="featured-points">
+        <li>他店にはない希少ブランド</li>
+        <li>中級者にも手が届く価格帯</li>
+        <li>タープ・シェルター類が充実</li>
+      </ul>
+      <a href="tel:0664993485" class="btn-cta">📞 商品について電話で聞いてみる</a>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="section-title">
+    <span>SHOP</span>
+    小さな店内に、大きな魅力
+  </div>
+  <img src="images/shop.jpg" alt="フラテッリイト 店内の様子">
+</section>
+
+<section class="strengths">
+  <div class="section-title">
+    <span>STRENGTH</span>
+    フラテッリイトが選ばれる理由
+  </div>
+  <div class="strengths-list">
+    <div class="strength-item">
+      <div class="strength-num">01</div>
+      <div>
+        <h4>ファミリーからソロまで対応する品揃え</h4>
+        <p>ファミリーキャンプからソロキャンプまで、色々と遊べる道具をご用意。キャンプスタイルや経験値に合わせたご提案が可能です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">02</div>
+      <div>
+        <h4>話しやすい店長との時間も魅力</h4>
+        <p>ギアの話からキャンプ場の話まで、つい長居してしまうほど話しやすい店長。初心者の方でも遠慮なく相談できる雰囲気です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">03</div>
+      <div>
+        <h4>お得なメンバーズポイントカード</h4>
+        <p>キャンプ道具に悩んでいる方も、まずは気軽に覗いてみてください。ポイントを貯めてお得にギアを揃えられます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">
+    <span>VOICE</span>
+    お客様の口コミ
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★☆</div>
+    <p>ヘキサタープのポールを探してこのお店に辿り着きました。
+タープ以外にも色んなギアのことやキャンプ場のことについて話してしまい気づけば1時間くらい話し込んでしまいました。
+また行きたいと思えるいいお店です。</p>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p class="short">ファミリーキャンパー中級者ですが、かなりワクワクしてしまうお店です♬
+量販店とは違って、オーナーの個性が出やすいのもあって、どこででも買えそうな商品と言うより、痒いところに手が届きそうな商品が多く感じました。
+30代かな？若い店長さん？は、とても話しやすく、話してて思わずウインドシールド買ってしまいました（笑）
+狭い店内ですが、売り場面積の20倍(体感)分の魅力的な商品で埋め尽くされています。近くに2台分の駐車場有り。遠くからでも行く価値アリです❣️</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">
+    <span>SHOP INFO</span>
+    店舗情報
+  </div>
+  <table>
+    <tr><td>店名</td><td>フラテッリイト</td></tr>
+    <tr><td>代表者</td><td>糸田川 達三</td></tr>
+    <tr><td>住所</td><td>兵庫県尼崎市潮江一丁目二十九番十六号</td></tr>
+    <tr><td>電話番号</td><td><a href="tel:0664993485">06-6499-3485</a></td></tr>
+    <tr><td>定休日</td><td>木曜日</td></tr>
+    <tr><td>HP</td><td><a href="https://www.fratelliit.shop/" target="_blank" rel="noopener">https://www.fratelliit.shop/</a></td></tr>
+    <tr><td>メール</td><td><a href="mailto:info@fratelliit.shop">info@fratelliit.shop</a></td></tr>
+  </table>
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E5%B0%BC%E5%B4%8E%E5%B8%82%E6%BD%AE%E6%B1%9F%E4%B8%80%E4%B8%81%E7%9B%AE%E4%BA%8C%E5%8D%81%E4%B9%9D%E7%95%AA%E5%8D%81%E5%85%AD%E5%8F%B7&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>まずはお気軽に覗いてみてください</h2>
+  <p>狭い店内ですが、売り場面積の20倍の魅力的な商品でお待ちしています。<br>駐車場もございますので、事前のご確認がおすすめです。</p>
+  <a href="tel:0664993485" class="btn-cta">📞 06-6499-3485 に電話する</a>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0664993485" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E5%B0%BC%E5%B4%8E%E5%B8%82%E6%BD%AE%E6%B1%9F%E4%B8%80%E4%B8%81%E7%9B%AE%E4%BA%8C%E5%8D%81%E4%B9%9D%E7%95%AA%E5%8D%81%E5%85%AD%E5%8F%B7" target="_blank" rel="noopener"><span class="icon">📍</span>地図</a>
+  <a href="https://www.fratelliit.shop/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+  <a href="mailto:info@fratelliit.shop"><span class="icon">✉️</span>メール</a>
+</nav>
+
+</body>
+</html>
