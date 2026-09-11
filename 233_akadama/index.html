@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>赤玉スポーツ｜神戸市灘区 水道筋商店街のスポーツ用品店</title>
+<style>
+  :root{
+    --red:#c8102e;
+    --dark-red:#8e0b1f;
+    --black:#1a1a1a;
+    --gray:#555;
+    --light:#f7f7f7;
+    --gold:#f0a500;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    color:var(--black);
+    background:#fff;
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header.fixed-header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--red);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  .shop-name-header{
+    color:#fff;font-size:16px;font-weight:bold;
+    letter-spacing:1px;
+  }
+  .header-tel{
+    background:#fff;color:var(--red);
+    font-weight:bold;font-size:13px;
+    padding:6px 12px;border-radius:20px;
+    display:flex;align-items:center;gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, rgba(26,26,26,0.55), rgba(26,26,26,0.65)), url('images/hero.jpg') center/cover no-repeat;
+    color:#fff;
+    padding:60px 20px 50px;
+    text-align:center;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:#1a1a1a;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 14px;
+    border-radius:20px;
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:bold;
+    line-height:1.4;
+    margin-bottom:10px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.4);
+  }
+  .hero p.sub{
+    font-size:14px;
+    opacity:0.95;
+    margin-bottom:20px;
+  }
+  .hero .since{
+    font-size:13px;
+    letter-spacing:2px;
+    border-top:1px solid rgba(255,255,255,0.4);
+    border-bottom:1px solid rgba(255,255,255,0.4);
+    display:inline-block;
+    padding:6px 20px;
+  }
+
+  /* Section common */
+  section{
+    padding:40px 20px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:8px;
+    color:var(--red);
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--gray);
+    font-weight:normal;
+    margin-top:4px;
+    letter-spacing:1px;
+  }
+
+  /* Featured product - 卓球場 */
+  .featured{
+    background:var(--black);
+    color:#fff;
+    position:relative;
+  }
+  .featured .section-title{color:var(--gold);}
+  .featured .section-title span{color:#ccc;}
+  .featured-card{
+    background:#2a2a2a;
+    border:2px solid var(--gold);
+    border-radius:12px;
+    overflow:hidden;
+    margin-top:20px;
+  }
+  .featured-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+  }
+  .featured-card .content{
+    padding:20px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#e0e0e0;
+    margin-bottom:14px;
+  }
+  .featured-list{
+    list-style:none;
+    font-size:13px;
+    color:#f0f0f0;
+  }
+  .featured-list li{
+    padding:6px 0;
+    border-bottom:1px dashed #555;
+    display:flex;
+    align-items:center;
+  }
+  .featured-list li::before{
+    content:"卓";
+    background:var(--gold);
+    color:#1a1a1a;
+    font-weight:bold;
+    font-size:11px;
+    width:20px;height:20px;
+    border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;
+    margin-right:10px;
+    flex-shrink:0;
+  }
+  .featured-cta{
+    display:block;
+    text-align:center;
+    background:var(--gold);
+    color:#1a1a1a;
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    margin-top:16px;
+    font-size:15px;
+  }
+
+  /* Strengths */
+  .strengths{
+    background:var(--light);
+  }
+  .strengths .lead{
+    font-size:14px;
+    color:var(--gray);
+    text-align:center;
+    margin-bottom:24px;
+  }
+  .strength-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .strength-item{
+    background:#fff;
+    border-left:4px solid var(--red);
+    border-radius:6px;
+    padding:16px;
+    box-shadow:0 1px 4px rgba(0,0,0,0.08);
+  }
+  .strength-item h4{
+    color:var(--red);
+    font-size:15px;
+    margin-bottom:6px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:var(--gray);
+  }
+
+  /* Gallery image within strengths */
+  .gallery-img{
+    margin-top:20px;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .gallery-img img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:#fff;
+  }
+  .review-card{
+    background:var(--light);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:16px;
+  }
+  .stars{
+    color:var(--gold);
+    font-size:16px;
+    margin-bottom:8px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#333;
+    white-space:pre-line;
+  }
+
+  /* Shop info */
+  .shop-info{
+    background:var(--light);
+  }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    font-size:13.5px;
+  }
+  .info-table th, .info-table td{
+    padding:14px 12px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+    vertical-align:top;
+  }
+  .info-table th{
+    background:#fdf0f0;
+    color:var(--red);
+    width:30%;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table a{
+    color:var(--red);
+    font-weight:bold;
+    word-break:break-all;
+  }
+  .map-wrap{
+    margin-top:16px;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 1px 6px rgba(0,0,0,0.1);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:280px;
+    border:0;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:var(--red);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13px;
+    margin-bottom:20px;
+    opacity:0.95;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-btn{
+    background:#fff;
+    color:var(--red);
+    font-weight:bold;
+    padding:16px;
+    border-radius:8px;
+    font-size:16px;
+  }
+  .cta-btn.outline{
+    background:transparent;
+    color:#fff;
+    border:2px solid #fff;
+  }
+
+  /* Bottom nav */
+  nav.bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    border-top:1px solid #ddd;
+    display:flex;
+    z-index:1000;
+    box-shadow:0 -2px 6px rgba(0,0,0,0.1);
+  }
+  nav.bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--gray);
+    gap:2px;
+  }
+  nav.bottom-nav a.call{
+    background:var(--red);
+    color:#fff;
+    font-weight:bold;
+  }
+  nav.bottom-nav .icon{
+    font-size:18px;
+  }
+
+  @media (min-width:480px){
+    .hero h1{font-size:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="fixed-header">
+  <span class="shop-name-header">赤玉スポーツ</span>
+  <a href="tel:078-801-6101" class="header-tel">📞 078-801-6101</a>
+</header>
+
+<section class="hero">
+  <span class="badge">昭和8年創業 神戸・水道筋商店街</span>
+  <h1>足のこと、道具のこと、<br>なんでも相談できる<br>街のスポーツ用品店</h1>
+  <p class="sub">野球・卓球・ランニング・シューズ・子供靴・足袋ぐつまで。<br>丁寧な接客で「ちょうどいい一足・一品」が見つかります。</p>
+  <span class="since">SINCE 1933｜灘区エルナード水道筋商店街</span>
+</section>
+
+<section class="featured">
+  <h2 class="section-title">イチオシ<span>ACCESS POINT</span></h2>
+  <div class="featured-card">
+    <img src="images/table_tennis.jpg" alt="赤玉スポーツ2階の予約制卓球場">
+    <div class="content">
+      <h3>2階に予約制の卓球場あり🏓</h3>
+      <p>お買い物だけでなく、実際にラケットの試し打ちや練習にも使える卓球場を2階に完備。息子さんの誕生日にラケットを選びに来た方も、店長の丁寧な対応で気持ちよくお買い物できたと好評です。</p>
+      <ul class="featured-list">
+        <li>予約制だから安心して利用できる</li>
+        <li>ラケット選びと合わせて試打も可能</li>
+        <li>お子様の卓球デビューにもおすすめ</li>
+      </ul>
+    </div>
+  </div>
+  <a href="tel:078-801-6101" class="featured-cta">📞 卓球場のご予約・お問い合わせはこちら</a>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">赤玉スポーツの強み<span>OUR STRENGTHS</span></h2>
+  <p class="lead">創業90年以上、水道筋商店街とともに歩んできた地域密着のスポーツ用品店です。</p>
+  <div class="strength-grid">
+    <div class="strength-item">
+      <h4>昭和8年創業、90年以上の実績</h4>
+      <p>神戸市灘区のエルナード水道筋商店街の中ほどで、長きにわたり地域のスポーツライフを支えてきました。</p>
+    </div>
+    <div class="strength-item">
+      <h4>幅広いジャンルの品揃え</h4>
+      <p>野球・卓球・ランニング・シューズ・子供靴・足袋ぐつなど、多様なスポーツ用品を取り扱っています。</p>
+    </div>
+    <div class="strength-item">
+      <h4>道具のメンテナンス対応</h4>
+      <p>購入後の道具のメンテナンスにも対応し、長く大切に使っていただけるようサポートします。</p>
+    </div>
+    <div class="strength-item">
+      <h4>100年動ける体づくりの提案</h4>
+      <p>用品の販売だけでなく、健康な体づくりに向けたご提案も行っており、末永く運動を楽しむお手伝いをします。</p>
+    </div>
+  </div>
+  <div class="gallery-img">
+    <img src="images/shop_front.jpg" alt="赤玉スポーツ 店舗外観">
+  </div>
+</section>
+
+<section class="reviews">
+  <h2 class="section-title">お客様の声<span>CUSTOMER REVIEWS</span></h2>
+
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>Tシャツ1枚を選ぶのに、女性店員さんがとても親切に対応してくださいました。結局買わずで、ごめんなさい。でも、自分のサイズが分かったので今度、好みに合ったものを見つけたら買います。スポーツウェアは優れもので普段着用したいと思っています。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>久しぶりにスポーツシューズが必要になって、思い出しました。水道筋商店街の赤玉さんなら、asicsのシューズがあるかも？と思ったら、やっぱりありました。
+
+丁寧な接客で、ちょうど考えていたくらいの価格で購入できました。一応、サイズを確認するためにワンサイズ上も出してきて貰えたので、自分の足の感覚でジャストサイズを選ぶことができて満足です。
+
+当たり前のことですが、靴は履いてから選んだ方が安心ですね。最近卓球に夢中の息子の誕生日にラケットを購入しようと思い、伺いました。店長さんにすごく丁寧に対応していただき、ラケットも購入できて気持ちよく買い物できました。2階には予約制の卓球場がありまた利用させていただきたいと考えてます😊</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <h2 class="section-title">店舗情報<span>SHOP INFORMATION</span></h2>
+  <table class="info-table">
+    <tr><th>店名</th><td>赤玉スポーツ</td></tr>
+    <tr><th>定休日</th><td>火曜定休</td></tr>
+    <tr><th>住所</th><td>兵庫県神戸市灘区水道筋3-19</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:078-801-6101">078-801-6101</a></td></tr>
+    <tr><th>HP</th><td><a href="https://www.akadama-sports.com/" target="_blank">https://www.akadama-sports.com/</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:akadama@mte.biglobe.ne.jp">akadama@mte.biglobe.ne.jp</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=兵庫県神戸市灘区水道筋3-19&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>サイズ選びから道具のメンテナンス、卓球場のご予約まで<br>スタッフが丁寧に対応いたします。</p>
+  <div class="cta-buttons">
+    <a href="tel:078-801-6101" class="cta-btn">📞 電話でお問い合わせ</a>
+    <a href="https://www.akadama-sports.com/" target="_blank" class="cta-btn outline">🌐 公式サイトを見る</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="https://www.google.com/maps?q=兵庫県神戸市灘区水道筋3-19" target="_blank">
+    <span class="icon">📍</span>アクセス
+  </a>
+  <a href="tel:078-801-6101" class="call">
+    <span class="icon">📞</span>電話する
+  </a>
+  <a href="https://www.akadama-sports.com/" target="_blank">
+    <span class="icon">🌐</span>公式サイト
+  </a>
+</nav>
+
+</body>
+</html>
