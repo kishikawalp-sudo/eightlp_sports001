@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>プロショップしげざき｜川西市のボウリング用品専門店</title>
+<style>
+  :root{
+    --main:#0b3d91;
+    --main-dark:#082a66;
+    --accent:#f5a623;
+    --bg-light:#f7f8fb;
+    --text:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:600px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header.fixed-header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--main);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header.fixed-header .shopname{
+    font-size:15px;
+    font-weight:bold;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  header.fixed-header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg,var(--main) 0%,var(--main-dark) 100%);
+    color:#fff;
+    padding:36px 16px 40px;
+    text-align:center;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 14px;
+    border-radius:16px;
+    margin-bottom:14px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:10px;
+    line-height:1.4;
+  }
+  .hero p.sub{
+    font-size:14px;
+    opacity:0.92;
+    margin-bottom:20px;
+  }
+  .hero .stars{
+    color:var(--accent);
+    font-size:18px;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .hero .hero-img{
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,0.3);
+  }
+
+  /* Section titles */
+  .section{padding:40px 0;}
+  .section.gray{background:var(--bg-light);}
+  .section-title{
+    text-align:center;
+    font-size:21px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent);
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:13px;
+    color:#555;
+    margin-bottom:26px;
+  }
+
+  /* Featured product (イチオシ) */
+  .featured-box{
+    background:#fff;
+    border:2px solid var(--accent);
+    border-radius:14px;
+    padding:22px 18px;
+    margin-top:10px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  }
+  .featured-box img{
+    border-radius:10px;
+    margin-bottom:16px;
+  }
+  .featured-box h3{
+    font-size:19px;
+    color:var(--main-dark);
+    margin-bottom:10px;
+    text-align:center;
+  }
+  .featured-box p{
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .featured-list li{
+    font-size:13.5px;
+    padding:8px 0 8px 26px;
+    position:relative;
+    border-bottom:1px dashed #e0d3b3;
+  }
+  .featured-list li:last-child{border-bottom:none;}
+  .featured-list li::before{
+    content:"●";
+    color:var(--accent);
+    position:absolute;
+    left:4px;
+    top:8px;
+    font-size:12px;
+  }
+  .cta-btn{
+    display:block;
+    background:var(--accent);
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    font-size:15px;
+    padding:14px;
+    border-radius:30px;
+    box-shadow:0 4px 10px rgba(245,166,35,0.4);
+  }
+
+  /* Strengths */
+  .strength-grid{display:flex;flex-direction:column;gap:16px;}
+  .strength-card{
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:38px;height:38px;
+    background:var(--main);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .strength-card h4{
+    font-size:15px;
+    color:var(--main-dark);
+    margin-bottom:6px;
+  }
+  .strength-card p{font-size:13px;color:#444;}
+
+  /* Reviews */
+  .review-box{
+    background:#fff;
+    border-left:4px solid var(--accent);
+    border-radius:8px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .review-box .stars{color:var(--accent);font-size:16px;margin-bottom:10px;}
+  .review-box p{font-size:13px;color:#444;white-space:pre-line;}
+  .review-box .review-more{
+    margin-top:12px;
+    font-size:13px;
+    color:#444;
+    white-space:pre-line;
+    border-top:1px solid #eee;
+    padding-top:12px;
+  }
+
+  /* Gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:10px;
+  }
+  .gallery img{border-radius:8px;}
+
+  /* Shop info table */
+  table.shop-info{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom:20px;
+  }
+  table.shop-info th,table.shop-info td{
+    padding:12px 14px;
+    font-size:13.5px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  table.shop-info th{
+    background:var(--bg-light);
+    color:var(--main-dark);
+    width:30%;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  table.shop-info tr:last-child th,
+  table.shop-info tr:last-child td{border-bottom:none;}
+  .map-frame{
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .map-frame iframe{width:100%;height:220px;border:0;}
+
+  /* CTA section */
+  .cta-section{
+    background:linear-gradient(135deg,var(--main) 0%,var(--main-dark) 100%);
+    color:#fff;
+    text-align:center;
+    padding:40px 16px;
+  }
+  .cta-section h2{font-size:20px;margin-bottom:10px;}
+  .cta-section p{font-size:13px;opacity:0.9;margin-bottom:20px;}
+  .cta-section .tel-big{
+    display:block;
+    font-size:24px;
+    font-weight:bold;
+    color:#fff;
+    background:var(--accent);
+    border-radius:30px;
+    padding:16px;
+    margin-bottom:14px;
+  }
+  .cta-section .sub-btn{
+    display:block;
+    font-size:13px;
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.6);
+    border-radius:30px;
+    padding:10px;
+  }
+
+  /* Footer */
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:20px 16px 0;
+  }
+
+  /* Bottom nav */
+  nav.bottom-nav{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    height:60px;
+    background:#fff;
+    border-top:1px solid #e0e0e0;
+    display:flex;
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.08);
+  }
+  nav.bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main-dark);
+    gap:2px;
+  }
+  nav.bottom-nav a.call{
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+  }
+  nav.bottom-nav .icon{font-size:18px;}
+
+  @media (min-width:601px){
+    .hero h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="fixed-header">
+  <div class="shopname">プロショップしげざき</div>
+  <a href="tel:0727570539" class="tel-btn">📞 電話する</a>
+</header>
+
+<section class="hero">
+  <span class="badge">兵庫県川西市 創業から歴史あるプロショップ</span>
+  <h1>あなたの一投を、<br>もっと自分らしく。<br>マイボール専門店</h1>
+  <p class="sub">狭くても、丁寧。だから選ばれる、地域のボウリング専門店。</p>
+  <div class="stars">★★★★★</div>
+  <p class="sub" style="margin-bottom:0;">お客様の口コミ評価</p>
+  <div class="hero-img">
+    <img src="images/shop_front.jpg" alt="プロショップしげざき 店舗外観">
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <span>ICHIOSHI</span>
+      イチオシ｜ボウリング用品専門店
+    </div>
+    <p class="section-lead">投球フォームに合わせて仕上げる、あなただけのマイボール</p>
+
+    <div class="featured-box">
+      <img src="images/myball_drill.jpg" alt="マイボール加工・ドリル作業の様子">
+      <h3>マイボール製作・ドリル込みで安心価格</h3>
+      <p>「はじめてのマイボールを作りたい」という方も大歓迎。正確な一本に仕上げるため、投球フォームを確認したうえで丁寧にフィッティングいたします。</p>
+      <ul class="featured-list">
+        <li>ドリル加工込みのリーズナブルな価格設定</li>
+        <li>投球フォームを見た上での的確なアドバイス</li>
+        <li>割れたボールなど不要になったボールの処分も対応</li>
+        <li>要望をお伝えいただければ最適な一本をご提案</li>
+      </ul>
+      <a href="tel:0727570539" class="cta-btn">まずはお電話でご相談 📞 072-757-0539</a>
+    </div>
+  </div>
+</section>
+
+<section class="section gray">
+  <div class="container">
+    <div class="section-title">
+      <span>STRENGTH</span>
+      選ばれる理由
+    </div>
+    <div class="strength-grid">
+      <div class="strength-card">
+        <div class="strength-num">1</div>
+        <div>
+          <h4>丁寧で親身な接客</h4>
+          <p>狭く古い店内ですが、その分お客様一人ひとりとしっかり向き合い、じっくりご相談に乗ります。</p>
+        </div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-num">2</div>
+        <div>
+          <h4>投球フォームに合わせた製作</h4>
+          <p>感覚だけに頼らず、実際のフォームを確認したうえでボールを仕上げるので、仕上がりに満足いただけます。</p>
+        </div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-num">3</div>
+        <div>
+          <h4>地域に根ざした貴重なプロショップ</h4>
+          <p>近隣のボウリング場が少なくなる中、専門知識を持つプロショップとして長年営業を続けています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <span>VOICE</span>
+      お客様の声
+    </div>
+    <div class="review-box">
+      <div class="stars">★★★★★</div>
+      <p>狭く古い店内ですが、接客はとても丁寧で、親身に相談に乗っていただきました。
+
+はじめてのマイボールを作りたいと思い来店しましたが、フォームなどを見てみないと正確に作れないとの事で、また改めて投球フォームを撮影して来店する事になりました。値段もドリル込みでリーズナブルな設計でしたので、また来店してマイボールを作る日が楽しみです。</p>
+      <p class="review-more">古くから営業されているボウリングショップです。持っていた玉がいつの間にか割れていたのでこちらで作らせて頂きました。満足の行く仕上がりで、割れた玉もついでに処分してもらいました。基本的に店内を見て選ぶというより、要望を言って決めてもらう感じ。今では貴重なプロショップです。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section gray">
+  <div class="container">
+    <div class="section-title">
+      <span>GALLERY</span>
+      店内・商品のご紹介
+    </div>
+    <div class="gallery">
+      <img src="images/shop_front.jpg" alt="プロショップしげざき 外観">
+      <img src="images/myball_drill.jpg" alt="マイボール加工の様子">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <span>SHOP INFO</span>
+      店舗情報
+    </div>
+    <table class="shop-info">
+      <tr><th>店名</th><td>プロショップしげざき</td></tr>
+      <tr><th>代表者</th><td>重崎孝法</td></tr>
+      <tr><th>イチオシ</th><td>ボウリング用品専門店（マイボール製作）</td></tr>
+      <tr><th>定休日</th><td>水曜日、木曜日</td></tr>
+      <tr><th>住所</th><td>兵庫県川西市栄根１丁目７−１７</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0727570539">072-757-0539</a></td></tr>
+      <tr><th>HP</th><td><a href="http://www.pss782.com/" target="_blank" rel="noopener">www.pss782.com</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:shigepro782@ymail.ne.jp">shigepro782@ymail.ne.jp</a></td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe loading="lazy" src="https://www.google.com/maps?q=兵庫県川西市栄根１丁目７−１７&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>あなただけの一本を、<br>ここで見つけませんか。</h2>
+  <p>マイボール製作のご相談はお気軽にどうぞ</p>
+  <a href="tel:0727570539" class="tel-big">📞 072-757-0539</a>
+  <a href="http://www.pss782.com/" target="_blank" rel="noopener" class="sub-btn">ホームページを見る</a>
+</section>
+
+<footer>
+  <p>&copy; プロショップしげざき</p>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0727570539" class="call"><span class="icon">📞</span>電話する</a>
+  <a href="https://www.google.com/maps?q=兵庫県川西市栄根１丁目７−１７" target="_blank" rel="noopener"><span class="icon">📍</span>地図を見る</a>
+  <a href="mailto:shigepro782@ymail.ne.jp"><span class="icon">✉️</span>メール</a>
+  <a href="http://www.pss782.com/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
