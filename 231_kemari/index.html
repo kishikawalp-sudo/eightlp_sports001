@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kemari87 KISHISPO 尼崎店｜サッカー用品専門店</title>
+<style>
+  :root{
+    --green-dark:#0d3b24;
+    --green:#1a6b3f;
+    --green-light:#e8f5ee;
+    --accent:#ff7a00;
+    --text:#222;
+    --gray:#666;
+    --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif;
+    color:var(--text);
+    line-height:1.7;
+    background:var(--white);
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--green-dark);
+    height:56px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-logo{
+    color:var(--white);
+    font-weight:bold;
+    font-size:15px;
+    line-height:1.3;
+  }
+  .header-logo span{
+    display:block;
+    font-size:11px;
+    font-weight:normal;
+    opacity:0.85;
+  }
+  .header-tel{
+    background:var(--accent);
+    color:var(--white);
+    padding:8px 14px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--green-dark) 0%, var(--green) 100%);
+    color:var(--white);
+    text-align:center;
+    padding:36px 16px 32px;
+  }
+  .hero-badge{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--white);
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:0.05em;
+  }
+  .hero h1{
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:8px;
+    letter-spacing:0.02em;
+  }
+  .hero p{
+    font-size:14px;
+    opacity:0.9;
+    margin-bottom:20px;
+  }
+  .hero-img{
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+    margin:0 auto 18px;
+    max-width:480px;
+  }
+  .hero-cta{
+    display:inline-block;
+    background:var(--white);
+    color:var(--green-dark);
+    font-weight:bold;
+    font-size:15px;
+    padding:14px 32px;
+    border-radius:30px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* Section common */
+  section{padding:36px 16px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--green-dark);
+    margin-bottom:6px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:12px;
+    color:var(--gray);
+    margin-bottom:24px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--green-light);
+  }
+  .featured-card{
+    background:var(--white);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    max-width:480px;
+    margin:0 auto;
+  }
+  .featured-card img{width:100%;}
+  .featured-body{padding:20px;}
+  .featured-tag{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--white);
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:16px;
+    margin-bottom:10px;
+  }
+  .featured-body h3{
+    font-size:19px;
+    color:var(--green-dark);
+    margin-bottom:10px;
+  }
+  .featured-body p{
+    font-size:14px;
+    color:var(--text);
+    margin-bottom:16px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:18px;
+  }
+  .featured-list li{
+    font-size:14px;
+    padding-left:24px;
+    position:relative;
+    margin-bottom:8px;
+  }
+  .featured-list li::before{
+    content:"⚽";
+    position:absolute;
+    left:0;
+    top:0;
+  }
+  .featured-cta{
+    display:block;
+    text-align:center;
+    background:var(--green);
+    color:var(--white);
+    font-weight:bold;
+    padding:14px;
+    border-radius:30px;
+    font-size:15px;
+  }
+
+  /* Strengths */
+  .strengths-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    max-width:480px;
+    margin:0 auto;
+  }
+  .strength-item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    background:var(--white);
+    border:1px solid #eee;
+    border-radius:12px;
+    padding:16px;
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:34px;height:34px;
+    background:var(--green);
+    color:var(--white);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .strength-text h4{
+    font-size:15px;
+    color:var(--green-dark);
+    margin-bottom:4px;
+  }
+  .strength-text p{
+    font-size:13px;
+    color:var(--gray);
+  }
+
+  /* Reviews */
+  .reviews{background:var(--green-light);}
+  .review-card{
+    background:var(--white);
+    border-radius:12px;
+    padding:18px;
+    max-width:480px;
+    margin:0 auto 16px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  }
+  .review-stars{
+    color:var(--accent);
+    font-size:15px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:var(--text);
+  }
+
+  /* Shop info */
+  .shop-table{
+    width:100%;
+    max-width:480px;
+    margin:0 auto 20px;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  .shop-table th,.shop-table td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .shop-table th{
+    width:28%;
+    color:var(--green-dark);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .shop-table td a{color:var(--green);text-decoration:underline;}
+  .map-wrap{
+    max-width:480px;
+    margin:0 auto 24px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+  .sns-links{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:8px;
+  }
+  .sns-links a{
+    background:var(--green-dark);
+    color:var(--white);
+    font-size:13px;
+    padding:8px 18px;
+    border-radius:20px;
+  }
+
+  /* CTA section */
+  .cta-section{
+    background:var(--green-dark);
+    color:var(--white);
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:20px;
+    margin-bottom:8px;
+  }
+  .cta-section p{
+    font-size:13px;
+    opacity:0.85;
+    margin-bottom:22px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:360px;
+    margin:0 auto;
+  }
+  .cta-btn{
+    display:block;
+    padding:15px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-btn.primary{background:var(--accent);color:var(--white);}
+  .cta-btn.secondary{background:var(--white);color:var(--green-dark);}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;z-index:100;
+    display:flex;
+    background:var(--white);
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px 8px;
+    font-size:11px;
+    color:var(--green-dark);
+    font-weight:bold;
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:var(--white);
+  }
+  .bottom-nav .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:var(--gray);
+    padding:16px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-logo">Kemari87 KISHISPO<span>尼崎店｜サッカー用品専門店</span></div>
+  <a href="tel:0664156590" class="header-tel">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <span class="hero-badge">サッカー用品専門店</span>
+  <h1>迷わず選べる、<br>サッカー用品のプロショップ</h1>
+  <p>シューズフィッティングも安心。親切な店員が丁寧にご案内します。</p>
+  <div class="hero-img">
+    <img src="images/hero.jpg" alt="Kemari87 KISHISPO 尼崎店 店舗外観">
+  </div>
+  <a href="#access" class="hero-cta">アクセス・営業時間を見る</a>
+</div>
+
+<section class="featured">
+  <div class="section-title">イチオシ</div>
+  <div class="section-sub">FEATURED ITEM</div>
+  <div class="featured-card">
+    <img src="images/item01.jpg" alt="サッカー用品 シューズフィッティング">
+    <div class="featured-body">
+      <span class="featured-tag">サッカー用品</span>
+      <h3>足に合った一足が見つかる、シューズフィッティング</h3>
+      <p>お子様のシューズ選びで「サイズが分からない」「どれを選べばいいか迷う」という方も安心。専門知識をもったスタッフが、一人ひとりの足に合わせて丁寧にフィッティングいたします。</p>
+      <ul class="featured-list">
+        <li>サッカー用品の専門知識で迷わず選べる</li>
+        <li>お子様のシューズ選びも安心サポート</li>
+        <li>オリジナル中敷きも好評です</li>
+      </ul>
+      <a href="tel:0664156590" class="featured-cta">電話でシューズ相談をする</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="section-sub">STRENGTH</div>
+  <div class="strengths-grid">
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div class="strength-text">
+        <h4>丁寧なシューズフィッティング</h4>
+        <p>専門店ならではの知識で、足に合った一足選びをサポート。お子様のシューズ選びに助かったという声も多数。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div class="strength-text">
+        <h4>広々とした駐車場</h4>
+        <p>駐車場も広く、お車でのご来店も安心。ご家族でゆっくり商品をお選びいただけます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div class="strength-text">
+        <h4>豊富な商品ラインナップ</h4>
+        <p>ジュニア用品も充実し、セール品も豊富。サッカー好きなら見ているだけでも楽しいお店です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="section-sub">REVIEW</div>
+  <div class="review-card">
+    <div class="review-stars">★★★★☆</div>
+    <p>店は小さめです。店員さんは親切です。サッカー用品の専門店で迷わず買えるかな？シューズのフィッティング、親切に対応してくださいます。子供のシューズ選びにとても助かりました。ここのオリジナルの中敷きおすすめですよー</p>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <p>昨日お店にお伺いしました。沢山の事を教えていただき家族で為になったと話題がつきませんでした。またお店にお伺いします！みんなキシスポさんで買ってほしい！駐車場も広いし、商品も多いのでサッカー好きは見ていて楽しいです。クラブチームユニはもう少しあったら嬉しいと思いますが、ジュニア用も多いし、セール品もかなりあるので助かります。</p>
+  </div>
+</section>
+
+<section id="access">
+  <div class="section-title">店舗情報</div>
+  <div class="section-sub">ACCESS</div>
+  <table class="shop-table">
+    <tr><th>店名</th><td>Kemari87 KISHISPO 尼崎店</td></tr>
+    <tr><th>会社名</th><td>株式会社 岸和田スポーツ</td></tr>
+    <tr><th>代表者</th><td>阪下 岳</td></tr>
+    <tr><th>住所</th><td>兵庫県尼崎市西昆陽3丁目3-1</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0664156590">06-6415-6590</a></td></tr>
+    <tr><th>定休日</th><td>毎週水曜日（祝日・春夏冬休み期間は営業）</td></tr>
+    <tr><th>HP</th><td><a href="http://www.kishispo.net/" target="_blank" rel="noopener">www.kishispo.net</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E5%B0%BC%E5%B4%8E%E5%B8%82%E8%A5%BF%E6%98%86%E9%99%BD3%E4%B8%81%E7%9B%AE3-1&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <div class="sns-links">
+    <a href="https://x.com/kkishispo" target="_blank" rel="noopener">X（旧Twitter）</a>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>シューズ選び・サッカー用品のことなら、Kemari87 KISHISPO 尼崎店へ</p>
+  <div class="cta-buttons">
+    <a href="tel:0664156590" class="cta-btn primary">📞 電話で問い合わせる</a>
+    <a href="https://www.kishispo.com/inquiry/all/" target="_blank" rel="noopener" class="cta-btn secondary">✉️ フォームで問い合わせる</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 株式会社岸和田スポーツ Kemari87 KISHISPO 尼崎店
+</footer>
+
+<nav class="bottom-nav">
+  <a href="#access"><span class="icon">📍</span>アクセス</a>
+  <a href="https://www.kishispo.com/inquiry/all/" target="_blank" rel="noopener"><span class="icon">✉️</span>問い合わせ</a>
+  <a href="tel:0664156590" class="call"><span class="icon">📞</span>電話する</a>
+</nav>
+
+</body>
+</html>
