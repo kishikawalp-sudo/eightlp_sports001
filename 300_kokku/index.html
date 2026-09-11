@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>シャトルコック｜バドミントン専門店 兵庫県尼崎市</title>
+<style>
+  :root{
+    --main:#1e5631;
+    --accent:#ffb703;
+    --dark:#1a1a1a;
+    --light:#f7f7f2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--dark);
+    background:var(--light);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main);
+    color:#fff;
+    height:56px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 14px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shopname{font-size:18px;font-weight:bold;letter-spacing:1px;}
+  header .tel-btn{
+    background:var(--accent);
+    color:var(--dark);
+    padding:8px 14px;
+    border-radius:20px;
+    font-weight:bold;
+    font-size:14px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{width:100%;height:60vh;object-fit:cover;filter:brightness(0.55);}
+  .hero-text{
+    position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text h1{
+    font-size:26px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 2px 8px rgba(0,0,0,0.5);
+  }
+  .hero-text p{
+    margin-top:10px;
+    font-size:15px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  }
+  .hero-cta{
+    display:inline-block;
+    margin-top:18px;
+    background:var(--accent);
+    color:var(--dark);
+    padding:12px 30px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+
+  section{padding:40px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:#666;
+    margin-bottom:28px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:var(--main);
+    color:#fff;
+  }
+  .featured .section-title, .featured .section-sub{color:#fff;}
+  .featured .section-sub{color:#dcefe0;}
+  .featured-card{
+    background:#fff;
+    color:var(--dark);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .featured-card img{width:100%;height:220px;object-fit:cover;}
+  .featured-card .body{padding:20px;}
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main);
+    margin-bottom:10px;
+  }
+  .featured-card p{font-size:14px;color:#333;}
+  .badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+  .badge{
+    background:var(--accent);
+    color:var(--dark);
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 12px;
+    border-radius:14px;
+  }
+  .featured-cta{
+    display:block;
+    text-align:center;
+    margin-top:16px;
+    background:var(--main);
+    color:#fff;
+    padding:13px;
+    border-radius:8px;
+    font-weight:bold;
+  }
+
+  /* Strengths */
+  .strengths-grid{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    background:#fff;
+    border-left:5px solid var(--accent);
+    border-radius:8px;
+    padding:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .strength-item h4{
+    color:var(--main);
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .strength-item p{font-size:13.5px;color:#444;}
+
+  /* Reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--light);
+    border-radius:10px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  }
+  .stars{color:var(--accent);font-size:18px;margin-bottom:10px;letter-spacing:2px;}
+  .review-card p{font-size:13.5px;color:#333;margin-bottom:14px;}
+  .review-card p:last-child{margin-bottom:0;}
+  .review-divider{
+    border:none;
+    border-top:1px dashed #ccc;
+    margin:16px 0;
+  }
+
+  /* Shop info */
+  .shop-info{background:var(--light);}
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  table.info-table th, table.info-table td{
+    padding:13px 12px;
+    font-size:13.5px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  table.info-table th{
+    width:28%;
+    background:#f0f0ea;
+    color:var(--main);
+    font-weight:bold;
+  }
+  table.info-table tr:last-child th, table.info-table tr:last-child td{border-bottom:none;}
+  .map-wrap{margin-top:16px;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  /* CTA section */
+  .cta-section{
+    background:var(--main);
+    text-align:center;
+    color:#fff;
+  }
+  .cta-section h2{font-size:20px;margin-bottom:10px;}
+  .cta-section p{font-size:13.5px;margin-bottom:22px;color:#dcefe0;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .cta-buttons a{
+    padding:15px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-call{background:var(--accent);color:var(--dark);}
+  .cta-web{background:#fff;color:var(--main);border:2px solid #fff;}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    color:var(--main);
+    font-weight:bold;
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:var(--dark);
+  }
+  .bottom-nav a .icon{display:block;font-size:18px;margin-bottom:2px;}
+
+  @media (min-width:600px){
+    .hero-text h1{font-size:32px;}
+    section{padding:60px 30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">シャトルコック</div>
+  <a href="tel:0664811616" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="シャトルコック バドミントン専門店">
+  <div class="hero-text">
+    <h1>初心者から上級者まで、<br>あなたに"本当に合う"一本を。</h1>
+    <p>兵庫県尼崎市のバドミントン専門店「シャトルコック」</p>
+    <a href="tel:0664811616" class="hero-cta">今すぐ電話で相談する</a>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title">イチオシ商品</div>
+  <div class="section-sub">バドミントン用品</div>
+  <div class="featured-card">
+    <img src="images/racket.jpg" alt="バドミントン用品 ラケット・シューズ">
+    <div class="body">
+      <h3>ラケット・シューズ・ウェア、豊富な品揃え</h3>
+      <p>
+        ラケットの種類や重心バランス、グリップのバンテージまで、経験豊富な店長が一つひとつ丁寧に解説。
+        シューズも足に合うものを妥協せず一緒に探します。
+        今の実力や環境に本当に必要なものだけをおすすめする、誠実な接客が自慢です。
+      </p>
+      <div class="badge-row">
+        <span class="badge">ラケット選び相談</span>
+        <span class="badge">ガット張り対応</span>
+        <span class="badge">シューズフィッティング</span>
+        <span class="badge">ウェア・ヨネックス取扱</span>
+      </div>
+      <a href="tel:0664811616" class="featured-cta">バドミントン用品について相談する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="section-sub">シャトルコックの強み</div>
+  <div class="strengths-grid">
+    <div class="strength-item">
+      <h4>初心者にもわかりやすい丁寧な説明</h4>
+      <p>ラケットの種類や重心バランスなど、専門用語を噛み砕いてわかりやすく解説。初めての方でも安心してご相談いただけます。</p>
+    </div>
+    <div class="strength-item">
+      <h4>妥協しないシューズ選び</h4>
+      <p>本人に本当に合うシューズを、粘り強く一緒に探します。見た目だけでなく足に合うかどうかを重視した提案です。</p>
+    </div>
+    <div class="strength-item">
+      <h4>必要な物だけをすすめる誠実な接客</h4>
+      <p>今の実力や環境に必要のないものは、きっぱりと購入を勧めない誠実さも好評。長く付き合えるお店です。</p>
+    </div>
+    <div class="strength-item">
+      <h4>アフターメンテナンスも安心</h4>
+      <p>ガット張りなど購入後のメンテナンスにも対応。長いお付き合いができる体制を整えています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="section-sub">クチコミ ★★★★★</div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>
+      初心者の妻にラケットの種類、重心など詳しくわかりやすく丁寧に説明してくださり、また靴も粘り強く本人に適したものを選んでくださいました。ラケットのグリップのバンテージも豊富でしたし経験からくるお話もとても分かりやすかったです。今の実力や環境で必要ないものはきっぱりと購入をやめたほうがいいといわれます（笑）。ガット張は一日時間を要するので余裕を持ちましょう。アフターメンテナンスも含め長いお付き合いになりそうです。よろしくお願いします。
+    </p>
+    <hr class="review-divider">
+    <p>
+      先日、店長の福村さんのアドバイスを頂いて、ランニング用のウェア上下とインナーを購入。ヨネックスからランニング用が結びつかなかったのですが、いつもステキに着こなして居られる店長を見ていて、是非ヨネックスで揃えたいと相談してみたところ、適切なアドバイスを頂いて納得のいくお買い物ができました。シューズも購入予定で、今入荷待ちです。福村店長のアドバイスは間違いがないな！というのが伝わります。ありがとうございました。
+    </p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>シャトルコック</td></tr>
+    <tr><th>代表者</th><td>山上　雅秀</td></tr>
+    <tr><th>住所</th><td>兵庫県尼崎市西長洲町2-14-5</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0664811616">06-6481-1616</a></td></tr>
+    <tr><th>定休日</th><td>火曜日</td></tr>
+    <tr><th>HP</th><td><a href="https://shuttle-cock.com/" target="_blank">https://shuttle-cock.com/</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@shuttle-cock.com">info@shuttle-cock.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=兵庫県尼崎市西長洲町2-14-5&z=16&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>あなたに合う一本を見つけませんか？</h2>
+  <p>ラケット・シューズ選びのご相談はお気軽にどうぞ。</p>
+  <div class="cta-buttons">
+    <a href="tel:0664811616" class="cta-call">📞 06-6481-1616 に電話する</a>
+    <a href="https://shuttle-cock.com/" target="_blank" class="cta-web">公式サイトを見る</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0664811616" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://maps.google.com/maps?q=兵庫県尼崎市西長洲町2-14-5" target="_blank"><span class="icon">📍</span>地図</a>
+  <a href="https://shuttle-cock.com/" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="mailto:info@shuttle-cock.com"><span class="icon">✉️</span>メール</a>
+</nav>
+
+</body>
+</html>
