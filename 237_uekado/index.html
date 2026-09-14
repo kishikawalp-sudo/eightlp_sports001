@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ウエカドスポーツ | 尼崎のラグビー専門店</title>
+<style>
+  :root{
+    --green-deep:#0b3d24;
+    --green-main:#1a5c3a;
+    --green-light:#2e8b57;
+    --gold:#d4a437;
+    --cream:#faf7f0;
+    --text-dark:#1c1c1c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","游ゴシック",sans-serif;
+    color:var(--text-dark);
+    background:var(--cream);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:64px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{width:100%;display:block;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--green-deep);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 16px;
+    height:56px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  .header .shop-name{
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:0.5px;
+  }
+  .header .tel-btn{
+    background:var(--gold);
+    color:var(--green-deep);
+    font-weight:700;
+    font-size:13px;
+    padding:8px 14px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-main) 100%);
+    padding:36px 20px 40px;
+    text-align:center;
+    color:#fff;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-40px;right:-40px;
+    width:180px;height:180px;
+    background:radial-gradient(circle,rgba(212,164,55,0.25) 0%,transparent 70%);
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--green-deep);
+    font-size:12px;
+    font-weight:700;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:800;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero h1 span{
+    color:var(--gold);
+  }
+  .hero p.sub{
+    font-size:14px;
+    opacity:0.9;
+    margin-bottom:22px;
+  }
+  .hero-img{
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,0.3);
+    margin-bottom:20px;
+  }
+  .hero-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .btn-primary{
+    background:var(--gold);
+    color:var(--green-deep);
+    font-weight:800;
+    font-size:16px;
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(212,164,55,0.4);
+  }
+  .btn-outline{
+    border:2px solid #fff;
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    padding:13px;
+    border-radius:8px;
+  }
+
+  /* Section common */
+  section{padding:44px 20px;}
+  .section-title{
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .section-title .en{
+    display:block;
+    font-size:12px;
+    color:var(--green-light);
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:22px;
+    font-weight:800;
+    color:var(--green-deep);
+  }
+
+  /* Featured product - MAIN PUSH SECTION */
+  .featured{
+    background:var(--green-deep);
+    color:#fff;
+    position:relative;
+  }
+  .featured .section-title .en{color:var(--gold);}
+  .featured .section-title h2{color:#fff;}
+  .featured-card{
+    background:#fff;
+    color:var(--text-dark);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    margin-bottom:20px;
+  }
+  .featured-card img{aspect-ratio:4/3;object-fit:cover;}
+  .featured-card .body{padding:20px;}
+  .featured-card .tag{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--green-deep);
+    font-size:12px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:6px;
+    margin-bottom:10px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    font-weight:800;
+    color:var(--green-deep);
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:#444;
+    margin-bottom:16px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:6px;
+  }
+  .featured-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    font-size:13.5px;
+    margin-bottom:8px;
+    color:#333;
+  }
+  .featured-list li::before{
+    content:"●";
+    color:var(--green-light);
+    font-size:10px;
+    margin-top:5px;
+  }
+  .featured-cta{
+    text-align:center;
+    margin-top:24px;
+  }
+
+  /* Strengths */
+  .strengths-grid{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.06);
+    border-left:4px solid var(--gold);
+  }
+  .strength-item .num{
+    font-size:12px;
+    font-weight:800;
+    color:var(--green-light);
+    letter-spacing:1px;
+  }
+  .strength-item h3{
+    font-size:16px;
+    font-weight:800;
+    color:var(--green-deep);
+    margin:6px 0 8px;
+  }
+  .strength-item p{
+    font-size:13.5px;
+    color:#555;
+  }
+
+  /* Reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--cream);
+    border-radius:12px;
+    padding:22px;
+    border:1px solid #eee;
+  }
+  .stars{
+    color:var(--gold);
+    font-size:18px;
+    margin-bottom:12px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:#333;
+    margin-bottom:14px;
+  }
+  .review-card .reviewer{
+    font-size:12.5px;
+    color:#888;
+    text-align:right;
+  }
+
+  /* Gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery img{
+    border-radius:10px;
+    aspect-ratio:1/1;
+    object-fit:cover;
+  }
+
+  /* Shop info */
+  .info{background:#fff;}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:14px 8px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:88px;
+    color:var(--green-deep);
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .info-table td a{
+    color:var(--green-light);
+    font-weight:700;
+  }
+  .map-wrap{
+    margin-top:20px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.1);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    display:block;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(160deg,var(--green-main) 0%,var(--green-deep) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:21px;
+    font-weight:800;
+    margin-bottom:10px;
+  }
+  .final-cta p{
+    font-size:13.5px;
+    opacity:0.9;
+    margin-bottom:24px;
+  }
+  .final-cta .btn-primary{width:100%;}
+  .final-cta .btn-outline{width:100%;margin-top:10px;}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:100;
+    display:flex;
+    background:#fff;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:10px 4px 8px;
+    font-size:11px;
+    font-weight:700;
+    color:var(--green-deep);
+  }
+  .bottom-nav a.call{
+    background:var(--gold);
+    color:var(--green-deep);
+  }
+  .bottom-nav a .icon{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:#999;
+    background:var(--cream);
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="shop-name">ウエカドスポーツ</div>
+    <a href="tel:0664365035" class="tel-btn">📞 電話する</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="badge">尼崎 南武庫之荘 ラグビー専門店</span>
+    <h1>子供達の<span>ラグビー愛</span>を<br>ずっと支える街の専門店</h1>
+    <p class="sub">兵庫県尼崎市 ウエカドスポーツ</p>
+    <div class="hero-img">
+      <img src="images/uekado_hero.jpg" alt="ウエカドスポーツ ラグビー専門店 外観">
+    </div>
+    <div class="hero-buttons">
+      <a href="tel:0664365035" class="btn-primary">📞 06-6436-5035 電話で問い合わせる</a>
+      <a href="https://www.rugbypro-uekado.com/" class="btn-outline" target="_blank" rel="noopener">公式サイトを見る</a>
+    </div>
+  </section>
+
+  <!-- Featured Product -->
+  <section class="featured" id="featured">
+    <div class="section-title">
+      <span class="en">OUR SPECIALTY</span>
+      <h2>イチオシは<br>ラグビー専門店ならではの品揃え</h2>
+    </div>
+
+    <div class="featured-card">
+      <img src="images/uekado_rugby_goods.jpg" alt="ラグビー用品の品揃え">
+      <div class="body">
+        <span class="tag">RUGBY SPECIALTY SHOP</span>
+        <h3>ラグビーひと筋。だから応えられる専門知識</h3>
+        <p>
+          ボール、ジャージ、スパイク、プロテクター、マウスピースまで、ラグビーに必要な用具をワンストップで揃える兵庫県尼崎市の専門店です。子供から大人まで、一人ひとりの体格やポジションに合わせたご提案をいたします。
+        </p>
+        <ul class="featured-list">
+          <li>ラグビーボール・ジャージ・ウェアの豊富な品揃え</li>
+          <li>スパイクのフィッティング相談もお任せください</li>
+          <li>チームユニフォーム・部活動用品のご相談も対応</li>
+          <li>初心者から経験者まで、用具選びを丁寧にサポート</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="featured-cta">
+      <a href="tel:0664365035" class="btn-primary">📞 用具のご相談はお電話で</a>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section class="strengths" id="strengths">
+    <div class="section-title">
+      <span class="en">WHY CHOOSE US</span>
+      <h2>選ばれる理由</h2>
+    </div>
+    <div class="strengths-grid">
+      <div class="strength-item">
+        <span class="num">POINT 01</span>
+        <h3>変わらないラグビー愛</h3>
+        <p>創業者・上門さんが大切にしてきたラグビーへの想いは、代替わりした今も変わりません。ラグビーをする子供達を応援する気持ちが、店づくりの原点です。</p>
+      </div>
+      <div class="strength-item">
+        <span class="num">POINT 02</span>
+        <h3>ラグビー専門店だからできる提案</h3>
+        <p>総合スポーツ店にはない専門知識で、用具選びから練習の相談まで一人ひとりに寄り添った対応をいたします。</p>
+      </div>
+      <div class="strength-item">
+        <span class="num">POINT 03</span>
+        <h3>地域に根差した信頼</h3>
+        <p>兵庫県尼崎市南武庫之荘で、長年にわたり地元のラグビーを愛する子供達とその家族に支持され続けています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews" id="reviews">
+    <div class="section-title">
+      <span class="en">VOICE</span>
+      <h2>お客様の声</h2>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>
+        ラグビー愛にあふれた専門店です。ラグビーをしている子供達のことを本当に大切にしてくださいます。ご主人の上門さんはお亡くなりになりましたが、新しい代表の方に代替わりしても、そのラグビーへの想いはまったく変わりません。これからも安心して通えるお店です。
+      </p>
+      <div class="reviewer">— 口コミより</div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-title">
+      <span class="en">GALLERY</span>
+      <h2>店舗の様子</h2>
+    </div>
+    <div class="gallery">
+      <img src="images/uekado_hero.jpg" alt="ウエカドスポーツ 店舗外観">
+      <img src="images/uekado_shop_interior.jpg" alt="ウエカドスポーツ 店内の様子">
+    </div>
+  </section>
+
+  <!-- Shop Info -->
+  <section class="info" id="info">
+    <div class="section-title">
+      <span class="en">SHOP INFO</span>
+      <h2>店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr>
+        <th>店名</th>
+        <td>ウエカドスポーツ</td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td>兵庫県尼崎市南武庫之荘３丁目３６−１２</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><a href="tel:0664365035">06-6436-5035</a></td>
+      </tr>
+      <tr>
+        <th>定休日</th>
+        <td>月曜定休</td>
+      </tr>
+      <tr>
+        <th>HP</th>
+        <td><a href="https://www.rugbypro-uekado.com/" target="_blank" rel="noopener">rugbypro-uekado.com</a></td>
+      </tr>
+      <tr>
+        <th>メール</th>
+        <td><a href="mailto:uekado@crocus.ocn.ne.jp">uekado@crocus.ocn.ne.jp</a></td>
+      </tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E5%B0%BC%E5%B4%8E%E5%B8%82%E5%8D%97%E6%AD%A6%E5%BA%AB%E4%B9%8B%E8%8D%98%EF%BC%93%E4%B8%81%E7%9B%AE%EF%BC%93%EF%BC%96%E2%88%92%EF%BC%91%EF%BC%92&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta" id="contact">
+    <h2>ラグビーのことなら<br>ウエカドスポーツへ</h2>
+    <p>用具選びのご相談、お気軽にお電話ください。</p>
+    <a href="tel:0664365035" class="btn-primary">📞 06-6436-5035 に電話する</a>
+    <a href="https://www.rugbypro-uekado.com/" class="btn-outline" target="_blank" rel="noopener">公式サイトはこちら</a>
+  </section>
+
+  <footer>
+    &copy; ウエカドスポーツ
+  </footer>
+
+  <!-- Bottom Nav -->
+  <nav class="bottom-nav">
+    <a href="#featured"><span class="icon">🏉</span>イチオシ</a>
+    <a href="#info"><span class="icon">📍</span>店舗情報</a>
+    <a href="tel:0664365035" class="call"><span class="icon">📞</span>電話する</a>
+  </nav>
+
+</body>
+</html>
