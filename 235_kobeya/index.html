@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コーベヤスポーツ 三木本店｜兵庫県三木市のスポーツ用品店</title>
+<style>
+  :root{
+    --main-color:#0a5c36;
+    --accent-color:#ff7a00;
+    --sub-color:#f4f9f5;
+    --text-color:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text-color);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:56px;
+    background:#fff;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:600px;margin:0 auto;padding:0 16px;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;width:100%;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    height:56px;
+    padding:0 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+  }
+  header .shopname{font-size:15px;font-weight:bold;}
+  header .tel-btn{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* hero */
+  .hero{position:relative;}
+  .hero img{width:100%;height:60vw;max-height:360px;object-fit:cover;}
+  .hero-text{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,.75));
+    color:#fff;
+    padding:30px 16px 16px;
+  }
+  .hero-text .catch{font-size:20px;font-weight:bold;letter-spacing:1px;}
+  .hero-text .sub{font-size:13px;margin-top:6px;}
+  .stars{color:#ffd400;font-size:16px;letter-spacing:2px;}
+
+  section{padding:36px 0;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    margin-bottom:24px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+  }
+
+  /* イチオシ */
+  .push-section{background:var(--sub-color);}
+  .push-card{
+    background:#fff;
+    border:2px solid var(--accent-color);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+  }
+  .push-card .ribbon{
+    background:var(--accent-color);
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    padding:8px;
+    font-size:14px;
+  }
+  .push-card img{width:100%;height:56vw;max-height:280px;object-fit:cover;}
+  .push-card .push-body{padding:16px;}
+  .push-card h3{font-size:18px;color:var(--main-color);margin-bottom:8px;}
+  .push-card p{font-size:14px;}
+
+  /* strengths */
+  .strengths-list{display:flex;flex-direction:column;gap:16px;}
+  .strength-item{
+    display:flex;gap:12px;align-items:flex-start;
+    background:var(--sub-color);
+    border-radius:10px;
+    padding:14px;
+  }
+  .strength-item .num{
+    flex:none;
+    width:32px;height:32px;
+    border-radius:50%;
+    background:var(--main-color);
+    color:#fff;
+    font-weight:bold;
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;
+  }
+  .strength-item .txt h4{font-size:15px;margin-bottom:4px;color:var(--main-color);}
+  .strength-item .txt p{font-size:13px;}
+
+  /* gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .gallery img{width:100%;height:32vw;max-height:160px;object-fit:cover;border-radius:8px;}
+
+  /* reviews */
+  .review-box{
+    background:var(--sub-color);
+    border-radius:10px;
+    padding:18px;
+  }
+  .review-box .stars{color:#ffb400;font-size:20px;margin-bottom:10px;display:block;}
+  .review-box p{font-size:14px;white-space:pre-wrap;}
+
+  /* shop info */
+  .info-table{width:100%;border-collapse:collapse;font-size:14px;}
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #ddd;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:28%;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table a{color:var(--accent-color);text-decoration:underline;}
+  .map-wrap{margin-top:16px;border-radius:10px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:240px;border:0;}
+
+  /* CTA */
+  .cta-section{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .cta-section .section-title{color:#fff;}
+  .cta-section .section-title::after{background:#fff;}
+  .cta-section p{font-size:14px;margin-bottom:20px;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .btn{
+    display:block;
+    padding:14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .btn-tel{background:var(--accent-color);color:#fff;}
+  .btn-form{background:#fff;color:var(--main-color);}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;width:100%;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    box-shadow:0 -2px 6px rgba(0,0,0,.1);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:8px 0 6px;
+    font-size:11px;
+    color:var(--main-color);
+  }
+  .bottom-nav a.call{background:var(--accent-color);color:#fff;font-weight:bold;}
+  .bottom-nav .icon{font-size:18px;display:block;margin-bottom:2px;}
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:20px 0 76px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">コーベヤスポーツ 三木本店</div>
+  <a href="tel:0794826130" class="tel-btn">📞 0794-82-6130</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="コーベヤスポーツ 三木本店 外観">
+  <div class="hero-text">
+    <span class="stars">★★★★★</span>
+    <div class="catch">有名ブランドが揃う<br>三木市のスポーツ専門店</div>
+    <div class="sub">ウインドブレーカー・靴・鞄・ラケット・ゴルフ用品まで幅広く取扱い</div>
+  </div>
+</div>
+
+<section class="push-section">
+  <div class="container">
+    <div class="section-title">イチオシ</div>
+    <div class="push-card">
+      <div class="ribbon">コーベヤスポーツ イチオシ企画</div>
+      <img src="images/event.jpg" alt="ランニングイベント">
+      <div class="push-body">
+        <h3>ランニングイベントを開催中！</h3>
+        <p>コーベヤスポーツでは、地域の皆さまと一緒に楽しめるランニングイベントを開催しています。シューズ選びのご相談から当日のサポートまで、スタッフが丁寧にご案内。初心者の方からベテランランナーの方まで、お気軽にご参加いただけます。詳しい開催情報はお電話またはホームページよりお問い合わせください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">選ばれる理由</div>
+    <div class="strengths-list">
+      <div class="strength-item">
+        <div class="num">1</div>
+        <div class="txt">
+          <h4>有名ブランドが充実の品揃え</h4>
+          <p>ウインドブレーカー、靴、鞄、ラケット、ゴルフ用品など、有名ブランドの商品が豊富に揃っています。価格もお手頃で、種類も豊富だから選ぶ楽しさがあります。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">2</div>
+        <div class="txt">
+          <h4>キャンプ用品も充実</h4>
+          <p>キャンプブームの影響もあり、キャンプ用品の取扱いを大幅に拡充。アウトドア好きの方にもおすすめの品揃えです。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">3</div>
+        <div class="txt">
+          <h4>ご家族みんなで楽しめるお店</h4>
+          <p>家族連れ、お子様連れの方も安心して楽しめる店内。もちろんお身体の不自由な方もご来店いただけるので、どなたでも安心してお買い求めいただけます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="push-section">
+  <div class="container">
+    <div class="section-title">店内・商品ギャラリー</div>
+    <div class="gallery">
+      <img src="images/hero.jpg" alt="コーベヤスポーツ 店舗外観">
+      <img src="images/event.jpg" alt="ランニングイベントの様子">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">お客様の口コミ</div>
+    <div class="review-box">
+      <span class="stars">★★★★★</span>
+      <p>スポーツ洋品店で、有名なウインドブレーカーから、有名な靴、有名な鞄、有名なラケット、有名なゴルフ洋品が揃っているお店です！
+価格的にもお手頃です！種類が沢山あります！かなり、期待できるお店です！
+家族連れ、お子様連れの方がいらっしゃっても、楽しめると思います！
+勿論、お身体の不自由な方も訪れることができるので、安心してお買い求めできます！
+是非、一度訪れてみて下さい！</p>
+    </div>
+  </div>
+</section>
+
+<section class="push-section">
+  <div class="container">
+    <div class="section-title">店舗情報</div>
+    <table class="info-table">
+      <tr><th>店名</th><td>コーベヤスポーツ 三木本店</td></tr>
+      <tr><th>会社名</th><td>株式会社コーベヤ</td></tr>
+      <tr><th>代表者</th><td>稲田 豊大</td></tr>
+      <tr><th>住所</th><td>兵庫県三木市末広２丁目４−８</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0794826130">0794-82-6130</a></td></tr>
+      <tr><th>定休日</th><td>水曜日（祝日は営業）</td></tr>
+      <tr><th>駐車場</th><td>店舗地下に駐車場あり（急なスロープのため車高の低い車はご注意ください）。店舗裏側に平面駐車場もございます。</td></tr>
+      <tr><th>ホームページ</th><td><a href="http://www.kobeya-sp.co.jp/" target="_blank" rel="noopener">www.kobeya-sp.co.jp</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=兵庫県三木市末広２丁目４−８&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="section-title">お問い合わせ</div>
+    <p>商品のご相談、ランニングイベントの詳細など、<br>お気軽にお問い合わせください。</p>
+    <div class="cta-buttons">
+      <a href="tel:0794826130" class="btn btn-tel">📞 電話で問い合わせる</a>
+      <a href="https://kobeya-sp.co.jp/contact/" target="_blank" rel="noopener" class="btn btn-form">✉️ お問い合わせフォーム</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; コーベヤスポーツ 三木本店（株式会社コーベヤ）
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0794826130" class="call"><span class="icon">📞</span>電話する</a>
+  <a href="https://www.google.com/maps?q=兵庫県三木市末広２丁目４−８" target="_blank" rel="noopener"><span class="icon">📍</span>地図を見る</a>
+  <a href="http://www.kobeya-sp.co.jp/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+  <a href="https://kobeya-sp.co.jp/contact/" target="_blank" rel="noopener"><span class="icon">✉️</span>お問い合わせ</a>
+</nav>
+
+</body>
+</html>
