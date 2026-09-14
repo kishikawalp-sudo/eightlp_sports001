@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAMELGEAR（キャメルギア）｜関西発アウトドアブランドのプライベートストア</title>
+<meta name="description" content="兵庫県尼崎市のアウトドア専門店CAMELGEAR。倉庫のような空間にオリジナルキャンプ用品・中古品がぎっしり。人気No.1のスケボーテーブルNEOなど、日常をカラフルにするキャンプギアをご紹介。">
+<style>
+  :root{
+    --sand:#f4e9d8;
+    --camel:#c8945c;
+    --camel-dark:#a4713a;
+    --brown:#4a3524;
+    --ink:#2b2118;
+    --cream:#fffaf2;
+    --accent:#e8622c;
+    --line:#e3d3ba;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:64px;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:520px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header.fixed-header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--brown);
+    color:#fff;
+    height:56px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  .fixed-header .logo{
+    font-weight:900;font-size:1.05rem;letter-spacing:.03em;
+    display:flex;align-items:center;gap:6px;
+  }
+  .fixed-header .logo span{font-size:1.2rem;}
+  .fixed-header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:7px 14px;
+    border-radius:20px;
+    font-size:.78rem;
+    font-weight:700;
+    display:flex;align-items:center;gap:4px;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--sand) 0%, var(--cream) 100%);
+    padding:26px 0 30px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;top:-40px;right:-40px;
+    width:180px;height:180px;
+    background:radial-gradient(circle,rgba(200,148,92,.25) 0%,transparent 70%);
+  }
+  .hero .tag{
+    display:inline-block;
+    background:var(--camel-dark);
+    color:#fff;
+    font-size:.72rem;
+    letter-spacing:.15em;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    font-weight:700;
+  }
+  .hero h1{
+    font-size:1.9rem;
+    font-weight:900;
+    letter-spacing:.02em;
+    color:var(--brown);
+    margin-bottom:6px;
+  }
+  .hero h1 small{
+    display:block;
+    font-size:.95rem;
+    font-weight:700;
+    color:var(--camel-dark);
+    margin-top:6px;
+  }
+  .hero p.lead{
+    font-size:.92rem;
+    color:#5c4a38;
+    margin:14px auto 20px;
+    max-width:380px;
+  }
+  .hero-img{
+    margin:0 auto 18px;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 26px rgba(74,53,36,.25);
+    border:4px solid #fff;
+  }
+  .hero-img img{width:100%;height:230px;object-fit:cover;}
+  .rating-badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:#fff;
+    border:1px solid var(--line);
+    padding:8px 16px;
+    border-radius:24px;
+    font-size:.85rem;
+    font-weight:700;
+    color:var(--camel-dark);
+    box-shadow:0 4px 10px rgba(0,0,0,.06);
+  }
+  .stars{color:#f2a93b;letter-spacing:1px;}
+
+  .cta-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    font-weight:800;
+    font-size:1rem;
+    padding:15px 0;
+    border-radius:10px;
+    box-shadow:0 6px 16px rgba(232,98,44,.35);
+    margin-top:16px;
+  }
+  .cta-btn small{display:block;font-weight:500;font-size:.72rem;opacity:.9;margin-top:2px;}
+
+  /* Section generic */
+  section{padding:36px 0;}
+  .section-head{
+    text-align:center;
+    margin-bottom:22px;
+  }
+  .section-head .eyebrow{
+    font-size:.72rem;
+    letter-spacing:.2em;
+    color:var(--camel-dark);
+    font-weight:800;
+  }
+  .section-head h2{
+    font-size:1.4rem;
+    font-weight:900;
+    color:var(--brown);
+    margin-top:6px;
+  }
+
+  /* Featured product (イチオシ) */
+  .featured{
+    background:var(--brown);
+    color:var(--sand);
+    position:relative;
+  }
+  .featured::before{
+    content:"🐪";
+    position:absolute;
+    top:14px;right:18px;
+    font-size:2rem;
+    opacity:.25;
+  }
+  .featured .section-head .eyebrow{color:var(--camel);}
+  .featured .section-head h2{color:#fff;}
+  .featured-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    color:var(--ink);
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+  }
+  .featured-card img{width:100%;height:220px;object-fit:cover;}
+  .featured-body{padding:20px;}
+  .featured-body .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:.68rem;
+    font-weight:800;
+    letter-spacing:.05em;
+    padding:4px 10px;
+    border-radius:14px;
+    margin-bottom:10px;
+  }
+  .featured-body h3{
+    font-size:1.2rem;
+    font-weight:900;
+    color:var(--brown);
+    margin-bottom:8px;
+  }
+  .featured-body p{font-size:.88rem;color:#4a3d30;margin-bottom:14px;}
+  .spec-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .spec-list li{
+    display:flex;
+    gap:8px;
+    font-size:.82rem;
+    color:#4a3d30;
+    padding-bottom:8px;
+    border-bottom:1px dashed var(--line);
+  }
+  .spec-list li strong{
+    color:var(--camel-dark);
+    min-width:78px;
+    flex-shrink:0;
+  }
+
+  /* Brand story */
+  .story{background:var(--cream);}
+  .story-block{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px;
+    margin-bottom:14px;
+  }
+  .story-block h3{
+    font-size:.98rem;
+    font-weight:800;
+    color:var(--camel-dark);
+    margin-bottom:8px;
+    display:flex;align-items:center;gap:6px;
+  }
+  .story-block p{font-size:.85rem;color:#4a3d30;}
+
+  /* Strengths */
+  .strengths{background:var(--sand);}
+  .strength-grid{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-item{
+    background:#fff;
+    border-radius:14px;
+    padding:18px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 4px 12px rgba(74,53,36,.08);
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--camel-dark);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;
+    font-size:.95rem;
+  }
+  .strength-item h4{font-size:.95rem;font-weight:800;color:var(--brown);margin-bottom:4px;}
+  .strength-item p{font-size:.82rem;color:#5c4a38;}
+
+  /* Gallery / interior image */
+  .gallery-img{
+    border-radius:14px;
+    overflow:hidden;
+    margin-top:18px;
+    box-shadow:0 8px 20px rgba(74,53,36,.15);
+  }
+  .gallery-img img{width:100%;height:200px;object-fit:cover;}
+  .gallery-cap{
+    text-align:center;
+    font-size:.78rem;
+    color:#8a7660;
+    margin-top:8px;
+  }
+
+  /* Reviews */
+  .reviews{background:var(--cream);}
+  .review-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px;
+    margin-bottom:14px;
+    position:relative;
+  }
+  .review-card .stars{display:block;margin-bottom:8px;font-size:.95rem;}
+  .review-card p{font-size:.85rem;color:#4a3d30;}
+  .review-card .visit{
+    display:inline-block;
+    margin-top:10px;
+    font-size:.72rem;
+    color:#a08a6e;
+    border-top:1px dashed var(--line);
+    padding-top:8px;
+    width:100%;
+  }
+
+  /* Shop info */
+  .shop-info{background:var(--sand);}
+  .info-table{
+    width:100%;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(74,53,36,.08);
+    border-collapse:collapse;
+    font-size:.85rem;
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:13px 14px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  .info-table tr:last-child th,.info-table tr:last-child td{border-bottom:none;}
+  .info-table th{
+    width:84px;
+    color:var(--camel-dark);
+    font-weight:800;
+    white-space:nowrap;
+  }
+  .info-table td a{color:var(--accent);font-weight:700;word-break:break-all;}
+  .map-frame{
+    margin-top:16px;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(74,53,36,.08);
+  }
+  .map-frame iframe{width:100%;height:220px;border:0;display:block;}
+
+  .sns-row{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+  }
+  .sns-row a{
+    flex:1;
+    text-align:center;
+    padding:12px 0;
+    border-radius:10px;
+    font-size:.82rem;
+    font-weight:800;
+  }
+  .sns-row .insta{background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);color:#fff;}
+  .sns-row .hp{background:var(--camel-dark);color:#fff;}
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--brown);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta .section-head h2{color:#fff;}
+  .final-cta .section-head .eyebrow{color:var(--camel);}
+  .final-cta p{font-size:.85rem;color:var(--sand);margin-bottom:18px;}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    z-index:100;
+    background:#fff;
+    border-top:1px solid var(--line);
+    display:flex;
+    box-shadow:0 -4px 12px rgba(0,0,0,.08);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 0 8px;
+    font-size:.68rem;
+    color:#6b5842;
+    font-weight:700;
+    display:flex;flex-direction:column;align-items:center;gap:3px;
+  }
+  .bottom-nav a.emph{color:var(--accent);}
+  .bottom-nav .icon{font-size:1.15rem;}
+
+  @media (max-width:360px){
+    .hero h1{font-size:1.6rem;}
+    .hero-img img{height:190px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="fixed-header">
+  <div class="logo"><span>🐪</span>CAMELGEAR</div>
+  <a href="tel:08080519949" class="tel-btn">📞 電話する</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="tag">関西発アウトドアブランド直営店</span>
+    <h1>倉庫いっぱいの"わくわく"に出会える<small>CAMELGEAR（キャメルギア）</small></h1>
+
+    <div class="hero-img">
+      <img src="images/hero_shop.jpg" alt="CAMELGEAR 店内の様子">
+    </div>
+
+    <p class="lead">オリジナル商品から中古品まで、見ているだけで楽しい倉庫のようなお店。<br>日常をカラフルにする、無骨さと可愛さを兼ね備えたキャンプ用品がここに。</p>
+
+    <span class="rating-badge"><span class="stars">★★★★☆</span> 口コミ多数の人気アウトドアショップ</span>
+
+    <a href="tel:08080519949" class="cta-btn">📞 今すぐ電話で問い合わせる<small>080-8051-9949（尼崎市東難波町）</small></a>
+  </div>
+</section>
+
+<!-- イチオシ商品 -->
+<section class="featured" id="product">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">SIGNATURE ITEM</div>
+      <h2>イチオシ商品</h2>
+    </div>
+
+    <div class="featured-card">
+      <img src="images/product_skatetable.jpg" alt="CAMELGEAR スケボーテーブルNEO">
+      <div class="featured-body">
+        <span class="badge">人気No.1 / 試作を重ねた自信作</span>
+        <h3>スケボーテーブル NEO</h3>
+        <p>廃棄スケートボードをテーブル代わりにしていた創業者のルーツから誕生した、CAMELGEARを代表する名作アイテム。使い勝手の良い、ひと回り大きなサイズにこだわり抜きました。</p>
+        <ul class="spec-list">
+          <li><strong>天板</strong>OSB合板を採用。木材専門工場で製作</li>
+          <li><strong>脚部</strong>アイアン製。金属加工を得意とする工場で製作</li>
+          <li><strong>強度対策</strong>軽量化が難しい中、縞板を埋め込み熱にも耐える設計に改良</li>
+          <li><strong>付属</strong>専用ケースはカバン工場でオーダー製作</li>
+        </ul>
+        <a href="tel:08080519949" class="cta-btn">📞 在庫・お取り置きを電話で確認</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ブランドストーリー -->
+<section class="story">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">BRAND STORY</div>
+      <h2>CAMELGEARについて</h2>
+    </div>
+
+    <div class="story-block">
+      <h3>🐪 ラクダのロゴに込めた想い</h3>
+      <p>ラクダは昔から重たい荷物を運ぶ「砂漠の運び屋さん」として重宝されてきました。そんなCAMEL（ラクダ）がGEAR（キャンプ道具・装備）を皆さんにお届けする、という願いを込めています。</p>
+    </div>
+
+    <div class="story-block">
+      <h3>🏄 創業者のルーツ</h3>
+      <p>開発者でもあるオーナーは元々サーフィンが趣味。浜辺でサンシェードのようなテントを張って寝泊まりし、廃棄されていたスケートボードをテーブル代わりにするなど、キャンプというより「野宿」をしていたそう。そのルーツから本格的にキャンプへのめり込み、後にCAMELGEARが誕生しました。</p>
+    </div>
+
+    <div class="story-block">
+      <h3>🎨 ブランドテーマ</h3>
+      <p>「日常をカラフルに」をテーマに、≪無骨さ≫と≪可愛さ≫を兼ね備えたユニークなキャンプ用品の開発を創出。RainbowCampのプライベートブランドとして2021年、関西で誕生しました。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="strengths">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">STRENGTH</div>
+      <h2>選ばれる理由</h2>
+    </div>
+
+    <div class="strength-grid">
+      <div class="strength-item">
+        <div class="num">1</div>
+        <div>
+          <h4>倉庫のような圧巻の品揃え</h4>
+          <p>所狭しと並ぶオリジナル商品・中古商品の数々。見ているだけで時間を忘れて楽しめる空間です。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">2</div>
+        <div>
+          <h4>試作を重ねたオリジナル開発</h4>
+          <p>人気のスケボーテーブルNEOをはじめ、強度・熱耐性・使い勝手にこだわり、専門工場と連携して丹精込めて商品開発を行っています。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">3</div>
+        <div>
+          <h4>感じの良いスタッフ対応</h4>
+          <p>口コミでも「スタッフさんの対応はいつも感じが良い」と評判。おしゃれで楽しいお店づくりを大切にしています。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-img">
+      <img src="images/gallery_items.jpg" alt="CAMELGEAR オリジナル・中古商品の数々">
+    </div>
+    <p class="gallery-cap">倉庫のような店内に並ぶ、ここでしか出会えないアイテムたち</p>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">REVIEW</div>
+      <h2>お客様の口コミ</h2>
+    </div>
+
+    <div class="review-card">
+      <span class="stars">★★★★☆</span>
+      <p>倉庫のような所に所狭しと物があります。オリジナル商品や中古商品など見てるだけで楽しいです。冬に伺ったのですが、中は寒かったです。表通りから裏に入った路地の奥にありました。目印はミニストップがわかりやすいですかね。</p>
+      <span class="visit">2024年2月 来店</span>
+    </div>
+
+    <div class="review-card">
+      <span class="stars">★★★★★</span>
+      <p>凄くおしゃれで楽しいお店でした。丁度良く探していた、大きさ高さのリサイクル品のテーブルが買えて良かったです。またお世話になります。スタッフさんの対応はいつも感じが良い。メーカーによるのは仕方ないけど、もう少しリーズナブルだと有り難いけど、今時代は難しいかな。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shop-info" id="info">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">SHOP INFO</div>
+      <h2>店舗情報</h2>
+    </div>
+
+    <table class="info-table">
+      <tr><th>店名</th><td>CAMELGEAR（キャメルギア）</td></tr>
+      <tr><th>住所</th><td>兵庫県尼崎市東難波町４丁目２２−８<br><span style="color:#8a7660;font-size:.78rem;">※表通りから裏に入った路地の奥。目印はミニストップ</span></td></tr>
+      <tr><th>電話</th><td><a href="tel:08080519949">080-8051-9949</a></td></tr>
+      <tr><th>定休日</th><td>定休日なし（年末年始あり）</td></tr>
+      <tr><th>HP</th><td><a href="https://rainbowcamp4.wixsite.com/camelgear2021" target="_blank" rel="noopener">公式サイトを見る</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:rainbowcamp0201@gmail.com">rainbowcamp0201@gmail.com</a></td></tr>
+    </table>
+
+    <div class="sns-row">
+      <a class="insta" href="https://www.instagram.com/camelgear2021/" target="_blank" rel="noopener">📷 Instagram</a>
+      <a class="hp" href="https://rainbowcamp4.wixsite.com/camelgear2021" target="_blank" rel="noopener">🌐 公式HP</a>
+    </div>
+
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E5%B0%BC%E5%B4%8E%E5%B8%82%E6%9D%B1%E9%9B%A3%E6%B3%A2%E7%94%BA%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%92%E2%88%92%EF%BC%98&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">CONTACT</div>
+      <h2>お気軽にお立ち寄りください</h2>
+    </div>
+    <p>アウトドア用品を中心に、ここでしか出会えないアイテムが揃うCAMELGEAR。<br>スケボーテーブルNEOをはじめ、こだわりの逸品をぜひ実際に見にきてください。</p>
+    <a href="tel:08080519949" class="cta-btn">📞 080-8051-9949 に電話する</a>
+  </div>
+</section>
+
+<!-- 固定フッターナビ -->
+<nav class="bottom-nav">
+  <a href="#product"><span class="icon">🐪</span>イチオシ</a>
+  <a href="#info"><span class="icon">📍</span>店舗情報</a>
+  <a href="https://www.instagram.com/camelgear2021/" target="_blank" rel="noopener"><span class="icon">📷</span>Instagram</a>
+  <a href="tel:08080519949" class="emph"><span class="icon">📞</span>電話する</a>
+</nav>
+
+</body>
+</html>
