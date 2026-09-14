@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>PLAYERZ｜特殊重心グローブ専門店（予約制）｜西宮市</title>
+<meta name="description" content="兵庫県西宮市のPLAYERZは特殊重心グローブ専門店。型付けの技術と知識に定評があり、完全予約制で一人ひとり丁寧に対応します。">
+<style>
+  :root{
+    --main:#0d2f1f;
+    --accent:#c8a24a;
+    --accent-dark:#a9822f;
+    --cream:#faf6ec;
+    --text:#22281f;
+    --sub:#5b5b4d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:64px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* header */
+  header.fixed-header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--main);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 14px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header.fixed-header .shop-name{
+    color:#fff;font-size:14px;font-weight:bold;letter-spacing:.5px;
+  }
+  header.fixed-header .tel-btn{
+    background:var(--accent);
+    color:var(--main);
+    font-weight:bold;
+    font-size:13px;
+    padding:8px 14px;
+    border-radius:30px;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+    background:#000;
+  }
+  .hero img{
+    width:100%;
+    height:64vh;
+    object-fit:cover;
+    opacity:.75;
+  }
+  .hero-overlay{
+    position:absolute;inset:0;
+    display:flex;flex-direction:column;
+    justify-content:center;align-items:center;
+    text-align:center;
+    padding:0 20px;
+    background:linear-gradient(180deg, rgba(13,47,31,.15) 0%, rgba(13,47,31,.75) 100%);
+  }
+  .hero-overlay .sub{
+    color:var(--accent);
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+  }
+  .hero-overlay h1{
+    color:#fff;
+    font-size:26px;
+    line-height:1.5;
+    font-weight:800;
+    text-shadow:0 2px 8px rgba(0,0,0,.5);
+  }
+  .hero-overlay .catch{
+    color:#fff;
+    font-size:14px;
+    margin-top:14px;
+    background:rgba(0,0,0,.35);
+    padding:6px 14px;
+    border-radius:20px;
+  }
+  .stars{color:var(--accent);font-size:16px;margin-top:10px;letter-spacing:2px;}
+
+  section{padding:44px 20px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:800;
+    color:var(--main);
+    margin-bottom:8px;
+  }
+  .section-title span{
+    display:block;
+    font-size:11px;
+    color:var(--accent-dark);
+    letter-spacing:3px;
+    margin-bottom:6px;
+    font-weight:600;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:13px;
+    color:var(--sub);
+    margin-bottom:28px;
+  }
+
+  /* featured product */
+  .featured{
+    background:var(--main);
+    color:#fff;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-title span{color:var(--accent);}
+  .featured .section-lead{color:#d8d8cc;}
+  .featured-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,.3);
+    border:2px solid var(--accent);
+  }
+  .featured-card img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--main);
+    font-size:12px;
+    font-weight:800;
+    padding:6px 14px;
+    border-radius:20px;
+    margin:16px 16px 0;
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--main);
+    margin:12px 16px 8px;
+    font-weight:800;
+  }
+  .featured-card p{
+    font-size:13.5px;
+    color:var(--sub);
+    margin:0 16px 18px;
+  }
+  .featured-points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 16px 18px;
+  }
+  .featured-points span{
+    background:var(--cream);
+    border:1px solid var(--accent);
+    color:var(--accent-dark);
+    font-size:11.5px;
+    font-weight:700;
+    padding:5px 10px;
+    border-radius:16px;
+  }
+  .featured-cta{
+    display:block;
+    margin:0 16px 16px;
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+    padding:14px;
+    border-radius:8px;
+    font-weight:800;
+    font-size:15px;
+  }
+
+  /* strengths */
+  .strengths-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    border-left:4px solid var(--accent);
+  }
+  .strength-item .num{
+    font-size:22px;
+    font-weight:800;
+    color:var(--accent);
+    min-width:34px;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main);
+    margin-bottom:4px;
+    font-weight:800;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:var(--sub);
+  }
+
+  /* reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--cream);
+    border-radius:10px;
+    padding:20px;
+    position:relative;
+  }
+  .review-card .stars{color:var(--accent-dark);font-size:16px;margin-bottom:10px;}
+  .review-card p{
+    font-size:13.5px;
+    color:var(--text);
+    line-height:1.9;
+  }
+  .review-card .reviewer{
+    margin-top:14px;
+    font-size:12px;
+    color:var(--sub);
+    text-align:right;
+  }
+
+  /* gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:8px;
+  }
+  .gallery img:first-child{
+    grid-column:1 / 3;
+    height:200px;
+  }
+
+  /* shop info */
+  .shop-info{background:var(--main);color:#fff;}
+  .shop-info .section-title{color:#fff;}
+  .shop-info .section-title span{color:var(--accent);}
+  table.info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    color:var(--text);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  table.info-table th, table.info-table td{
+    text-align:left;
+    padding:14px 12px;
+    font-size:13px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  table.info-table th{
+    width:88px;
+    color:var(--main);
+    font-weight:800;
+    background:var(--cream);
+    white-space:nowrap;
+  }
+  table.info-table tr:last-child th, table.info-table tr:last-child td{border-bottom:none;}
+  .map-wrap{margin-top:16px;border-radius:8px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  /* CTA section */
+  .cta-section{
+    text-align:center;
+    background:linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    color:var(--main);
+  }
+  .cta-section h2{
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:10px;
+  }
+  .cta-section p{
+    font-size:13px;
+    margin-bottom:22px;
+    color:#3a2f10;
+  }
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .cta-buttons a{
+    padding:16px;
+    border-radius:8px;
+    font-weight:800;
+    font-size:15px;
+  }
+  .cta-buttons .tel{background:var(--main);color:#fff;}
+  .cta-buttons .mail{background:#fff;color:var(--main);border:2px solid var(--main);}
+
+  /* bottom nav */
+  nav.bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:64px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,.12);
+    z-index:1000;
+  }
+  nav.bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:700;
+    color:var(--main);
+    gap:4px;
+  }
+  nav.bottom-nav a.emph{
+    background:var(--accent);
+    color:var(--main);
+  }
+  nav.bottom-nav .icon{font-size:18px;}
+
+  @media (min-width:480px){
+    .hero-overlay h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="fixed-header">
+  <span class="shop-name">PLAYERZ</span>
+  <a href="tel:08078062321" class="tel-btn">📞 予約する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="PLAYERZ 特殊重心グローブ専門店">
+  <div class="hero-overlay">
+    <p class="sub">特殊重心グローブ専門店・完全予約制</p>
+    <h1>PLAYER ファースト。<br>納得の型付けを、あなたに。</h1>
+    <p class="catch">兵庫県西宮市 ｜ 予約制</p>
+    <p class="stars">★★★★★</p>
+  </div>
+</div>
+
+<section class="featured">
+  <p class="section-title"><span>ICHIOSHI</span>イチオシの商品・サービス</p>
+  <p class="section-lead">PLAYERZが自信を持ってお届けする、特殊重心グローブ</p>
+  <div class="featured-card">
+    <img src="images/glove_main.jpg" alt="特殊重心グローブ">
+    <span class="featured-badge">当店イチオシ</span>
+    <h3>特殊重心グローブ専門店</h3>
+    <p>PLAYERZだからこそ提案できる、特殊重心グローブ。型付けの技術と知識には最高の信頼と実績があります。お客様一人ひとりのポジション・プレースタイルに合わせ、じっくりとお話を伺いながら仕立てます。購入後のメンテナンスまで、店主自らが丁寧にサポートいたします。</p>
+    <div class="featured-points">
+      <span>高い技術力の型付け</span>
+      <span>予約制でじっくり相談</span>
+      <span>購入後のメンテナンス対応</span>
+    </div>
+    <a href="tel:08078062321" class="featured-cta">📞 まずはご予約・お問い合わせ</a>
+  </div>
+</section>
+
+<section>
+  <p class="section-title"><span>STRENGTH</span>選ばれる理由</p>
+  <p class="section-lead">野球が好きな方にこそ、一度体感してほしい</p>
+  <div class="strengths-list">
+    <div class="strength-item">
+      <div class="num">01</div>
+      <div>
+        <h4>圧倒的な技術と知識</h4>
+        <p>型付けの技術・知識ともに最高レベル。専門店ならではの提案力で、他では味わえない納得感があります。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">02</div>
+      <div>
+        <h4>PLAYERファーストの接客</h4>
+        <p>一人ひとりとじっくり向き合う予約制。プレーヤーの立場に立った、心のこもった対応が評判です。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">03</div>
+      <div>
+        <h4>購入後も安心のメンテナンス</h4>
+        <p>買って終わりではなく、長く大切に使い続けられるよう、店主自らアフターケアまで対応します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <p class="section-title"><span>REVIEW</span>お客様の声</p>
+  <p class="section-lead">実際にご来店されたお客様より</p>
+  <div class="review-card">
+    <p class="stars">★★★★★</p>
+    <p>いやもう目から鱗とはこのことを指すのだろう。いい感動を味わえた。買わずとも一度は行って話を聞いてみるべき。野球が好きな人間であれば。PLAYERファースト❗型付けの技術、知識ともに最高の信頼と安心感です。購入後のメンテナンスも店主さんのお人柄が感じられ、長く大切に使うことができます☺️</p>
+    <p class="reviewer">— ご来店されたお客様より</p>
+  </div>
+</section>
+
+<section>
+  <p class="section-title"><span>GALLERY</span>店舗・商品紹介</p>
+  <div class="gallery">
+    <img src="images/glove_main.jpg" alt="特殊重心グローブ">
+    <img src="images/shop_interior.jpg" alt="PLAYERZ 店内">
+  </div>
+</section>
+
+<section class="shop-info">
+  <p class="section-title"><span>SHOP INFO</span>店舗情報</p>
+  <table class="info-table">
+    <tr><th>店名</th><td>PLAYERZ<br>特殊重心グローブ専門店・予約制</td></tr>
+    <tr><th>代表者</th><td>下橋　和貴</td></tr>
+    <tr><th>住所</th><td>兵庫県西宮市西田町５−４<br>阪急サンらいふ</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:08078062321">080-7806-2321</a></td></tr>
+    <tr><th>定休日</th><td>予約制</td></tr>
+    <tr><th>HP</th><td><a href="https://playerz-katatsukeya.jimdo.com/" target="_blank" rel="noopener">playerz-katatsukeya.jimdo.com</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:push_the_envelope_playerz@yahoo.co.jp">push_the_envelope_playerz@yahoo.co.jp</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=兵庫県西宮市西田町５−４&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>まずはお気軽にご予約ください</h2>
+  <p>特殊重心グローブについて、じっくりお話を伺います</p>
+  <div class="cta-buttons">
+    <a href="tel:08078062321" class="tel">📞 電話で予約する（080-7806-2321）</a>
+    <a href="mailto:push_the_envelope_playerz@yahoo.co.jp" class="mail">✉️ メールで問い合わせる</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:08078062321">
+    <span class="icon">📞</span>電話予約
+  </a>
+  <a href="https://www.google.com/maps?q=兵庫県西宮市西田町５−４" target="_blank" rel="noopener">
+    <span class="icon">📍</span>地図
+  </a>
+  <a href="https://playerz-katatsukeya.jimdo.com/" target="_blank" rel="noopener">
+    <span class="icon">🌐</span>HP
+  </a>
+  <a href="mailto:push_the_envelope_playerz@yahoo.co.jp" class="emph">
+    <span class="icon">✉️</span>メール
+  </a>
+</nav>
+
+</body>
+</html>
