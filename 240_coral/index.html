@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>テニス・クロスミントン・スカッシュ・ラケットボール専門店 Coral（コーラル）｜尼崎市塚口</title>
+<meta name="description" content="兵庫県尼崎市南塚口町のラケットスポーツ専門店Coral（コーラル）。テニス・ピックルボール・クロスミントンラケット取扱い。看板犬のいる気さくなお店です。">
+<style>
+  :root{
+    --coral: #ff6f5e;
+    --coral-dark: #e8503e;
+    --coral-light: #ffe3de;
+    --navy: #2b2d3e;
+    --cream: #fffaf7;
+    --text: #333333;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: "Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    padding-top:56px;
+    padding-bottom:60px;
+    line-height:1.7;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  .header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:8px 14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    height:56px;
+  }
+  .header .shop-name{
+    font-size:14px;font-weight:bold;color:var(--navy);
+    line-height:1.3;
+  }
+  .header .shop-name span{color:var(--coral);}
+  .header .tel-btn{
+    background:var(--coral);color:#fff;
+    padding:8px 14px;border-radius:24px;
+    font-size:13px;font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{
+    width:100%;height:64vw;max-height:420px;object-fit:cover;
+    filter:brightness(0.72);
+  }
+  .hero-text{
+    position:absolute;top:0;left:0;right:0;bottom:0;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:20px;
+  }
+  .hero-text .badge{
+    background:var(--coral);
+    padding:5px 16px;border-radius:20px;
+    font-size:12px;letter-spacing:0.1em;margin-bottom:14px;
+  }
+  .hero-text h1{
+    font-size:26px;font-weight:900;line-height:1.5;
+    text-shadow:0 2px 8px rgba(0,0,0,0.5);
+  }
+  .hero-text h1 small{
+    display:block;font-size:15px;font-weight:normal;margin-top:8px;
+  }
+  .hero-text .stars{
+    margin-top:14px;color:#ffd54a;font-size:20px;letter-spacing:2px;
+  }
+
+  section{padding:40px 20px;}
+  .section-title{
+    text-align:center;
+    font-size:22px;font-weight:900;color:var(--navy);
+    margin-bottom:8px;
+  }
+  .section-title .sub{
+    display:block;text-align:center;color:var(--coral);
+    font-size:13px;font-weight:bold;letter-spacing:0.15em;margin-bottom:10px;
+  }
+  .lead{
+    text-align:center;color:#666;font-size:14px;margin-bottom:28px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:linear-gradient(160deg,var(--coral) 0%,var(--coral-dark) 100%);
+    color:#fff;
+  }
+  .featured .section-title, .featured .section-title .sub{color:#fff;}
+  .featured .lead{color:#fff2ef;}
+  .featured-card{
+    background:#fff;color:var(--text);
+    border-radius:16px;overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+  }
+  .featured-card img{width:100%;height:56vw;max-height:280px;object-fit:cover;}
+  .featured-card .body{padding:20px;}
+  .featured-card h3{
+    font-size:19px;color:var(--coral-dark);margin-bottom:10px;font-weight:900;
+  }
+  .featured-card p{font-size:14px;color:#555;margin-bottom:14px;}
+  .featured-list{list-style:none;}
+  .featured-list li{
+    padding:8px 0 8px 26px;position:relative;font-size:14px;font-weight:bold;
+    border-top:1px dashed #eee;
+  }
+  .featured-list li:before{
+    content:"🎾";position:absolute;left:0;top:8px;
+  }
+
+  /* Strengths */
+  .strengths{background:#fff;}
+  .strength-grid{display:flex;flex-direction:column;gap:16px;}
+  .strength-item{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--coral-light);
+    border-radius:12px;padding:16px;
+  }
+  .strength-item .num{
+    flex-shrink:0;
+    background:var(--coral);color:#fff;
+    width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:15px;
+  }
+  .strength-item h4{font-size:15px;color:var(--navy);margin-bottom:4px;font-weight:900;}
+  .strength-item p{font-size:13px;color:#555;}
+
+  /* Reviews */
+  .reviews{background:var(--navy);color:#fff;}
+  .reviews .section-title, .reviews .section-title .sub{color:#fff;}
+  .review-card{
+    background:#383a4d;border-radius:14px;padding:22px;position:relative;
+  }
+  .review-card .stars{color:#ffd54a;font-size:18px;letter-spacing:3px;margin-bottom:12px;}
+  .review-card p{font-size:14px;color:#e6e6ee;}
+  .review-card .from{
+    margin-top:14px;font-size:12px;color:#a9abc0;text-align:right;
+  }
+
+  /* Gallery */
+  .gallery{background:#fff;}
+  .gallery-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  }
+  .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:10px;}
+
+  /* Shop info */
+  .shop-info{background:var(--cream);}
+  .info-table{
+    width:100%;background:#fff;border-radius:12px;overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,0,0,0.06);
+  }
+  .info-table tr{border-bottom:1px solid #f0e6e2;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    width:96px;background:var(--coral-light);color:var(--coral-dark);
+    font-size:13px;font-weight:bold;text-align:left;
+    padding:14px 10px;vertical-align:top;
+  }
+  .info-table td{
+    padding:14px 12px;font-size:13.5px;vertical-align:top;
+  }
+  .info-table td a{color:var(--coral-dark);font-weight:bold;text-decoration:underline;}
+  .map-wrap{margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.06);}
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block;}
+
+  /* CTA section */
+  .cta-section{
+    background:linear-gradient(160deg,var(--navy) 0%,#1b1c28 100%);
+    color:#fff;text-align:center;
+  }
+  .cta-section h2{font-size:20px;font-weight:900;margin-bottom:10px;}
+  .cta-section p{font-size:13.5px;color:#cfd0dd;margin-bottom:22px;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;}
+  .cta-buttons a{
+    padding:14px;border-radius:30px;font-weight:bold;font-size:15px;
+  }
+  .cta-tel{background:var(--coral);color:#fff;}
+  .cta-hp{background:#fff;color:var(--navy);}
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;z-index:100;
+    display:flex;
+    background:#fff;box-shadow:0 -2px 10px rgba(0,0,0,0.1);
+  }
+  .bottom-nav a{
+    flex:1;text-align:center;padding:9px 4px;font-size:11px;color:var(--navy);
+    display:flex;flex-direction:column;align-items:center;gap:2px;
+  }
+  .bottom-nav a.tel{background:var(--coral);color:#fff;}
+  .bottom-nav .icon{font-size:18px;}
+
+  @media (min-width:480px){
+    .hero-text h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="shop-name">Coral<span>（コーラル）</span></div>
+    <a href="tel:0649500526" class="tel-btn">📞 電話する</a>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="images/coral_hero.jpg" alt="Coral店舗外観とラケット">
+    <div class="hero-text">
+      <div class="badge">兵庫県尼崎市 南塚口町</div>
+      <h1>テニス・クロスミントン<br>スカッシュ・ラケットボール専門店
+        <small>Coral（コーラル）</small>
+      </h1>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <!-- Featured -->
+  <section class="featured" id="feature">
+    <span class="sub">ICHIOSHI</span>
+    <h2 class="section-title">イチオシは<br>ラケット専門店ならではの品揃え</h2>
+    <p class="lead">テニスはもちろん、話題のピックルボールやクロスミントンラケットまで幅広く取り扱い。<br>あなたにぴったりの一本がきっと見つかります。</p>
+    <div class="featured-card">
+      <img src="images/coral_racket.jpg" alt="Coralのラケット・ウェア商品">
+      <div class="body">
+        <h3>ラケット選びはCoralにお任せください</h3>
+        <p>オーナーさんが親身になってお話を聞いてくれるので、初心者の方でも安心してラケット選びができます。配色豊かなコーラルオリジナルウェアも人気です。</p>
+        <ul class="featured-list">
+          <li>テニスラケット取扱い</li>
+          <li>ピックルボールラケット取扱い</li>
+          <li>クロスミントンラケット取扱い</li>
+          <li>コーラルオリジナルウェア販売</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section class="strengths">
+    <span class="sub" style="color:var(--coral);display:block;text-align:center;font-size:13px;font-weight:bold;letter-spacing:0.15em;margin-bottom:10px;">POINT</span>
+    <h2 class="section-title">Coralが選ばれる理由</h2>
+    <p class="lead">口コミでも高評価をいただいている、Coralならではの魅力をご紹介します。</p>
+    <div class="strength-grid">
+      <div class="strength-item">
+        <div class="num">1</div>
+        <div>
+          <h4>気さくで楽しいオーナー</h4>
+          <p>親身になって話を聞いてくれるオーナーさんが、あなたに合ったラケット選びをサポートします。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">2</div>
+        <div>
+          <h4>お手頃な価格設定</h4>
+          <p>テニス・ピックルボール・クロスミントンラケットなど、お値打ち価格でご購入いただけます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">3</div>
+        <div>
+          <h4>配色豊かなオリジナルウェア</h4>
+          <p>他にはないコーラルオリジナルウェアも販売中。カラフルなデザインが人気です。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">4</div>
+        <div>
+          <h4>可愛い看板犬がお出迎え</h4>
+          <p>お店には可愛い看板犬がいて、来店するたびに癒されると評判です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <span class="sub">VOICE</span>
+    <h2 class="section-title">お客様の口コミ</h2>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>とても気さくで楽しいオーナーさんで、親身になって話を聞いてくれます。お値段もお手頃で、テニス、ピックルボール、クロスミントンラケットなども取り扱いしてありました。配色豊かなコーラルオリジナルウェアも販売されていてオススメです♫ 可愛い看板犬のいる本当に素敵なお店でした。</p>
+      <div class="from">— ご来店されたお客様より</div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <span class="sub" style="color:var(--coral);display:block;text-align:center;font-size:13px;font-weight:bold;letter-spacing:0.15em;margin-bottom:10px;">GALLERY</span>
+    <h2 class="section-title">店内のご紹介</h2>
+    <div class="gallery-grid">
+      <img src="images/coral_hero.jpg" alt="Coral店舗外観">
+      <img src="images/coral_racket.jpg" alt="Coralのラケット商品棚">
+    </div>
+  </section>
+
+  <!-- Shop info -->
+  <section class="shop-info" id="info">
+    <span class="sub" style="color:var(--coral);display:block;text-align:center;font-size:13px;font-weight:bold;letter-spacing:0.15em;margin-bottom:10px;">SHOP INFO</span>
+    <h2 class="section-title">店舗情報</h2>
+    <table class="info-table">
+      <tr>
+        <th>店名</th>
+        <td>テニス・クロスミントン・スカッシュ・ラケットボール専門店 Coral（コーラル）</td>
+      </tr>
+      <tr>
+        <th>定休日</th>
+        <td>火曜日</td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td>兵庫県尼崎市南塚口町２丁目３６−５ ノステルコート塚口 1F</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><a href="tel:0649500526">06-4950-0526</a></td>
+      </tr>
+      <tr>
+        <th>HP</th>
+        <td><a href="https://coral-tsr.jp/" target="_blank" rel="noopener">https://coral-tsr.jp/</a></td>
+      </tr>
+      <tr>
+        <th>Facebook</th>
+        <td><a href="https://www.facebook.com/people/Coral-%E3%83%86%E3%83%8B%E3%82%B9%E3%82%AF%E3%83%AD%E3%82%B9%E3%83%9F%E3%83%B3%E3%83%88%E3%83%B3%E3%82%B9%E3%82%AB%E3%83%83%E3%82%B7%E3%83%A5%E3%83%A9%E3%82%B1%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB%E5%B0%82%E9%96%80%E5%BA%97/100054649950504/" target="_blank" rel="noopener">Facebookページ</a></td>
+      </tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E5%B0%BC%E5%B4%8E%E5%B8%82%E5%8D%97%E5%A1%9A%E5%8F%A3%E7%94%BA%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%93%EF%BC%96%E2%88%92%EF%BC%95%20%E3%83%8E%E3%82%B9%E3%83%86%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%88%E5%A1%9A%E5%8F%A3&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>ラケット選びなら<br>Coralへお任せください</h2>
+    <p>気さくなオーナーさんと看板犬が、笑顔でお待ちしています。<br>まずはお気軽にお電話・HPからお問い合わせください。</p>
+    <div class="cta-buttons">
+      <a href="tel:0649500526" class="cta-tel">📞 06-4950-0526 に電話する</a>
+      <a href="https://coral-tsr.jp/" target="_blank" rel="noopener" class="cta-hp">🌐 公式サイトを見る</a>
+    </div>
+  </section>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav">
+    <a href="#feature"><span class="icon">🎾</span>イチオシ</a>
+    <a href="tel:0649500526" class="tel"><span class="icon">📞</span>電話する</a>
+    <a href="#info"><span class="icon">📍</span>店舗情報</a>
+    <a href="https://coral-tsr.jp/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+  </nav>
+
+</body>
+</html>
