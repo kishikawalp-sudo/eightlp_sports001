@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マイルドスポーツウエステ｜神戸市垂水区の野球用品専門店</title>
+<meta name="description" content="神戸市垂水区のマイルドスポーツウエステ。グラブをはじめ野球用品が豊富。野球に詳しいスタッフが一人ひとりに合った一品をご提案します。">
+<style>
+:root{
+  --navy:#0d2b52;
+  --navy-d:#081d39;
+  --red:#d7262c;
+  --cream:#f7f4ec;
+  --text:#22262b;
+  --gray:#6b7279;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.8;
+  font-size:16px;
+  padding-top:56px;
+  padding-bottom:64px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;display:block;height:auto;}
+a{text-decoration:none;color:inherit;}
+
+/* header */
+.header{
+  position:fixed;top:0;left:0;width:100%;height:56px;z-index:100;
+  background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px;box-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+.header__name{font-size:15px;font-weight:700;letter-spacing:.02em;line-height:1.3;}
+.header__name span{display:block;font-size:10px;font-weight:400;color:#b9c8dd;}
+.header__tel{
+  background:var(--red);color:#fff;font-weight:700;font-size:13px;
+  padding:8px 12px;border-radius:999px;white-space:nowrap;
+}
+
+/* hero */
+.hero{position:relative;background:var(--navy-d);}
+.hero img{width:100%;height:auto;opacity:.55;object-fit:cover;min-height:280px;}
+.hero__inner{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;color:#fff;padding:16px;
+}
+.hero__badge{
+  background:var(--red);font-size:12px;font-weight:700;
+  padding:4px 14px;border-radius:999px;margin-bottom:12px;letter-spacing:.06em;
+}
+.hero h1{font-size:26px;line-height:1.5;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.5);}
+.hero h1 em{font-style:normal;color:#ffd84d;}
+.hero p{font-size:13px;margin-top:10px;text-shadow:0 2px 8px rgba(0,0,0,.6);}
+
+/* common */
+.section{padding:44px 18px;}
+.section--cream{background:var(--cream);}
+.section--navy{background:var(--navy);color:#fff;}
+.ttl{text-align:center;margin-bottom:24px;}
+.ttl small{display:block;font-size:11px;letter-spacing:.18em;color:var(--red);font-weight:700;margin-bottom:6px;}
+.ttl h2{font-size:22px;font-weight:800;line-height:1.5;}
+.section--navy .ttl small{color:#ffd84d;}
+
+/* push */
+.push{
+  background:#fff;border:2px solid var(--navy);border-radius:14px;
+  overflow:hidden;box-shadow:0 8px 20px rgba(13,43,82,.12);
+}
+.push__head{background:var(--navy);color:#fff;text-align:center;padding:12px;}
+.push__head strong{font-size:20px;display:block;}
+.push__head span{font-size:11px;color:#b9c8dd;letter-spacing:.1em;}
+.push__body{padding:18px;}
+.push__body p{font-size:15px;}
+.push__list{margin-top:16px;display:grid;gap:10px;}
+.push__list li{
+  list-style:none;background:var(--cream);border-radius:10px;
+  padding:12px 14px;font-size:14px;font-weight:700;position:relative;padding-left:40px;
+}
+.push__list li::before{
+  content:"⚾";position:absolute;left:14px;top:11px;font-size:15px;
+}
+.push__note{font-size:12px;color:var(--gray);margin-top:14px;}
+
+/* strengths */
+.cards{display:grid;gap:14px;}
+.card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 4px 12px rgba(0,0,0,.06);}
+.card h3{font-size:16px;color:var(--navy);margin-bottom:6px;font-weight:800;}
+.card h3 b{color:var(--red);margin-right:6px;}
+.card p{font-size:14px;color:#3d444b;}
+
+/* review */
+.review{background:#fff;border-radius:12px;padding:16px;margin-bottom:14px;box-shadow:0 4px 12px rgba(0,0,0,.06);}
+.stars{color:#f5a623;font-size:15px;letter-spacing:.08em;margin-bottom:6px;}
+.review p{font-size:14px;}
+
+/* info */
+.info{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;font-size:14px;}
+.info th,.info td{border-bottom:1px solid #e5e2da;padding:12px;text-align:left;vertical-align:top;}
+.info th{background:#eeeade;width:32%;font-weight:700;color:var(--navy);white-space:nowrap;}
+.info a{color:var(--red);font-weight:700;word-break:break-all;}
+.map{margin-top:16px;border-radius:12px;overflow:hidden;line-height:0;}
+.map iframe{width:100%;height:230px;border:0;}
+
+/* cta */
+.cta{text-align:center;}
+.cta p{font-size:15px;margin-bottom:18px;}
+.btn{
+  display:block;background:var(--red);color:#fff;font-weight:800;font-size:17px;
+  padding:16px;border-radius:999px;margin-bottom:10px;box-shadow:0 6px 16px rgba(215,38,44,.35);
+}
+.btn--sub{background:#fff;color:var(--navy);border:2px solid #fff;}
+.btn--line{background:transparent;border:2px solid #fff;color:#fff;}
+
+/* footer */
+.footer{background:var(--navy-d);color:#c6d2e2;text-align:center;font-size:12px;padding:24px 16px;}
+
+/* bottom nav */
+.nav{
+  position:fixed;left:0;bottom:0;width:100%;height:64px;z-index:100;
+  background:#fff;border-top:1px solid #e0ddd5;display:flex;
+  box-shadow:0 -2px 10px rgba(0,0,0,.08);
+}
+.nav a{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;color:var(--navy);gap:3px;
+}
+.nav a span{font-size:18px;line-height:1;}
+.nav a.is-tel{background:var(--red);color:#fff;}
+
+@media(min-width:768px){
+  body{font-size:17px;}
+  .section{padding:60px 24px;max-width:780px;margin:0 auto;}
+  .section--cream,.section--navy{max-width:none;}
+  .section--cream>*,.section--navy>*{max-width:780px;margin-left:auto;margin-right:auto;}
+  .hero h1{font-size:36px;}
+  .cards{grid-template-columns:repeat(3,1fr);}
+  .push__list{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header__name">マイルドスポーツウエステ<span>神戸市垂水区の野球用品専門店</span></div>
+  <a class="header__tel" href="tel:078-708-4334">📞 078-708-4334</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="images/hero.jpg" alt="マイルドスポーツウエステの野球用品売り場">
+  <div class="hero__inner">
+    <span class="hero__badge">神戸市垂水区・天ノ下町</span>
+    <h1>その一球に、<br><em>「自分のグラブ」</em>を。</h1>
+    <p>野球に詳しいスタッフが、あなたに合う一品をご提案します</p>
+  </div>
+</section>
+
+<!-- イチオシ -->
+<section class="section">
+  <div class="ttl">
+    <small>OUR RECOMMENDATION</small>
+    <h2>イチオシは<br>豊富な品揃えの「野球用品」</h2>
+  </div>
+
+  <div class="push">
+    <div class="push__head">
+      <span>BASEBALL ITEMS</span>
+      <strong>野球用品</strong>
+    </div>
+    <img src="images/baseball.jpg" alt="店内に並ぶグラブなどの野球用品">
+    <div class="push__body">
+      <p>グラブ・バット・スパイク・ウェアまで、野球に必要な道具が一通り揃います。とくにグラブは品数が豊富で、内野用・外野用・投手用・キャッチャーミットと、ポジションやサイズ、革の質感を見比べながらお選びいただけます。</p>
+      <ul class="push__list">
+        <li>内野・外野・投手・捕手用グラブが豊富</li>
+        <li>初めての一つでも一から相談OK</li>
+        <li>硬式・軟式・少年用まで幅広く対応</li>
+        <li>バット・スパイク・小物も取り揃え</li>
+      </ul>
+      <p class="push__note">※在庫状況・お取り寄せについては、お気軽にお電話ください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="section section--cream">
+  <div class="ttl">
+    <small>OUR STRENGTH</small>
+    <h2>選ばれている3つの理由</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <h3><b>01</b>野球に詳しいスタッフ</h3>
+      <p>野球をよく知るスタッフが在籍。使う人のレベルやポジション、プレースタイルを伺ったうえでご提案するので、安心してお買い物いただけます。</p>
+    </div>
+    <div class="card">
+      <h3><b>02</b>納得いくまで選べる品数</h3>
+      <p>数多くのグラブを実際に手にとって比較できます。「思っていた一つ」に出会えるまで、じっくりお選びください。</p>
+    </div>
+    <div class="card">
+      <h3><b>03</b>初めての方も大歓迎</h3>
+      <p>初めてのグラブ選びこそご相談ください。サイズ感や手入れの仕方まで、疑問にひとつずつお答えします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="section">
+  <div class="ttl">
+    <small>REVIEWS</small>
+    <h2>お客様からの声</h2>
+  </div>
+  <div class="review">
+    <div class="stars">★★★★☆</div>
+    <p>初めての内野グラブを買うためにいくつか質問をして品数豊富だったので自分の思うグラブと出会えました</p>
+  </div>
+  <div class="review">
+    <div class="stars">★★★★★</div>
+    <p>野球⚾️に詳しいお店の方がいらして、安心して買い物ができました。ありがとうございました。</p>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="section section--cream">
+  <div class="ttl">
+    <small>SHOP INFORMATION</small>
+    <h2>店舗情報</h2>
+  </div>
+  <img src="images/shop.jpg" alt="マイルドスポーツウエステの店舗外観" style="border-radius:12px;margin-bottom:16px;">
+  <table class="info">
+    <tr><th>店名</th><td>マイルドスポーツウエステ</td></tr>
+    <tr><th>住所</th><td>兵庫県神戸市垂水区天ノ下町1-1-113</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:078-708-4334">078-708-4334</a></td></tr>
+    <tr><th>定休日</th><td>木曜日（祝日は営業）</td></tr>
+    <tr><th>メール</th><td><a href="mailto:mildwest8@ybb.ne.jp">mildwest8@ybb.ne.jp</a></td></tr>
+    <tr><th>ホームページ</th><td><a href="https://mildwest.jimdofree.com/" target="_blank" rel="noopener">https://mildwest.jimdofree.com/</a></td></tr>
+    <tr><th>取扱い</th><td>野球用品（グラブ・バット・スパイク・ウェア ほか）</td></tr>
+  </table>
+  <div class="map">
+    <iframe src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E7%A5%9E%E6%88%B8%E5%B8%82%E5%9E%82%E6%B0%B4%E5%8C%BA%E5%A4%A9%E3%83%8E%E4%B8%8B%E7%94%BA1-1-113&output=embed" loading="lazy" title="マイルドスポーツウエステ 地図"></iframe>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--navy cta">
+  <div class="ttl">
+    <small>CONTACT</small>
+    <h2>グラブ選び、<br>まずはご相談ください</h2>
+  </div>
+  <p>「どれを選べばいいか分からない」で大丈夫です。<br>お電話でもメールでもお気軽にどうぞ。</p>
+  <a class="btn" href="tel:078-708-4334">📞 電話する（078-708-4334）</a>
+  <a class="btn btn--line" href="mailto:mildwest8@ybb.ne.jp">✉ メールで問い合わせる</a>
+  <a class="btn btn--line" href="https://mildwest.jimdofree.com/" target="_blank" rel="noopener">🌐 公式ホームページ</a>
+</section>
+
+<footer class="footer">
+  マイルドスポーツウエステ<br>
+  兵庫県神戸市垂水区天ノ下町1-1-113／TEL 078-708-4334<br>
+  <small>&copy; マイルドスポーツウエステ</small>
+</footer>
+
+<nav class="nav">
+  <a href="#top"><span>🏠</span>ホーム</a>
+  <a href="https://mildwest.jimdofree.com/" target="_blank" rel="noopener"><span>🌐</span>HP</a>
+  <a href="mailto:mildwest8@ybb.ne.jp"><span>✉</span>メール</a>
+  <a class="is-tel" href="tel:078-708-4334"><span>📞</span>電話する</a>
+</nav>
+
+</body>
+</html>
