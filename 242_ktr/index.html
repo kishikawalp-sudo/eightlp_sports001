@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>KTR本店【手作り木製バット専門店】| 兵庫県伊丹市</title>
+<style>
+  :root{
+    --wood-dark:#3e2723;
+    --wood:#5d4037;
+    --wood-light:#8d6e63;
+    --accent:#c9a227;
+    --accent-light:#e8c766;
+    --cream:#fbf6ec;
+    --text:#2b211d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    padding-top:60px;
+    padding-bottom:64px;
+    line-height:1.7;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:60px;
+    background:var(--wood-dark);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 14px;
+    z-index:100;
+    box-shadow:0 2px 8px rgba(0,0,0,0.3);
+  }
+  header .logo{
+    color:var(--accent-light);
+    font-weight:bold;
+    font-size:15px;
+    letter-spacing:1px;
+  }
+  header .logo span{
+    display:block;
+    font-size:10px;
+    color:#e0d5c5;
+    font-weight:normal;
+  }
+  .header-call{
+    background:var(--accent);
+    color:var(--wood-dark);
+    padding:8px 14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:13px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(rgba(30,20,15,0.55),rgba(30,20,15,0.75)),url('images/hero_bat.jpg') center/cover no-repeat;
+    color:#fff;
+    padding:56px 20px 44px;
+    text-align:center;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--wood-dark);
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:14px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:10px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  }
+  .hero p{
+    font-size:14px;
+    color:#f0e6d6;
+    margin-bottom:22px;
+  }
+  .hero-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:var(--wood-dark);
+    padding:15px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:16px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  }
+  .btn-secondary{
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.6);
+    color:#fff;
+    padding:13px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:15px;
+  }
+
+  /* Section common */
+  section{padding:44px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:21px;
+    font-weight:bold;
+    color:var(--wood-dark);
+    margin-bottom:6px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:12px;
+    color:var(--wood-light);
+    margin-bottom:28px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+  }
+
+  /* Featured product - イチオシ */
+  .featured{
+    background:var(--wood-dark);
+    color:#fff;
+  }
+  .featured .section-title{color:var(--accent-light);}
+  .featured .section-sub{color:#c7b8a8;}
+  .feature-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .feature-card img{width:100%;height:auto;}
+  .feature-card .body{padding:20px;}
+  .feature-card h3{
+    color:var(--accent-light);
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .feature-card p{
+    font-size:14px;
+    color:#e4dccf;
+    margin-bottom:14px;
+  }
+  .feature-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .feature-list li{
+    font-size:13.5px;
+    color:#f0e6d6;
+    padding-left:22px;
+    position:relative;
+  }
+  .feature-list li::before{
+    content:"◆";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-size:11px;
+  }
+  .order-note{
+    text-align:center;
+    margin-top:22px;
+    font-size:13px;
+    color:var(--accent-light);
+    border-top:1px dashed rgba(255,255,255,0.25);
+    padding-top:16px;
+  }
+
+  /* Strengths */
+  .strengths{background:var(--cream);}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    background:#fff;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(93,64,55,0.08);
+    border-left:4px solid var(--accent);
+  }
+  .strength-num{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--accent);
+    min-width:34px;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--wood-dark);
+    margin-bottom:6px;
+  }
+  .strength-item p{font-size:13px;color:#5a4d44;}
+
+  .story-box{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    margin-top:22px;
+    box-shadow:0 2px 8px rgba(93,64,55,0.08);
+  }
+  .story-box h4{
+    color:var(--wood-dark);
+    font-size:15px;
+    margin-bottom:10px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .story-box h4::before{content:"🪵";}
+  .story-box p{font-size:13.5px;color:#5a4d44;white-space:pre-line;}
+
+  /* Gallery image */
+  .gallery-img{
+    border-radius:12px;
+    overflow:hidden;
+    margin:22px 0;
+    box-shadow:0 4px 12px rgba(93,64,55,0.15);
+  }
+
+  /* Reviews */
+  .reviews{background:var(--wood-light);color:#fff;}
+  .reviews .section-title{color:#fff;}
+  .reviews .section-sub{color:#f0e6d6;}
+  .review-card{
+    background:rgba(255,255,255,0.92);
+    color:var(--text);
+    border-radius:12px;
+    padding:20px;
+  }
+  .stars{
+    color:var(--accent);
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .review-card p{
+    font-size:14px;
+    white-space:pre-line;
+    margin-bottom:10px;
+  }
+  .review-card .signoff{
+    font-size:13px;
+    color:var(--wood);
+    font-weight:bold;
+  }
+
+  /* Shop info */
+  .shopinfo{background:var(--cream);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(93,64,55,0.08);
+    font-size:13.5px;
+  }
+  .info-table tr{border-bottom:1px solid #eee0cc;}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table th{
+    background:#f2e9d8;
+    color:var(--wood-dark);
+    text-align:left;
+    padding:12px 14px;
+    width:32%;
+    font-weight:bold;
+    vertical-align:top;
+  }
+  .info-table td{
+    padding:12px 14px;
+    color:#3a2f28;
+    vertical-align:top;
+  }
+  .info-table a{color:var(--wood);text-decoration:underline;}
+  .map-frame{
+    margin-top:18px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(93,64,55,0.08);
+  }
+  .map-frame iframe{width:100%;height:220px;border:0;}
+
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+    justify-content:center;
+  }
+  .sns-links a{
+    background:var(--wood-dark);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:bold;
+  }
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(135deg,var(--wood-dark),var(--wood));
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:22px;
+    margin-bottom:10px;
+    color:var(--accent-light);
+  }
+  .cta p{font-size:13.5px;color:#e4dccf;margin-bottom:24px;}
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:var(--wood-light);
+    background:var(--cream);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:64px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    font-size:11px;
+    color:var(--wood-dark);
+    font-weight:bold;
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:var(--wood-dark);
+  }
+  .bottom-nav a .icon{font-size:19px;}
+
+  @media (min-width:480px){
+    .hero h1{font-size:29px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">KTR本店<span>手作り木製バット専門店</span></div>
+  <a href="tel:09053623219" class="header-call">📞 090-5362-3219</a>
+</header>
+
+<div class="hero">
+  <span class="badge">完全予約制・完全受注生産</span>
+  <h1>職人が一本一本削り出す、<br>あなただけの木製バット</h1>
+  <p>大阪発、創業2011年。既製品を一切扱わない国内唯一の木製バット専門店</p>
+  <div class="hero-buttons">
+    <a href="tel:09053623219" class="btn-primary">📞 今すぐ電話で相談する</a>
+    <a href="#contact" class="btn-secondary">ご予約・お問い合わせフォーム</a>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title">イチオシの商品</div>
+  <div class="section-sub">FEATURED PRODUCT</div>
+  <div class="feature-card">
+    <img src="images/bat_craft.jpg" alt="職人が手作りする木製バット">
+    <div class="body">
+      <h3>完全受注生産・職人手作り木製バット</h3>
+      <p>良質な素材のみを厳選し、既製品を一切扱わない国内唯一のお店。徹底的にこだわる野球選手一人ひとりに、じっくりと向き合ってバットを仕立てます。</p>
+      <ul class="feature-list">
+        <li>ノックバットから実戦用バットまで幅広く対応</li>
+        <li>素材・グリップ・バランスまでこだわりのオーダーメイド</li>
+        <li>親子2代・チーム単位でのご利用実績も豊富</li>
+        <li>ケガなく、後悔なく野球を楽しむための徹底サポート</li>
+      </ul>
+      <div class="order-note">ご相談・ご予約はお電話またはお問い合わせフォームから承ります</div>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">KTRが選ばれる理由</div>
+  <div class="section-sub">OUR STRENGTHS</div>
+
+  <div class="strength-item">
+    <div class="strength-num">01</div>
+    <div>
+      <h4>創業2011年・大阪発の実績</h4>
+      <p>長年にわたり全国のお客様・チームにご利用いただいてきた確かな信頼と実績があります。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">02</div>
+    <div>
+      <h4>既製品を一切扱わない国内唯一の専門店</h4>
+      <p>良質な素材のみを提供し、完全受注生産・職人手作りにこだわり抜いています。</p>
+    </div>
+  </div>
+  <div class="strength-item">
+    <div class="strength-num">03</div>
+    <div>
+      <h4>徹底的にこだわる選手だけに向き合う</h4>
+      <p>完全予約制だからこそ、お一人お一人とじっくり対話しながらバットを仕立てられます。</p>
+    </div>
+  </div>
+
+  <div class="gallery-img">
+    <img src="images/bat_lineup.jpg" alt="木製バットのラインナップ">
+  </div>
+
+  <div class="story-box">
+    <h4>創業者ストーリー</h4>
+    <p>KTRは2011年に大阪で開業。創業12年目の2011年1月より活動内容を一新し、既製品を一切扱わず良質素材のみを提供する国内唯一のお店として、徹底的にこだわる野球選手にのみじっくり対応できる体制へ。一度しかない大事な人生のうち、野球選手としての時間をケガなく後悔なく、最高に楽しんでいただくために全力でサポートいたします。</p>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="section-sub">CUSTOMER REVIEWS</div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>使ったらわかる！品質・耐久性抜群！
+私は、ノックバット
+息子は、トレーニングも実戦もKTR
+これからも使い続けます o(^o^)o</p>
+    <div class="signoff">— ご利用者様の声</div>
+  </div>
+</section>
+
+<section class="shopinfo">
+  <div class="section-title">店舗情報</div>
+  <div class="section-sub">SHOP INFORMATION</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>KTR本店【手作り木製バット専門店】</td></tr>
+    <tr><th>会社名</th><td>KTR合同会社</td></tr>
+    <tr><th>住所</th><td>兵庫県伊丹市野間８丁目１−２<br>あぜりあサンハイツ 1階正面右端店舗</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:09053623219">090-5362-3219</a></td></tr>
+    <tr><th>定休日</th><td>完全予約制</td></tr>
+    <tr><th>HP</th><td><a href="https://ktr.handcrafted.jp/" target="_blank" rel="noopener">https://ktr.handcrafted.jp/</a></td></tr>
+  </table>
+
+  <div class="map-frame">
+    <iframe src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E4%BC%8A%E4%B8%B9%E5%B8%82%E9%87%8E%E9%96%93%EF%BC%98%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%8D%EF%BC%92&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="sns-links">
+    <a href="https://x.com/KTR89Keitaro" target="_blank" rel="noopener">𝕏 公式SNS</a>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>完全予約制のため、お電話またはフォームより<br>ご希望の日時をお知らせください</p>
+  <div class="cta-buttons">
+    <a href="tel:09053623219" class="btn-primary">📞 090-5362-3219 に電話する</a>
+    <a href="https://thebase.com/inquiry/ktr-handcrafted-jp?_gl=1*2e9jom*_gcl_au*NDEwODMxNjY3LjE3NjI5MDk4OTE.*_ga*OTQyOTk0MTYyLjE3NjI5MDk4OTE.*_ga_574HL6KGKQ*czE3NjI5MDk4OTEkbzEkZzAkdDE3NjI5MDk4OTgkajUzJGwwJGgw" target="_blank" rel="noopener" class="btn-secondary">お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<footer>
+  © KTR合同会社 KTR本店【手作り木製バット専門店】
+</footer>
+
+<div class="bottom-nav">
+  <a href="tel:09053623219" class="call"><span class="icon">📞</span>電話する</a>
+  <a href="#contact"><span class="icon">📝</span>お問い合わせ</a>
+  <a href="https://ktr.handcrafted.jp/" target="_blank" rel="noopener"><span class="icon">🌐</span>公式HP</a>
+  <a href="https://x.com/KTR89Keitaro" target="_blank" rel="noopener"><span class="icon">𝕏</span>SNS</a>
+</div>
+
+</body>
+</html>
