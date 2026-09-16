@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カヤックコウノトリ｜兵庫県尼崎市のカヤック専門店</title>
+<style>
+  :root{
+    --blue-deep:#0b3d5c;
+    --blue-main:#1a6ea8;
+    --blue-light:#4fa3d1;
+    --aqua:#2fb8c6;
+    --sand:#f5efe2;
+    --white:#ffffff;
+    --text:#233238;
+    --star:#ffb400;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    color:var(--text);
+    background:var(--sand);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:64px;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:600px;margin:0 auto;padding:0 20px;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:var(--blue-deep);
+    color:var(--white);
+    height:56px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  }
+  header .shopname{font-size:16px;font-weight:bold;letter-spacing:0.02em;}
+  header .tel-btn{
+    background:var(--aqua);
+    color:var(--white);
+    font-size:13px;
+    font-weight:bold;
+    padding:8px 14px;
+    border-radius:20px;
+    display:flex;align-items:center;gap:6px;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--blue-deep) 0%,var(--blue-main) 100%);
+    color:var(--white);
+    text-align:center;
+    padding:36px 20px 44px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:-2px;left:0;right:0;
+    height:36px;
+    background:var(--sand);
+    border-radius:50% 50% 0 0/28px 28px 0 0;
+  }
+  .hero .catch-sub{
+    font-size:13px;
+    letter-spacing:0.15em;
+    color:var(--aqua);
+    font-weight:bold;
+    margin-bottom:10px;
+  }
+  .hero h1{
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:8px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.25);
+  }
+  .hero .hero-desc{
+    font-size:14px;
+    color:#e4f2fa;
+    margin-bottom:18px;
+  }
+  .hero-img-wrap{
+    position:relative;
+    z-index:2;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,0.3);
+    margin:0 auto;
+    max-width:480px;
+  }
+  .hero-img-wrap img{width:100%;height:auto;}
+  .hero-badge{
+    display:inline-block;
+    background:var(--white);
+    color:var(--blue-deep);
+    font-size:12px;
+    font-weight:bold;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-top:16px;
+  }
+
+  section{padding:40px 0;}
+  .section-title{
+    text-align:center;
+    margin-bottom:26px;
+  }
+  .section-title .en{
+    display:block;
+    font-size:11px;
+    letter-spacing:0.2em;
+    color:var(--aqua);
+    font-weight:bold;
+    margin-bottom:4px;
+  }
+  .section-title .ja{
+    font-size:21px;
+    font-weight:bold;
+    color:var(--blue-deep);
+    position:relative;
+    display:inline-block;
+    padding-bottom:10px;
+  }
+  .section-title .ja::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    width:40px;height:3px;
+    background:var(--aqua);
+    border-radius:2px;
+  }
+
+  /* featured product - main push */
+  .featured{
+    background:var(--white);
+  }
+  .featured-card{
+    background:linear-gradient(160deg,#eaf6fa 0%, var(--white) 60%);
+    border:2px solid var(--aqua);
+    border-radius:18px;
+    padding:22px 18px 26px;
+    box-shadow:0 6px 20px rgba(26,110,168,0.12);
+    position:relative;
+  }
+  .featured-ribbon{
+    position:absolute;
+    top:-14px;left:50%;
+    transform:translateX(-50%);
+    background:var(--star);
+    color:var(--white);
+    font-size:13px;
+    font-weight:bold;
+    padding:7px 20px;
+    border-radius:20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    white-space:nowrap;
+  }
+  .featured-card img{
+    border-radius:12px;
+    margin:14px 0 16px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.12);
+  }
+  .featured-card h3{
+    font-size:19px;
+    color:var(--blue-deep);
+    text-align:center;
+    margin-bottom:10px;
+  }
+  .featured-card p{
+    font-size:14px;
+    color:var(--text);
+  }
+  .featured-points{
+    margin-top:16px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .featured-points .point{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    background:var(--white);
+    border-radius:10px;
+    padding:10px 12px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .featured-points .icon{
+    flex:0 0 auto;
+    width:26px;height:26px;
+    border-radius:50%;
+    background:var(--blue-main);
+    color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:bold;
+  }
+  .featured-points .txt{font-size:13.5px;}
+
+  .notice-box{
+    margin-top:18px;
+    background:#fff4e0;
+    border-left:4px solid var(--star);
+    border-radius:8px;
+    padding:12px 14px;
+    font-size:12.5px;
+    color:#6b4b00;
+  }
+
+  /* strengths */
+  .strengths{background:var(--sand);}
+  .strength-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-item{
+    background:var(--white);
+    border-radius:12px;
+    padding:16px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .strength-item .num{
+    flex:0 0 auto;
+    width:34px;height:34px;
+    border-radius:50%;
+    background:var(--blue-deep);
+    color:var(--white);
+    font-weight:bold;
+    font-size:15px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .strength-item .body h4{
+    font-size:15px;
+    color:var(--blue-deep);
+    margin-bottom:4px;
+  }
+  .strength-item .body p{
+    font-size:13px;
+    color:#4a5a60;
+  }
+
+  /* gallery */
+  .gallery{background:var(--white);}
+  .gallery img{
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* reviews */
+  .reviews{background:var(--sand);}
+  .review-card{
+    background:var(--white);
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .review-card .stars{
+    color:var(--star);
+    font-size:16px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13.5px;
+    color:#3c4a50;
+  }
+
+  /* shop info */
+  .shopinfo{background:var(--white);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    background:var(--white);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.07);
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:12px 14px;
+    border-bottom:1px solid #e6ece f0;
+    border-bottom:1px solid #e5edf1;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:96px;
+    background:#eef6fa;
+    color:var(--blue-deep);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table tr:last-child th,
+  .info-table tr:last-child td{border-bottom:none;}
+  .info-table a{color:var(--blue-main);text-decoration:underline;}
+  .map-wrap{
+    margin-top:16px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.07);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  .sns-links{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+    flex-wrap:wrap;
+  }
+  .sns-links a{
+    flex:1;
+    min-width:120px;
+    text-align:center;
+    background:var(--blue-deep);
+    color:var(--white);
+    padding:12px 10px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:bold;
+  }
+  .sns-links a.youtube{background:#d93025;}
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(160deg,var(--blue-deep) 0%,var(--blue-main) 100%);
+    color:var(--white);
+    text-align:center;
+  }
+  .cta h2{font-size:20px;margin-bottom:10px;}
+  .cta p{font-size:13.5px;color:#dff0f8;margin-bottom:22px;}
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:340px;
+    margin:0 auto;
+  }
+  .cta-buttons a{
+    display:block;
+    padding:15px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-buttons .btn-tel{background:var(--aqua);color:var(--white);}
+  .cta-buttons .btn-hp{background:var(--white);color:var(--blue-deep);border:2px solid var(--white);}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:100;
+    background:var(--white);
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px 8px;
+    font-size:11px;
+    color:var(--blue-deep);
+    font-weight:bold;
+  }
+  .bottom-nav a .ic{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+  .bottom-nav a.main{
+    background:var(--aqua);
+    color:var(--white);
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:#7d8a90;
+    background:var(--sand);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">カヤックコウノトリ</div>
+  <a href="tel:09083869214" class="tel-btn">📞 電話する</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <span class="catch-sub">HYOGO AMAGASAKI KAYAK SHOP</span>
+    <h1>知識と経験で選ぶ、<br>本物のカヤックショップ</h1>
+    <p class="hero-desc">兵庫県尼崎市 戸ノ内町のカヤック・カヌー専門店</p>
+    <div class="hero-img-wrap">
+      <img src="images/kounotori_main.jpg" alt="カヤックコウノトリ 店内に並ぶカヤック">
+    </div>
+    <span class="hero-badge">★4.0〜5.0の口コミ多数</span>
+  </div>
+</div>
+
+<!-- 一押し商品：カヤック専門店であることを最大限訴求 -->
+<section class="featured">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">OUR SPECIALTY</span>
+      <span class="ja">イチオシは「カヤック専門店」</span>
+    </div>
+    <div class="featured-card">
+      <div class="featured-ribbon">★ カヤック・カヌー専門店</div>
+      <img src="images/kounotori_kayak.jpg" alt="カヤックコウノトリで取り扱う様々なタイプのカヤック">
+      <h3>様々なタイプのカヤックを豊富に取り扱い</h3>
+      <p>カヤックコウノトリは、豊富な知識と経験を持つスタッフが対応するプロショップです。ツーリング用・フィッシング用・激流用など、様々なタイプのカヤックを取り扱っているので、カヤックに興味のある方はぜひ一度ご来店ください。</p>
+      <div class="featured-points">
+        <div class="point">
+          <div class="icon">1</div>
+          <div class="txt">豊富な知識と経験を持つプロショップ。カヤック選びのご相談にしっかり対応します。</div>
+        </div>
+        <div class="point">
+          <div class="icon">2</div>
+          <div class="txt">様々なタイプのカヤックを取り扱い。用途やレベルに合わせて選べます。</div>
+        </div>
+        <div class="point">
+          <div class="icon">3</div>
+          <div class="txt">普段あまり見かけないパーツ類も豊富に取り揃えています。</div>
+        </div>
+        <div class="point">
+          <div class="icon">4</div>
+          <div class="txt">気さくで優しい店長が、初めての方にも安心して相談できる雰囲気で対応します。</div>
+        </div>
+      </div>
+      <div class="notice-box">
+        ⚠️ 初心者の方は、不要なトラブルや事故を回避するためにも、サポートのある実店舗での購入をおすすめします。カヤックコウノトリなら安心してご相談いただけます。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="strengths">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">STRENGTH</span>
+      <span class="ja">選ばれる理由</span>
+    </div>
+    <div class="strength-list">
+      <div class="strength-item">
+        <div class="num">1</div>
+        <div class="body">
+          <h4>豊富な知識と経験</h4>
+          <p>カヤックに関する豊富な知識と経験を持つプロショップだからこそ、あなたに合った一艇をご提案できます。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">2</div>
+        <div class="body">
+          <h4>数少ないカヤック・カヌー専門店</h4>
+          <p>関西でも数少ないカヤック・カヌーの専門店。普段見かけないパーツなども取り揃えています。</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">3</div>
+        <div class="body">
+          <h4>気さくで優しい店長</h4>
+          <p>初めての方でも相談しやすい、気さくで優しい店長が丁寧に対応します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ギャラリー -->
+<section class="gallery">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">GALLERY</span>
+      <span class="ja">店内・取扱い商品</span>
+    </div>
+    <img src="images/kounotori_shop.jpg" alt="カヤックコウノトリ 店内の様子">
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="reviews">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">REVIEW</span>
+      <span class="ja">お客様の口コミ</span>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <p>豊富な知識と経験を持つプロショップです。様々なタイプのカヤックを取り扱っているので、カヤックに興味のある方は一度来店することをおすすめします。店長は気さくで優しい人です。</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>数少ないカヤック、カヌーの専門店。普段見ないパーツなどもあります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shopinfo">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">SHOP INFO</span>
+      <span class="ja">店舗情報</span>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>カヤックコウノトリ</td></tr>
+      <tr><th>住所</th><td>兵庫県尼崎市戸ノ内町１丁目２−１８ 2F</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:09083869214">090-8386-9214</a></td></tr>
+      <tr><th>定休日</th><td>月曜日・火曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://www.kono-tori.com/" target="_blank" rel="noopener">www.kono-tori.com</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:kayak@kono-tori.com">kayak@kono-tori.com</a></td></tr>
+    </table>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E5%B0%BC%E5%B4%8E%E5%B8%82%E6%88%B8%E3%83%8E%E5%86%85%E7%94%BA%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%8D%EF%BC%91%EF%BC%98&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+    <div class="sns-links">
+      <a href="https://www.kono-tori.com/" target="_blank" rel="noopener">🌐 公式HP</a>
+      <a class="youtube" href="https://www.youtube.com/channel/UCLmrETYuCa-B-2YtvlMsfRg" target="_blank" rel="noopener">▶ YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>カヤックのご相談はお気軽に</h2>
+    <p>気さくで優しい店長が、初心者の方にも丁寧に対応いたします。<br>まずはお電話またはHPからお問い合わせください。</p>
+    <div class="cta-buttons">
+      <a class="btn-tel" href="tel:09083869214">📞 090-8386-9214 に電話する</a>
+      <a class="btn-hp" href="https://www.kono-tori.com/" target="_blank" rel="noopener">🌐 公式サイトを見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © カヤックコウノトリ
+</footer>
+
+<!-- 固定フッターナビ -->
+<div class="bottom-nav">
+  <a class="main" href="tel:09083869214"><span class="ic">📞</span>電話</a>
+  <a href="#shopinfo-anchor" onclick="document.querySelector('.shopinfo').scrollIntoView({behavior:'smooth'});return false;"><span class="ic">📍</span>アクセス</a>
+  <a href="https://www.kono-tori.com/" target="_blank" rel="noopener"><span class="ic">🌐</span>HP</a>
+  <a href="mailto:kayak@kono-tori.com"><span class="ic">✉️</span>メール</a>
+</div>
+
+</body>
+</html>
