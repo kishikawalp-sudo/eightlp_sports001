@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プラザスポーツ｜神戸市灘区の野球用品専門店｜久保田スラッガー充実</title>
+<meta name="description" content="神戸市灘区・王子町のプラザスポーツ。久保田スラッガーをはじめ野球用品が充実。グローブ選びは物腰柔らかい店主が丁寧にご案内します。">
+<style>
+:root{
+  --navy:#0d2149;
+  --navy-d:#081634;
+  --red:#c8102e;
+  --gold:#d8a531;
+  --bg:#f5f6f8;
+  --text:#22272f;
+  --gray:#6b7280;
+  --line:#e2e5ea;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.8;
+  font-size:15px;
+  padding-top:56px;
+  padding-bottom:64px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block;}
+a{text-decoration:none;color:inherit;}
+.wrap{width:100%;max-width:640px;margin:0 auto;background:#fff;overflow:hidden;}
+.inner{padding:0 18px;}
+
+/* header */
+.header{
+  position:fixed;top:0;left:0;right:0;height:56px;z-index:100;
+  background:var(--navy);display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px;max-width:640px;margin:0 auto;
+  box-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+.header .logo{color:#fff;font-size:16px;font-weight:700;letter-spacing:.04em;line-height:1.2;}
+.header .logo span{display:block;font-size:9px;color:var(--gold);font-weight:500;letter-spacing:.12em;}
+.header .tel{
+  background:var(--red);color:#fff;font-size:13px;font-weight:700;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* hero */
+.hero{position:relative;background:var(--navy-d);}
+.hero img{width:100%;height:auto;opacity:.55;}
+.hero-body{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;color:#fff;padding:12px;
+  background:linear-gradient(180deg,rgba(8,22,52,.45) 0%,rgba(8,22,52,.75) 100%);
+}
+.hero-badge{
+  display:inline-block;background:var(--gold);color:var(--navy-d);
+  font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:10px;
+  letter-spacing:.06em;
+}
+.hero h1{font-size:25px;line-height:1.45;font-weight:800;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+.hero h1 em{font-style:normal;color:var(--gold);}
+.hero p{font-size:12.5px;margin-top:10px;text-shadow:0 1px 8px rgba(0,0,0,.7);}
+
+/* section common */
+.sec{padding:46px 0 42px;}
+.sec-head{text-align:center;margin-bottom:26px;}
+.sec-head .en{
+  display:block;font-size:10px;letter-spacing:.24em;color:var(--gold);font-weight:700;margin-bottom:6px;
+}
+.sec-head h2{font-size:21px;font-weight:800;color:var(--navy);line-height:1.5;}
+.sec-head h2 em{font-style:normal;color:var(--red);}
+
+/* oshi */
+.oshi{background:linear-gradient(180deg,#0d2149 0%,#123063 100%);color:#fff;}
+.oshi .sec-head h2{color:#fff;}
+.oshi .sec-head h2 em{color:var(--gold);}
+.oshi-lead{
+  text-align:center;font-size:14px;margin-bottom:20px;color:#dbe2f0;
+}
+.oshi-img{border-radius:12px;overflow:hidden;margin-bottom:22px;box-shadow:0 8px 24px rgba(0,0,0,.35);}
+.oshi-card{
+  background:rgba(255,255,255,.07);border:1px solid rgba(216,165,49,.4);
+  border-radius:12px;padding:18px 16px;margin-bottom:14px;
+}
+.oshi-card h3{
+  font-size:16.5px;font-weight:800;color:var(--gold);margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+.oshi-card h3 i{
+  font-style:normal;background:var(--gold);color:var(--navy-d);
+  font-size:11px;padding:2px 8px;border-radius:4px;flex-shrink:0;
+}
+.oshi-card p{font-size:13.5px;color:#e6ebf5;}
+.oshi-note{
+  margin-top:20px;background:var(--red);border-radius:12px;padding:16px;text-align:center;
+}
+.oshi-note strong{display:block;font-size:16px;margin-bottom:4px;}
+.oshi-note span{font-size:12.5px;}
+
+/* strength */
+.st-list{display:flex;flex-direction:column;gap:14px;}
+.st-item{
+  display:flex;gap:14px;align-items:flex-start;
+  border:1px solid var(--line);border-radius:12px;padding:16px 14px;background:#fff;
+  box-shadow:0 2px 8px rgba(13,33,73,.05);
+}
+.st-num{
+  flex-shrink:0;width:38px;height:38px;border-radius:50%;
+  background:var(--navy);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;
+}
+.st-item h3{font-size:15.5px;color:var(--navy);font-weight:800;margin-bottom:5px;}
+.st-item p{font-size:13.5px;color:var(--gray);}
+
+/* gallery */
+.gal{padding:0 0 10px;}
+.gal img{width:100%;}
+
+/* review */
+.rev{background:#f0f2f6;}
+.rev-card{
+  background:#fff;border-radius:12px;padding:18px 16px;margin-bottom:14px;
+  box-shadow:0 2px 10px rgba(13,33,73,.06);border-top:3px solid var(--gold);
+}
+.stars{color:var(--gold);font-size:15px;letter-spacing:.12em;}
+.rev-card h3{font-size:15px;font-weight:800;color:var(--navy);margin:6px 0 8px;}
+.rev-card p{font-size:13.5px;color:#454b56;}
+
+/* info */
+.info-table{width:100%;border-collapse:collapse;font-size:13.5px;border-top:1px solid var(--line);}
+.info-table th,.info-table td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+.info-table th{width:88px;color:var(--navy);font-weight:700;background:#f7f8fa;white-space:nowrap;}
+.info-table a{color:var(--red);text-decoration:underline;word-break:break-all;}
+.map{margin-top:18px;border-radius:12px;overflow:hidden;line-height:0;}
+.map iframe{width:100%;height:240px;border:0;}
+
+/* cta */
+.cta{background:var(--navy);color:#fff;text-align:center;padding:44px 0 46px;}
+.cta h2{font-size:20px;font-weight:800;margin-bottom:10px;line-height:1.5;}
+.cta h2 em{font-style:normal;color:var(--gold);}
+.cta p{font-size:13.5px;color:#cdd6e6;margin-bottom:22px;}
+.btns{display:flex;flex-direction:column;gap:12px;}
+.btn{
+  display:block;padding:15px;border-radius:999px;font-weight:800;font-size:16px;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+.btn-tel{background:var(--red);color:#fff;}
+.btn-tel small{display:block;font-size:11px;font-weight:600;opacity:.9;}
+.btn-mail{background:var(--gold);color:var(--navy-d);}
+.btn-hp{background:#fff;color:var(--navy);}
+
+/* footer */
+.footer{background:var(--navy-d);color:#93a1bd;text-align:center;font-size:11px;padding:20px 12px 24px;}
+.footer strong{display:block;color:#fff;font-size:14px;margin-bottom:4px;}
+
+/* bottom nav */
+.bnav{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  max-width:640px;margin:0 auto;display:flex;background:var(--navy);
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.bnav a{
+  flex:1;text-align:center;color:#fff;font-size:11px;font-weight:700;
+  padding:10px 2px;border-right:1px solid rgba(255,255,255,.12);line-height:1.4;
+}
+.bnav a:last-child{border-right:0;}
+.bnav a b{display:block;font-size:16px;font-weight:800;}
+.bnav .n-tel{background:var(--red);}
+.bnav .n-mail{background:var(--gold);color:var(--navy-d);}
+
+@media(min-width:480px){
+  body{font-size:16px;}
+  .hero h1{font-size:30px;}
+  .btns{flex-direction:row;}
+  .btn{flex:1;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">プラザスポーツ<span>KOBE NADA / BASEBALL</span></div>
+  <a class="tel" href="tel:0788017228">☎ 078-801-7228</a>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="images/hero.jpg" alt="プラザスポーツ 店内の野球用品">
+    <div class="hero-body">
+      <span class="hero-badge">神戸市灘区・王子町</span>
+      <h1>そのグローブ選び、<br><em>迷ったままにしない。</em></h1>
+      <p>久保田スラッガーが充実。<br>野球用品の専門店 プラザスポーツ</p>
+    </div>
+  </section>
+
+  <!-- イチオシ -->
+  <section class="sec oshi">
+    <div class="inner">
+      <div class="sec-head">
+        <span class="en">RECOMMEND</span>
+        <h2>イチオシは<em>野球用品</em></h2>
+      </div>
+      <p class="oshi-lead">はじめての一球から、勝負を懸けた一球まで。<br>所狭しと並ぶ品揃えから、あなたに合う一品を。</p>
+
+      <div class="oshi-img">
+        <img src="images/baseball.jpg" alt="プラザスポーツの野球用品・グローブ">
+      </div>
+
+      <div class="oshi-card">
+        <h3><i>01</i>久保田スラッガーが充実</h3>
+        <p>野球人が憧れるブランドを、実際に手に取って比べられます。ずらりと並ぶラインナップから、手の大きさ・ポジション・プレースタイルに合った一つをお選びいただけます。</p>
+      </div>
+
+      <div class="oshi-card">
+        <h3><i>02</i>並べて比べられる品揃え</h3>
+        <p>店内は所狭しと商品がずらり。大型店ほどの規模ではなくても、複数種類をじっくり見比べられる十分な品揃え。「色々見比べられるのが嬉しい」とお客様からも好評です。</p>
+      </div>
+
+      <div class="oshi-card">
+        <h3><i>03</i>知識ゼロでも大丈夫な商品説明</h3>
+        <p>部活デビューのお子さま用グローブ選びも、親子そろって知識がなくてOK。物腰柔らかい店主が、何がどう違うのかを非常に分かりやすくご説明します。</p>
+      </div>
+
+      <div class="oshi-card">
+        <h3><i>04</i>小物類までワンストップ</h3>
+        <p>グローブやバットだけでなく、その他小物類も所狭しと並んでいます。必要なものをまとめて揃えられるので、「とても満足した買い物が出来た」との声をいただいています。</p>
+      </div>
+
+      <div class="oshi-note">
+        <strong>まずは、見に来てください。</strong>
+        <span>比べて、触れて、納得して選ぶ。それがプラザスポーツです。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section class="sec">
+    <div class="inner">
+      <div class="sec-head">
+        <span class="en">OUR STRENGTH</span>
+        <h2>選ばれる<em>4つの理由</em></h2>
+      </div>
+      <div class="st-list">
+        <div class="st-item">
+          <div class="st-num">01</div>
+          <div>
+            <h3>個人商店ならではの距離感</h3>
+            <p>物腰柔らかい店主さんが、一人ひとりに丁寧に対応。気軽に何でも相談できる雰囲気です。</p>
+          </div>
+        </div>
+        <div class="st-item">
+          <div class="st-num">02</div>
+          <div>
+            <h3>比較できる十分な品揃え</h3>
+            <p>複数種類を並べて比較できるから、納得してから決められます。</p>
+          </div>
+        </div>
+        <div class="st-item">
+          <div class="st-num">03</div>
+          <div>
+            <h3>はじめての方に強い</h3>
+            <p>中学野球部デビューなど、初めての道具選びこそお任せください。分かりやすさが違います。</p>
+          </div>
+        </div>
+        <div class="st-item">
+          <div class="st-num">04</div>
+          <div>
+            <h3>王子公園エリアの地域密着店</h3>
+            <p>神戸市灘区王子町。地元の選手と保護者の皆さまに長く親しまれています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gal">
+    <img src="images/shop.jpg" alt="プラザスポーツ 店舗の様子">
+  </div>
+
+  <!-- 口コミ -->
+  <section class="sec rev">
+    <div class="inner">
+      <div class="sec-head">
+        <span class="en">REVIEW</span>
+        <h2>お客様の<em>クチコミ</em></h2>
+      </div>
+
+      <div class="rev-card">
+        <div class="stars">★★★★☆</div>
+        <h3>品揃え豊富！</h3>
+        <p>所狭しと商品が並んでいます。色々見比べれるのが嬉しい。野球のグラブの匠仕様は使ってないから分かりません。</p>
+      </div>
+
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <h3>親子共々、無知でも安心でした</h3>
+        <p>個人商店ですが、物腰柔らかい店主さんが丁寧に対応してくださいました。大型店ほどではないですが、複数種類を比較できて十分な品揃えだと思いました。中学野球部デビューの息子用グローブを探しに行きましたが、親子共々無知にも関わらず非常に分かりやすく商品説明をして頂きました。久保田スラッガーが充実しており、その他小物類も所狭しと並んでおり、とても満足した買い物が出来ます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="sec">
+    <div class="inner">
+      <div class="sec-head">
+        <span class="en">SHOP INFO</span>
+        <h2>店舗情報</h2>
+      </div>
+      <table class="info-table">
+        <tr><th>店名</th><td>プラザスポーツ</td></tr>
+        <tr><th>住所</th><td>〒657-0837<br>兵庫県神戸市灘区王子町1丁目2−14<br>プラザマンション</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0788017228">078-801-7228</a></td></tr>
+        <tr><th>定休日</th><td>水曜日</td></tr>
+        <tr><th>イチオシ</th><td>野球用品</td></tr>
+        <tr><th>メール</th><td><a href="mailto:info@plaza-sports.com">info@plaza-sports.com</a></td></tr>
+        <tr><th>ホームページ</th><td><a href="https://www.plaza-sports.com/" target="_blank" rel="noopener">https://www.plaza-sports.com/</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://www.plaza-sports.com/contact" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E7%A5%9E%E6%88%B8%E5%B8%82%E7%81%98%E5%8C%BA%E7%8E%8B%E5%AD%90%E7%94%BA1%E4%B8%81%E7%9B%AE2-14&output=embed" loading="lazy" title="プラザスポーツ 地図"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="inner">
+      <h2>グローブ選びで<br><em>もう迷わせません。</em></h2>
+      <p>ご相談・在庫のお問い合わせはお気軽にどうぞ。</p>
+      <div class="btns">
+        <a class="btn btn-tel" href="tel:0788017228">☎ 078-801-7228<small>定休日：水曜日</small></a>
+        <a class="btn btn-mail" href="https://www.plaza-sports.com/contact" target="_blank" rel="noopener">お問い合わせフォーム</a>
+        <a class="btn btn-hp" href="https://www.plaza-sports.com/" target="_blank" rel="noopener">公式ホームページ</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <strong>プラザスポーツ</strong>
+    兵庫県神戸市灘区王子町1丁目2−14 プラザマンション<br>
+    TEL 078-801-7228 ／ 定休日 水曜日<br>
+    <span>&copy; プラザスポーツ</span>
+  </footer>
+
+</div>
+
+<nav class="bnav">
+  <a href="#" class="n-top"><b>⌂</b>TOP</a>
+  <a href="https://www.plaza-sports.com/" target="_blank" rel="noopener"><b>⊕</b>HP</a>
+  <a href="mailto:info@plaza-sports.com" class="n-mail"><b>✉</b>メール</a>
+  <a href="tel:0788017228" class="n-tel"><b>☎</b>電話する</a>
+</nav>
+
+</body>
+</html>
