@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ラケット工房ファミリー｜兵庫県伊丹市のテニス用品専門店・ガット張り</title>
+<meta name="description" content="兵庫県伊丹市荒牧のラケット工房ファミリー。テニス用品とガット張りの専門店。年中無休で対応、急な試合前のガット切れもご相談ください。">
+<style>
+:root{
+  --navy:#0b2a4a;
+  --blue:#0f5fa6;
+  --sky:#e8f2fb;
+  --accent:#ffb703;
+  --accent-d:#e09600;
+  --green:#1f9d55;
+  --text:#22303c;
+  --gray:#6b7a89;
+  --line:#dbe4ec;
+  --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",YuGothic,Meiryo,sans-serif;
+  color:var(--text);
+  line-height:1.8;
+  background:var(--white);
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+  padding-top:58px;
+  padding-bottom:64px;
+}
+img{max-width:100%;height:auto;display:block;}
+a{text-decoration:none;color:inherit;}
+.wrap{width:100%;max-width:680px;margin:0 auto;padding:0 18px;}
+
+/* header */
+.header{
+  position:fixed;top:0;left:0;width:100%;height:58px;z-index:100;
+  background:rgba(11,42,74,.97);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 14px;box-shadow:0 2px 10px rgba(0,0,0,.18);
+}
+.header .logo{color:#fff;font-size:15px;font-weight:700;letter-spacing:.02em;line-height:1.3;}
+.header .logo span{display:block;font-size:10px;font-weight:400;color:var(--accent);letter-spacing:.08em;}
+.header .tel{
+  background:var(--accent);color:#3a2a00;font-weight:700;font-size:13px;
+  padding:8px 12px;border-radius:999px;white-space:nowrap;
+}
+
+/* hero */
+.hero{position:relative;background:var(--navy);}
+.hero img{width:100%;height:auto;opacity:.55;}
+.hero .hero-inner{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:16px;
+}
+.hero .badge{
+  display:inline-block;background:var(--accent);color:#3a2a00;
+  font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:10px;
+}
+.hero h1{
+  color:#fff;font-size:24px;line-height:1.45;font-weight:800;
+  text-shadow:0 2px 10px rgba(0,0,0,.6);
+}
+.hero h1 em{font-style:normal;color:var(--accent);display:block;font-size:15px;margin-top:6px;letter-spacing:.05em;}
+.hero .sub{
+  color:#fff;font-size:12px;margin-top:10px;text-shadow:0 2px 8px rgba(0,0,0,.7);
+}
+.hero-strip{
+  background:var(--blue);color:#fff;text-align:center;font-size:12.5px;
+  padding:9px 12px;letter-spacing:.03em;font-weight:700;
+}
+
+/* section common */
+.sec{padding:44px 0;}
+.sec.alt{background:var(--sky);}
+.sec-head{text-align:center;margin-bottom:26px;}
+.sec-head .en{
+  display:block;font-size:11px;letter-spacing:.2em;color:var(--blue);font-weight:700;margin-bottom:6px;
+}
+.sec-head h2{font-size:21px;font-weight:800;line-height:1.5;color:var(--navy);}
+.sec-head h2 b{color:var(--blue);}
+.sec-head .line{width:42px;height:3px;background:var(--accent);margin:12px auto 0;border-radius:2px;}
+
+/* push */
+.push-card{
+  background:#fff;border-radius:14px;overflow:hidden;
+  box-shadow:0 6px 22px rgba(11,42,74,.12);
+}
+.push-card .tag{
+  background:linear-gradient(90deg,var(--navy),var(--blue));
+  color:#fff;text-align:center;font-size:13px;font-weight:700;padding:10px;letter-spacing:.06em;
+}
+.push-card .body{padding:20px 18px 24px;}
+.push-card h3{font-size:19px;font-weight:800;color:var(--navy);line-height:1.5;margin-bottom:12px;text-align:center;}
+.push-card h3 span{color:var(--blue);}
+.push-card p{font-size:14.5px;color:#3a4856;}
+.push-list{margin:18px 0 0;list-style:none;}
+.push-list li{
+  position:relative;padding:11px 12px 11px 40px;background:var(--sky);
+  border-radius:8px;margin-bottom:9px;font-size:14px;font-weight:700;color:var(--navy);
+}
+.push-list li::before{
+  content:"✓";position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  width:20px;height:20px;border-radius:50%;background:var(--blue);color:#fff;
+  font-size:12px;display:flex;align-items:center;justify-content:center;
+}
+.push-note{
+  margin-top:16px;border:2px dashed var(--accent);border-radius:10px;
+  padding:14px;font-size:13.5px;background:#fffdf5;
+}
+.push-note b{color:var(--accent-d);}
+
+/* strengths */
+.point{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:18px 16px;margin-bottom:14px;
+}
+.point .num{
+  display:inline-block;background:var(--navy);color:var(--accent);
+  font-size:11px;font-weight:700;letter-spacing:.1em;padding:3px 10px;border-radius:999px;margin-bottom:8px;
+}
+.point h3{font-size:16.5px;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.5;}
+.point p{font-size:14px;color:#4a5765;}
+
+.photo{border-radius:12px;overflow:hidden;margin:22px 0 0;box-shadow:0 5px 18px rgba(11,42,74,.12);}
+
+/* reviews */
+.review{
+  background:#fff;border-radius:12px;padding:18px 16px;margin-bottom:14px;
+  box-shadow:0 3px 12px rgba(11,42,74,.08);
+}
+.review .stars{color:#f5a623;font-size:16px;letter-spacing:.12em;margin-bottom:6px;}
+.review .stars small{color:var(--gray);font-size:11px;letter-spacing:0;margin-left:6px;}
+.review p{font-size:14px;color:#3a4856;}
+.review .who{margin-top:10px;font-size:12px;color:var(--gray);text-align:right;}
+
+/* info */
+.info-table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 3px 12px rgba(11,42,74,.08);}
+.info-table th,.info-table td{border-bottom:1px solid var(--line);padding:13px 12px;font-size:14px;text-align:left;vertical-align:top;}
+.info-table th{background:var(--navy);color:#fff;width:32%;font-weight:700;white-space:nowrap;}
+.info-table tr:last-child th,.info-table tr:last-child td{border-bottom:none;}
+.info-table a{color:var(--blue);text-decoration:underline;word-break:break-all;}
+.map{margin-top:16px;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px rgba(11,42,74,.08);line-height:0;}
+.map iframe{width:100%;height:260px;border:0;}
+
+/* cta */
+.cta{background:linear-gradient(160deg,var(--navy),var(--blue));color:#fff;padding:44px 0;text-align:center;}
+.cta h2{font-size:20px;font-weight:800;line-height:1.55;margin-bottom:10px;}
+.cta h2 span{color:var(--accent);}
+.cta p{font-size:14px;color:#d7e6f4;margin-bottom:22px;}
+.btn{
+  display:block;width:100%;max-width:400px;margin:0 auto 12px;
+  padding:16px;border-radius:999px;font-weight:800;font-size:16.5px;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
+.btn-tel{background:var(--accent);color:#3a2a00;}
+.btn-tel small{display:block;font-size:11px;font-weight:600;}
+.btn-form{background:#fff;color:var(--navy);}
+.btn-hp{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);font-size:14.5px;padding:13px;}
+
+/* footer */
+.footer{background:#071e36;color:#93a9bd;text-align:center;padding:24px 16px 30px;font-size:12px;}
+.footer strong{display:block;color:#fff;font-size:14px;margin-bottom:6px;}
+
+/* bottom nav */
+.bottom-nav{
+  position:fixed;left:0;bottom:0;width:100%;z-index:100;
+  display:flex;background:rgba(11,42,74,.97);box-shadow:0 -2px 10px rgba(0,0,0,.2);
+}
+.bottom-nav a{
+  flex:1;text-align:center;color:#fff;font-size:11.5px;font-weight:700;
+  padding:10px 4px;border-right:1px solid rgba(255,255,255,.15);line-height:1.4;
+}
+.bottom-nav a:last-child{border-right:none;}
+.bottom-nav a i{display:block;font-style:normal;font-size:16px;margin-bottom:1px;}
+.bottom-nav a.main{background:var(--accent);color:#3a2a00;}
+
+@media (min-width:600px){
+  .hero h1{font-size:30px;}
+  .sec-head h2{font-size:24px;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">ラケット工房ファミリー<span>伊丹市・テニス用品専門</span></div>
+  <a class="tel" href="tel:072-779-8643">☎ 072-779-8643</a>
+</header>
+
+<section class="hero">
+  <img src="images/hero.jpg" alt="ラケット工房ファミリーのテニス用品とガット張り">
+  <div class="hero-inner">
+    <span class="badge">年中無休／兵庫県伊丹市荒牧</span>
+    <h1>テニス用品のことは<br>ラケット工房へ。<em>RACKET KOUBOU FAMILY</em></h1>
+    <p class="sub">ラケット選びからガット張りまで、一本一本ていねいに。</p>
+  </div>
+</section>
+<div class="hero-strip">「明日が試合」もあきらめない。年中無休でお待ちしています</div>
+
+<!-- イチオシ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">RECOMMEND</span>
+      <h2>当店イチオシは<br><b>テニス用品</b></h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="push-card">
+      <div class="tag">＼ 工房だからできる、あなた仕様の一本 ／</div>
+      <div class="body">
+        <h3>ラケット・ガット・シューズ<br><span>すべてご相談ください</span></h3>
+        <p>「工房」を名乗る当店の主役は、テニス用品。ラケットは振ってみないと分からない、ガットは打ってみないと分からない――だからこそ、プレースタイルやレベル、お体の状態までうかがったうえで、本当に合う一本をご提案します。張り上げまで自店で行うから、テンションや張り方の細かなご希望にもその場でお応えできます。</p>
+
+        <ul class="push-list">
+          <li>ラケット選びを一から相談できる</li>
+          <li>ガット張り上げはていねいで美しい仕上がり</li>
+          <li>テンション・ガットの種類も細かく指定OK</li>
+          <li>ジュニアから大人まで幅広く対応</li>
+          <li>バドミントンのラケットもお任せください</li>
+        </ul>
+
+        <div class="push-note">
+          <b>お急ぎの方はお電話を。</b><br>
+          「明日の試合でガットが切れた」——そんなときこそご相談ください。状況によっては当日中の張り上げにも可能な限り対応しています。まずは <a href="tel:072-779-8643" style="color:var(--blue);font-weight:700;">072-779-8643</a> までお電話ください。
+        </div>
+      </div>
+    </div>
+
+    <div class="photo">
+      <img src="images/racket.jpg" alt="ていねいに張り上げたテニスラケットとガット">
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">OUR STRENGTH</span>
+      <h2>選ばれる<b>3つの理由</b></h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="point">
+      <span class="num">POINT 01</span>
+      <h3>年中無休。いつでも駆け込める</h3>
+      <p>部活も試合も、待ってはくれません。当店は年中無休。週末も祝日も営業しているので、「練習の帰りに」「試合の前日に」立ち寄れます。地域のプレーヤーの“いざ”を支えるのが、私たちの役割です。</p>
+    </div>
+
+    <div class="point">
+      <span class="num">POINT 02</span>
+      <h3>仕上がりの美しさに定評のあるガット張り</h3>
+      <p>「綺麗なガットに張り上がりました」——お客様からいただくこの一言が、何よりの誇りです。目に見える仕上がりの美しさは、そのまま打球感の安定につながります。一本一本、道具を大切にする気持ちを込めて張り上げます。</p>
+    </div>
+
+    <div class="point">
+      <span class="num">POINT 03</span>
+      <h3>困っている人を、放っておかない</h3>
+      <p>開店前のご来店でも、複数本の急ぎの張り替えでも、できる限りの対応を。テニス・バドミントンを頑張る方の力になりたい。その一心で、地域の学生さんから社会人プレーヤーまで幅広くご利用いただいています。</p>
+    </div>
+
+    <div class="photo">
+      <img src="images/shop.jpg" alt="ラケット工房ファミリー 店内の様子">
+    </div>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">REVIEWS</span>
+      <h2>お客様の<b>声</b></h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★☆<small>★4</small></div>
+      <p>綺麗なガットに張り上がりました。</p>
+      <p class="who">— お客様の声より</p>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★<small>★5</small></div>
+      <p>自分はバドミントンをしている高校生ですが、急に次の日に試合が入りガットが切れていて困っていましたが、試合が午後からだったので11:00開店ですが少し早めの10:30に店を訪れたのですが店を開けてくださって無理を言ってラケット2本のガットを2時間程ではってくださいました。素晴らしい店です。</p>
+      <p class="who">— 高校生のお客様より</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">SHOP INFO</span>
+      <h2>店舗<b>情報</b></h2>
+      <div class="line"></div>
+    </div>
+
+    <table class="info-table">
+      <tr><th>店名</th><td>ラケット工房ファミリー</td></tr>
+      <tr><th>イチオシ</th><td>テニス用品</td></tr>
+      <tr><th>住所</th><td>〒664-0009<br>兵庫県伊丹市荒牧５丁目４−３</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:072-779-8643">072-779-8643</a></td></tr>
+      <tr><th>定休日</th><td>年中無休</td></tr>
+      <tr><th>ホームページ</th><td><a href="https://www.f-tennis.com/" target="_blank" rel="noopener">https://www.f-tennis.com/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://ws.formzu.net/fgen/S11632694/" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+    </table>
+
+    <div class="map">
+      <iframe src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E4%BC%8A%E4%B8%B9%E5%B8%82%E8%8D%92%E7%89%A7%EF%BC%95%E4%B8%81%E7%9B%AE%EF%BC%94%E2%88%92%EF%BC%93&output=embed" loading="lazy" title="ラケット工房ファミリーの地図"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>ラケットのこと、<br><span>まずはご相談ください。</span></h2>
+    <p>ガット張り・ラケット選び・用品のご相談まで<br>年中無休でお待ちしています。</p>
+    <a class="btn btn-tel" href="tel:072-779-8643">☎ 072-779-8643<small>タップで電話がかけられます</small></a>
+    <a class="btn btn-form" href="https://ws.formzu.net/fgen/S11632694/" target="_blank" rel="noopener">お問い合わせフォーム</a>
+    <a class="btn btn-hp" href="https://www.f-tennis.com/" target="_blank" rel="noopener">公式ホームページを見る</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <strong>ラケット工房ファミリー</strong>
+  兵庫県伊丹市荒牧５丁目４−３／TEL 072-779-8643／年中無休<br>
+  <small>&copy; ラケット工房ファミリー</small>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="#"><i>🎾</i>TOP</a>
+  <a href="https://www.f-tennis.com/" target="_blank" rel="noopener"><i>🌐</i>HP</a>
+  <a href="https://ws.formzu.net/fgen/S11632694/" target="_blank" rel="noopener"><i>✉</i>お問合せ</a>
+  <a class="main" href="tel:072-779-8643"><i>☎</i>電話する</a>
+</nav>
+
+</body>
+</html>
