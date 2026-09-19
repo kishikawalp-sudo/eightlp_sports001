@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>起己スポーツ｜兵庫県明石市のテニス専門スポーツ店</title>
+<style>
+  :root{
+    --main-color:#0d5c3f;
+    --accent-color:#e6a817;
+    --dark-color:#1a1a1a;
+    --light-bg:#f7f7f2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    color:var(--dark-color);
+    background:#fff;
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+
+  /* 固定ヘッダー */
+  header.fixed-header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--main-color);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header.fixed-header .shop-name{
+    font-size:15px;
+    font-weight:bold;
+  }
+  header.fixed-header .tel-btn{
+    background:var(--accent-color);
+    color:#1a1a1a;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    background:#000;
+  }
+  .hero img{
+    width:100%;
+    height:56vh;
+    object-fit:cover;
+    opacity:0.75;
+  }
+  .hero-text{
+    position:absolute;
+    bottom:20px;left:0;right:0;
+    text-align:center;
+    color:#fff;
+    padding:0 16px;
+  }
+  .hero-text .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 2px 6px rgba(0,0,0,0.7);
+  }
+  .hero-text .sub{
+    margin-top:8px;
+    font-size:14px;
+    background:var(--main-color);
+    display:inline-block;
+    padding:4px 14px;
+    border-radius:20px;
+  }
+
+  section{
+    padding:36px 18px;
+  }
+  h2.section-title{
+    text-align:center;
+    font-size:20px;
+    color:var(--main-color);
+    margin-bottom:24px;
+    position:relative;
+  }
+  h2.section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+  }
+
+  /* イチオシ商品セクション */
+  .featured{
+    background:var(--light-bg);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  }
+  .featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent-color);
+    color:#1a1a1a;
+    font-weight:bold;
+    font-size:13px;
+    padding:4px 12px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .featured-body{
+    padding:18px;
+  }
+  .featured-body h3{
+    font-size:18px;
+    color:var(--main-color);
+    margin-bottom:8px;
+  }
+  .featured-body p{
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .featured-list{
+    list-style:none;
+    margin-bottom:16px;
+  }
+  .featured-list li{
+    font-size:14px;
+    padding-left:22px;
+    position:relative;
+    margin-bottom:6px;
+  }
+  .featured-list li::before{
+    content:"✓";
+    color:var(--main-color);
+    font-weight:bold;
+    position:absolute;
+    left:0;
+  }
+  .cta-btn{
+    display:block;
+    text-align:center;
+    background:var(--main-color);
+    color:#fff;
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    font-size:15px;
+  }
+
+  /* 強みセクション */
+  .strengths{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .strength-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:10px;
+    padding:14px;
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:36px;height:36px;
+    background:var(--main-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;justify-content:center;
+    font-weight:bold;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--main-color);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13.5px;
+  }
+
+  /* 店内写真 */
+  .gallery{
+    background:var(--light-bg);
+  }
+  .gallery img{
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  }
+
+  /* 口コミ */
+  .review-card{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:10px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .stars{
+    color:var(--accent-color);
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .review-card p{
+    font-size:14px;
+    white-space:pre-line;
+  }
+
+  /* 店舗情報 */
+  .shop-info table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .shop-info th,.shop-info td{
+    padding:12px 8px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+    vertical-align:top;
+  }
+  .shop-info th{
+    width:30%;
+    color:var(--main-color);
+    white-space:nowrap;
+  }
+  .map-wrap{
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:260px;
+    border:0;
+  }
+
+  /* 最終CTA */
+  .final-cta{
+    background:var(--main-color);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{
+    color:#fff;
+    font-size:20px;
+    margin-bottom:14px;
+  }
+  .final-cta h2::after{
+    background:var(--accent-color);
+  }
+  .final-cta p{
+    font-size:14px;
+    margin-bottom:20px;
+    opacity:0.95;
+  }
+  .final-cta .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .final-cta .btn-primary{
+    background:var(--accent-color);
+    color:#1a1a1a;
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    font-size:16px;
+  }
+  .final-cta .btn-secondary{
+    background:#fff;
+    color:var(--main-color);
+    font-weight:bold;
+    padding:14px;
+    border-radius:8px;
+    font-size:15px;
+  }
+
+  /* 固定フッターナビ */
+  nav.bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:56px;
+    background:#fff;
+    border-top:1px solid #ddd;
+    display:flex;
+    z-index:1000;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+  }
+  nav.bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main-color);
+    gap:2px;
+  }
+  nav.bottom-nav a.nav-primary{
+    background:var(--accent-color);
+    color:#1a1a1a;
+    font-weight:bold;
+  }
+  nav.bottom-nav .nav-icon{
+    font-size:18px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:#888;
+    padding:20px;
+  }
+
+  @media(min-width:600px){
+    .hero img{height:60vh;}
+    section{padding:48px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="fixed-header">
+  <div class="shop-name">起己スポーツ</div>
+  <a href="tel:078-911-5148" class="tel-btn">📞 078-911-5148</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="起己スポーツ 店舗">
+  <div class="hero-text">
+    <div class="catch">硬式・ソフトテニスのことなら<br>起己スポーツにお任せください</div>
+    <div class="sub">兵庫県明石市桜町 ｜ 有限会社起己スポーツ</div>
+  </div>
+</div>
+
+<section class="featured">
+  <h2 class="section-title">イチオシ｜テニス用品</h2>
+  <div class="featured-card">
+    <img src="images/tennis_goods.jpg" alt="テニス用品 ラケット カスタムオーダー">
+    <div class="featured-body">
+      <span class="featured-badge">丁寧な対応が評判</span>
+      <h3>硬式・ソフトテニスラケット カスタムオーダー</h3>
+      <p>お客様お一人おひとりのプレースタイルに合わせたソフトテニスラケットのカスタムオーダーが起己スポーツの自慢です。硬式テニスラケットの通販対応も、迅速で丁寧なご案内が好評をいただいております。</p>
+      <ul class="featured-list">
+        <li>ソフトテニスラケットのカスタムオーダー対応</li>
+        <li>硬式テニスラケットの通販・お取り寄せ</li>
+        <li>納期に関するご連絡もこまめに丁寧に対応</li>
+        <li>雪など天候不良時も電話で親切にご案内</li>
+      </ul>
+      <a href="tel:078-911-5148" class="cta-btn">電話でテニス用品について相談する</a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths-section">
+  <h2 class="section-title">起己スポーツが選ばれる理由</h2>
+  <div class="strengths">
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div>
+        <h4>丁寧・迅速な対応</h4>
+        <p>ご連絡はいつも丁寧かつスピーディー。ご注文からお届けまで安心してお任せいただけます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div>
+        <h4>ソフトテニスラケットのカスタムオーダー</h4>
+        <p>長年のノウハウを活かし、お客様の好みやプレースタイルに合わせたラケットをご提案します。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div>
+        <h4>天候不良時も安心のフォロー</h4>
+        <p>大雪などで納期が遅れる場合も、電話で丁寧にご連絡。お客様に寄り添う姿勢を大切にしています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <h2 class="section-title">店舗紹介</h2>
+  <img src="images/shop_interior.jpg" alt="起己スポーツ 店内の様子">
+</section>
+
+<section class="reviews">
+  <h2 class="section-title">お客様の声</h2>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>通販で硬式テニスラケットを購入しました。丁寧な対応を頂き嬉しかったです！
+いつもソフトテニスラケットのカスタムオーダーでお世話になっております。
+毎度丁寧に連絡も下さり、ご対応も早く、すごく助かっております。
+大雪で納期が遅れる場合も親切に電話対応してくださり、ありがとうございました。
+これからもよろしくお願いします。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <h2 class="section-title">店舗情報</h2>
+  <table>
+    <tr><th>店名</th><td>起己スポーツ</td></tr>
+    <tr><th>会社名</th><td>有限会社起己スポーツ</td></tr>
+    <tr><th>住所</th><td>兵庫県明石市桜町11-13</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:078-911-5148">078-911-5148</a></td></tr>
+    <tr><th>定休日</th><td>木曜日</td></tr>
+    <tr><th>ホームページ</th><td><a href="https://www.tatumisp.co.jp/" target="_blank" rel="noopener">https://www.tatumisp.co.jp/</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E6%98%8E%E7%9F%B3%E5%B8%82%E6%A1%9C%E7%94%BA11-13&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2 class="section-title">テニス用品のご相談はお気軽に</h2>
+  <p>ラケットのカスタムオーダーからお取り寄せまで、起己スポーツが丁寧にサポートいたします。</p>
+  <div class="cta-buttons">
+    <a href="tel:078-911-5148" class="btn-primary">📞 今すぐ電話で相談する</a>
+    <a href="https://tatumisp.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener" class="btn-secondary">✉️ お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<footer>
+  © 有限会社起己スポーツ
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:078-911-5148">
+    <span class="nav-icon">📞</span>電話する
+  </a>
+  <a href="https://tatumisp.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener" class="nav-primary">
+    <span class="nav-icon">✉️</span>お問い合わせ
+  </a>
+  <a href="https://www.tatumisp.co.jp/" target="_blank" rel="noopener">
+    <span class="nav-icon">🌐</span>HP
+  </a>
+</nav>
+
+</body>
+</html>
