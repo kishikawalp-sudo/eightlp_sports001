@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanves（ヴァンヴ）｜尼崎のサーフィン専門店</title>
+<style>
+  :root{
+    --sea-deep:#0a3d62;
+    --sea:#1e6091;
+    --sea-light:#4fa8d8;
+    --sand:#f7f3e9;
+    --sun:#ffb703;
+    --sun-dark:#fb8500;
+    --text:#1c2b36;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif;
+    color:var(--text);
+    background:var(--sand);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:64px;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+
+  /* ヘッダー */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:56px;
+    background:var(--sea-deep);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 14px;
+    z-index:100;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  header .shopname{
+    font-size:18px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  header .tel-btn{
+    background:var(--sun);
+    color:var(--sea-deep);
+    font-weight:bold;
+    font-size:14px;
+    padding:8px 14px;
+    border-radius:24px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+
+  /* ヒーロー */
+  .hero{
+    position:relative;
+    width:100%;
+    height:78vh;
+    min-height:420px;
+    overflow:hidden;
+  }
+  .hero img{
+    width:100%;height:100%;object-fit:cover;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(10,61,98,.15) 0%, rgba(10,61,98,.75) 100%);
+  }
+  .hero-text{
+    position:absolute;
+    bottom:28px;left:0;right:0;
+    padding:0 20px;
+    color:#fff;
+    z-index:2;
+    text-align:center;
+  }
+  .hero-text .catch{
+    font-size:15px;
+    letter-spacing:3px;
+    color:var(--sun);
+    font-weight:bold;
+    margin-bottom:8px;
+  }
+  .hero-text h1{
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:10px;
+    text-shadow:0 2px 6px rgba(0,0,0,.4);
+  }
+  .hero-text p{
+    font-size:14px;
+    opacity:.95;
+  }
+
+  section{
+    padding:44px 20px;
+  }
+  .section-title{
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .section-title .en{
+    display:block;
+    font-size:12px;
+    letter-spacing:3px;
+    color:var(--sea-light);
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .section-title h2{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--sea-deep);
+  }
+
+  /* イチオシ商品 */
+  .featured{
+    background:linear-gradient(180deg,var(--sea-deep) 0%, var(--sea) 100%);
+    color:#fff;
+  }
+  .featured .section-title h2{color:#fff;}
+  .featured .section-title .en{color:var(--sun);}
+  .featured-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:16px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .featured-card img{width:100%;height:220px;object-fit:cover;}
+  .featured-card .body{padding:20px;}
+  .featured-card .tag{
+    display:inline-block;
+    background:var(--sun);
+    color:var(--sea-deep);
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 12px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .featured-card h3{
+    font-size:19px;
+    margin-bottom:8px;
+  }
+  .featured-card p{
+    font-size:14px;
+    opacity:.92;
+  }
+  .featured-cta{
+    display:block;
+    margin:24px auto 0;
+    max-width:320px;
+    background:var(--sun);
+    color:var(--sea-deep);
+    text-align:center;
+    font-weight:bold;
+    font-size:16px;
+    padding:15px;
+    border-radius:30px;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);
+  }
+
+  /* 強み */
+  .strengths{background:#fff;}
+  .strength-item{
+    display:flex;
+    gap:14px;
+    margin-bottom:24px;
+    align-items:flex-start;
+  }
+  .strength-item:last-child{margin-bottom:0;}
+  .strength-num{
+    flex-shrink:0;
+    width:40px;height:40px;
+    border-radius:50%;
+    background:var(--sea-light);
+    color:#fff;
+    font-weight:bold;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+  }
+  .strength-item h3{
+    font-size:16px;
+    color:var(--sea-deep);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13.5px;
+    color:#444;
+  }
+
+  /* ギャラリー */
+  .gallery{background:var(--sand);}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:10px;
+    height:140px;
+    object-fit:cover;
+  }
+
+  /* 口コミ */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--sand);
+    border-radius:14px;
+    padding:20px;
+    position:relative;
+  }
+  .review-stars{
+    color:var(--sun-dark);
+    font-size:18px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+  }
+  .review-card p{
+    font-size:14px;
+    color:#333;
+  }
+  .review-card .quote-mark{
+    font-size:40px;
+    color:var(--sea-light);
+    opacity:.35;
+    position:absolute;
+    top:4px;left:12px;
+    line-height:1;
+  }
+
+  /* 店舗情報 */
+  .shop-info{background:var(--sea-deep);color:#fff;}
+  .shop-info .section-title h2{color:#fff;}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    background:rgba(255,255,255,.05);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .info-table th,.info-table td{
+    padding:13px 12px;
+    text-align:left;
+    border-bottom:1px solid rgba(255,255,255,.15);
+    vertical-align:top;
+  }
+  .info-table th{
+    width:88px;
+    color:var(--sun);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table tr:last-child th,
+  .info-table tr:last-child td{border-bottom:none;}
+  .info-table a{color:#fff;text-decoration:underline;}
+  .map-wrap{
+    margin-top:20px;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.2);
+  }
+  .map-wrap iframe{width:100%;height:220px;border:0;display:block;}
+
+  /* CTA */
+  .cta-section{
+    background:var(--sun);
+    text-align:center;
+  }
+  .cta-section h2{
+    font-size:20px;
+    color:var(--sea-deep);
+    margin-bottom:8px;
+  }
+  .cta-section p{
+    font-size:13.5px;
+    color:#5a4300;
+    margin-bottom:20px;
+  }
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .cta-buttons a{
+    padding:15px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+  }
+  .cta-call{background:var(--sea-deep);color:#fff;}
+  .cta-form{background:#fff;color:var(--sea-deep);border:2px solid var(--sea-deep);}
+
+  /* 固定フッターナビ */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:64px;
+    background:#fff;
+    border-top:1px solid #ddd;
+    display:flex;
+    z-index:100;
+    box-shadow:0 -2px 10px rgba(0,0,0,.1);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--sea-deep);
+    gap:4px;
+  }
+  .bottom-nav a.primary{
+    background:var(--sea-deep);
+    color:#fff;
+  }
+  .bottom-nav .icon{font-size:20px;}
+
+  @media (min-width:600px){
+    .gallery-grid{grid-template-columns:repeat(3,1fr);}
+    .hero-text h1{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">Vanves</div>
+  <a href="tel:0664986889" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/vanves-main.jpg" alt="Vanves サーフィン用具専門店">
+  <div class="hero-text">
+    <span class="catch">兵庫県尼崎市 サーフィン専門店</span>
+    <h1>Vanves（ヴァンヴ）</h1>
+    <p>サーフィン愛が伝わる、親切丁寧な店主のお店</p>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title">
+    <span class="en">OUR SPECIALTY</span>
+    <h2>イチオシ｜サーフィン用具専門</h2>
+  </div>
+  <div class="featured-card">
+    <img src="images/vanves-item.jpg" alt="サーフィン用具">
+    <div class="body">
+      <span class="tag">専門店だからできる提案</span>
+      <h3>あなたに合ったサーフボード・用具選び</h3>
+      <p>ボード、ウェットスーツ、リーシュコードなど、サーフィン用具を専門に取り扱っています。初心者からベテランまで、レベルやスタイルに合わせて店主が一緒に選んでくれると評判です。サーフィンへの愛情が伝わる接客で、安心して相談できるお店です。</p>
+    </div>
+  </div>
+  <a href="tel:0664986889" class="featured-cta">📞 お気軽にお問い合わせください</a>
+</section>
+
+<section class="strengths">
+  <div class="section-title">
+    <span class="en">STRONG POINTS</span>
+    <h2>Vanvesが選ばれる理由</h2>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-num">1</div>
+    <div>
+      <h3>サーフィン愛が伝わる親しみやすい店主</h3>
+      <p>お客様からの口コミでも「サーフィン愛が伝わる親しみやすい店主」と評判。専門知識をやさしく教えてくれます。</p>
+    </div>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-num">2</div>
+    <div>
+      <h3>すごくすごく親切・丁寧な接客</h3>
+      <p>初めてサーフィンを始める方にも、道具選びから丁寧にサポート。分からないことも安心して相談できます。</p>
+    </div>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-num">3</div>
+    <div>
+      <h3>サーフィン用具の専門店ならではの品揃え</h3>
+      <p>サーフィンに特化しているからこそできる、豊富な品揃えと的確なアドバイス。あなたにぴったりの1本が見つかります。</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-title">
+    <span class="en">GALLERY</span>
+    <h2>店内・商品紹介</h2>
+  </div>
+  <div class="gallery-grid">
+    <img src="images/vanves-gallery1.jpg" alt="Vanves 店内の様子">
+    <img src="images/vanves-gallery2.jpg" alt="Vanves サーフィン用具">
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">
+    <span class="en">REVIEW</span>
+    <h2>お客様の声</h2>
+  </div>
+  <div class="review-card">
+    <span class="quote-mark">”</span>
+    <div class="review-stars">★★★★★</div>
+    <p>すごくすごく親切で、丁寧です。素敵なお店でした！😭✨ 親切丁寧で何よりサーフィン愛が伝わる親しみやすい店主でした！！</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">
+    <span class="en">SHOP INFO</span>
+    <h2>店舗情報</h2>
+  </div>
+  <table class="info-table">
+    <tr><th>店名</th><td>Vanves（ヴァンヴ）</td></tr>
+    <tr><th>住所</th><td>〒661-0975<br>兵庫県尼崎市潮江4丁目1-11</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0664986889">06-6498-6889</a></td></tr>
+    <tr><th>定休日</th><td>日曜・祝日</td></tr>
+    <tr><th>HP</th><td><a href="https://www.vanves.net/" target="_blank" rel="noopener">https://www.vanves.net/</a></td></tr>
+    <tr><th>お問い合わせ</th><td><a href="https://vanves.ocnk.net/contact" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E5%B0%BC%E5%B4%8E%E5%B8%82%E6%BD%AE%E6%B1%9F4%E4%B8%81%E7%9B%AE1-11&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>サーフィン用具のことなら、Vanvesにお任せください</p>
+  <div class="cta-buttons">
+    <a href="tel:0664986889" class="cta-call">📞 電話で問い合わせる</a>
+    <a href="https://vanves.ocnk.net/contact" target="_blank" rel="noopener" class="cta-form">✉️ フォームで問い合わせる</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0664986889" class="primary"><span class="icon">📞</span>電話</a>
+  <a href="#shop-info"><span class="icon">📍</span>アクセス</a>
+  <a href="https://vanves.ocnk.net/contact" target="_blank" rel="noopener"><span class="icon">✉️</span>お問合せ</a>
+  <a href="https://www.vanves.net/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
