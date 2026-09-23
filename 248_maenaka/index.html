@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>マエナカスポーツ｜三田市のスポーツ店｜オリジナルウエア製作は1着から</title>
+<meta name="description" content="兵庫県三田市の総合スポーツ店「マエナカスポーツ」。オリジナルウエア製作は1着から、名入れ対応もOK。「今日中になんとかしてぇ」「こんな用具ない？」まずはお気軽にご相談ください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14243d;
+  --navy-deep:#0d1a2e;
+  --court:#f2c230;
+  --court-dark:#c99a00;
+  --paper:#f6f4ee;
+  --white:#ffffff;
+  --ink:#1c2430;
+  --muted:#5b6675;
+  --line:#dcd8cc;
+  --tel:#e8492b;
+  --font:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font);
+  font-size:16px;
+  line-height:1.85;
+  color:var(--ink);
+  background:var(--paper);
+  padding-top:56px;
+  padding-bottom:64px;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--court);outline-offset:2px}
+
+/* ---------- fixed header ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:56px;
+  background:var(--navy);
+  color:var(--white);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px 0 16px;
+}
+.header__name{font-weight:900;font-size:1.05rem;letter-spacing:.04em;text-decoration:none}
+.header__tel{
+  display:flex;align-items:center;gap:6px;
+  background:var(--court);color:var(--navy-deep);
+  font-weight:900;font-size:.9rem;
+  padding:8px 14px;border-radius:999px;text-decoration:none;
+}
+
+/* ---------- common ---------- */
+.wrap{width:100%;max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+.h2{
+  font-size:1.55rem;line-height:1.5;font-weight:900;margin:0 0 20px;
+  letter-spacing:.02em;color:var(--navy);
+}
+.lead{margin:0 0 20px;color:var(--muted)}
+.btn{
+  display:flex;align-items:center;justify-content:center;
+  min-height:56px;padding:12px 20px;border-radius:10px;
+  font-weight:900;font-size:1.05rem;text-decoration:none;text-align:center;
+}
+.btn--tel{background:var(--tel);color:var(--white)}
+.btn--yellow{background:var(--court);color:var(--navy-deep)}
+.btn--line{border:2px solid var(--white);color:var(--white)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--navy);color:var(--white);padding:0 0 44px}
+.hero__img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.hero__body{padding:28px 20px 0;max-width:760px;margin:0 auto}
+.hero__kicker{
+  display:inline-block;background:var(--court);color:var(--navy-deep);
+  font-weight:900;font-size:.85rem;padding:2px 12px;border-radius:4px;margin:0 0 16px;
+}
+.hero h1{
+  margin:0 0 18px;font-size:1.85rem;line-height:1.45;font-weight:900;letter-spacing:.02em;
+}
+.hero__sub{margin:0 0 26px;color:#d6dce6;font-size:1rem}
+.hero__cta{display:grid;gap:12px}
+
+/* ---------- ichioshi ---------- */
+.pick{background:var(--court);padding:56px 0 0}
+.pick .h2{color:var(--navy-deep);font-size:1.7rem}
+.pick__badge{
+  display:inline-block;background:var(--navy);color:var(--court);
+  font-weight:900;font-size:.9rem;padding:4px 14px;border-radius:4px;margin-bottom:14px;
+}
+.pick__big{
+  font-size:2.3rem;line-height:1.3;font-weight:900;color:var(--navy-deep);margin:0 0 16px;
+  letter-spacing:.01em;
+}
+.pick__lead{margin:0 0 28px;color:#2b2a1c;font-weight:500}
+.pick__img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:4px solid var(--navy)}
+.pick__panel{
+  background:var(--white);margin-top:-28px;border-radius:16px 16px 0 0;
+  padding:40px 20px 48px;
+}
+.pick__list{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:14px}
+.pick__list li{
+  display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:start;
+}
+.pick__check{
+  width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--court);
+  display:flex;align-items:center;justify-content:center;font-weight:900;
+}
+.pick__list b{display:block;color:var(--navy);font-size:1.05rem;line-height:1.5}
+.pick__list span{color:var(--muted);font-size:.93rem}
+.steps{
+  list-style:none;margin:0 0 28px;padding:20px;background:var(--paper);border-radius:12px;
+  display:grid;gap:12px;
+}
+.steps__title{margin:0 0 4px;font-weight:900;color:var(--navy)}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;font-weight:700}
+.steps li i{
+  font-style:normal;font-size:.8rem;background:var(--navy);color:var(--white);
+  min-width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+
+/* ---------- strengths ---------- */
+.strengths{background:var(--paper)}
+.strength{
+  background:var(--white);border-left:6px solid var(--court);
+  padding:20px 20px 20px 18px;margin:0 0 16px;border-radius:0 10px 10px 0;
+}
+.strength h3{margin:0 0 6px;font-size:1.15rem;line-height:1.5;color:var(--navy);font-weight:900}
+.strength p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* ---------- consult ---------- */
+.consult{background:var(--navy);color:var(--white)}
+.consult .h2{color:var(--white)}
+.talk{display:grid;gap:14px;margin:0 0 24px}
+.talk p{
+  margin:0;padding:14px 18px;border-radius:18px 18px 18px 4px;
+  background:var(--white);color:var(--navy-deep);font-weight:700;
+}
+.talk p:nth-child(even){
+  border-radius:18px 18px 4px 18px;background:var(--court);margin-left:auto;
+}
+.consult__note{margin:0;color:#d6dce6}
+
+/* ---------- story ---------- */
+.story .h2{margin-bottom:16px}
+.story__img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:12px;margin:0 0 22px}
+.story p{margin:0 0 16px}
+.story__sign{color:var(--muted);text-align:right;font-weight:700}
+.story__quote{
+  background:var(--white);border-radius:12px;padding:18px 20px;margin:24px 0 0;
+  font-weight:700;color:var(--navy);
+}
+
+/* ---------- info ---------- */
+.info{background:var(--white)}
+.table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:.95rem}
+.table th,.table td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table th{width:5.5em;color:var(--navy);font-weight:900;white-space:nowrap}
+.table a{color:var(--navy);word-break:break-all}
+.map{position:relative;width:100%;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--paper)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---------- final CTA ---------- */
+.cta{background:var(--navy-deep);color:var(--white);text-align:center}
+.cta .h2{color:var(--white)}
+.cta p{margin:0 0 24px;color:#d6dce6}
+.cta__tel{
+  display:block;font-size:2rem;font-weight:900;color:var(--court);text-decoration:none;
+  margin:0 0 4px;letter-spacing:.03em;
+}
+.cta__hours{font-size:.85rem;color:#aab3c2;margin:0 0 22px}
+.cta__btns{display:grid;gap:12px}
+
+.footer{background:#08111f;color:#98a3b5;text-align:center;font-size:.8rem;padding:22px 20px}
+
+/* ---------- fixed bottom nav ---------- */
+.bottom{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;height:64px;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;
+  background:var(--white);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.bottom a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:.75rem;font-weight:900;text-decoration:none;color:var(--navy);gap:2px;
+}
+.bottom a.bottom__tel{background:var(--tel);color:var(--white);font-size:.95rem}
+.bottom svg{width:20px;height:20px;fill:currentColor}
+
+@media (min-width:768px){
+  body{padding-top:64px}
+  .header{height:64px;padding:0 max(24px,calc((100vw - 760px)/2))}
+  .hero{padding-bottom:64px}
+  .hero__img{aspect-ratio:16/8}
+  .hero h1{font-size:2.3rem}
+  .hero__cta{grid-template-columns:1fr 1fr}
+  .pick__big{font-size:2.9rem}
+  .cta__btns{grid-template-columns:1fr 1fr}
+  .bottom{display:none}
+  body{padding-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- 固定ヘッダー -->
+<header class="header">
+  <a class="header__name" href="#top">マエナカスポーツ</a>
+  <a class="header__tel" href="tel:0795645570" aria-label="マエナカスポーツに電話する">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z"/></svg>
+    電話する
+  </a>
+</header>
+
+<main id="top">
+
+<!-- ヒーロー -->
+<section class="hero" style="padding-top:0">
+  <img class="hero__img" src="images/hero.jpg" alt="マエナカスポーツの店内。スポーツ用品とオリジナルウエアが並ぶ様子" width="1200" height="900">
+  <div class="hero__body">
+    <p class="hero__kicker">兵庫県三田市・小さくても総合スポーツ店</p>
+    <h1>「今日中になんとかしてぇ」も、<br>まず聞かせてください。</h1>
+    <p class="hero__sub">オリジナルウエアは1着から。名入れも、特殊な用具の探し物も、断る前に「どうすればできるか」を一緒に考えます。</p>
+    <div class="hero__cta">
+      <a class="btn btn--tel" href="tel:0795645570">079-564-5570 に電話する</a>
+      <a class="btn btn--line" href="#pick">イチオシを見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- イチオシ -->
+<section class="pick" id="pick" style="padding-bottom:0">
+  <div class="wrap">
+    <span class="pick__badge">マエナカスポーツのイチオシ</span>
+    <h2 class="pick__big">オリジナルウエア、<br>1着からつくれます。</h2>
+    <p class="pick__lead">頭の中にあるイメージを、絵柄にデザイン。チームでも、ひとりでも、記念の1着でも。大量ロットは要りません。</p>
+    <img class="pick__img" src="images/original_wear.jpg" alt="マエナカスポーツで製作したオリジナルウエアの例" width="1200" height="900">
+  </div>
+  <div class="pick__panel">
+    <div class="wrap" style="padding:0">
+      <h2 class="h2">1着から気軽に頼める、3つの理由</h2>
+      <ul class="pick__list">
+        <li>
+          <span class="pick__check" aria-hidden="true">✓</span>
+          <div><b>頭の中のイメージを、絵柄に</b><span>「こんな感じにしたい」を聞いて、デザインに起こします。うまく言葉にできなくても大丈夫です。</span></div>
+        </li>
+        <li>
+          <span class="pick__check" aria-hidden="true">✓</span>
+          <div><b>1着からOK</b><span>まとまった数がなくても対応します。1人分だけの注文も、気軽にどうぞ。</span></div>
+        </li>
+        <li>
+          <span class="pick__check" aria-hidden="true">✓</span>
+          <div><b>スポーツグッズ・ユニフォームへの名入れ</b><span>ウエアだけでなく、スポーツグッズへの名入れにも対応しています。</span></div>
+        </li>
+      </ul>
+
+      <ol class="steps" aria-label="ご相談の流れ">
+        <li class="steps__title" style="display:block">ご相談の流れ</li>
+        <li><i>1</i>電話・メール・ご来店でご相談</li>
+        <li><i>2</i>イメージをお聞きして、絵柄にデザイン</li>
+        <li><i>3</i>内容を確認して、製作</li>
+        <li><i>4</i>お渡し</li>
+      </ol>
+
+      <a class="btn btn--tel" href="tel:0795645570">オリジナルウエアを相談する（電話）</a>
+      <p style="margin:12px 0 0;text-align:center;font-size:.9rem"><a href="mailto:maenakasports@gmail.com?subject=オリジナルウエア製作のご相談">メールで相談する</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="strengths" id="strength">
+  <div class="wrap">
+    <h2 class="h2">ネットで買えない、店で相談する良さ。</h2>
+    <p class="lead">商品を売るだけなら、Amazonでポチッとすれば済む時代。だからこそ、マエナカスポーツは「話して決める」お店です。</p>
+
+    <div class="strength">
+      <h3>会話のキャッチボールを楽しむ店</h3>
+      <p>お客さんとの会話を大事にしています。目的や困りごとを聞いてから、ぴったりの1点をご提案します。</p>
+    </div>
+    <div class="strength">
+      <h3>小さくても、総合スポーツ店</h3>
+      <p>商品販売から名入れ、オリジナルウエア製作まで。地元で長く親しまれる店を目指して、幅広く対応しています。</p>
+    </div>
+    <div class="strength">
+      <h3>まずは断らず、なんとかなるよう考える</h3>
+      <p>当店だけでは難しいことでも、まず考えます。対面販売で、お客様のニーズにとことん向き合います。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 相談例 -->
+<section class="consult">
+  <div class="wrap">
+    <h2 class="h2">こんなご相談、待っています。</h2>
+    <div class="talk">
+      <p>「今日中になんとかしてぇ」</p>
+      <p>まずは断らずに、なんとかなるように考えてみます。</p>
+      <p>「こんな商品（特殊用具）あらへん？」</p>
+      <p>探し方から一緒に考えます。まずはお電話ください。</p>
+    </div>
+    <p class="consult__note">できる限りのご支援をします。困ったときは、お気軽にお問い合わせください。</p>
+  </div>
+</section>
+
+<!-- 店のストーリー -->
+<section class="story">
+  <div class="wrap">
+    <h2 class="h2">元バレーボール選手の父が、<br>1982年に始めた店です。</h2>
+    <img class="story__img" src="images/shop.jpg" alt="マエナカスポーツの店舗と店主・前中" width="1200" height="800">
+    <p>創業者は、身長190cmの元バレーボール選手だった父。豪快に、利益を度外視してでもスポーツを盛り上げようと活動していました。</p>
+    <p>2018年に2代目として社長に就任したのが私です。大学卒業後は大手企業に就職しましたが、東日本大震災に被災したことをきっかけに、育ててくれた両親と一緒に働きたいと思い、地元の三田市へ帰ってきました。</p>
+    <p>父の精神を引き継ぎ、地元で長く親しまれる会社を目指しています。小さくても総合スポーツ店にこだわり、お客様に喜んでもらえる店づくりを進めています。</p>
+    <p class="story__sign">株式会社マエナカスポーツ　代表　前中 務</p>
+    <p class="story__quote">できる限りのご支援をします。お気軽にお問い合わせください。</p>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="info" id="info">
+  <div class="wrap">
+    <h2 class="h2">店舗情報</h2>
+    <table class="table">
+      <tr><th>店名</th><td>マエナカスポーツ</td></tr>
+      <tr><th>会社名</th><td>株式会社マエナカスポーツ</td></tr>
+      <tr><th>代表者</th><td>前中 務</td></tr>
+      <tr><th>住所</th><td>兵庫県三田市南が丘１丁目４０−５</td></tr>
+      <tr><th>電話</th><td><a href="tel:0795645570">079-564-5570</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:maenakasports@gmail.com">maenakasports@gmail.com</a></td></tr>
+      <tr><th>HP</th><td><a href="https://maenakasports.jimdo.com/" target="_blank" rel="noopener">https://maenakasports.jimdo.com/</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="マエナカスポーツの地図" src="https://maps.google.com/maps?q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E4%B8%89%E7%94%B0%E5%B8%82%E5%8D%97%E3%81%8C%E4%B8%981%E4%B8%81%E7%9B%AE40-5&output=embed&hl=ja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 最後のCTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2 class="h2">まずは、話してみませんか。</h2>
+    <p>オリジナルウエアのご相談も、探し物のご相談も、お気軽にどうぞ。</p>
+    <a class="cta__tel" href="tel:0795645570">079-564-5570</a>
+    <p class="cta__hours">お電話でのご相談はこちらから</p>
+    <div class="cta__btns">
+      <a class="btn btn--yellow" href="tel:0795645570">電話で相談する</a>
+      <a class="btn btn--line" href="mailto:maenakasports@gmail.com?subject=ご相談">メールで相談する</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">© 株式会社マエナカスポーツ</footer>
+
+<!-- 固定ボトムナビ（スマホ） -->
+<nav class="bottom" aria-label="クイックメニュー">
+  <a class="bottom__tel" href="tel:0795645570">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z"/></svg>
+    電話する
+  </a>
+  <a href="mailto:maenakasports@gmail.com?subject=ご相談">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+    メール
+  </a>
+  <a href="#info">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+    店舗情報
+  </a>
+</nav>
+
+</body>
+</html>
