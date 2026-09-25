@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ナカジマスポーツ｜山形県河北町のスポーツ用品店</title>
+<style>
+  :root {
+    --main-color: #0b5ea8;
+    --accent-color: #ff7a00;
+    --dark-color: #1a1a2e;
+    --light-bg: #f5f8fc;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    color: #222;
+    line-height: 1.7;
+    background:#fff;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a { text-decoration:none; color:inherit; }
+  img { max-width:100%; display:block; }
+
+  /* Header */
+  header {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background: var(--main-color);
+    color:#fff;
+    display:flex; align-items:center; justify-content:space-between;
+    height:56px; padding:0 12px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  header .shop-name {
+    font-size:16px; font-weight:bold;
+  }
+  header .tel-btn {
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    display:flex; align-items:center; gap:4px;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--main-color), #093c6e);
+    color:#fff;
+    text-align:center;
+    padding:40px 16px 32px;
+  }
+  .hero .badge {
+    display:inline-block;
+    background:var(--accent-color);
+    padding:4px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:14px;
+  }
+  .hero h1 {
+    font-size:26px;
+    line-height:1.5;
+    margin-bottom:12px;
+  }
+  .hero p {
+    font-size:14px;
+    opacity:0.9;
+    margin-bottom:20px;
+  }
+  .hero-img {
+    width:100%;
+    border-radius:12px;
+    box-shadow:0 6px 16px rgba(0,0,0,0.3);
+  }
+
+  section {
+    padding:36px 16px;
+  }
+  .section-title {
+    text-align:center;
+    font-size:21px;
+    font-weight:bold;
+    color:var(--dark-color);
+    margin-bottom:6px;
+    position:relative;
+  }
+  .section-title::after {
+    content:"";
+    display:block;
+    width:44px; height:4px;
+    background:var(--accent-color);
+    margin:10px auto 0;
+    border-radius:2px;
+  }
+  .section-sub {
+    text-align:center;
+    font-size:13px;
+    color:#777;
+    margin-bottom:24px;
+  }
+
+  /* Featured / Ichioshi */
+  .featured {
+    background: var(--light-bg);
+  }
+  .feature-cards {
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .feature-card {
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    border:2px solid var(--accent-color);
+  }
+  .feature-card img {
+    width:100%;
+    height:180px;
+    object-fit:cover;
+  }
+  .feature-card .fc-body {
+    padding:16px;
+  }
+  .feature-card .fc-tag {
+    display:inline-block;
+    background:var(--accent-color);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:3px 10px;
+    border-radius:12px;
+    margin-bottom:8px;
+  }
+  .feature-card h3 {
+    font-size:18px;
+    color:var(--dark-color);
+    margin-bottom:6px;
+  }
+  .feature-card p {
+    font-size:14px;
+    color:#444;
+  }
+
+  /* Strengths */
+  .strengths-list {
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-item {
+    display:flex;
+    gap:12px;
+    background:#fff;
+    border-radius:12px;
+    padding:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    align-items:flex-start;
+  }
+  .strength-icon {
+    flex-shrink:0;
+    width:40px; height:40px;
+    background:var(--main-color);
+    color:#fff;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:18px;
+    font-weight:bold;
+  }
+  .strength-item h4 {
+    font-size:15px;
+    color:var(--dark-color);
+    margin-bottom:4px;
+  }
+  .strength-item p {
+    font-size:13px;
+    color:#555;
+  }
+
+  /* Reviews */
+  .reviews {
+    background: var(--light-bg);
+  }
+  .review-card {
+    background:#fff;
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  }
+  .stars {
+    color:#ffb400;
+    font-size:20px;
+    margin-bottom:10px;
+    text-align:center;
+  }
+  .review-card p {
+    font-size:14px;
+    color:#333;
+  }
+
+  /* Shop info */
+  .info-table {
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .info-table th, .info-table td {
+    text-align:left;
+    padding:12px 8px;
+    border-bottom:1px solid #ddd;
+    vertical-align:top;
+  }
+  .info-table th {
+    width:90px;
+    color:var(--main-color);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table a { color:var(--main-color); text-decoration:underline; }
+  .map-wrap {
+    margin-top:20px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  }
+  .map-wrap iframe {
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--dark-color), #33334d);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2 {
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .cta p {
+    font-size:14px;
+    opacity:0.85;
+    margin-bottom:20px;
+  }
+  .cta-buttons {
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .cta-btn {
+    display:block;
+    padding:14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .cta-btn.primary {
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .cta-btn.secondary {
+    background:#fff;
+    color:var(--main-color);
+    border:2px solid var(--main-color);
+  }
+
+  /* Bottom nav */
+  .bottom-nav {
+    position:fixed; bottom:0; left:0; right:0; z-index:100;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+  }
+  .bottom-nav a {
+    flex:1;
+    text-align:center;
+    padding:10px 4px;
+    font-size:12px;
+    color:var(--dark-color);
+    font-weight:bold;
+  }
+  .bottom-nav a.call {
+    background:var(--accent-color);
+    color:#fff;
+  }
+  .bottom-nav a.map-link {
+    background:var(--main-color);
+    color:#fff;
+  }
+
+  @media (min-width:600px) {
+    .feature-cards { flex-direction:row; }
+    .feature-card { flex:1; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">ナカジマスポーツ</div>
+  <a href="tel:0237734611" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <div class="badge">口コミ ★★★★★</div>
+  <h1>専門スタッフが笑顔でお迎え<br>ナカジマスポーツ</h1>
+  <p>山形県西村山郡河北町 ／ スポーツ用品のことなら何でもご相談ください</p>
+  <img class="hero-img" src="images/hero.jpg" alt="ナカジマスポーツ 店舗外観">
+</div>
+
+<section class="featured">
+  <div class="section-title">イチオシ商品・サービス</div>
+  <div class="section-sub">この冬・この春、特に自信を持っておすすめします</div>
+  <div class="feature-cards">
+    <div class="feature-card">
+      <img src="images/ski.jpg" alt="レンタルスキー">
+      <div class="fc-body">
+        <span class="fc-tag">レンタルスキー</span>
+        <h3>手ぶらで滑れる！レンタルスキー</h3>
+        <p>板選びに迷ったらお任せください。レベルや目的に合わせて最適なスキー用品をご用意。ご家族・グループでのご利用も歓迎です。</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <img src="images/tabletennis.jpg" alt="卓球レッスン">
+      <div class="fc-body">
+        <span class="fc-tag">卓球レッスン</span>
+        <h3>基礎から丁寧に、卓球レッスン</h3>
+        <p>卓球担当・布川さんが初心者から経験者まで丁寧に指導。用具選びからフォームまで、じっくり相談しながら上達を目指せます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="section-sub">口コミ★★★★★のワケ</div>
+  <div class="strengths-list">
+    <div class="strength-item">
+      <div class="strength-icon">1</div>
+      <div>
+        <h4>専門分野ごとのスタッフが在籍</h4>
+        <p>代表・奥様・お母様に加え、野球担当の佐藤さん、卓球担当の布川さんなど、各分野の専門スタッフが安心して相談できる体制を整えています。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-icon">2</div>
+      <div>
+        <h4>笑顔で温かい接客</h4>
+        <p>スタッフ全員が笑顔で親切に対応。スポーツ用品で何を選べば良いか分からない方も、安心してご相談いただけます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-icon">3</div>
+      <div>
+        <h4>購入前の丁寧な商品説明</h4>
+        <p>野球用品をはじめ、どの商品も購入前にとても詳しく説明。納得してから購入できると評判です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>スタッフが笑顔で対応して下さります。それぞれのスタッフが専門分野毎に居られますので、安心して相談出来るショップです。代表はじめ奥様、お母様、野球担当の佐藤さん、卓球担当の布川さん、皆んな温かく親切に対応してくれます。私は特に野球でお世話になってますが、どの商品も購入前にとても詳しく説明して頂けるのでとても助かります。スポーツ用品で何を購入すれば良いのか分からずお困りの方は是非相談に行くと良いですよ。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>ナカジマスポーツ</td></tr>
+    <tr><th>代表者</th><td>渡辺　諭</td></tr>
+    <tr><th>住所</th><td>〒999-3511 山形県西村山郡河北町谷地中央５丁目５−１５</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0237734611">023-773-4611</a></td></tr>
+    <tr><th>定休日</th><td>毎週火曜日</td></tr>
+    <tr><th>HP</th><td><a href="https://www.nakajima-sports.com/" target="_blank">https://www.nakajima-sports.com/</a></td></tr>
+    <tr><th>お問合せ</th><td><a href="https://www.nakajima-sports.com/%E3%81%8A%E5%95%8F%E5%90%88%E3%81%9B/" target="_blank">お問い合わせフォーム</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@nakajima-sports.com">info@nakajima-sports.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E8%A5%BF%E6%9D%91%E5%B1%B1%E9%83%A1%E6%B2%B3%E5%8C%97%E7%94%BA%E8%B0%B7%E5%9C%B0%E4%B8%AD%E5%A4%AE%EF%BC%95%E4%B8%81%E7%9B%AE%EF%BC%95%EF%BC%8D%EF%BC%91%EF%BC%95&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>レンタルスキー・卓球レッスンのご予約やご質問、お待ちしております。</p>
+  <div class="cta-buttons">
+    <a href="tel:0237734611" class="cta-btn primary">📞 電話で相談する</a>
+    <a href="https://www.nakajima-sports.com/%E3%81%8A%E5%95%8F%E5%90%88%E3%81%9B/" target="_blank" class="cta-btn secondary">✉️ フォームで問い合わせる</a>
+  </div>
+</section>
+
+<nav class="bottom-nav">
+  <a href="tel:0237734611" class="call">📞<br>電話</a>
+  <a href="#shop-info" class="map-link">📍<br>アクセス</a>
+  <a href="https://www.nakajima-sports.com/" target="_blank">🌐<br>公式HP</a>
+</nav>
+
+</body>
+</html>
