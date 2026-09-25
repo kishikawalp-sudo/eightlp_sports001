@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カスカワスポーツ 天童店｜ゴルフ用品専門</title>
+<style>
+  :root{
+    --main:#0b5d3b;
+    --main-dark:#08432a;
+    --accent:#e8a90b;
+    --text:#222;
+    --bg:#faf9f5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--main);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+  }
+  header .shopname{font-size:15px;font-weight:bold;line-height:1.3;}
+  header .call-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    filter:brightness(0.6);
+  }
+  .hero-text{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+  }
+  .hero-text h1{
+    font-size:24px;
+    line-height:1.5;
+    margin-bottom:8px;
+    text-shadow:0 2px 6px rgba(0,0,0,.5);
+  }
+  .hero-text p{
+    font-size:14px;
+    background:var(--accent);
+    display:inline-block;
+    padding:4px 14px;
+    border-radius:20px;
+    font-weight:bold;
+  }
+
+  section{
+    padding:32px 16px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:20px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent);
+    margin:8px auto 0;
+  }
+
+  /* Featured Product */
+  .featured{
+    background:linear-gradient(135deg,#0b5d3b,#0d7a4d);
+    color:#fff;
+  }
+  .featured .section-title{color:#fff;}
+  .featured .section-title::after{background:var(--accent);}
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .featured-img{
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:16px;
+    box-shadow:0 6px 18px rgba(0,0,0,.3);
+  }
+  .featured-copy{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:10px;
+    line-height:1.5;
+  }
+  .featured-desc{
+    font-size:14px;
+    line-height:1.9;
+    background:rgba(255,255,255,.1);
+    padding:16px;
+    border-radius:10px;
+  }
+  .featured-points{
+    list-style:none;
+    margin-top:16px;
+  }
+  .featured-points li{
+    font-size:14px;
+    padding:10px 0 10px 28px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+    position:relative;
+  }
+  .featured-points li::before{
+    content:"⛳";
+    position:absolute;
+    left:0;
+  }
+
+  /* Strengths */
+  .strengths{
+    background:#fff;
+  }
+  .strength-card{
+    display:flex;
+    gap:14px;
+    background:var(--bg);
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    border-left:4px solid var(--main);
+  }
+  .strength-num{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--main);
+    min-width:32px;
+  }
+  .strength-card h3{
+    font-size:15px;
+    color:var(--main-dark);
+    margin-bottom:6px;
+  }
+  .strength-card p{
+    font-size:13px;
+    line-height:1.7;
+    color:#444;
+  }
+
+  /* Gallery */
+  .gallery{
+    background:var(--bg);
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery-grid img{
+    border-radius:8px;
+    height:130px;
+    object-fit:cover;
+    width:100%;
+  }
+  .gallery-grid .full{
+    grid-column:1/3;
+    height:180px;
+  }
+
+  /* Reviews */
+  .reviews{
+    background:#fff;
+  }
+  .review-card{
+    background:var(--bg);
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    border:1px solid #e5e0d5;
+  }
+  .stars{
+    color:var(--accent);
+    font-size:16px;
+    margin-bottom:8px;
+  }
+  .review-card p{
+    font-size:13px;
+    line-height:1.8;
+    color:#444;
+  }
+
+  /* Shop Info */
+  .shopinfo{
+    background:var(--main-dark);
+    color:#fff;
+  }
+  .shopinfo .section-title{color:#fff;}
+  .shopinfo .section-title::after{background:var(--accent);}
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+    background:rgba(255,255,255,.05);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .info-table th,.info-table td{
+    padding:12px 10px;
+    text-align:left;
+    border-bottom:1px solid rgba(255,255,255,.15);
+    vertical-align:top;
+  }
+  .info-table th{
+    width:90px;
+    color:var(--accent);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .info-table a{color:#fff;text-decoration:underline;}
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.3);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta{
+    background:var(--accent);
+    text-align:center;
+  }
+  .cta h2{
+    font-size:19px;
+    color:#fff;
+    margin-bottom:16px;
+    line-height:1.6;
+  }
+  .cta-btn{
+    display:block;
+    background:#fff;
+    color:var(--main);
+    font-weight:bold;
+    font-size:16px;
+    padding:16px;
+    border-radius:10px;
+    margin-bottom:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+  }
+  .cta-btn.sub{
+    background:var(--main-dark);
+    color:#fff;
+  }
+
+  /* Bottom Nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,.15);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--main-dark);
+    font-weight:bold;
+  }
+  .bottom-nav a.call{
+    background:var(--main);
+    color:#fff;
+  }
+  .bottom-nav a .icon{
+    font-size:20px;
+    margin-bottom:2px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#888;
+    padding:20px 16px 76px;
+    background:var(--bg);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">カスカワスポーツ<br>天童店</div>
+  <a href="tel:0236533425" class="call-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="カスカワスポーツ天童店 店内">
+  <div class="hero-text">
+    <h1>山形県天童市<br>カスカワスポーツ 天童店</h1>
+    <p>ゴルフ用品 品揃え豊富＆試し打ちOK</p>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="featured-badge">イチオシ商品</div>
+  <h2 class="section-title">ゴルフ用品</h2>
+  <div class="featured-img">
+    <img src="images/golf_main.jpg" alt="ゴルフ用品 陳列">
+  </div>
+  <p class="featured-copy">豊富な品揃え×試し打ちで、<br>あなたにぴったりの一本が見つかる。</p>
+  <div class="featured-desc">
+    クラブからウェア、小物まで幅広いゴルフ用品を取り揃え。店内では試し打ちも可能なので、実際の打感を確かめてから納得の一本を選べます。知識豊富なスタッフが、レベルやお悩みに合わせて丁寧にご提案いたします。
+  </div>
+  <ul class="featured-points">
+    <li>クラブ・ウェア・小物まで豊富な品揃え</li>
+    <li>店内で試し打りができて失敗しない</li>
+    <li>知識豊富なスタッフが親身に相談対応</li>
+  </ul>
+</section>
+
+<section class="strengths">
+  <h2 class="section-title">選ばれる理由</h2>
+  <div class="strength-card">
+    <div class="strength-num">01</div>
+    <div>
+      <h3>圧倒的な品揃え</h3>
+      <p>ゴルフをはじめ様々なスポーツ用品を取り扱い。じっくり比較しながら選べます。</p>
+    </div>
+  </div>
+  <div class="strength-card">
+    <div class="strength-num">02</div>
+    <div>
+      <h3>専門知識豊富なスタッフ</h3>
+      <p>スタッフの知識量に定評あり。試し打ちのアドバイスも的確で、安心して購入できます。</p>
+    </div>
+  </div>
+  <div class="strength-card">
+    <div class="strength-num">03</div>
+    <div>
+      <h3>グラウンドゴルフ・パークゴルフにも対応</h3>
+      <p>専門的な道具を自由に選べる、押し付けのない接客が好評です。</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <h2 class="section-title">店内のご紹介</h2>
+  <div class="gallery-grid">
+    <img src="images/shop1.jpg" alt="店内の様子1">
+    <img src="images/shop2.jpg" alt="店内の様子2">
+  </div>
+</section>
+
+<section class="reviews">
+  <h2 class="section-title">お客様の声</h2>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>仙台から行ってみましたカスカワさんへ。試し打ちもできるし品数がいっぱいでわたしを迷わせました。店員さんの知識がすごい、試し打ちがあってよかったので即購入。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>初めて行きました。グランドゴルフに必要な道具を買うため。専門店でした。押し付けがなくて、自由に選べて買いやすかったです。パークゴルフ用品はいつもカスカワ天童店。</p>
+  </div>
+</section>
+
+<section class="shopinfo">
+  <h2 class="section-title">店舗情報</h2>
+  <table class="info-table">
+    <tr><th>店名</th><td>カスカワスポーツ 天童店</td></tr>
+    <tr><th>会社名</th><td>株式会社カスカワスポーツ</td></tr>
+    <tr><th>住所</th><td>山形県天童市老野森２丁目１３−１</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0236533425">023-653-3425</a></td></tr>
+    <tr><th>定休日</th><td>毎週木曜日<br>※祝日の場合は通常通り営業</td></tr>
+    <tr><th>HP</th><td><a href="https://www.kasukawa.jp/" target="_blank">https://www.kasukawa.jp/</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@kasukawa.jp">info@kasukawa.jp</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=山形県天童市老野森2丁目13-1&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>ゴルフ用品のご相談は<br>お気軽にどうぞ</h2>
+  <a href="tel:0236533425" class="cta-btn">📞 023-653-3425 に電話する</a>
+  <a href="https://www.kasukawa.jp/" target="_blank" class="cta-btn sub">🌐 公式サイトを見る</a>
+</section>
+
+<footer>
+  © 株式会社カスカワスポーツ 天童店
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0236533425" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://www.google.com/maps?q=山形県天童市老野森2丁目13-1" target="_blank"><span class="icon">🗺️</span>地図</a>
+  <a href="https://www.kasukawa.jp/" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="mailto:info@kasukawa.jp"><span class="icon">✉️</span>メール</a>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>川井スポーツ 本店｜山形市のスポーツ用品店</title>
+<style>
+  :root{
+    --main:#0a5c36;
+    --main-dark:#073e24;
+    --accent:#f2a900;
+    --bg:#fafaf7;
+    --text:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--main);
+    color:#fff;
+    height:56px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+  }
+  header .logo{font-size:15px;font-weight:bold;}
+  header .tel-btn{
+    background:var(--accent);
+    color:#222;
+    padding:8px 14px;
+    border-radius:20px;
+    font-weight:bold;
+    font-size:13px;
+    white-space:nowrap;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+  }
+  .hero img{width:100%;height:320px;object-fit:cover;}
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.6));
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:20px;
+    color:#fff;
+  }
+  .hero-overlay .catch{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    text-shadow:0 2px 6px rgba(0,0,0,.6);
+  }
+  .hero-overlay .sub{
+    margin-top:8px;
+    font-size:14px;
+    opacity:.95;
+  }
+
+  section{padding:32px 18px;}
+  h2.section-title{
+    font-size:20px;
+    text-align:center;
+    color:var(--main);
+    margin-bottom:22px;
+    position:relative;
+  }
+  h2.section-title:after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent);
+    margin:8px auto 0;
+  }
+
+  /* featured product */
+  .featured{
+    background:var(--main);
+    color:#fff;
+  }
+  .featured h2.section-title{color:#fff;}
+  .featured-box{
+    background:#fff;
+    color:var(--text);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,.2);
+  }
+  .featured-box img{width:100%;height:200px;object-fit:cover;}
+  .featured-box .body{padding:18px;}
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#222;
+    font-weight:bold;
+    font-size:12px;
+    padding:4px 12px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .featured-box h3{
+    font-size:19px;
+    color:var(--main-dark);
+    margin-bottom:10px;
+  }
+  .featured-box p{font-size:14px;color:#444;}
+  .featured-list{
+    margin-top:14px;
+    list-style:none;
+  }
+  .featured-list li{
+    font-size:14px;
+    padding:8px 0;
+    border-top:1px dashed #ddd;
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+  }
+  .featured-list li:before{
+    content:"⛷";
+    flex-shrink:0;
+  }
+
+  /* strengths */
+  .strengths-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .strength-card{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    border-left:4px solid var(--accent);
+  }
+  .strength-card h3{
+    font-size:15px;
+    color:var(--main-dark);
+    margin-bottom:6px;
+  }
+  .strength-card p{font-size:13.5px;color:#444;}
+
+  /* gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery img{
+    width:100%;height:140px;object-fit:cover;border-radius:8px;
+  }
+  .gallery .wide{grid-column:1/3;height:180px;}
+
+  /* reviews */
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .stars{color:var(--accent);font-size:16px;margin-bottom:8px;letter-spacing:2px;}
+  .review-card p{font-size:13.5px;color:#333;}
+
+  /* shop info */
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .info-table th,.info-table td{
+    text-align:left;
+    padding:12px 14px;
+    font-size:13.5px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .info-table th{
+    width:88px;
+    color:var(--main);
+    background:#f3f8f5;
+    white-space:nowrap;
+  }
+  .map-wrap{margin-top:16px;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  /* cta */
+  .cta{
+    background:var(--main-dark);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{font-size:19px;margin-bottom:10px;}
+  .cta p{font-size:13.5px;opacity:.9;margin-bottom:20px;}
+  .cta-buttons{display:flex;flex-direction:column;gap:12px;}
+  .btn{
+    display:block;
+    padding:14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+  }
+  .btn-primary{background:var(--accent);color:#222;}
+  .btn-secondary{background:#fff;color:var(--main-dark);}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    display:flex;
+    background:#fff;
+    border-top:1px solid #ddd;
+    z-index:100;
+  }
+  .bottom-nav a{
+    flex:1;
+    text-align:center;
+    padding:9px 4px;
+    font-size:11px;
+    color:var(--main-dark);
+  }
+  .bottom-nav a.call{
+    background:var(--main);
+    color:#fff;
+    font-weight:bold;
+  }
+  .bottom-nav .icon{font-size:17px;display:block;margin-bottom:2px;}
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#999;
+    padding:16px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">川井スポーツ 本店</div>
+  <a href="tel:0236228528" class="tel-btn">📞 023-622-8528</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="川井スポーツ 本店 外観">
+  <div class="hero-overlay">
+    <div class="catch">昔ながらの佇まいと、<br>確かな知識。山形の街のスポーツ店。</div>
+    <div class="sub">株式会社川井スポーツ｜山形県山形市七日町</div>
+  </div>
+</div>
+
+<section class="featured">
+  <h2 class="section-title">イチオシ</h2>
+  <div class="featured-box">
+    <img src="images/ski.jpg" alt="レンタルスキー・スキー教室">
+    <div class="body">
+      <span class="featured-badge">この冬のおすすめ</span>
+      <h3>レンタルスキー・スキー教室</h3>
+      <p>板選びに迷ったら川井スポーツへ。長年スキー用品を扱ってきた知識豊富なスタッフが、お客様のレベルや目的に合わせてぴったりの一式をご提案します。</p>
+      <ul class="featured-list">
+        <li>お子様から大人まで、体格に合わせたレンタル一式をご用意</li>
+        <li>初めての方も安心のスキー教室</li>
+        <li>用品選びのご相談はスタッフにお気軽に</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">選ばれる理由</h2>
+  <div class="strengths-grid">
+    <div class="strength-card">
+      <h3>昔ながらの佇まいと豊富な品揃え</h3>
+      <p>七日町で長く親しまれてきたお店。色々な商品が並び、見ているだけでも楽しいと評判です。</p>
+    </div>
+    <div class="strength-card">
+      <h3>急な相談にも親身に対応</h3>
+      <p>サイズ探しなど急なお願いにも、スタッフが一緒になって根気よく探してくれると好評。丁寧な接客に定評があります。</p>
+    </div>
+    <div class="strength-card">
+      <h3>学校にも信頼される専門知識</h3>
+      <p>学校関係の対応も行っており、季節ごとの商品陳列や豊富な知識で、安心して相談できるお店です。</p>
+    </div>
+    <div class="strength-card">
+      <h3>ベニpay対応</h3>
+      <p>地域の電子マネー「ベニpay」もご利用いただけます。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">店内のようす</h2>
+  <div class="gallery">
+    <img src="images/shop.jpg" alt="店内のようす" class="wide">
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">お客様の声</h2>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>急なお願いにもかかわらず、同じサイズの上履きをいろいろ探して見せていただいて本当に助かりました。店員さんの対応はとても丁寧で、今まで行ったお店の中で一番と言っていいくらい素晴らしい対応でした。学校も相手にしているので店員さんの知識も十分で、担当店員さんの対応も良くお世話になっています。カタログ注文も可能で、欲しい製品の特長など確認しながら安心して買い物ができます。決して押し売りなどはされませんので、自分に合うスポーツ用品をお探しの場合は一度相談してみてはいかがでしょうか。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★</div>
+    <p>昔ながらの佇まいで、色々あってたのしいお店です。ベニpayも使えるので便利です。</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">店舗情報</h2>
+  <table class="info-table">
+    <tr><th>店名</th><td>川井スポーツ 本店（株式会社川井スポーツ）</td></tr>
+    <tr><th>住所</th><td>〒990-0042 山形県山形市七日町2-7-21</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0236228528">023-622-8528</a></td></tr>
+    <tr><th>定休日</th><td>毎週火曜日</td></tr>
+    <tr><th>HP</th><td><a href="http://www.kawai-sports.com/" target="_blank" rel="noopener">www.kawai-sports.com</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:kawaisp@msb.biglobe.ne.jp">kawaisp@msb.biglobe.ne.jp</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E5%B1%B1%E5%BD%A2%E5%B8%82%E4%B8%83%E6%97%A5%E7%94%BA2-7-21&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>レンタルスキー・スキー教室のことも、お店の商品のことも、お電話またはお問い合わせフォームからどうぞ。</p>
+  <div class="cta-buttons">
+    <a href="tel:0236228528" class="btn btn-primary">📞 電話で相談する</a>
+    <a href="http://www.kawai-sports.com/publics/index/7/" target="_blank" rel="noopener" class="btn btn-secondary">✉️ お問い合わせフォーム</a>
+  </div>
+</section>
+
+<footer>© 株式会社川井スポーツ</footer>
+
+<nav class="bottom-nav">
+  <a href="#top"><span class="icon">🏠</span>トップ</a>
+  <a href="http://www.kawai-sports.com/" target="_blank" rel="noopener"><span class="icon">🌐</span>HP</a>
+  <a href="tel:0236228528" class="call"><span class="icon">📞</span>電話する</a>
+</nav>
+
+</body>
+</html>
