@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スポーツショップＭＯＧＩ｜卓球用品・学生服の専門店</title>
+<style>
+  :root{
+    --navy:#0d3b66;
+    --navy-dark:#092849;
+    --accent:#e8590c;
+    --accent-light:#ff8c42;
+    --bg:#f7f9fb;
+    --text:#222;
+    --gray:#6b7280;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    padding-top:56px;
+    padding-bottom:64px;
+  }
+  img{max-width:100%;display:block;}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--navy);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 12px;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  }
+  header .shop-name{
+    font-size:15px;font-weight:bold;line-height:1.2;
+  }
+  header a.tel-btn{
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+    padding:8px 12px;
+    border-radius:20px;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    text-align:center;
+    padding:36px 16px 40px;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--accent);
+    padding:4px 14px;
+    border-radius:16px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:12px;
+  }
+  .hero h1{
+    font-size:22px;
+    line-height:1.5;
+    margin-bottom:10px;
+  }
+  .hero p.sub{
+    font-size:14px;
+    opacity:0.9;
+    margin-bottom:18px;
+  }
+  .hero .stars{
+    color:#ffd166;
+    font-size:18px;
+    letter-spacing:2px;
+  }
+  .hero-img{
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  }
+
+  section{padding:36px 16px;}
+  .section-title{
+    text-align:center;
+    font-size:19px;
+    font-weight:bold;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .section-title span{
+    display:block;
+    font-size:12px;
+    color:var(--accent);
+    letter-spacing:2px;
+    font-weight:bold;
+    margin-bottom:6px;
+  }
+  .section-sub{
+    text-align:center;
+    font-size:13px;
+    color:var(--gray);
+    margin-bottom:24px;
+  }
+
+  /* Featured product */
+  .featured{
+    background:#fff;
+  }
+  .featured-card{
+    background:linear-gradient(135deg,#fff4ec,#fff);
+    border:2px solid var(--accent);
+    border-radius:14px;
+    padding:20px;
+    margin-bottom:20px;
+    position:relative;
+  }
+  .featured-card .osusume-tag{
+    position:absolute;
+    top:-14px;left:16px;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 14px;
+    border-radius:14px;
+  }
+  .featured-card h3{
+    color:var(--navy);
+    font-size:17px;
+    margin:10px 0 8px;
+  }
+  .featured-card img{
+    border-radius:10px;
+    margin-bottom:12px;
+  }
+  .featured-card p{
+    font-size:14px;
+    line-height:1.7;
+    color:#444;
+  }
+
+  /* Strengths */
+  .strengths{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .strength-item{
+    background:#fff;
+    border-radius:12px;
+    padding:16px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  }
+  .strength-item .icon{
+    width:40px;height:40px;
+    flex-shrink:0;
+    background:var(--navy);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+    font-size:16px;
+  }
+  .strength-item h4{
+    font-size:15px;
+    color:var(--navy);
+    margin-bottom:4px;
+  }
+  .strength-item p{
+    font-size:13px;
+    color:var(--gray);
+    line-height:1.6;
+  }
+
+  /* Gallery */
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .gallery img{
+    border-radius:10px;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    width:100%;
+    height:100%;
+  }
+  .gallery .full{grid-column:1/3;aspect-ratio:16/9;}
+
+  /* Reviews */
+  .reviews{background:#fff;}
+  .review-card{
+    background:var(--bg);
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:12px;
+  }
+  .review-card .stars{color:#ffb400;font-size:16px;margin-bottom:6px;}
+  .review-card p{font-size:14px;color:#333;line-height:1.7;}
+
+  /* Shop info */
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    font-size:14px;
+  }
+  .info-table th, .info-table td{
+    text-align:left;
+    padding:12px 10px;
+    border-bottom:1px solid #eee;
+    vertical-align:top;
+  }
+  .info-table th{
+    color:var(--navy);
+    font-weight:bold;
+    width:88px;
+    white-space:nowrap;
+  }
+  .info-table a{color:var(--accent);text-decoration:none;word-break:break-all;}
+  .map-wrap{
+    margin-top:16px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  }
+  .map-wrap iframe{
+    width:100%;
+    height:220px;
+    border:0;
+  }
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{font-size:18px;margin-bottom:8px;}
+  .cta p{font-size:13px;opacity:0.9;margin-bottom:20px;}
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:320px;
+    margin:0 auto;
+  }
+  .cta-buttons a{
+    display:block;
+    padding:14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+    text-decoration:none;
+  }
+  .cta-buttons a.primary{
+    background:var(--accent);
+    color:#fff;
+  }
+  .cta-buttons a.secondary{
+    background:#fff;
+    color:var(--navy);
+  }
+
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    height:64px;
+    background:#fff;
+    display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.1);
+    z-index:1000;
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:var(--navy);
+    font-size:11px;
+    font-weight:bold;
+    gap:4px;
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:#fff;
+  }
+  .bottom-nav .emoji{font-size:18px;}
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:var(--gray);
+    padding:16px;
+    background:var(--bg);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shop-name">スポーツショップＭＯＧＩ</div>
+  <a class="tel-btn" href="tel:0235222113">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <div class="badge">卓球用品・学生服の専門店</div>
+  <h1>卓球用品の品揃えなら<br>スポーツショップＭＯＧＩ</h1>
+  <p class="sub">山形県鶴岡市余慶町の地域密着スポーツ店</p>
+  <div class="stars">★★★★☆</div>
+  <div class="hero-img">
+    <img src="images/mogi_hero.jpg" alt="スポーツショップMOGI 店舗外観">
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title"><span>OSUSUME</span>イチオシの商品</div>
+  <p class="section-sub">卓球用品と学生服、2つの専門分野でお応えします</p>
+
+  <div class="featured-card">
+    <span class="osusume-tag">卓球用品</span>
+    <img src="images/mogi_table_tennis.jpg" alt="卓球用品コーナー">
+    <h3>豊富な品揃えの卓球用品</h3>
+    <p>ラケット・ラバー・シューズまで幅広く取り揃え。口コミでも高評価をいただいている卓球用品の品揃えの良さが自慢です。初心者から競技者まで、目的やレベルに合わせたご提案をいたします。</p>
+  </div>
+
+  <div class="featured-card">
+    <span class="osusume-tag">学生服</span>
+    <img src="images/mogi_uniform.jpg" alt="学生服コーナー">
+    <h3>地域の学生服も取扱い</h3>
+    <p>学校の制服・体操服のご相談も承っております。サイズ選びから買い替えまで、地域のお子様の成長をしっかりサポートいたします。</p>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title"><span>STRENGTH</span>選ばれる理由</div>
+  <div class="strengths">
+    <div class="strength-item">
+      <div class="icon">1</div>
+      <div>
+        <h4>卓球用品の品揃えに定評</h4>
+        <p>口コミでも「卓球用品の品揃えはいい」と評判。専門性の高い商品ラインナップで、地域の卓球愛好家から支持されています。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="icon">2</div>
+      <div>
+        <h4>学生服も同時に相談できる</h4>
+        <p>スポーツ用品だけでなく学生服の取扱いもあるため、ご家族の様々なニーズに一度に対応できます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="icon">3</div>
+      <div>
+        <h4>鶴岡協同の家 こぴあ内でアクセス良好</h4>
+        <p>鶴岡市中心部からもアクセスしやすい立地。お買い物のついでにお気軽にお立ち寄りいただけます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title"><span>REVIEW</span>お客様の声</div>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>卓球用品の品揃えはいいと思います。ラケットもラバーも種類が豊富で選びやすかったです。</p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title"><span>ACCESS</span>店舗情報</div>
+  <table class="info-table">
+    <tr><th>店名</th><td>スポーツショップＭＯＧＩ</td></tr>
+    <tr><th>住所</th><td>山形県鶴岡市余慶町１番２号<br>鶴岡協同の家 こぴあ 内</td></tr>
+    <tr><th>電話</th><td><a href="tel:0235222113">0235-22-2113</a></td></tr>
+    <tr><th>定休日</th><td>毎週水曜日<br>（水曜日が祝日の場合、翌営業日）</td></tr>
+    <tr><th>HP</th><td><a href="http://www.sportsshop-mogi.com/" target="_blank" rel="noopener">www.sportsshop-mogi.com</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E9%B6%B4%E5%B2%A1%E5%B8%82%E4%BD%99%E6%85%B6%E7%94%BA%EF%BC%91%E7%95%AA%EF%BC%92%E5%8F%B7&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>卓球用品・学生服のことなら<br>お気軽にご相談ください</h2>
+  <p>お電話・お問い合わせフォームからどうぞ</p>
+  <div class="cta-buttons">
+    <a class="primary" href="tel:0235222113">📞 今すぐ電話する</a>
+    <a class="secondary" href="https://www.sportsshop-mogi.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener">✉ お問い合わせフォーム</a>
+  </div>
+</section>
+
+<footer>
+  © スポーツショップＭＯＧＩ
+</footer>
+
+<div class="bottom-nav">
+  <a class="call" href="tel:0235222113"><span class="emoji">📞</span>電話</a>
+  <a href="https://www.sportsshop-mogi.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" target="_blank" rel="noopener"><span class="emoji">✉</span>お問い合わせ</a>
+  <a href="http://www.sportsshop-mogi.com/" target="_blank" rel="noopener"><span class="emoji">🌐</span>ホームページ</a>
+</div>
+
+</body>
+</html>
