@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホンマスポーツ｜山形県鶴岡市の野球用品専門店</title>
+<style>
+  :root{
+    --main:#1b3a6b;
+    --accent:#e8482c;
+    --light:#f5f7fa;
+    --text:#222;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","メイリオ",sans-serif;
+    color:var(--text);
+    background:#fff;
+    padding-top:56px;
+    padding-bottom:60px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    height:56px;
+    background:var(--main);
+    color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 14px;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  header .shopname{font-size:16px;font-weight:bold;}
+  header .tel-btn{
+    background:var(--accent);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:bold;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+  }
+  .hero img{width:100%;height:60vw;max-height:340px;object-fit:cover;filter:brightness(0.6);}
+  .hero-text{
+    position:absolute;top:0;left:0;right:0;bottom:0;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:0 20px;
+  }
+  .hero-text h1{
+    font-size:26px;
+    line-height:1.4;
+    margin-bottom:10px;
+    text-shadow:0 2px 6px rgba(0,0,0,.6);
+  }
+  .hero-text p{
+    font-size:15px;
+    text-shadow:0 1px 4px rgba(0,0,0,.6);
+  }
+
+  section{padding:36px 18px;}
+  .section-title{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main);
+    margin-bottom:24px;
+    position:relative;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:40px;height:3px;
+    background:var(--accent);
+    margin:10px auto 0;
+  }
+
+  /* featured product */
+  .featured{
+    background:var(--light);
+  }
+  .featured-card{
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    max-width:480px;
+    margin:0 auto;
+  }
+  .featured-card img{width:100%;height:220px;object-fit:cover;}
+  .featured-badge{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+    padding:6px 16px;
+    border-radius:20px;
+    margin:16px auto 10px;
+  }
+  .featured-body{padding:0 20px 24px;text-align:center;}
+  .featured-body h2{font-size:20px;color:var(--main);margin-bottom:10px;}
+  .featured-body p{font-size:14.5px;line-height:1.8;}
+
+  /* strengths */
+  .strengths-list{
+    display:flex;flex-direction:column;gap:16px;
+    max-width:480px;margin:0 auto;
+  }
+  .strength-item{
+    display:flex;gap:14px;
+    background:var(--light);
+    border-radius:10px;
+    padding:16px;
+    align-items:flex-start;
+  }
+  .strength-num{
+    flex-shrink:0;
+    width:34px;height:34px;
+    background:var(--main);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+  }
+  .strength-item p{font-size:14.5px;line-height:1.8;}
+  .strength-item h3{font-size:15.5px;color:var(--main);margin-bottom:6px;}
+
+  /* reviews */
+  .review-card{
+    background:#fff9ee;
+    border:1px solid #f0dbb0;
+    border-radius:10px;
+    padding:20px;
+    max-width:480px;
+    margin:0 auto;
+  }
+  .stars{color:#f5a623;font-size:20px;margin-bottom:10px;letter-spacing:2px;}
+  .review-card p{font-size:14.5px;line-height:1.9;}
+
+  /* shop info */
+  .shop-info table{
+    width:100%;max-width:480px;margin:0 auto;
+    border-collapse:collapse;
+    font-size:14.5px;
+  }
+  .shop-info td{
+    padding:12px 8px;
+    border-bottom:1px solid #e0e0e0;
+    vertical-align:top;
+  }
+  .shop-info td:first-child{
+    width:88px;
+    color:var(--main);
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .shop-info a{color:var(--accent);text-decoration:underline;}
+  .map-wrap{max-width:480px;margin:20px auto 0;border-radius:10px;overflow:hidden;}
+  .map-wrap iframe{width:100%;height:220px;border:0;}
+
+  /* cta */
+  .cta{
+    background:var(--main);
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{font-size:20px;margin-bottom:14px;}
+  .cta p{font-size:14px;margin-bottom:20px;opacity:.9;}
+  .cta-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:14px 36px;
+    border-radius:30px;
+    margin-bottom:14px;
+  }
+  .cta-sub{
+    display:block;font-size:13px;color:#dfe7f5;
+  }
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;bottom:0;left:0;right:0;
+    height:60px;
+    background:#fff;
+    display:flex;
+    border-top:1px solid #ddd;
+    z-index:100;
+    box-shadow:0 -2px 8px rgba(0,0,0,.08);
+  }
+  .bottom-nav a{
+    flex:1;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    font-size:12px;
+    color:var(--main);
+    gap:2px;
+  }
+  .bottom-nav a.call{
+    background:var(--accent);
+    color:#fff;
+    font-weight:bold;
+  }
+  .bottom-nav .icon{font-size:18px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shopname">ホンマスポーツ</div>
+  <a href="tel:0235220467" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="ホンマスポーツ 店舗外観">
+  <div class="hero-text">
+    <h1>野球用品なら、<br>迷わずホンマスポーツへ。</h1>
+    <p>山形県鶴岡市の老舗スポーツ店</p>
+  </div>
+</div>
+
+<section class="featured">
+  <div class="section-title">イチオシ商品</div>
+  <div class="featured-card">
+    <img src="images/baseball.jpg" alt="野球用品">
+    <div style="text-align:center;">
+      <span class="featured-badge">野球用品 充実の品揃え</span>
+    </div>
+    <div class="featured-body">
+      <h2>グローブ・バット・スパイクまで<br>野球のことならホンマスポーツ</h2>
+      <p>
+        地域で野球用品を買うなら「ホンマスポーツ」という声をいただくほど、
+        長年の実績と豊富な品揃えが自慢です。手書き伝票による昔ながらの丁寧な接客で、
+        一人ひとりのプレースタイルに合った商品選びをサポートします。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="section-title">選ばれる理由</div>
+  <div class="strengths-list">
+    <div class="strength-item">
+      <div class="strength-num">1</div>
+      <div>
+        <h3>野球用品といえばホンマスポーツ</h3>
+        <p>地元で長く愛される老舗ならではの豊富な品揃えと確かな知識で、グローブ選びからバット・スパイクまでしっかりサポートします。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">2</div>
+      <div>
+        <h3>バドミントン用品もわかりやすく丁寧に</h3>
+        <p>ラケット選びの相談にも分かりやすく丁寧に説明していただけると好評。初心者の方でも安心してご相談いただけます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">3</div>
+      <div>
+        <h3>昔ながらの温かい接客</h3>
+        <p>手書きの伝票でアナログな部分もありますが、その分お客様一人ひとりと向き合う、良心的で誠実な接客が魅力です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-title">お客様の声</div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>
+      大昔からある老舗です。手書きの伝票でアナログで時間がかかるけど、野球道具を買うなら、ホンマスポーツ。
+      バドミントンラケットの相談に分かりやすく説明していただけました。良心的なお店だと思います。
+    </p>
+  </div>
+</section>
+
+<section class="shop-info">
+  <div class="section-title">店舗情報</div>
+  <table>
+    <tr><td>店名</td><td>ホンマスポーツ</td></tr>
+    <tr><td>住所</td><td>山形県鶴岡市山王町８−１４</td></tr>
+    <tr><td>電話番号</td><td><a href="tel:0235220467">0235-22-0467</a></td></tr>
+    <tr><td>定休日</td><td>第一・第三木曜日</td></tr>
+    <tr><td>HP</td><td><a href="https://honma-sports.jimdo.com/" target="_blank" rel="noopener">https://honma-sports.jimdo.com/</a></td></tr>
+    <tr><td>お問合せ</td><td><a href="mailto:homma-ki@mub.biglobe.ne.jp">homma-ki@mub.biglobe.ne.jp</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E9%B6%B4%E5%B2%A1%E5%B8%82%E5%B1%B1%E7%8E%8B%E7%94%BA%EF%BC%98%E2%88%92%EF%BC%91%EF%BC%94&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>野球用品・バドミントン用品のことなら、何でもお問い合わせください。</p>
+  <a href="tel:0235220467" class="cta-btn">📞 0235-22-0467</a>
+  <span class="cta-sub">受付時間はお電話にてご確認ください</span>
+</section>
+
+<div class="bottom-nav">
+  <a href="tel:0235220467" class="call"><span class="icon">📞</span>電話</a>
+  <a href="https://maps.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E9%B6%B4%E5%B2%A1%E5%B8%82%E5%B1%B1%E7%8E%8B%E7%94%BA%EF%BC%98%E2%88%92%EF%BC%91%EF%BC%94" target="_blank"><span class="icon">📍</span>地図</a>
+  <a href="https://honma-sports.jimdo.com/" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="mailto:homma-ki@mub.biglobe.ne.jp"><span class="icon">✉️</span>問合せ</a>
+</div>
+
+</body>
+</html>
