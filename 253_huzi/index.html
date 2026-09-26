@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>富士スポーツ｜山形県尾花沢市 クロスカントリースキー専門店</title>
+<style>
+  :root {
+    --main-color: #0b4f8a;
+    --accent-color: #e8590c;
+    --bg-light: #f4f8fb;
+    --text-dark: #222;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    color: var(--text-dark);
+    background: #fff;
+    padding-top: 56px;
+    padding-bottom: 60px;
+  }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+
+  /* Header */
+  header.fixed-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 56px;
+    background: var(--main-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  header.fixed-header .shop-name {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  header.fixed-header .tel-btn {
+    background: var(--accent-color);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(rgba(11,79,138,0.55), rgba(11,79,138,0.55)), url('images/hero.jpg') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 60px 16px 40px;
+  }
+  .hero h1 {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  }
+  .hero p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: var(--accent-color);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  section {
+    padding: 32px 16px;
+  }
+  section h2 {
+    text-align: center;
+    font-size: 20px;
+    color: var(--main-color);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  section h2:after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 8px auto 0;
+  }
+
+  /* Featured product */
+  .featured {
+    background: var(--bg-light);
+  }
+  .featured-box {
+    background: #fff;
+    border: 2px solid var(--main-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+  .featured-box img {
+    width: 100%;
+    height: auto;
+  }
+  .featured-box .content {
+    padding: 20px;
+  }
+  .featured-box .label {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .featured-box h3 {
+    font-size: 19px;
+    color: var(--main-color);
+    margin-bottom: 10px;
+  }
+  .featured-box p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* Strengths */
+  .strengths ul {
+    list-style: none;
+  }
+  .strengths li {
+    display: flex;
+    gap: 12px;
+    background: #fff;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    padding: 14px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .strengths li .num {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--accent-color);
+    flex-shrink: 0;
+  }
+
+  /* Reviews */
+  .reviews {
+    background: var(--bg-light);
+  }
+  .review-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  .review-card .stars {
+    color: #f5a623;
+    font-size: 16px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .review-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #444;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .gallery-grid img {
+    border-radius: 8px;
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+
+  /* Shop info */
+  .shop-info table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .shop-info td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .shop-info td.label {
+    width: 90px;
+    color: var(--main-color);
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  .map-wrap {
+    margin-top: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .map-wrap iframe {
+    width: 100%;
+    height: 220px;
+    border: 0;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--main-color);
+    color: #fff;
+    text-align: center;
+  }
+  .cta-section p {
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 1.7;
+  }
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .cta-buttons a {
+    padding: 14px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .cta-buttons .tel {
+    background: var(--accent-color);
+    color: #fff;
+  }
+  .cta-buttons .mail {
+    background: #fff;
+    color: var(--main-color);
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
+    color: #888;
+    background: #f0f0f0;
+  }
+
+  /* Bottom nav */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    display: flex;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  .bottom-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 8px 4px;
+    font-size: 11px;
+    color: var(--main-color);
+  }
+  .bottom-nav a.call {
+    background: var(--accent-color);
+    color: #fff;
+    font-weight: bold;
+  }
+  .bottom-nav .icon {
+    font-size: 18px;
+    display: block;
+  }
+
+  @media (min-width: 600px) {
+    .hero h1 { font-size: 30px; }
+    section { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="fixed-header">
+  <span class="shop-name">富士スポーツ</span>
+  <a href="tel:0237220153" class="tel-btn">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <span class="badge">尾花沢のクロスカントリー専門店</span>
+  <h1>クロカン用品の老舗<br>富士スポーツ</h1>
+  <p>豊富な品ぞろえと熱心な説明で<br>あなたにぴったりの一本を見つけます</p>
+</div>
+
+<section class="featured">
+  <h2>イチオシ紹介</h2>
+  <div class="featured-box">
+    <img src="images/main.jpg" alt="クロスカントリースキー専門コーナー">
+    <div class="content">
+      <span class="label">イチオシ</span>
+      <h3>クロスカントリースキー専門店</h3>
+      <p>
+        クロカン用品の品ぞろえは尾花沢随一。様々なメーカー・サイズを取り揃え、
+        大変熱心かつ丁寧な説明でお客様一人ひとりに合った用品選びをお手伝いします。
+        店頭にない商品も倉庫から取り出してご案内可能。
+        分からないことがあれば何でも聞いてみてください。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <h2>富士スポーツの強み</h2>
+  <ul>
+    <li><span class="num">01</span><span>クロカンスキーの品ぞろえが豊富。様々なメーカー・サイズを取り揃え、初心者からベテランまで対応します。</span></li>
+    <li><span class="num">02</span><span>店舗ならではの豊富な在庫。ネット通販より数が多く、金額的にもお得に揃えられます。</span></li>
+    <li><span class="num">03</span><span>スタッフによる大変熱心かつ丁寧な説明。防寒着選びなど急な相談にも快くご案内します。</span></li>
+    <li><span class="num">04</span><span>店頭にない商品も倉庫から取り出し対応。気になる商品があれば遠慮なくお尋ねください。</span></li>
+  </ul>
+</section>
+
+<section class="reviews">
+  <h2>お客様の口コミ</h2>
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    <p>久しぶりに今日行ったんですが、店員さんの接客はよい方だと思います。急に防寒着を買いに行ったんですがいろいろ教えてくれて助かりました。ただメーカー品が多いせいか値段が高いのが「ん～」っていう所ですがその反面製品はいい物揃いです。あと駐車場が少ないため不便な所もあります。</p>
+  </div>
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>先日、クロカンスキーを買ってきました。クラッシックです。40年ぶりにスキーを買いました。世の中は変わって驚きました。品ぞろえは、かなり多く、様々なメーカーかつサイズもそろっていて、尾花沢恐るべし・・・。大変熱心かつ丁寧な説明も助かりました。楽天にも出ているようですが、店舗のほうが、はるかに数が多いですし、金額的にも安く済みます。2階が倉庫になっているのか、店員さんに聞いてみるといろいろ出してきてくれるので、店頭にないものがあれば聞いてみるとよいと思います。クロカン用品の老舗と言えば尾花沢の富士スポーツです。分からない事があれば何でも聞いてみる事をオススメします。</p>
+  </div>
+</section>
+
+<section class="gallery">
+  <h2>店舗のご紹介</h2>
+  <div class="gallery-grid">
+    <img src="images/shop1.jpg" alt="富士スポーツ店内の様子">
+    <img src="images/shop2.jpg" alt="富士スポーツ 取扱商品">
+  </div>
+</section>
+
+<section class="shop-info">
+  <h2>店舗情報</h2>
+  <table>
+    <tr><td class="label">店名</td><td>富士スポーツ（株式会社富士スポーツ）</td></tr>
+    <tr><td class="label">住所</td><td>山形県尾花沢市新町1-4-34</td></tr>
+    <tr><td class="label">電話番号</td><td><a href="tel:0237220153">0237-22-0153</a></td></tr>
+    <tr><td class="label">定休日</td><td>毎週水曜</td></tr>
+    <tr><td class="label">HP</td><td><a href="http://fujisports.co.jp/" target="_blank">fujisports.co.jp</a></td></tr>
+    <tr><td class="label">メール</td><td><a href="mailto:info@fujisports.co.jp">info@fujisports.co.jp</a></td></tr>
+  </table>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E5%B0%BE%E8%8A%B1%E6%B2%A2%E5%B8%82%E6%96%B0%E7%94%BA1-4-34&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2 style="color:#fff;">クロカン用品のご相談はお気軽に</h2>
+  <p>初めての方も、40年ぶりの方も。<br>丁寧にご案内しますのでお気軽にお立ち寄りください。</p>
+  <div class="cta-buttons">
+    <a href="tel:0237220153" class="tel">📞 電話で問い合わせる</a>
+    <a href="mailto:info@fujisports.co.jp" class="mail">✉️ メールで問い合わせる</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 富士スポーツ（株式会社富士スポーツ）
+</footer>
+
+<nav class="bottom-nav">
+  <a href="tel:0237220153" class="call"><span class="icon">📞</span>電話</a>
+  <a href="#shop-info"><span class="icon">📍</span>アクセス</a>
+  <a href="http://fujisports.co.jp/" target="_blank"><span class="icon">🌐</span>HP</a>
+  <a href="mailto:info@fujisports.co.jp"><span class="icon">✉️</span>メール</a>
+</nav>
+
+</body>
+</html>
