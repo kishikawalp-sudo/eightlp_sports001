@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>吾妻スポーツ 本店｜米沢のサッカースパイク</title>
+<meta name="description" content="山形県米沢市の吾妻スポーツ 本店。サッカースパイクをスポーツマンのスタッフがお客様の立場で提案します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --turf:#0e3b2a; --turf-d:#082a1d; --chalk:#f5f6f0; --line:#d9ddd0;
+  --flare:#ff5a1f; --ink:#16211b; --mute:#5b675f;
+  --font:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{font-family:var(--font);color:var(--ink);background:var(--chalk);line-height:1.8;font-size:16px;padding-bottom:64px;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--flare);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.65rem;line-height:1.4;font-weight:900;margin-bottom:20px;letter-spacing:.02em}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;height:52px;background:var(--turf-d);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 14px}
+.hd b{font-size:.95rem;font-weight:700}
+.hd a.btn-s{background:var(--flare);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 14px;border-radius:999px}
+
+/* hero */
+.hero{position:relative;background:var(--turf);color:#fff;padding:52px 0 0;overflow:hidden}
+.hero .wrap{padding-top:36px}
+.hero h1{font-size:clamp(2.1rem,9.5vw,3.4rem);line-height:1.25;font-weight:900;letter-spacing:.01em}
+.hero p{margin-top:16px;color:#d6e6dc;font-size:1rem}
+.hero .cta{margin:26px 0 32px}
+.hero img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.btn{display:inline-block;background:var(--flare);color:#fff;text-decoration:none;font-weight:900;font-size:1.05rem;padding:16px 28px;border-radius:6px;text-align:center}
+.btn.ghost{background:transparent;border:2px solid #fff}
+
+/* pick */
+.pick{background:var(--chalk)}
+.tag{display:inline-block;background:var(--turf);color:#fff;font-weight:700;font-size:.85rem;padding:4px 14px;border-radius:999px;margin-bottom:14px}
+.pick img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;margin:8px 0 26px}
+.pick ul{list-style:none;border-top:2px solid var(--turf)}
+.pick li{padding:16px 0;border-bottom:1px solid var(--line)}
+.pick li strong{display:block;font-size:1.1rem;font-weight:900}
+.pick li span{color:var(--mute);font-size:.95rem}
+.band{background:var(--turf);color:#fff;text-align:center}
+.band h2{font-size:1.5rem}
+.band p{color:#d6e6dc;margin-bottom:24px}
+
+/* strengths */
+.st{background:#fff}
+.st .lead{font-size:1.05rem;font-weight:700;border-left:5px solid var(--flare);padding-left:14px;margin-bottom:24px}
+.st p{margin-bottom:14px}
+.st img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-top:24px}
+
+/* review */
+.rv blockquote{background:#fff;border:2px solid var(--turf);border-radius:8px;padding:24px 22px}
+.rv .stars{color:var(--flare);font-size:1.35rem;letter-spacing:.12em}
+.rv p{font-weight:500;margin-top:6px}
+.rv cite{display:block;margin-top:10px;color:var(--mute);font-size:.85rem;font-style:normal}
+
+/* info */
+.info{background:#fff}
+table{width:100%;border-collapse:collapse;margin-bottom:24px}
+th,td{text-align:left;padding:14px 8px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.95rem}
+th{width:5.5em;font-weight:700;color:var(--turf)}
+td a{word-break:break-all}
+.map{border:0;width:100%;height:280px;border-radius:8px}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--turf-d);padding-bottom:env(safe-area-inset-bottom,0)}
+.bn a{color:#fff;text-decoration:none;text-align:center;font-size:.85rem;font-weight:700;padding:12px 4px}
+.bn a.main{background:var(--flare)}
+footer{background:var(--turf-d);color:#a9c0b3;text-align:center;font-size:.8rem;padding:24px 20px 28px}
+
+@media(min-width:720px){
+  .hero .wrap{padding-top:64px}
+  .hero img{aspect-ratio:16/9}
+  section{padding:80px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <b>吾妻スポーツ 本店</b>
+  <a class="btn-s" href="https://azumasports.com/pages/contact">お問い合わせ</a>
+</header>
+
+<main>
+<!-- hero -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <h1>次の一歩は、<br>自分に合う<br>スパイクから。</h1>
+    <p>米沢でサッカースパイクを探すなら、吾妻スポーツ 本店。スポーツマンのスタッフが、あなたの競技を一緒に考えます。</p>
+    <div class="cta"><a class="btn" href="#spike">サッカースパイクを見る</a></div>
+  </div>
+  <!-- 画像1：ピッチ上のサッカースパイク（ヒーロー用） -->
+  <img src="images/hero_spike.jpg" alt="ピッチに置かれたサッカースパイク" width="1200" height="900">
+</div>
+
+<!-- イチオシ -->
+<section class="pick" id="spike">
+  <div class="wrap">
+    <span class="tag">イチオシ</span>
+    <h2>サッカースパイク</h2>
+    <p>走る、止まる、蹴る。すべての動きを支えるのが足元の一足です。スパイクは、選び方ひとつでプレーのしやすさが変わります。</p>
+    <!-- 画像2：サッカースパイクのアップ（商品用） -->
+    <img src="images/soccer_spike.jpg" alt="吾妻スポーツ 本店で扱うサッカースパイク" width="1200" height="900">
+    <ul>
+      <li><strong>競技力の向上を考えて提案</strong><span>「どうすれば上達につながるか」を常に想像し、スパイク選びをお手伝いします。</span></li>
+      <li><strong>お客様の立場に立った接客</strong><span>商品知識だけでなく、あなたのプレーや悩みに寄り添って選びます。</span></li>
+      <li><strong>気軽に相談できる地元のお店</strong><span>米沢市丸の内の本店で、スタッフにお声がけください。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>スパイク選びは、スタッフに相談。</h2>
+    <p>ご来店前のご質問も、お問い合わせページから受け付けています。</p>
+    <a class="btn" href="https://azumasports.com/pages/contact">お問い合わせページへ</a>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="st" id="strength">
+  <div class="wrap">
+    <h2>スタッフ全員が、スポーツマン。</h2>
+    <p class="lead">スポーツ品を扱う我々スタッフは、スポーツマンです。</p>
+    <p>スポーツマンはルールを遵守し、自由な発想で、常に新しいことに挑戦します。商品知識の学習に限らず、常にお客様の立場に立った販売をし、お客様の満足度を高めております。</p>
+    <p>また、地域密着の使命を担い、地域環境や社会貢献運動などにも積極的に取り組みます。</p>
+    <p>スポーツをどうやって楽しんでいただくか、またどうやって競技力の向上につながるかを常に想像し、お客様にアプローチしています。</p>
+    <!-- 画像3：店内・スタッフの様子 -->
+    <img src="images/shop_staff.jpg" alt="吾妻スポーツ 本店の店内とスタッフ" width="1280" height="720">
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section class="rv" id="review">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <blockquote>
+      <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+      <p>スタッフさん皆さまの態度、対応がとても素晴らしいと感じました。</p>
+      <cite>Googleクチコミより</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="info" id="shop">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>吾妻スポーツ 本店</td></tr>
+      <tr><th>住所</th><td>山形県米沢市丸の内１丁目１−９０</td></tr>
+      <tr><th>公式HP</th><td><a href="http://azumasports.com/">http://azumasports.com/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://azumasports.com/pages/contact">https://azumasports.com/pages/contact</a></td></tr>
+    </table>
+    <iframe class="map" title="吾妻スポーツ 本店の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E7%B1%B3%E6%B2%A2%E5%B8%82%E4%B8%B8%E3%81%AE%E5%86%85%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%91%E2%88%92%EF%BC%99%EF%BC%90&output=embed"></iframe>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>あなたの一足を、一緒に。</h2>
+    <p>サッカースパイクのご相談は、吾妻スポーツ 本店へ。</p>
+    <a class="btn" href="https://azumasports.com/pages/contact">お問い合わせページへ</a>
+  </div>
+</section>
+</main>
+
+<footer>© 吾妻スポーツ 本店</footer>
+
+<nav class="bn" aria-label="固定メニュー">
+  <a href="#spike">イチオシ</a>
+  <a href="#shop">店舗情報</a>
+  <a class="main" href="https://azumasports.com/pages/contact">お問い合わせ</a>
+</nav>
+
+</body>
+</html>
