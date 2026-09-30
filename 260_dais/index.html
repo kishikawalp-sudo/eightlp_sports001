@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DAIS DESIGN AND FIELD｜山形市のアウトドア用品店</title>
+<meta name="description" content="山形市飯田のアウトドア用品店 DAIS DESIGN AND FIELD。他では売っていないオーナー厳選のアウトドア用品が揃います。">
+<style>
+:root{
+  --bg:#f6f3ec;
+  --ink:#26302b;
+  --green:#3f5a45;
+  --green-dark:#2b3f30;
+  --accent:#d9782b;
+  --accent-dark:#b85f18;
+  --sand:#e9e2d0;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Meiryo",sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.8;
+  padding-top:56px;padding-bottom:64px;font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+.en{font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:.18em;font-size:12px;color:var(--accent);font-weight:700;text-align:center}
+h2{font-size:24px;line-height:1.5;text-align:center;margin:6px 0 28px;color:var(--green-dark)}
+
+/* header */
+.header{position:fixed;top:0;left:0;right:0;height:56px;background:var(--green-dark);color:#fff;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 16px}
+.header .logo{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;line-height:1.3}
+.header .tel{background:var(--accent);color:#fff;font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;color:#fff;padding:0;background:var(--green-dark)}
+.hero img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;opacity:.55}
+.hero-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 20px 36px;background:linear-gradient(to top,rgba(20,30,24,.85),rgba(20,30,24,0) 70%)}
+.hero .badge{align-self:flex-start;background:var(--accent);font-size:12px;font-weight:700;padding:3px 12px;border-radius:2px;margin-bottom:12px}
+.hero h1{font-size:28px;line-height:1.45;margin-bottom:10px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.hero p{font-size:14px;margin-bottom:18px}
+.btn{display:block;text-align:center;font-weight:700;padding:16px;border-radius:8px;font-size:16px}
+.btn-main{background:var(--accent);color:#fff;box-shadow:0 4px 0 var(--accent-dark)}
+.btn-sub{background:var(--white);color:var(--green-dark);border:2px solid var(--green)}
+
+/* intro */
+.intro{background:var(--white);text-align:center}
+.intro p{font-size:15px;margin-bottom:12px}
+.intro strong{background:linear-gradient(transparent 60%,#f6cf9f 60%)}
+
+/* pick */
+.pick{background:var(--green);color:#fff;position:relative}
+.pick h2{color:#fff}
+.pick .en{color:#f4b678}
+.pick-card{background:var(--white);color:var(--ink);border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.pick-card .label{background:var(--accent);color:#fff;font-weight:700;text-align:center;padding:8px;font-size:14px;letter-spacing:.1em}
+.pick-card .body{padding:22px 20px 26px}
+.pick-card h3{font-size:21px;line-height:1.5;margin-bottom:12px;color:var(--green-dark)}
+.pick-card ul{list-style:none;margin:16px 0 20px}
+.pick-card li{padding:10px 0 10px 30px;position:relative;border-bottom:1px dashed #cfc7b2;font-size:15px}
+.pick-card li::before{content:"✔";position:absolute;left:4px;color:var(--accent);font-weight:700}
+.pick-voice{background:var(--sand);border-radius:8px;padding:14px 16px;font-size:14px;margin-bottom:20px}
+.pick-voice b{color:var(--accent-dark)}
+
+/* strengths */
+.point{background:var(--white);border-radius:12px;padding:22px 20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;gap:16px}
+.point .num{font-family:"Helvetica Neue",Arial,sans-serif;font-size:30px;font-weight:700;color:var(--accent);line-height:1}
+.point h3{font-size:17px;line-height:1.5;margin-bottom:6px;color:var(--green-dark)}
+.point p{font-size:14.5px}
+.shop-photo{margin-top:24px;border-radius:12px;overflow:hidden}
+.shop-photo img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* voice */
+.voice{background:var(--sand)}
+.voice-box{background:var(--white);border-radius:12px;padding:24px 20px;position:relative}
+.stars{color:#f0a81c;font-size:22px;letter-spacing:4px;margin-bottom:8px}
+.voice-box p{font-size:15px}
+.voice-box .who{margin-top:12px;font-size:12px;color:#777}
+
+/* info */
+table{width:100%;border-collapse:collapse;background:var(--white);border-radius:8px;overflow:hidden;font-size:14.5px}
+th,td{padding:14px 12px;border-bottom:1px solid #e5dfcf;text-align:left;vertical-align:top}
+th{width:32%;background:#efe9d8;color:var(--green-dark);font-weight:700}
+td a{color:var(--accent-dark);text-decoration:underline;word-break:break-all}
+.map{margin-top:20px;border-radius:8px;overflow:hidden;line-height:0}
+.map iframe{width:100%;height:280px;border:0}
+
+/* cta */
+.cta{background:var(--green-dark);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{font-size:14.5px;margin-bottom:22px}
+.cta .btn{margin-bottom:14px}
+.cta .tel-big{font-family:"Helvetica Neue",Arial,sans-serif;font-size:26px;letter-spacing:.04em}
+
+footer{background:#1c261f;color:#b9c2bb;text-align:center;font-size:12px;padding:24px 20px 28px}
+
+/* bottom nav */
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;height:60px;background:var(--white);border-top:1px solid #d9d2bd;display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom)}
+.bottom-nav a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--green-dark);border-right:1px solid #eee7d4}
+.bottom-nav a:last-child{border-right:0}
+.bottom-nav a.call{background:var(--accent);color:#fff}
+.bottom-nav span{font-size:18px;line-height:1.2}
+
+@media (min-width:768px){
+  .hero img{aspect-ratio:16/9}
+  .hero-inner{padding-bottom:56px}
+  .hero-inner>*{max-width:720px;width:100%;margin-left:auto;margin-right:auto}
+  .hero .badge{align-self:auto;width:auto;margin-left:auto;margin-right:auto;margin-left:calc((100% - 720px)/2)}
+  .btn{max-width:420px}
+  .cta .btn{margin-left:auto;margin-right:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">DAIS<br>DESIGN AND FIELD</div>
+  <a class="tel" href="tel:0236239671">📞 電話する</a>
+</header>
+
+<!-- ヒーロー -->
+<div class="hero" id="top">
+  <img src="images/hero.jpg" alt="DAIS DESIGN AND FIELD のアウトドア用品">
+  <div class="hero-inner">
+    <span class="badge">山形市飯田・アウトドア用品店</span>
+    <h1>他では売っていない、<br>出会えるアウトドア。</h1>
+    <p>オーナーのセンスで選ばれた<br>ここだけのアウトドア用品をご覧ください。</p>
+    <a class="btn btn-main" href="#pick">イチオシ商品を見る</a>
+  </div>
+</div>
+
+<!-- イントロ -->
+<section class="intro">
+  <div class="wrap">
+    <p class="en">WELCOME</p>
+    <h2>次のキャンプが、<br>もっと楽しみになる店。</h2>
+    <p>山形市にある <strong>DAIS DESIGN AND FIELD</strong>。</p>
+    <p>お客様から「オーナーさんのセンスがいいお店」と<br>ご好評をいただいています。</p>
+    <p>ほかのお店ではなかなか見つからない<br>アウトドア製品を、ぜひ手に取ってご覧ください。</p>
+  </div>
+</section>
+
+<!-- イチオシ -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <p class="en">RECOMMEND</p>
+    <h2>当店イチオシ<br>アウトドア用品</h2>
+
+    <div class="pick-card">
+      <img src="images/pick.jpg" alt="DAIS DESIGN AND FIELD イチオシのアウトドア用品">
+      <div class="label">★ IMPRESSIVE PICK ★</div>
+      <div class="body">
+        <h3>ここでしか出会えない、<br>センスで選ぶアウトドア用品</h3>
+        <p>オーナーの目線で選び抜いた、他店ではなかなか見かけないアウトドア製品が並びます。収納ができるカトラリーケースなど、使うたびに気分が上がるアイテムをお探しの方にぴったりです。</p>
+        <ul>
+          <li>他では売っていない、個性あるアウトドア製品</li>
+          <li>オーナーのセンスが光るセレクト</li>
+          <li>カトラリー収納など、キャンプで使いたくなるアイテム</li>
+          <li>見ているだけでも「面白い」と評判</li>
+        </ul>
+        <div class="pick-voice"><b>お客様の声：</b>「カトラリーの収納ができるやつを買わせて頂きました。これをもってキャンプに行くのが楽しみです。」</div>
+        <a class="btn btn-main" href="tel:0236239671">電話で商品を問い合わせる</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 選ばれる理由 -->
+<section id="strength">
+  <div class="wrap">
+    <p class="en">STRENGTH</p>
+    <h2>DAISが選ばれる理由</h2>
+
+    <div class="point">
+      <div class="num">01</div>
+      <div>
+        <h3>他では売っていない<br>アウトドア製品</h3>
+        <p>「他では売ってない製品があって面白い」とお客様にも好評。ここでしか出会えない一品が見つかります。</p>
+      </div>
+    </div>
+    <div class="point">
+      <div class="num">02</div>
+      <div>
+        <h3>オーナーのセンスが光る品揃え</h3>
+        <p>「オーナーさんのセンスがいいお店」というクチコミが寄せられています。選ぶ時間そのものが楽しくなる売り場です。</p>
+      </div>
+    </div>
+    <div class="point">
+      <div class="num">03</div>
+      <div>
+        <h3>キャンプが楽しみになる<br>アイテムばかり</h3>
+        <p>買ったその日から「早く使いたい」と思える、アウトドアの時間を豊かにしてくれる道具を取り揃えています。</p>
+      </div>
+    </div>
+
+    <div class="shop-photo">
+      <img src="images/shop.jpg" alt="DAIS DESIGN AND FIELD 店内の様子">
+    </div>
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section class="voice" id="voice">
+  <div class="wrap">
+    <p class="en">VOICE</p>
+    <h2>お客様の声</h2>
+    <div class="voice-box">
+      <div class="stars">★★★★★</div>
+      <p>オーナーさんのセンスがいいお店です。カトラリーの収納ができるやつを買わせて頂きました。これをもってキャンプに行くのが楽しみです。</p>
+      <p style="margin-top:10px">他では売ってない、アウトドア製品が有り、面白かったですね☺️</p>
+      <p class="who">― Googleクチコミより</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section id="info">
+  <div class="wrap">
+    <p class="en">SHOP INFO</p>
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>DAIS DESIGN AND FIELD</td></tr>
+      <tr><th>住所</th><td>山形県山形市飯田２丁目２−２</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0236239671">023-623-9671</a></td></tr>
+      <tr><th>会社名</th><td>合同会社DECEMBER</td></tr>
+      <tr><th>代表者</th><td>菊地 大二郎</td></tr>
+      <tr><th>公式HP</th><td><a href="https://daisdesignandfield.com/" target="_blank" rel="noopener">https://daisdesignandfield.com/</a></td></tr>
+      <tr><th>Instagram</th><td><a href="https://www.instagram.com/daisdesignandfield/#" target="_blank" rel="noopener">@daisdesignandfield</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://dais.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E5%B1%B1%E5%BD%A2%E5%B8%82%E9%A3%AF%E7%94%B0%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%92%E2%88%92%EF%BC%92&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="DAIS DESIGN AND FIELD の地図"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <p class="en" style="color:#f4b678">CONTACT</p>
+    <h2>お気軽にご相談ください</h2>
+    <p>商品の在庫やお取り扱いについては、<br>お電話またはフォームからどうぞ。</p>
+    <a class="btn btn-main" href="tel:0236239671"><span class="tel-big">📞 023-623-9671</span></a>
+    <a class="btn btn-sub" href="https://dais.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener">お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 合同会社DECEMBER / DAIS DESIGN AND FIELD</p>
+</footer>
+
+<nav class="bottom-nav">
+  <a class="call" href="tel:0236239671"><span>📞</span>電話</a>
+  <a href="https://dais.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener"><span>✉️</span>問合せ</a>
+  <a href="#info"><span>📍</span>アクセス</a>
+  <a href="https://www.instagram.com/daisdesignandfield/#" target="_blank" rel="noopener"><span>📷</span>Instagram</a>
+</nav>
+
+</body>
+</html>
