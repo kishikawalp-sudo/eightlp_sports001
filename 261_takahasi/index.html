@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>タカハシスポーツ｜新庄市のバドミントン用品・ガット張り</title>
+<meta name="description" content="山形県新庄市のタカハシスポーツ。58年・49,200本超のガット張り実績。バドミントン用品のご相談は、学校周りもしてくれる地域のスポーツ店へ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0e4a37; --green-d:#0a3527; --ink:#1d2622; --paper:#fbfaf6;
+  --line:#dcdad0; --string:#e9c62b; --red:#c8402f; --muted:#5d6862;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.85;font-size:16px;padding-top:56px;padding-bottom:64px;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-family:var(--serif);font-weight:800;font-size:1.65rem;line-height:1.5;margin-bottom:20px;color:var(--green)}
+:focus-visible{outline:3px solid var(--string);outline-offset:2px}
+
+/* header */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;background:var(--green-d);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 16px}
+.hdr b{font-family:var(--serif);font-size:1.05rem;letter-spacing:.04em}
+.hdr a{background:var(--string);color:#1d1a05;text-decoration:none;font-weight:700;font-size:.9rem;padding:8px 14px;border-radius:999px}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--green-d);padding:0}
+.hero img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.55}
+.hero .txt{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 20px 28px;background:linear-gradient(to top,rgba(6,30,22,.92) 8%,rgba(6,30,22,0) 75%)}
+.hero .sub{font-size:.85rem;margin-bottom:8px}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(1.7rem,7.4vw,2.6rem);line-height:1.4}
+.hero .num{color:var(--string)}
+.hero-cta{padding:22px 20px 0;background:var(--paper)}
+
+/* buttons */
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:16px;border-radius:10px;font-size:1.05rem}
+.btn.tel{background:var(--red);color:#fff}
+.btn.tel small{display:block;font-weight:400;font-size:.78rem;opacity:.92}
+.btn.ghost{border:2px solid var(--green);color:var(--green);margin-top:10px;background:#fff}
+
+/* featured */
+.pick{background:var(--green);color:#fff}
+.pick h2{color:#fff}
+.badge{display:inline-block;background:var(--string);color:#1d1a05;font-weight:700;font-size:.85rem;padding:2px 12px;margin-bottom:14px;border-radius:4px}
+.pick .photo{margin:22px -20px;}
+.pick .photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick ul{list-style:none;margin-top:8px}
+.pick li{padding:12px 0 12px 30px;border-top:1px solid rgba(255,255,255,.22);position:relative}
+.pick li::before{content:"";position:absolute;left:4px;top:1.15em;width:14px;height:14px;border:2px solid var(--string);border-radius:50%}
+
+/* strengths */
+.st{display:grid;gap:14px}
+.st div{background:#fff;border:1px solid var(--line);border-left:6px solid var(--green);border-radius:6px;padding:16px 18px}
+.st h3{font-size:1.05rem;margin-bottom:4px;color:var(--green)}
+.st p{font-size:.95rem;color:var(--muted)}
+
+/* story */
+.story{background:#f1efe6}
+.story .photo img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px;margin-bottom:22px}
+.story p{font-family:var(--serif);font-weight:600;font-size:1.06rem;line-height:2}
+.story .who{margin-top:16px;text-align:right;font-family:var(--sans);font-size:.9rem;font-weight:500}
+.big{font-family:var(--serif);font-weight:800;font-size:2.6rem;color:var(--red);line-height:1.2}
+
+/* review */
+.rev{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px}
+.stars{color:#e0a800;font-size:1.3rem;letter-spacing:.1em}
+.rev p{margin-top:6px}
+
+/* info */
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{padding:12px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:6.5em;color:var(--green);white-space:nowrap}
+td a{word-break:break-all}
+.map{margin-top:20px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:280px;border:0}
+
+/* final cta */
+.final{background:var(--green-d);color:#fff;text-align:center}
+.final h2{color:#fff}
+.final .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.final p.s{font-size:.9rem;margin-top:14px;opacity:.9}
+footer{background:#06231a;color:#b9c7c0;text-align:center;font-size:.78rem;padding:20px 16px 28px}
+
+/* bottom nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1fr 1fr;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.nav a{text-align:center;text-decoration:none;font-size:.78rem;font-weight:700;padding:10px 4px;color:var(--green)}
+.nav a.call{background:var(--red);color:#fff}
+
+@media (min-width:768px){
+  body{padding-bottom:0}
+  .nav{display:none}
+  .hero img{aspect-ratio:16/8}
+  .hero .txt{padding-left:calc(50% - 340px)}
+  .pick .photo{margin:22px 0;border-radius:6px;overflow:hidden}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <b>タカハシスポーツ</b>
+  <a href="tel:0233220377">電話する</a>
+</header>
+
+<main>
+<!-- ヒーロー -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="バドミントンのラケットとシャトルが並ぶタカハシスポーツの店内" width="1200" height="900">
+  <div class="txt">
+    <p class="sub">山形県新庄市の地域のスポーツ店</p>
+    <h1>張り上げたラケット<br><span class="num">49,200本</span>超。<br>バドミントンは、ここで。</h1>
+  </div>
+</div>
+<div class="hero-cta wrap">
+  <a class="btn tel" href="tel:0233220377">0233-22-0377<small>タップで電話・定休日：毎週水曜、第二木曜</small></a>
+</div>
+
+<!-- イチオシ -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="badge">イチオシ</span>
+    <h2>バドミントン用品は、<br>58年の「張る技術」で選ぶ。</h2>
+    <p>ラケットの性能を決めるのは、ガットの張り。5歳でガットを張った日から58年、張り続けてきた店だからできるご相談があります。</p>
+    <div class="photo"><img src="images/badminton.jpg" alt="ガットを張り上げたバドミントンラケット" width="1200" height="900" loading="lazy"></div>
+    <ul>
+      <li>バドミントン用品のご相談・ご注文</li>
+      <li>これまでの張り上げ実績は49,200本超</li>
+      <li>学校周りで、部活の用品も注文しやすい</li>
+    </ul>
+    <a class="btn tel" style="margin-top:24px" href="tel:0233220377">バドミントン用品を電話で相談<small>0233-22-0377</small></a>
+  </div>
+</section>
+
+<!-- 強み -->
+<section id="strength">
+  <div class="wrap">
+    <h2>選ばれる、3つの理由</h2>
+    <div class="st">
+      <div><h3>技術：49,200本超の実績</h3><p>幼少の頃から続けてきたガット張り。数えきれないラケットを張ってきた経験が、仕上がりの土台です。</p></div>
+      <div><h3>信頼：口コミ★5の丁寧な対応</h3><p>「安心して買えます」と地域のお客様から評価をいただいています。</p></div>
+      <div><h3>学校周りで注文しやすい</h3><p>学校を回って用品をお預かり・ご注文いただけるので、部活の物も頼みやすいと好評です。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 創業者ストーリー -->
+<section class="story" id="story">
+  <div class="wrap">
+    <h2>縁側で聞いた、<br>祖父の言葉が信条です。</h2>
+    <div class="photo"><img src="images/shop.jpg" alt="タカハシスポーツの店舗外観" width="1200" height="800" loading="lazy"></div>
+    <p>幼少の頃（5歳）、祖父・利三のまねをして、バドミントンのガットを張ったことがありました。</p>
+    <p class="big" aria-label="58年、49,200本">58年 ／ 49,200本</p>
+    <p>あれから58年。これまでに張り上げたラケットは、49,200本を超えました。あの頃、あの縁側で交わした祖父との会話。『技術と信頼』は、今も変わらず私の信条です。</p>
+    <p class="who">代表　髙橋 欣也</p>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section id="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="rev">
+      <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+      <p>丁寧な対応。安心して買えます。地域のスポーツ店です。学校周りしてくれるので、部活の物も注文し易いです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section id="info" style="padding-top:0">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>タカハシスポーツ</td></tr>
+      <tr><th>会社名</th><td>有限会社 タカハシスポーツ</td></tr>
+      <tr><th>代表者</th><td>髙橋 欣也</td></tr>
+      <tr><th>住所</th><td>山形県新庄市小田島町2-56</td></tr>
+      <tr><th>電話</th><td><a href="tel:0233220377">0233-22-0377</a></td></tr>
+      <tr><th>定休日</th><td>毎週水曜日、第二木曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://taka-sp.jimdo.com/" target="_blank" rel="noopener">https://taka-sp.jimdo.com/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:taka-sp@mvd.biglobe.ne.jp">taka-sp@mvd.biglobe.ne.jp</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="タカハシスポーツの地図" src="https://www.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E6%96%B0%E5%BA%84%E5%B8%82%E5%B0%8F%E7%94%B0%E5%B3%B6%E7%94%BA2-56&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="final" id="contact">
+  <div class="wrap">
+    <h2>バドミントン用品の<br>ご相談は、お電話で。</h2>
+    <a class="btn tel" href="tel:0233220377">0233-22-0377<small>定休日：毎週水曜日、第二木曜日</small></a>
+    <a class="btn ghost" href="mailto:taka-sp@mvd.biglobe.ne.jp">メールで問い合わせる</a>
+    <p class="s">山形県新庄市小田島町2-56</p>
+  </div>
+</section>
+</main>
+
+<footer>&copy; 有限会社 タカハシスポーツ</footer>
+
+<nav class="nav" aria-label="固定メニュー">
+  <a href="#pick">イチオシ</a>
+  <a href="#info">店舗情報</a>
+  <a class="call" href="tel:0233220377">電話する</a>
+</nav>
+
+</body>
+</html>
