@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ファミリーショップ甲子園｜庄内町のゴルフ用品・グラウンドゴルフ専門店</title>
+<meta name="description" content="山形県庄内町のファミリーショップ甲子園。ゴルフ用品、グラウンドゴルフ商品が豊富。昔なつかしい商品も並ぶ穴場のお店です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1f5a32;
+  --green-d:#143d22;
+  --turf:#e9f1df;
+  --ball:#f2b705;
+  --wood:#8a5a2b;
+  --ink:#1e2a1d;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--white);line-height:1.8;font-size:16px;
+  padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.5rem;line-height:1.4;font-weight:900;color:var(--green-d);margin-bottom:20px}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--green-d);color:var(--white);
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:8px 12px;padding-top:calc(8px + env(safe-area-inset-top,0px));min-height:56px}
+.hd b{font-size:.95rem;line-height:1.3}
+.hd a.tel{background:var(--ball);color:var(--green-d);font-weight:900;text-decoration:none;
+  padding:8px 14px;border-radius:999px;font-size:.9rem;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;color:var(--white);background:var(--green) url("images/hero.jpg") center/cover no-repeat;padding:0}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,61,34,.55),rgba(20,61,34,.88))}
+.hero .wrap{position:relative;padding-top:64px;padding-bottom:56px}
+.hero p.pre{font-weight:700;font-size:.95rem}
+.hero h1{font-size:clamp(1.9rem,8vw,2.8rem);line-height:1.3;font-weight:900;margin:10px 0 16px}
+.hero p.lead{font-size:1rem;margin-bottom:24px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:900;font-size:1.05rem;
+  padding:16px 20px;border-radius:12px;background:var(--ball);color:var(--green-d)}
+.btn.sub{background:transparent;border:2px solid currentColor;color:var(--white);margin-top:12px}
+
+/* featured */
+.feat{background:var(--turf)}
+.badge{display:inline-block;background:var(--green-d);color:var(--white);font-weight:900;
+  font-size:.9rem;padding:4px 16px;border-radius:999px;margin-bottom:12px}
+.feat .ph{border-radius:16px;overflow:hidden;margin:20px 0;border:4px solid var(--white);
+  background:var(--green) ;min-height:200px}
+.feat .ph img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.feat ul{list-style:none;display:grid;gap:10px;margin:20px 0}
+.feat li{background:var(--white);border-left:6px solid var(--ball);border-radius:8px;padding:12px 16px;font-weight:700}
+.feat li span{display:block;font-weight:500;font-size:.9rem;color:#4a5a47}
+
+/* strengths */
+.st{display:grid;gap:16px}
+.st article{border:2px solid var(--green);border-radius:14px;padding:20px}
+.st h3{font-size:1.15rem;font-weight:900;color:var(--green);margin-bottom:6px}
+.shop-ph{border-radius:14px;overflow:hidden;margin-top:24px;background:var(--turf);min-height:160px}
+.shop-ph img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* review */
+.rev{background:var(--turf)}
+.rev blockquote{background:var(--white);border-radius:14px;padding:20px;border-top:6px solid var(--wood)}
+.stars{color:var(--ball);font-size:1.4rem;letter-spacing:2px;text-shadow:0 0 1px #b88700}
+.rev p{margin-top:8px}
+
+/* info */
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{padding:12px 10px;border-bottom:1px solid #cfd9c6;text-align:left;vertical-align:top}
+th{width:7em;color:var(--green);font-weight:900;white-space:nowrap}
+td{word-break:break-all}
+.map{margin-top:20px;border-radius:14px;overflow:hidden;border:2px solid var(--green)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{background:var(--green-d);color:var(--white);text-align:center}
+.cta h2{color:var(--white)}
+.cta .btn+.btn{margin-top:12px}
+.cta .btn.sub{margin-top:12px}
+footer{background:#0e2917;color:#cfe0d2;text-align:center;font-size:.8rem;padding:20px}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(3,1fr);
+  background:var(--white);border-top:2px solid var(--green);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn a{display:block;text-align:center;text-decoration:none;font-weight:900;font-size:.85rem;
+  padding:12px 4px;color:var(--green-d)}
+.bn a.call{background:var(--ball)}
+
+a:focus-visible{outline:3px solid var(--ball);outline-offset:2px}
+@media (min-width:640px){
+  .st{grid-template-columns:repeat(3,1fr)}
+  .btn{max-width:420px}
+  .hero .btn,.cta .btn{margin-left:0}
+  .cta .btn{margin-left:auto;margin-right:auto}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <b>ファミリーショップ甲子園</b>
+  <a class="tel" href="tel:0234432233">電話する</a>
+</header>
+
+<main>
+  <!-- ヒーロー：images/hero.jpg（店舗外観またはゴルフ用品の売場） -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="pre">山形県庄内町｜ゴルフ用品・グラウンドゴルフ</p>
+      <h1>ゴルフ用品なら、<br>ファミリーショップ甲子園へ。</h1>
+      <p class="lead">グラウンドゴルフの商品がいっぱい。昔なつかしい品も並ぶ、知る人ぞ知る穴場のお店です。</p>
+      <a class="btn" href="tel:0234432233">0234-43-2233 に電話する</a>
+      <a class="btn sub" href="#info">お店の場所を見る</a>
+    </div>
+  </section>
+
+  <!-- イチオシ：images/golf.jpg（ゴルフ用品の写真） -->
+  <section class="feat" id="oshi">
+    <div class="wrap">
+      <span class="badge">イチオシ</span>
+      <h2>ゴルフ用品が、<br>ここにそろいます。</h2>
+      <div class="ph"><img src="images/golf.jpg" alt="ファミリーショップ甲子園のゴルフ用品" width="800" height="600"></div>
+      <p>ゴルフを始めたい方も、長く楽しんでいる方も。グラウンドゴルフの商品が特に豊富なので、道具選びの相談先としても頼れるお店です。</p>
+      <ul>
+        <li>グラウンドゴルフ用品<span>商品数が多く、見て選べます</span></li>
+        <li>ゴルフ用品<span>今回のイチオシ。店頭でお探しください</span></li>
+        <li>昔なつかしい商品<span>他ではあまり見かけない品に出会えることも</span></li>
+      </ul>
+      <a class="btn" href="tel:0234432233">在庫を電話で聞いてみる</a>
+    </div>
+  </section>
+
+  <!-- 強み：images/shop.jpg（店内または店舗外観） -->
+  <section id="strength">
+    <div class="wrap">
+      <h2>ファミリーショップ甲子園<br>3つの魅力</h2>
+      <div class="st">
+        <article>
+          <h3>グラウンドゴルフの品揃え</h3>
+          <p>グラウンドゴルフの商品がいっぱい。選ぶ楽しさがあります。</p>
+        </article>
+        <article>
+          <h3>昔っぽい商品に出会える</h3>
+          <p>今どきのお店ではあまり見ない、昔ながらの商品も並んでいます。</p>
+        </article>
+        <article>
+          <h3>知る人ぞ知る穴場</h3>
+          <p>口コミでも「穴場」と評判。ゆっくり商品を見られます。</p>
+        </article>
+      </div>
+      <div class="shop-ph"><img src="images/shop.jpg" alt="ファミリーショップ甲子園の店内" width="800" height="500" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="rev" id="review">
+    <div class="wrap">
+      <h2>お客様の声</h2>
+      <blockquote>
+        <div class="stars" aria-label="5段階評価で4">★★★★</div>
+        <p>グラウンドゴルフの商品がいっぱい有ります。昔っぽい商品あり。穴場。</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="info">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <table>
+        <tr><th>店名</th><td>ファミリーショップ甲子園</td></tr>
+        <tr><th>住所</th><td>山形県東田川郡庄内町余目土堤下30-5</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0234432233">0234-43-2233</a></td></tr>
+        <tr><th>定休日</th><td>月曜日・火曜日</td></tr>
+        <tr><th>ホームページ</th><td><a href="https://kousien.net/" target="_blank" rel="noopener">https://kousien.net/</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:info@kousien.ne">info@kousien.ne</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe title="ファミリーショップ甲子園の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E6%9D%B1%E7%94%B0%E5%B7%9D%E9%83%A1%E5%BA%84%E5%86%85%E7%94%BA%E4%BD%99%E7%9B%AE%E5%9C%9F%E5%A0%A4%E4%B8%8B30-5&amp;output=embed&amp;hl=ja"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>ゴルフ用品のご相談は<br>お気軽にどうぞ</h2>
+      <p style="margin-bottom:20px">定休日は月曜日・火曜日です。</p>
+      <a class="btn" href="tel:0234432233">0234-43-2233 に電話する</a>
+      <a class="btn sub" href="https://kousien.net/" target="_blank" rel="noopener">ホームページを見る</a>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; ファミリーショップ甲子園</footer>
+
+<nav class="bn" aria-label="固定メニュー">
+  <a href="#oshi">イチオシ</a>
+  <a href="#info">店舗情報</a>
+  <a class="call" href="tel:0234432233">電話</a>
+</nav>
+
+</body>
+</html>
