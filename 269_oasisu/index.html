@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ダイビング体験 | ダイビングショップ オアシス（山形市）</title>
+<meta name="description" content="山形市のダイビングショップ オアシス。はじめての方向けのダイビング体験をご案内します。電話 023-679-4122">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#0a3a4a; --sea:#1b8a9c; --foam:#e6f4f5; --sand:#f6efe2;
+  --coral:#e5533d; --coral-d:#c63f2b; --ink:#10262c; --line:#cfe0e3;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:#fff;line-height:1.8;font-size:16px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.4;margin:0}
+h2{font-size:1.5rem;font-weight:900;color:var(--deep);margin-bottom:20px}
+
+/* header */
+.header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,58,74,.96);color:#fff;padding-top:env(safe-area-inset-top,0px)}
+.header .in{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 14px 0 20px}
+.logo{font-weight:700;font-size:.95rem;text-decoration:none}
+.tel-s{background:var(--coral);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:8px 14px;border-radius:999px}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--deep);padding-top:calc(52px + env(safe-area-inset-top,0px))}
+.hero img{width:100%;height:56vw;max-height:420px;min-height:230px;object-fit:cover}
+.hero .txt{background:linear-gradient(180deg,var(--deep),#0d4a5c);padding:28px 20px 36px}
+.hero .txt>div{max-width:960px;margin:0 auto}
+.hero small{display:inline-block;background:var(--foam);color:var(--deep);font-weight:700;font-size:.8rem;padding:3px 12px;border-radius:999px;margin-bottom:14px}
+.hero h1{font-size:1.9rem;font-weight:900;letter-spacing:.02em}
+.hero p{margin:14px 0 22px;color:#d5ecef}
+
+.btn{display:block;text-align:center;text-decoration:none;font-weight:900;border-radius:12px;padding:16px 18px;font-size:1.05rem}
+.btn-tel{background:var(--coral);color:#fff;box-shadow:0 4px 0 var(--coral-d)}
+.btn-tel span{display:block;font-size:.78rem;font-weight:500;opacity:.9}
+.btn-mail{background:#fff;color:var(--deep);margin-top:14px;border:2px solid var(--deep)}
+.hero .btn-mail{border-color:#fff}
+
+/* featured */
+.pick{padding:56px 0;background:var(--sand)}
+.badge{display:inline-block;background:var(--coral);color:#fff;font-weight:900;font-size:.85rem;padding:4px 14px;border-radius:6px;margin-bottom:12px}
+.pick .grid{display:grid;gap:24px}
+.pick img{border-radius:14px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick h2{font-size:1.7rem}
+.pick ul{list-style:none;padding:0;margin:18px 0 24px}
+.pick li{padding:12px 0 12px 34px;border-top:1px solid #dccfb6;position:relative;font-weight:500}
+.pick li:last-child{border-bottom:1px solid #dccfb6}
+.pick li::before{content:"";position:absolute;left:4px;top:19px;width:16px;height:9px;border-left:3px solid var(--sea);border-bottom:3px solid var(--sea);transform:rotate(-45deg)}
+
+/* reasons */
+.reason{padding:56px 0;background:#fff}
+.reason .items{display:grid;gap:16px}
+.reason .it{border-left:5px solid var(--sea);background:var(--foam);padding:16px 18px;border-radius:0 12px 12px 0}
+.reason h3{font-size:1.05rem;color:var(--deep);margin-bottom:4px}
+.reason p{margin:0;font-size:.95rem}
+
+/* visual band */
+.band img{width:100%;height:44vw;max-height:320px;min-height:180px;object-fit:cover}
+
+/* shop */
+.shop{padding:56px 0;background:var(--foam)}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;font-size:.95rem}
+th,td{padding:14px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:6.5em;background:#f3f9fa;color:var(--deep);font-weight:700;white-space:nowrap}
+tr:last-child th,tr:last-child td{border-bottom:0}
+td small{display:block;color:#4b6269;margin-top:4px;line-height:1.6}
+td a{color:var(--sea);word-break:break-all}
+.map{margin-top:20px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{padding:56px 0 64px;background:var(--deep);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{margin:0 0 22px;color:#d5ecef}
+.cta .box{max-width:420px;margin:0 auto}
+.cta .btn-mail{border-color:#fff}
+footer{background:#06242e;color:#9fc0c6;text-align:center;font-size:.78rem;padding:18px 20px}
+
+/* bottom nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1fr 1fr;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.nav a{display:flex;align-items:center;justify-content:center;height:60px;text-decoration:none;font-weight:700;font-size:.85rem;color:var(--deep)}
+.nav a.call{background:var(--coral);color:#fff}
+
+a:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+
+@media (min-width:768px){
+  body{padding-bottom:0}
+  .nav{display:none}
+  .hero{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+  .hero img{height:100%;max-height:none;min-height:480px;grid-column:2;grid-row:1}
+  .hero .txt{grid-column:1;grid-row:1;display:flex;align-items:center;padding:60px 40px}
+  .hero h1{font-size:2.4rem}
+  .btn{display:inline-block;min-width:300px}
+  .btn-mail{margin:0 0 0 12px}
+  .pick .grid{grid-template-columns:1fr 1fr;align-items:center;gap:40px}
+  .reason .items{grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="in">
+    <a class="logo" href="#top">ダイビングショップ オアシス</a>
+    <a class="tel-s" href="tel:0236794122">電話する</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img src="images/hero.jpg" alt="青い海を泳ぐダイバー" width="1200" height="800">
+    <div class="txt"><div>
+      <small>山形市のダイビングショップ</small>
+      <h1>はじめての海を、<br>ダイビング体験で。</h1>
+      <p>ダイビングショップ オアシスで、水中の世界をのぞいてみませんか。ご予約・ご相談はお電話かメールで受け付けています。</p>
+      <a class="btn btn-tel" href="tel:0236794122"><span>タップして電話する</span>023-679-4122</a>
+      <a class="btn btn-mail" href="mailto:oasis@oasis-diving.com?subject=ダイビング体験について">メールで問い合わせる</a>
+    </div></div>
+  </section>
+
+  <section class="pick" id="pick">
+    <div class="wrap grid">
+      <img src="images/taiken.jpg" alt="ダイビング体験の様子" width="800" height="600" loading="lazy">
+      <div>
+        <span class="badge">イチオシ</span>
+        <h2>ダイビング体験</h2>
+        <p style="margin:0">オアシスいちばんのおすすめは、ダイビング体験です。ダイビングが気になっている方は、まずここから始めてください。</p>
+        <ul>
+          <li>ダイビングに興味はあるけれど、まだ潜ったことがない方に</li>
+          <li>日程・料金・持ち物は、お電話かメールでご案内します</li>
+          <li>ご不明な点は、ご予約の前にお気軽にご相談ください</li>
+        </ul>
+        <a class="btn btn-tel" href="tel:0236794122"><span>ダイビング体験のご相談はこちら</span>023-679-4122</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reason">
+    <div class="wrap">
+      <h2>オアシスが選ばれる理由</h2>
+      <div class="items">
+        <div class="it"><h3>山形市のダイビングショップ</h3><p>山形市嶋北にあるお店です。地元で気軽に相談できます。</p></div>
+        <div class="it"><h3>講習やツアーも開催</h3><p>体験のあとは、講習やツアーにも参加できます。</p></div>
+        <div class="it"><h3>相談は電話・メールで</h3><p>体験の内容や日程は、事前にお問い合わせください。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band"><img src="images/sea.jpg" alt="透きとおる海と水中の景色" width="1200" height="600" loading="lazy"></div>
+
+  <section class="shop" id="shop">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <table>
+        <tr><th>店名</th><td>ダイビングショップ オアシス</td></tr>
+        <tr><th>住所</th><td>山形県山形市嶋北２丁目１２−５５</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0236794122">023-679-4122</a></td></tr>
+        <tr><th>定休日</th><td>月・火曜日
+          <small>講習やツアー開催の場合は営業します。<br>月・火曜日が祝日の場合は営業し、翌日が定休日となります。</small></td></tr>
+        <tr><th>メール</th><td><a href="mailto:oasis@oasis-diving.com">oasis@oasis-diving.com</a></td></tr>
+        <tr><th>ホームページ</th><td><a href="http://oasis-diving.com/" target="_blank" rel="noopener">http://oasis-diving.com/</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe title="ダイビングショップ オアシスの地図" src="https://maps.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E5%B1%B1%E5%BD%A2%E5%B8%82%E5%B6%8B%E5%8C%97%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%92%E2%88%92%EF%BC%95%EF%BC%95&output=embed&hl=ja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="wrap"><div class="box">
+      <h2>ダイビング体験のご予約・ご相談</h2>
+      <p>お電話またはメールでお気軽にどうぞ。</p>
+      <a class="btn btn-tel" href="tel:0236794122"><span>タップして電話する</span>023-679-4122</a>
+      <a class="btn btn-mail" href="mailto:oasis@oasis-diving.com?subject=ダイビング体験について">メールで問い合わせる</a>
+    </div></div>
+  </section>
+</main>
+
+<footer>&copy; ダイビングショップ オアシス</footer>
+
+<nav class="nav" aria-label="スマートフォン用メニュー">
+  <a class="call" href="tel:0236794122">電話する</a>
+  <a href="#shop">店舗情報</a>
+  <a href="mailto:oasis@oasis-diving.com?subject=ダイビング体験について">メール</a>
+</nav>
+
+</body>
+</html>
