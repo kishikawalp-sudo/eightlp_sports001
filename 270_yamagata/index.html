@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>山形劔堂｜天童市の剣道用品専門店</title>
+<meta name="description" content="山形県天童市の剣道用品なら山形劔堂。防具選びが初めての方・保護者の方にも親身に対応します。">
+<style>
+:root{--ai:#1b2a4e;--ai-d:#111c36;--shu:#b3261e;--paper:#f6f7f9;--ink:#1e2128;--mute:#5d6470;--line:#d9dde4;--serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;--sans:"Hiragino Kaku Gothic ProN","Noto Sans JP","Meiryo",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.8;font-size:16px;padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--shu);outline-offset:2px}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+h2{font-family:var(--serif);font-size:1.6rem;line-height:1.4;color:var(--ai);margin-bottom:20px}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;background:var(--ai-d);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 14px;padding-top:env(safe-area-inset-top,0px);box-sizing:content-box}
+.hd b{font-family:var(--serif);font-size:1.15rem;letter-spacing:.12em}
+.hd a.tel{background:var(--shu);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:8px 14px;border-radius:4px}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--ai-d)}
+.hero img{width:100%;height:62vh;min-height:360px;max-height:560px;object-fit:cover;opacity:.55}
+.hero .txt{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 20px 36px;max-width:760px;margin:0 auto}
+.hero h1{font-family:var(--serif);font-size:clamp(1.9rem,8vw,3rem);line-height:1.35;letter-spacing:.04em;writing-mode:horizontal-tb}
+.hero p{margin-top:12px;font-size:1rem;opacity:.95}
+.hero .btn{margin-top:20px;align-self:flex-start}
+.btn{display:inline-block;background:var(--shu);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:4px;font-size:1.05rem}
+.btn.line{background:transparent;border:2px solid #fff}
+
+/* featured */
+.pick{background:var(--ai);color:#fff;padding:56px 0}
+.pick h2{color:#fff}
+.pick .tag{display:inline-block;background:var(--shu);padding:2px 14px;font-weight:700;margin-bottom:14px}
+.pick figure{margin:24px -20px}
+.pick figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick figcaption{font-size:.8rem;opacity:.7;padding:8px 20px}
+.pick ul{list-style:none;margin:20px 0 28px}
+.pick li{padding:12px 0 12px 22px;border-top:1px solid rgba(255,255,255,.22);position:relative}
+.pick li:last-child{border-bottom:1px solid rgba(255,255,255,.22)}
+.pick li:before{content:"";position:absolute;left:0;top:1.35em;width:10px;height:10px;background:var(--shu)}
+
+/* strengths */
+.str{padding:56px 0}
+.str dl>div{padding:18px 0;border-bottom:1px solid var(--line)}
+.str dt{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--ai)}
+.str dd{color:var(--mute);margin-top:4px}
+
+/* review */
+.rev{padding:56px 0;background:#fff}
+.rev blockquote{border-left:5px solid var(--shu);padding:6px 0 6px 18px}
+.rev .star{color:var(--shu);font-size:1.3rem;letter-spacing:.1em}
+.rev p{margin-top:8px}
+.rev small{display:block;margin-top:12px;color:var(--mute)}
+
+/* info */
+.info{padding:56px 0}
+table{width:100%;border-collapse:collapse;background:#fff;margin-bottom:20px}
+th,td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.95rem}
+th{width:6.5em;color:var(--ai);background:#eef0f5;white-space:nowrap}
+td a{color:var(--ai);word-break:break-all}
+.map{border:0;width:100%;height:300px;display:block}
+
+/* cta */
+.cta{background:var(--ai-d);color:#fff;text-align:center;padding:56px 0}
+.cta h2{color:#fff}
+.cta .btn{display:block;margin:12px auto 0;max-width:360px}
+.cta .btn.line{border-color:rgba(255,255,255,.7)}
+.cta .co{margin-top:28px;font-size:.85rem;opacity:.75}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn a{text-align:center;text-decoration:none;font-size:.78rem;font-weight:700;color:var(--ai);padding:12px 2px;line-height:1.2}
+.bn a.t{background:var(--shu);color:#fff}
+
+@media(min-width:768px){body{padding-bottom:0}.bn{display:none}.pick figure{margin:24px 0}.pick figcaption{padding-left:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <b>山形劔堂</b>
+  <a class="tel" href="tel:0236514134">📞 電話する</a>
+</header>
+
+<section class="hero">
+  <img src="images/hero.jpg" alt="山形劔堂の店内に並ぶ剣道の防具と竹刀">
+  <div class="txt">
+    <h1>はじめての防具も、<br>ここで安心。</h1>
+    <p>山形県天童市の剣道用品専門店<br>お子さまの入部準備から有段者の道具選びまで</p>
+    <a class="btn" href="tel:0236514134">電話で相談する</a>
+  </div>
+</section>
+
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="tag">イチオシ</span>
+    <h2>剣道用品を、<br>わかるまで相談できる。</h2>
+    <p>防具・竹刀・道着など、剣道に必要な道具をそろえる専門店です。はじめての入部で何を選べばいいかわからない方も、ご相談ください。</p>
+    <figure>
+      <img src="images/kendo-gear.jpg" alt="剣道の防具と竹刀">
+      <figcaption>防具・竹刀・道着など剣道用品</figcaption>
+    </figure>
+    <ul>
+      <li>入部前の「何から買う？」の相談</li>
+      <li>お子さまと保護者の方、一緒に選べる</li>
+      <li>剣道に加え、なぎなた部の防具のご相談も実績あり</li>
+    </ul>
+    <a class="btn" href="tel:0236514134">剣道用品について問い合わせる</a>
+  </div>
+</section>
+
+<section class="str" id="strength">
+  <div class="wrap">
+    <h2>山形劔堂が選ばれる理由</h2>
+    <dl>
+      <div><dt>分からないことだらけでも大丈夫</dt><dd>クチコミでも「親身に対応していただいた」と評価をいただいています。</dd></div>
+      <div><dt>人の良い店員さんの接客</dt><dd>お子さまへ「がんばってね」と声をかける、あたたかい接客です。</dd></div>
+      <div><dt>明るい店内</dt><dd>初めてのお店でも入りやすく、ゆっくり道具を見ていただけます。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="rev" id="review">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <blockquote>
+      <div class="star" aria-label="5つ星">★★★★★</div>
+      <p>中学生になり、子どもがなぎなた部に入部し、いろいろとお世話になりました。分からないことだらけでしたが、親身になって対応していただきました。<br>がんばってね、と声をかけていただいて嬉しそうに防具を抱えてお店を出ていく後ろ姿がたくましく見えました。 明るい店内と人の良い感じの店員さんが対応してくれて良かったです😊 …</p>
+      <small>Google クチコミより</small>
+    </blockquote>
+  </div>
+</section>
+
+<section class="info" id="info">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>山形劔堂</td></tr>
+      <tr><th>住所</th><td>山形県天童市東本町１丁目１−２５ ダイヤモンドヒルズ</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0236514134">023-651-4134</a></td></tr>
+      <tr><th>定休日</th><td>毎週月曜日<br>第１・第３火曜日</td></tr>
+      <tr><th>会社名</th><td>株式会社山形劔堂</td></tr>
+      <tr><th>ホームページ</th><td><a href="https://www.y-tsurugido.jp/" target="_blank" rel="noopener">https://www.y-tsurugido.jp/</a></td></tr>
+      <tr><th>Instagram</th><td><a href="https://www.instagram.com/yamagata_tsurugido/" target="_blank" rel="noopener">@yamagata_tsurugido</a></td></tr>
+    </table>
+    <iframe class="map" title="山形劔堂の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E5%A4%A9%E7%AB%A5%E5%B8%82%E6%9D%B1%E6%9C%AC%E7%94%BA1%E4%B8%81%E7%9B%AE1-25&output=embed"></iframe>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>剣道用品のご相談は<br>お気軽に</h2>
+    <a class="btn" href="tel:0236514134">📞 023-651-4134</a>
+    <a class="btn line" href="https://www.y-tsurugido.jp/" target="_blank" rel="noopener">お問い合わせフォーム</a>
+    <a class="btn line" href="https://www.instagram.com/yamagata_tsurugido/" target="_blank" rel="noopener">Instagramを見る</a>
+    <p class="co">株式会社山形劔堂</p>
+  </div>
+</section>
+
+<nav class="bn" aria-label="固定メニュー">
+  <a class="t" href="tel:0236514134">📞<br>電話</a>
+  <a href="#info">📍<br>アクセス</a>
+  <a href="https://www.instagram.com/yamagata_tsurugido/" target="_blank" rel="noopener">📷<br>Instagram</a>
+  <a href="https://www.y-tsurugido.jp/" target="_blank" rel="noopener">✉️<br>問い合わせ</a>
+</nav>
+
+</body>
+</html>
