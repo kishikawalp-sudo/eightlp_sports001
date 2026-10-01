@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>剣道用品ならユザスポーツ｜山形県遊佐町</title>
+<meta name="description" content="山形県遊佐町のユザスポーツ。剣道用品（防具・竹刀・剣道着・袴）をご相談ください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ai:#16213E;      /* 藍 */
+  --ai-deep:#0E1630;
+  --shu:#B3261E;     /* 朱 */
+  --gin:#D5D9E0;     /* 銀 */
+  --paper:#FFFFFF;
+  --mist:#F2F4F7;
+  --ink:#1B1F2A;
+  --serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.8;font-size:16px;
+  padding-top:calc(52px + env(safe-area-inset-top,0px));
+  padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));
+  -webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--shu);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-family:var(--serif);font-weight:800;font-size:1.6rem;line-height:1.5;color:var(--ai);margin-bottom:20px}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--ai-deep);color:#fff;
+  padding:env(safe-area-inset-top,0px) 14px 0;display:flex;align-items:center;justify-content:space-between;height:calc(52px + env(safe-area-inset-top,0px))}
+.hd .name{font-family:var(--serif);font-weight:800;font-size:1.05rem;letter-spacing:.06em}
+.hd a.tel{background:var(--shu);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:8px 14px;border-radius:4px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--ai-deep);padding:0}
+.hero img{width:100%;height:340px;object-fit:cover;opacity:.55}
+.hero .copy{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 20px 28px;max-width:720px;margin:0 auto}
+.hero p.lead{font-size:.95rem;margin-bottom:6px}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:2rem;line-height:1.4;letter-spacing:.04em}
+.hero .sub{margin-top:10px;font-size:.9rem;color:var(--gin)}
+.btns{padding:20px;background:var(--ai-deep);display:grid;gap:10px;max-width:720px;margin:0 auto}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:15px 12px;border-radius:6px;font-size:1.05rem}
+.btn.primary{background:var(--shu);color:#fff}
+.btn.ghost{border:2px solid var(--gin);color:#fff}
+.btn.dark{background:var(--ai);color:#fff}
+
+/* featured */
+.feature{background:var(--mist)}
+.feature .tag{display:inline-block;background:var(--shu);color:#fff;font-weight:700;font-size:.85rem;padding:2px 12px;border-radius:2px;margin-bottom:12px}
+.feature .photo{margin:0 -20px 24px}
+.feature .photo img{width:100%;height:260px;object-fit:cover}
+.feature p{margin-bottom:16px}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+.items div{background:#fff;border-left:4px solid var(--ai);padding:14px 12px}
+.items b{display:block;font-family:var(--serif);color:var(--ai);font-size:1.05rem}
+.items span{font-size:.85rem;color:#4a5160}
+.note{background:#fff;border:2px solid var(--ai);padding:16px;border-radius:6px}
+.note b{color:var(--shu)}
+
+/* strengths */
+.str{list-style:none}
+.str li{padding:20px 0;border-bottom:1px solid var(--gin)}
+.str li:first-child{padding-top:0}
+.str h3{font-family:var(--serif);font-size:1.15rem;color:var(--ai);margin-bottom:6px}
+
+/* shop */
+.shop{background:var(--mist)}
+table{width:100%;border-collapse:collapse;background:#fff;margin-bottom:20px}
+th,td{padding:14px 12px;border-bottom:1px solid var(--gin);text-align:left;vertical-align:top;font-size:.95rem}
+th{width:30%;background:var(--ai);color:#fff;font-weight:500}
+td a{color:var(--shu);word-break:break-all}
+.map{position:relative;width:100%;padding-top:70%;border-radius:6px;overflow:hidden}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* cta */
+.cta{background:var(--ai-deep);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{margin-bottom:24px;color:var(--gin)}
+.cta .btn{margin-bottom:12px}
+footer{background:#080D1F;color:var(--gin);text-align:center;font-size:.8rem;padding:20px}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(3,1fr);background:var(--ai-deep);
+  padding-bottom:env(safe-area-inset-bottom,0px);border-top:1px solid #2a3558}
+.bn a{color:#fff;text-decoration:none;text-align:center;font-size:.8rem;font-weight:700;padding:12px 4px;line-height:1.3}
+.bn a.call{background:var(--shu)}
+
+@media (min-width:720px){
+  .hero img{height:460px}
+  .hero h1{font-size:2.6rem}
+  .feature .photo{margin:0 0 24px}
+  .feature .photo img{border-radius:6px;height:340px}
+  .btns{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <span class="name">ユザスポーツ</span>
+  <a class="tel" href="tel:0234723194">電話する</a>
+</header>
+
+<main>
+<!-- ヒーロー -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="剣道の防具と竹刀" width="1200" height="800">
+  <div class="copy">
+    <p class="lead">山形県遊佐町の スポーツ店</p>
+    <h1>剣道の道具選びは、<br>ユザスポーツへ。</h1>
+    <p class="sub">防具・竹刀・剣道着・袴まで、剣道用品をご相談いただけます。</p>
+  </div>
+</div>
+<div class="btns">
+  <a class="btn primary" href="tel:0234723194">電話で相談する 023-472-3194</a>
+  <a class="btn ghost" href="https://yuzaspo.stores.jp/inquiry" target="_blank" rel="noopener">お問い合わせフォーム</a>
+</div>
+
+<!-- イチオシ -->
+<section class="feature" id="item">
+  <div class="wrap">
+    <span class="tag">イチオシ</span>
+    <h2>剣道用品を、<br>一式そろえたい方へ。</h2>
+    <div class="photo"><img src="images/kendo.jpg" alt="剣道用品（面・小手・竹刀）" width="1200" height="800" loading="lazy"></div>
+    <p>剣道は、道具が体に合っているかどうかで、稽古のしやすさが変わります。ユザスポーツでは、剣道を始めたばかりの方から続けている方まで、使う人に合わせた剣道用品をご案内します。</p>
+    <div class="items">
+      <div><b>防具</b><span>面・小手・胴・垂</span></div>
+      <div><b>竹刀</b><span>用途に合わせて</span></div>
+      <div><b>剣道着・袴</b><span>稽古着をそろえる</span></div>
+      <div><b>その他用品</b><span>稽古で使う小物</span></div>
+    </div>
+    <div class="note">
+      <p><b>何を選べばいいか分からない場合も大丈夫です。</b>お子さまの入部前や買い替えのご相談など、まずは電話か問い合わせフォームでお気軽にご連絡ください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section id="strength">
+  <div class="wrap">
+    <h2>ユザスポーツが<br>選ばれる理由</h2>
+    <ul class="str">
+      <li>
+        <h3>剣道用品をまとめて相談できる</h3>
+        <p>防具から竹刀、剣道着まで、必要なものを一度に相談できます。買い忘れも防げます。</p>
+      </li>
+      <li>
+        <h3>初めての方にも分かりやすい</h3>
+        <p>初めての道具選びでも、気軽に質問できる店です。使う人の状況に合わせてご案内します。</p>
+      </li>
+      <li>
+        <h3>地元・遊佐町のスポーツ店</h3>
+        <p>遊佐町の地域に根ざしたお店です。オンラインストアもあり、店頭に来られないときも便利です。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shop" id="shop">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>ユザスポーツ</td></tr>
+      <tr><th>住所</th><td>山形県飽海郡遊佐町遊佐高砂40</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0234723194">023-472-3194</a></td></tr>
+      <tr><th>ホームページ</th><td><a href="https://yuzaspo.stores.jp/" target="_blank" rel="noopener">https://yuzaspo.stores.jp/</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="ユザスポーツの地図" src="https://www.google.com/maps?q=山形県飽海郡遊佐町遊佐高砂40&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>剣道用品のご相談は、<br>お気軽にどうぞ。</h2>
+    <p>電話でもフォームでも受け付けています。</p>
+    <a class="btn primary" href="tel:0234723194">電話をかける 023-472-3194</a>
+    <a class="btn ghost" href="https://yuzaspo.stores.jp/inquiry" target="_blank" rel="noopener">お問い合わせフォーム</a>
+    <a class="btn dark" href="https://yuzaspo.stores.jp/" target="_blank" rel="noopener" style="border:2px solid #2a3558">オンラインストアを見る</a>
+  </div>
+</section>
+</main>
+
+<footer>&copy; ユザスポーツ　山形県飽海郡遊佐町遊佐高砂40</footer>
+
+<nav class="bn" aria-label="固定メニュー">
+  <a class="call" href="tel:0234723194">電話</a>
+  <a href="https://yuzaspo.stores.jp/inquiry" target="_blank" rel="noopener">お問い合わせ</a>
+  <a href="#shop">店舗情報</a>
+</nav>
+
+</body>
+</html>
