@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>カヌー体験なら山形市の漕快亭｜カヌー＆トレッキング 漕快亭</title>
+<meta name="description" content="山形市のカヌー＆トレッキング専門店 漕快亭。経験豊富なオーナー丹野さんが、初めてのカヌー体験から道具選びまで親身にサポートします。">
+<style>
+:root{
+  --river:#0f3d3e;
+  --river-deep:#0a2b2c;
+  --mist:#eef3f1;
+  --paper:#fbfcfb;
+  --wood:#b9803e;
+  --signal:#e8602c;
+  --ink:#14201f;
+  --sub:#4a5c5a;
+  --line:#d3dedb;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
+  --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.85;font-size:16px;padding-top:calc(52px + env(safe-area-inset-top,0px));padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);line-height:1.45;margin:0;font-weight:700}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--river-deep);color:#fff;padding:env(safe-area-inset-top,0px) 14px 0;height:calc(52px + env(safe-area-inset-top,0px));display:flex;align-items:center;justify-content:space-between;gap:10px}
+.hd .name{font-family:var(--serif);font-size:15px;font-weight:700;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hd .tel{flex:none;background:var(--signal);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px}
+
+/* hero */
+.hero{position:relative;padding:0;color:#fff;background:var(--river-deep)}
+.hero img{width:100%;height:68vh;min-height:420px;max-height:640px;object-fit:cover;opacity:.78}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,43,44,.15) 0%,rgba(10,43,44,.2) 40%,rgba(10,43,44,.88) 100%)}
+.hero .in{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 20px 36px;max-width:720px;margin:0 auto}
+.hero .shop{font-size:13px;letter-spacing:.08em;margin-bottom:10px;opacity:.92}
+.hero h1{font-size:clamp(30px,8.4vw,48px);letter-spacing:.03em}
+.hero p.lead{margin:14px 0 22px;font-size:15px;max-width:30em}
+.btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:8px;padding:15px 24px;text-align:center;font-size:16px}
+.btn-main{background:var(--signal);color:#fff}
+.btn-sub{border:2px solid #fff;color:#fff;margin-left:8px}
+
+/* headings */
+.sec-h{font-size:clamp(23px,6vw,31px);margin-bottom:22px;color:var(--river)}
+
+/* featured */
+.feature{background:var(--mist)}
+.badge{display:inline-block;background:var(--wood);color:#fff;font-weight:700;font-size:13px;padding:3px 12px;border-radius:4px;margin-bottom:14px}
+.feature figure{margin:26px -20px 24px}
+.feature figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.points{list-style:none;margin:0 0 28px;padding:0;border-top:1px solid var(--line)}
+.points li{padding:16px 0 16px 34px;border-bottom:1px solid var(--line);position:relative}
+.points li::before{content:"";position:absolute;left:4px;top:25px;width:14px;height:14px;border-radius:50% 50% 50% 0;background:var(--signal);transform:rotate(-45deg)}
+.points b{display:block;font-family:var(--serif);font-size:18px;color:var(--river)}
+.cta-box{background:var(--river);color:#fff;border-radius:12px;padding:26px 22px;text-align:center}
+.cta-box p{margin-bottom:14px}
+.cta-box .big{font-family:var(--serif);font-size:18px}
+.cta-box .num{display:block;font-size:30px;font-weight:700;letter-spacing:.04em;color:#fff;text-decoration:none;margin:4px 0 14px}
+
+/* strengths */
+.str{border-left:4px solid var(--wood);padding:2px 0 2px 18px;margin-bottom:28px}
+.str h3{font-size:19px;color:var(--river);margin-bottom:6px}
+.str p{margin:0;color:var(--sub)}
+
+/* reviews */
+.reviews{background:var(--river);color:#fff}
+.reviews .sec-h{color:#fff}
+.rv{background:rgba(255,255,255,.08);border-radius:10px;padding:20px;margin-bottom:16px}
+.rv .st{color:#f4c15a;letter-spacing:.12em;font-size:18px;margin-bottom:6px}
+.rv p{margin:0;font-size:15px}
+
+/* info */
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:6.2em;color:var(--river);font-weight:700;white-space:nowrap}
+td a{color:var(--river);word-break:break-all}
+.map{margin-top:24px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* last cta */
+.last{background:var(--river-deep);color:#fff;text-align:center}
+.last h2{font-size:clamp(22px,6vw,30px);margin-bottom:16px}
+.last .btn{display:block;max-width:360px;margin:12px auto 0}
+.last .btn-sub{margin-left:auto}
+footer{background:#06191a;color:#9fb3b0;font-size:12px;text-align:center;padding:18px 20px}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn a{text-decoration:none;text-align:center;font-size:12px;font-weight:700;color:var(--river);padding:11px 4px;min-height:52px;display:flex;align-items:center;justify-content:center}
+.bn a.call{background:var(--signal);color:#fff}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  section{padding:80px 0}
+  .feature figure{margin:30px 0 28px;border-radius:12px;overflow:hidden}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <span class="name">カヌー＆トレッキング 漕快亭</span>
+  <a class="tel" href="tel:0236449558">電話する</a>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="top">
+  <img src="images/hero.jpg" alt="穏やかな水面をカヌーで進む様子" width="1200" height="1500">
+  <div class="in">
+    <p class="shop">山形市 肴町｜カヌー＆トレッキング 漕快亭</p>
+    <h1>水の上から見る、<br>いつもと違う景色へ。</h1>
+    <p class="lead">経験豊富なオーナーが、はじめてのカヌー体験から親身にご案内します。</p>
+    <a class="btn btn-main" href="tel:0236449558">カヌー体験を相談する</a>
+    <a class="btn btn-sub" href="#feature">詳しく見る</a>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="feature" id="feature">
+  <div class="wrap">
+    <span class="badge">イチオシ</span>
+    <h2 class="sec-h">漕快亭のカヌー体験</h2>
+    <p>カヌーに乗ると、岸からは見えない景色が広がります。漕快亭では、豊富な知識を持つオーナーの丹野さんが、素敵な景色と体験をご用意します。</p>
+    <figure>
+      <img src="images/canoe.jpg" alt="カヌー体験の様子" width="1200" height="900" loading="lazy">
+    </figure>
+    <ul class="points">
+      <li><b>はじめてでも安心</b>サップやカヌーを楽しく指導してくれると、お客様から好評です。</li>
+      <li><b>経験豊富なオーナーが案内</b>学ぶことが多く、安心して参加できるというお声をいただいています。</li>
+      <li><b>体験したあとも相談できる</b>自分に合った道具選びまで、親身に話を聞いてアドバイスします。</li>
+    </ul>
+    <div class="cta-box">
+      <p class="big">カヌー体験のお問い合わせはお電話で</p>
+      <a class="num" href="tel:0236449558">023-644-9558</a>
+      <a class="btn btn-main" href="tel:0236449558">電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section id="strength">
+  <div class="wrap">
+    <h2 class="sec-h">漕快亭が選ばれる理由</h2>
+    <div class="str">
+      <h3>親身に話を聞いてくれる</h3>
+      <p>まず希望を聞き、自分に合ったものが見つかるようにアドバイスします。</p>
+    </div>
+    <div class="str">
+      <h3>厳選された商品が揃う</h3>
+      <p>カヌーやトレッキングで使う道具を、店主が選んで取り揃えています。</p>
+    </div>
+    <div class="str">
+      <h3>体験もイベントも楽しめる</h3>
+      <p>カヌー、サップ、トレッキング。お店のイベントにも参加できます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <h2 class="sec-h">お客様の声</h2>
+    <div class="rv">
+      <div class="st" aria-label="5段階中4">★★★★</div>
+      <p>厳選された商品が揃っています。親身になって話を聞いてアドバイスしてくれるので自分に合ったものが見つかると思います。カヌーやトレッキングも素敵な景色、体験を豊富な知識で実現してくれます。</p>
+    </div>
+    <div class="rv">
+      <div class="st" aria-label="5段階中5">★★★★★</div>
+      <p>他店で購入したトレッキングシューズの中敷きが合わず相談したところ、気持ち良く相談にのって頂き次回の山行きが楽しみになりました。サップやカヌーなども楽しく指導していただける店主さんです。イベントに参加しています。私の生活を輝かせてくれます！！経験豊富なオーナーで学ぶことも多く安心して参加しています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP INFO -->
+<section id="access">
+  <div class="wrap">
+    <h2 class="sec-h">店舗情報</h2>
+    <img src="images/shop.jpg" alt="漕快亭の店舗の様子" width="1200" height="800" loading="lazy" style="border-radius:10px;margin-bottom:22px">
+    <table>
+      <tr><th>店名</th><td>カヌー＆トレッキング 漕快亭</td></tr>
+      <tr><th>代表者</th><td>丹野</td></tr>
+      <tr><th>住所</th><td>山形県山形市肴町３−２５</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0236449558">023-644-9558</a></td></tr>
+      <tr><th>HP</th><td><a href="https://www.soukaitei.com/" target="_blank" rel="noopener">https://www.soukaitei.com/</a></td></tr>
+      <tr><th>Instagram</th><td><a href="https://www.instagram.com/soukaitei_hiroyuki.tanno/" target="_blank" rel="noopener">@soukaitei_hiroyuki.tanno</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="漕快亭の地図" src="https://www.google.com/maps?q=山形県山形市肴町3-25&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="last" id="contact">
+  <div class="wrap">
+    <h2>まずは気軽に、<br>カヌー体験のご相談を。</h2>
+    <p>お電話でもInstagramでもお問い合わせいただけます。</p>
+    <a class="btn btn-main" href="tel:0236449558">023-644-9558 に電話する</a>
+    <a class="btn btn-sub" href="https://www.instagram.com/soukaitei_hiroyuki.tanno/" target="_blank" rel="noopener">Instagramを見る</a>
+  </div>
+</section>
+</main>
+
+<footer>© カヌー＆トレッキング 漕快亭</footer>
+
+<nav class="bn" aria-label="ページ内メニュー">
+  <a href="#feature">カヌー体験</a>
+  <a href="#access">アクセス</a>
+  <a class="call" href="tel:0236449558">電話する</a>
+</nav>
+
+</body>
+</html>
