@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LADE SNOW｜山形・尾花沢のスキーウェア専門店</title>
+<meta name="description" content="山形県尾花沢市のスキーウェア専門店 LADE SNOW。自然のモチーフとアースカラーのセレクト＆オリジナルウェア。オーダーメイドの耳付きハットも。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine:#24352d; --pine-2:#33493f; --snow:#f3f6f6; --white:#fff;
+  --bark:#5e4b3a; --moss:#7d8f72; --ochre:#b9803a; --line:#d9e0dd;
+  --serif:"Shippori Mincho","Yu Mincho","Hiragino Mincho ProN",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{font-family:var(--sans);color:var(--pine);background:var(--snow);line-height:1.85;font-size:16px;padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+h2{font-family:var(--serif);font-weight:700;font-size:1.65rem;line-height:1.5;letter-spacing:.04em;margin-bottom:20px}
+.ph{background:linear-gradient(135deg,#cfd8d3,#aebcb3);overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;padding:env(safe-area-inset-top,0px) 16px 0;background:rgba(36,53,45,.96);color:#fff;display:flex;align-items:center;justify-content:space-between}
+.hd .logo{font-family:var(--serif);font-weight:700;letter-spacing:.14em;font-size:1.05rem;text-decoration:none}
+.hd .tel{background:var(--ochre);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:8px 16px;border-radius:999px}
+
+/* hero */
+.hero{position:relative;color:#fff;padding:0;min-height:calc(100svh - 56px);max-height:760px;display:flex;align-items:flex-end}
+.hero .ph{position:absolute;inset:0}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,32,26,.88) 8%,rgba(20,32,26,.25) 60%,rgba(20,32,26,.1))}
+.hero .wrap{position:relative;z-index:2;padding-bottom:48px;padding-top:120px}
+.hero .loc{font-size:.85rem;letter-spacing:.12em;margin-bottom:12px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.9rem,8.2vw,3rem);line-height:1.45;letter-spacing:.05em}
+.hero p{margin-top:16px;font-size:.98rem;max-width:30em}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:6px;font-weight:700;text-decoration:none;font-size:1rem}
+.btn.p{background:var(--ochre);color:#fff}
+.btn.s{border:1.5px solid currentColor}
+.btn:focus-visible,.hd a:focus-visible,.bn a:focus-visible{outline:3px solid #ffd58f;outline-offset:2px}
+
+/* ichioshi */
+.pick{background:var(--white)}
+.pick .tag{display:inline-block;background:var(--pine);color:#fff;font-size:.8rem;letter-spacing:.1em;padding:4px 14px;border-radius:999px;margin-bottom:16px}
+.pick .big{aspect-ratio:4/5;border-radius:10px;margin:28px 0}
+.pick ul{list-style:none;border-top:1px solid var(--line)}
+.pick li{padding:16px 0 16px 28px;border-bottom:1px solid var(--line);position:relative}
+.pick li::before{content:"";position:absolute;left:4px;top:26px;width:10px;height:10px;border-radius:50%;background:var(--moss)}
+.pick li b{display:block}
+
+/* strengths */
+.str{background:var(--pine);color:#fff}
+.str h2{margin-bottom:28px}
+.sg{display:grid;gap:16px}
+.sc{background:var(--pine-2);border-left:4px solid var(--ochre);padding:22px 20px;border-radius:0 8px 8px 0}
+.sc h3{font-family:var(--serif);font-size:1.15rem;margin-bottom:6px;letter-spacing:.04em}
+.sc p{font-size:.95rem;color:#e3ebe6}
+.str .ph{aspect-ratio:3/2;border-radius:10px;margin-top:32px}
+
+/* review */
+.rv .box{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:28px 22px}
+.stars{color:var(--ochre);font-size:1.4rem;letter-spacing:.12em}
+.rv p{margin-top:12px}
+.rv small{display:block;margin-top:14px;color:var(--bark);font-size:.82rem}
+
+/* info */
+.info{background:var(--white)}
+table{width:100%;border-collapse:collapse;margin-bottom:28px}
+th,td{text-align:left;vertical-align:top;padding:14px 8px;border-bottom:1px solid var(--line);font-size:.95rem}
+th{width:5.5em;color:var(--bark);font-weight:700;white-space:nowrap}
+td a{word-break:break-all}
+.map{border-radius:10px;overflow:hidden;aspect-ratio:4/3}
+.map iframe{width:100%;height:100%;border:0}
+
+/* cta */
+.cta{background:var(--bark);color:#fff;text-align:center}
+.cta p{margin-bottom:24px}
+.cta .btns{justify-content:center;flex-direction:column;align-items:stretch}
+.cta .btn.s{color:#fff}
+footer{background:#18241e;color:#b9c6be;text-align:center;font-size:.8rem;padding:24px 20px}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);background:var(--pine);padding-bottom:env(safe-area-inset-bottom,0px);border-top:1px solid #46604f}
+.bn a{color:#fff;text-decoration:none;text-align:center;font-size:.75rem;font-weight:700;padding:10px 0;min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.bn a:first-child{background:var(--ochre)}
+.bn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+@media(min-width:768px){
+  body{font-size:17px}
+  section{padding:88px 0}
+  .sg{grid-template-columns:repeat(3,1fr)}
+  .cta .btns{flex-direction:row}
+  .pick .big{aspect-ratio:3/2}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <a class="logo" href="#top">LADE SNOW</a>
+  <a class="tel" href="tel:023-753-9800">電話する</a>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="ph"><img src="images/lade_hero.jpg" alt="LADE SNOWのスキーウェアと雪山の風景"></div>
+  <div class="wrap">
+    <p class="loc">山形県尾花沢市</p>
+    <h1>雪山を、<br>自然の色でまとう。</h1>
+    <p>自然のモチーフとアースカラーのウェアが揃う、スキーウェア専門店 LADE SNOW。</p>
+    <div class="btns">
+      <a class="btn p" href="#pick">スキーウェアを見る</a>
+      <a class="btn s" href="tel:023-753-9800">023-753-9800</a>
+    </div>
+  </div>
+</section>
+
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="tag">イチオシ</span>
+    <h2>おしゃれで質の高い、<br>スキーウェア専門店</h2>
+    <p>LADE SNOWは、スキーウェアを専門に扱うお店です。セレクトの商品もオリジナルも、おしゃれで質の高いものばかり。ゲレンデでも街でも、自分らしく雪を楽しめる一着が見つかります。</p>
+    <div class="big ph"><img src="images/lade_skiwear.jpg" alt="LADE SNOWのスキーウェア"></div>
+    <ul>
+      <li><b>セレクト＋オリジナル</b>選び抜かれたウェアと、お店オリジナルの商品が並びます。</li>
+      <li><b>自然のモチーフ・アースカラー</b>雪景色になじむ、落ち着いた色とデザインが豊富です。</li>
+      <li><b>オーダーメイドの耳付きハット</b>世界にひとつの帽子も相談できます。</li>
+    </ul>
+    <div class="btns"><a class="btn p" href="https://ladeclothing.com/japanese/" target="_blank" rel="noopener">公式サイトで商品を見る</a></div>
+  </div>
+</section>
+
+<section class="str" id="strength">
+  <div class="wrap">
+    <h2>LADE SNOWが選ばれる理由</h2>
+    <div class="sg">
+      <div class="sc"><h3>質の高いセレクト</h3><p>お客様からも「質の高いものばかり」と評判のラインナップです。</p></div>
+      <div class="sc"><h3>自然を感じるデザイン</h3><p>自然のモチーフやアースカラーのアイテムが多く、おしゃれに着こなせます。</p></div>
+      <div class="sc"><h3>親切な接客</h3><p>「とても親切に接客していただきました」と喜びの声をいただいています。</p></div>
+    </div>
+    <div class="ph"><img src="images/lade_shop.jpg" alt="LADE SNOWの店内とオーダーメイドの耳付きハット"></div>
+  </div>
+</section>
+
+<section class="rv" id="review">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="box">
+      <div class="stars" aria-label="5つ星">★★★★★</div>
+      <p>セレクトの商品やオリジナルもおしゃれで質の高いものばかりでした！自然のモチーフやアースカラーのものが多くありました！オーダーメイドで耳付きのハットも頼めるようです。とても親切に接客していただきました😌 また花笠に行く時には立ち寄りたいです✨</p>
+      <small>Google口コミより</small>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="info">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>LADE SNOW</td></tr>
+      <tr><th>住所</th><td>山形県尾花沢市鶴子1300-53</td></tr>
+      <tr><th>電話</th><td><a href="tel:023-753-9800">023-753-9800</a></td></tr>
+      <tr><th>公式HP</th><td><a href="https://ladeclothing.com/japanese/" target="_blank" rel="noopener">https://ladeclothing.com/japanese/</a></td></tr>
+      <tr><th>Instagram</th><td><a href="https://www.instagram.com/lade.snow/" target="_blank" rel="noopener">@lade.snow</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="LADE SNOWの地図" src="https://www.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E5%B0%BE%E8%8A%B1%E6%B2%A2%E5%B8%82%E9%B6%B4%E5%AD%901300-53&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>スキーウェア選びやオーダーメイドの耳付きハットのご相談は、お電話またはフォームから。</p>
+    <div class="btns">
+      <a class="btn p" href="tel:023-753-9800">電話で問い合わせる</a>
+      <a class="btn s" href="https://lade.clothing/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a>
+      <a class="btn s" href="https://www.instagram.com/lade.snow/" target="_blank" rel="noopener">Instagramを見る</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>&copy; LADE SNOW</footer>
+
+<nav class="bn" aria-label="クイックメニュー">
+  <a href="tel:023-753-9800"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>電話</a>
+  <a href="https://ladeclothing.com/japanese/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>公式HP</a>
+  <a href="https://lade.clothing/contact/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>問合せ</a>
+  <a href="https://www.instagram.com/lade.snow/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r=".6"/></svg>Instagram</a>
+</nav>
+
+</body>
+</html>
