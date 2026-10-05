@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIKESPORTSキッド｜山形県東根市のスポーツバイク専門店・TREKロードバイク</title>
+<meta name="description" content="山形県東根市のスポーツバイク専門店 BIKESPORTSキッド。TREKのロードバイクを、初めての方にもていねいに説明。購入後の調整・基本整備は無料。試乗もできます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101b2d;
+  --cobalt:#1f4fd8;
+  --cobalt-dark:#173ba3;
+  --tint:#e8eef9;
+  --paper:#fafaf7;
+  --amber:#f2a900;
+  --line:#d5dbe6;
+  --font:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.8;font-size:16px;-webkit-text-size-adjust:100%;padding-bottom:72px}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.5rem;line-height:1.45;font-weight:900;letter-spacing:.02em;margin-bottom:20px}
+.lead{color:#3a4659;margin-bottom:24px}
+
+/* ボタン */
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:12px 24px;border-radius:999px;font-weight:700;font-size:1.05rem;text-decoration:none;text-align:center}
+.btn-main{background:var(--amber);color:var(--ink)}
+.btn-sub{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
+.btn-blue{background:var(--cobalt);color:#fff}
+
+/* ヒーロー */
+.hero{position:relative;background:var(--ink);color:#fff}
+.hero-img{aspect-ratio:4/5;max-height:640px;width:100%;object-fit:cover;background:#22304a}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,27,45,.35) 0%,rgba(16,27,45,.2) 30%,rgba(16,27,45,.92) 100%)}
+.hero-body{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:0 20px 32px}
+.hero-body .in{max-width:720px;margin:0 auto}
+.shop{font-weight:700;font-size:.95rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.75rem,7.4vw,2.6rem);line-height:1.35;font-weight:900;margin-bottom:14px}
+.hero p{font-size:.98rem;margin-bottom:20px;color:#e6ebf5}
+.hero .btns{display:grid;gap:10px}
+
+/* 共感 */
+.problem{background:var(--tint)}
+.problem ul{list-style:none;display:grid;gap:12px}
+.problem li{background:#fff;border-left:5px solid var(--cobalt);padding:14px 16px;font-weight:500}
+.problem .answer{margin-top:24px;font-weight:700;font-size:1.1rem}
+
+/* イチオシ */
+.pick-img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:12px;background:#c9d3e8;margin-bottom:24px}
+.pick-list{display:grid;gap:0}
+.pick-item{padding:20px 0;border-top:1px solid var(--line)}
+.pick-item:last-child{border-bottom:1px solid var(--line)}
+.pick-item h3{font-size:1.15rem;font-weight:900;color:var(--cobalt-dark);margin-bottom:6px}
+.pick-item p{color:#3a4659}
+
+/* 購入後 */
+.after{background:var(--ink);color:#fff}
+.after h2{color:#fff}
+.after .lead{color:#c5cee0}
+.after-img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:12px;background:#22304a;margin-bottom:24px}
+.after .badge{display:inline-block;background:var(--amber);color:var(--ink);font-weight:900;padding:4px 14px;border-radius:6px;margin-bottom:14px}
+.after .free{display:grid;gap:10px;margin-bottom:28px}
+.after .free div{border:1px solid rgba(255,255,255,.25);padding:14px 16px;border-radius:8px;font-weight:700}
+
+/* クチコミ */
+.voice-head{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.stars{color:var(--amber);font-size:1.4rem;letter-spacing:2px}
+.voice{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:16px}
+.voice p{font-size:.97rem}
+.voice .who{margin-top:10px;font-size:.85rem;color:#5b667a}
+
+/* 店舗情報 */
+.info{background:var(--tint)}
+.info dl{background:#fff;border-radius:12px;padding:4px 20px}
+.info .row{padding:14px 0;border-bottom:1px solid var(--line)}
+.info .row:last-child{border-bottom:0}
+.info dt{font-weight:900;font-size:.9rem;color:var(--cobalt-dark)}
+.info dd{word-break:break-all}
+.info .btns{display:grid;gap:10px;margin-top:24px}
+
+/* フッター・固定バー */
+footer{background:var(--ink);color:#aeb8cc;text-align:center;padding:28px 20px;font-size:.85rem}
+.fixed{position:fixed;left:0;right:0;bottom:0;z-index:10;background:#fff;border-top:1px solid var(--line);padding:8px 12px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fixed .btn{min-height:48px;font-size:.95rem;padding:8px 12px}
+
+@media (min-width:768px){
+  body{font-size:17px;padding-bottom:0}
+  section{padding:80px 0}
+  h2{font-size:1.9rem}
+  .hero-img{aspect-ratio:16/9;max-height:620px}
+  .hero .btns{grid-template-columns:auto auto;justify-content:start}
+  .info .btns{grid-template-columns:1fr 1fr}
+  .fixed{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- ヒーロー -->
+<header class="hero">
+  <img class="hero-img" src="images/hero_trek_roadbike.jpg" alt="TREKのロードバイクが並ぶBIKESPORTSキッドの店内" width="1200" height="1500">
+  <div class="hero-body"><div class="in">
+    <p class="shop">山形県東根市｜スポーツバイク専門店 BIKESPORTSキッド</p>
+    <h1>はじめてのロードバイクを、<br>売りっぱなしにしない店。</h1>
+    <p>TREKを取りそろえ、乗るための基本までやさしく教えます。購入後の調整・基本整備は無料です。</p>
+    <div class="btns">
+      <a class="btn btn-main" href="tel:0237420561">📞 電話で相談する 023-742-0561</a>
+      <a class="btn btn-sub" href="#pick">お店の強みを見る</a>
+    </div>
+  </div></div>
+</header>
+
+<main>
+<!-- 共感 -->
+<section class="problem">
+  <div class="wrap">
+    <h2>ロードバイク、<br>はじめてだと不安ですよね。</h2>
+    <ul>
+      <li>どれを選べばいいのか分からない</li>
+      <li>組み立てや乗り方の基本を教えてほしい</li>
+      <li>買ったあとの調整や整備も安心して任せたい</li>
+    </ul>
+    <p class="answer">その不安、BIKESPORTSキッドがひとつずつ解消します。</p>
+  </div>
+</section>
+
+<!-- イチオシ -->
+<section id="pick">
+  <div class="wrap">
+    <h2>スポーツバイク専門店だから、<br>選び方も乗り方も頼れる。</h2>
+    <p class="lead">ただ売るだけでなく、バイクに乗るための基本まで。TREKのロードバイクを、あなたに合う一台に。</p>
+    <img class="pick-img" src="images/shop_trek_lineup.jpg" alt="スポーツバイク専門店のTREKロードバイクのラインナップ" width="1200" height="800" loading="lazy">
+    <div class="pick-list">
+      <div class="pick-item">
+        <h3>TREKのロードバイクを取り扱い</h3>
+        <p>「息子の探していたTREKが買えた」とご家族からも喜びの声。人気のロードバイクをご覧いただけます。</p>
+      </div>
+      <div class="pick-item">
+        <h3>説明がていねい、組み立て方も教えます</h3>
+        <p>忙しい中でも、バイクに乗るための基本をやさしく説明。はじめての方も置いてきぼりにしません。</p>
+      </div>
+      <div class="pick-item">
+        <h3>見て、聞いて、試乗もできる</h3>
+        <p>色々な説明を聞いたり、試乗してみたり。納得してから選べます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 購入後 -->
+<section class="after">
+  <div class="wrap">
+    <span class="badge">買ったあとも安心</span>
+    <h2>体に合わせた調整・基本整備は、無料。</h2>
+    <p class="lead">売りっぱなしにしないのが、BIKESPORTSキッドのスタイルです。ご夫婦ならではの息の合った接客で、購入後もずっとお付き合いします。</p>
+    <img class="after-img" src="images/staff_adjustment.jpg" alt="スタッフがロードバイクを体に合わせて調整している様子" width="1200" height="800" loading="lazy">
+    <div class="free">
+      <div>🔧 体に合わせたポジション調整（無料）</div>
+      <div>🔧 基本的な整備（無料）</div>
+    </div>
+    <a class="btn btn-main" href="tel:0237420561">📞 まずは電話で相談する</a>
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section>
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="voice-head"><span class="stars" aria-label="5つ星">★★★★★</span><span>Googleクチコミより</span></div>
+    <div class="voice">
+      <p>とても素敵なバイクスポーツショップさんです。息子の探していたロードバイク（トレック）の取り扱いショップです。取り扱いを丁寧に説明、組み立て方も親切に教えてくださいました。ただ販売するのでなく、バイクに乗るための基本を、忙しい中でも優しく教えてくださいました。ご夫婦と一緒の仕事をしているあうんの呼吸を感じました。なにより、売りっぱなしにしないバイクスポーツショップさんです。</p>
+      <p class="who">ご家族でご来店の方</p>
+    </div>
+    <div class="voice">
+      <p>初めてロードバイクを買いました！店長さんがお父さんから息子さんに変わったと話を聞きました。息子さんが対応してくださったのですが、対応や説明がとても丁寧で、購入を決めました。購入してからも、体に合わせて調整や基本的な整備を無料でやってくれるところもすごく助かりました！これからもずっとお世話になろうと思います。</p>
+      <p class="who">ロードバイク初購入の方</p>
+    </div>
+    <div class="voice">
+      <p>先輩に紹介したところ、先輩も購入を決めたみたいで、やっぱりいいところでした！初めての人でも、色々説明聞いたり、試乗してみたりできるのでここのお店はおすすめします！！TREK最高です。</p>
+      <p class="who">ご紹介でご来店の方</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="info" id="access">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <dl>
+      <div class="row"><dt>店名</dt><dd>BIKESPORTSキッド</dd></div>
+      <div class="row"><dt>住所</dt><dd>山形県東根市本丸南３丁目２−２６</dd></div>
+      <div class="row"><dt>電話番号</dt><dd><a href="tel:0237420561">023-742-0561</a></dd></div>
+      <div class="row"><dt>定休日</dt><dd>木曜日</dd></div>
+      <div class="row"><dt>ホームページ</dt><dd><a href="http://bikesports-kid.net/" target="_blank" rel="noopener">http://bikesports-kid.net/</a></dd></div>
+      <div class="row"><dt>メール</dt><dd><a href="mailto:ici39157@bikesports-kid.net">ici39157@bikesports-kid.net</a></dd></div>
+    </dl>
+    <div class="btns">
+      <a class="btn btn-main" href="tel:0237420561">📞 電話する</a>
+      <a class="btn btn-blue" href="https://www.google.com/maps/search/?api=1&query=山形県東根市本丸南３丁目２−２６+BIKESPORTSキッド" target="_blank" rel="noopener">地図を見る</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© BIKESPORTSキッド</footer>
+
+<!-- スマホ固定バー -->
+<div class="fixed">
+  <a class="btn btn-main" href="tel:0237420561">📞 電話する</a>
+  <a class="btn btn-blue" href="#access">店舗情報</a>
+</div>
+
+</body>
+</html>
