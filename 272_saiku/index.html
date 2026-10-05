@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>サイクレスタ｜山形県天童市のスポーツバイク専門店</title>
+<meta name="description" content="山形県天童市のスポーツバイク専門店サイクレスタ。初めての方にも丁寧な説明、小さなことでも丁寧にメンテナンス。旅行中のサイクリストにも好評です。">
+<style>
+:root{
+  --main:#0b5fa5;
+  --main-dark:#08436f;
+  --accent:#ff6a13;
+  --accent-dark:#d9540a;
+  --bg:#f4f8fb;
+  --text:#1f2933;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Meiryo",sans-serif;
+  color:var(--text);background:var(--white);line-height:1.8;
+  padding-top:56px;padding-bottom:64px;
+  font-size:16px;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px}
+
+/* header */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;height:56px;
+  background:var(--white);border-bottom:2px solid var(--main);
+  display:flex;align-items:center;justify-content:space-between;padding:0 12px;
+}
+.header .logo{font-weight:900;font-size:18px;color:var(--main);letter-spacing:.04em}
+.header .tel{
+  background:var(--accent);color:#fff;font-weight:700;font-size:14px;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* hero */
+.hero{position:relative;background:var(--main-dark);color:#fff}
+.hero img{width:100%;height:340px;object-fit:cover;opacity:.55}
+.hero-inner{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  padding:0 20px;max-width:760px;margin:0 auto;
+}
+.hero .badge{
+  display:inline-block;align-self:flex-start;background:var(--accent);color:#fff;
+  font-size:13px;font-weight:700;padding:3px 12px;border-radius:4px;margin-bottom:12px;
+}
+.hero h1{font-size:clamp(24px,7vw,38px);line-height:1.4;font-weight:900;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.hero p{margin-top:10px;font-size:14px;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.hero .btn{margin-top:18px;align-self:flex-start}
+
+.btn{
+  display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+  padding:14px 28px;border-radius:999px;font-size:16px;
+  box-shadow:0 4px 0 var(--accent-dark);text-align:center;
+}
+.btn.sub{background:var(--white);color:var(--main);box-shadow:0 4px 0 #b9cfe2;border:2px solid var(--main)}
+
+section{padding:48px 0}
+.sec-title{text-align:center;margin-bottom:28px}
+.sec-title small{display:block;color:var(--accent);font-weight:700;letter-spacing:.2em;font-size:12px}
+.sec-title h2{font-size:24px;color:var(--main);line-height:1.5;font-weight:900}
+.sec-title h2::after{content:"";display:block;width:48px;height:4px;background:var(--accent);margin:10px auto 0;border-radius:2px}
+
+/* feature */
+.feature{background:var(--bg)}
+.feature-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(11,95,165,.12);border:3px solid var(--main)}
+.feature-card .tag{background:var(--main);color:#fff;text-align:center;font-weight:700;padding:8px;letter-spacing:.1em}
+.feature-card img{width:100%;height:240px;object-fit:cover}
+.feature-body{padding:22px 20px 26px}
+.feature-body h3{font-size:22px;line-height:1.5;color:var(--main);margin-bottom:12px;font-weight:900}
+.feature-body h3 em{font-style:normal;background:linear-gradient(transparent 60%,#ffd9bd 60%)}
+.feature-body p{font-size:15px}
+.check{list-style:none;margin:16px 0 20px}
+.check li{position:relative;padding:8px 0 8px 32px;border-bottom:1px dashed #cdd9e4;font-weight:700;font-size:15px}
+.check li::before{
+  content:"✓";position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;
+  background:var(--accent);color:#fff;font-size:13px;line-height:22px;text-align:center;
+}
+.center{text-align:center}
+
+/* strengths */
+.point{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
+.point .num{
+  flex:0 0 46px;height:46px;border-radius:50%;background:var(--main);color:#fff;
+  font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center;
+}
+.point h3{font-size:18px;color:var(--main);line-height:1.5;margin-bottom:4px}
+.point p{font-size:14.5px}
+
+/* review */
+.review{background:var(--bg)}
+.review-card{background:#fff;border-radius:14px;padding:22px 20px;box-shadow:0 4px 16px rgba(0,0,0,.08);position:relative}
+.stars{color:#f5a623;font-size:22px;letter-spacing:2px}
+.review-card .lead{font-weight:900;color:var(--main);font-size:17px;margin:6px 0 10px}
+.review-card p{font-size:15px}
+.review-card .src{margin-top:12px;font-size:12px;color:#7b8794;text-align:right}
+
+/* shop info */
+.info-table{width:100%;border-collapse:collapse;font-size:15px;margin-bottom:22px}
+.info-table th,.info-table td{padding:14px 10px;border-bottom:1px solid #d9e2ec;text-align:left;vertical-align:top}
+.info-table th{width:92px;color:var(--main);white-space:nowrap}
+.info-table td a{color:var(--main);text-decoration:underline;word-break:break-all}
+.map{position:relative;width:100%;padding-top:70%;border-radius:12px;overflow:hidden;border:1px solid #d9e2ec}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* cta */
+.cta{background:var(--main);color:#fff;text-align:center}
+.cta h2{font-size:22px;line-height:1.6;font-weight:900;margin-bottom:10px}
+.cta p{font-size:14.5px;margin-bottom:22px}
+.cta .btns{display:flex;flex-direction:column;gap:14px;align-items:center}
+.cta .btn{width:100%;max-width:340px}
+.cta .sns{display:inline-block;margin-top:20px;font-size:14px;text-decoration:underline}
+
+footer{background:var(--main-dark);color:#cfe0ee;text-align:center;font-size:12px;padding:20px 12px 24px}
+
+/* bottom nav */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:100;height:60px;
+  display:flex;background:#fff;border-top:2px solid var(--main);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.bottom-nav a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--main);gap:2px}
+.bottom-nav a .ico{font-size:20px;line-height:1}
+.bottom-nav a.tel{background:var(--accent);color:#fff}
+.bottom-nav a + a{border-left:1px solid #d9e2ec}
+
+@media (min-width:768px){
+  body{padding-bottom:0}
+  .bottom-nav{display:none}
+  .hero img{height:460px}
+  .hero h1{font-size:42px}
+  .feature-card img{height:340px}
+  .cta .btns{flex-direction:row;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">サイクレスタ</div>
+  <a class="tel" href="tel:0236655567">📞 電話する</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <!-- 画像1：店舗外観またはスポーツバイクが並ぶ店内 -->
+  <img src="images/hero.jpg" alt="山形県天童市のスポーツバイク専門店 サイクレスタ">
+  <div class="hero-inner">
+    <span class="badge">山形県天童市｜スポーツバイク専門店</span>
+    <h1>自転車を、もっと楽しく。<br>はじめての1台も、<br>長く乗る1台も。</h1>
+    <p>口コミ★5｜小さなことでも丁寧にメンテナンス</p>
+    <a class="btn" href="#info">店舗情報・ご相談はこちら</a>
+  </div>
+</div>
+
+<!-- FEATURE（イチオシ） -->
+<section class="feature" id="feature">
+  <div class="wrap">
+    <div class="sec-title">
+      <small>RECOMMEND</small>
+      <h2>サイクレスタのイチオシ</h2>
+    </div>
+    <div class="feature-card">
+      <div class="tag">スポーツバイク専門店</div>
+      <!-- 画像2：スポーツバイク（ロードバイク・クロスバイク等）の写真 -->
+      <img src="images/sportbike.jpg" alt="サイクレスタのスポーツバイク">
+      <div class="feature-body">
+        <h3>「選ぶ」から「乗る」まで、<br><em>スポーツバイクのことなら</em><br>おまかせください</h3>
+        <p>サイクレスタは、スポーツバイクを専門に扱う自転車店です。はじめてスポーツバイクを検討される方にも、基本からしっかりご説明します。購入後のメンテナンスも、小さなことまで丁寧に対応します。</p>
+        <ul class="check">
+          <li>初めての方にもわかりやすい丁寧な説明</li>
+          <li>小さな不調・ちょっとした調整もお気軽に</li>
+          <li>旅行中のサイクリストの立ち寄りも大歓迎</li>
+          <li>山形のおすすめスポットも教えてもらえる</li>
+        </ul>
+        <div class="center">
+          <a class="btn" href="tel:0236655567">📞 まずは電話で相談する</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section id="strength">
+  <div class="wrap">
+    <div class="sec-title">
+      <small>STRENGTHS</small>
+      <h2>サイクレスタが選ばれる理由</h2>
+    </div>
+
+    <div class="point">
+      <div class="num">1</div>
+      <div>
+        <h3>初めてでも安心の丁寧な説明</h3>
+        <p>「初めてでもしっかり説明してくれて助かった」というお声をいただいています。わからないことは遠慮なくご質問ください。</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="num">2</div>
+      <div>
+        <h3>小さなことでも丁寧にメンテナンス</h3>
+        <p>「小さなことでも丁寧にメンテしてくれる」と好評です。気になる点があれば、お気軽にご相談ください。</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="num">3</div>
+      <div>
+        <h3>山形のサイクリング・観光情報も</h3>
+        <p>旅行でお立ち寄りのお客様には、山形のおすすめスポットや温泉の情報もご案内。楽しい旅のお手伝いをします。</p>
+      </div>
+    </div>
+
+    <!-- 画像3：店内・スタッフ・メンテナンス風景など -->
+    <img src="images/shop.jpg" alt="サイクレスタの店内・メンテナンスの様子" style="border-radius:12px;margin-top:8px;width:100%;height:220px;object-fit:cover">
+  </div>
+</section>
+
+<!-- REVIEW -->
+<section class="review" id="review">
+  <div class="wrap">
+    <div class="sec-title">
+      <small>VOICE</small>
+      <h2>お客様の声</h2>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="lead">旅行中のサイクリングで立ち寄りました！</p>
+      <p>山形のオススメスポットや、温泉なども快く教えていただき、楽しかったです！山形で整備が必要な時には行かせてもらいます！笑　初めてでもしっかり説明してくれて助かりました🥰 小さなことでも丁寧にメンテしてくれます‼️</p>
+      <div class="src">― Googleマップの口コミより</div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP INFO -->
+<section id="info">
+  <div class="wrap">
+    <div class="sec-title">
+      <small>SHOP INFO</small>
+      <h2>店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>サイクレスタ</td></tr>
+      <tr><th>住所</th><td>山形県天童市久野本3丁目12-17</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0236655567">023-665-5567</a></td></tr>
+      <tr><th>定休日</th><td>水曜日・木曜日</td></tr>
+      <tr><th>公式サイト</th><td><a href="http://www.cyclesta.jp/" target="_blank" rel="noopener">http://www.cyclesta.jp/</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.facebook.com/cyclesta/" target="_blank" rel="noopener">Facebook</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=山形県天童市久野本3丁目12-17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="サイクレスタの地図"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>スポーツバイクのこと、<br>お気軽にご相談ください</h2>
+    <p>購入のご相談もメンテナンスも、<br>お電話またはお問い合わせフォームから。</p>
+    <div class="btns">
+      <a class="btn" href="tel:0236655567">📞 023-665-5567</a>
+      <a class="btn sub" href="https://www.cyclesta.jp/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener">✉ お問い合わせフォーム</a>
+    </div>
+    <a class="sns" href="https://www.facebook.com/cyclesta/" target="_blank" rel="noopener">Facebookはこちら</a>
+  </div>
+</section>
+
+<footer>© サイクレスタ ｜ 定休日：水曜日・木曜日</footer>
+
+<!-- bottom nav -->
+<nav class="bottom-nav">
+  <a class="tel" href="tel:0236655567"><span class="ico">📞</span>電話</a>
+  <a href="https://www.cyclesta.jp/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener"><span class="ico">✉</span>問合せ</a>
+  <a href="#info"><span class="ico">📍</span>アクセス</a>
+  <a href="http://www.cyclesta.jp/" target="_blank" rel="noopener"><span class="ico">🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
