@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>パラグライダー体験なら｜トントンとんびパラグライダースクール白鷹校（山形県白鷹町）</title>
+<meta name="description" content="山形県白鷹町のパラグライダースクール。朝日連峰を望むロケーションで、初めてでも安心の体験フライト。">
+<style>
+:root{
+  --sky:#2a8fd6;
+  --deep:#12395c;
+  --sun:#f08a24;
+  --sun-d:#d9730f;
+  --mist:#eef6fc;
+  --ink:#1f2d3a;
+  --line:#d3e3f0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.8;font-size:16px;
+  padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.5rem;line-height:1.45;color:var(--deep);margin-bottom:20px;letter-spacing:.02em}
+p{margin-bottom:1em}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;height:calc(56px + env(safe-area-inset-top,0px));
+  padding-top:env(safe-area-inset-top,0px);background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;
+  padding-left:14px;padding-right:10px}
+.hd b{font-size:.82rem;color:var(--deep);line-height:1.3}
+.hd a.tel{background:var(--sun);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;
+  padding:9px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;color:#fff;padding:0;background:var(--deep)}
+.hero img{width:100%;height:68vh;min-height:380px;max-height:560px;object-fit:cover;opacity:.88}
+.hero .txt{position:absolute;left:0;right:0;bottom:0;padding:48px 20px 28px;
+  background:linear-gradient(to top,rgba(10,30,50,.88),rgba(10,30,50,0))}
+.hero .in{max-width:720px;margin:0 auto}
+.hero small{display:block;font-size:.85rem;margin-bottom:6px}
+.hero h1{font-size:1.85rem;line-height:1.4;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.hero p{font-size:.95rem;margin-bottom:18px}
+
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;border-radius:10px;
+  padding:16px 20px;font-size:1.05rem}
+.btn.main{background:var(--sun);color:#fff;box-shadow:0 4px 0 var(--sun-d)}
+.btn.sub{background:#fff;color:var(--deep);border:2px solid var(--deep);margin-top:12px}
+
+/* pick */
+.pick{background:var(--mist)}
+.pick .badge{display:inline-block;background:var(--deep);color:#fff;font-size:.8rem;font-weight:700;
+  padding:3px 12px;border-radius:4px;margin-bottom:12px}
+.pick img{border-radius:12px;margin:20px 0}
+.points{list-style:none}
+.points li{background:#fff;border-left:5px solid var(--sky);border-radius:6px;padding:14px 16px;margin-bottom:12px}
+.points li strong{display:block;color:var(--deep);margin-bottom:2px}
+
+/* strengths */
+.view img{border-radius:12px;margin:0 0 20px}
+.sun-box{background:var(--deep);color:#fff;border-radius:12px;padding:20px;margin-top:8px}
+.sun-box p{margin:0}
+
+/* voice */
+.voice{background:var(--mist)}
+.rv{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px}
+.rv .st{color:var(--sun);font-size:1.15rem;letter-spacing:2px;margin-bottom:4px}
+.rv .st span{color:#c9d6e0}
+.rv p{margin:0}
+
+/* info */
+table{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:.95rem}
+th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:28%;color:var(--deep);white-space:nowrap}
+td a{color:var(--sky);word-break:break-all}
+.map{width:100%;height:280px;border:0;border-radius:12px;background:var(--mist)}
+
+/* cta */
+.cta{background:linear-gradient(160deg,var(--sky),var(--deep));color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta .tel-big{display:block;font-size:1.9rem;font-weight:800;text-decoration:none;margin:8px 0 18px}
+
+footer{background:#0c2740;color:#aac2d6;text-align:center;font-size:.8rem;padding:20px 20px}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);
+  background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn a{text-align:center;text-decoration:none;font-size:.75rem;font-weight:700;color:var(--deep);
+  padding:10px 2px;line-height:1.3}
+.bn a.go{background:var(--sun);color:#fff}
+
+@media(min-width:768px){
+  h2{font-size:1.8rem}
+  .hero h1{font-size:2.4rem}
+  .bn{display:none}
+  body{padding-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <b>トントンとんび<br>パラグライダースクール白鷹校</b>
+  <a class="tel" href="tel:0238872500">電話する</a>
+</header>
+
+<main>
+  <!-- ヒーロー -->
+  <section class="hero">
+    <img src="images/hero.jpg" alt="朝日連峰を望む空を飛ぶパラグライダー">
+    <div class="txt"><div class="in">
+      <small>山形県白鷹町｜パラグライダースクール</small>
+      <h1>山形の空を、<br>はじめて飛ぶ。</h1>
+      <p>体験で安心して空を飛べる。口コミで選ばれるパラグライダー体験です。</p>
+      <a class="btn main" href="https://reserva.be/winpal/contact?mode=edit" target="_blank" rel="noopener">体験について問い合わせる</a>
+    </div></div>
+  </section>
+
+  <!-- イチオシ -->
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <span class="badge">イチオシ</span>
+      <h2>パラグライダー体験で、<br>空からの景色を自分のものに。</h2>
+      <p>地上では味わえない、風に乗って空を進む時間。はじめての方でも、スクールの体験なら安心して空の世界を楽しめます。</p>
+      <img src="images/experience.jpg" alt="パラグライダー体験の様子" loading="lazy">
+      <ul class="points">
+        <li><strong>はじめてでも安心</strong>口コミでも「体験で安心して空を飛べる」と評価をいただいています。</li>
+        <li><strong>景色が主役のフライト</strong>朝日連峰を望む、山形ならではのロケーションです。</li>
+        <li><strong>スクールだからこそ</strong>体験から本格的に始めたい方まで、相談できる専門スクールです。</li>
+      </ul>
+      <a class="btn main" href="tel:0238872500" style="margin-top:20px">電話で体験を相談する 023-887-2500</a>
+    </div>
+  </section>
+
+  <!-- ロケーション -->
+  <section class="view" id="view">
+    <div class="wrap">
+      <h2>朝日連峰の眺めと、<br>夕陽のきれいな空。</h2>
+      <img src="images/view.jpg" alt="白鷹町の空と夕陽" loading="lazy">
+      <p>白鷹校のフライトエリアは、朝日連峰を望む絶好のロケーション。お客様からも「眺めがよい」「夕陽がきれい」という声が寄せられています。</p>
+      <div class="sun-box">
+        <p>空を飛ぶ爽快感と、山形の景色。その両方を一度に楽しめるのが、白鷹校の体験です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口コミ -->
+  <section class="voice" id="voice">
+    <div class="wrap">
+      <h2>体験した方の声</h2>
+      <div class="rv">
+        <div class="st">★★★★<span>★</span></div>
+        <p>体験で安心して空を飛べる。</p>
+      </div>
+      <div class="rv">
+        <div class="st">★★★★★</div>
+        <p>パラグライダーのロケーションが良い～(^_^)v　朝日連峰のながめがよい、夕陽がきれい！</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section id="info">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <table>
+        <tr><th>店名</th><td>トントンとんびパラグライダースクール白鷹校</td></tr>
+        <tr><th>住所</th><td>山形県西置賜郡白鷹町中山2812</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0238872500">023-887-2500</a></td></tr>
+        <tr><th>定休日</th><td>毎週金曜日（悪天時）</td></tr>
+        <tr><th>公式HP</th><td><a href="https://tonton-tonbi.sakura.ne.jp/" target="_blank" rel="noopener">https://tonton-tonbi.sakura.ne.jp/</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://reserva.be/winpal/contact?mode=edit" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      </table>
+      <iframe class="map" title="トントンとんびパラグライダースクール白鷹校の地図"
+        src="https://www.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E8%A5%BF%E7%BD%AE%E8%B3%9C%E9%83%A1%E7%99%BD%E9%B7%B9%E7%94%BA%E4%B8%AD%E5%B1%B12812&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>まずは気軽に、<br>パラグライダー体験の相談を。</h2>
+      <a class="tel-big" href="tel:0238872500">023-887-2500</a>
+      <a class="btn main" href="https://reserva.be/winpal/contact?mode=edit" target="_blank" rel="noopener">お問い合わせフォームへ</a>
+      <a class="btn sub" href="https://tonton-tonbi.sakura.ne.jp/" target="_blank" rel="noopener">公式HPを見る</a>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; トントンとんびパラグライダースクール白鷹校</footer>
+
+<nav class="bn" aria-label="固定メニュー">
+  <a href="tel:0238872500">電話</a>
+  <a href="#pick">体験</a>
+  <a href="#info">アクセス</a>
+  <a class="go" href="https://reserva.be/winpal/contact?mode=edit" target="_blank" rel="noopener">問い合わせ</a>
+</nav>
+
+</body>
+</html>
