@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>マルゼンスポーツ｜山形県南陽市の野球・ソフトボール用品専門店</title>
+<meta name="description" content="山形県南陽市の地域密着スポーツ店 マルゼンスポーツ。ハタケヤマ・ゼット・ウイルソン・ActiveMを中心に、野球・ソフトボール用品を取り扱っています。">
+<style>
+:root{
+  --navy:#0f2547;
+  --navy-d:#091830;
+  --red:#d12f2f;
+  --chalk:#f5f8fc;
+  --ink:#1a2433;
+  --line:#d9e1ec;
+  --tan:#c9a46a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.8;font-size:16px;
+  padding-bottom:72px;-webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.5rem;line-height:1.45;font-weight:800;color:var(--navy);margin-bottom:20px;letter-spacing:.02em}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:56px;padding:14px 20px;border-radius:999px;
+  font-weight:800;font-size:1.05rem;text-decoration:none;text-align:center;
+}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 4px 0 #8f1f1f}
+.btn-line{border:2px solid #fff;color:#fff}
+.btn-navy{background:var(--navy);color:#fff}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--tan);outline-offset:3px}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:0 0 40px}
+.hero-img{aspect-ratio:4/3;width:100%;object-fit:cover;background:var(--navy-d)}
+.hero .wrap{padding-top:28px}
+.shop{font-size:.9rem;color:var(--tan);font-weight:700;margin-bottom:8px}
+.hero h1{font-size:1.9rem;line-height:1.4;font-weight:900;letter-spacing:.02em;margin-bottom:16px}
+.hero p{color:#d5deec;margin-bottom:24px}
+.hero .btns{display:grid;gap:12px}
+
+/* brands */
+.brands{background:var(--chalk)}
+.brand-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.brand-list li{
+  list-style:none;background:#fff;border:2px solid var(--navy);border-radius:8px;
+  padding:18px 8px;text-align:center;font-weight:900;font-size:1.15rem;color:var(--navy);
+}
+.brand-list li:nth-child(odd){border-right-color:var(--red)}
+.lead{color:#3a475c}
+
+/* oshi */
+.oshi{background:#fff}
+.badge{
+  display:inline-block;background:var(--red);color:#fff;font-weight:800;
+  font-size:.9rem;padding:4px 14px;border-radius:4px;margin-bottom:14px;
+}
+.oshi-img{border-radius:10px;margin:20px 0;aspect-ratio:3/2;object-fit:cover;width:100%;background:var(--chalk)}
+.points{margin-top:20px;display:grid;gap:12px}
+.points li{
+  list-style:none;padding:14px 16px 14px 18px;border-left:6px solid var(--red);
+  background:var(--chalk);font-weight:700;
+}
+.points li span{display:block;font-weight:400;font-size:.92rem;color:#3a475c}
+
+/* voice */
+.voice{background:var(--navy);color:#fff}
+.voice h2{color:#fff}
+.vcard{background:#fff;color:var(--ink);border-radius:10px;padding:20px;margin-bottom:16px}
+.stars{color:#e8a400;font-size:1.2rem;letter-spacing:.1em}
+.stars small{color:#6b778a;font-size:.8rem;letter-spacing:0;margin-left:6px}
+.vcard p{margin-top:8px}
+
+/* shop */
+.shop-img{border-radius:10px;margin-bottom:24px;aspect-ratio:3/2;object-fit:cover;width:100%;background:var(--chalk)}
+table{width:100%;border-collapse:collapse;font-size:.98rem}
+th,td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:30%;color:var(--navy);font-weight:800;white-space:nowrap}
+td a{color:var(--navy);font-weight:700;word-break:break-all}
+.cta{background:var(--chalk);text-align:center}
+.cta .btns{display:grid;gap:12px;margin-top:20px}
+footer{background:var(--navy-d);color:#9fb0cc;text-align:center;font-size:.8rem;padding:24px 20px}
+
+/* sticky call bar */
+.bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:10;display:grid;
+  grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));
+  background:rgba(9,24,48,.96);
+}
+.bar .btn{min-height:48px;padding:8px;font-size:.95rem;box-shadow:none}
+
+@media(min-width:720px){
+  .hero-img{aspect-ratio:16/9}
+  .hero h1{font-size:2.4rem}
+  .hero .btns,.cta .btns{grid-template-columns:1fr 1fr}
+  h2{font-size:1.8rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <!-- 画像1: images/hero_baseball.jpg（野球グラブ・バットなど野球用品のメイン画像） -->
+  <img class="hero-img" src="images/hero_baseball.jpg" alt="マルゼンスポーツの野球用品（グラブ・バット・ボール）" width="1200" height="900">
+  <div class="wrap">
+    <p class="shop">山形県南陽市｜マルゼンスポーツ</p>
+    <h1>プレーを支える一本が、<br>ここで見つかる。</h1>
+    <p>ハタケヤマ・ゼット・ウイルソン・ActiveMを中心に、野球・ソフトボール用品をそろえる地域密着のスポーツ店です。</p>
+    <div class="btns">
+      <a class="btn btn-red" href="tel:0238472362">電話で相談する 0238-47-2362</a>
+      <a class="btn btn-line" href="#oshi">野球用品を見る</a>
+    </div>
+  </div>
+</header>
+
+<section class="brands">
+  <div class="wrap">
+    <h2>野球・ソフトボール用品を、<br>4つのブランドから。</h2>
+    <p class="lead">マルゼンスポーツでは、ハタケヤマ・ゼット・ウイルソン・ActiveMを中心に、ソフトボール、野球用品を取り扱っています。</p>
+    <ul class="brand-list">
+      <li>ハタケヤマ</li>
+      <li>ゼット</li>
+      <li>ウイルソン</li>
+      <li>ActiveM</li>
+    </ul>
+  </div>
+</section>
+
+<section class="oshi" id="oshi">
+  <div class="wrap">
+    <span class="badge">イチオシ</span>
+    <h2>野球用品で、<br>さらなる高みへの一歩を。</h2>
+    <!-- 画像2: images/baseball_gear.jpg（グラブ・バット・ボールを並べた商品画像） -->
+    <img class="oshi-img" src="images/baseball_gear.jpg" alt="野球用品のラインナップ" width="1200" height="800" loading="lazy">
+    <p class="lead">高品質の野球用品を取り扱うことで、皆さんのプレーを支え、さらなる高みへの一歩を踏み出すお手伝いをさせていただいています。</p>
+    <ul class="points">
+      <li>野球・ソフトボール用品が中心の品ぞろえ
+        <span>4ブランドを軸に、プレーに合わせて選べます。</span></li>
+      <li>部活動のご相談にも対応
+        <span>「部活関係のことでもいろいろ対応してもらえた」とのお声をいただいています。</span></li>
+      <li>店長・スタッフが親身に接客
+        <span>優しく明るく元気な接客で、初めての方も気軽に相談できます。</span></li>
+    </ul>
+    <div style="margin-top:28px">
+      <a class="btn btn-navy" href="tel:0238472362">野球用品について問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<section class="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="vcard">
+      <div class="stars">★★★★<small>口コミ</small></div>
+      <p>地域密着型のスポーツ店！部活関係の事でもいろいろ対応してもらいました。</p>
+    </div>
+    <div class="vcard">
+      <div class="stars">★★★★★<small>口コミ</small></div>
+      <p>買い物だけでなく、店長さんの経験から、人生や、子育てについて、親身になって、お話や、アドバイスを頂け、勉強になります。店員さんの接客も優しく、明るく、元気で素晴らしい😊</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <!-- 画像3: images/shop_front.jpg（店舗外観または店内の写真） -->
+    <img class="shop-img" src="images/shop_front.jpg" alt="マルゼンスポーツ 店舗の様子" width="1200" height="800" loading="lazy">
+    <table>
+      <tr><th>店名</th><td>マルゼンスポーツ</td></tr>
+      <tr><th>会社名</th><td>有限会社丸善</td></tr>
+      <tr><th>住所</th><td>山形県南陽市宮内4524-7</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0238472362">0238-47-2362</a></td></tr>
+      <tr><th>定休日</th><td>水曜日、他不定休</td></tr>
+      <tr><th>HP</th><td><a href="https://www.maruzen-sp.jp/shop.html" target="_blank" rel="noopener">https://www.maruzen-sp.jp/shop.html</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>野球用品のご相談は、<br>お気軽にどうぞ。</h2>
+    <p class="lead">お電話またはお問い合わせフォームから受け付けています。</p>
+    <div class="btns">
+      <a class="btn btn-red" href="tel:0238472362">電話する</a>
+      <a class="btn btn-navy" href="https://www.maruzen-sp.jp/login/inquiryedit" target="_blank" rel="noopener">問い合わせフォーム</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 有限会社丸善 マルゼンスポーツ</footer>
+
+<nav class="bar" aria-label="お問い合わせ">
+  <a class="btn btn-red" href="tel:0238472362">電話する</a>
+  <a class="btn btn-line" href="https://www.maruzen-sp.jp/login/inquiryedit" target="_blank" rel="noopener">お問い合わせ</a>
+</nav>
+
+</body>
+</html>
