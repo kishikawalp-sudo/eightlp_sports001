@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>THE EC MALL 富士スポーツ 村山店｜ランニングシューズ｜山形県村山市</title>
+<meta name="description" content="山形県村山市のスポーツ店「THE EC MALL 富士スポーツ 村山店」。ランニングシューズを中心に、陸上競技用スパイクやお買い得品も。毎週月曜定休。">
+<style>
+:root{
+  --ink:#0f1b2d;
+  --blue:#1d4ed8;
+  --yellow:#ffd400;
+  --paper:#f6f7f9;
+  --gray:#5b6575;
+  --line:#dde2ea;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--white);line-height:1.8;
+  font-size:16px;-webkit-text-size-adjust:100%;
+  padding-top:calc(56px + env(safe-area-inset-top,0px));
+  padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:26px;line-height:1.4;font-weight:900;letter-spacing:.02em}
+.lead{color:var(--gray);margin-top:12px;font-size:15px}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--ink);color:var(--white);
+  padding-top:env(safe-area-inset-top,0px)}
+.hd .in{max-width:720px;margin:0 auto;height:56px;padding:0 12px 0 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.hd .name{font-size:13px;font-weight:700;line-height:1.3}
+.hd .name small{display:block;font-size:11px;font-weight:400;opacity:.7}
+.tel-btn{flex:none;background:var(--yellow);color:var(--ink);font-weight:900;font-size:14px;text-decoration:none;padding:9px 14px;border-radius:999px}
+
+/* hero */
+.hero{position:relative;background:var(--ink);color:var(--white);padding:0;overflow:hidden}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.55}
+.hero-body{position:relative;padding:28px 20px 44px;max-width:720px;margin:0 auto}
+.hero-tag{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:900;font-size:13px;padding:3px 12px;border-radius:2px}
+.hero h1{font-size:34px;line-height:1.35;font-weight:900;margin-top:14px;letter-spacing:.02em}
+.hero p{margin-top:14px;font-size:15px;opacity:.9}
+.lanes{height:18px;background:
+  repeating-linear-gradient(90deg,var(--yellow) 0 36px,transparent 36px 48px)}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:900;font-size:17px;padding:16px 20px;border-radius:8px;margin-top:22px}
+.btn-y{background:var(--yellow);color:var(--ink)}
+.btn-b{background:var(--blue);color:var(--white)}
+.btn-o{border:2px solid var(--white);color:var(--white);margin-top:12px}
+
+/* featured */
+.pick{background:var(--paper)}
+.pick-badge{display:inline-block;background:var(--blue);color:var(--white);font-weight:900;font-size:13px;padding:3px 12px;border-radius:2px;margin-bottom:12px}
+.pick-img{margin:24px -20px 0;width:calc(100% + 40px);max-width:none;aspect-ratio:4/3;object-fit:cover}
+.pick ul{list-style:none;margin-top:24px;display:grid;gap:12px}
+.pick li{background:var(--white);border-left:6px solid var(--blue);padding:14px 16px;font-weight:700;font-size:15px;line-height:1.6}
+.pick li span{display:block;font-weight:400;color:var(--gray);font-size:14px;margin-top:2px}
+
+/* strengths */
+.st-list{display:grid;gap:16px;margin-top:28px}
+.st{border-top:4px solid var(--ink);padding-top:12px}
+.st h3{font-size:19px;font-weight:900;line-height:1.5}
+.st p{color:var(--gray);font-size:15px;margin-top:4px}
+
+/* review */
+.rv{background:var(--ink);color:var(--white)}
+.rv h2{color:var(--white)}
+.stars{color:var(--yellow);font-size:24px;letter-spacing:4px;margin-top:16px}
+blockquote{margin-top:12px;font-size:15px;line-height:1.95;border-left:4px solid var(--yellow);padding-left:16px}
+.rv cite{display:block;margin-top:14px;font-size:13px;font-style:normal;opacity:.7}
+
+/* info */
+table{width:100%;border-collapse:collapse;margin-top:24px;font-size:15px}
+th,td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.6}
+th{width:6.5em;font-weight:900;white-space:nowrap}
+td a{color:var(--blue);word-break:break-all}
+.map{margin-top:24px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{background:var(--blue);color:var(--white);text-align:center}
+.cta h2{color:var(--white)}
+.cta p{margin-top:12px;opacity:.92;font-size:15px}
+.cta .tel{display:block;font-size:34px;font-weight:900;text-decoration:none;margin-top:20px;letter-spacing:.03em}
+.cta .note{font-size:13px;opacity:.85;margin-top:4px}
+.cta .btn-y{margin-top:20px}
+footer{background:var(--ink);color:var(--white);text-align:center;font-size:12px;padding:24px 20px;opacity:1}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--white);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn ul{list-style:none;max-width:720px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.bn a{display:block;text-align:center;text-decoration:none;font-size:12px;font-weight:700;padding:12px 4px;min-height:56px;line-height:1.3}
+.bn li:first-child a{background:var(--yellow)}
+.bn a b{display:block;font-size:15px}
+
+@media (min-width:720px){
+  .hero-img{aspect-ratio:16/8}
+  .hero h1{font-size:44px}
+  .btn{max-width:360px}
+  .cta .btn{margin-left:auto;margin-right:auto}
+  .pick-img{margin:24px 0 0;width:100%;border-radius:8px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="in">
+    <div class="name">THE EC MALL 富士スポーツ<small>村山店｜山形県村山市</small></div>
+    <a class="tel-btn" href="tel:0237555805">電話する</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="images/hero.jpg" alt="ランニングシューズが並ぶ富士スポーツ村山店の店内">
+  <div class="hero-body">
+    <span class="hero-tag">ランニングシューズ</span>
+    <h1>シーズンインの前に、<br>走る一足を選ぼう。</h1>
+    <p>山形県村山市の「富士スポーツ 村山店」。新作モデルも、お買い得品も。ご家族で相談しながら選べるお店です。</p>
+    <a class="btn btn-y" href="tel:0237555805">電話で在庫を確認する</a>
+    <a class="btn btn-o" href="#pick">ランニングシューズを見る</a>
+  </div>
+  <div class="lanes" aria-hidden="true"></div>
+</div>
+
+<!-- イチオシ -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="pick-badge">イチオシ</span>
+    <h2>ランニングシューズは、<br>富士スポーツ 村山店で。</h2>
+    <p class="lead">毎日のジョギングから、陸上競技の短距離用スパイクまで。走る人のための一足を、店頭でお選びいただけます。</p>
+    <img class="pick-img" src="images/shoes.jpg" alt="富士スポーツ村山店で取り扱うランニングシューズ" loading="lazy">
+    <ul>
+      <li>新作モデルを取り揃え<span>人気のモデルは数に限りがあります。気になる一足は、早めのご来店・お問い合わせがおすすめです。</span></li>
+      <li>お買い得品もあります<span>品質はそのまま、お求めやすい価格の商品もご覧いただけます。</span></li>
+      <li>お子さまの陸上用スパイクもご相談ください<span>部活・大会に向けた一足を、ご家族で一緒に選べます。</span></li>
+    </ul>
+    <a class="btn btn-b" href="tel:0237555805">電話で問い合わせる</a>
+  </div>
+</section>
+
+<!-- 強み -->
+<section id="strength">
+  <div class="wrap">
+    <h2>選ばれている、<br>3つの理由。</h2>
+    <div class="st-list">
+      <div class="st">
+        <h3>最新モデルに出会える</h3>
+        <p>お客さまからも、新作モデルを買えたという声をいただいています。</p>
+      </div>
+      <div class="st">
+        <h3>お買い得品が見つかる</h3>
+        <p>新作だけでなく、お買い得品もチェックできます。</p>
+      </div>
+      <div class="st">
+        <h3>やさしいスタッフが接客</h3>
+        <p>「優しそうなお父さんが働かれているお店」と、口コミでも評判です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="rv" id="review">
+  <div class="wrap">
+    <h2>お客さまの声</h2>
+    <div class="stars" aria-label="5つ星">★★★★★</div>
+    <blockquote>
+      息子の陸上競技短距離用スパイク購入の為、伺いました。2025年新作モデルの在庫が少なくなって来ており、購入が厳しいかも？と思いましたが、なんとか、最後の１足GET出来ました。シーズンイン間近、危なかったぁー。お買い得品もあり、優しそうなお父さんが働かれているお店。素敵な買い物ができました！ありがとうございました。
+    </blockquote>
+    <cite>口コミより</cite>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section id="info">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>THE EC MALL 富士スポーツ 村山店</td></tr>
+      <tr><th>住所</th><td>山形県村山市楯岡新町1-10-2</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0237555805">0237-55-5805</a></td></tr>
+      <tr><th>定休日</th><td>毎週月曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://fujisports.co.jp/" target="_blank" rel="noopener">https://fujisports.co.jp/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@fujisports.co.jp">info@fujisports.co.jp</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://x.com/fujisports_xc" target="_blank" rel="noopener">X（旧Twitter）</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="富士スポーツ 村山店の地図" src="https://www.google.com/maps?q=%E5%B1%B1%E5%BD%A2%E7%9C%8C%E6%9D%91%E5%B1%B1%E5%B8%82%E6%A5%A0%E5%B2%A1%E6%96%B0%E7%94%BA1-10-2&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>お気に入りの一足を、<br>お取り置きの前にご相談ください。</h2>
+    <p>在庫やサイズのご確認は、お電話で承ります。</p>
+    <a class="tel" href="tel:0237555805">0237-55-5805</a>
+    <div class="note">定休日：毎週月曜日</div>
+    <a class="btn btn-y" href="tel:0237555805">電話をかける</a>
+    <a class="btn btn-o" href="mailto:info@fujisports.co.jp">メールで問い合わせる</a>
+  </div>
+</section>
+</main>
+
+<footer>&copy; THE EC MALL 富士スポーツ 村山店</footer>
+
+<nav class="bn" aria-label="クイックメニュー">
+  <ul>
+    <li><a href="tel:0237555805"><b>電話</b>在庫確認</a></li>
+    <li><a href="#pick"><b>商品</b>イチオシ</a></li>
+    <li><a href="#info"><b>店舗</b>アクセス</a></li>
+    <li><a href="mailto:info@fujisports.co.jp"><b>メール</b>問い合わせ</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
