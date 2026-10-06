@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>スポーツショップナイン｜いわき市の野球用品専門店</title>
+<meta name="description" content="福島県いわき市の野球用品専門店「スポーツショップナイン」。親切丁寧、何でも相談できるこだわりのお店です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#12213a;
+  --navy-deep:#0b1526;
+  --grass:#1f6b4a;
+  --chalk:#fafaf7;
+  --line:#dcdfe3;
+  --stitch:#c8312b;
+  --text:#1c2430;
+  --muted:#5b6573;
+  --head-h:56px;
+  --nav-h:62px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head-h) + 8px)}
+body{
+  margin:0;
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--text);
+  background:var(--chalk);
+  line-height:1.8;
+  font-size:16px;
+  padding-top:var(--head-h);
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+/* 縫い目：野球ボールのステッチを区切り線に */
+.stitch{border:0;border-top:3px dashed var(--stitch);margin:0;opacity:.85}
+
+/* ヘッダー */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:var(--head-h);
+  background:var(--navy-deep);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px 0 16px;
+}
+.header .logo{font-weight:900;font-size:16px;letter-spacing:.04em;text-decoration:none}
+.header .tel{
+  display:flex;align-items:center;gap:6px;
+  background:var(--stitch);color:#fff;text-decoration:none;
+  font-weight:700;font-size:14px;
+  padding:8px 14px;border-radius:999px;
+}
+
+/* ヒーロー */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero-img{aspect-ratio:4/3;width:100%;object-fit:cover;background:#22365a}
+.hero-body{padding:28px 20px 36px;max-width:720px;margin:0 auto}
+.hero-lead{font-size:14px;margin:0 0 10px;color:#c9d3e4;font-weight:500}
+.hero h1{
+  margin:0 0 16px;
+  font-size:clamp(34px,10.5vw,52px);
+  line-height:1.2;font-weight:900;letter-spacing:.02em;
+}
+.hero-sub{margin:0 0 24px;font-size:16px;color:#e7ecf5}
+.rating{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.08);
+  padding:8px 14px;border-radius:8px;font-size:14px;margin-bottom:24px;
+}
+.rating .stars{color:#ffc93c;letter-spacing:2px;font-size:16px}
+
+/* ボタン */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:56px;padding:12px 20px;border-radius:10px;
+  font-weight:700;font-size:17px;text-decoration:none;text-align:center;
+}
+.btn-tel{background:var(--stitch);color:#fff}
+.btn-sub{background:#fff;color:var(--navy);border:2px solid var(--navy);margin-top:12px}
+.hero .btn-sub{border-color:#fff}
+
+/* セクション共通 */
+section{padding:56px 0}
+h2{
+  margin:0 0 24px;font-size:26px;line-height:1.4;font-weight:900;color:var(--navy);
+}
+.sec-note{margin:0 0 24px;color:var(--muted);font-size:15px}
+
+/* イチオシ */
+.pick{background:#fff;padding-top:48px}
+.pick-badge{
+  display:inline-block;background:var(--stitch);color:#fff;
+  font-weight:900;font-size:15px;padding:4px 14px;border-radius:4px;margin-bottom:14px;
+}
+.pick h2{font-size:clamp(28px,8vw,40px);margin-bottom:20px}
+.pick-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;background:#e3e7ec;margin-bottom:24px}
+.pick p{margin:0 0 16px}
+.pick-points{list-style:none;margin:24px 0 28px;padding:0;border-top:3px dashed var(--stitch)}
+.pick-points li{
+  padding:16px 0 16px 0;border-bottom:1px solid var(--line);
+  font-weight:700;font-size:17px;
+}
+.pick-points li span{display:block;font-weight:400;font-size:14px;color:var(--muted);margin-top:2px}
+
+/* 選ばれる理由 */
+.reasons{background:var(--chalk)}
+.reason{
+  background:#fff;border-left:6px solid var(--grass);
+  padding:20px 20px 20px 18px;margin-bottom:16px;border-radius:0 10px 10px 0;
+}
+.reason h3{margin:0 0 6px;font-size:19px;color:var(--grass);font-weight:900}
+.reason p{margin:0;font-size:15px}
+
+/* 口コミ */
+.voice{background:var(--navy);color:#fff}
+.voice h2{color:#fff}
+.voice-card{background:#fff;color:var(--text);border-radius:12px;padding:24px 20px}
+.voice-card .stars{color:#e8a400;font-size:20px;letter-spacing:3px;margin-bottom:8px}
+.voice-card .title{font-weight:900;font-size:18px;margin:0 0 12px;color:var(--navy)}
+.voice-card p{margin:0 0 8px;font-size:15px}
+.voice-card .src{margin-top:12px;font-size:12px;color:var(--muted)}
+.hint{margin-top:20px;text-align:center;font-weight:700;font-size:15px;color:#e7ecf5}
+
+/* 店舗情報 */
+.shop{background:#fff}
+.shop-photo{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:#e3e7ec;margin-bottom:24px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:30%;color:var(--navy);font-weight:700;white-space:nowrap}
+td a{color:var(--navy);word-break:break-all}
+.map{margin-top:24px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* 最後のCTA */
+.cta{background:var(--navy-deep);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta .tel-num{display:block;font-size:clamp(30px,9vw,42px);font-weight:900;margin:8px 0 4px;text-decoration:none;color:#fff}
+.cta small{display:block;color:#c9d3e4;margin-bottom:24px}
+.cta .btn-sub{background:transparent;color:#fff;border-color:#fff}
+
+footer{background:#060d19;color:#8f9bb0;text-align:center;font-size:12px;padding:20px 16px}
+
+/* 下部固定ナビ */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  height:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  background:#fff;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.bottom-nav a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  text-decoration:none;font-size:11px;font-weight:700;color:var(--navy);
+}
+.bottom-nav a .ic{font-size:20px;line-height:1}
+.bottom-nav a.main{background:var(--stitch);color:#fff}
+
+a:focus-visible,.btn:focus-visible{outline:3px solid #ffc93c;outline-offset:2px}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  .hero-img{aspect-ratio:16/9}
+  .hero-body{padding:40px 20px 48px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header">
+  <a class="logo" href="#top">スポーツショップナイン</a>
+  <a class="tel" href="tel:0246299229" aria-label="電話をかける">📞 電話する</a>
+</header>
+
+<main id="top">
+
+<!-- ヒーロー -->
+<div class="hero">
+  <img class="hero-img" src="images/hero.jpg" alt="スポーツショップナインの店内・野球用品" width="1200" height="900">
+  <div class="hero-body">
+    <p class="hero-lead">福島県いわき市｜こだわりの野球用品ならここ</p>
+    <h1>野球用品<br>専門店</h1>
+    <p class="hero-sub">親切丁寧に、何でも相談できるお店。<br>道具選びに迷ったら、まずはお気軽にどうぞ。</p>
+    <div class="rating"><span class="stars">★★★★★</span><span>クチコミ高評価</span></div>
+    <a class="btn btn-tel" href="tel:0246299229">📞 0246-29-9229 に電話する</a>
+    <a class="btn btn-sub" href="#shop">お店の場所を見る</a>
+  </div>
+</div>
+<hr class="stitch">
+
+<!-- イチオシ -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="pick-badge">イチオシ</span>
+    <h2>こだわりの野球用品を、<br>専門店で選ぶ。</h2>
+    <img class="pick-img" src="images/baseball-goods.jpg" alt="スポーツショップナインの野球用品" width="1200" height="900" loading="lazy">
+    <p>スポーツショップナインは、野球用品を専門に扱うお店です。野球のことだけを見つめているからこそ、道具選びの「ちょっとした疑問」にもじっくり向き合えます。</p>
+    <p>お客様からは「こだわりの野球用品ならここ」という声をいただいています。</p>
+    <ul class="pick-points">
+      <li>野球用品専門店<span>野球に絞った、こだわりの品揃え</span></li>
+      <li>何でも相談できる<span>選び方に迷ったら、そのまま聞いてください</span></li>
+      <li>親切丁寧な接客<span>初めての方も、気軽に立ち寄れます</span></li>
+    </ul>
+    <a class="btn btn-tel" href="tel:0246299229">📞 野球用品のご相談はこちら</a>
+  </div>
+</section>
+<hr class="stitch">
+
+<!-- 選ばれる理由 -->
+<section class="reasons" id="reasons">
+  <div class="wrap">
+    <h2>ナインが選ばれる3つの理由</h2>
+    <div class="reason">
+      <h3>こだわりの野球用品</h3>
+      <p>野球用品専門店ならではの視点で、こだわりの道具をご用意しています。</p>
+    </div>
+    <div class="reason">
+      <h3>親切丁寧な接客</h3>
+      <p>ひとりひとりのお客様に、親切丁寧に向き合います。</p>
+    </div>
+    <div class="reason">
+      <h3>何でも相談できる</h3>
+      <p>道具のこと、選び方のこと。気になることは何でもご相談ください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section class="voice" id="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="voice-card">
+      <div class="stars" aria-label="5つ星">★★★★★</div>
+      <p class="title">こだわりのお店⚾️</p>
+      <p>親切丁寧なお店ꉂ(ˊᗜˋ*)</p>
+      <p>何でも相談できるお店(^ε^)-☆!!</p>
+      <p>皆さんも、是非お店に足を運んでみて下さい✨　こだわりの野球用品ならここです☺</p>
+      <p class="src">※ お客様のクチコミより</p>
+    </div>
+    <p class="hint">あなたも、お店に足を運んでみてください。</p>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="shop" id="shop">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <img class="shop-photo" src="images/shop-exterior.jpg" alt="スポーツショップナインの外観" width="1280" height="720" loading="lazy">
+    <table>
+      <tr><th>店名</th><td>スポーツショップナイン</td></tr>
+      <tr><th>代表者</th><td>朝倉 正男</td></tr>
+      <tr><th>住所</th><td>福島県いわき市常磐上矢田町太良作36</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0246299229">0246-29-9229</a></td></tr>
+      <tr><th>定休日</th><td>毎週火曜日・水曜日</td></tr>
+      <tr><th>HP</th><td><a href="http://www.sports-nine.com/" target="_blank" rel="noopener">http://www.sports-nine.com/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@sports-nine.com">info@sports-nine.com</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="スポーツショップナインの地図" src="https://www.google.com/maps?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%E3%81%84%E3%82%8F%E3%81%8D%E5%B8%82%E5%B8%B8%E7%9B%A4%E4%B8%8A%E7%9F%A2%E7%94%B0%E7%94%BA%E5%A4%AA%E8%89%AF%E4%BD%9C36&output=embed&hl=ja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>野球用品のご相談は<br>スポーツショップナインへ</h2>
+    <a class="tel-num" href="tel:0246299229">0246-29-9229</a>
+    <small>定休日：毎週火曜日・水曜日</small>
+    <a class="btn btn-tel" href="tel:0246299229">📞 電話で相談する</a>
+    <a class="btn btn-sub" href="mailto:info@sports-nine.com">✉️ メールで問い合わせる</a>
+  </div>
+</section>
+
+</main>
+
+<footer>&copy; スポーツショップナイン</footer>
+
+<!-- 下部固定ナビ -->
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <a class="main" href="tel:0246299229"><span class="ic">📞</span>電話する</a>
+  <a href="mailto:info@sports-nine.com"><span class="ic">✉️</span>メール</a>
+  <a href="#shop"><span class="ic">📍</span>アクセス</a>
+  <a href="http://www.sports-nine.com/" target="_blank" rel="noopener"><span class="ic">🌐</span>公式HP</a>
+</nav>
+
+</body>
+</html>
