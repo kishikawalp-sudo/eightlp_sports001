@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中央武道具｜郡山市の剣道用具専門店</title>
+<meta name="description" content="福島県郡山市の剣道用具専門店「中央武道具」。初めての防具一式から買い替えまで、親身なアドバイスで剣士を支えます。ホームページから店舗LINEで在庫確認・注文もOK。">
+<style>
+:root{
+  --indigo:#14213d;
+  --indigo-2:#1f3563;
+  --red:#c1272d;
+  --gold:#c9a24a;
+  --paper:#f7f4ee;
+  --ink:#222;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+  color:var(--ink);background:var(--paper);line-height:1.8;
+  padding-top:56px;padding-bottom:64px;-webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+.sec-label{
+  text-align:center;font-size:12px;letter-spacing:.3em;color:var(--red);font-weight:700;
+}
+.sec-title{
+  text-align:center;font-size:24px;line-height:1.5;color:var(--indigo);font-weight:800;margin:6px 0 28px;
+}
+.sec-title::after{
+  content:"";display:block;width:48px;height:3px;background:var(--red);margin:14px auto 0;
+}
+
+/* header */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;height:56px;
+  background:var(--indigo);color:var(--white);
+  display:flex;align-items:center;justify-content:space-between;padding:0 14px;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+.header .logo{font-size:17px;font-weight:800;letter-spacing:.08em;text-decoration:none}
+.header .logo small{display:block;font-size:10px;font-weight:400;letter-spacing:.1em;opacity:.8;line-height:1.2}
+.header .tel{
+  background:var(--red);color:var(--white);text-decoration:none;font-weight:700;font-size:14px;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* hero */
+.hero{
+  position:relative;color:var(--white);padding:0;
+  background:var(--indigo);
+}
+.hero-img{width:100%;height:340px;object-fit:cover;opacity:.55}
+.hero-box{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:24px 20px;
+  background:linear-gradient(180deg,rgba(20,33,61,.55),rgba(20,33,61,.8));
+}
+.hero .tag{
+  display:inline-block;border:1px solid var(--gold);color:var(--gold);
+  font-size:12px;letter-spacing:.2em;padding:3px 14px;margin-bottom:14px;
+}
+.hero h1{font-size:28px;line-height:1.5;font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{margin-top:12px;font-size:14px;opacity:.95}
+.btn{
+  display:block;text-align:center;text-decoration:none;font-weight:800;border-radius:6px;
+  padding:16px 20px;font-size:16px;letter-spacing:.05em;
+}
+.btn-red{background:var(--red);color:var(--white);box-shadow:0 4px 0 #8c1a1f}
+.btn-line{background:#06c755;color:var(--white);box-shadow:0 4px 0 #04943f}
+.btn-ghost{background:var(--white);color:var(--indigo);border:2px solid var(--indigo)}
+.hero .btn{margin-top:20px;width:100%;max-width:320px}
+
+/* featured */
+.pick{background:var(--white)}
+.badge{
+  display:inline-block;background:var(--red);color:var(--white);font-weight:800;font-size:13px;
+  letter-spacing:.15em;padding:4px 16px;border-radius:2px;
+}
+.pick-head{text-align:center;margin-bottom:10px}
+.pick-img{border-radius:8px;box-shadow:0 8px 24px rgba(20,33,61,.18);margin:22px 0}
+.pick-lead{font-size:16px;text-align:center;font-weight:700;color:var(--indigo)}
+.pick-list{list-style:none;margin:24px 0}
+.pick-list li{
+  position:relative;padding:14px 14px 14px 48px;background:var(--paper);
+  border-left:4px solid var(--red);margin-bottom:10px;font-size:15px;
+}
+.pick-list li::before{
+  content:"✓";position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  width:24px;height:24px;border-radius:50%;background:var(--red);color:var(--white);
+  font-size:14px;text-align:center;line-height:24px;font-weight:700;
+}
+.pick .btn{margin-top:8px}
+.note{font-size:12px;color:#666;text-align:center;margin-top:10px}
+
+/* strengths */
+.strength{background:var(--indigo);color:var(--white)}
+.strength .sec-title{color:var(--white)}
+.strength .sec-label{color:var(--gold)}
+.card{
+  background:var(--indigo-2);border-radius:8px;padding:22px 20px;margin-bottom:16px;
+  border-top:3px solid var(--gold);
+}
+.card .num{font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:700}
+.card h3{font-size:18px;margin:2px 0 8px;line-height:1.5}
+.card p{font-size:14px;opacity:.92}
+
+/* reviews */
+.review{
+  background:var(--white);border-radius:8px;padding:22px 20px;margin-bottom:18px;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);position:relative;
+}
+.stars{color:#e6a700;font-size:18px;letter-spacing:2px}
+.stars span{color:#ddd}
+.review p{font-size:14px;margin-top:8px}
+.review .who{font-size:12px;color:#777;margin-top:10px}
+.shop-photo{border-radius:8px;margin-top:8px}
+
+/* info */
+.info{background:var(--white)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:14px 10px;border-bottom:1px solid #e2ddd2;text-align:left;vertical-align:top}
+th{width:28%;color:var(--indigo);white-space:nowrap;background:var(--paper)}
+td a{color:var(--red);word-break:break-all}
+.map{margin-top:24px;border-radius:8px;overflow:hidden;border:1px solid #ddd}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{
+  background:linear-gradient(160deg,var(--indigo),var(--indigo-2));color:var(--white);text-align:center;
+}
+.cta h2{font-size:22px;line-height:1.6;font-weight:800}
+.cta h2 em{font-style:normal;color:var(--gold)}
+.cta p{font-size:14px;margin:12px 0 24px;opacity:.9}
+.cta .btn{margin-bottom:14px}
+.cta .tel-big{font-size:26px;font-weight:800;letter-spacing:.05em}
+.footer{background:#0c1426;color:#9aa3b5;text-align:center;font-size:12px;padding:20px 20px 28px}
+
+/* bottom nav */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:100;display:flex;
+  background:var(--white);border-top:1px solid #ddd;box-shadow:0 -2px 10px rgba(0,0,0,.1);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.bottom-nav a{
+  flex:1;text-align:center;text-decoration:none;font-size:11px;font-weight:700;
+  color:var(--indigo);padding:8px 2px 7px;border-right:1px solid #eee;line-height:1.3;
+}
+.bottom-nav a:last-child{border-right:0;background:var(--red);color:var(--white)}
+.bottom-nav .ico{display:block;font-size:18px;line-height:1.2}
+
+@media (min-width:768px){
+  body{padding-bottom:0}
+  .bottom-nav{display:none}
+  .hero-img{height:460px}
+  .hero h1{font-size:40px}
+  .sec-title{font-size:30px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="#top">中央武道具<small>剣道用具専門店｜福島県郡山市</small></a>
+  <a class="tel" href="tel:0249340815">📞 電話する</a>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-img" src="images/hero.jpg" alt="中央武道具 剣道防具のイメージ">
+    <div class="hero-box">
+      <span class="tag">剣道用具専門店</span>
+      <h1>はじめての防具も、<br><em>安心して</em>おまかせ。</h1>
+      <p>多くの剣士に愛される、郡山の剣道専門店</p>
+      <a class="btn btn-red" href="#pick">イチオシのご案内を見る</a>
+    </div>
+  </section>
+
+  <!-- 一押し -->
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <div class="pick-head"><span class="badge">イチオシ</span></div>
+      <p class="sec-label">KENDO SPECIALTY SHOP</p>
+      <h2 class="sec-title">剣道用具の専門店だから、<br>選び方から相談できます</h2>
+
+      <img class="pick-img" src="images/product.jpg" alt="剣道用具・防具一式">
+
+      <p class="pick-lead">防具・竹刀・道着まで、剣道に必要な道具を専門店の目線でご提案。</p>
+
+      <ul class="pick-list">
+        <li>入部・入会で初めて防具一式をそろえる方にも、ひとつずつ丁寧に説明</li>
+        <li>前回の商品との比較や、その子に合うかどうかまで的確にアドバイス</li>
+        <li>学校・チームとのお取引が多い、剣道用具の専門店</li>
+        <li>ホームページから店舗LINEで在庫確認・ご注文ができます</li>
+      </ul>
+
+      <a class="btn btn-line" href="https://www.ken-shi.com/" target="_blank" rel="noopener">ホームページから在庫確認・注文</a>
+      <a class="btn btn-red" style="margin-top:16px" href="tel:0249340815">📞 024-934-0815 に電話で相談</a>
+      <p class="note">定休日：水曜日・木曜日</p>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section class="strength" id="strength">
+    <div class="wrap">
+      <p class="sec-label">OUR STRENGTHS</p>
+      <h2 class="sec-title">剣士に愛される3つの理由</h2>
+
+      <div class="card">
+        <span class="num">POINT 01</span>
+        <h3>道具選びを一から教えてくれる</h3>
+        <p>はじめての武道具一式でも、お店の方が非常に丁寧に教えてくれたと口コミで好評。「どんなのが良いかな」という悩みにも、説明しながら一緒に考えます。</p>
+      </div>
+      <div class="card">
+        <span class="num">POINT 02</span>
+        <h3>お名前を覚えて、連絡にも丁寧に対応</h3>
+        <p>注文や商品の質問にも丁寧にお返事。お客様のお名前を覚え、前回の商品との比較など、的確なアドバイスをいただけると評判です。</p>
+      </div>
+      <div class="card">
+        <span class="num">POINT 03</span>
+        <h3>いつでも笑顔で、剣道の相談ができる</h3>
+        <p>顔なじみのお客様が多く、店主さんが気さくに声をかけてくれるお店。「いつでも剣道のことを教えるよ」の一言が、お子さまと保護者の安心につながります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口コミ -->
+  <section class="voice" id="voice">
+    <div class="wrap">
+      <p class="sec-label">CUSTOMER VOICE</p>
+      <h2 class="sec-title">お客様の声</h2>
+
+      <div class="review">
+        <div class="stars">★★★★<span>★</span></div>
+        <p>中学から剣道を始めた息子の道具準備でお世話になりました。たくさんの学校やチームとのお取引があるお店ですが、注文や商品の質問にも丁寧に返事をくださり、しっかりと名前を覚えてくださっていて、前回の商品との比較やアドバイスも的確です。お店に行くといつも優しい笑顔で迎えてくださり、「お子さん調子どうですか？」と気にかけてくださるところに、たくさんの剣士に愛される理由がよくわかります。ホームページから直接店舗のLINEで在庫確認や注文ができますよ。</p>
+        <p class="who">ご利用者さまの口コミ（中学生のお子さまの保護者）</p>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>子どもが中学入学で剣道部に入部。はじめて武道具一式を購入しましたが、お店の方が非常に丁寧に教えてくださり助かりました。顔なじみのお客様も多いようで、店主さんが気さくに声をかけていました。「お店に行けばいつでも剣道のことを教えてあげるよ」と子も言われ、安心感があります。これからも宜しくお願いします。</p>
+        <p class="who">ご利用者さまの口コミ</p>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>大学生の長男と長女が中学・高校の剣道部で大変お世話になった中央武道具店。店主の奥田社長は、いつも笑顔で親切・丁重な対応で素晴らしいお店です。</p>
+        <p class="who">ご利用者さまの口コミ</p>
+      </div>
+
+      <img class="shop-photo" src="images/shop.jpg" alt="中央武道具 店内・店舗の様子">
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="info" id="info">
+    <div class="wrap">
+      <p class="sec-label">SHOP INFORMATION</p>
+      <h2 class="sec-title">店舗情報</h2>
+
+      <table>
+        <tr><th>店名</th><td>中央武道具</td></tr>
+        <tr><th>取扱</th><td>剣道用具専門店</td></tr>
+        <tr><th>住所</th><td>福島県郡山市菜根１丁目６−１</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0249340815">024-934-0815</a></td></tr>
+        <tr><th>定休日</th><td>水曜日・木曜日</td></tr>
+        <tr><th>ホームページ</th><td><a href="https://www.ken-shi.com/" target="_blank" rel="noopener">https://www.ken-shi.com/</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://www.ken-shi.com/?page_id=2" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      </table>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%E9%83%A1%E5%B1%B1%E5%B8%82%E8%8F%9C%E6%A0%B9%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%96%E2%88%92%EF%BC%91&output=embed&hl=ja"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="中央武道具の地図" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>剣道の道具選びは、<br><em>中央武道具</em>にご相談ください</h2>
+      <p>はじめての方も、買い替えの方も、お気軽にどうぞ。</p>
+      <a class="btn btn-line" href="https://www.ken-shi.com/" target="_blank" rel="noopener">ホームページから在庫確認・注文</a>
+      <a class="btn btn-ghost" href="https://www.ken-shi.com/?page_id=2" target="_blank" rel="noopener">お問い合わせフォーム</a>
+      <a class="btn btn-red" href="tel:0249340815">📞 電話でのご相談<br><span class="tel-big">024-934-0815</span></a>
+      <p style="margin-top:6px;font-size:12px">定休日：水曜日・木曜日</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">© 中央武道具　福島県郡山市菜根１丁目６−１</footer>
+
+<nav class="bottom-nav">
+  <a href="#pick"><span class="ico">🥋</span>イチオシ</a>
+  <a href="#voice"><span class="ico">⭐</span>口コミ</a>
+  <a href="#info"><span class="ico">📍</span>店舗情報</a>
+  <a href="tel:0249340815"><span class="ico">📞</span>電話する</a>
+</nav>
+
+</body>
+</html>
