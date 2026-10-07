@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ヤマトスポーツ店｜会津若松の学校指定運動着・運動用砂</title>
+<meta name="description" content="福島県会津若松市のヤマトスポーツ店。学校指定運動着・運動用砂販売はお任せください。野球道具・カンタベリーウェアも取り扱い。">
+<style>
+:root{
+  --main:#0b3d91;
+  --main-dark:#082b66;
+  --accent:#ff7a00;
+  --accent-dark:#e06600;
+  --bg:#f4f7fc;
+  --text:#222;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Meiryo",sans-serif;
+  color:var(--text);background:var(--white);line-height:1.8;
+  padding-top:56px;padding-bottom:64px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.container{width:100%;max-width:640px;margin:0 auto;padding:0 16px}
+section{padding:48px 0}
+h2.sec-title{
+  text-align:center;font-size:1.5rem;color:var(--main);line-height:1.4;margin-bottom:28px;
+}
+h2.sec-title span{
+  display:block;font-size:.75rem;letter-spacing:.2em;color:var(--accent);margin-bottom:6px;font-weight:700;
+}
+h2.sec-title::after{
+  content:"";display:block;width:48px;height:4px;background:var(--accent);margin:12px auto 0;border-radius:2px;
+}
+
+/* header */
+.header{
+  position:fixed;top:0;left:0;right:0;height:56px;z-index:100;
+  background:var(--main);color:var(--white);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px;box-shadow:0 2px 6px rgba(0,0,0,.25);
+}
+.header .logo{font-weight:700;font-size:1.05rem}
+.header .tel{
+  background:var(--accent);color:var(--white);font-weight:700;font-size:.9rem;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* hero */
+.hero{position:relative;padding:0;background:var(--main-dark);color:var(--white)}
+.hero img{width:100%;height:56vw;max-height:360px;object-fit:cover;opacity:.55}
+.hero-inner{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:16px;
+}
+.hero-badge{
+  background:var(--accent);font-weight:700;font-size:.8rem;padding:4px 14px;border-radius:999px;margin-bottom:10px;
+}
+.hero h1{font-size:1.55rem;line-height:1.4;text-shadow:0 2px 6px rgba(0,0,0,.6)}
+.hero h1 em{font-style:normal;color:#ffd54a}
+.hero-sub{margin-top:8px;font-size:.85rem;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.hero-cta{padding:20px 16px;background:var(--main-dark);text-align:center}
+
+/* buttons */
+.btn{
+  display:block;width:100%;max-width:420px;margin:0 auto;text-align:center;
+  background:var(--accent);color:var(--white);font-weight:700;font-size:1.1rem;
+  padding:16px;border-radius:12px;box-shadow:0 4px 0 var(--accent-dark);
+}
+.btn small{display:block;font-size:.75rem;font-weight:400;opacity:.95}
+.btn.sub{background:var(--white);color:var(--main);box-shadow:0 4px 0 #c9d3e6;margin-top:14px}
+.btn.line{background:var(--main);box-shadow:0 4px 0 var(--main-dark);margin-top:14px}
+
+/* ichioshi */
+.ichi{background:var(--bg)}
+.ichi-label{
+  display:inline-block;background:var(--accent);color:var(--white);font-weight:700;
+  padding:4px 16px;border-radius:4px;font-size:.9rem;margin-bottom:10px;
+}
+.ichi-lead{text-align:center;font-size:1.05rem;font-weight:700;margin-bottom:24px}
+.ichi-lead em{font-style:normal;color:var(--accent);background:linear-gradient(transparent 65%,#ffe3c2 65%)}
+.card{
+  background:var(--white);border-radius:14px;overflow:hidden;
+  box-shadow:0 4px 14px rgba(11,61,145,.12);margin-bottom:24px;border-top:5px solid var(--main);
+}
+.card.pick{border-top-color:var(--accent)}
+.card img{width:100%;height:52vw;max-height:320px;object-fit:cover}
+.card-body{padding:18px 16px 22px}
+.card-body h3{font-size:1.25rem;color:var(--main);line-height:1.4;margin-bottom:8px}
+.card-body ul{list-style:none;margin:12px 0 0}
+.card-body li{position:relative;padding-left:1.6em;margin-bottom:6px;font-size:.95rem}
+.card-body li::before{
+  content:"✔";position:absolute;left:0;color:var(--accent);font-weight:700;
+}
+.note{font-size:.8rem;color:#666;margin-top:10px}
+
+/* strengths */
+.points{display:grid;gap:14px}
+.point{
+  display:flex;gap:14px;align-items:flex-start;background:var(--bg);
+  border-radius:12px;padding:16px;
+}
+.point .num{
+  flex:0 0 40px;height:40px;border-radius:50%;background:var(--main);color:var(--white);
+  font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.point h3{font-size:1.05rem;color:var(--main);line-height:1.4;margin-bottom:4px}
+.point p{font-size:.92rem}
+
+/* review */
+.review{background:var(--bg)}
+.review-box{
+  background:var(--white);border-radius:14px;padding:20px 18px;
+  box-shadow:0 4px 14px rgba(11,61,145,.1);position:relative;
+}
+.stars{color:#ffb400;font-size:1.3rem;letter-spacing:.1em}
+.stars span{color:#ddd}
+.review-box p{margin-top:8px;font-size:.95rem}
+.review-from{margin-top:10px;font-size:.78rem;color:#777;text-align:right}
+
+/* info */
+.info-table{width:100%;border-collapse:collapse;font-size:.92rem}
+.info-table th,.info-table td{padding:12px 10px;border-bottom:1px solid #dde4f0;text-align:left;vertical-align:top}
+.info-table th{width:28%;background:var(--bg);color:var(--main);white-space:nowrap}
+.info-table a{color:var(--main);text-decoration:underline;word-break:break-all}
+.map{margin-top:20px;border-radius:12px;overflow:hidden;border:1px solid #dde4f0}
+.map iframe{width:100%;height:280px;border:0;display:block}
+
+/* final cta */
+.final{background:var(--main);color:var(--white);text-align:center}
+.final h2{font-size:1.35rem;line-height:1.5;margin-bottom:10px}
+.final h2 em{font-style:normal;color:#ffd54a}
+.final p{font-size:.9rem;margin-bottom:22px;opacity:.95}
+.footer{background:var(--main-dark);color:#cfd8ee;text-align:center;font-size:.75rem;padding:18px 12px}
+
+/* bottom nav */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;height:60px;z-index:100;
+  display:grid;grid-template-columns:repeat(4,1fr);background:var(--white);
+  box-shadow:0 -2px 8px rgba(0,0,0,.18);padding-bottom:env(safe-area-inset-bottom);
+}
+.bottom-nav a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:.7rem;font-weight:700;color:var(--main);border-right:1px solid #e3e8f2;
+}
+.bottom-nav a:last-child{border-right:0}
+.bottom-nav a .ic{font-size:1.2rem;line-height:1.2}
+.bottom-nav a.call{background:var(--accent);color:var(--white)}
+
+@media(min-width:700px){
+  .hero img{height:360px}
+  .hero h1{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">ヤマトスポーツ店</div>
+  <a class="tel" href="tel:0241225131">📞 0241-22-5131</a>
+</header>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="ヤマトスポーツ店 店舗外観">
+  <div class="hero-inner">
+    <div class="hero-badge">福島県 会津若松市</div>
+    <h1>学校指定の運動着なら<br><em>ヤマトスポーツ店</em></h1>
+    <p class="hero-sub">運動用砂の販売も承ります／野球道具もおまかせ</p>
+  </div>
+</div>
+<div class="hero-cta">
+  <a class="btn" href="tel:0241225131">📞 まずは電話で相談する<small>0241-22-5131</small></a>
+</div>
+
+<!-- イチオシ -->
+<section class="ichi" id="ichioshi">
+  <div class="container">
+    <h2 class="sec-title"><span>RECOMMEND</span>当店のイチオシ</h2>
+    <p class="ichi-lead" style="text-align:center"><span class="ichi-label">イチオシ</span><br><em>学校指定運動着</em>と<em>運動用砂販売</em></p>
+
+    <div class="card pick">
+      <img src="images/uniform.jpg" alt="学校指定運動着">
+      <div class="card-body">
+        <h3>学校指定運動着</h3>
+        <p>通学する学校の指定に合わせた運動着をご用意します。サイズや仕様のご相談もお気軽にどうぞ。</p>
+        <ul>
+          <li>学校指定の運動着を取り扱い</li>
+          <li>ご購入前のご相談もOK</li>
+          <li>お電話・メール・お問い合わせフォームから受付</li>
+        </ul>
+        <p class="note">※指定内容・在庫・価格はお問い合わせください。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/sand.jpg" alt="運動用砂">
+      <div class="card-body">
+        <h3>運動用砂販売</h3>
+        <p>スポーツやグラウンド整備に使う運動用砂を販売しています。用途や数量をお伝えください。</p>
+        <ul>
+          <li>運動用砂の販売に対応</li>
+          <li>用途・数量のご相談を承ります</li>
+        </ul>
+        <p class="note">※価格・数量・配送の可否はお問い合わせください。</p>
+      </div>
+    </div>
+
+    <a class="btn" href="tel:0241225131">📞 運動着・砂について問い合わせる<small>0241-22-5131</small></a>
+    <a class="btn line" href="https://www.yamato-sports.net/detail/588/contact.html" target="_blank" rel="noopener">✉ お問い合わせフォームはこちら</a>
+  </div>
+</section>
+
+<!-- 強み -->
+<section id="strengths">
+  <div class="container">
+    <h2 class="sec-title"><span>STRENGTHS</span>ヤマトスポーツ店が選ばれる理由</h2>
+    <div class="points">
+      <div class="point">
+        <div class="num">1</div>
+        <div>
+          <h3>学校指定運動着をまとめて相談</h3>
+          <p>学校で指定された運動着をお探しの方は、まずはご相談ください。</p>
+        </div>
+      </div>
+      <div class="point">
+        <div class="num">2</div>
+        <div>
+          <h3>運動用砂の販売にも対応</h3>
+          <p>運動用砂の販売も行っています。他では探しにくいご要望もお気軽にどうぞ。</p>
+        </div>
+      </div>
+      <div class="point">
+        <div class="num">3</div>
+        <div>
+          <h3>野球道具・人気ブランドウェアも</h3>
+          <p>野球道具を扱う店として、またカンタベリーのウェアも店頭で見られると口コミで話題です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="review" id="review">
+  <div class="container">
+    <h2 class="sec-title"><span>REVIEW</span>お客様の声</h2>
+    <div class="review-box">
+      <div class="stars">★★★★<span>★</span></div>
+      <p>息子の野球道具を扱うお店です！わたし個人では、イノマタスポーツさんとして、大変お世話になりました。ショップにあるカンタベリーのウェアが気になっています‼️</p>
+      <div class="review-from">― Googleクチコミより</div>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section id="info">
+  <div class="container">
+    <h2 class="sec-title"><span>SHOP INFO</span>店舗情報</h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>ヤマトスポーツ店</td></tr>
+      <tr><th>住所</th><td>福島県会津若松市追手町５−２１</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0241225131">0241-22-5131</a></td></tr>
+      <tr><th>定休日</th><td>不定休</td></tr>
+      <tr><th>メール</th><td><a href="mailto:yamatosp@deluxe.ocn.ne.jp">yamatosp@deluxe.ocn.ne.jp</a></td></tr>
+      <tr><th>公式HP</th><td><a href="https://www.yamato-sports.net/detail/588/freepage-2.html" target="_blank" rel="noopener">公式ホームページ</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://www.yamato-sports.net/detail/588/contact.html" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.instagram.com/yamatosp2022/" target="_blank" rel="noopener">Instagram</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe src="https://maps.google.com/maps?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%E4%BC%9A%E6%B4%A5%E8%8B%A5%E6%9D%BE%E5%B8%82%E8%BF%BD%E6%89%8B%E7%94%BA%EF%BC%95%E2%88%92%EF%BC%92%EF%BC%91&output=embed&hl=ja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ヤマトスポーツ店の地図"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="final" id="contact">
+  <div class="container">
+    <h2>学校指定運動着・運動用砂は<br><em>ヤマトスポーツ店</em>へ</h2>
+    <p>ご来店前のご相談も歓迎です。<br>定休日は不定休のため、お電話でご確認ください。</p>
+    <a class="btn" href="tel:0241225131">📞 電話で問い合わせる<small>0241-22-5131</small></a>
+    <a class="btn sub" href="https://www.yamato-sports.net/detail/588/contact.html" target="_blank" rel="noopener">✉ お問い合わせフォーム</a>
+  </div>
+</section>
+
+<footer class="footer">© ヤマトスポーツ店</footer>
+
+<!-- 下部固定ナビ -->
+<nav class="bottom-nav">
+  <a class="call" href="tel:0241225131"><span class="ic">📞</span>電話</a>
+  <a href="mailto:yamatosp@deluxe.ocn.ne.jp"><span class="ic">✉</span>メール</a>
+  <a href="https://www.yamato-sports.net/detail/588/contact.html" target="_blank" rel="noopener"><span class="ic">📝</span>問合せ</a>
+  <a href="https://www.instagram.com/yamatosp2022/" target="_blank" rel="noopener"><span class="ic">📷</span>Instagram</a>
+</nav>
+
+</body>
+</html>
