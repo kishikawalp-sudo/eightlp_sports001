@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>YAMAtune（ヤマチューン）｜東川町のアウトドアショップ・春夏秋冬の4色ソックス</title>
+<meta name="description" content="北海道東川町、旭岳のふもとのアウトドアショップYAMAtune。同じデザインで春夏秋冬の4色、履き心地のよいアウトドア用ソックスが約1600円。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1f3a32;
+  --snow:#f6f8f5;
+  --stone:#3a3f42;
+  --line:#d9dfda;
+  --spring:#8fc17f;
+  --summer:#3f8db0;
+  --autumn:#c98a2b;
+  --winter:#7d8fa8;
+  --tel:#e0592a;
+  --font:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font-family:var(--font);color:var(--stone);background:var(--snow);line-height:1.8;font-size:16px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.4;margin:0;color:var(--forest);font-weight:900}
+h2{font-size:1.5rem;margin-bottom:20px}
+section{padding:56px 0}
+
+/* 4-season stripe: the one signature element */
+.seasons{display:flex;height:8px}
+.seasons i{flex:1}
+.seasons i:nth-child(1){background:var(--spring)}
+.seasons i:nth-child(2){background:var(--summer)}
+.seasons i:nth-child(3){background:var(--autumn)}
+.seasons i:nth-child(4){background:var(--winter)}
+
+/* fixed header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(246,248,245,.96);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header .in{max-width:720px;margin:0 auto;height:56px;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:1.2rem;color:var(--forest);text-decoration:none;letter-spacing:.02em}
+.logo small{font-weight:500;font-size:.7rem;margin-left:6px;color:var(--stone)}
+.hd-tel{background:var(--tel);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:8px 14px;border-radius:999px}
+
+/* hero */
+.hero{position:relative;margin-top:calc(56px + env(safe-area-inset-top,0px));background:var(--forest);color:#fff}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#2b4a40}
+.hero-body{padding:28px 20px 36px;max-width:720px;margin:0 auto}
+.hero h1{color:#fff;font-size:1.9rem;line-height:1.35}
+.hero p{margin:14px 0 0;font-size:1rem;color:#e6eee9}
+.price{display:inline-block;margin-top:18px;font-weight:700;border:1px solid rgba(255,255,255,.5);padding:6px 14px;border-radius:4px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:16px 20px;border-radius:8px;font-size:1.05rem}
+.btn-tel{background:var(--tel);color:#fff}
+.btn-sub{background:#fff;color:var(--forest);border:2px solid var(--forest)}
+.hero .btn{margin-top:22px}
+
+/* featured product */
+.pick{background:#fff}
+.pick .tag{display:inline-block;background:var(--forest);color:#fff;font-weight:700;font-size:.85rem;padding:4px 12px;border-radius:4px;margin-bottom:14px}
+.pick-img{border-radius:10px;margin:22px 0;width:100%;aspect-ratio:4/3;object-fit:cover;background:#e8ede9}
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}
+.swatch{text-align:center;font-weight:700;font-size:.9rem}
+.swatch b{display:block;height:56px;border-radius:8px;margin-bottom:6px}
+.swatch:nth-child(1) b{background:var(--spring)}
+.swatch:nth-child(2) b{background:var(--summer)}
+.swatch:nth-child(3) b{background:var(--autumn)}
+.swatch:nth-child(4) b{background:var(--winter)}
+.pick ul{padding-left:1.2em;margin:16px 0}
+.pick li{margin-bottom:6px}
+.note{font-size:.9rem;color:#5b6266}
+
+/* strengths */
+.str-list{display:grid;gap:14px}
+.str{background:#fff;border-left:6px solid var(--forest);padding:18px 18px 16px;border-radius:0 8px 8px 0}
+.str:nth-child(2){border-left-color:var(--summer)}
+.str:nth-child(3){border-left-color:var(--autumn)}
+.str h3{font-size:1.1rem;margin-bottom:6px}
+.str p{margin:0;font-size:.95rem}
+.shop-img{border-radius:10px;margin-top:24px;width:100%;aspect-ratio:16/10;object-fit:cover;background:#e8ede9}
+
+/* reviews */
+.reviews{background:#eaf0ec}
+.rv{background:#fff;border-radius:10px;padding:20px;margin-bottom:16px}
+.rv .stars{color:var(--autumn);font-size:1.1rem;letter-spacing:.1em;font-weight:700}
+.rv p{margin:8px 0 0;font-size:.95rem}
+
+/* info */
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:.95rem}
+th,td{padding:14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:30%;background:#eef2ef;color:var(--forest);white-space:nowrap}
+td a{color:var(--summer);word-break:break-all}
+.map{margin-top:20px;border:0;width:100%;height:300px;border-radius:10px;background:#dfe6e1}
+
+/* cta */
+.cta{background:var(--forest);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{margin:0 0 20px}
+.cta .btn+.btn{margin-top:12px}
+
+footer{text-align:center;font-size:.8rem;padding:22px 20px;color:#6a7175}
+
+/* fixed bottom nav */
+nav{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav a{display:flex;align-items:center;justify-content:center;height:64px;text-decoration:none;font-weight:700;font-size:.85rem;color:var(--forest)}
+nav a.tel{background:var(--tel);color:#fff}
+
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--autumn);outline-offset:2px}
+@media (min-width:600px){
+  .hero h1{font-size:2.4rem}
+  h2{font-size:1.8rem}
+  .hero-img{aspect-ratio:16/9}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="in">
+    <a class="logo" href="#top">YAMAtune<small>ヤマチューン</small></a>
+    <a class="hd-tel" href="tel:0166746388">電話する</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="images/hero.jpg" alt="旭岳のふもと、東川町にあるYAMAtune大雪山店の外観" width="1200" height="900">
+  <div class="seasons" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="hero-body">
+    <h1>春夏秋冬、<br>四つの色を足もとに。</h1>
+    <p>旭岳のふもと・東川町のアウトドアショップ。同じデザインで4色そろう、履き心地のよいアウトドアソックスを置いています。</p>
+    <span class="price">アウトドアソックス 約1,600円</span>
+    <a class="btn btn-tel" href="tel:0166746388">電話で問い合わせる 0166-74-6388</a>
+  </div>
+</div>
+
+<!-- イチオシ -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="tag">イチオシ</span>
+    <h2>下山後も脱ぎたくない、<br>アウトドア用ソックス</h2>
+    <p>同じデザインを、春・夏・秋・冬の4色で。季節ごとの色を選んで、山にも街にも履いていけます。</p>
+    <img class="pick-img" src="images/socks.jpg" alt="春夏秋冬の4色がそろうYAMAtuneのアウトドア用ソックス" width="1200" height="900" loading="lazy">
+    <div class="swatches" aria-label="4色のラインナップ">
+      <div class="swatch"><b></b>春</div>
+      <div class="swatch"><b></b>夏</div>
+      <div class="swatch"><b></b>秋</div>
+      <div class="swatch"><b></b>冬</div>
+    </div>
+    <ul>
+      <li>アウトドア用は、はき心地が素晴らしいと評判</li>
+      <li>日常使いのソックスも、はき心地とカラーリングが好評</li>
+      <li>お値段は約1,600円。春と秋の2足買いをされたお客様も</li>
+    </ul>
+    <p class="note">※在庫・色は変わる場合があります。お電話でもご確認いただけます。</p>
+    <a class="btn btn-tel" href="tel:0166746388">在庫を電話で確認する</a>
+  </div>
+</section>
+
+<!-- 強み -->
+<section id="strength">
+  <div class="wrap">
+    <h2>YAMAtuneが選ばれる理由</h2>
+    <div class="str-list">
+      <div class="str">
+        <h3>トレッキング・トレランの道具がそろう</h3>
+        <p>トレッキング用・トレラン用のスニーカーや手拭いなど、質のよい商品を選べます。</p>
+      </div>
+      <div class="str">
+        <h3>感じのよい店員さん</h3>
+        <p>十勝岳の下山後に立ち寄ったお客様からも、スタッフの感じのよさに声が届いています。</p>
+      </div>
+      <div class="str">
+        <h3>買い物のあとはcafeちゅーんへ</h3>
+        <p>お買い物をすると、となりのcafeちゅーんで割引が受けられます。旭岳ふもとの町歩きの一服に。</p>
+      </div>
+    </div>
+    <img class="shop-img" src="images/shop.jpg" alt="リゾートの雰囲気ただようYAMAtuneの店内とcafeちゅーん" width="1200" height="750" loading="lazy">
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <h2>お客様のクチコミ</h2>
+    <div class="rv">
+      <div class="stars" aria-label="5段階中5">★★★★★</div>
+      <p>大雪山店　リゾートの雰囲気漂うステキなお店です。希望の靴下がたくさん見つかります♪ 同じデザインで4色　春、夏、秋、冬の色だそう。春と秋を購入しました。普段用のソックスも愛用してますがとっても良いです。お値段1600円ほど。パタゴニアも買いやすい品揃えも良いです。お買い物したらとなりのcafeちゅーんで割引うけられます。一服☕️して旭岳麓の町を楽しみました。 アウトドア用靴下が素晴らしい履き心地なのはもちろん、日常使いの靴下もとても履き心地が良く、カラーリングも素敵で、行くたびに欲しくなってしまいます。裏手にオープンしたばかりのカフェも、とても素敵でゆっくりできる雰囲気です。エスプレッソマシーンがかっこいい。カフェオレとアフォガードおいしかったです。</p>
+    </div>
+    <div class="rv">
+      <div class="stars" aria-label="5段階中4">★★★★</div>
+      <p>十勝岳下山後に伺いました。店員の皆さん、とても感じが良かったです。トレッキング用、トレラン用のスニーカーと手拭いを買いましたが、商品の質も良く愛用しております。お店は分かりにくいですが、少しでも気になったら行ったほうが良いと思います。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section id="info">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>YAMAtune（ヤマチューン）</td></tr>
+      <tr><th>住所</th><td>北海道上川郡東川町南町２丁目２−５</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0166746388">0166-74-6388</a></td></tr>
+      <tr><th>定休日</th><td>木曜日（祝日の場合は営業いたします）</td></tr>
+      <tr><th>会社名</th><td>ヤマチューン株式会社</td></tr>
+      <tr><th>HP</th><td><a href="http://yamatune.com/" target="_blank" rel="noopener">http://yamatune.com/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:contact@yamatune.jp">contact@yamatune.jp</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.facebook.com/yamatune.jp/" target="_blank" rel="noopener">Facebook</a></td></tr>
+    </table>
+    <iframe class="map" title="YAMAtuneの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=%E5%8C%97%E6%B5%B7%E9%81%93%E4%B8%8A%E5%B7%9D%E9%83%A1%E6%9D%B1%E5%B7%9D%E7%94%BA%E5%8D%97%E7%94%BA%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%92%E2%88%92%EF%BC%95&output=embed"></iframe>
+    <p class="note">お店は少し分かりにくい場所にあります。迷われたらお電話ください。</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>気になったら、まず足を運んでください</h2>
+    <p>商品のこと、在庫のこと、お気軽にお問い合わせください。</p>
+    <a class="btn btn-tel" href="tel:0166746388">電話する 0166-74-6388</a>
+    <a class="btn btn-sub" href="https://www.yamatune.jp/pages/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" target="_blank" rel="noopener">お問い合わせフォーム</a>
+  </div>
+</section>
+
+</main>
+
+<footer>© ヤマチューン株式会社 YAMAtune</footer>
+
+<nav aria-label="固定メニュー">
+  <a class="tel" href="tel:0166746388">電話</a>
+  <a href="#pick">イチオシ</a>
+  <a href="#info">店舗情報</a>
+  <a href="#contact">問い合わせ</a>
+</nav>
+
+</body>
+</html>
