@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ICE HOCKEY SHOP イシカワスポーツ｜帯広のアイスホッケー用品専門店</title>
+<meta name="description" content="北海道帯広市のアイスホッケー用品専門店「ICE HOCKEY SHOP イシカワスポーツ」。買う前の相談も、進学・入部の準備も、丁寧に教えてくれるお店です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ice:#EAF3F8;
+  --ice-deep:#D3E5EF;
+  --rink:#0D2540;
+  --steel:#4F6F89;
+  --red:#C41E2F;
+  --white:#FFFFFF;
+  --ink:#16222E;
+  --header-h:56px;
+  --nav-h:60px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px)}
+body{
+  margin:0;
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--ice);
+  line-height:1.8;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+  padding-top:calc(var(--header-h) + env(safe-area-inset-top,0px));
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:720px;margin:0 auto;padding:0 20px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+/* ---------- fixed header ---------- */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:calc(var(--header-h) + env(safe-area-inset-top,0px));
+  padding-top:env(safe-area-inset-top,0px);
+  background:var(--rink);color:var(--white);
+  border-bottom:3px solid var(--red);
+}
+.site-header .wrap{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 14px 0 16px}
+.brand{font-weight:900;font-size:15px;line-height:1.25;letter-spacing:.02em}
+.brand small{display:block;font-weight:500;font-size:10px;opacity:.75;letter-spacing:.06em}
+.tel-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--red);color:var(--white);text-decoration:none;
+  font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--rink);color:var(--white);overflow:hidden}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.55}
+.hero-body{padding:0 0 36px;margin-top:-92px;position:relative}
+.hero h1{
+  margin:0 0 14px;font-weight:900;font-size:clamp(27px,8vw,40px);line-height:1.3;letter-spacing:.01em;
+}
+.hero h1 span{display:block}
+.hero p{margin:0 0 22px;font-size:15px;color:#DCE8F0}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:54px;padding:12px 20px;border-radius:6px;
+  font-weight:700;font-size:17px;text-decoration:none;text-align:center;
+}
+.btn-red{background:var(--red);color:var(--white)}
+.btn-line{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.7);margin-top:10px;font-size:15px}
+.hero .rating{display:inline-block;margin-bottom:14px;font-size:13px;font-weight:700;background:rgba(255,255,255,.14);padding:4px 12px;border-radius:999px}
+.hero .rating b{color:#FFC93C;letter-spacing:.1em}
+
+/* rink line divider: blue line + red center line */
+.rinkline{height:10px;background:linear-gradient(90deg,#2F6FB0 0 42%,var(--red) 42% 58%,#2F6FB0 58% 100%);opacity:.9}
+
+/* ---------- common sections ---------- */
+section{padding:56px 0}
+h2{margin:0 0 8px;font-weight:900;font-size:clamp(23px,6.4vw,30px);line-height:1.4;color:var(--rink)}
+.lead{margin:0 0 28px;color:#34495C;font-size:15px}
+
+/* ---------- featured (イチオシ) ---------- */
+.feature{background:var(--white)}
+.feature-tag{
+  display:inline-block;background:var(--red);color:var(--white);
+  font-weight:900;font-size:13px;padding:3px 12px;border-radius:3px;margin-bottom:12px;
+}
+.feature-img{border-radius:10px;margin:0 0 24px;width:100%;aspect-ratio:16/10;object-fit:cover}
+.reasons{list-style:none;margin:0 0 28px;padding:0;border-top:2px solid var(--rink)}
+.reasons li{padding:18px 0;border-bottom:1px solid var(--ice-deep)}
+.reasons strong{display:block;font-size:18px;font-weight:900;color:var(--rink);margin-bottom:2px}
+.reasons span{font-size:15px;color:#34495C}
+
+/* ---------- strengths ---------- */
+.strength{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--ice-deep)}
+.strength:last-child{border-bottom:0}
+.strength img{width:104px;height:104px;object-fit:cover;border-radius:10px;flex:none}
+.strength h3{margin:0 0 4px;font-size:17px;font-weight:900;color:var(--rink);line-height:1.5}
+.strength p{margin:0;font-size:14.5px;color:#34495C;line-height:1.75}
+.strength.noimg{display:block}
+
+/* ---------- voices ---------- */
+.voices{background:var(--rink);color:var(--white)}
+.voices h2{color:var(--white)}
+.voices .lead{color:#C9D9E5}
+.voice{margin:0 0 16px;padding:20px;background:rgba(255,255,255,.08);border-left:5px solid var(--red);border-radius:0 8px 8px 0}
+.voice .stars{color:#FFC93C;letter-spacing:.12em;font-size:15px;margin-bottom:6px}
+.voice p{margin:0;font-size:15px;line-height:1.85}
+.voice-note{font-size:12px;color:#9FB6C8;margin:4px 0 0}
+
+/* ---------- info ---------- */
+.info{background:var(--white)}
+table{width:100%;border-collapse:collapse;font-size:15px;margin-bottom:24px}
+th,td{padding:14px 10px;border-bottom:1px solid var(--ice-deep);text-align:left;vertical-align:top}
+th{width:6.5em;color:var(--steel);font-weight:700;white-space:nowrap}
+td a{color:var(--rink);font-weight:700;word-break:break-all}
+.closed dt{font-weight:700;color:var(--rink)}
+.closed dd{margin:0 0 6px}
+.closed{margin:0}
+.map{position:relative;width:100%;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--ice-deep)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---------- final CTA ---------- */
+.cta{background:var(--ice-deep);text-align:center}
+.cta h2{margin-bottom:10px}
+.cta p{margin:0 0 24px;color:#34495C}
+.cta .btn{margin-bottom:12px}
+.btn-navy{background:var(--rink);color:var(--white)}
+.tel-big{display:block;font-size:30px;font-weight:900;color:var(--rink);text-decoration:none;margin:2px 0 18px;letter-spacing:.02em}
+
+footer{background:var(--ink);color:#9FB0BF;text-align:center;font-size:12px;padding:22px 20px}
+
+/* ---------- fixed bottom nav ---------- */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  height:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  background:var(--white);border-top:3px solid var(--rink);
+}
+.bottom-nav a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  text-decoration:none;font-weight:700;font-size:12px;color:var(--rink);
+}
+.bottom-nav a .ic{font-size:20px;line-height:1}
+.bottom-nav a.primary{background:var(--red);color:var(--white)}
+
+@media (min-width:640px){
+  .hero-img{aspect-ratio:16/8}
+  .hero-body{margin-top:-130px}
+  .strength img{width:140px;height:140px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- 固定ヘッダー -->
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">ICE HOCKEY SHOP<small>イシカワスポーツ</small></div>
+    <a class="tel-btn" href="tel:0155335101" aria-label="電話をかける 0155-33-5101">📞 電話する</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <img class="hero-img" src="images/hero.jpg" alt="ICE HOCKEY SHOP イシカワスポーツの店内・アイスホッケー用品">
+  <div class="wrap hero-body">
+    <div class="rating">口コミ <b>★★★★★</b></div>
+    <h1><span>アイスホッケー用品、</span><span>初めてでも安心して</span><span>相談できる店。</span></h1>
+    <p>買うつもりがなくても、丁寧に説明してくれる。<br>北海道帯広の、アイスホッケー専門店です。</p>
+    <a class="btn btn-red" href="tel:0155335101">📞 0155-33-5101 に電話する</a>
+    <a class="btn btn-line" href="https://ishikawa-sports.com/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a>
+  </div>
+</div>
+<div class="rinkline" aria-hidden="true"></div>
+
+<!-- イチオシ -->
+<section class="feature" id="ichioshi">
+  <div class="wrap">
+    <span class="feature-tag">イチオシ</span>
+    <h2>アイスホッケー用品</h2>
+    <p class="lead">道具選びで迷ったら、まずお店で話してみてください。お客様の状況に合わせて、一つずつ教えてくれます。</p>
+    <img class="feature-img" src="images/ichioshi.jpg" alt="イシカワスポーツのアイスホッケー用品" loading="lazy">
+    <ul class="reasons">
+      <li><strong>用品を買わなくても、丁寧に説明</strong><span>「まず話を聞きたい」だけでも大丈夫。購入は、あらためて相談してから決められます。</span></li>
+      <li><strong>お子さんの進学・入部の準備にも</strong><span>初めて迎える進学で何をそろえるか分からなくても、察して細かく教えてくれます。</span></li>
+      <li><strong>いつも柔らかく、優しい接客</strong><span>通うたびに「ありがたい」と感じる店員さんの対応が、口コミで評価されています。</span></li>
+    </ul>
+    <a class="btn btn-red" href="tel:0155335101">📞 アイスホッケー用品を電話で相談</a>
+  </div>
+</section>
+
+<!-- 選ばれる理由 -->
+<section id="strengths">
+  <div class="wrap">
+    <h2>イシカワスポーツが<br>選ばれる理由</h2>
+    <p class="lead">お客様の口コミから見えてきた、このお店の良さです。</p>
+
+    <div class="strength">
+      <img src="images/service.jpg" alt="接客の様子" loading="lazy">
+      <div>
+        <h3>買わなくても、親切に教えてくれる</h3>
+        <p>「用品を買わないのに丁寧に説明して頂きました」という声が届いています。気持ちの良い接客です。</p>
+      </div>
+    </div>
+    <div class="strength noimg">
+      <h3>初めての進学でも、細かくサポート</h3>
+      <p>お子さんの進学は、親にとっても初めてのこと。こちらの状況を察して、必要なことを細かく教えてくれます。</p>
+    </div>
+    <div class="strength noimg">
+      <h3>近くにあって良かった、と言われるお店</h3>
+      <p>店員さんの対応は、いつも柔らかく優しい。地域の方に「近くにあってくれて本当に良かった」と言われています。</p>
+    </div>
+  </div>
+</section>
+
+<div class="rinkline" aria-hidden="true"></div>
+
+<!-- お客様の声 -->
+<section class="voices" id="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <p class="lead">Google の口コミ（★5）より</p>
+
+    <div class="voice">
+      <div class="stars" aria-label="5つ星">★★★★★</div>
+      <p>用品買わないのに丁寧に説明して頂きました。とても気持ちの良い接客です。購入する時はこちらであらためて相談したいです。</p>
+    </div>
+    <div class="voice">
+      <div class="stars" aria-label="5つ星">★★★★★</div>
+      <p>店員さんの対応がいつも有り難くなるくらい柔らかくて優しい。子供の進学なんて親にとっても初めてだけど察してくれて細かく教えてくれる。近くにあってくれて本当に良かったお店。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="info" id="access">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <p class="lead">ご来店前のお電話もお気軽にどうぞ。</p>
+    <table>
+      <tr><th>店名</th><td>ICE HOCKEY SHOP イシカワスポーツ</td></tr>
+      <tr><th>住所</th><td>北海道帯広市西１８条南２丁目２−６７</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0155335101">0155-33-5101</a></td></tr>
+      <tr>
+        <th>定休日</th>
+        <td>
+          <dl class="closed">
+            <dt>12〜3月</dt><dd>水曜日</dd>
+            <dt>4〜6月</dt><dd>水・木曜日</dd>
+            <dt>7〜11月</dt><dd>水曜日・第2／第4木曜日</dd>
+          </dl>
+        </td>
+      </tr>
+      <tr><th>公式HP</th><td><a href="https://ishikawa-sports.com/" target="_blank" rel="noopener">https://ishikawa-sports.com/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://ishikawa-sports.com/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="イシカワスポーツの地図" src="https://maps.google.com/maps?q=%E5%8C%97%E6%B5%B7%E9%81%93%E5%B8%AF%E5%BA%83%E5%B8%82%E8%A5%BF%EF%BC%91%EF%BC%98%E6%9D%A1%E5%8D%97%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%92%E2%88%92%EF%BC%96%EF%BC%97&hl=ja&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>まずは、気軽に<br>相談してみませんか。</h2>
+    <p>アイスホッケー用品のことなら、お電話でもフォームでもお問い合わせいただけます。</p>
+    <a class="tel-big" href="tel:0155335101">0155-33-5101</a>
+    <a class="btn btn-red" href="tel:0155335101">📞 電話で相談する</a>
+    <a class="btn btn-navy" href="https://ishikawa-sports.com/contact/" target="_blank" rel="noopener">✉ お問い合わせフォーム</a>
+  </div>
+</section>
+
+</main>
+
+<footer>© ICE HOCKEY SHOP イシカワスポーツ</footer>
+
+<!-- 固定フッターナビ -->
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <a class="primary" href="tel:0155335101"><span class="ic">📞</span>電話する</a>
+  <a href="https://ishikawa-sports.com/contact/" target="_blank" rel="noopener"><span class="ic">✉</span>お問い合わせ</a>
+  <a href="#access"><span class="ic">📍</span>アクセス</a>
+</nav>
+
+</body>
+</html>
