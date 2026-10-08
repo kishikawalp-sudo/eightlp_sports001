@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スポーツハウス｜帯広の豊かで質の高いスポーツライフを叶える館</title>
+<meta name="description" content="北海道帯広市のスポーツハウス。スポーツ用品全般の販売とサービスで、豊かで質の高いスポーツライフを応援します。TEL 0155-22-1151">
+<style>
+  :root{
+    --main:#0b3d91;
+    --main-dark:#082c69;
+    --accent:#ff7a00;
+    --accent-dark:#e06600;
+    --bg:#f4f7fb;
+    --text:#222;
+    --white:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:60px}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+    color:var(--text);background:var(--white);line-height:1.8;
+    padding-top:56px;padding-bottom:64px;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:720px;margin:0 auto;padding:0 18px}
+  section{padding:48px 0}
+  h2{
+    text-align:center;font-size:1.45rem;color:var(--main);line-height:1.4;margin-bottom:28px;
+  }
+  h2 small{display:block;font-size:.72rem;letter-spacing:.2em;color:var(--accent);margin-bottom:6px}
+  h2::after{content:"";display:block;width:48px;height:4px;background:var(--accent);margin:12px auto 0;border-radius:2px}
+
+  /* header */
+  .header{
+    position:fixed;top:0;left:0;right:0;z-index:100;height:56px;
+    background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.12);
+    display:flex;align-items:center;justify-content:space-between;padding:0 12px;
+  }
+  .logo{font-weight:800;color:var(--main);font-size:1.05rem}
+  .header-tel{
+    background:var(--accent);color:#fff;font-weight:700;font-size:.9rem;
+    padding:8px 14px;border-radius:999px;white-space:nowrap;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;color:#fff;text-align:center;
+    background:linear-gradient(rgba(8,44,105,.55),rgba(8,44,105,.75)),url("images/hero.jpg") center/cover no-repeat;
+    background-color:var(--main);
+    padding:72px 0 64px;
+  }
+  .hero .badge{
+    display:inline-block;background:var(--accent);font-weight:700;font-size:.8rem;
+    padding:4px 14px;border-radius:999px;margin-bottom:16px;
+  }
+  .hero h1{font-size:1.75rem;line-height:1.45;margin-bottom:14px;text-shadow:0 2px 6px rgba(0,0,0,.4)}
+  .hero h1 span{color:#ffd24d}
+  .hero p{font-size:.95rem;margin-bottom:26px}
+  .btn{
+    display:block;max-width:340px;margin:0 auto 12px;padding:15px 10px;border-radius:999px;
+    font-weight:800;font-size:1.05rem;text-align:center;
+  }
+  .btn-tel{background:var(--accent);color:#fff;box-shadow:0 4px 0 var(--accent-dark)}
+  .btn-form{background:#fff;color:var(--main);box-shadow:0 4px 0 rgba(0,0,0,.18)}
+
+  /* intro */
+  .intro{background:var(--bg);text-align:center}
+  .intro p{font-size:1rem}
+  .intro strong{color:var(--main)}
+
+  /* ichioshi */
+  .ichioshi{background:linear-gradient(180deg,#fff7ec,#fff)}
+  .pick-card{
+    background:#fff;border:3px solid var(--accent);border-radius:18px;overflow:hidden;
+    box-shadow:0 8px 24px rgba(255,122,0,.18);position:relative;
+  }
+  .pick-label{
+    background:var(--accent);color:#fff;font-weight:800;text-align:center;padding:8px;letter-spacing:.15em;
+  }
+  .pick-card img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#dde6f3}
+  .pick-body{padding:22px 18px 26px}
+  .pick-body h3{font-size:1.35rem;color:var(--main);margin-bottom:10px;line-height:1.5}
+  .pick-body p{margin-bottom:14px}
+  .checks{list-style:none;margin:16px 0 22px}
+  .checks li{
+    padding:10px 12px 10px 38px;position:relative;background:var(--bg);border-radius:10px;margin-bottom:8px;font-weight:600;
+  }
+  .checks li::before{
+    content:"✔";position:absolute;left:12px;top:10px;color:#fff;background:var(--accent);
+    width:20px;height:20px;border-radius:50%;font-size:.7rem;line-height:20px;text-align:center;
+  }
+
+  /* strengths */
+  .strengths{background:var(--bg)}
+  .s-item{background:#fff;border-radius:14px;padding:20px 18px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;gap:14px}
+  .s-num{
+    flex:0 0 44px;height:44px;border-radius:50%;background:var(--main);color:#fff;
+    font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;
+  }
+  .s-item h3{font-size:1.05rem;color:var(--main);margin-bottom:4px;line-height:1.5}
+  .s-item p{font-size:.92rem}
+  .service-img{margin-top:8px;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+  .service-img img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#dde6f3}
+
+  /* cta */
+  .cta{background:var(--main);color:#fff;text-align:center}
+  .cta h2{color:#fff}
+  .cta h2 small{color:#ffd24d}
+  .cta p{margin-bottom:20px;font-size:.95rem}
+  .cta .tel-big{display:block;font-size:2rem;font-weight:800;color:#ffd24d;margin-bottom:4px}
+  .cta .hours{font-size:.82rem;opacity:.9;margin-bottom:20px}
+
+  /* info */
+  .info table{width:100%;border-collapse:collapse;font-size:.95rem;margin-bottom:22px}
+  .info th,.info td{padding:13px 10px;border-bottom:1px solid #dfe5ee;text-align:left;vertical-align:top}
+  .info th{width:30%;background:var(--bg);color:var(--main);white-space:nowrap}
+  .info td a{color:var(--main);text-decoration:underline;word-break:break-all}
+  .map{border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+  .map iframe{display:block;width:100%;height:300px;border:0}
+
+  footer{background:#111c33;color:#aab6cc;text-align:center;font-size:.78rem;padding:22px 12px}
+
+  /* bottom nav */
+  .bottom-nav{
+    position:fixed;left:0;right:0;bottom:0;z-index:100;display:flex;
+    box-shadow:0 -2px 10px rgba(0,0,0,.18);
+    padding-bottom:env(safe-area-inset-bottom);background:#fff;
+  }
+  .bottom-nav a{flex:1;text-align:center;font-weight:800;font-size:.92rem;padding:16px 4px}
+  .bottom-nav .n-tel{background:var(--accent);color:#fff}
+  .bottom-nav .n-form{background:var(--main);color:#fff}
+  .bottom-nav .n-map{background:#fff;color:var(--main)}
+
+  @media (min-width:768px){
+    .hero h1{font-size:2.3rem}
+    .btn{max-width:380px}
+    .bottom-nav{display:none}
+    body{padding-bottom:0}
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">スポーツハウス</div>
+  <a class="header-tel" href="tel:0155221151">📞 電話する</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <span class="badge">帯広市のスポーツ用品店</span>
+    <h1>豊かで質の高い<br><span>スポーツライフ</span>を、<br>ここから。</h1>
+    <p>スポーツ用品全般を取り揃え、<br>あなたのスポーツをトータルでサポートします。</p>
+    <a class="btn btn-tel" href="tel:0155221151">📞 0155-22-1151</a>
+    <a class="btn btn-form" href="https://www.sportshouse.info/contactus/" target="_blank" rel="noopener">✉ お問い合わせフォーム</a>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="wrap">
+    <h2><small>CONCEPT</small>豊かで質の高い<br>スポーツライフを叶える館</h2>
+    <p>スポーツ用品の販売、サービスの提供を通じて、<br>お客様の<strong>豊かで質の高いスポーツライフ</strong>を願い、<br>その豊かさ・質の高い満足度を実感していただけるよう、<br>日々取り組むのが<strong>スポーツハウス</strong>です。</p>
+  </div>
+</section>
+
+<!-- ICHIOSHI -->
+<section class="ichioshi" id="ichioshi">
+  <div class="wrap">
+    <h2><small>RECOMMEND</small>スポーツハウスの<br>イチオシ</h2>
+    <div class="pick-card">
+      <div class="pick-label">★ イチオシ ★</div>
+      <img src="images/ichioshi.jpg" alt="スポーツハウスのスポーツ用品の品揃え">
+      <div class="pick-body">
+        <h3>スポーツ用品全般を、<br>ひとつの「館」で。</h3>
+        <p>競技を始めたばかりの方から、本格的に取り組む方まで。あなたのスポーツに合わせて、必要な用品をお探しします。</p>
+        <ul class="checks">
+          <li>幅広いスポーツ用品をまとめて相談できる</li>
+          <li>用品選びから購入後まで、サービスで支える</li>
+          <li>「豊かで質の高いスポーツライフ」を実感できる満足度を追求</li>
+        </ul>
+        <a class="btn btn-tel" href="tel:0155221151">📞 まずは電話で相談する</a>
+        <a class="btn btn-form" style="border:2px solid var(--main);box-shadow:none" href="https://www.sportshouse.info/contactus/" target="_blank" rel="noopener">✉ フォームで問い合わせる</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section class="strengths">
+  <div class="wrap">
+    <h2><small>STRENGTHS</small>スポーツハウスの強み</h2>
+    <div class="s-item">
+      <div class="s-num">1</div>
+      <div>
+        <h3>スポーツ用品の幅広い品揃え</h3>
+        <p>スポーツ用品全般を扱う「館」として、さまざまなスポーツの用品選びに対応します。</p>
+      </div>
+    </div>
+    <div class="s-item">
+      <div class="s-num">2</div>
+      <div>
+        <h3>販売だけでなく「サービス」でも支える</h3>
+        <p>用品の販売に加え、サービスの提供を通じて、お客様のスポーツライフを応援します。</p>
+      </div>
+    </div>
+    <div class="s-item">
+      <div class="s-num">3</div>
+      <div>
+        <h3>お客様の満足度を日々追求</h3>
+        <p>豊かさ・質の高い満足度を実感していただけるよう、日々取り組んでいます。</p>
+      </div>
+    </div>
+    <div class="service-img">
+      <img src="images/service.jpg" alt="スポーツハウスの店内・サービスの様子">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2><small>CONTACT</small>お気軽にご相談ください</h2>
+    <p>スポーツ用品のことなら、まずはお電話を。</p>
+    <a class="tel-big" href="tel:0155221151">0155-22-1151</a>
+    <div class="hours">定休日：土曜・日曜・祝日</div>
+    <a class="btn btn-tel" href="tel:0155221151">📞 今すぐ電話する</a>
+    <a class="btn btn-form" href="https://www.sportshouse.info/contactus/" target="_blank" rel="noopener">✉ お問い合わせフォーム</a>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info" id="access">
+  <div class="wrap">
+    <h2><small>SHOP INFO</small>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>スポーツハウス</td></tr>
+      <tr><th>会社名</th><td>株式会社スポーツハウス</td></tr>
+      <tr><th>代表者</th><td>伊藤 忠寛</td></tr>
+      <tr><th>住所</th><td>北海道帯広市西5条南24丁目3-1<br>セントラル5 A号室</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0155221151">0155-22-1151</a></td></tr>
+      <tr><th>定休日</th><td>土曜・日曜・祝日</td></tr>
+      <tr><th>公式HP</th><td><a href="https://www.sportskan.co.jp/index.html" target="_blank" rel="noopener">https://www.sportskan.co.jp/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://www.sportshouse.info/contactus/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps?q=%E5%8C%97%E6%B5%B7%E9%81%93%E5%B8%AF%E5%BA%83%E5%B8%82%E8%A5%BF5%E6%9D%A1%E5%8D%9724%E4%B8%81%E7%9B%AE3-1&output=embed&hl=ja"
+        title="スポーツハウスの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>© 株式会社スポーツハウス</footer>
+
+<nav class="bottom-nav">
+  <a class="n-tel" href="tel:0155221151">📞 電話</a>
+  <a class="n-form" href="https://www.sportshouse.info/contactus/" target="_blank" rel="noopener">✉ 問い合わせ</a>
+  <a class="n-map" href="#access">📍 アクセス</a>
+</nav>
+
+</body>
+</html>
