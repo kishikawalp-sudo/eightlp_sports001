@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WAVES スキー&amp;スノーボードレンタル｜富良野のスキー場送迎つき・良心価格</title>
+<meta name="description" content="富良野のスキー・スノーボードレンタル WAVES。ビンディング単体のレンタルにも対応、スキー場までの送迎つき。ギアのトラブルも気軽にご相談ください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0c2a3d;
+  --deep:#0a3d56;
+  --wave:#0e8aa0;
+  --ice:#e9f4f8;
+  --snow:#ffffff;
+  --signal:#f0641e;
+  --signal-d:#c94d0f;
+  --text:#18303f;
+  --muted:#5c7482;
+  --line:#cfe1e9;
+  --nav-h:62px;
+  --head-h:54px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--head-h)}
+body{
+  margin:0;
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--text);
+  background:var(--snow);
+  line-height:1.8;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+  padding-top:var(--head-h);
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.45;margin:0}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+
+/* Header */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:var(--head-h);
+  background:var(--ink);
+  color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 14px 0 16px;
+}
+.logo{font-weight:900;letter-spacing:.08em;font-size:1.15rem;text-decoration:none}
+.logo small{display:block;font-size:.58rem;font-weight:500;letter-spacing:.04em;opacity:.8;margin-top:-4px}
+.head-tel{
+  background:var(--signal);color:#fff;text-decoration:none;
+  font-weight:700;font-size:.9rem;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* Hero */
+.hero{
+  position:relative;
+  background:var(--deep);
+  color:#fff;
+  overflow:hidden;
+}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.55}
+.hero-body{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:24px 20px 56px;
+  background:linear-gradient(180deg,rgba(10,61,86,.15) 0%,rgba(8,32,48,.88) 100%);
+}
+.hero-tag{
+  align-self:flex-start;
+  background:var(--signal);color:#fff;
+  font-weight:700;font-size:.78rem;
+  padding:3px 12px;border-radius:4px;margin-bottom:12px;
+}
+.hero h1{font-size:1.75rem;font-weight:900;letter-spacing:.01em}
+.hero h1 span{display:inline-block}
+.hero-sub{font-size:.95rem;margin:12px 0 0;opacity:.95;line-height:1.7}
+.wave-edge{position:absolute;left:0;right:0;bottom:-1px;line-height:0}
+.wave-edge svg{width:100%;height:40px;display:block}
+
+/* Buttons */
+.btn{
+  display:flex;align-items:center;justify-content:center;
+  min-height:56px;padding:12px 20px;
+  background:var(--signal);color:#fff;
+  border-radius:10px;text-decoration:none;
+  font-weight:900;font-size:1.05rem;
+  border-bottom:4px solid var(--signal-d);
+}
+.btn:active{transform:translateY(2px);border-bottom-width:2px}
+.btn.sub{background:#fff;color:var(--deep);border:2px solid var(--deep);border-bottom-width:4px}
+
+/* Sections */
+section{padding:56px 0}
+.sec-title{font-size:1.45rem;font-weight:900;color:var(--ink);margin-bottom:8px}
+.sec-lead{color:var(--muted);font-size:.95rem;margin-bottom:28px}
+
+/* Featured */
+.pick{background:var(--ice);padding-top:40px}
+.pick-badge{
+  display:inline-block;background:var(--ink);color:#fff;
+  font-size:.8rem;font-weight:700;padding:4px 14px;border-radius:999px;margin-bottom:14px;
+}
+.pick h2{font-size:1.6rem;font-weight:900;color:var(--ink);margin-bottom:18px}
+.pick h2 em{font-style:normal;background:linear-gradient(transparent 62%,#ffd7bf 62%)}
+.pick-photo{border-radius:14px;overflow:hidden;margin-bottom:22px;box-shadow:0 8px 24px rgba(10,61,86,.18)}
+.pick-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick-list{list-style:none;margin:0 0 26px;padding:0}
+.pick-list li{
+  background:#fff;border-left:6px solid var(--wave);
+  border-radius:8px;padding:14px 16px;margin-bottom:10px;
+  font-weight:700;color:var(--ink);
+}
+.pick-list li span{display:block;font-weight:400;font-size:.9rem;color:var(--muted);margin-top:2px}
+
+/* Strengths */
+.strong-item{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.strong-item:last-of-type{border-bottom:0}
+.strong-mark{
+  flex:0 0 48px;height:48px;border-radius:50%;
+  background:var(--deep);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;
+}
+.strong-item h3{font-size:1.1rem;color:var(--ink);margin-bottom:4px}
+.strong-item p{margin:0;font-size:.95rem;color:var(--text)}
+.strong-photo{border-radius:14px;overflow:hidden;margin-top:12px}
+.strong-photo img{width:100%;aspect-ratio:16/9;object-fit:cover}
+
+/* Voice */
+.voice{background:var(--deep);color:#fff}
+.voice .sec-title{color:#fff}
+.voice .sec-lead{color:#bcd9e4}
+.stars{color:#ffc83d;font-size:1.25rem;letter-spacing:.1em;margin-bottom:10px}
+.voice-card{background:#fff;color:var(--text);border-radius:14px;padding:22px 20px}
+.voice-card p{font-size:.95rem}
+.voice-card p:last-of-type{margin-bottom:0}
+.voice-pt{
+  display:inline;
+  background:linear-gradient(transparent 60%,#ffe2cf 60%);
+  font-weight:700;
+}
+.voice-src{margin-top:14px;font-size:.8rem;color:var(--muted)}
+
+/* Info */
+.info-table{width:100%;border-collapse:collapse;font-size:.95rem;margin-bottom:24px}
+.info-table th,.info-table td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info-table th{width:7.5em;color:var(--deep);font-weight:700;white-space:nowrap}
+.info-table a{color:var(--wave);word-break:break-all}
+.map{border-radius:14px;overflow:hidden;border:1px solid var(--line);margin-bottom:8px}
+.map iframe{display:block;width:100%;height:280px;border:0}
+.map-note{font-size:.8rem;color:var(--muted)}
+
+/* CTA */
+.cta{background:var(--ice);text-align:center}
+.cta h2{font-size:1.5rem;font-weight:900;color:var(--ink);margin-bottom:10px}
+.cta p{color:var(--muted);font-size:.95rem}
+.cta-tel{display:block;font-size:2rem;font-weight:900;color:var(--deep);text-decoration:none;margin:10px 0 18px;letter-spacing:.02em}
+.cta .btn{margin-bottom:12px}
+
+footer{background:var(--ink);color:#bcd9e4;text-align:center;font-size:.8rem;padding:24px 20px}
+
+/* Bottom nav */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  height:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  background:#fff;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.bottom-nav a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  text-decoration:none;color:var(--deep);font-size:.72rem;font-weight:700;
+}
+.bottom-nav a .ic{font-size:1.25rem;line-height:1}
+.bottom-nav a.tel{background:var(--signal);color:#fff}
+
+@media (min-width:640px){
+  .hero h1{font-size:2.3rem}
+  .hero-body{padding:40px 48px 64px}
+  .sec-title{font-size:1.7rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="#top">WAVES<small>スキー&amp;スノーボードレンタル</small></a>
+  <a class="head-tel" href="tel:0167231911">📞 電話する</a>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <div class="hero">
+    <img class="hero-img" src="images/hero.jpg" alt="富良野のゲレンデとWAVESのスキー・スノーボード用品" width="1200" height="900">
+    <div class="hero-body">
+      <span class="hero-tag">北海道・富良野</span>
+      <h1><span>ゲレンデで困ったら、</span><span>まずWAVESへ。</span></h1>
+      <p class="hero-sub">スキー＆スノーボードのレンタルとショップ。<br>スキー場までの送迎もお任せください。</p>
+    </div>
+    <div class="wave-edge" aria-hidden="true">
+      <svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 22 C 150 0, 300 44, 450 22 S 750 0, 900 22 S 1100 40, 1200 18 L1200 40 L0 40 Z" fill="#e9f4f8"/></svg>
+    </div>
+  </div>
+
+  <!-- Featured -->
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <span class="pick-badge">WAVESのイチオシ</span>
+      <h2>富良野の<em>スキー・スノーボードショップ</em>。道具の相談から、ギアのレンタルまで。</h2>
+      <figure class="pick-photo" style="margin:0 0 22px">
+        <img src="images/ichioshi.jpg" alt="WAVESのスキー・スノーボード用品" width="1200" height="900">
+      </figure>
+      <ul class="pick-list">
+        <li>ビンディング単体でもレンタルOK<span>お客様の口コミでも「かなり安価で借りられた」と好評です。</span></li>
+        <li>スキー場までの送迎つき<span>移動の手間を減らして、滑る時間をしっかり確保。</span></li>
+        <li>良心的な価格設定<span>地元のお客様にも、観光で訪れる方にも。</span></li>
+      </ul>
+      <a class="btn" href="tel:0167231911">📞 0167-23-1911 に電話する</a>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section id="strength">
+    <div class="wrap">
+      <h2 class="sec-title">WAVESが選ばれる理由</h2>
+      <p class="sec-lead">富良野で滑る人の「困った」に寄り添うお店です。</p>
+
+      <div class="strong-item">
+        <div class="strong-mark" aria-hidden="true">🔧</div>
+        <div>
+          <h3>道具のトラブルにも柔軟に対応</h3>
+          <p>滑っている最中にビンディングが壊れてしまった。そんなときも、お店に相談してみてください。</p>
+        </div>
+      </div>
+      <div class="strong-item">
+        <div class="strong-mark" aria-hidden="true">🚐</div>
+        <div>
+          <h3>スキー場まで送迎</h3>
+          <p>ご利用のお客様には、スキー場までの送迎があります。移動の不安なく富良野を満喫できます。</p>
+        </div>
+      </div>
+      <div class="strong-item">
+        <div class="strong-mark" aria-hidden="true">💬</div>
+        <div>
+          <h3>スタッフが親切に教えてくれる</h3>
+          <p>スキー・スノーボードのことを、スタッフがやさしく丁寧に案内します。初めての方も気軽にどうぞ。</p>
+        </div>
+      </div>
+      <div class="strong-photo">
+        <img src="images/service.jpg" alt="WAVESのスタッフとレンタル用品" width="1280" height="720">
+      </div>
+    </div>
+  </section>
+
+  <!-- Voice -->
+  <section class="voice" id="voice">
+    <div class="wrap">
+      <h2 class="sec-title">お客様の声</h2>
+      <p class="sec-lead">Googleマップに寄せられた口コミです。</p>
+      <div class="voice-card">
+        <div class="stars" aria-label="5つ星">★★★★★</div>
+        <p>富良野スキー場で滑っていたところ、自前のビンディングが破損してしまったので、来店。販売はしていないとのことでしたが、<span class="voice-pt">ビンディング単体をかなり安価でレンタルできました。</span></p>
+        <p>もしかすると今後は販売用にもスキーやスノーボードを扱うとのことで、富良野にはスキー用品をあまり買えるところがなく、旭川まで行かないといけないそうなので、地元のお客さんや観光客想いの素敵なお店です。とても良心的な価格設定だし、<span class="voice-pt">スキー場まで送迎もして頂いて助かりました。</span></p>
+        <p>皆さん優しく、色々教えてくださり、また利用したいです！<br>富良野に来る方、是非オススメします！</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop info -->
+  <section id="info">
+    <div class="wrap">
+      <h2 class="sec-title">店舗情報</h2>
+      <p class="sec-lead">富良野の中心、本町にあります。</p>
+      <table class="info-table">
+        <tr><th>店名</th><td>WAVES スキー&amp;スノーボードレンタル</td></tr>
+        <tr><th>代表者</th><td>松本 幸夫</td></tr>
+        <tr><th>住所</th><td>北海道富良野市本町</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0167231911">0167-23-1911</a></td></tr>
+        <tr><th>公式サイト</th><td><a href="https://waves-active.studio.site/" target="_blank" rel="noopener">https://waves-active.studio.site/</a></td></tr>
+        <tr><th>Instagram</th><td><a href="https://www.instagram.com/waves_furano/" target="_blank" rel="noopener">@waves_furano</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe title="WAVES 富良野 周辺地図" src="https://maps.google.com/maps?q=%E5%8C%97%E6%B5%B7%E9%81%93%E5%AF%8C%E8%89%AF%E9%87%8E%E5%B8%82%E6%9C%AC%E7%94%BA%20WAVES&amp;output=embed&amp;z=15" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <p class="map-note">※ 地図は富良野市本町周辺を表示しています。</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>富良野で滑るなら、WAVESへ。</h2>
+      <p>ご利用のご相談・お問い合わせは、お電話かフォームから。</p>
+      <a class="cta-tel" href="tel:0167231911">0167-23-1911</a>
+      <a class="btn" href="tel:0167231911">📞 電話で問い合わせる</a>
+      <a class="btn sub" href="https://waves-active.studio.site/#company" target="_blank" rel="noopener">✉ お問い合わせフォーム</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="margin:0">© WAVES スキー&amp;スノーボードレンタル</p>
+</footer>
+
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <a class="tel" href="tel:0167231911"><span class="ic">📞</span>電話</a>
+  <a href="https://waves-active.studio.site/#company" target="_blank" rel="noopener"><span class="ic">✉</span>問い合わせ</a>
+  <a href="https://www.instagram.com/waves_furano/" target="_blank" rel="noopener"><span class="ic">📷</span>Instagram</a>
+  <a href="#info"><span class="ic">📍</span>アクセス</a>
+</nav>
+
+</body>
+</html>
