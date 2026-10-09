@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>スポーツプラス｜帯広のバドミントン用品店</title>
+<meta name="description" content="北海道帯広市のスポーツプラス。バドミントン用品を割引価格で。親切な接客で選び方も相談できます。定休日は火曜日。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --court:#0B3C5D;
+  --court-deep:#082B43;
+  --line:#FFFFFF;
+  --shuttle:#F2C230;
+  --ink:#16222C;
+  --mist:#EEF3F6;
+  --sub:#5B6B77;
+  --head-h:56px;
+  --nav-h:60px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head-h) + 8px);-webkit-text-size-adjust:100%}
+body{
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.8;font-size:16px;
+  padding-top:calc(var(--head-h) + env(safe-area-inset-top,0px));
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;line-height:1.35}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+
+/* ===== header ===== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:var(--court-deep);color:#fff;
+  padding-top:env(safe-area-inset-top,0px);
+}
+.header .in{
+  max-width:720px;margin:0 auto;height:var(--head-h);padding:0 14px 0 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.logo{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:18px;letter-spacing:.04em;text-decoration:none}
+.tel-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--shuttle);color:var(--court-deep);
+  font-weight:700;font-size:14px;text-decoration:none;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+.tel-btn svg{width:16px;height:16px;fill:currentColor}
+
+/* ===== hero ===== */
+.hero{
+  position:relative;color:#fff;background:var(--court);
+  padding:0;overflow:hidden;
+}
+.hero-img{
+  position:relative;aspect-ratio:4/3;background:var(--court-deep);
+}
+.hero-img img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero-img::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,43,67,.15) 0%,var(--court) 100%);
+}
+.hero-body{position:relative;margin-top:-72px;z-index:2;padding:0 20px 44px;max-width:720px;margin-left:auto;margin-right:auto}
+.hero-tag{
+  display:inline-block;background:var(--shuttle);color:var(--court-deep);
+  font-weight:700;font-size:13px;padding:3px 12px;border-radius:4px;margin-bottom:14px;
+}
+.hero h1{font-size:clamp(30px,8.6vw,46px);font-weight:900;letter-spacing:.02em}
+.hero p.lead{margin-top:14px;font-size:15px;color:#D7E4EC}
+.hero-cta{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:54px;padding:12px 20px;border-radius:10px;
+  font-weight:700;font-size:16px;text-decoration:none;text-align:center;
+}
+.btn-main{background:var(--shuttle);color:var(--court-deep)}
+.btn-sub{border:2px solid rgba(255,255,255,.7);color:#fff}
+.btn-dark{background:var(--court);color:#fff}
+.btn-line{border:2px solid var(--court);color:var(--court)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+/* court line decoration */
+.court-lines{position:absolute;left:0;right:0;bottom:0;height:10px;background:
+  linear-gradient(90deg,var(--shuttle) 0 28%,transparent 28% 30%,#fff 30% 100%);opacity:.9}
+
+/* ===== feature (イチオシ) ===== */
+.feature{background:var(--mist)}
+.sec-title{font-size:clamp(24px,6.6vw,32px);font-weight:900;color:var(--court-deep)}
+.sec-lead{margin-top:10px;color:var(--sub);font-size:15px}
+.badge{
+  display:inline-block;background:var(--court);color:#fff;font-weight:700;font-size:13px;
+  padding:3px 12px;border-radius:4px;margin-bottom:12px;
+}
+.feature-img{margin-top:26px;border-radius:14px;overflow:hidden;background:var(--court-deep);aspect-ratio:4/3;box-shadow:0 10px 24px rgba(8,43,67,.18)}
+.feature-img img{width:100%;height:100%;object-fit:cover}
+.pickup{margin-top:28px;display:grid;gap:14px}
+.pickup li{
+  list-style:none;background:#fff;border-left:6px solid var(--shuttle);
+  border-radius:0 10px 10px 0;padding:16px 18px;
+}
+.pickup h3{font-size:18px;color:var(--court-deep)}
+.pickup p{margin-top:4px;font-size:15px;color:var(--sub)}
+.feature .btn{margin-top:28px}
+
+/* ===== strengths ===== */
+.strength-list{margin-top:26px;display:grid;gap:22px}
+.strength{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start}
+.strength .mark{
+  width:56px;height:56px;border-radius:50%;background:var(--court);color:var(--shuttle);
+  display:grid;place-items:center;
+}
+.strength .mark svg{width:28px;height:28px;fill:currentColor}
+.strength h3{font-size:19px;color:var(--court-deep)}
+.strength p{margin-top:4px;font-size:15px;color:var(--sub)}
+.service-img{margin-top:30px;border-radius:14px;overflow:hidden;background:var(--court-deep);aspect-ratio:16/10}
+.service-img img{width:100%;height:100%;object-fit:cover}
+
+/* ===== reviews ===== */
+.reviews{background:var(--court);color:#fff}
+.reviews .sec-title{color:#fff}
+.review-list{margin-top:26px;display:grid;gap:16px}
+.review{background:#fff;color:var(--ink);border-radius:12px;padding:20px}
+.stars{color:#E0A800;font-size:20px;letter-spacing:2px;line-height:1}
+.stars .off{color:#CBD5DB}
+.review p{margin-top:10px;font-size:15px}
+.review .who{margin-top:8px;font-size:12px;color:var(--sub)}
+
+/* ===== shop info ===== */
+.info-table{width:100%;border-collapse:collapse;margin-top:24px;font-size:15px}
+.info-table th,.info-table td{padding:14px 10px;border-bottom:1px solid #D9E2E8;text-align:left;vertical-align:top}
+.info-table th{width:7.5em;color:var(--court);font-weight:700;white-space:nowrap}
+.info-table td a{color:var(--court);word-break:break-all}
+.closed{display:inline-block;background:var(--shuttle);color:var(--court-deep);font-weight:700;padding:0 10px;border-radius:4px}
+.map{margin-top:26px;border-radius:12px;overflow:hidden;background:var(--mist);aspect-ratio:4/3}
+.map iframe{width:100%;height:100%;border:0}
+
+/* ===== cta ===== */
+.cta{background:var(--court-deep);color:#fff;text-align:center}
+.cta h2{font-size:clamp(24px,6.6vw,32px);font-weight:900}
+.cta p{margin-top:10px;color:#C9D9E4;font-size:15px}
+.cta-btns{margin-top:26px;display:grid;gap:12px;text-align:center}
+.cta .btn-sub{border-color:rgba(255,255,255,.6)}
+.sns-line{margin-top:22px;font-size:14px}
+.sns-line a{color:var(--shuttle)}
+
+footer{background:#061F31;color:#9FB4C2;text-align:center;font-size:12px;padding:22px 20px}
+
+/* ===== bottom nav ===== */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:#fff;border-top:1px solid #D9E2E8;
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.bottom-nav ul{max-width:720px;margin:0 auto;height:var(--nav-h);display:grid;grid-template-columns:repeat(3,1fr);list-style:none}
+.bottom-nav a{
+  height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  text-decoration:none;font-size:11px;font-weight:700;color:var(--court);
+}
+.bottom-nav a.call{background:var(--shuttle);color:var(--court-deep)}
+.bottom-nav svg{width:22px;height:22px;fill:currentColor}
+
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--shuttle);outline-offset:2px}
+@media (min-width:640px){
+  .hero-cta,.cta-btns{flex-direction:row;display:flex;justify-content:center}
+  .hero-cta{justify-content:flex-start}
+  .btn{min-width:240px}
+  .pickup{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- 固定ヘッダー -->
+<header class="header">
+  <div class="in">
+    <a class="logo" href="#top">スポーツプラス</a>
+    <a class="tel-btn" href="tel:0155678915" aria-label="電話をかける 0155-67-8915">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      電話する
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="hero-img">
+    <img src="images/hero.jpg" alt="スポーツプラスのバドミントン用品売り場" width="1200" height="900">
+  </div>
+  <div class="hero-body">
+    <span class="hero-tag">帯広のバドミントン用品店</span>
+    <h1>バドミントン用品は、<br>ここで買う。</h1>
+    <p class="lead">割引があって安い。相談にも親切に応えてくれる。<br>リピーターに選ばれているのは、そんなお店です。</p>
+    <div class="hero-cta">
+      <a class="btn btn-main" href="tel:0155678915">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+        0155-67-8915に電話する
+      </a>
+      <a class="btn btn-sub" href="#feature">バドミントン用品を見る</a>
+    </div>
+  </div>
+  <div class="court-lines" aria-hidden="true"></div>
+</section>
+
+<!-- イチオシ -->
+<section class="feature" id="feature">
+  <div class="wrap">
+    <span class="badge">イチオシ</span>
+    <h2 class="sec-title">バドミントン用品なら、<br>スポーツプラス。</h2>
+    <p class="sec-lead">シューズをはじめ、プレーに必要なバドミントン用品を扱っています。</p>
+
+    <div class="feature-img">
+      <img src="images/ichioshi.jpg" alt="スポーツプラスで扱うバドミントンシューズ・用品" width="1200" height="900" loading="lazy">
+    </div>
+
+    <ul class="pickup">
+      <li>
+        <h3>バドシューズが割引価格</h3>
+        <p>お客様の口コミでも「割引があり安い」と好評です。</p>
+      </li>
+      <li>
+        <h3>選び方も、気軽に相談</h3>
+        <p>「とても親切でした」という声をいただいています。初めての方もお気軽にどうぞ。</p>
+      </li>
+      <li>
+        <h3>「バドミントン用品はここで買います」</h3>
+        <p>通い続けるお客様に選ばれている、帯広のバドミントン用品店です。</p>
+      </li>
+    </ul>
+    <a class="btn btn-dark" href="tel:0155678915">在庫・価格を電話で問い合わせる</a>
+  </div>
+</section>
+
+<!-- 選ばれる理由 -->
+<section id="strength">
+  <div class="wrap">
+    <h2 class="sec-title">スポーツプラスが<br>選ばれる理由</h2>
+    <div class="strength-list">
+      <div class="strength">
+        <div class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21.4 11.6l-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7c0 .53.21 1.04.59 1.41l9 9a2 2 0 0 0 2.82 0l7-7a2 2 0 0 0 0-2.82zM6.5 8A1.5 1.5 0 1 1 8 6.5 1.5 1.5 0 0 1 6.5 8z"/></svg>
+        </div>
+        <div>
+          <h3>割引があって、安い</h3>
+          <p>口コミでも価格面を評価いただいています。バドミントン用品を、お得に揃えられます。</p>
+        </div>
+      </div>
+      <div class="strength">
+        <div class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <div>
+          <h3>とにかく親切な接客</h3>
+          <p>口コミは星5つで「とても親切でした」。わからないことは、遠慮なく聞いてください。</p>
+        </div>
+      </div>
+      <div class="strength">
+        <div class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l5.59-5.59L18 10z"/></svg>
+        </div>
+        <div>
+          <h3>バドミントン用品を一か所で</h3>
+          <p>「バドミントン用品はここで買います」と言われる、頼れる一店です。</p>
+        </div>
+      </div>
+    </div>
+    <div class="service-img">
+      <img src="images/service.jpg" alt="スポーツプラスの店内と接客の様子" width="1200" height="750" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <h2 class="sec-title">お客様の声</h2>
+    <div class="review-list">
+      <div class="review">
+        <div class="stars" aria-label="5点満点中4点">★★★★<span class="off">★</span></div>
+        <p>バドシューズ、サイズ展開は少ないが割引があり安い。</p>
+        <div class="who">口コミより</div>
+      </div>
+      <div class="review">
+        <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+        <p>とても親切でした！親切。バドミントン用品はここで買います。</p>
+        <div class="who">口コミより</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section id="shop">
+  <div class="wrap">
+    <h2 class="sec-title">店舗情報</h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>スポーツプラス</td></tr>
+      <tr><th>運営会社</th><td>有限会社スポーツプラス</td></tr>
+      <tr><th>住所</th><td>北海道帯広市大通南３４丁目28番地1</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0155678915">0155-67-8915</a></td></tr>
+      <tr><th>定休日</th><td><span class="closed">火曜日</span></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@sportsplace.jp">info@sportsplace.jp</a></td></tr>
+      <tr><th>公式サイト</th><td><a href="http://sportsplace.jp/" target="_blank" rel="noopener">http://sportsplace.jp/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://sportsplace.jp/inquiry/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://x.com/BgX1xBIet6NAhuY" target="_blank" rel="noopener">X（旧Twitter）</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="スポーツプラスの地図" src="https://www.google.com/maps?q=%E5%8C%97%E6%B5%B7%E9%81%93%E5%B8%AF%E5%BA%83%E5%B8%82%E5%A4%A7%E9%80%9A%E5%8D%97%EF%BC%93%EF%BC%94%E4%B8%81%E7%9B%AE28%E7%95%AA%E5%9C%B01&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>バドミントン用品の<br>ご相談はお気軽に</h2>
+    <p>在庫やサイズのご確認は、お電話が早くて確実です。<br>定休日は火曜日です。</p>
+    <div class="cta-btns">
+      <a class="btn btn-main" href="tel:0155678915">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+        電話で問い合わせる
+      </a>
+      <a class="btn btn-sub" href="https://sportsplace.jp/inquiry/" target="_blank" rel="noopener">フォームで問い合わせる</a>
+    </div>
+    <p class="sns-line">最新情報は <a href="https://x.com/BgX1xBIet6NAhuY" target="_blank" rel="noopener">X（旧Twitter）</a> をご覧ください。</p>
+  </div>
+</section>
+
+</main>
+
+<footer>© 有限会社スポーツプラス</footer>
+
+<!-- 固定ボトムナビ -->
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <ul>
+    <li><a href="#feature">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>イチオシ</a></li>
+    <li><a class="call" href="tel:0155678915">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>電話</a></li>
+    <li><a href="#shop">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg>店舗情報</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
