@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>アウトドアアドベンチャーズ｜北海道・日高町の沙流川でラフティング＆ジップライン</title>
+<meta name="description" content="北海道沙流郡日高町のアウトドアアドベンチャーズ。5歳からのラフティング、ジップライン&ハイロープなど、家族みんなで楽しめるレクリエーションセンター。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --river:#0d4a5a;
+  --river-deep:#07303b;
+  --foam:#f3f8f6;
+  --stone:#dfe9e5;
+  --vest:#ff6a2b;
+  --vest-dark:#e2501a;
+  --ink:#16262b;
+  --muted:#58706f;
+  --star:#f5a400;
+  --head:"Zen Maru Gothic","Noto Sans JP","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+  --body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+  --header-h:56px;
+  --nav-h:64px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--body);color:var(--ink);background:var(--foam);
+  line-height:1.85;font-size:16px;
+  padding-top:calc(var(--header-h) + env(safe-area-inset-top,0px));
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);line-height:1.4;margin:0}
+p{margin:0}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+:focus-visible{outline:3px solid var(--vest);outline-offset:3px}
+
+/* ヘッダー */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding-top:env(safe-area-inset-top,0px);
+  background:rgba(7,48,59,.96);color:#fff;
+}
+.header-in{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:960px;margin:0 auto;padding:0 14px}
+.logo{font-family:var(--head);font-weight:900;font-size:15px;line-height:1.25;text-decoration:none;letter-spacing:.02em}
+.logo small{display:block;font-family:var(--body);font-weight:500;font-size:10px;opacity:.75;letter-spacing:.04em}
+.tel-btn{
+  flex:none;display:inline-flex;align-items:center;gap:6px;
+  background:var(--vest);color:#fff;text-decoration:none;font-weight:700;font-size:14px;
+  padding:9px 14px;border-radius:999px;white-space:nowrap
+}
+.tel-btn svg{width:16px;height:16px;fill:currentColor}
+
+/* ヒーロー */
+.hero{position:relative;padding:0;color:#fff;background:var(--river-deep)}
+.hero-img{width:100%;aspect-ratio:4/5;max-height:640px;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,48,59,.15) 0%,rgba(7,48,59,.25) 40%,rgba(7,48,59,.88) 100%)}
+.hero-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 20px 36px}
+.hero-copy .in{max-width:760px;margin:0 auto}
+.badge{
+  display:inline-block;background:var(--vest);color:#fff;font-weight:700;font-size:13px;
+  padding:4px 12px;border-radius:4px;margin-bottom:14px
+}
+.hero h1{font-size:clamp(30px,8.4vw,52px);font-weight:900;letter-spacing:.02em;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.hero p.lead{margin-top:14px;font-size:15px;line-height:1.8;max-width:30em;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.hero-cta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;
+  text-decoration:none;border:2px solid transparent;font-family:var(--head)
+}
+.btn-primary{background:var(--vest);color:#fff;box-shadow:0 6px 18px rgba(255,106,43,.38)}
+.btn-primary:active{background:var(--vest-dark)}
+.btn-ghost{border-color:rgba(255,255,255,.8);color:#fff}
+.btn-line{border-color:var(--river);color:var(--river)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+
+/* 見出し */
+.sec-title{font-size:clamp(24px,6.2vw,34px);font-weight:900;color:var(--river);text-align:center}
+.sec-sub{text-align:center;color:var(--muted);margin-top:10px;font-size:15px}
+
+/* イチオシ */
+.pick{background:var(--river);color:#fff;padding:0 0 56px}
+.pick-ribbon{
+  background:var(--vest);color:#fff;text-align:center;font-family:var(--head);font-weight:900;
+  font-size:15px;padding:10px 16px;letter-spacing:.08em
+}
+.pick-img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.pick-body{padding:32px 20px 0;max-width:760px;margin:0 auto}
+.pick h2{font-size:clamp(28px,7.6vw,42px);font-weight:900;letter-spacing:.02em}
+.pick h2 span{display:block;font-size:.5em;font-weight:700;color:#ffd2bd;margin-bottom:6px}
+.pick .desc{margin-top:18px;font-size:16px;line-height:1.95}
+.pick-points{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+.pick-points li{
+  background:rgba(255,255,255,.09);border-left:5px solid var(--vest);border-radius:0 10px 10px 0;
+  padding:14px 16px;font-size:15px;line-height:1.7
+}
+.pick-points b{display:block;font-family:var(--head);font-size:17px;margin-bottom:2px}
+.pick-cta{margin-top:32px;text-align:center}
+.pick-cta .note{font-size:13px;opacity:.85;margin-top:10px}
+
+/* 強み */
+.points{margin-top:32px;display:grid;gap:20px}
+.point{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--stone)}
+.point-img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.point-body{padding:20px}
+.point h3{font-size:19px;color:var(--river);margin-bottom:6px}
+.point p{font-size:15px;color:#2e4448}
+.point.plain{padding:20px;border-left:6px solid var(--vest);border-radius:0 14px 14px 0}
+
+/* クチコミ */
+.voice{background:var(--stone)}
+.review{background:#fff;border-radius:14px;padding:22px 20px;margin-top:20px}
+.review:first-of-type{margin-top:30px}
+.stars{color:var(--star);font-size:20px;letter-spacing:2px;line-height:1}
+.review h3{font-size:17px;margin:10px 0 8px;color:var(--river)}
+.review p{font-size:15px;line-height:1.9;color:#2e4448}
+.review p + p{margin-top:8px}
+
+/* 店舗情報 */
+.info-table{width:100%;border-collapse:collapse;margin-top:28px;background:#fff;border-radius:12px;overflow:hidden;font-size:15px}
+.info-table th,.info-table td{padding:14px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--stone);line-height:1.7}
+.info-table tr:last-child th,.info-table tr:last-child td{border-bottom:0}
+.info-table th{width:28%;background:#eaf2ef;color:var(--river);font-weight:700;white-space:nowrap}
+.info-table td{word-break:break-all}
+.info-table a{color:var(--river);font-weight:700}
+.map{margin-top:22px;border-radius:12px;overflow:hidden;border:1px solid var(--stone);background:#fff}
+.map iframe{display:block;width:100%;height:320px;border:0}
+
+/* 最終CTA */
+.final{background:var(--river-deep);color:#fff;text-align:center}
+.final h2{font-size:clamp(24px,6.4vw,34px);font-weight:900}
+.final p{margin-top:14px;opacity:.9}
+.final .actions{margin-top:28px;display:grid;gap:12px;max-width:380px;margin-left:auto;margin-right:auto}
+.final .tel-big{font-family:var(--head);font-weight:900;font-size:30px;letter-spacing:.04em}
+
+footer{background:#041f27;color:#a9c0c2;text-align:center;font-size:12px;padding:22px 16px}
+
+/* 下部固定ナビ */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:repeat(3,1fr);
+  background:#fff;border-top:1px solid var(--stone);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  box-shadow:0 -4px 16px rgba(0,0,0,.08)
+}
+.bottom-nav a{
+  height:var(--nav-h);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  text-decoration:none;font-size:12px;font-weight:700;color:var(--river)
+}
+.bottom-nav a svg{width:22px;height:22px;fill:currentColor}
+.bottom-nav a.call{background:var(--vest);color:#fff}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  .hero-img{aspect-ratio:16/9}
+  .pick-img{aspect-ratio:21/9}
+  .points{grid-template-columns:1fr 1fr}
+  .point.plain{grid-column:1 / -1}
+  .logo{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- 固定ヘッダー -->
+<header class="header">
+  <div class="header-in">
+    <a class="logo" href="#top">アウトドアアドベンチャーズ<small>北海道・日高町</small></a>
+    <a class="tel-btn" href="tel:01457-6-2668" aria-label="電話をかける 01457-6-2668">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      電話する
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ヒーロー -->
+<section class="hero">
+  <img class="hero-img" src="images/hero.jpg" alt="沙流川の流れの上でラフティングを楽しむ家族" width="1200" height="1500" fetchpriority="high">
+  <div class="hero-copy">
+    <div class="in">
+      <span class="badge">口コミ ★★★★★</span>
+      <h1>5歳から、<br>北海道の川へ。</h1>
+      <p class="lead">家族みんなで「またやりたいね」と言い合える1日を。日高町の沙流川で、ラフティングとジップラインのアドベンチャーを。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#pick">イチオシを見る</a>
+        <a class="btn btn-ghost" href="tel:01457-6-2668">電話で相談</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- イチオシ -->
+<section class="pick" id="pick">
+  <div class="pick-ribbon">いちばんのおすすめ</div>
+  <img class="pick-img" src="images/ichioshi.jpg" alt="アウトドアアドベンチャーズのレクリエーションセンター" width="1200" height="800" loading="lazy">
+  <div class="pick-body">
+    <h2><span>イチオシのサービス</span>レクリエーション<wbr>センター</h2>
+    <p class="desc">沙流川の自然の中で、ラフティングからジップライン&amp;ハイロープまで。大人も子供も一緒に楽しめるアクティビティが、ここから始まります。</p>
+    <ul class="pick-points">
+      <li><b>5歳から参加できる</b>緩やかなコースがあるから、初めてのご家族も安心して挑戦できます。</li>
+      <li><b>楽しいガイドがそばにいる</b>経験豊富なガイドが案内。「本当に楽しい時間をありがとう」の声が届いています。</li>
+      <li><b>川の上空を渡る体験も</b>「MAGIC MONKEY TOUR ジップライン&amp;ハイロープ」で、スリルと爽快感を。</li>
+    </ul>
+    <div class="pick-cta">
+      <a class="btn btn-primary" href="tel:01457-6-2668">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+        電話で予約・相談する
+      </a>
+      <p class="note">お問い合わせフォームからも受け付けています</p>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section id="strength">
+  <div class="wrap">
+    <h2 class="sec-title">選ばれる理由</h2>
+    <p class="sec-sub">口コミから見えてきた、アウトドアアドベンチャーズの魅力</p>
+    <div class="points">
+      <article class="point">
+        <img class="point-img" src="images/service.jpg" alt="ガイドと一緒に川下りを楽しむ参加者" width="1200" height="750" loading="lazy">
+        <div class="point-body">
+          <h3>緩やかな流れと、水しぶきの高低差</h3>
+          <p>景色に癒されるゆったりした流れの中に、アトラクションのように水しぶきが上がるポイントも。大人も子供も楽しめます。</p>
+        </div>
+      </article>
+      <article class="point plain">
+        <h3>ガイドの皆さんが、とにかく楽しい</h3>
+        <p>初めてでも安心して参加できるのは、ガイドの丁寧で明るい案内があるから。家族みんなの笑顔が、1日の締めくくりです。</p>
+      </article>
+      <article class="point plain">
+        <h3>30年通っても、新しい発見がある</h3>
+        <p>沙流川に30年通い続けた方も驚いた、川の上空を渡るジップライン&amp;ハイロープ。川のアクティビティが、さらに広がります。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section class="voice" id="voice">
+  <div class="wrap">
+    <h2 class="sec-title">お客様の声</h2>
+    <p class="sec-sub">ご利用いただいた皆さまからいただいた口コミです</p>
+
+    <article class="review">
+      <div class="stars" aria-label="5つ星">★★★★★</div>
+      <h3>家族みんなが楽しかった！</h3>
+      <p>夏の北海道旅行で忠別川ラフティングに参加しました。こちらのコースは5歳からラフティングができる緩やかなコースという事で、初めてでしたが安心して参加できました。</p>
+      <p>全体的に川の流れは緩やかですが、川の流れや景色を見て癒されるポイントもあれば、少し高低差のあるポイントではアトラクションの様に水しぶきがあがり、大人も子供も楽しめました！</p>
+      <p>終わった後も家族みんなが楽しかった〜またやりたいねと話していました。ぜひ別の川も挑戦してみたいです！テクさんをはじめ、ガイドのみなさん本当に楽しい時間をありがとうございました！</p>
+    </article>
+
+    <article class="review">
+      <div class="stars" aria-label="5つ星">★★★★★</div>
+      <h3>スリルと爽快感を超えてくるツアー</h3>
+      <p>ずっーとやって見たかった「MAGIC MONKEY TOUR ジップライン&amp;ハイロープ」。</p>
+      <p>30年前から沙流川に通ってましたが、まさか川の上空を渡る日が来るとは思ってませんでした！！スリルと想像を超えてくる爽快感のツアーです。</p>
+    </article>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section id="access">
+  <div class="wrap">
+    <h2 class="sec-title">店舗情報</h2>
+    <table class="info-table">
+      <tr><th scope="row">店名</th><td>アウトドアアドベンチャーズ</td></tr>
+      <tr><th scope="row">会社名</th><td>有限会社HOA北海道アウトドアアドベンチャーズ</td></tr>
+      <tr><th scope="row">住所</th><td>北海道沙流郡日高町千栄132番地</td></tr>
+      <tr><th scope="row">電話番号</th><td><a href="tel:01457-6-2668">01457-6-2668</a></td></tr>
+      <tr><th scope="row">メール</th><td><a href="mailto:hoa@rafting-hoa.co.jp">hoa@rafting-hoa.co.jp</a></td></tr>
+      <tr><th scope="row">公式サイト</th><td><a href="https://rafting-hoa.co.jp/" target="_blank" rel="noopener">https://rafting-hoa.co.jp/</a></td></tr>
+      <tr><th scope="row">お問い合わせ</th><td><a href="https://rafting-hoa.co.jp/contact" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th scope="row">SNS</th><td><a href="https://www.facebook.com/people/HOA-Hokkaido-Outdoor-Adventures-%E5%8C%97%E6%B5%B7%E9%81%93%E3%82%A2%E3%82%A6%E3%83%88%E3%83%89%E3%82%A2%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BA/100063316832397/" target="_blank" rel="noopener">Facebook</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="アウトドアアドベンチャーズの地図" src="https://www.google.com/maps?q=%E5%8C%97%E6%B5%B7%E9%81%93%E6%B2%99%E6%B5%81%E9%83%A1%E6%97%A5%E9%AB%98%E7%94%BA%E5%8D%83%E6%A0%84132&output=embed&z=15" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="final" id="contact">
+  <div class="wrap">
+    <h2>次の休日は、川の上で。</h2>
+    <p>レクリエーションセンターのご利用・ご相談は、お電話またはフォームから。</p>
+    <div class="actions">
+      <a class="tel-big" href="tel:01457-6-2668" style="color:#fff;text-decoration:none">01457-6-2668</a>
+      <a class="btn btn-primary" href="tel:01457-6-2668">電話で予約・相談する</a>
+      <a class="btn btn-ghost" href="https://rafting-hoa.co.jp/contact" target="_blank" rel="noopener">フォームで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© 有限会社HOA北海道アウトドアアドベンチャーズ</footer>
+
+<!-- 固定ボトムナビ -->
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <a class="call" href="tel:01457-6-2668">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    電話する
+  </a>
+  <a href="https://rafting-hoa.co.jp/contact" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+    問い合わせ
+  </a>
+  <a href="#access">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+    アクセス
+  </a>
+</nav>
+
+</body>
+</html>
