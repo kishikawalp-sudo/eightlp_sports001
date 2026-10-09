@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>サッカーショップ プレイヤーズ帯広店｜帯広のサッカー・フットサル専門店</title>
+<meta name="description" content="1983年創業、帯広のサッカー・フットサル専門店。前モデルのスパイク特価、シューズ袋付き、店舗独自のスパイク保証。部活・少年団・チームの相談もお任せください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --turf:#1d4a34;
+  --turf-deep:#123324;
+  --chalk:#f6f7f2;
+  --paper:#ffffff;
+  --ink:#17211b;
+  --muted:#58655d;
+  --card:#f3c21b;
+  --line:#d9ded4;
+  --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  --serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--chalk);line-height:1.8;font-size:16px;padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--card);outline-offset:3px}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 20px}
+
+/* HERO */
+.hero{position:relative;background:var(--turf-deep);color:#fff;overflow:hidden;padding-top:env(safe-area-inset-top,0px)}
+.hero-img{position:relative;aspect-ratio:4/3;max-height:520px;width:100%}
+.hero-img img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(18,51,36,.1) 0%,rgba(18,51,36,.55) 60%,var(--turf-deep) 100%)}
+.hero-body{position:relative;margin-top:-96px;padding:0 20px 44px;max-width:960px;margin-left:auto;margin-right:auto;z-index:1}
+.shop{font-size:.85rem;font-weight:500;letter-spacing:.08em;display:inline-block;border-left:4px solid var(--card);padding-left:10px;margin-bottom:14px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.9rem,8vw,3.2rem);line-height:1.35;letter-spacing:.02em}
+.hero p.lead{margin-top:16px;font-size:.98rem;max-width:34em;color:#e4ebe3}
+.btns{display:flex;flex-direction:column;gap:12px;margin-top:26px;max-width:420px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;border-radius:999px;text-decoration:none;font-weight:700;font-size:1.05rem;padding:0 24px;text-align:center}
+.btn-primary{background:var(--card);color:var(--ink)}
+.btn-ghost{border:2px solid rgba(255,255,255,.75);color:#fff}
+
+/* ピッチのライン装飾（ヒーロー下のセンターサークル） */
+.pitch-line{height:36px;background:var(--chalk);position:relative}
+.pitch-line::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:var(--turf);opacity:.25}
+.pitch-line::after{content:"";position:absolute;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%);border-radius:50%;background:var(--chalk);border:2px solid var(--turf);opacity:.7}
+
+section{padding:56px 0}
+h2{font-family:var(--serif);font-size:clamp(1.5rem,6vw,2.2rem);line-height:1.45;font-weight:700;color:var(--turf);margin-bottom:20px}
+.sub{color:var(--muted);font-size:.95rem;margin-bottom:28px}
+
+/* イチオシ */
+.pick{background:var(--turf);color:#fff}
+.pick h2{color:#fff}
+.pick .sub{color:#cfdccf}
+.pick-grid{display:grid;gap:28px}
+.pick-img{border-radius:6px;overflow:hidden;box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.pick-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.reasons{list-style:none;display:grid;gap:14px}
+.reasons li{background:rgba(255,255,255,.08);border-left:5px solid var(--card);padding:16px 18px;border-radius:0 6px 6px 0}
+.reasons strong{display:block;font-size:1.08rem;margin-bottom:2px}
+.reasons span{font-size:.92rem;color:#dbe6db}
+
+/* サービス */
+.service-grid{display:grid;gap:24px}
+.service-img{border-radius:6px;overflow:hidden}
+.service-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.checks{list-style:none;display:grid;gap:12px}
+.checks li{position:relative;padding:14px 14px 14px 46px;background:var(--paper);border:1px solid var(--line);border-radius:6px}
+.checks li::before{content:"";position:absolute;left:16px;top:20px;width:12px;height:7px;border-left:3px solid var(--turf);border-bottom:3px solid var(--turf);transform:rotate(-45deg)}
+.checks b{display:block}
+
+/* 口コミ */
+.voice{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stars{color:var(--card);font-size:1.5rem;letter-spacing:.1em;-webkit-text-stroke:1px #c99a00}
+.voice h3{font-family:var(--serif);font-size:1.2rem;margin:6px 0 14px;color:var(--turf)}
+.voice blockquote{font-size:.98rem;color:#2c382f}
+.voice blockquote p+p{margin-top:12px}
+.voice cite{display:block;margin-top:16px;font-style:normal;font-size:.85rem;color:var(--muted)}
+
+/* ストーリー */
+.story-text{font-family:var(--serif);font-size:1rem;line-height:2}
+.story-text p+p{margin-top:16px}
+.story .year{font-family:var(--sans);font-weight:900;font-size:3.4rem;line-height:1;color:var(--turf);margin-bottom:8px;letter-spacing:-.02em}
+.story .year small{font-size:1rem;font-weight:700;margin-left:6px}
+
+/* 店舗情報 */
+.info{background:var(--paper);border-top:1px solid var(--line)}
+.tbl{width:100%;border-collapse:collapse;font-size:.95rem}
+.tbl th,.tbl td{text-align:left;padding:14px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{width:6.5em;color:var(--turf);font-weight:700;white-space:nowrap}
+.tbl a{color:var(--turf);font-weight:500;word-break:break-all}
+
+/* 最終CTA */
+.final{background:var(--turf-deep);color:#fff;text-align:center}
+.final h2{color:#fff}
+.final .btns{margin-left:auto;margin-right:auto}
+.final p{color:#d3dfd3}
+
+footer{background:#0c2218;color:#9fb3a5;font-size:.8rem;text-align:center;padding:24px 20px}
+
+/* スマホ固定電話バー */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));background:rgba(18,51,36,.97);box-shadow:0 -4px 14px rgba(0,0,0,.25)}
+.callbar a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:700;text-decoration:none;font-size:.95rem}
+.callbar .tel{background:var(--card);color:var(--ink)}
+.callbar .mail{border:2px solid rgba(255,255,255,.7);color:#fff}
+
+@media (min-width:760px){
+  body{padding-bottom:0}
+  .callbar{display:none}
+  .hero{display:grid}
+  .hero-img{aspect-ratio:21/9;max-height:460px}
+  .hero-body{margin-top:-140px;padding-bottom:64px}
+  .btns{flex-direction:row;max-width:none}
+  .btn{min-width:240px}
+  section{padding:80px 0}
+  .pick-grid,.service-grid{grid-template-columns:1fr 1fr;align-items:center;gap:48px}
+  .service-grid.rev .service-img{order:2}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-img">
+    <img src="images/hero.jpg" alt="サッカーショップ プレイヤーズ帯広店の店内">
+  </div>
+  <div class="hero-body">
+    <span class="shop">サッカーショップ プレイヤーズ帯広店</span>
+    <h1>サッカーのことなら、<br>帯広で、昔ながらの専門店へ。</h1>
+    <p class="lead">1983年創業。部活・少年団・チームの「困った」に、スタッフがアドバイスします。シーズン前は前モデルのスパイクが特価に。</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="tel:0155258813">電話で相談する 0155-25-8813</a>
+      <a class="btn btn-ghost" href="#access">お店の場所を見る</a>
+    </div>
+  </div>
+</header>
+<div class="pitch-line" aria-hidden="true"></div>
+
+<section class="pick" id="pick">
+  <div class="wrap">
+    <h2>サッカー用品専門店だから、<br>選べて、相談できて、安心。</h2>
+    <p class="sub">スパイク、シューズ、チーム用品まで。プレイヤーズがイチオシする理由です。</p>
+    <div class="pick-grid">
+      <div class="pick-img">
+        <img src="images/ichioshi.jpg" alt="サッカースパイクとシューズの品揃え">
+      </div>
+      <ul class="reasons">
+        <li><strong>前モデルのスパイク・シューズが特価に</strong><span>シーズン前はお買い得。サイズがあるうちの来店がおすすめです。</span></li>
+        <li><strong>店舗独自のスパイク保証つき</strong><span>購入後も安心して履き込めます。</span></li>
+        <li><strong>チーム用品を常時在庫</strong><span>急ぎで必要なときも、まずはご相談ください。</span></li>
+        <li><strong>スタッフがチーム・個人を問わずアドバイス</strong><span>選び方に迷ったときは、遠慮なく声をかけてください。</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="service">
+  <div class="wrap">
+    <h2>買ったあとまで、気がきくお店です。</h2>
+    <p class="sub">お客さまから好評の、プレイヤーズならではのサービス。</p>
+    <div class="service-grid rev">
+      <div class="service-img">
+        <img src="images/service.jpg" alt="シューズ袋と店頭でのご案内">
+      </div>
+      <ul class="checks">
+        <li><b>シューズにはシューズ袋をプレゼント</b>購入したシューズには、必ずシューズ袋をおつけします。</li>
+        <li><b>ポイントが貯まって割引に</b>貯めたポイントは、次のお買い物の割引に使えます。</li>
+        <li><b>少年団・部活・チームの相談にも</b>チームでも個人でも、スタッフが親身に対応します。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="voice" id="voice">
+  <div class="wrap">
+    <div class="stars" aria-label="5つ星">★★★★★</div>
+    <h3>プレイヤーズ全店制覇！昔ながらのサッカー専門店</h3>
+    <blockquote>
+      <p>懐かしくいい雰囲気の店内でした！サッカーをやっている息子達が、部活や少年団でもお世話になっているサッカー・フットサル専門店です。個人的にもここで買い物をすることが多いです。</p>
+      <p>品揃えは大型店にはかないませんが、チームで常時在庫をしてもらっている物もあり、困ったときにはチーム、個人に関わらずスタッフさんがアドバイスをくれるので安心です。</p>
+      <p>シーズン前には、前モデルのスパイクやシューズが特価になるので、サイズがあるうちの来店がオススメですよ。シューズには必ずシューズ袋をつけてくれて、店舗独自のスパイク保証も安心です。ポイントを貯めると割引に使えます。</p>
+    </blockquote>
+    <cite>お客さまの口コミより</cite>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="year">1983<small>年3月 創業</small></div>
+    <h2>サッカー文化が育つ、<br>ほんの少しの支えに。</h2>
+    <div class="story-text">
+      <p>サッカーショッププレイヤーズは1983年3月、ギネスにも載った400ｍベンチのある帯広緑ヶ丘公園のグリーンパーク北側にオープンしました。当初はバドミントンやスキーなども取り扱う各種スポーツ店でしたが、3年後からサッカー用品専門店として営業を続けています。</p>
+      <p>良いプレーには敵味方関係なく拍手を贈る。それがヨーロッパのサッカーです。教えてもらうサッカーから、自分自身で楽しみを大きくするサッカーへ。応援に行くおじいちゃんやおばあちゃんが、チームに関係なく拍手を贈れる環境になったとき、サッカー文化が育っていると感じられると思います。</p>
+      <p>帯広フットボールクラブのサポートを含め、サッカー文化が育っていくほんの少しの支えを、サッカーショップとして続けていければと考えています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="access">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table class="tbl">
+      <tr><th>店名</th><td>サッカーショップ プレイヤーズ帯広店</td></tr>
+      <tr><th>住所</th><td>北海道帯広市公園東町３丁目１１−１ グリーンテラス 2F<br><a href="https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E6%B5%B7%E9%81%93%E5%B8%AF%E5%BA%83%E5%B8%82%E5%85%AC%E5%9C%92%E6%9D%B1%E7%94%BA3%E4%B8%81%E7%9B%AE11-1+%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">地図アプリで開く</a></td></tr>
+      <tr><th>電話</th><td><a href="tel:0155258813">0155-25-8813</a></td></tr>
+      <tr><th>定休日</th><td>毎週水曜日（祝日を除く）</td></tr>
+      <tr><th>メール</th><td><a href="mailto:obihiro@soccershop-players.co.jp">obihiro@soccershop-players.co.jp</a></td></tr>
+      <tr><th>公式HP</th><td><a href="https://www.soccershop-players.com/" target="_blank" rel="noopener">https://www.soccershop-players.com/</a></td></tr>
+      <tr><th>会社名</th><td>有限会社 プレイヤーズ</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>まずは、お気軽にご相談ください。</h2>
+    <p>スパイク選びも、チーム用品も、サッカーのことなら何でも。</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="tel:0155258813">電話する 0155-25-8813</a>
+      <a class="btn btn-ghost" href="mailto:obihiro@soccershop-players.co.jp">メールで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 有限会社 プレイヤーズ サッカーショップ プレイヤーズ帯広店</footer>
+
+<nav class="callbar" aria-label="お問い合わせ">
+  <a class="tel" href="tel:0155258813">電話する</a>
+  <a class="mail" href="mailto:obihiro@soccershop-players.co.jp">メール</a>
+</nav>
+
+</body>
+</html>
