@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>野球専門店 仙台ドーム｜仙台市泉区の野球用品店・グローブなら仙台ドーム</title>
+<meta name="description" content="仙台市泉区松森の野球専門店「仙台ドーム」。野球用具一式が揃い、グローブはメーカー多数で比較しやすい。ソフトボール用グローブも取扱い。水曜定休。TEL 022-779-7791">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f1b30;
+  --ink-soft:#1d2d4a;
+  --leather:#b8642a;
+  --leather-deep:#8a4519;
+  --stitch:#d8392f;
+  --turf:#1f6b45;
+  --chalk:#ffffff;
+  --paper:#f6f3ee;
+  --text:#1a2233;
+  --muted:#5b6579;
+  --line:#dcd6cb;
+  --header-h:56px;
+  --nav-h:62px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px)}
+body{
+  margin:0;
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  color:var(--text);
+  background:var(--chalk);
+  line-height:1.8;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+  padding-top:var(--header-h);
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--stitch);outline-offset:2px}
+
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h1,h2,h3,p,ul,dl{margin:0}
+h2{
+  font-size:clamp(22px,6vw,30px);
+  line-height:1.4;
+  font-weight:900;
+  letter-spacing:.02em;
+  margin-bottom:8px;
+}
+.lead{color:var(--muted);font-size:15px;margin-bottom:28px}
+
+/* ---------- header ---------- */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:var(--header-h);
+  background:var(--ink);
+  color:var(--chalk);
+  border-bottom:3px solid var(--leather);
+}
+.site-header .in{
+  max-width:720px;margin:0 auto;height:100%;
+  padding:0 12px 0 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.brand{font-weight:900;font-size:17px;letter-spacing:.04em;text-decoration:none;white-space:nowrap}
+.brand small{display:block;font-size:10px;font-weight:500;opacity:.75;letter-spacing:.06em;line-height:1.2}
+.head-tel{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--stitch);color:var(--chalk);
+  text-decoration:none;font-weight:700;font-size:14px;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+.head-tel svg{width:16px;height:16px;fill:currentColor}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  padding:0;
+  background:var(--ink) url("images/hero.jpg") center/cover no-repeat;
+  color:var(--chalk);
+  min-height:min(88svh,560px);
+  display:flex;align-items:flex-end;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(15,27,48,.35) 0%,rgba(15,27,48,.55) 45%,rgba(15,27,48,.92) 100%);
+}
+.hero .wrap{position:relative;width:100%;padding-top:48px;padding-bottom:36px}
+.hero-tag{
+  display:inline-block;
+  background:var(--chalk);color:var(--ink);
+  font-weight:700;font-size:13px;
+  padding:3px 12px;border-radius:2px;margin-bottom:14px;
+}
+.hero h1{
+  font-size:clamp(34px,10.5vw,56px);
+  line-height:1.2;font-weight:900;letter-spacing:.01em;
+  margin-bottom:14px;
+}
+.hero p{font-size:15px;max-width:30em;opacity:.95;margin-bottom:22px}
+.hero-stars{
+  display:flex;align-items:center;gap:10px;font-size:13px;margin-bottom:22px;
+}
+.hero-stars .st{color:#ffc43d;font-size:18px;letter-spacing:2px}
+.btn-row{display:flex;flex-direction:column;gap:10px}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:54px;padding:12px 20px;border-radius:6px;
+  font-weight:700;font-size:16px;text-decoration:none;text-align:center;
+  border:2px solid transparent;
+}
+.btn-main{background:var(--stitch);color:var(--chalk)}
+.btn-sub{background:transparent;color:var(--chalk);border-color:rgba(255,255,255,.7)}
+.btn svg{width:18px;height:18px;fill:currentColor;flex:none}
+
+/* ---------- featured (イチオシ) ---------- */
+.feature{background:var(--paper)}
+.stitch-frame{
+  position:relative;
+  background:var(--chalk);
+  border-radius:14px;
+  padding:26px 20px 28px;
+}
+.stitch-frame::before{
+  content:"";position:absolute;inset:7px;
+  border:2px dashed var(--stitch);
+  border-radius:9px;pointer-events:none;
+}
+.badge{
+  display:inline-block;background:var(--leather);color:var(--chalk);
+  font-weight:900;font-size:13px;padding:3px 12px;border-radius:2px;margin-bottom:10px;
+}
+.feature h2{font-size:clamp(26px,7.4vw,36px);margin-bottom:12px}
+.feature-img{border-radius:8px;overflow:hidden;margin:18px 0 20px;background:var(--ink-soft);aspect-ratio:4/3}
+.feature-img img{width:100%;height:100%;object-fit:cover}
+.check{list-style:none;padding:0;display:grid;gap:12px}
+.check li{
+  position:relative;padding-left:34px;font-weight:500;
+}
+.check li::before{
+  content:"";position:absolute;left:0;top:.35em;width:22px;height:22px;border-radius:50%;
+  background:var(--turf);
+}
+.check li::after{
+  content:"";position:absolute;left:7px;top:calc(.35em + 5px);width:8px;height:5px;
+  border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(-45deg);
+}
+.check b{font-weight:900}
+
+/* ---------- strengths ---------- */
+.strength-list{display:grid;gap:0}
+.strength{
+  padding:22px 0;border-top:1px solid var(--line);
+}
+.strength:last-child{border-bottom:1px solid var(--line)}
+.strength h3{font-size:18px;font-weight:900;line-height:1.5;margin-bottom:6px;color:var(--ink)}
+.strength p{font-size:15px;color:var(--muted)}
+.service-img{border-radius:8px;overflow:hidden;margin-top:30px;background:var(--ink-soft);aspect-ratio:16/10}
+.service-img img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- reviews ---------- */
+.reviews{background:var(--ink);color:var(--chalk)}
+.reviews h2{color:var(--chalk)}
+.reviews .lead{color:rgba(255,255,255,.7)}
+.review{
+  background:var(--ink-soft);
+  border-left:5px solid var(--leather);
+  border-radius:4px;
+  padding:20px 18px;
+  margin-bottom:16px;
+}
+.review .stars{color:#ffc43d;font-size:20px;letter-spacing:3px;line-height:1;margin-bottom:10px}
+.review .stars span{color:rgba(255,255,255,.28)}
+.review p{font-size:15px;line-height:1.85}
+.review cite{display:block;margin-top:10px;font-size:12px;font-style:normal;opacity:.65}
+
+/* ---------- shop info ---------- */
+.info-table{width:100%;border-collapse:collapse;font-size:15px;margin-bottom:24px}
+.info-table th,.info-table td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info-table th{width:6.5em;font-weight:700;color:var(--ink);white-space:nowrap}
+.info-table a{color:var(--leather-deep);font-weight:700;word-break:break-all}
+.map{
+  position:relative;width:100%;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--paper);
+}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---------- final CTA ---------- */
+.cta{background:var(--turf);color:var(--chalk);text-align:center}
+.cta h2{margin-bottom:10px}
+.cta p{font-size:15px;opacity:.95;margin-bottom:26px}
+.cta .btn-row{max-width:420px;margin:0 auto}
+.cta .btn-main{background:var(--chalk);color:var(--ink)}
+.cta .btn-main svg{fill:var(--stitch)}
+.cta .btn-sub{border-color:rgba(255,255,255,.8)}
+.tel-big{display:block;font-size:clamp(28px,8.5vw,40px);font-weight:900;letter-spacing:.03em;margin-bottom:4px;text-decoration:none}
+.cta small{display:block;opacity:.85;margin-bottom:22px;font-size:13px}
+
+footer{background:var(--ink);color:rgba(255,255,255,.7);text-align:center;font-size:12px;padding:22px 16px}
+
+/* ---------- bottom nav ---------- */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--chalk);
+  border-top:2px solid var(--leather);
+  padding-bottom:env(safe-area-inset-bottom);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.bottom-nav a{
+  min-height:var(--nav-h);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font-size:11px;font-weight:700;text-decoration:none;color:var(--ink);
+}
+.bottom-nav a svg{width:22px;height:22px;fill:currentColor}
+.bottom-nav a.tel{background:var(--stitch);color:var(--chalk)}
+
+/* ---------- larger screens ---------- */
+@media (min-width:640px){
+  .btn-row{flex-direction:row}
+  .btn{flex:1}
+  .stitch-frame{padding:36px 36px 38px}
+  .strength-list{grid-template-columns:1fr 1fr;column-gap:32px}
+  .strength:nth-last-child(2){border-bottom:1px solid var(--line)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- 使用画像（C:\Users\user\Pictures\eightLP\sports\297_sendai\images\ に配置）
+  images/hero.jpg      … ファーストビュー用：店舗外観 または 野球グローブ・用具が並ぶ写真（縦長〜横長どちらでも可）
+  images/ichioshi.jpg  … イチオシ用：店内の野球用具・グローブ陳列の写真（4:3 推奨）
+  images/service.jpg   … 強み用：グローブ売場／接客／メーカー比較の様子（16:10 推奨）
+-->
+
+<header class="site-header">
+  <div class="in">
+    <a class="brand" href="#top">仙台ドーム<small>野球専門店</small></a>
+    <a class="head-tel" href="tel:0227797791" aria-label="電話をかける 022-779-7791">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      電話する
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== ヒーロー ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="hero-tag">仙台市泉区の野球専門店</span>
+      <h1>野球道具は、<br>ここで一式そろう。</h1>
+      <p>グローブはメーカーを並べて比べられる。ソフトボール用グローブの取扱いもあります。</p>
+      <div class="hero-stars" aria-label="クチコミ評価 星4から星5">
+        <span class="st" aria-hidden="true">★★★★★</span>
+        <span>クチコミで「グローブならここ」の声</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-main" href="tel:0227797791">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          022-779-7791 に電話する
+        </a>
+        <a class="btn btn-sub" href="#access">場所と営業日を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== イチオシ：野球専門店 ===== -->
+  <section class="feature" id="ichioshi">
+    <div class="wrap">
+      <div class="stitch-frame">
+        <span class="badge">イチオシ</span>
+        <h2>野球専門店 仙台ドーム</h2>
+        <p>小さな店舗に、野球に必要な道具が詰まっています。必要なものをここで買い揃えられるのが、野球専門店ならではの強みです。</p>
+
+        <div class="feature-img">
+          <img src="images/ichioshi.jpg" alt="野球専門店 仙台ドームの店内。グローブなど野球用具が並ぶ売場" width="800" height="600" loading="lazy">
+        </div>
+
+        <ul class="check">
+          <li><b>野球用具一式を買い揃えられる</b>豊富な品揃えで、1店舗でそろいます。</li>
+          <li><b>グローブのメーカーが多く、比べやすい</b>手に取って違いを見ながら選べます。</li>
+          <li><b>ソフトボール用グローブも取扱い</b>野球だけでなく、ソフトボールの道具探しにも。</li>
+          <li><b>グローブの色の規定も気軽に相談</b>「嫌な顔せず聞いてくれた」とクチコミでも好評です。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 選ばれる理由 ===== -->
+  <section id="strength">
+    <div class="wrap">
+      <h2>仙台ドームが選ばれる理由</h2>
+      <p class="lead">初めての道具選びでも、買い替えでも。</p>
+
+      <div class="strength-list">
+        <div class="strength">
+          <h3>1店舗で野球道具がそろう</h3>
+          <p>グローブ、バットなどの用具を、野球専門店の品揃えから選べます。あちこち回らずに済みます。</p>
+        </div>
+        <div class="strength">
+          <h3>メーカーを横並びで比較できる</h3>
+          <p>グローブは取扱いメーカーが多く、見比べながら自分に合う一つを探せます。</p>
+        </div>
+        <div class="strength">
+          <h3>ソフトボール用グローブもある</h3>
+          <p>数は多くありませんが、ソフトボール用のグローブも取り扱っています。</p>
+        </div>
+        <div class="strength">
+          <h3>細かい疑問にも親切に対応</h3>
+          <p>グローブの色の規定など、チームごとのルールに関する質問も、丁寧に聞いてくれます。</p>
+        </div>
+      </div>
+
+      <div class="service-img">
+        <img src="images/service.jpg" alt="グローブをメーカー別に見比べて選べる仙台ドームの売場" width="800" height="500" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== クチコミ ===== -->
+  <section class="reviews" id="voice">
+    <div class="wrap">
+      <h2>お客様のクチコミ</h2>
+      <p class="lead">実際にご来店いただいた方の声です。</p>
+
+      <article class="review">
+        <div class="stars" aria-label="星5つ中4つ">★★★★<span>★</span></div>
+        <p>小さな店舗ですが、野球用具一式を買い揃えることができる豊富な品揃えです。少しではありますが、ソフトボール用のグローブも取り扱っていました。グローブの取扱いメーカーが多く比較しやすいです。</p>
+        <cite>Google クチコミより</cite>
+      </article>
+
+      <article class="review">
+        <div class="stars" aria-label="星5つ中5つ">★★★★★</div>
+        <p>この前、仙台ドームさんでグローブの色の規定について聞いたら、嫌な顔せず聞いてくれた。本当にグローブならここ。</p>
+        <cite>Google クチコミより</cite>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== 店舗情報 ===== -->
+  <section id="access">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <p class="lead">水曜日が定休日です。お越しの際はお気をつけて。</p>
+
+      <table class="info-table">
+        <tbody>
+          <tr><th scope="row">店名</th><td>野球専門店 仙台ドーム</td></tr>
+          <tr><th scope="row">住所</th><td>宮城県仙台市泉区松森後田45-1</td></tr>
+          <tr><th scope="row">電話番号</th><td><a href="tel:0227797791">022-779-7791</a></td></tr>
+          <tr><th scope="row">定休日</th><td>水曜日</td></tr>
+          <tr><th scope="row">ホームページ</th><td><a href="http://alpinesp.s70.xrea.com/shop/index.html" target="_blank" rel="noopener">公式サイトを見る</a></td></tr>
+          <tr><th scope="row">Instagram</th><td><a href="https://www.instagram.com/sendai_dome/" target="_blank" rel="noopener">@sendai_dome</a></td></tr>
+        </tbody>
+      </table>
+
+      <div class="map">
+        <iframe
+          title="野球専門店 仙台ドームの地図"
+          src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E6%B3%89%E5%8C%BA%E6%9D%BE%E6%A3%AE%E5%BE%8C%E7%94%B0%EF%BC%94%EF%BC%95%E2%88%92%EF%BC%91&output=embed&hl=ja"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 最終CTA ===== -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>グローブ選びの相談、お待ちしています</h2>
+      <p>在庫や取扱いメーカーなど、まずはお電話かフォームでお気軽にどうぞ。</p>
+      <a class="tel-big" href="tel:0227797791">022-779-7791</a>
+      <small>定休日：水曜日</small>
+      <div class="btn-row">
+        <a class="btn btn-main" href="tel:0227797791">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          電話で問い合わせる
+        </a>
+        <a class="btn btn-sub" href="http://alpinesp.s70.xrea.com/shop/form.php" target="_blank" rel="noopener">問い合わせフォーム</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 野球専門店 仙台ドーム</p>
+</footer>
+
+<!-- ===== 固定ボトムナビ ===== -->
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <a class="tel" href="tel:0227797791">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    電話
+  </a>
+  <a href="http://alpinesp.s70.xrea.com/shop/form.php" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+    問い合わせ
+  </a>
+  <a href="#access">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+    アクセス
+  </a>
+  <a href="https://www.instagram.com/sendai_dome/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.2 6a1.1 1.1 0 1 1-1.1 1.1A1.1 1.1 0 0 1 17.2 6z"/></svg>
+    Instagram
+  </a>
+</nav>
+
+</body>
+</html>
