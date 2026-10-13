@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ウッキーズ｜富良野・空知川 ひと家族貸切のカヌー川下り</title>
+<meta name="description" content="北海道富良野のウッキーズは、1ツアーひと家族限定の貸切カヌー川下り。2歳のお子さまから3世代家族まで、気兼ねなく自然を満喫できます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --river:#0f3a4a;
+  --water:#1f86a3;
+  --foam:#e3f2f1;
+  --leaf:#3f8a5a;
+  --sun:#f4b63b;
+  --sun-dark:#d99a1c;
+  --ink:#1d2b30;
+  --mute:#5b6d73;
+  --line:#d3e3e3;
+  --white:#ffffff;
+  --header-h:56px;
+  --nav-h:60px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px)}
+body{
+  margin:0;
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.85;
+  font-size:16px;
+  padding-top:var(--header-h);
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+/* ---------- header ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:var(--header-h);
+  background:var(--river);
+  color:var(--white);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 14px;
+}
+.header .logo{font-weight:900;font-size:19px;letter-spacing:.04em;text-decoration:none}
+.header .tel{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--sun);color:var(--river);
+  font-weight:900;font-size:14px;text-decoration:none;
+  padding:8px 14px;border-radius:999px;
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--river);color:var(--white)}
+.hero-img{aspect-ratio:4/5;max-height:78vh;width:100%;object-fit:cover;background:linear-gradient(160deg,#1f86a3,#0f3a4a)}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(15,58,74,.15) 0%,rgba(15,58,74,.2) 35%,rgba(15,58,74,.88) 100%);
+}
+.hero-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 20px 28px}
+.hero-sub{margin:0 0 6px;font-size:14px;font-weight:700;color:var(--sun)}
+.hero h1{margin:0 0 14px;font-size:31px;line-height:1.35;font-weight:900;letter-spacing:.02em}
+.hero-lead{margin:0 0 18px;font-size:15px;line-height:1.8;color:#e9f3f4}
+.btn{
+  display:flex;align-items:center;justify-content:center;
+  min-height:54px;border-radius:999px;
+  font-weight:900;font-size:17px;text-decoration:none;text-align:center;
+  padding:12px 20px;
+}
+.btn-sun{background:var(--sun);color:var(--river);box-shadow:0 4px 0 var(--sun-dark)}
+.btn-sun:active{transform:translateY(2px);box-shadow:0 2px 0 var(--sun-dark)}
+.btn-line{border:2px solid var(--white);color:var(--white)}
+.btn-stack{display:grid;gap:12px}
+
+/* ---------- section common ---------- */
+section{padding:56px 0}
+.sec-title{margin:0 0 8px;font-size:26px;line-height:1.45;font-weight:900;color:var(--river)}
+.sec-lead{margin:0 0 28px;color:var(--mute);font-size:15px}
+.bg-foam{background:var(--foam)}
+
+/* ---------- feature (イチオシ) ---------- */
+.ichioshi{background:var(--white)}
+.badge{
+  display:inline-block;background:var(--sun);color:var(--river);
+  font-weight:900;font-size:13px;padding:4px 14px;border-radius:999px;margin-bottom:12px;
+}
+.feature-img{border-radius:20px;width:100%;aspect-ratio:4/3;object-fit:cover;background:linear-gradient(160deg,#1f86a3,#3f8a5a);margin:20px 0 24px}
+.points{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.points li{
+  display:flex;gap:14px;align-items:flex-start;
+  background:var(--foam);border-radius:16px;padding:16px;
+}
+.points .mark{
+  flex:none;width:36px;height:36px;border-radius:50%;
+  background:var(--water);color:var(--white);
+  display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;
+}
+.points strong{display:block;font-size:17px;color:var(--river);line-height:1.5;margin-bottom:2px}
+.points span{font-size:14.5px;color:var(--ink)}
+.feature-cta{margin-top:28px}
+
+/* ---------- strengths ---------- */
+.strength-img{border-radius:20px;width:100%;aspect-ratio:3/2;object-fit:cover;background:linear-gradient(160deg,#3f8a5a,#1f86a3);margin:0 0 24px}
+.strength-box{background:var(--white);border-radius:20px;padding:24px 22px;border:2px solid var(--line)}
+.strength-box h3{margin:0 0 10px;font-size:22px;line-height:1.5;color:var(--river)}
+.strength-box p{margin:0 0 12px;font-size:15.5px}
+.strength-box p:last-child{margin-bottom:0}
+.who{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+.who li{background:var(--foam);color:var(--river);font-weight:700;font-size:14px;padding:6px 14px;border-radius:999px}
+
+/* ---------- flow ---------- */
+.flow{list-style:none;margin:0;padding:0;counter-reset:s}
+.flow li{position:relative;padding:0 0 22px 52px;counter-increment:s;font-size:15.5px}
+.flow li::before{
+  content:counter(s);position:absolute;left:0;top:0;
+  width:36px;height:36px;border-radius:50%;
+  background:var(--river);color:var(--white);font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+}
+.flow li::after{content:"";position:absolute;left:17px;top:40px;bottom:4px;width:2px;background:var(--line)}
+.flow li:last-child{padding-bottom:0}
+.flow li:last-child::after{display:none}
+.flow b{display:block;color:var(--river);font-size:17px}
+.note{margin:24px 0 0;font-size:13.5px;color:var(--mute)}
+
+/* ---------- reviews ---------- */
+.review{background:var(--white);border-radius:20px;padding:22px;margin-bottom:18px;border:2px solid var(--line)}
+.stars{color:var(--sun-dark);font-size:20px;letter-spacing:.1em;margin:0 0 4px;font-weight:900}
+.review h3{margin:0 0 10px;font-size:17px;line-height:1.55;color:var(--river)}
+.review p{margin:0 0 10px;font-size:15px}
+.review .who-s{margin:12px 0 0;font-size:13px;color:var(--mute)}
+
+/* ---------- info ---------- */
+.info-table{width:100%;border-collapse:collapse;font-size:15px;margin-bottom:22px}
+.info-table th,.info-table td{padding:14px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info-table th{width:92px;color:var(--river);font-weight:900;white-space:nowrap}
+.info-table td{word-break:break-all}
+.info-table a{color:var(--water);font-weight:700}
+.map{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:var(--foam)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---------- final CTA ---------- */
+.cta{background:var(--river);color:var(--white);text-align:center}
+.cta h2{margin:0 0 12px;font-size:25px;line-height:1.5;font-weight:900}
+.cta p{margin:0 0 24px;font-size:15px;color:#d5e6e8}
+.cta .tel-big{display:block;margin:18px 0 0;font-size:30px;font-weight:900;color:var(--sun);text-decoration:none;letter-spacing:.03em}
+.cta .sns{margin-top:22px;font-size:14px}
+.cta .sns a{color:var(--white);font-weight:700}
+
+footer{background:#0a2832;color:#9fb8be;text-align:center;font-size:12.5px;padding:20px 20px 24px}
+
+/* ---------- bottom nav ---------- */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  height:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  background:var(--white);border-top:1px solid var(--line);
+  display:grid;grid-template-columns:1fr 1fr 1.4fr;
+}
+.bottom-nav a{
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;font-weight:900;font-size:13.5px;color:var(--river);
+  border-right:1px solid var(--line);
+}
+.bottom-nav a.main{background:var(--sun);border-right:0;font-size:15px}
+
+a:focus-visible{outline:3px solid var(--water);outline-offset:2px}
+
+@media (min-width:600px){
+  .hero-img{aspect-ratio:16/9;max-height:none}
+  .hero-copy{padding-bottom:48px}
+  .hero-copy .inner{max-width:720px;margin:0 auto}
+  .hero h1{font-size:40px}
+  .btn-stack{grid-template-columns:1fr 1fr}
+  .sec-title{font-size:30px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="#top">ウッキーズ</a>
+  <a class="tel" href="tel:0167228787">電話で予約</a>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img class="hero-img" src="images/hero.jpg" alt="空知川をカヌーで下る家族" width="1200" height="1500">
+    <div class="hero-copy">
+      <div class="inner">
+        <p class="hero-sub">北海道・富良野　空知川のカヌー川下り</p>
+        <h1>うちの家族だけの、<br>川下り。</h1>
+        <p class="hero-lead">1つのツアーに、ひと家族だけ。<br>2歳のお子さまも、おじいちゃん・おばあちゃんも、まわりに気兼ねなく。</p>
+        <div class="btn-stack">
+          <a class="btn btn-sun" href="tel:0167228787">電話で予約する　0167-22-8787</a>
+          <a class="btn btn-line" href="mailto:go.wokkys.furano@gmail.com">メールで問い合わせる</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- イチオシ -->
+  <section class="ichioshi" id="ichioshi">
+    <div class="wrap">
+      <span class="badge">イチオシ</span>
+      <h2 class="sec-title">貸切カヌー川下りツアー</h2>
+      <p class="sec-lead">空知川をゆっくり下りながら、北海道の大きな自然の中へ。初めての方、小さなお子さま連れの方でも安心して参加できます。</p>
+
+      <img class="feature-img" src="images/ichioshi.jpg" alt="空知川をカヌーで下るツアーの様子" width="1200" height="900" loading="lazy">
+
+      <ul class="points">
+        <li>
+          <div class="mark">1</div>
+          <div>
+            <strong>ひと家族だけの貸切</strong>
+            <span>ほかのお客さまはいません。ペースも会話も、家族のままで楽しめます。</span>
+          </div>
+        </li>
+        <li>
+          <div class="mark">2</div>
+          <div>
+            <strong>2歳のお子さまも体験できた</strong>
+            <span>口コミでは、2歳・8歳・11歳のお子さま連れの5人家族が参加。「2歳連れでも安心して体験できました」との声をいただいています。</span>
+          </div>
+        </li>
+        <li>
+          <div class="mark">3</div>
+          <div>
+            <strong>写真もおやつも、おまかせ</strong>
+            <span>橋の上からの撮影、防水デジカメの貸出、手作りクッキーと冷たい麦茶のおやつタイムつき。写真は体験後にGoogleフォトで共有します。</span>
+          </div>
+        </li>
+        <li>
+          <div class="mark">4</div>
+          <div>
+            <strong>川から上がったあとも手厚く</strong>
+            <span>足洗い用のバケツとタオル、着替え用のテントをご用意しています。</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="feature-cta">
+        <a class="btn btn-sun" href="tel:0167228787">このツアーを予約する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section class="bg-foam" id="strength">
+    <div class="wrap">
+      <h2 class="sec-title">ウッキーズが貸切にこだわる理由</h2>
+      <p class="sec-lead">創業のときから、ずっと変わらない約束です。</p>
+
+      <img class="strength-img" src="images/service.jpg" alt="家族で川下りを楽しむ様子" width="1200" height="800" loading="lazy">
+
+      <div class="strength-box">
+        <h3>1つのツアーに、ひと家族限定。</h3>
+        <p>小さなお子さまがいる親御さまにも、3世代のご家族にも、体力に自信のない方にも、まわりに気兼ねなく自然を満喫してほしい。そんな思いで、創業時から貸切プランを続けています。</p>
+        <ul class="who">
+          <li>小さなお子さま連れ</li>
+          <li>3世代のご家族</li>
+          <li>体力に自信のない方</li>
+          <li>ご夫婦・カップル</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 当日の流れ -->
+  <section id="flow">
+    <div class="wrap">
+      <h2 class="sec-title">当日の流れ</h2>
+      <p class="sec-lead">口コミでいただいた体験談をもとにご紹介します。待ち合わせから終了までは約2時間、川下りそのものは1時間ちょっとです。</p>
+      <ol class="flow">
+        <li><b>待ち合わせ</b>大きなボートをつないだ車が目印です。出発前にお手洗いをご案内します。</li>
+        <li><b>ゴール地点からスタート地点へ移動</b>スタート地点までは、ウッキーズの車でご案内します。</li>
+        <li><b>操作のレクチャー</b>カヌーの漕ぎ方を、ていねいにお伝えします。</li>
+        <li><b>川下りスタート</b>自然の音だけが聞こえる、ゆったりとした時間です。途中でおやつタイムがあります。</li>
+        <li><b>ゴール・足洗い</b>足洗い用のバケツやタオルをご用意しています。</li>
+      </ol>
+      <p class="note">※水着で川に入る方は、ご自身用のタオルをお持ちください。</p>
+    </div>
+  </section>
+
+  <!-- 口コミ -->
+  <section class="bg-foam" id="voice">
+    <div class="wrap">
+      <h2 class="sec-title">お客さまの声</h2>
+      <p class="sec-lead">ご参加いただいたお客さまからのクチコミです。</p>
+
+      <div class="review">
+        <p class="stars">★★★★★</p>
+        <h3>2歳の子どもでも安心でした。「素晴らしい」の一言です</h3>
+        <p>2歳の子どもでも体験できるツアーを探してたどり着きました。2歳連れに多少不安もありましたが、説明がていねいで安心して体験できました。</p>
+        <p>手作りクッキーと冷たい麦茶のおやつタイム、ガイドさんと写真撮影の方、防水デジカメの貸出まで、至れり尽くせりでした。自然の音だけが聞こえる時間にとても癒されました。</p>
+        <p class="who-s">2025年8月・家族5人（11歳・8歳・2歳のお子さま連れ）</p>
+      </div>
+
+      <div class="review">
+        <p class="stars">★★★★★</p>
+        <h3>また来年も来たいと、二人で語り合いました</h3>
+        <p>北海道は思ったよりはるかに蒸し暑く、空知川のカヌーでやっと清涼感を味わえました。スタート地点のレクチャーではファーストネームで呼んでいただき、最初からリラックスできました。</p>
+        <p>橋の上から写真を撮ってもらい、雄大な自然の中にいることを実感。ゴールでは足を洗う場所まで用意していただき、最後は川の景色を見ながらお茶とお菓子をいただきました。</p>
+        <p class="who-s">7月・ご夫婦（北海道ドライブキャンプ10日間の旅の途中）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section id="info">
+    <div class="wrap">
+      <h2 class="sec-title">店舗情報</h2>
+      <p class="sec-lead">ご予約・ご相談は、お電話またはメールでどうぞ。</p>
+
+      <table class="info-table">
+        <tr><th>店名</th><td>ウッキーズ</td></tr>
+        <tr><th>住所</th><td>北海道富良野市字島ノ下</td></tr>
+        <tr><th>電話</th><td><a href="tel:0167228787">0167-22-8787</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:go.wokkys.furano@gmail.com">go.wokkys.furano@gmail.com</a></td></tr>
+        <tr><th>ホームページ</th><td><a href="http://www.wokkys.jp/index.html" target="_blank" rel="noopener">http://www.wokkys.jp/index.html</a></td></tr>
+        <tr><th>Instagram</th><td><a href="https://www.instagram.com/wokkys.furano/?hl=ja" target="_blank" rel="noopener">@wokkys.furano</a></td></tr>
+      </table>
+
+      <div class="map">
+        <iframe title="ウッキーズの地図" src="https://maps.google.com/maps?q=%E5%8C%97%E6%B5%B7%E9%81%93%E5%AF%8C%E8%89%AF%E9%87%8E%E5%B8%82%E5%AD%97%E5%B3%B6%E3%83%8E%E4%B8%8B&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>家族だけの川下りを、<br>富良野で。</h2>
+      <p>日程や人数、お子さまの年齢など、お気軽にご相談ください。</p>
+      <div class="btn-stack">
+        <a class="btn btn-sun" href="tel:0167228787">電話で予約する</a>
+        <a class="btn btn-line" href="mailto:go.wokkys.furano@gmail.com">メールで問い合わせる</a>
+      </div>
+      <a class="tel-big" href="tel:0167228787">0167-22-8787</a>
+      <p class="sns"><a href="https://www.instagram.com/wokkys.furano/?hl=ja" target="_blank" rel="noopener">Instagramで最新情報を見る</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>© ウッキーズ</footer>
+
+<nav class="bottom-nav" aria-label="固定メニュー">
+  <a href="#ichioshi">ツアー</a>
+  <a href="#voice">口コミ</a>
+  <a class="main" href="tel:0167228787">電話する</a>
+</nav>
+
+</body>
+</html>
