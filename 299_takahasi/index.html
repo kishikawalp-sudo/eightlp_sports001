@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>タカハシ運動具店｜仙台市若林区のスポーツ用品店｜オリジナルユニフォーム・トレーニング用品</title>
+<meta name="description" content="宮城県仙台市若林区のスポーツ用品店「タカハシ運動具店」。オリジナルユニフォーム・トレーニング用品がイチオシ。野球・バドミントン・卓球・武道具、学校指定の体育着まで。店内にない商品もお取り寄せ。">
+<style>
+:root{
+  --navy:#14263d;
+  --navy-dark:#0c1828;
+  --ink:#1c2430;
+  --paper:#ffffff;
+  --mist:#eef2f6;
+  --line:#d5dde6;
+  --yellow:#ffc928;
+  --red:#d6342c;
+  --muted:#5b6776;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{
+  margin:0;
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Meiryo",sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.8;
+  font-size:16px;
+  padding-top:calc(56px + env(safe-area-inset-top, 0px));
+  padding-bottom:calc(64px + env(safe-area-inset-bottom, 0px));
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.wrap{width:100%;max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{
+  margin:0 0 24px;
+  font-size:1.6rem;
+  line-height:1.4;
+  font-weight:900;
+  letter-spacing:.02em;
+  color:var(--navy);
+}
+h2 small{display:block;margin-top:6px;font-size:.85rem;font-weight:500;color:var(--muted);letter-spacing:.04em}
+
+/* ---------- header ---------- */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:var(--navy);color:#fff;
+  padding-top:env(safe-area-inset-top, 0px);
+}
+.site-header .inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:56px;max-width:720px;margin:0 auto;padding:0 12px 0 20px;
+}
+.logo{font-weight:900;font-size:1.05rem;letter-spacing:.04em;text-decoration:none}
+.head-tel{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--yellow);color:var(--navy-dark);
+  font-weight:900;font-size:.9rem;text-decoration:none;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  padding:0;
+  color:#fff;
+  background:var(--navy-dark);
+  overflow:hidden;
+}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(12,24,40,.35) 0%,rgba(12,24,40,.9) 100%);
+}
+.hero .wrap{position:relative;z-index:1;padding-top:56px;padding-bottom:48px;min-height:min(86vh,640px);display:flex;flex-direction:column;justify-content:flex-end}
+.hero-sub{margin:0 0 12px;font-weight:700;font-size:.95rem;color:var(--yellow)}
+.hero h1{
+  margin:0 0 20px;
+  font-size:clamp(2.1rem,9.5vw,3.2rem);
+  line-height:1.2;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.hero p.lead{margin:0 0 28px;font-size:1rem;line-height:1.9;max-width:34em}
+.btn-row{display:flex;flex-direction:column;gap:12px}
+.btn{
+  display:flex;align-items:center;justify-content:center;
+  min-height:54px;padding:12px 20px;border-radius:10px;
+  font-weight:900;font-size:1.05rem;text-decoration:none;text-align:center;
+}
+.btn-tel{background:var(--yellow);color:var(--navy-dark)}
+.btn-sub{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.8)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-line{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+
+/* ---------- ichioshi ---------- */
+.ichioshi{background:var(--yellow);padding-bottom:0}
+.ichioshi h2{color:var(--navy-dark)}
+.tag{
+  display:inline-block;margin:0 0 14px;padding:4px 14px;
+  background:var(--navy-dark);color:var(--yellow);
+  font-weight:900;font-size:.9rem;border-radius:4px;
+}
+.ichioshi .lead{margin:0 0 24px;font-size:1.02rem;font-weight:500;color:var(--navy-dark)}
+.ichioshi figure{margin:0 -20px}
+.ichioshi figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ichioshi figcaption{padding:10px 20px;font-size:.8rem;background:var(--navy-dark);color:#fff}
+.menu{background:var(--navy-dark);color:#fff;padding:36px 0 44px}
+.menu .wrap{display:grid;gap:14px}
+.menu-item{
+  border-left:6px solid var(--yellow);
+  padding:6px 0 6px 16px;
+}
+.menu-item h3{margin:0 0 4px;font-size:1.15rem;font-weight:900;color:var(--yellow)}
+.menu-item p{margin:0;font-size:.95rem;line-height:1.8}
+
+/* ---------- order voice ---------- */
+.voice-hl{background:var(--mist)}
+.hl-card{
+  background:#fff;border:2px solid var(--navy);border-radius:14px;
+  padding:22px 20px;
+}
+.hl-card .stars{color:var(--red);font-size:1.1rem;letter-spacing:.1em;margin:0 0 6px}
+.hl-card p{margin:0}
+.hl-card .big{font-size:1.15rem;font-weight:800;line-height:1.7;color:var(--navy)}
+.hl-card .src{margin-top:10px;font-size:.8rem;color:var(--muted)}
+.note{margin:14px 0 0;font-size:.82rem;color:var(--muted)}
+
+/* ---------- strengths ---------- */
+.strengths ul{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.strengths li{padding:0 0 22px;border-bottom:1px solid var(--line)}
+.strengths li:last-child{border-bottom:0;padding-bottom:0}
+.strengths h3{margin:0 0 6px;font-size:1.15rem;font-weight:900;color:var(--navy)}
+.strengths p{margin:0;font-size:.98rem}
+.service-img{margin:32px -20px 0}
+.service-img img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* ---------- reviews ---------- */
+.reviews{background:var(--navy);color:#fff}
+.reviews h2{color:#fff}
+.reviews h2 small{color:#b9c6d6}
+.review{background:#fff;color:var(--ink);border-radius:12px;padding:18px 18px 20px;margin:0 0 16px}
+.review:last-child{margin-bottom:0}
+.review .stars{color:var(--red);letter-spacing:.1em;margin:0 0 6px}
+.review p{margin:0;font-size:.98rem}
+
+/* ---------- info ---------- */
+.info table{width:100%;border-collapse:collapse;font-size:.98rem}
+.info th,.info td{padding:14px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+.info th{width:6.5em;white-space:nowrap;color:var(--navy);font-weight:900}
+.info td a{color:var(--navy);font-weight:700;word-break:break-all}
+.map{margin-top:28px;border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* ---------- final cta ---------- */
+.cta{background:var(--navy-dark);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{margin:0 0 28px;color:#d7e0ea}
+.cta .tel-big{
+  display:block;margin:0 0 6px;font-size:2rem;font-weight:900;letter-spacing:.04em;
+  color:var(--yellow);text-decoration:none;
+}
+.cta .hours{margin:0 0 28px;font-size:.88rem;color:#b9c6d6}
+
+footer{background:#070f1a;color:#9fb0c3;text-align:center;font-size:.8rem;padding:22px 20px}
+footer a{color:#cfd9e4}
+
+/* ---------- bottom nav ---------- */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;
+  background:#fff;border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom, 0px);
+}
+.bottom-nav a{
+  display:flex;align-items:center;justify-content:center;
+  min-height:56px;font-size:.82rem;font-weight:800;text-decoration:none;color:var(--navy);
+  border-left:1px solid var(--line);text-align:center;line-height:1.3;
+}
+.bottom-nav a:first-child{background:var(--yellow);color:var(--navy-dark);border-left:0;font-size:.95rem}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  .btn-row{flex-direction:row}
+  .btn{flex:1}
+  .ichioshi figure,.service-img{margin-left:0;margin-right:0;border-radius:12px;overflow:hidden}
+  .menu .wrap{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="logo" href="#top">タカハシ運動具店</a>
+    <a class="head-tel" href="tel:0222310892" aria-label="電話をかける 022-231-0892">電話する</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="タカハシ運動具店">
+    <!-- 画像：images/hero.jpg（チームウェアを着たスポーツチーム、または店舗外観） -->
+    <img class="hero-img" src="images/hero.jpg" alt="タカハシ運動具店で作ったオリジナルユニフォームを着たチーム" width="1200" height="800">
+    <div class="wrap">
+      <p class="hero-sub">仙台市若林区｜地域に根ざしたスポーツ用品店</p>
+      <h1>チームの一着を、<br>オリジナルで。</h1>
+      <p class="lead">タカハシ運動具店は、オリジナルユニフォームとトレーニング用品がイチオシ。オーダーのご相談から、担当スタッフが親身にお手伝いします。</p>
+      <div class="btn-row">
+        <a class="btn btn-tel" href="tel:0222310892">電話で相談する　022-231-0892</a>
+        <a class="btn btn-sub" href="http://www.takaun.com/pages/3/" target="_blank" rel="noopener">問い合わせフォーム</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ICHIOSHI -->
+  <section class="ichioshi" id="ichioshi">
+    <div class="wrap">
+      <span class="tag">イチオシ</span>
+      <h2>オリジナルユニフォーム<br>＆ トレーニング用品</h2>
+      <p class="lead">部活動・クラブチーム・サークルのチームウェアから、日々の練習を支えるトレーニング用品まで。ご要望に合わせてオーダーできます。</p>
+    </div>
+    <figure>
+      <!-- 画像：images/ichioshi.jpg（オリジナルユニフォーム・Tシャツ・トレーニング用品） -->
+      <img src="images/ichioshi.jpg" alt="オリジナルユニフォームとトレーニング用品" width="1200" height="900" loading="lazy">
+      <figcaption>オリジナルユニフォーム・トレーニング用品</figcaption>
+    </figure>
+    <div class="menu">
+      <div class="wrap">
+        <div class="menu-item">
+          <h3>オリジナルユニフォーム</h3>
+          <p>チームの一体感を高める、オリジナルのユニフォーム・チームウェアをオーダーできます。</p>
+        </div>
+        <div class="menu-item">
+          <h3>チームTシャツ</h3>
+          <p>バックプリント・胸プリントなど、チームの希望に合わせたご相談が可能です。</p>
+        </div>
+        <div class="menu-item">
+          <h3>トレーニング用品</h3>
+          <p>練習の質を上げるトレーニング用品を取り扱っています。何を選べばよいか、お気軽にご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE HIGHLIGHT -->
+  <section class="voice-hl">
+    <div class="wrap">
+      <h2>オーダーしたお客様の声<small>Google口コミより</small></h2>
+      <div class="hl-card">
+        <p class="stars" aria-label="5段階評価の4">★★★★</p>
+        <p class="big">チームTシャツ、バックプリント＆胸プリントで3200円！オーダーできるし、担当さん親切でよき</p>
+        <p class="src">口コミ（クレーマー様のチームTシャツ）</p>
+      </div>
+      <p class="note">※価格は口コミ投稿時のものです。最新の内容・納期はお問い合わせください。</p>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section class="strengths" id="strengths">
+    <div class="wrap">
+      <h2>タカハシ運動具店の強み<small>宮城県仙台市のスポーツ用品店</small></h2>
+      <ul>
+        <li>
+          <h3>野球・バドミントン・卓球・武道具まで幅広く</h3>
+          <p>野球、バドミントン、卓球、武道具、オリジナルユニフォーム、トレーニング用品など、各種スポーツ用品を取り扱っています。</p>
+        </li>
+        <li>
+          <h3>学校・スポーツ施設の用品にも対応</h3>
+          <p>宮城県内の学校やスポーツ施設の運動用品・用具、学校指定の体育着・上靴・体育館シューズなども取り扱っています。</p>
+        </li>
+        <li>
+          <h3>店内にない商品もお取り寄せ</h3>
+          <p>店頭にない商品でも、カタログからお取り寄せします。探している用品はまずご相談ください。</p>
+        </li>
+        <li>
+          <h3>お客さまに寄り添う、地域密着のサービス</h3>
+          <p>地域に根ざしたスポーツショップならではの、お客さまに寄り添ったサービスをご提供します。</p>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap">
+      <div class="service-img">
+        <!-- 画像：images/service.jpg（店内の様子、または取扱い商品） -->
+        <img src="images/service.jpg" alt="タカハシ運動具店の店内と取扱い商品" width="1200" height="750" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <h2>お客様の口コミ<small>Google口コミより</small></h2>
+      <div class="review">
+        <p class="stars" aria-label="5段階評価の4">★★★★</p>
+        <p>クレーマーのチームTシャツ、バックプリント＆胸プリントで3200円！オーダーできるし、担当さん親切でよき</p>
+      </div>
+      <div class="review">
+        <p class="stars" aria-label="5段階評価の5">★★★★★</p>
+        <p>地元のスポーツ店という印象のお店です。社長含めスタッフの皆さん、感じがよく丁寧に対応していただけました。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP INFO -->
+  <section class="info" id="info">
+    <div class="wrap">
+      <h2>店舗情報<small>Shop Information</small></h2>
+      <table>
+        <tr><th scope="row">店名</th><td>タカハシ運動具店<br><span style="font-size:.85rem;color:var(--muted)">（有限会社タカハシ運動具店）</span></td></tr>
+        <tr><th scope="row">住所</th><td>宮城県仙台市若林区大和町二丁目4番25号</td></tr>
+        <tr><th scope="row">電話番号</th><td><a href="tel:0222310892">022-231-0892</a></td></tr>
+        <tr><th scope="row">定休日</th><td>火曜日</td></tr>
+        <tr><th scope="row">公式サイト</th><td><a href="http://www.takaun.com/" target="_blank" rel="noopener">http://www.takaun.com/</a></td></tr>
+        <tr><th scope="row">お問い合わせ</th><td><a href="http://www.takaun.com/pages/3/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+        <tr><th scope="row">Instagram</th><td><a href="https://www.instagram.com/takaun_ug/?hl=ja" target="_blank" rel="noopener">@takaun_ug</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe
+          title="タカハシ運動具店の地図"
+          src="https://www.google.com/maps?q=宮城県仙台市若林区大和町二丁目4番25号 タカハシ運動具店&amp;output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>ユニフォーム・用品のご相談は<br>お気軽に</h2>
+      <p>オーダーの内容が決まっていなくても大丈夫です。まずはお電話かフォームからご連絡ください。</p>
+      <a class="tel-big" href="tel:0222310892">022-231-0892</a>
+      <p class="hours">定休日：火曜日</p>
+      <div class="btn-row">
+        <a class="btn btn-tel" href="tel:0222310892">電話で相談する</a>
+        <a class="btn btn-sub" href="http://www.takaun.com/pages/3/" target="_blank" rel="noopener">問い合わせフォーム</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="margin:0">&copy; 有限会社タカハシ運動具店　<a href="http://www.takaun.com/" target="_blank" rel="noopener">公式サイト</a></p>
+</footer>
+
+<nav class="bottom-nav" aria-label="固定メニュー">
+  <a href="tel:0222310892">電話する</a>
+  <a href="http://www.takaun.com/pages/3/" target="_blank" rel="noopener">お問い合わせ</a>
+  <a href="https://www.instagram.com/takaun_ug/?hl=ja" target="_blank" rel="noopener">Instagram</a>
+  <a href="#info">アクセス</a>
+</nav>
+
+</body>
+</html>
