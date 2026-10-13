@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ゆうゆう館｜仙台・ライミング／登山／沢登り／テレマークスキー／山スキー／カヌーの専門店</title>
+<meta name="description" content="仙台市宮城野区のライミング・登山・沢登り・テレマークスキー・山スキー・カヌー専門店「ゆうゆう館」。県外からも通うお客さんがいる口コミ★5の人気店。購入前にじっくり相談できます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #17232b;
+    --slate: #2f4858;
+    --sage: #8fa89a;
+    --mist: #eef2f0;
+    --paper: #fbfcfb;
+    --rope: #e8562a;
+    --rope-dark: #c7431b;
+    --text: #1d2a31;
+    --muted: #55656d;
+    --line: #d5dcd8;
+    --serif: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    --sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--paper);
+    padding-top: 56px;
+    padding-bottom: 68px;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--rope); outline-offset: 3px; }
+  .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  .section { padding: 56px 0; }
+  .section--mist { background: var(--mist); }
+  .section--night { background: var(--night); color: #fff; }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.5;
+    margin: 0 0 20px;
+    letter-spacing: .02em;
+  }
+  h2::after {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 4px;
+    background: var(--rope);
+    margin-top: 14px;
+  }
+  .lead { margin: 0 0 24px; color: var(--muted); }
+  .section--night .lead { color: #c9d6d0; }
+
+  /* ---------- Fixed header ---------- */
+  .header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 56px;
+    z-index: 50;
+    background: rgba(23, 35, 43, .96);
+    color: #fff;
+  }
+  .header__inner {
+    height: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 12px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .header__logo {
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: .06em;
+    text-decoration: none;
+  }
+  .header__tel {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 40px;
+    padding: 0 16px;
+    background: var(--rope);
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 999px;
+  }
+  .header__tel:hover { background: var(--rope-dark); }
+  .icon { width: 18px; height: 18px; flex: none; fill: currentColor; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: calc(100svh - 56px);
+    min-height: calc(100vh - 56px);
+    display: flex;
+    align-items: flex-end;
+    color: #fff;
+    background: var(--night);
+    overflow: hidden;
+  }
+  .hero__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(23,35,43,.25) 0%, rgba(23,35,43,.55) 45%, rgba(23,35,43,.92) 100%);
+  }
+  .hero__body { position: relative; z-index: 1; width: 100%; padding: 40px 0 44px; }
+  .hero__rating {
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 6px 14px;
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .hero__rating b { color: #ffc24b; letter-spacing: .1em; }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: clamp(34px, 9.5vw, 56px);
+    line-height: 1.32;
+    margin: 0 0 18px;
+    letter-spacing: .03em;
+  }
+  .hero__sub {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+  .hero__note { margin: 0 0 28px; font-size: 14px; color: #d5e0da; }
+  .btns { display: flex; flex-direction: column; gap: 12px; }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 54px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid transparent;
+  }
+  .btn--primary { background: var(--rope); color: #fff; }
+  .btn--primary:hover { background: var(--rope-dark); }
+  .btn--ghost { border-color: rgba(255,255,255,.7); color: #fff; }
+  .btn--ghost:hover { background: rgba(255,255,255,.12); }
+  .btn--dark { border-color: var(--slate); color: var(--slate); }
+
+  /* ---------- Featured (イチオシ) ---------- */
+  .featured__photo {
+    margin: 0 -20px 28px;
+  }
+  .featured__photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--slate); }
+  .discipline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .discipline li {
+    background: var(--paper);
+    border-left: 4px solid var(--rope);
+    padding: 14px 14px 14px 16px;
+    line-height: 1.5;
+  }
+  .discipline strong { display: block; font-size: 17px; margin-bottom: 4px; }
+  .discipline span { font-size: 13px; color: var(--muted); }
+
+  /* ---------- Strengths ---------- */
+  .points { list-style: none; margin: 0 0 28px; padding: 0; }
+  .points li { padding: 20px 0; border-top: 1px solid var(--line); }
+  .points li:last-child { border-bottom: 1px solid var(--line); }
+  .points h3 { margin: 0 0 6px; font-size: 18px; line-height: 1.55; color: var(--slate); }
+  .points p { margin: 0; color: var(--muted); font-size: 15px; }
+  .strengths__photo img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; background: var(--slate); }
+
+  /* ---------- Reviews ---------- */
+  .stars { color: #f0a500; letter-spacing: .12em; font-size: 18px; line-height: 1; }
+  .review-head { display: flex; align-items: center; gap: 12px; margin: 0 0 22px; flex-wrap: wrap; }
+  .review-head p { margin: 0; font-size: 14px; color: #c9d6d0; }
+  .review {
+    margin: 0 0 18px;
+    padding: 22px 20px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 6px;
+  }
+  .review h3 { margin: 8px 0 10px; font-size: 17px; line-height: 1.6; }
+  .review p { margin: 0 0 10px; font-size: 15px; color: #e3ece7; }
+  .review p:last-child { margin-bottom: 0; }
+
+  /* ---------- Access ---------- */
+  .info { width: 100%; border-collapse: collapse; margin: 0 0 24px; font-size: 15px; }
+  .info th, .info td { padding: 14px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; line-height: 1.7; }
+  .info th { width: 5.5em; font-weight: 700; color: var(--slate); white-space: nowrap; }
+  .info a { color: var(--rope-dark); font-weight: 500; word-break: break-all; }
+  .map { position: relative; width: 100%; aspect-ratio: 4 / 3; border-radius: 6px; overflow: hidden; background: var(--line); }
+  .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---------- CTA ---------- */
+  .cta { text-align: center; }
+  .cta h2::after { margin-left: auto; margin-right: auto; }
+  .cta__tel {
+    display: block;
+    margin: 0 0 6px;
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: clamp(30px, 9vw, 44px);
+    line-height: 1.3;
+    text-decoration: none;
+  }
+  .cta__hours { margin: 0 0 26px; font-size: 14px; color: #c9d6d0; }
+  .cta .btns { max-width: 420px; margin: 0 auto; }
+
+  .footer { padding: 24px 20px 28px; text-align: center; font-size: 12px; color: var(--muted); background: var(--mist); }
+  .footer p { margin: 0; }
+
+  /* ---------- Fixed bottom nav (mobile) ---------- */
+  .bottom-nav {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 50;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    background: var(--night);
+    border-top: 1px solid rgba(255,255,255,.18);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  .bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-height: 60px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .bottom-nav a:first-child { background: var(--rope); font-size: 13px; }
+  .bottom-nav .icon { width: 20px; height: 20px; }
+
+  /* ---------- Tablet / desktop ---------- */
+  @media (min-width: 768px) {
+    body { padding-bottom: 0; font-size: 17px; }
+    .bottom-nav { display: none; }
+    .section { padding: 80px 0; }
+    h2 { font-size: 32px; }
+    .hero { min-height: 640px; }
+    .btns { flex-direction: row; }
+    .btn { min-width: 240px; }
+    .featured__photo { margin: 0 0 32px; }
+    .featured__photo img { border-radius: 6px; aspect-ratio: 16 / 9; }
+    .discipline { grid-template-columns: repeat(3, 1fr); }
+    .info th { width: 8em; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 固定ヘッダー -->
+<header class="header">
+  <div class="header__inner">
+    <a class="header__logo" href="#top">ゆうゆう館</a>
+    <a class="header__tel" href="tel:0222529750" aria-label="ゆうゆう館に電話する">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      電話する
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <img class="hero__img" src="images/hero.jpg" alt="ゆうゆう館の店内に並ぶ登山・クライミングの道具">
+    <div class="hero__body">
+      <div class="wrap">
+        <p class="hero__rating"><b>★★★★★</b>　県外からも通う人気店</p>
+        <h1>道具は、<br>値段で選ばない。</h1>
+        <p class="hero__sub">ライミング・登山・沢登り・<br>テレマークスキー・山スキー・カヌーの専門店</p>
+        <p class="hero__note">仙台市宮城野区｜購入前にじっくり相談できます</p>
+        <div class="btns">
+          <a class="btn btn--primary" href="tel:0222529750">電話で相談する　022-252-9750</a>
+          <a class="btn btn--ghost" href="#access">店舗情報・地図を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- イチオシ -->
+  <section class="section section--mist" id="ichioshi">
+    <div class="wrap">
+      <h2>山と川で遊ぶ道具を、<br>専門店で選ぶ。</h2>
+      <p class="lead">ゆうゆう館は、ライミング・登山・沢登り・テレマークスキー・山スキー・カヌーの専門店です。フィールドに合わせて、あなたに合う一つを一緒に探します。</p>
+
+      <figure class="featured__photo">
+        <img src="images/ichioshi.jpg" alt="ライミング・登山・カヌーなどのアウトドア用品" loading="lazy">
+      </figure>
+
+      <ul class="discipline">
+        <li><strong>ライミング</strong><span>岩と向き合う</span></li>
+        <li><strong>登山</strong><span>山頂を目指す</span></li>
+        <li><strong>沢登り</strong><span>水の流れをたどる</span></li>
+        <li><strong>テレマークスキー</strong><span>踵を上げて滑る</span></li>
+        <li><strong>山スキー</strong><span>雪の山を登って滑る</span></li>
+        <li><strong>カヌー</strong><span>水面を漕ぎ出す</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section class="section" id="strength">
+    <div class="wrap">
+      <h2>買う前に、じっくり相談できる店。</h2>
+      <p class="lead">経験を積むほど、道具は値段ではないと分かってきます。けれど初心者のうちは、なかなか気づけません。だからこそ、最初に訪れてほしいお店です。</p>
+
+      <ul class="points">
+        <li>
+          <h3>勧められるままに買わなくていい</h3>
+          <p>量販店で言われるがまま高いものを買い、本当に自分に合うのか分からない。そんな不安に、一つずつ答えてくれます。</p>
+        </li>
+        <li>
+          <h3>商品への造詣が深く、その人に合う一品を提案</h3>
+          <p>使う場面や目的を聞いたうえで、あなたに合った商品をアドバイスします。</p>
+        </li>
+        <li>
+          <h3>試着して、手入れの方法まで</h3>
+          <p>何着も試着しながら選び、購入後の手入れ方法も教えてもらえます。大切に使い続けるための知識が身につきます。</p>
+        </li>
+      </ul>
+
+      <div class="strengths__photo">
+        <img src="images/service.jpg" alt="スタッフがお客様に道具選びをアドバイスする様子" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="section section--night" id="voice">
+    <div class="wrap">
+      <h2>お客さまの声</h2>
+      <div class="review-head">
+        <span class="stars" aria-label="5点満点中5点">★★★★★</span>
+        <p>県外のお客さんもたくさん来店する人気のお店です</p>
+      </div>
+
+      <article class="review">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <h3>初心者のうちに訪問したかったお店です</h3>
+        <p>何もわからない初心者のうちは、店員さんの言われるままに高いものを買ってしまいがち。こちらのお店は商品への造詣が深く、その人に合った商品をアドバイスしてもらえます。</p>
+        <p>お時間に余裕のあるときに訪れて、購入する前にじっくりアドバイスを受けるのがおすすめです。</p>
+      </article>
+
+      <article class="review">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <h3>アークテリクスのベータLTを求めて来店</h3>
+        <p>何着も試着させていただき、山登りではなくタウンユースだと伝えて、いろいろアドバイスをもらいました。手入れの方法も教えていただき、5年ほど着ていますが今も現役です。</p>
+        <p>常連のお客さんもいい人でした。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="section" id="access">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <table class="info">
+        <tbody>
+          <tr><th scope="row">店名</th><td>ゆうゆう館</td></tr>
+          <tr><th scope="row">住所</th><td>宮城県仙台市宮城野区燕沢東2丁目9−51 東仙台プラザ</td></tr>
+          <tr><th scope="row">電話番号</th><td><a href="tel:0222529750">022-252-9750</a></td></tr>
+          <tr><th scope="row">定休日</th><td>月曜日・第二火曜日</td></tr>
+          <tr><th scope="row">公式HP</th><td><a href="http://www.youyoukan.jp/" target="_blank" rel="noopener">http://www.youyoukan.jp/</a></td></tr>
+          <tr><th scope="row">メール</th><td><a href="mailto:info@youyoukan.jp">info@youyoukan.jp</a></td></tr>
+        </tbody>
+      </table>
+      <div class="map">
+        <iframe
+          title="ゆうゆう館の地図"
+          src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E5%AE%AE%E5%9F%8E%E9%87%8E%E5%8C%BA%E7%87%95%E6%B2%A2%E6%9D%B12%E4%B8%81%E7%9B%AE9-51%20%E6%9D%B1%E4%BB%99%E5%8F%B0%E3%83%97%E3%83%A9%E3%82%B6&output=embed&hl=ja"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--night cta" id="contact">
+    <div class="wrap">
+      <h2>まずは、お店で話してみませんか。</h2>
+      <p class="lead">ライミング・登山・沢登り・テレマークスキー・山スキー・カヌーの道具選びは、ゆうゆう館へ。</p>
+      <a class="cta__tel" href="tel:0222529750">022-252-9750</a>
+      <p class="cta__hours">定休日：月曜日・第二火曜日</p>
+      <div class="btns">
+        <a class="btn btn--primary" href="tel:0222529750">電話で問い合わせる</a>
+        <a class="btn btn--ghost" href="mailto:info@youyoukan.jp">メールで問い合わせる</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; ゆうゆう館　宮城県仙台市宮城野区燕沢東2丁目9−51 東仙台プラザ</p>
+</footer>
+
+<!-- 固定ボトムナビ（スマホ） -->
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <a href="tel:0222529750">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    電話で相談
+  </a>
+  <a href="mailto:info@youyoukan.jp">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+    メール
+  </a>
+  <a href="#access">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+    アクセス
+  </a>
+</nav>
+
+</body>
+</html>
