@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>スポーツショップマツムラ｜石巻の中高年フィットネスクラブ</title>
+<meta name="description" content="石巻市のスポーツ専門店「スポーツショップマツムラ」が運営する中高年フィットネスクラブ。健康状態・生活状態に合わせて、明るく楽しく体を動かせます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12303a;
+  --ink-soft:#456068;
+  --sea:#136f7f;
+  --sea-deep:#0b4654;
+  --mist:#eef5f6;
+  --paper:#ffffff;
+  --sun:#f4a62a;
+  --sun-soft:#fff3d9;
+  --cta:#e4572e;
+  --cta-deep:#c9431d;
+  --line:#d3e1e4;
+  --header-h:56px;
+  --nav-h:62px;
+  --font-head:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;
+  --font-body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.85;
+  color:var(--ink);
+  background:var(--paper);
+  padding-top:var(--header-h);
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-head);line-height:1.45;margin:0;letter-spacing:.02em}
+p{margin:0}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{width:100%;max-width:720px;margin:0 auto;padding:0 20px}
+.sec{padding:56px 0}
+.sec-title{font-size:1.55rem;font-weight:900;color:var(--sea-deep)}
+.sec-lead{margin-top:14px;color:var(--ink-soft)}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:56px;padding:12px 22px;border-radius:999px;
+  font-family:var(--font-head);font-weight:900;font-size:1.05rem;
+  text-decoration:none;text-align:center;border:2px solid transparent;
+  transition:background-color .2s,transform .2s;
+}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-cta{background:var(--cta);color:#fff;box-shadow:0 6px 0 var(--cta-deep)}
+.btn-cta:active{transform:translateY(3px);box-shadow:0 3px 0 var(--cta-deep)}
+.btn-ghost{background:rgba(255,255,255,.95);color:var(--sea-deep);border-color:#fff}
+.btn-line{background:#fff;color:var(--sea-deep);border-color:var(--sea)}
+
+/* ---------- fixed header ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:calc(var(--header-h) + env(safe-area-inset-top,0px));
+  padding-top:env(safe-area-inset-top,0px);
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(6px);
+}
+.header-in{
+  height:var(--header-h);max-width:960px;margin:0 auto;padding:0 12px 0 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.brand{font-family:var(--font-head);font-weight:900;font-size:1rem;color:var(--sea-deep);text-decoration:none;line-height:1.2}
+.brand small{display:block;font-family:var(--font-body);font-weight:500;font-size:.68rem;color:var(--ink-soft)}
+.tel-btn{
+  display:inline-flex;align-items:center;gap:6px;flex:none;
+  background:var(--cta);color:#fff;text-decoration:none;
+  font-family:var(--font-head);font-weight:900;font-size:.95rem;
+  padding:9px 16px;border-radius:999px;min-height:40px;
+}
+.tel-btn svg{width:18px;height:18px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:calc(100svh - var(--header-h) - var(--nav-h));display:flex;align-items:flex-end;background:var(--sea-deep);color:#fff;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,70,84,.15) 0%,rgba(11,70,84,.55) 45%,rgba(7,40,50,.92) 100%)}
+.hero-body{position:relative;z-index:1;width:100%;max-width:720px;margin:0 auto;padding:0 20px 36px}
+.hero-tag{
+  display:inline-block;background:var(--sun);color:var(--ink);
+  font-family:var(--font-head);font-weight:900;font-size:.85rem;
+  padding:5px 14px;border-radius:999px;margin-bottom:16px;
+}
+.hero h1{font-size:clamp(1.9rem,8.4vw,2.8rem);font-weight:900;line-height:1.35;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.hero-sub{margin-top:14px;font-size:1rem;line-height:1.8;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.hero-actions{margin-top:24px;display:grid;gap:12px}
+
+/* ---------- featured (ichioshi) ---------- */
+.pick{background:var(--sun-soft);position:relative}
+.pick-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--sea-deep);color:#fff;
+  font-family:var(--font-head);font-weight:900;font-size:.95rem;
+  padding:6px 18px;border-radius:999px;margin-bottom:14px;
+}
+.pick-badge::before{content:"★";color:var(--sun)}
+.pick h2{font-size:1.75rem;font-weight:900;color:var(--sea-deep)}
+.pick-photo{margin:24px -20px 0}
+.pick-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--line)}
+.pick-copy{margin-top:22px;font-size:1.05rem}
+.pick-copy strong{background:linear-gradient(transparent 60%,#ffd27a 60%);font-weight:700}
+.pick-points{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
+.pick-points li{
+  background:#fff;border-radius:16px;padding:18px 18px 18px 20px;
+  border-left:6px solid var(--sea);
+}
+.pick-points h3{font-size:1.1rem;font-weight:900;color:var(--sea-deep);margin-bottom:4px}
+.pick-points p{font-size:.95rem;color:var(--ink-soft);line-height:1.75}
+.pick-cta{margin-top:30px;display:grid;gap:12px}
+.pick-note{margin-top:12px;font-size:.85rem;color:var(--ink-soft);text-align:center}
+
+/* ---------- why ---------- */
+.why{background:var(--paper)}
+.why-box{margin-top:24px;display:grid;gap:18px}
+.why-box p{font-size:1rem}
+.why-quote{
+  margin-top:26px;padding:22px 20px;border-radius:16px;
+  background:var(--mist);font-family:var(--font-head);font-weight:700;
+  font-size:1.1rem;line-height:1.8;color:var(--sea-deep);text-align:center;
+}
+
+/* ---------- strengths ---------- */
+.strength{background:var(--mist)}
+.strength-photo{margin:24px -20px 0}
+.strength-photo img{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--line)}
+.strength-list{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:20px}
+.strength-list li{padding-left:18px;border-left:4px solid var(--sun)}
+.strength-list h3{font-size:1.08rem;font-weight:900;color:var(--sea-deep);margin-bottom:4px}
+.strength-list p{font-size:.95rem;color:var(--ink-soft);line-height:1.8}
+
+/* ---------- reviews ---------- */
+.review-card{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 20px}
+.stars{color:var(--sun);font-size:1.4rem;letter-spacing:.12em;line-height:1}
+.review-title{margin-top:10px;font-family:var(--font-head);font-weight:900;font-size:1.2rem;color:var(--sea-deep)}
+.review-card p.text{margin-top:14px;font-size:.98rem;line-height:1.85}
+.review-card p.text + p.text{margin-top:12px}
+
+/* ---------- shop info ---------- */
+.info{background:var(--mist)}
+.info-table{width:100%;border-collapse:collapse;margin-top:24px;background:#fff;border-radius:16px;overflow:hidden;font-size:.95rem}
+.info-table th,.info-table td{padding:14px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.7}
+.info-table tr:last-child th,.info-table tr:last-child td{border-bottom:0}
+.info-table th{width:7.2em;background:#f7fafb;color:var(--sea-deep);font-weight:700;white-space:nowrap}
+.info-table td{word-break:break-all}
+.info-table a{color:var(--sea);font-weight:500}
+.map{margin-top:24px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* ---------- final CTA ---------- */
+.final{background:var(--sea-deep);color:#fff;text-align:center}
+.final h2{font-size:1.6rem;font-weight:900}
+.final p{margin-top:14px;color:#d4e8ec}
+.final-actions{margin-top:28px;display:grid;gap:14px}
+.final .tel-num{font-family:var(--font-head);font-weight:900;font-size:2rem;letter-spacing:.04em;line-height:1.2}
+
+/* ---------- footer ---------- */
+.footer{background:#072832;color:#a9c3c9;text-align:center;padding:24px 20px;font-size:.8rem;line-height:1.7}
+
+/* ---------- fixed bottom nav (mobile) ---------- */
+.bnav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  height:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  background:#fff;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.bnav a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  text-decoration:none;color:var(--sea-deep);
+  font-size:.7rem;font-weight:700;
+}
+.bnav svg{width:22px;height:22px}
+.bnav a.is-call{background:var(--cta);color:#fff}
+
+/* ---------- tablet / desktop ---------- */
+@media (min-width:768px){
+  body{padding-bottom:0}
+  .bnav{display:none}
+  .hero{min-height:560px}
+  .hero-actions{grid-template-columns:repeat(2,minmax(0,260px))}
+  .pick-photo,.strength-photo{margin-left:0;margin-right:0}
+  .pick-photo img,.strength-photo img{border-radius:20px}
+  .pick-cta{grid-template-columns:repeat(2,1fr)}
+  .final-actions{grid-template-columns:repeat(2,minmax(0,280px));justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.5 7v10h15V7L12 12.2zM5.8 7 12 11.3 18.2 7H5.8z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3L12 3z"/></symbol>
+</svg>
+
+<!-- fixed header -->
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="#top">スポーツショップマツムラ<small>宮城県石巻市</small></a>
+    <a class="tel-btn" href="tel:0225952923" aria-label="電話をかける 0225-95-2923">
+      <svg aria-hidden="true"><use href="#i-phone"/></svg>電話する
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- hero -->
+  <section class="hero">
+    <img class="hero-img" src="images/hero.jpg" alt="スポーツショップマツムラのフィットネスクラブで楽しく体を動かす中高年の方々" width="1200" height="1600" fetchpriority="high">
+    <div class="hero-body">
+      <span class="hero-tag">石巻のスポーツ専門店が運営</span>
+      <h1>いくつになっても、<br>体を動かす楽しさを。</h1>
+      <p class="hero-sub">リハビリではなく、明るく健康的に。<br>あなたの体調・暮らしに合わせて続けられる、中高年向けフィットネスクラブです。</p>
+      <div class="hero-actions">
+        <a class="btn btn-cta" href="tel:0225952923"><svg aria-hidden="true"><use href="#i-phone"/></svg>0225-95-2923 に電話する</a>
+        <a class="btn btn-ghost" href="https://ss-matsu.com/contact" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-mail"/></svg>お問い合わせフォーム</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- featured: fitness club -->
+  <section class="sec pick" id="fitness">
+    <div class="wrap">
+      <span class="pick-badge">イチオシ</span>
+      <h2>中高年向け<br>フィットネスクラブ</h2>
+
+      <div class="pick-photo">
+        <img src="images/ichioshi.jpg" alt="トレーニングを楽しむフィットネスクラブの様子" width="1200" height="900" loading="lazy">
+      </div>
+
+      <p class="pick-copy">
+        「運動したいけれど、何から始めたらいいか分からない」<br>
+        そんな方のために、スポーツのハードとソフトの両面に長年関わってきた私たちが開いたのが、このフィットネスクラブです。<strong>その方の健康状態・生活状態に合わせて</strong>、トレーニングやゲームにトライできます。
+      </p>
+
+      <ul class="pick-points">
+        <li>
+          <h3>リハビリではなく、明るく健康的に</h3>
+          <p>「リハビリ＝高齢のイメージ」とは違う、前向きで明るい雰囲気。楽しみながら体を動かせる仕組みをご用意しています。</p>
+        </li>
+        <li>
+          <h3>一人ひとりの体調・暮らしに合わせる</h3>
+          <p>無理のない内容で、トレーニングやゲームに取り組めます。「今の自分」に合ったペースで始められます。</p>
+        </li>
+        <li>
+          <h3>スポーツ専門店だからできる</h3>
+          <p>用品販売から指導、アフターケアまで、長年スポーツに携わってきた経験を、そのままフィットネスの現場に活かしています。</p>
+        </li>
+      </ul>
+
+      <div class="pick-cta">
+        <a class="btn btn-cta" href="tel:0225952923"><svg aria-hidden="true"><use href="#i-phone"/></svg>まずは電話で相談する</a>
+        <a class="btn btn-line" href="https://ss-matsu.com/contact" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-mail"/></svg>フォームで問い合わせる</a>
+      </div>
+      <p class="pick-note">ご利用についてのご質問だけでもお気軽にどうぞ。</p>
+    </div>
+  </section>
+
+  <!-- why we started -->
+  <section class="sec why" id="story">
+    <div class="wrap">
+      <h2 class="sec-title">なぜ、スポーツ専門店が<br>フィットネスを始めたのか</h2>
+      <div class="why-box">
+        <p>長年スポーツ指導に関わる中で、社会の変化とともに寿命が延びていることに気づきました。同時に、「リタイア後の生活をどう支えるか」という課題に、私たちは疑問を抱くようになりました。</p>
+        <p>だからこそ、スポーツに携わってきた私たちが取り組むことにしました。リハビリという枠にとらわれず、明るく健康的なイメージで体を動かせる場を、新しい形でご提供しています。</p>
+      </div>
+      <p class="why-quote">皆さまがいつまでも<br>健やかでいきいきとした毎日を<br>送られることを願っています。</p>
+    </div>
+  </section>
+
+  <!-- strengths -->
+  <section class="sec strength" id="strength">
+    <div class="wrap">
+      <h2 class="sec-title">地域のスポーツを支えて、<br>ずっと。</h2>
+      <p class="sec-lead">創業以来、スポーツの専門店としてお客様のニーズに応え続けてきました。</p>
+
+      <div class="strength-photo">
+        <img src="images/service.jpg" alt="スポーツショップマツムラの店舗とスポーツ用品" width="1200" height="750" loading="lazy">
+      </div>
+
+      <ul class="strength-list">
+        <li>
+          <h3>用品から指導まで、ひとつの窓口で</h3>
+          <p>一般スポーツ用品・用具の販売、施設工事、管理メンテナンス、トレーニング指導、アフターケア、イベント開催まで幅広く対応しています。</p>
+        </li>
+        <li>
+          <h3>幼児からお年寄りまで、誰もが楽しめる地域へ</h3>
+          <p>平成15年にスポーツ普及のNPOを設立。いつでも、どこでも、誰もがスポーツを楽しめる地域を目指して活動し、代表も理事を務めています。</p>
+        </li>
+        <li>
+          <h3>震災後も、地域とともに</h3>
+          <p>震災後は、地域コミュニティの再生と子どもたちの元気づくりに力を入れて取り組んでいます。</p>
+        </li>
+        <li>
+          <h3>履き方・手入れまで丁寧に教えてくれる</h3>
+          <p>お客様の声でも、スパイクの履き方やお手入れの仕方まで教えてもらえたと好評をいただいています。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- reviews -->
+  <section class="sec" id="voice">
+    <div class="wrap">
+      <h2 class="sec-title">お客様の声</h2>
+      <article class="review-card">
+        <div class="stars" role="img" aria-label="5つ星のうち5">★★★★★</div>
+        <p class="review-title">丁寧親切！</p>
+        <p class="text">宮城県でラグビーやっていると石巻セイホクパークは必ずいく場所。そこから車で5分くらいの場所なので、何かあっても安心して駆け込めます。</p>
+        <p class="text">初めてアルミスタッドのスパイクを購入した時に、履き方から手入れの仕方まで教えてくれました。「ラグビー上手になってね」と送り出してくれます！ 対応が親切で丁寧でした。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- shop info -->
+  <section class="sec info" id="access">
+    <div class="wrap">
+      <h2 class="sec-title">店舗情報</h2>
+      <table class="info-table">
+        <tbody>
+          <tr><th scope="row">店名</th><td>スポーツショップマツムラ</td></tr>
+          <tr><th scope="row">会社名</th><td>有限会社スポーツショップマツムラ</td></tr>
+          <tr><th scope="row">代表者</th><td>松村 善行</td></tr>
+          <tr><th scope="row">住所</th><td>宮城県石巻市中央３丁目６−６</td></tr>
+          <tr><th scope="row">電話番号</th><td><a href="tel:0225952923">0225-95-2923</a></td></tr>
+          <tr><th scope="row">メール</th><td><a href="mailto:ss-matsu@muf.biglobe.ne.jp">ss-matsu@muf.biglobe.ne.jp</a></td></tr>
+          <tr><th scope="row">ホームページ</th><td><a href="https://www.rakuten.co.jp/ss-matsu/" target="_blank" rel="noopener">https://www.rakuten.co.jp/ss-matsu/</a></td></tr>
+          <tr><th scope="row">お問い合わせ</th><td><a href="https://ss-matsu.com/contact" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+          <tr><th scope="row">SNS</th><td><a href="https://www.facebook.com/ssmatsumura/" target="_blank" rel="noopener">Facebook</a></td></tr>
+        </tbody>
+      </table>
+
+      <div class="map">
+        <iframe
+          title="スポーツショップマツムラの地図"
+          src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E7%9F%B3%E5%B7%BB%E5%B8%82%E4%B8%AD%E5%A4%AE3%E4%B8%81%E7%9B%AE6-6&output=embed&hl=ja"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- final CTA -->
+  <section class="sec final" id="contact">
+    <div class="wrap">
+      <h2>体を動かす一歩を、<br>ここから始めませんか。</h2>
+      <p>フィットネスクラブのご相談は、お電話またはフォームから。</p>
+      <div class="final-actions">
+        <a class="btn btn-cta" href="tel:0225952923"><svg aria-hidden="true"><use href="#i-phone"/></svg>電話で相談する</a>
+        <a class="btn btn-ghost" href="https://ss-matsu.com/contact" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-mail"/></svg>フォームで問い合わせ</a>
+      </div>
+      <p class="tel-num" style="margin-top:24px">0225-95-2923</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 有限会社スポーツショップマツムラ<br>宮城県石巻市中央３丁目６−６</p>
+</footer>
+
+<!-- fixed bottom nav (mobile) -->
+<nav class="bnav" aria-label="クイックメニュー">
+  <a class="is-call" href="tel:0225952923"><svg aria-hidden="true"><use href="#i-phone"/></svg>電話</a>
+  <a href="https://ss-matsu.com/contact" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-mail"/></svg>問い合わせ</a>
+  <a href="#access"><svg aria-hidden="true"><use href="#i-pin"/></svg>アクセス</a>
+  <a href="https://www.rakuten.co.jp/ss-matsu/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-home"/></svg>HP</a>
+</nav>
+
+</body>
+</html>
