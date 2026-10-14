@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>スポーツ工房ネクスト｜仙台市宮城野区のバドミントン用品・ガット張替</title>
+<meta name="description" content="仙台市宮城野区のスポーツ工房ネクスト。バドミントン用品とガット張替が自慢のお店です。張替えは1時間かからず、丁寧で速いと口コミ★5。定休日は火曜日。">
+<meta name="theme-color" content="#14213D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14213D;
+  --ink-soft:#3B4763;
+  --court:#1F7A5C;
+  --string:#F2C230;
+  --string-deep:#C99A0B;
+  --shuttle:#FAFAF6;
+  --mist:#EEF1EC;
+  --line:#D5DBD2;
+  --white:#fff;
+  --head:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  --body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--body);font-size:16px;line-height:1.85;color:var(--ink);
+  background:var(--shuttle);
+  padding-top:calc(56px + env(safe-area-inset-top,0px));
+  padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--string);outline-offset:2px}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.4}
+p{margin:0}
+.wrap{width:100%;max-width:760px;margin:0 auto;padding:0 20px}
+
+/* header */
+.hd{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:var(--ink);color:var(--white);
+  padding-top:env(safe-area-inset-top,0px);
+}
+.hd-in{max-width:760px;margin:0 auto;height:56px;padding:0 14px 0 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.logo{font-family:var(--head);font-weight:900;font-size:17px;letter-spacing:.02em;text-decoration:none;white-space:nowrap}
+.hd-tel{
+  display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border-radius:999px;
+  background:var(--string);color:var(--ink);font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap
+}
+
+/* hero: the racket string bed is the one memorable motif */
+.hero{
+  position:relative;background:var(--ink);color:var(--white);overflow:hidden;
+  padding:36px 0 0;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(90deg,rgba(242,194,48,.16) 0 1px,transparent 1px 22px),
+    repeating-linear-gradient(0deg,rgba(242,194,48,.16) 0 1px,transparent 1px 22px);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.15) 85%);
+  mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.15) 85%);
+}
+.hero .wrap{position:relative}
+.hero-tag{
+  display:inline-block;background:var(--string);color:var(--ink);
+  font-weight:700;font-size:13px;line-height:1;padding:8px 12px;border-radius:4px;margin-bottom:18px
+}
+.hero h1{font-size:clamp(30px,8.4vw,46px);font-weight:900;letter-spacing:.01em}
+.hero h1 span{display:block}
+.hero-lead{margin-top:16px;color:#D9DEEA;font-size:15px}
+.hero-stars{
+  margin-top:20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  font-size:13px;color:#D9DEEA
+}
+.hero-stars b{color:var(--string);font-size:20px;letter-spacing:.08em}
+.hero-img{position:relative;margin-top:28px}
+.hero-img img{width:100%;aspect-ratio:4/3;object-fit:cover;border-top-left-radius:28px;border-top-right-radius:28px}
+
+/* buttons */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;
+  border-radius:10px;font-family:var(--head);font-weight:700;font-size:17px;text-decoration:none;text-align:center;
+  border:2px solid transparent
+}
+.btn-main{background:var(--string);color:var(--ink);box-shadow:0 3px 0 var(--string-deep)}
+.btn-sub{background:transparent;color:var(--white);border-color:rgba(255,255,255,.55)}
+.btn-line{background:var(--white);color:var(--ink);border-color:var(--ink)}
+.btn-stack{display:grid;gap:12px;margin-top:24px}
+.hero .btn-stack{margin:26px 0 30px}
+.btn small{display:block;font-size:12px;font-weight:500;opacity:.8}
+
+/* sections */
+section{padding:60px 0}
+.sec-title{font-size:clamp(24px,6.4vw,32px);font-weight:900;text-align:left}
+.sec-title::after{
+  content:"";display:block;width:64px;height:6px;margin-top:14px;border-radius:3px;
+  background:repeating-linear-gradient(90deg,var(--string) 0 8px,transparent 8px 12px)
+}
+.sec-lead{margin-top:18px;color:var(--ink-soft)}
+
+/* featured (イチオシ) */
+.pick{background:var(--white);border-top:6px solid var(--string)}
+.pick-badge{
+  display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-weight:900;font-size:14px;
+  color:var(--ink);background:var(--string);padding:7px 14px;border-radius:999px;margin-bottom:16px
+}
+.pick-img{margin:26px -20px 0}
+.pick-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick-cards{display:grid;gap:16px;margin-top:28px}
+.pick-card{border:2px solid var(--ink);border-radius:14px;padding:22px 20px;background:var(--shuttle)}
+.pick-card h3{font-size:21px;font-weight:900}
+.pick-card p{margin-top:10px;color:var(--ink-soft)}
+.pick-card.hot{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.pick-card.hot p{color:#D9DEEA}
+.pick-card.hot h3{color:var(--string)}
+.pick-points{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
+.pick-points li{position:relative;padding-left:30px;font-weight:500}
+.pick-points li::before{
+  content:"";position:absolute;left:0;top:.55em;width:18px;height:18px;border-radius:50%;
+  background:var(--court);
+  box-shadow:inset 0 0 0 5px var(--court),inset 0 0 0 9px var(--white)
+}
+
+/* strengths */
+.str{background:var(--mist)}
+.str-list{display:grid;gap:14px;margin-top:28px}
+.str-item{background:var(--white);border-radius:14px;padding:22px 20px;border-left:8px solid var(--court)}
+.str-item h3{font-size:19px;font-weight:700}
+.str-item p{margin-top:8px;color:var(--ink-soft);font-size:15px}
+.str-img{margin-top:28px}
+.str-img img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px}
+
+/* review */
+.rv-box{
+  margin-top:28px;background:var(--white);border:2px solid var(--ink);border-radius:14px;padding:24px 20px;position:relative
+}
+.rv-stars{color:var(--string-deep);font-size:22px;letter-spacing:.1em;line-height:1}
+.rv-box p{margin-top:14px}
+.rv-src{margin-top:14px;font-size:13px;color:var(--ink-soft)}
+
+/* shop info */
+.info{background:var(--white)}
+.tbl{width:100%;border-collapse:collapse;margin-top:28px;font-size:15px}
+.tbl th,.tbl td{padding:16px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl th{width:7.2em;font-weight:700;color:var(--court);white-space:nowrap}
+.tbl a{color:var(--ink);word-break:break-all}
+.map{margin-top:28px;border-radius:14px;overflow:hidden;border:2px solid var(--ink);aspect-ratio:4/3;background:var(--mist)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* final CTA */
+.cta{background:var(--ink);color:var(--white);text-align:left;position:relative;overflow:hidden}
+.cta::before{
+  content:"";position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(90deg,rgba(242,194,48,.12) 0 1px,transparent 1px 22px),
+    repeating-linear-gradient(0deg,rgba(242,194,48,.12) 0 1px,transparent 1px 22px);
+}
+.cta .wrap{position:relative}
+.cta h2{font-size:clamp(24px,6.6vw,34px);font-weight:900}
+.cta p{margin-top:14px;color:#D9DEEA}
+.cta .tel-big{
+  display:block;margin-top:22px;font-family:var(--head);font-weight:900;font-size:clamp(30px,9vw,44px);
+  color:var(--string);text-decoration:none;letter-spacing:.02em
+}
+.cta .closed{margin-top:4px;font-size:14px;color:#D9DEEA}
+
+footer{background:#0C1428;color:#AEB6C9;text-align:center;font-size:12px;padding:22px 20px}
+
+/* bottom nav (mobile-fixed) */
+.bn{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--white);
+  border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(4,1fr);
+  padding-bottom:env(safe-area-inset-bottom,0px)
+}
+.bn a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:62px;
+  font-size:11px;font-weight:700;text-decoration:none;color:var(--ink)
+}
+.bn a + a{border-left:1px solid var(--line)}
+.bn .ico{font-size:20px;line-height:1}
+.bn a.tel{background:var(--string)}
+
+@media (min-width:720px){
+  body{font-size:17px}
+  .hero{padding-top:56px}
+  .hero .btn-stack,.btn-stack.row{grid-template-columns:1fr 1fr}
+  .pick-img{margin:30px 0 0}
+  .pick-img img{border-radius:16px}
+  .pick-cards{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hd-in">
+    <a class="logo" href="#top">スポーツ工房ネクスト</a>
+    <a class="hd-tel" href="tel:0227819252" aria-label="電話をかける 022-781-9252">📞 電話する</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <span class="hero-tag">仙台市宮城野区｜火曜定休</span>
+    <h1><span>バドミントン用品と</span><span>ガット張替なら、</span><span>ネクストへ。</span></h1>
+    <p class="hero-lead">張替えは1時間かからず、仕上がりは丁寧。「速くて丁寧です」とお客様から評価をいただいています。</p>
+    <p class="hero-stars"><b aria-label="口コミ評価 5つ星">★★★★★</b><span>お客様の口コミより</span></p>
+    <div class="btn-stack">
+      <a class="btn btn-main" href="tel:0227819252"><span>📞 022-781-9252<small>電話でガット張替をご相談</small></span></a>
+      <a class="btn btn-sub" href="#pick">イチオシの商品を見る</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hero-img">
+      <img src="images/hero.jpg" alt="スポーツ工房ネクストのバドミントンラケットとガット張替の様子" width="800" height="600">
+    </div>
+  </div>
+</div>
+
+<!-- イチオシ -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="pick-badge">★ イチオシ</span>
+    <h2 class="sec-title">バドミントン用品と<br>ガット張替</h2>
+    <p class="sec-lead">ラケットの打球感を決めるのは、ガットの張り。ネクストはバドミントン用品の品揃えと、ガット張替に力を入れているお店です。</p>
+
+    <div class="pick-img">
+      <img src="images/ichioshi.jpg" alt="スポーツ工房ネクストのバドミントン用品とガット" width="800" height="600" loading="lazy">
+    </div>
+
+    <div class="pick-cards">
+      <div class="pick-card hot">
+        <h3>ガット張替</h3>
+        <p>張替えは1時間かからずに仕上がります。待ち時間が短いので、練習や試合の前でも相談しやすいのが魅力です。</p>
+      </div>
+      <div class="pick-card">
+        <h3>バドミントン用品</h3>
+        <p>プレーに欠かせないバドミントン用品を取り揃えています。選び方もお気軽にご相談ください。</p>
+      </div>
+    </div>
+
+    <ul class="pick-points">
+      <li>張替えが速い。1時間かからない</li>
+      <li>接客が丁寧で、初めてでも相談しやすい</li>
+      <li>「次回もお願いしたい」と思える仕上がり</li>
+    </ul>
+
+    <div class="btn-stack row">
+      <a class="btn btn-main" href="tel:0227819252"><span>📞 電話で相談する<small>022-781-9252</small></span></a>
+      <a class="btn btn-line" href="https://www.sportsknextt.com/contact" target="_blank" rel="noopener">フォームで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="str" id="strength">
+  <div class="wrap">
+    <h2 class="sec-title">ネクストが選ばれる理由</h2>
+    <div class="str-list">
+      <div class="str-item">
+        <h3>1時間かからないスピード張替</h3>
+        <p>「張り替えも1時間かからなかった」という口コミのとおり、スピーディーに対応します。</p>
+      </div>
+      <div class="str-item">
+        <h3>丁寧で親切な接客</h3>
+        <p>初めてのご来店でも安心。「接客も丁寧で次回もお願いしたい」とのお声をいただいています。</p>
+      </div>
+      <div class="str-item">
+        <h3>ソフトテニスのガット張替にも対応</h3>
+        <p>バドミントンだけでなく、ソフトテニスのガット張替をご利用のお客様もいらっしゃいます。</p>
+      </div>
+    </div>
+    <div class="str-img">
+      <img src="images/service.jpg" alt="スポーツ工房ネクストの店内とスタッフの接客風景" width="800" height="500" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section id="review">
+  <div class="wrap">
+    <h2 class="sec-title">お客様の声</h2>
+    <div class="rv-box">
+      <div class="rv-stars" aria-label="5つ星">★★★★★</div>
+      <p>初めてネクストさんでソフトテニスのガットを張り替えて貰ったのですが接客も丁寧で次回もお願いしたいと思いました。張り替えも1時間かからなかったです。本当におすすめのお店です。</p>
+      <p>いつも使わせて頂いています❗<br>速くて丁寧です。</p>
+      <p class="rv-src">お客様の口コミより</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="info" id="info">
+  <div class="wrap">
+    <h2 class="sec-title">店舗情報</h2>
+    <table class="tbl">
+      <tr><th scope="row">店名</th><td>スポーツ工房ネクスト</td></tr>
+      <tr><th scope="row">代表者</th><td>村田 貴洋</td></tr>
+      <tr><th scope="row">住所</th><td>宮城県仙台市宮城野区出花２丁目７０−６</td></tr>
+      <tr><th scope="row">電話番号</th><td><a href="tel:0227819252">022-781-9252</a></td></tr>
+      <tr><th scope="row">定休日</th><td>火曜日</td></tr>
+      <tr><th scope="row">メール</th><td><a href="mailto:sports.k.nextt@gmail.com">sports.k.nextt@gmail.com</a></td></tr>
+      <tr><th scope="row">お問い合わせ</th><td><a href="https://www.sportsknextt.com/contact" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th scope="row">公式サイト</th><td><a href="http://sportsknextt.com/" target="_blank" rel="noopener">sportsknextt.com</a></td></tr>
+      <tr><th scope="row">SNS</th><td><a href="https://www.sportsknextt.com/" target="_blank" rel="noopener">https://www.sportsknextt.com/</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="スポーツ工房ネクストの地図" src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E5%AE%AE%E5%9F%8E%E9%87%8E%E5%8C%BA%E5%87%BA%E8%8A%B1%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%97%EF%BC%90%E2%88%92%EF%BC%96&output=embed&hl=ja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 最後のCTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>ガット張替・バドミントン用品のご相談は、お電話で。</h2>
+    <p>ご来店前に電話でお問い合わせいただくと、スムーズです。</p>
+    <a class="tel-big" href="tel:0227819252">022-781-9252</a>
+    <p class="closed">定休日：火曜日</p>
+    <div class="btn-stack row">
+      <a class="btn btn-main" href="tel:0227819252">📞 電話をかける</a>
+      <a class="btn btn-sub" href="https://www.sportsknextt.com/contact" target="_blank" rel="noopener">フォームで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© スポーツ工房ネクスト</footer>
+
+<nav class="bn" aria-label="固定ナビゲーション">
+  <a class="tel" href="tel:0227819252"><span class="ico">📞</span>電話</a>
+  <a href="https://www.sportsknextt.com/contact" target="_blank" rel="noopener"><span class="ico">✉️</span>問い合わせ</a>
+  <a href="#info"><span class="ico">📍</span>アクセス</a>
+  <a href="mailto:sports.k.nextt@gmail.com"><span class="ico">📧</span>メール</a>
+</nav>
+
+</body>
+</html>
