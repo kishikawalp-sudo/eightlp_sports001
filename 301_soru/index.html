@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SoL SorriSo（ソルソリッソ）｜仙台市泉区のフットサル専門店</title>
+<meta name="description" content="仙台市泉区のフットサル専門店 SoL SorriSo（ソルソリッソ）。初心者の方も安心、シューズのサイズ確認からゆっくり丁寧にご案内します。">
+<style>
+:root{
+  --navy:#0b1f3a;
+  --navy2:#14325c;
+  --green:#14a85a;
+  --green-dark:#0e8447;
+  --orange:#ff7a1a;
+  --orange-dark:#e45f00;
+  --bg:#f4f7fb;
+  --text:#1c2733;
+  --white:#fff;
+  --gold:#f5b301;
+  --header-h:56px;
+  --nav-h:64px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.75;
+  font-size:16px;
+  padding-top:calc(var(--header-h) + env(safe-area-inset-top, 0px));
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom, 0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+section{padding:48px 0}
+h1,h2,h3,p{margin:0}
+
+/* ---------- Header ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:var(--navy);color:var(--white);
+  padding-top:env(safe-area-inset-top, 0px);
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+.header-in{
+  max-width:720px;margin:0 auto;height:var(--header-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px 0 16px;gap:8px;
+}
+.logo{font-weight:800;font-size:17px;letter-spacing:.02em;line-height:1.2}
+.logo small{display:block;font-size:10px;font-weight:500;opacity:.8;letter-spacing:.08em}
+.header-tel{
+  display:flex;align-items:center;gap:6px;
+  background:var(--orange);color:var(--white);
+  font-weight:800;font-size:14px;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:var(--navy);color:var(--white);padding:0}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.55}
+.hero-copy{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:24px 18px 28px;
+  background:linear-gradient(180deg,rgba(11,31,58,.1) 0%,rgba(11,31,58,.92) 100%);
+}
+.hero-badge{
+  align-self:flex-start;
+  background:var(--green);color:var(--white);
+  font-weight:800;font-size:13px;padding:4px 12px;border-radius:4px;margin-bottom:10px;
+}
+.hero h1{font-size:27px;line-height:1.35;font-weight:900;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{margin-top:8px;font-size:14px;opacity:.95}
+.hero-cta{padding:20px 18px 26px;background:var(--navy)}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:16px 18px;border-radius:12px;
+  font-weight:800;font-size:17px;text-align:center;
+  box-shadow:0 4px 0 rgba(0,0,0,.18);
+}
+.btn-tel{background:var(--orange);color:var(--white);box-shadow:0 4px 0 var(--orange-dark)}
+.btn-sub{background:var(--white);color:var(--navy);margin-top:12px;box-shadow:0 4px 0 #c6d1e0}
+.btn-note{font-size:12px;text-align:center;margin-top:10px;opacity:.85}
+
+/* ---------- Section heading ---------- */
+.sec-label{
+  display:block;text-align:center;
+  color:var(--green);font-weight:800;font-size:12px;letter-spacing:.2em;margin-bottom:6px;
+}
+.sec-title{text-align:center;font-size:24px;font-weight:900;color:var(--navy);line-height:1.4;margin-bottom:28px}
+.sec-title::after{
+  content:"";display:block;width:48px;height:4px;border-radius:2px;
+  background:var(--orange);margin:12px auto 0;
+}
+
+/* ---------- Featured (イチオシ) ---------- */
+.featured{background:var(--white);position:relative}
+.ichioshi-tag{
+  display:inline-block;background:var(--orange);color:var(--white);
+  font-weight:900;font-size:14px;padding:5px 16px;border-radius:999px;margin-bottom:12px;
+}
+.featured-card{
+  border:3px solid var(--green);border-radius:18px;overflow:hidden;background:var(--white);
+  box-shadow:0 8px 24px rgba(20,168,90,.18);
+}
+.featured-card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.featured-body{padding:22px 18px 24px}
+.featured-body h3{font-size:23px;font-weight:900;color:var(--navy);line-height:1.4;margin-bottom:12px}
+.featured-body h3 span{color:var(--green)}
+.featured-body p{font-size:15px;margin-bottom:12px}
+.check{list-style:none;margin:16px 0 0;padding:0}
+.check li{
+  position:relative;padding:10px 10px 10px 40px;margin-bottom:8px;
+  background:var(--bg);border-radius:10px;font-weight:700;font-size:15px;
+}
+.check li::before{
+  content:"✓";position:absolute;left:10px;top:50%;transform:translateY(-50%);
+  width:22px;height:22px;border-radius:50%;
+  background:var(--green);color:var(--white);
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;
+}
+
+/* ---------- Strengths ---------- */
+.strengths{background:var(--bg)}
+.points{display:grid;gap:16px}
+.point{
+  background:var(--white);border-radius:16px;padding:22px 18px 20px;
+  box-shadow:0 4px 14px rgba(11,31,58,.08);position:relative;
+}
+.point-num{
+  position:absolute;top:-14px;left:16px;
+  background:var(--navy);color:var(--white);
+  font-weight:900;font-size:13px;padding:3px 12px;border-radius:999px;letter-spacing:.08em;
+}
+.point h3{font-size:18px;font-weight:900;color:var(--navy);margin:6px 0 8px}
+.point p{font-size:14.5px}
+.fitting-img{margin-top:22px;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(11,31,58,.12)}
+.fitting-img img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* ---------- Review ---------- */
+.review{background:var(--navy);color:var(--white)}
+.review .sec-title{color:var(--white)}
+.review-card{
+  background:var(--white);color:var(--text);border-radius:16px;padding:24px 20px;position:relative;
+}
+.review-card::before{
+  content:"“";position:absolute;top:-6px;left:14px;
+  font-size:72px;line-height:1;color:var(--green);font-family:Georgia,serif;
+}
+.stars{color:var(--gold);font-size:22px;letter-spacing:.1em;margin-bottom:8px;padding-left:4px}
+.review-card p{font-size:15px;line-height:1.85}
+.review-from{margin-top:12px;font-size:12px;color:#6b7785;text-align:right}
+
+/* ---------- Info ---------- */
+.info{background:var(--white)}
+.info-table{width:100%;border-collapse:collapse;font-size:15px}
+.info-table th,.info-table td{padding:14px 10px;border-bottom:1px solid #e1e8f0;text-align:left;vertical-align:top}
+.info-table th{width:28%;color:var(--navy);font-weight:800;white-space:nowrap;background:var(--bg)}
+.info-table td a{color:var(--green-dark);font-weight:700;text-decoration:underline;word-break:break-all}
+.info-table td a.tel{color:var(--orange-dark);font-size:18px;text-decoration:none}
+.map{margin-top:24px;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(11,31,58,.12)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* ---------- Final CTA ---------- */
+.cta{
+  background:linear-gradient(135deg,var(--green) 0%,var(--navy2) 100%);
+  color:var(--white);text-align:center;
+}
+.cta h2{font-size:23px;font-weight:900;line-height:1.5;margin-bottom:10px}
+.cta p{font-size:14.5px;margin-bottom:22px;opacity:.95}
+.cta .btn-sub{margin-top:12px}
+.tel-big{display:block;font-size:30px;font-weight:900;letter-spacing:.03em;margin-bottom:4px}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--navy);color:rgba(255,255,255,.75);text-align:center;font-size:12px;padding:22px 18px}
+
+/* ---------- Bottom nav ---------- */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:100;
+  background:var(--white);border-top:1px solid #d7dfea;
+  padding-bottom:env(safe-area-inset-bottom, 0px);
+  box-shadow:0 -2px 10px rgba(0,0,0,.12);
+}
+.bottom-nav-in{max-width:720px;margin:0 auto;height:var(--nav-h);display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr}
+.bottom-nav a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font-size:11px;font-weight:800;color:var(--navy);
+}
+.bottom-nav a span.ico{font-size:20px;line-height:1}
+.bottom-nav a.nav-tel{background:var(--orange);color:var(--white)}
+
+@media (min-width:600px){
+  .hero h1{font-size:34px}
+  .points{grid-template-columns:repeat(3,1fr)}
+  .wrap{padding:0 24px}
+}
+@media (max-width:360px){
+  .hero h1{font-size:23px}
+  .logo{font-size:15px}
+  .header-tel{font-size:13px;padding:7px 10px}
+}
+</style>
+</head>
+<body>
+
+<!-- 固定ヘッダー -->
+<header class="header">
+  <div class="header-in">
+    <div class="logo">SoL SorriSo<small>ソルソリッソ｜フットサル専門店</small></div>
+    <a class="header-tel" href="tel:0227258234" aria-label="電話をかける">📞 電話する</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ヒーロー -->
+<section class="hero" id="top">
+  <img class="hero-img" src="images/hero.jpg" alt="SoL SorriSo ソルソリッソ 店舗・フットサルシューズのイメージ" width="800" height="600">
+  <div class="hero-copy">
+    <span class="hero-badge">仙台市泉区｜フットサル専門店</span>
+    <h1>はじめてのフットサルも、<br><em>ゆっくり丁寧に</em>ご案内。</h1>
+    <p class="hero-sub">シューズのサイズ確認まで、安心してお任せください。</p>
+  </div>
+</section>
+<div class="hero-cta">
+  <div class="wrap">
+    <a class="btn btn-tel" href="tel:0227258234">📞 022-725-8234 に電話する</a>
+    <a class="btn btn-sub" href="mailto:solsorriso0401@gmail.com">✉ メールで問い合わせる</a>
+    <p class="btn-note">お気軽にご相談ください</p>
+  </div>
+</div>
+
+<!-- イチオシ -->
+<section class="featured" id="ichioshi">
+  <div class="wrap">
+    <span class="sec-label">RECOMMENDED</span>
+    <h2 class="sec-title">当店のイチオシ</h2>
+    <div class="featured-card">
+      <img src="images/ichioshi.jpg" alt="フットサル専門店 SoL SorriSo のフットサルシューズ・用品" width="800" height="500">
+      <div class="featured-body">
+        <span class="ichioshi-tag">★ イチオシ</span>
+        <h3>フットサルのことなら、<br><span>フットサル専門店</span>へ。</h3>
+        <p>SoL SorriSo（ソルソリッソ）は、フットサルに特化した専門店です。これから始める初心者の方から、もっと上を目指したい方まで、フットサルのことを安心して相談できます。</p>
+        <p>大切なシューズ選びも、スタッフがひとつひとつ丁寧にサポート。サイズの確認もゆっくり時間をかけて行います。</p>
+        <ul class="check">
+          <li>フットサル初心者の方も大歓迎</li>
+          <li>サイズ確認をゆっくり丁寧に</li>
+          <li>スタッフの親身な接客が好評</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:22px">
+      <a class="btn btn-tel" href="tel:0227258234">📞 まずは電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- 選ばれる理由 -->
+<section class="strengths" id="strengths">
+  <div class="wrap">
+    <span class="sec-label">REASONS</span>
+    <h2 class="sec-title">ソルソリッソが<br>選ばれる3つの理由</h2>
+    <div class="points">
+      <div class="point">
+        <span class="point-num">POINT 01</span>
+        <h3>フットサル専門店だから</h3>
+        <p>扱うのはフットサルのこと。専門店ならではの視点で、あなたにぴったりの一足・一品を一緒に探します。</p>
+      </div>
+      <div class="point">
+        <span class="point-num">POINT 02</span>
+        <h3>初心者にもやさしく丁寧</h3>
+        <p>「何を選べばいいかわからない」という初心者の方にも、ひとつずつ分かりやすく教えてくれると好評です。</p>
+      </div>
+      <div class="point">
+        <span class="point-num">POINT 03</span>
+        <h3>ゆっくりサイズ確認</h3>
+        <p>シューズは足に合うことが何より大切。急かさず、じっくりサイズを確認できるので安心です。</p>
+      </div>
+    </div>
+    <div class="fitting-img">
+      <img src="images/service.jpg" alt="スタッフがシューズのサイズを丁寧に確認する接客のイメージ" width="800" height="500" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- お客様の声 -->
+<section class="review" id="review">
+  <div class="wrap">
+    <span class="sec-label" style="color:var(--gold)">VOICE</span>
+    <h2 class="sec-title">お客様の声</h2>
+    <div class="review-card">
+      <div class="stars" aria-label="5つ星">★★★★★</div>
+      <p>フットサルメーカー初心者の私にも優しく丁寧に教えてくれました。とても店員さんの対応が素晴らしく、ゆっくりとシューズのサイズの確認ができました。とても満足できる買い物ができ、某大手スポーツ店より有意義でした。</p>
+      <p class="review-from">― お客様のクチコミより</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="info" id="access">
+  <div class="wrap">
+    <span class="sec-label">SHOP INFO</span>
+    <h2 class="sec-title">店舗情報</h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>SoL SorriSo（ソルソリッソ）</td></tr>
+      <tr><th>住所</th><td>宮城県仙台市泉区市名坂字東裏77<br>齋藤ビル1階</td></tr>
+      <tr><th>電話番号</th><td><a class="tel" href="tel:0227258234">022-725-8234</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:solsorriso0401@gmail.com">solsorriso0401@gmail.com</a></td></tr>
+      <tr><th>公式HP</th><td><a href="https://solsorriso.com/" target="_blank" rel="noopener">https://solsorriso.com/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://solsorriso.com/" target="_blank" rel="noopener">お問い合わせフォームはこちら</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe
+        title="SoL SorriSo の地図"
+        src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E6%B3%89%E5%8C%BA%E5%B8%82%E5%90%8D%E5%9D%82%E5%AD%97%E6%9D%B1%E8%A3%8F77%20%E9%BD%8B%E8%97%A4%E3%83%93%E3%83%AB&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>フットサルを始めるなら、<br>まずはご相談ください。</h2>
+    <p>シューズ選びからゆっくり丁寧に。<br>ご来店・お問い合わせをお待ちしています。</p>
+    <a class="tel-big" href="tel:0227258234">📞 022-725-8234</a>
+    <a class="btn btn-tel" href="tel:0227258234" style="margin-top:14px">電話で問い合わせる</a>
+    <a class="btn btn-sub" href="https://solsorriso.com/" target="_blank" rel="noopener">お問い合わせフォーム</a>
+    <a class="btn btn-sub" href="mailto:solsorriso0401@gmail.com">✉ メールで問い合わせる</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  &copy; SoL SorriSo（ソルソリッソ）｜宮城県仙台市泉区市名坂字東裏77 齋藤ビル1階
+</footer>
+
+<!-- 固定ボトムナビ -->
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <div class="bottom-nav-in">
+    <a class="nav-tel" href="tel:0227258234"><span class="ico">📞</span>電話する</a>
+    <a href="mailto:solsorriso0401@gmail.com"><span class="ico">✉</span>メール</a>
+    <a href="https://solsorriso.com/" target="_blank" rel="noopener"><span class="ico">📝</span>問合せ</a>
+    <a href="#access"><span class="ico">📍</span>アクセス</a>
+  </div>
+</nav>
+
+</body>
+</html>
