@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ourthing 山と暮らしの道具店｜栗原市の登山用品・アウトドア用品店</title>
+<meta name="description" content="宮城県栗原市の登山・キャンプ用品店。ourthing 山と暮らしの道具店は、気さくな店主が一つひとつ丁寧にご案内。栗駒山の帰りにもぜひ。">
+<style>
+:root{
+  --forest:#2f4a3a;
+  --forest-dark:#1f3326;
+  --moss:#6b8e5a;
+  --sand:#f6f1e7;
+  --ink:#26302a;
+  --accent:#d9792b;
+  --accent-dark:#b86118;
+  --line:#e2dccd;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Meiryo",sans-serif;
+  color:var(--ink);background:#fff;line-height:1.8;font-size:16px;
+  padding-top:56px;padding-bottom:64px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.5rem;line-height:1.4;text-align:center;color:var(--forest);margin-bottom:8px}
+.eyebrow{display:block;text-align:center;font-size:.75rem;letter-spacing:.2em;color:var(--moss);font-weight:700;margin-bottom:6px}
+.lead{text-align:center;margin-bottom:28px;font-size:.95rem}
+
+/* header */
+.header{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;background:var(--forest-dark);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;padding:0 14px;padding-top:env(safe-area-inset-top,0px)}
+.header .logo{font-weight:700;font-size:.9rem;line-height:1.2}
+.header .logo small{display:block;font-weight:400;font-size:.65rem;opacity:.8}
+.header .tel{background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.85rem;padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--forest-dark);padding:0}
+.hero img{width:100%;height:340px;object-fit:cover;opacity:.55}
+.hero .copy{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px}
+.hero .badge{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);padding:4px 14px;border-radius:999px;font-size:.78rem;margin-bottom:14px}
+.hero h1{font-size:1.65rem;line-height:1.45;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.hero h1 span{display:block;font-size:.95rem;font-weight:400;margin-top:10px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:15px 20px;border-radius:10px;font-size:1rem}
+.btn-main{background:var(--accent);color:#fff;box-shadow:0 4px 0 var(--accent-dark)}
+.btn-sub{background:#fff;color:var(--forest);border:2px solid var(--forest);margin-top:12px}
+.hero-cta{background:var(--forest-dark);padding:18px 20px 26px}
+.hero-cta .btn{max-width:420px;margin:0 auto}
+
+/* ichioshi */
+.ichioshi{background:var(--sand)}
+.feature-img{border-radius:14px;overflow:hidden;margin-bottom:22px;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.feature-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.tag{display:inline-block;background:var(--accent);color:#fff;font-size:.78rem;font-weight:700;padding:3px 12px;border-radius:4px;margin-bottom:10px}
+.ichioshi h3{font-size:1.35rem;line-height:1.5;color:var(--forest);margin-bottom:12px}
+.points{list-style:none;margin:20px 0 24px}
+.points li{background:#fff;border-left:5px solid var(--moss);padding:14px 16px;margin-bottom:10px;border-radius:0 8px 8px 0;font-size:.95rem}
+.points li b{display:block;color:var(--forest);margin-bottom:2px}
+
+/* strengths */
+.cards{display:grid;grid-template-columns:1fr;gap:14px}
+.card{border:1px solid var(--line);border-radius:12px;padding:20px;background:#fff}
+.card .num{font-size:.75rem;color:var(--moss);font-weight:700;letter-spacing:.15em}
+.card h3{font-size:1.1rem;color:var(--forest);margin:2px 0 6px}
+.card p{font-size:.92rem}
+.service-img{border-radius:14px;overflow:hidden;margin-top:24px}
+.service-img img{width:100%;aspect-ratio:16/9;object-fit:cover}
+
+/* reviews */
+.reviews{background:var(--sand)}
+.review{background:#fff;border-radius:12px;padding:20px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.stars{color:#e8a317;font-size:1.1rem;letter-spacing:2px;margin-bottom:6px}
+.review p{font-size:.92rem}
+.review .who{margin-top:8px;font-size:.78rem;color:#7a7a6d}
+
+/* info */
+.info table{width:100%;border-collapse:collapse;font-size:.92rem}
+.info th,.info td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info th{width:28%;color:var(--forest);white-space:nowrap}
+.info td a{color:var(--accent-dark);word-break:break-all}
+.map{margin-top:22px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{width:100%;height:300px;border:0;display:block}
+
+/* cta */
+.cta{background:var(--forest);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{margin-bottom:22px;font-size:.95rem}
+.cta .btn{max-width:420px;margin:0 auto}
+.cta .btn-sub{border-color:#fff;background:transparent;color:#fff}
+.tel-big{display:block;font-size:1.8rem;font-weight:700;margin:6px 0 2px}
+footer{background:var(--forest-dark);color:#cfd8d1;text-align:center;font-size:.75rem;padding:22px 20px}
+
+/* bottom nav */
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;background:#fff;border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 -2px 10px rgba(0,0,0,.08)}
+.bottom-nav a{flex:1;text-align:center;text-decoration:none;font-size:.7rem;font-weight:700;color:var(--forest);padding:9px 2px;line-height:1.3}
+.bottom-nav a span{display:block;font-size:1.15rem}
+.bottom-nav a.call{background:var(--accent);color:#fff}
+
+@media(min-width:640px){
+  .hero img{height:460px}
+  .hero h1{font-size:2.2rem}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  h2{font-size:1.8rem}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">ourthing<small>山と暮らしの道具店</small></div>
+  <a class="tel" href="tel:0228248305">📞 電話する</a>
+</header>
+
+<main>
+<!-- HERO -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="ourthing 山と暮らしの道具店 店舗・登山用品の様子">
+  <div class="copy">
+    <span class="badge">宮城県栗原市｜栗駒山のふもとの道具店</span>
+    <h1>山を歩く道具は、<br>顔の見えるお店で。<span>登山・キャンプ用品を、気さくな店主がご案内</span></h1>
+  </div>
+</div>
+<div class="hero-cta">
+  <a class="btn btn-main" href="tel:0228248305">📞 0228-24-8305 に電話する</a>
+</div>
+
+<!-- ICHIOSHI -->
+<section class="ichioshi" id="ichioshi">
+  <div class="wrap">
+    <span class="eyebrow">RECOMMEND</span>
+    <h2>イチオシは<br>登山用品・アウトドア用品</h2>
+    <p class="lead">栗駒山の麓だからこそ分かる、<br>本当に使える山の道具をそろえています。</p>
+
+    <div class="feature-img">
+      <img src="images/ichioshi.jpg" alt="登山用品・アウトドア用品の品揃え">
+    </div>
+
+    <span class="tag">いちばんのおすすめ</span>
+    <h3>はじめての一足・一本も、<br>ベテランの買い足しも。</h3>
+    <p>登山、キャンプ用品を中心に、小さな店内にギアがぎっしり。ネットでは分かりにくい使い心地や選び方を、お店の方が一つひとつ丁寧に説明します。「何を選べばいいか分からない」からでも、気軽にお越しください。</p>
+
+    <ul class="points">
+      <li><b>① 登山・キャンプ用品が豊富</b>栗駒山へ向かう前にも、帰りにも立ち寄れる品揃え。</li>
+      <li><b>② 買う前に相談できる</b>用途や好みを聞きながら、ぴったりの道具を一緒に選びます。</li>
+      <li><b>③ ここでしか出会えない品も</b>地元限定品や手作り手芸品、山の思い出になるTシャツなども。</li>
+    </ul>
+    <a class="btn btn-main" href="tel:0228248305">📞 商品の在庫・相談はお電話で</a>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section id="strengths">
+  <div class="wrap">
+    <span class="eyebrow">STRENGTHS</span>
+    <h2>ourthing が選ばれる3つの理由</h2>
+    <p class="lead">小さなお店だから、一人ひとりに向き合えます。</p>
+    <div class="cards">
+      <div class="card"><div class="num">POINT 01</div><h3>親切で丁寧な商品説明</h3><p>お客様の声でも「好印象」と評判。道具の特徴や使い方まで、分かりやすくご案内します。</p></div>
+      <div class="card"><div class="num">POINT 02</div><h3>気さくな店主との会話</h3><p>入りやすい雰囲気で、初めての方も安心。道具の話も山の話も、気軽にどうぞ。</p></div>
+      <div class="card"><div class="num">POINT 03</div><h3>ギアだけじゃない品揃え</h3><p>登山・キャンプ用品のほか、地元限定品や手作り手芸品も。見て回るだけでも楽しいお店です。</p></div>
+    </div>
+    <div class="service-img">
+      <img src="images/service.jpg" alt="店内で接客・商品を説明するスタッフ">
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <span class="eyebrow">VOICE</span>
+    <h2>お客様の声</h2>
+    <p class="lead">Googleクチコミより</p>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>昨日お伺いしました。社長さん？が気さくで楽しかったです。また行きます。キャンプ道具はネットで訳わからない物を買うより、こちらで買った方がいいと思います。栗駒山の帰りTシャツを求めてよりました。お店も入りやすくてたくさんのギアもおいてあり欲しいものたくさん…お店の方も気さくに話してくださりいいお店でした!</p>
+      <div class="who">Googleクチコミ</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★<span style="color:#ccc">★</span></div>
+      <p>小さなお店でしたが、お店の方は親切に商品の説明してくださったり好印象でした。登山、キャンプ用品の他、地元限定品や手作り手芸品等あって良いお店でした。</p>
+      <div class="who">Googleクチコミ</div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info" id="info">
+  <div class="wrap">
+    <span class="eyebrow">SHOP INFO</span>
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>ourthing 山と暮らしの道具店</td></tr>
+      <tr><th>住所</th><td>宮城県栗原市栗駒岩ケ崎六日町95-2</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0228248305">0228-24-8305</a></td></tr>
+      <tr><th>定休日</th><td>毎週水曜日、第2・第4木曜日、不定休（農繁休業）</td></tr>
+      <tr><th>取扱商品</th><td>登山用品、キャンプ・アウトドア用品、地元限定品、手作り手芸品 ほか</td></tr>
+      <tr><th>ホームページ</th><td><a href="http://yamatokurashi.com/" target="_blank" rel="noopener">http://yamatokurashi.com/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:ourthing@yamatokurashi.com">ourthing@yamatokurashi.com</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="ourthing 山と暮らしの道具店 周辺地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E6%A0%97%E5%8E%9F%E5%B8%82%E6%A0%97%E9%A7%92%E5%B2%A9%E3%82%B1%E5%B4%8E%E5%85%AD%E6%97%A5%E7%94%BA95-2&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>在庫の確認・道具選びのご相談は、お電話でどうぞ。<br>定休日は水曜・第2第4木曜・不定休です。</p>
+    <a class="tel-big" href="tel:0228248305" style="color:#fff;text-decoration:none">0228-24-8305</a>
+    <a class="btn btn-main" href="tel:0228248305" style="margin-top:14px">📞 今すぐ電話する</a>
+    <a class="btn btn-sub" href="http://yamatokurashi.com/" target="_blank" rel="noopener">公式サイトを見る</a>
+  </div>
+</section>
+</main>
+
+<footer>© ourthing 山と暮らしの道具店</footer>
+
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <a href="#ichioshi"><span>⛰️</span>イチオシ</a>
+  <a href="#reviews"><span>💬</span>口コミ</a>
+  <a href="#info"><span>📍</span>店舗情報</a>
+  <a class="call" href="tel:0228248305"><span>📞</span>電話</a>
+</nav>
+
+</body>
+</html>
