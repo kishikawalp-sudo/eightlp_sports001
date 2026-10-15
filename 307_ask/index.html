@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ASK｜宮城県涌谷町のスケボー専門店｜初心者も安心</title>
+<meta name="description" content="宮城県涌谷町のスケボー専門店ASK。初心者にもていねいに説明、購入後のフォローも安心。お気軽にご来店ください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --concrete:#ebe8e2;
+  --paper:#f7f5f1;
+  --grip:#2a2d33;
+  --deck:#1d4f91;
+  --wheel:#ffc72c;
+  --line:#cfcac0;
+  --text:#262a30;
+  --sub:#5d626b;
+  --head-font:"Dela Gothic One","Noto Sans JP","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+  --body-font:"Noto Sans JP","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+  --head-h:56px;
+  --nav-h:60px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head-h) + 8px);-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--body-font);color:var(--text);background:var(--paper);line-height:1.8;font-size:16px;
+  padding-top:var(--head-h);padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px))}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--head-font);font-weight:400;line-height:1.35;margin:0}
+h2{font-size:26px;margin-bottom:20px}
+section{padding:56px 0}
+
+/* header */
+.site-head{position:fixed;top:0;left:0;right:0;z-index:50;height:var(--head-h);background:var(--grip);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;padding:0 14px 0 18px}
+.logo{font-family:var(--head-font);font-size:24px;letter-spacing:.06em;text-decoration:none}
+.head-tel{display:inline-flex;align-items:center;gap:6px;background:var(--wheel);color:var(--grip);font-weight:700;
+  text-decoration:none;font-size:15px;padding:8px 14px;border-radius:999px}
+
+/* hero */
+.hero{position:relative;padding:0;background:var(--grip);color:#fff;overflow:hidden}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#4a4f58}
+.hero-body{padding:28px 20px 40px;max-width:720px;margin:0 auto}
+.hero-area{display:inline-block;background:var(--wheel);color:var(--grip);font-weight:700;font-size:13px;padding:2px 12px;border-radius:3px;margin-bottom:14px}
+.hero h1{font-size:34px;line-height:1.3;margin-bottom:14px}
+.hero p{margin:0 0 24px;color:#e3e1dc;font-size:15px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 24px;border-radius:6px;
+  font-weight:700;font-size:17px;text-decoration:none;text-align:center}
+.btn-main{background:var(--wheel);color:var(--grip)}
+.btn-sub{background:transparent;border:2px solid #fff;color:#fff;margin-top:10px}
+.btn:focus-visible,.head-tel:focus-visible,.nav a:focus-visible{outline:3px solid var(--deck);outline-offset:2px}
+
+/* featured */
+.pick{background:var(--concrete)}
+.pick-tag{display:inline-block;background:var(--deck);color:#fff;font-weight:700;font-size:14px;padding:3px 14px;border-radius:3px;margin-bottom:12px}
+.pick h2{font-size:30px}
+.pick-img{border-radius:6px;margin:0 0 22px;width:100%;aspect-ratio:4/3;object-fit:cover;background:#b9b5ab}
+.pick-lead{font-size:17px;font-weight:500;margin:0 0 22px}
+.pick-points{list-style:none;margin:0 0 26px;padding:0;border-top:2px solid var(--grip)}
+.pick-points li{padding:14px 0 14px 0;border-bottom:1px solid var(--line)}
+.pick-points strong{display:block;font-size:17px;color:var(--deck)}
+.pick-points span{font-size:15px;color:var(--sub)}
+
+/* strengths */
+.str-list{display:grid;gap:14px}
+.str{background:#fff;border-left:6px solid var(--wheel);padding:16px 18px;border-radius:0 6px 6px 0}
+.str h3{font-family:var(--body-font);font-weight:700;font-size:18px;margin-bottom:4px}
+.str p{margin:0;font-size:15px;color:var(--sub)}
+.str.soon{border-left-color:var(--deck)}
+.service-img{margin-top:22px;border-radius:6px;width:100%;aspect-ratio:16/9;object-fit:cover;background:#b9b5ab}
+
+/* reviews */
+.reviews{background:var(--grip);color:#fff}
+.reviews h2{color:#fff}
+.rev{background:#383c44;border-radius:6px;padding:20px;margin-bottom:16px}
+.stars{color:var(--wheel);font-size:18px;letter-spacing:.08em;margin-bottom:6px}
+.rev p{margin:0 0 .9em;font-size:15px;color:#ecebe7}
+.rev p:last-child{margin-bottom:0}
+.rev-note{font-size:12px;color:#a9adb5;margin-top:4px}
+
+/* info */
+.info table{width:100%;border-collapse:collapse;background:#fff;font-size:15px}
+.info th,.info td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info th{width:30%;background:var(--concrete);font-weight:700;white-space:nowrap}
+.info td{word-break:break-all}
+.map{margin-top:22px;border:0;width:100%;height:300px;border-radius:6px;background:var(--concrete)}
+
+/* cta */
+.cta{background:var(--deck);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{margin:0 0 24px}
+.cta .btn-main{max-width:420px;margin:0 auto}
+.cta .btn-sub{max-width:420px;margin:10px auto 0}
+.tel-big{font-family:var(--head-font);font-size:32px;line-height:1.2}
+
+footer{background:var(--grip);color:#b9bcc3;text-align:center;font-size:13px;padding:24px 20px}
+
+/* bottom nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:50;height:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+  padding-bottom:env(safe-area-inset-bottom,0px);background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}
+.nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none;font-size:12px;font-weight:700;color:var(--grip)}
+.nav a .ic{font-size:20px;line-height:1}
+.nav a.call{background:var(--wheel)}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  h2{font-size:32px}
+  .hero{display:grid}
+  .hero-img{aspect-ratio:21/9}
+  .hero h1{font-size:44px}
+  .btn{display:inline-flex}
+  .btn-sub{margin-top:0;margin-left:10px}
+  .nav{display:none}
+  body{padding-bottom:0}
+  .str-list{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <a class="logo" href="#top">ASK</a>
+  <a class="head-tel" href="tel:0229435601" aria-label="電話をかける 0229-43-5601">📞 電話する</a>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-img" src="images/hero.jpg" alt="スケートボード専門店ASKの店内・スケートボード" width="1200" height="900">
+    <div class="hero-body">
+      <span class="hero-area">宮城県涌谷町｜スケボー専門店</span>
+      <h1>はじめてのスケボーは、<br>ASKで。</h1>
+      <p>何も分からなくて大丈夫。ひとつずつ、ていねいに説明します。買ったあとのフォローまで安心のスケボー専門店です。</p>
+      <a class="btn btn-main" href="tel:0229435601">📞 0229-43-5601 に電話する</a>
+      <a class="btn btn-sub" href="#info">場所・店舗情報を見る</a>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <span class="pick-tag">イチオシ</span>
+      <h2>スケボー専門店だから、<br>最初の一台を相談できる。</h2>
+      <img class="pick-img" src="images/ichioshi.jpg" alt="ASKで取り扱うスケートボード" width="1200" height="900" loading="lazy">
+      <p class="pick-lead">スケボーのことだけを扱う専門店。何を選べばいいか分からない初心者の方こそ、ぜひご来店ください。</p>
+      <ul class="pick-points">
+        <li><strong>初心者にも、ていねいでわかりやすい説明</strong><span>「スケボー初心者ですが、丁寧に説明してもらえて助かりました」（お客様の声）</span></li>
+        <li><strong>40代からの健康づくりにも</strong><span>「健康維持のため、気まぐれでスケボーを始めました」というお客様も、安心してお買い物できました。</span></li>
+        <li><strong>買って終わりにしない、アフターフォロー</strong><span>ねじ等のサービスなど、購入後も気にかけてくれると好評です。</span></li>
+      </ul>
+      <a class="btn btn-main" href="tel:0229435601">📞 まずは電話で相談する</a>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section id="strength">
+    <div class="wrap">
+      <h2>ASKが選ばれる理由</h2>
+      <div class="str-list">
+        <div class="str">
+          <h3>ゆっくり相談できる接客</h3>
+          <p>お客様のペースに合わせて、じっくり説明を受けながらお買い物ができます。</p>
+        </div>
+        <div class="str">
+          <h3>初心者の「分からない」に寄り添う</h3>
+          <p>道具選びからていねいに案内。何も知らない状態でも、気持ちよく買い物できたとの声をいただいています。</p>
+        </div>
+        <div class="str">
+          <h3>購入後も頼れるフォロー</h3>
+          <p>ねじ等のサービスなど、買ったあとも安心。今後も通いたくなるお店です。</p>
+        </div>
+        <div class="str soon">
+          <h3>パーク運営・スクールも予定</h3>
+          <p>近々パークの運営を予定（工事施工中）。ゆくゆくはスケボースクールの開校も目指しています。</p>
+        </div>
+      </div>
+      <img class="service-img" src="images/service.jpg" alt="ASKのスタッフがスケートボードについて説明する様子" width="1280" height="720" loading="lazy">
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="voice">
+    <div class="wrap">
+      <h2>お客様の声</h2>
+      <div class="rev">
+        <div class="stars" aria-label="5点満点中4点">★★★★</div>
+        <p>スケボー初心者ですが、丁寧に説明してもらえて助かりました。</p>
+      </div>
+      <div class="rev">
+        <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+        <p>40代ですが、健康維持のため、気まぐれでスケボー始めることにしました。このため、何も分からないので、とりあえず本ショップに来ました。</p>
+        <p>ちょうど、自分のほかにはお客さんがいなかったので、ゆっくり説明を受けながら、買い物ができました。説明は、丁寧で分かりやすく、気持ちよく買い物できました。</p>
+        <p>また、ねじ等サービスしてもらったりと買った後のフォローもしっかりしてくれそうなので、今後もこちらのお店にきたいと思います。</p>
+        <p>また、近々、パークの運営もするそうで、現在工事施工中とのことから、完成したら、滑りにきたいと思います。さらに、ゆくゆくは、スケボースクールなどを開きたいとのことで、こちらも大いに期待しています。</p>
+      </div>
+      <p class="rev-note">※ Googleマップのクチコミより</p>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="info" id="info">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <table>
+        <tr><th>店名</th><td>ASK</td></tr>
+        <tr><th>会社名</th><td>株式会社ASK</td></tr>
+        <tr><th>代表者</th><td>菊地 昭貴</td></tr>
+        <tr><th>住所</th><td>宮城県遠田郡涌谷町字柳町27-5</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0229435601">0229-43-5601</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:wakan@oasis.ocn.ne.jp">wakan@oasis.ocn.ne.jp</a></td></tr>
+        <tr><th>ホームページ</th><td><a href="http://wakuya-ask.com/ask/ask.html" target="_blank" rel="noopener">http://wakuya-ask.com/ask/ask.html</a></td></tr>
+      </table>
+      <iframe class="map" title="ASKの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E9%81%A0%E7%94%B0%E9%83%A1%E6%B6%8C%E8%B0%B7%E7%94%BA%E5%AD%97%E6%9F%B3%E7%94%BA27-5&hl=ja&z=16&output=embed"></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>スケボーを始めたいと思ったら、<br>今がタイミングです。</h2>
+      <p>ご質問だけでもお気軽にどうぞ。</p>
+      <a class="btn btn-main" href="tel:0229435601"><span class="tel-big">0229-43-5601</span></a>
+      <a class="btn btn-sub" href="mailto:wakan@oasis.ocn.ne.jp">✉ メールで問い合わせる</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 株式会社ASK</footer>
+
+<nav class="nav" aria-label="スマートフォン用メニュー">
+  <a class="call" href="tel:0229435601"><span class="ic">📞</span>電話</a>
+  <a href="#pick"><span class="ic">🛹</span>イチオシ</a>
+  <a href="#voice"><span class="ic">💬</span>口コミ</a>
+  <a href="#info"><span class="ic">📍</span>店舗情報</a>
+</nav>
+
+</body>
+</html>
