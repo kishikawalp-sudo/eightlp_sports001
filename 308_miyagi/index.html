@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宮城ダイビング サービス ハイブリッジ｜女川でダイビングライセンス取得・ボートダイブ</title>
+<meta name="description" content="宮城県女川町のダイビングショップ。ライセンス取得からアドバンス講習、牡鹿半島のボートダイブまで。タンゴウオが一年中見られる海へ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#0A3A47;
+  --sea:#13667A;
+  --foam:#E9F4F2;
+  --paper:#FFFFFF;
+  --coral:#F0602D;
+  --coral-d:#D44C1B;
+  --ink:#1B2B30;
+  --mute:#5B6E73;
+  --line:#CFE0DE;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:var(--foam);line-height:1.8;font-size:16px;-webkit-text-size-adjust:100%;padding-bottom:calc(68px + env(safe-area-inset-bottom,0px))}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:clamp(22px,6vw,30px);line-height:1.4;margin:0 0 20px;color:var(--deep);font-weight:900}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,58,71,.96);color:#fff;padding-top:env(safe-area-inset-top,0px)}
+.hd .in{max-width:960px;margin:0 auto;height:56px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.hd .nm{font-weight:900;font-size:14px;line-height:1.3;letter-spacing:.02em}
+.hd .tel{flex:none;background:var(--coral);color:#fff;text-decoration:none;font-weight:900;font-size:14px;padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;color:#fff;padding:0;margin-top:calc(56px + env(safe-area-inset-top,0px));background:var(--deep)}
+.hero img{width:100%;height:68vh;min-height:420px;max-height:640px;object-fit:cover;opacity:.55}
+.hero .tx{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 20px 36px;max-width:720px;margin:0 auto}
+.hero .lead{font-size:14px;font-weight:700;margin:0 0 8px;color:#BFE8E1}
+.hero h1{margin:0 0 14px;font-size:clamp(30px,9vw,46px);line-height:1.25;font-weight:900}
+.hero p.sub{margin:0 0 22px;font-size:15px;max-width:30em}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:900;font-size:17px;padding:16px 20px;border-radius:12px;background:var(--coral);color:#fff;box-shadow:0 3px 0 var(--coral-d)}
+.btn.sub{background:var(--paper);color:var(--deep);box-shadow:0 3px 0 var(--line);margin-top:12px}
+.hero .btn{max-width:380px}
+
+/* featured */
+.pick{background:var(--paper)}
+.pick .badge{display:inline-block;background:var(--coral);color:#fff;font-weight:900;font-size:13px;padding:3px 12px;border-radius:999px;margin-bottom:10px}
+.pick .pic{border-radius:16px;overflow:hidden;margin:0 0 22px}
+.pick .pic img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:12px}
+.pick li{padding:14px 16px 14px 18px;background:var(--foam);border-left:6px solid var(--sea);border-radius:0 12px 12px 0}
+.pick li b{display:block;color:var(--deep);font-size:17px;line-height:1.5}
+.pick li span{font-size:14px;color:var(--mute)}
+
+/* strengths */
+.str .grid{display:grid;gap:16px}
+.str .item{background:var(--paper);border-radius:14px;padding:20px;border:1px solid var(--line)}
+.str h3{margin:0 0 6px;font-size:18px;color:var(--sea)}
+.str p{margin:0;font-size:15px}
+.str .pic{border-radius:16px;overflow:hidden;margin-bottom:20px}
+.str .pic img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* reviews */
+.rv{background:var(--deep);color:#fff}
+.rv h2{color:#fff}
+.rv .card{background:var(--paper);color:var(--ink);border-radius:14px;padding:20px;margin-bottom:16px}
+.rv .stars{color:#F2A900;font-size:18px;letter-spacing:2px;font-weight:700}
+.rv .stars small{color:var(--mute);font-size:13px;letter-spacing:0;margin-left:6px}
+.rv .card p{margin:8px 0 0;font-size:15px}
+
+/* info */
+table{width:100%;border-collapse:collapse;background:var(--paper);border-radius:12px;overflow:hidden;font-size:15px}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.6}
+th{width:7em;background:#F3F9F8;color:var(--deep);font-weight:700;white-space:nowrap}
+tr:last-child th,tr:last-child td{border-bottom:0}
+td a{word-break:break-all}
+.map{margin-top:20px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{background:linear-gradient(180deg,var(--sea),var(--deep));color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{margin:0 0 22px}
+.cta .tel-big{display:block;font-size:clamp(28px,8vw,38px);font-weight:900;text-decoration:none;margin:0 0 18px;letter-spacing:.02em}
+.cta .btn{max-width:380px;margin:0 auto}
+.cta .btn.sub{margin-top:12px}
+footer{padding:22px 20px;text-align:center;font-size:12px;color:var(--mute)}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);background:var(--paper);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:60px;text-decoration:none;font-size:11px;font-weight:700;color:var(--deep)}
+.bn a svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bn a.call{background:var(--coral);color:#fff}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  section{padding:80px 0}
+  .str .grid{grid-template-columns:1fr 1fr}
+  .bn{display:none}
+  body{padding-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="in">
+    <div class="nm">宮城ダイビング サービス<br>ハイブリッジ</div>
+    <a class="tel" href="tel:05017207001">電話する</a>
+  </div>
+</header>
+
+<main>
+<!-- ヒーロー -->
+<section class="hero" id="top">
+  <img src="images/hero.jpg" alt="女川・牡鹿半島の海を潜るダイバー">
+  <div class="tx">
+    <p class="lead">宮城県女川町のダイビングショップ</p>
+    <h1>女川の海で、<br>ダイバーになる。</h1>
+    <p class="sub">ライセンス取得から、牡鹿半島のボートダイブまで。海好きの店長が、最初から最後まで寄りそいます。</p>
+    <a class="btn" href="tel:05017207001">電話で相談する 050-1720-7001</a>
+  </div>
+</section>
+
+<!-- イチオシ -->
+<section class="pick" id="service">
+  <div class="wrap">
+    <span class="badge">イチオシ</span>
+    <h2>女川の海を、<br>はじめて潜るなら。<br>ダイビングサービス</h2>
+    <div class="pic"><img src="images/ichioshi.jpg" alt="ハイブリッジのダイビングサービス"></div>
+    <ul>
+      <li><b>ライセンス取得講習</b><span>通いで取得した方も。最初から最後まで安心して任せられると評判です。</span></li>
+      <li><b>アドバンス講習</b><span>これまで曖昧だった部分もていねいに確認。スキルアップを実感できます。</span></li>
+      <li><b>牡鹿半島のボートダイブ</b><span>複雑な海底地形と、想像以上に多くの生き物に出会えます。</span></li>
+      <li><b>タンゴウオに会える</b><span>一年中見られる海。マクロ・フォト派にもおすすめです。</span></li>
+    </ul>
+    <a class="btn" href="tel:05017207001">ダイビングについて電話で聞く</a>
+    <a class="btn sub" href="https://high-bridge1.com/contacts/contact/" target="_blank" rel="noopener">メールフォームで問い合わせる</a>
+  </div>
+</section>
+
+<!-- 選ばれる理由 -->
+<section class="str" id="strength">
+  <div class="wrap">
+    <h2>ハイブリッジが選ばれる理由</h2>
+    <div class="pic"><img src="images/service.jpg" alt="女川の海とダイビングショップのスタッフ"></div>
+    <div class="grid">
+      <div class="item">
+        <h3>海好きの店長が案内</h3>
+        <p>女川の海の良さを、本当に海が好きな店長が教えてくれます。</p>
+      </div>
+      <div class="item">
+        <h3>丁寧で親切な対応</h3>
+        <p>店長とスタッフの受け答えが丁寧。初めてでも相談しやすいショップです。</p>
+      </div>
+      <div class="item">
+        <h3>ここでしか出会えない海</h3>
+        <p>牡鹿半島ならではの海底地形と生き物。タンゴウオは一年中見られます。</p>
+      </div>
+      <div class="item">
+        <h3>周辺も便利</h3>
+        <p>ショップから10分以内に、飲食店・温泉・宿泊施設・駅があります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="rv" id="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="card">
+      <div class="stars">★★★★<small>ライセンス取得</small></div>
+      <p>親切、丁寧な店長さんと看板娘のなぎさちゃんがかわいい🎵女川の海の良さを教えてくれる、本当に海好きの店長さんでした。私がこのお店を覗いたとき、女性staffさんの丁寧な受け答えにshopを決め、ライセンスをとりました。最初から最後まで全部安心して任せられました！通いで取得しましたが、金額も高くなかったという印象です。おすすめします！！</p>
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★<small>アドバンス講習</small></div>
+      <p>アドバンスの講習でお世話になりました。今まで疎かになっていた部分もしっかり教えてもらえ、スキルアップの実感を得られました。ボートダイブでは想像以上に沢山の生き物と、牡鹿半島ならではの複雑な海底地形を楽しめました。今後も是非お世話になりたいと思います。タンゴウオが一年中見れます！マクロやフォト派なら絶対面白い海です！スタッフさんも丁寧です！ショップから10分以内に飲食店たくさん、温泉、宿泊施設、駅もあり、いろいろと便利です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section id="access">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>宮城ダイビング サービス ハイブリッジ</td></tr>
+      <tr><th>代表者</th><td>髙橋 正祥</td></tr>
+      <tr><th>住所</th><td>宮城県牡鹿郡女川町女川２丁目61番地1<br>シーパルピア女川D棟16</td></tr>
+      <tr><th>電話</th><td><a href="tel:05017207001">050-1720-7001</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@high-bridge1.com">info@high-bridge1.com</a></td></tr>
+      <tr><th>公式サイト</th><td><a href="https://high-bridge1.com/" target="_blank" rel="noopener">https://high-bridge1.com/</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="宮城ダイビング サービス ハイブリッジの地図" src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E7%89%A1%E9%B9%BF%E9%83%A1%E5%A5%B3%E5%B7%9D%E7%94%BA%E5%A5%B3%E5%B7%9D2%E4%B8%81%E7%9B%AE61%E7%95%AA%E5%9C%B01%20%E3%82%B7%E3%83%BC%E3%83%91%E3%83%AB%E3%83%94%E3%82%A2%E5%A5%B3%E5%B7%9D&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>まずは、女川の海の話を<br>聞きに来ませんか。</h2>
+    <p>ダイビングのご相談は、お電話またはメールでお気軽にどうぞ。</p>
+    <a class="tel-big" href="tel:05017207001">050-1720-7001</a>
+    <a class="btn" href="tel:05017207001">電話をかける</a>
+    <a class="btn sub" href="https://high-bridge1.com/contacts/contact/" target="_blank" rel="noopener">メールフォームで問い合わせる</a>
+  </div>
+</section>
+</main>
+
+<footer>© 宮城ダイビング サービス ハイブリッジ</footer>
+
+<nav class="bn" aria-label="固定メニュー">
+  <a class="call" href="tel:05017207001">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>電話
+  </a>
+  <a href="mailto:info@high-bridge1.com">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>メール
+  </a>
+  <a href="#voice">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>口コミ
+  </a>
+  <a href="#access">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>アクセス
+  </a>
+</nav>
+
+</body>
+</html>
