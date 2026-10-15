@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>伊勢審判本舗｜野球審判用品専門店（宮城県大崎市）</title>
+<meta name="description" content="宮城県大崎市の野球審判用品専門店「伊勢審判本舗」。審判用品ならお任せください。お電話・メールでのご相談もお気軽にどうぞ。">
+<style>
+:root{
+  --black:#111418;
+  --navy:#16202e;
+  --red:#c8102e;
+  --red-dark:#9e0c24;
+  --gold:#e8b84a;
+  --bg:#f6f4ef;
+  --white:#fff;
+  --text:#222;
+  --muted:#666;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+  color:var(--text);background:var(--bg);line-height:1.8;font-size:16px;
+  padding-top:56px;padding-bottom:64px;-webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px}
+section{padding:52px 0}
+h2{font-size:1.5rem;line-height:1.4;text-align:center;margin-bottom:28px;color:var(--navy)}
+h2 small{display:block;font-size:.72rem;letter-spacing:.2em;color:var(--red);margin-bottom:6px;font-weight:700}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;background:var(--black);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 16px;border-bottom:3px solid var(--red)}
+.hd .logo{font-weight:800;font-size:1.05rem;letter-spacing:.06em;text-decoration:none}
+.hd .tel{background:var(--red);color:#fff;text-decoration:none;font-weight:700;font-size:.85rem;
+  padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;background:var(--black);color:#fff;padding:0}
+.hero img{width:100%;height:340px;object-fit:cover;opacity:.55}
+.hero .inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;padding:0 20px}
+.hero .tag{background:var(--red);font-size:.8rem;font-weight:700;padding:3px 14px;letter-spacing:.12em;margin-bottom:14px}
+.hero h1{font-size:1.95rem;line-height:1.35;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.hero h1 span{color:var(--gold)}
+.hero p{margin-top:12px;font-size:.95rem;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:800;border-radius:10px;padding:16px 12px;
+  font-size:1.05rem;line-height:1.3}
+.btn small{display:block;font-weight:500;font-size:.75rem;margin-top:2px}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 4px 0 var(--red-dark)}
+.btn-line{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.hero-cta{background:var(--black);padding:18px 18px 22px}
+.hero-cta .btn{max-width:420px;margin:0 auto}
+
+/* ichioshi */
+.ichi{background:#fff;position:relative}
+.ichi .badge{display:table;margin:0 auto 14px;background:var(--gold);color:var(--black);font-weight:800;
+  padding:4px 18px;border-radius:999px;font-size:.85rem;letter-spacing:.1em}
+.ichi h2{margin-bottom:18px}
+.ichi h2 em{font-style:normal;color:var(--red)}
+.ichi .photo{border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.18);margin-bottom:22px}
+.ichi .photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ichi .lead{font-size:1.02rem;margin-bottom:20px}
+.ichi .lead strong{background:linear-gradient(transparent 60%,#ffe28a 60%)}
+.points{list-style:none;display:grid;gap:12px;margin-bottom:26px}
+.points li{background:var(--bg);border-left:6px solid var(--red);padding:14px 16px;border-radius:6px;font-weight:700}
+.points li span{display:block;font-weight:400;font-size:.9rem;color:var(--muted);margin-top:2px}
+
+/* strengths */
+.str{background:var(--navy);color:#fff}
+.str h2{color:#fff}
+.str h2 small{color:var(--gold)}
+.str .photo{border-radius:12px;overflow:hidden;margin-bottom:22px}
+.str .photo img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.cards{display:grid;gap:14px}
+.card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:18px}
+.card .no{color:var(--gold);font-weight:800;font-size:.8rem;letter-spacing:.15em}
+.card h3{font-size:1.1rem;margin:4px 0 6px}
+.card p{font-size:.92rem;color:#d9dee6}
+
+/* shop */
+.shop table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;font-size:.95rem}
+.shop th,.shop td{padding:14px;border-bottom:1px solid #e6e2d8;text-align:left;vertical-align:top}
+.shop th{width:7.5em;background:#efece4;color:var(--navy);white-space:nowrap}
+.shop td{word-break:break-all}
+.shop td a{color:var(--red-dark);font-weight:700}
+.map{margin-top:22px;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{background:linear-gradient(160deg,var(--red),var(--red-dark));color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta h2 small{color:var(--gold)}
+.cta p{margin-bottom:22px}
+.cta .btns{display:grid;gap:12px;max-width:420px;margin:0 auto}
+.cta .btn-red{background:#fff;color:var(--red-dark);box-shadow:0 4px 0 rgba(0,0,0,.25)}
+.cta .btn-line{background:transparent;color:#fff;border-color:#fff}
+
+footer{background:var(--black);color:#bbb;text-align:center;font-size:.8rem;padding:26px 16px 30px}
+footer a{color:#fff}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);
+  background:var(--black);border-top:2px solid var(--red);padding-bottom:env(safe-area-inset-bottom)}
+.bn a{color:#fff;text-decoration:none;text-align:center;font-size:.72rem;font-weight:700;padding:10px 2px;line-height:1.3}
+.bn a b{display:block;font-size:1.1rem}
+.bn a.call{background:var(--red)}
+
+@media(min-width:700px){
+  .hero img{height:460px}
+  .hero h1{font-size:2.6rem}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .points{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <a class="logo" href="#top">伊勢審判本舗</a>
+  <a class="tel" href="tel:05054723783">📞 電話する</a>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="images/hero.jpg" alt="伊勢審判本舗 野球審判用品のイメージ">
+    <div class="inner">
+      <span class="tag">野球審判用品専門店</span>
+      <h1>審判の道具は、<br><span>専門店</span>で選ぶ。</h1>
+      <p>宮城県大崎市｜伊勢審判本舗</p>
+    </div>
+  </section>
+  <div class="hero-cta">
+    <a class="btn btn-red" href="tel:05054723783">電話で相談する<small>050-5472-3783</small></a>
+  </div>
+
+  <!-- ICHIOSHI -->
+  <section class="ichi" id="ichioshi">
+    <div class="wrap">
+      <span class="badge">★ イチオシ</span>
+      <h2><small>RECOMMEND</small>審判用品なら、<br><em>野球審判用品専門店</em>へ。</h2>
+      <div class="photo"><img src="images/ichioshi.jpg" alt="野球審判用品"></div>
+      <p class="lead">一般的なスポーツ店では探しにくい<strong>野球審判用品</strong>を専門に取り扱う、宮城県大崎市の専門店です。審判活動に必要な用品をお探しの方は、まずはお気軽にご相談ください。</p>
+      <ul class="points">
+        <li>審判用品に特化<span>専門店ならではの視点でご案内します</span></li>
+        <li>お電話・メールで相談OK<span>お探しの用品がある方もお気軽に</span></li>
+        <li>HP・SNSで最新情報<span>公式サイトとInstagramでご確認いただけます</span></li>
+      </ul>
+      <a class="btn btn-red" href="tel:05054723783">審判用品について問い合わせる<small>050-5472-3783</small></a>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section class="str" id="strength">
+    <div class="wrap">
+      <h2><small>STRENGTH</small>伊勢審判本舗が選ばれる理由</h2>
+      <div class="photo"><img src="images/service.jpg" alt="伊勢審判本舗の店舗・サービス"></div>
+      <div class="cards">
+        <div class="card"><span class="no">POINT 01</span><h3>審判用品の専門店</h3><p>審判用品に絞った専門店だからこそ、目的に合わせた用品選びをサポートします。</p></div>
+        <div class="card"><span class="no">POINT 02</span><h3>気軽に相談できる</h3><p>ご不明な点やお探しの用品は、お電話・メールでお問い合わせいただけます。</p></div>
+        <div class="card"><span class="no">POINT 03</span><h3>情報を随時発信</h3><p>公式ホームページとInstagramで、店舗の最新情報をお届けしています。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP INFO -->
+  <section class="shop" id="shop">
+    <div class="wrap">
+      <h2><small>SHOP INFO</small>店舗情報</h2>
+      <table>
+        <tr><th>店名</th><td>伊勢審判本舗</td></tr>
+        <tr><th>運営会社</th><td>株式会社あべけい</td></tr>
+        <tr><th>代表者</th><td>阿部 敬一郎</td></tr>
+        <tr><th>住所</th><td>宮城県大崎市岩出山下川原211-1</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:05054723783">050-5472-3783</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:shop@iseshinpanhonpo.shop-pro.jp">shop@iseshinpanhonpo.shop-pro.jp</a></td></tr>
+        <tr><th>ホームページ</th><td><a href="https://datenaumpire.com/" target="_blank" rel="noopener">https://datenaumpire.com/</a></td></tr>
+        <tr><th>Instagram</th><td><a href="https://www.instagram.com/datenaump/" target="_blank" rel="noopener">@datenaump</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe title="伊勢審判本舗の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E5%A4%A7%E5%B4%8E%E5%B8%82%E5%B2%A9%E5%87%BA%E5%B1%B1%E4%B8%8B%E5%B7%9D%E5%8E%9F211-1&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2><small>CONTACT</small>審判用品のご相談は<br>お気軽にどうぞ</h2>
+      <p>お電話・メールでのお問い合わせをお待ちしています。</p>
+      <div class="btns">
+        <a class="btn btn-red" href="tel:05054723783">電話で問い合わせる<small>050-5472-3783</small></a>
+        <a class="btn btn-line" href="mailto:shop@iseshinpanhonpo.shop-pro.jp">メールで問い合わせる</a>
+        <a class="btn btn-line" href="https://datenaumpire.com/" target="_blank" rel="noopener">公式ホームページを見る</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>伊勢審判本舗（株式会社あべけい）</p>
+  <p>宮城県大崎市岩出山下川原211-1</p>
+  <p><a href="https://www.instagram.com/datenaump/" target="_blank" rel="noopener">Instagram</a></p>
+  <p style="margin-top:10px">&copy; 伊勢審判本舗 All Rights Reserved.</p>
+</footer>
+
+<nav class="bn" aria-label="固定メニュー">
+  <a class="call" href="tel:05054723783"><b>📞</b>電話</a>
+  <a href="#ichioshi"><b>⚾</b>イチオシ</a>
+  <a href="#shop"><b>📍</b>店舗情報</a>
+  <a href="mailto:shop@iseshinpanhonpo.shop-pro.jp"><b>✉️</b>メール</a>
+</nav>
+
+</body>
+</html>
