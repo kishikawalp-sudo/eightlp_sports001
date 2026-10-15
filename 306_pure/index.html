@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プレチューンナップサービス｜スキー・スノーボードクリーニング｜宮城県登米市</title>
+<meta name="description" content="宮城県登米市のプレチューンナップサービス。スキー・スノーボードのクリーニングを、ひとつひとつ手作業で丁寧に仕上げます。">
+<style>
+:root{
+  --ink:#10243a;
+  --snow:#f3f8fb;
+  --ice:#d9ebf5;
+  --blue:#1c6e9c;
+  --deep:#0d3b5c;
+  --accent:#e8590c;
+  --line:#c5d9e6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+  color:var(--ink);background:var(--snow);line-height:1.8;font-size:16px;
+  padding-top:56px;padding-bottom:64px;-webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.5rem;line-height:1.45;font-weight:800;color:var(--deep);margin-bottom:20px;letter-spacing:.02em}
+.lead{color:#38546c}
+
+/* header */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;background:var(--deep);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;padding:0 14px}
+.hdr .name{font-weight:800;font-size:.95rem;letter-spacing:.03em}
+.hdr .tel{background:var(--accent);color:#fff;text-decoration:none;font-weight:800;font-size:.9rem;
+  padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;background:var(--deep);color:#fff;padding:0}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.55}
+.hero-box{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px 20px 28px;
+  background:linear-gradient(180deg,rgba(13,59,92,0) 25%,rgba(13,59,92,.92) 100%)}
+.hero h1{font-size:1.85rem;line-height:1.4;font-weight:900;letter-spacing:.02em;max-width:640px}
+.hero p{margin-top:10px;font-size:.98rem;max-width:560px}
+.hero .btn{margin-top:18px;align-self:flex-start}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;
+  padding:14px 26px;border-radius:8px;font-size:1rem;text-align:center}
+.btn.sub{background:#fff;color:var(--deep);border:2px solid var(--deep)}
+
+/* ichioshi */
+.pick{background:#fff;border-top:6px solid var(--blue)}
+.pick .tag{display:inline-block;background:var(--accent);color:#fff;font-weight:800;font-size:.85rem;padding:4px 12px;border-radius:4px;margin-bottom:12px}
+.pick h2{font-size:1.7rem}
+.pick-img{border-radius:10px;margin:20px 0;width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick ul{list-style:none;margin:20px 0}
+.pick li{padding:12px 0 12px 34px;position:relative;border-bottom:1px solid var(--line);font-weight:600}
+.pick li::before{content:"";position:absolute;left:4px;top:19px;width:14px;height:8px;border-left:3px solid var(--blue);border-bottom:3px solid var(--blue);transform:rotate(-45deg)}
+.pick .cta{text-align:center;margin-top:24px}
+.pick .cta .btn{width:100%;max-width:420px}
+
+/* strengths */
+.str{background:var(--ice)}
+.str-item{background:#fff;border-radius:10px;padding:22px 20px;margin-top:16px;border-left:6px solid var(--blue)}
+.str-item h3{font-size:1.1rem;color:var(--deep);margin-bottom:6px}
+.str-item p{font-size:.96rem}
+.service-img{border-radius:10px;margin-top:24px;width:100%;aspect-ratio:16/9;object-fit:cover}
+
+/* review */
+.rev{background:#fff}
+.rev-card{background:var(--snow);border:1px solid var(--line);border-radius:10px;padding:22px 20px}
+.stars{color:#f0a500;font-size:1.3rem;letter-spacing:.1em}
+.rev-card h3{font-size:1.1rem;margin:6px 0 10px;color:var(--deep)}
+.rev-card p{font-size:.97rem}
+.rev-card .src{margin-top:12px;font-size:.82rem;color:#5b7488}
+
+/* info */
+.info{background:var(--snow)}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:.95rem}
+th,td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:30%;background:var(--ice);color:var(--deep);font-weight:700}
+td a{color:var(--blue);word-break:break-all}
+.map{margin-top:24px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:320px;border:0}
+
+/* cta */
+.final{background:var(--deep);color:#fff;text-align:center}
+.final h2{color:#fff}
+.final p{margin-bottom:24px}
+.final .btn{width:100%;max-width:420px;margin:6px auto;display:block}
+.final .btn.sub{background:transparent;color:#fff;border-color:#fff}
+footer{background:#08283f;color:#b8cddb;text-align:center;font-size:.8rem;padding:20px 16px 24px}
+
+/* bottom nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;background:#fff;border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0)}
+.nav a{flex:1;text-align:center;text-decoration:none;font-size:.78rem;font-weight:700;color:var(--deep);padding:10px 4px}
+.nav a.call{background:var(--accent);color:#fff}
+
+@media (min-width:768px){
+  .hero-img{aspect-ratio:21/9}
+  .hero h1{font-size:2.4rem}
+  .hero-box{padding:40px calc(50% - 360px) 40px}
+  h2{font-size:1.8rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <span class="name">プレチューンナップサービス</span>
+  <a class="tel" href="tel:0220230061" aria-label="電話をかける">0220-23-0061</a>
+</header>
+
+<main>
+  <!-- ヒーロー -->
+  <div class="hero">
+    <img class="hero-img" src="images/hero.jpg" alt="手作業でスキーを仕上げる様子" width="1200" height="900">
+    <div class="hero-box">
+      <h1>最後は、人の手と目。<br>スキー・スノーボードのクリーニング</h1>
+      <p>宮城県登米市｜プレチューンナップサービス</p>
+      <a class="btn" href="#pick">クリーニングについて見る</a>
+    </div>
+  </div>
+
+  <!-- イチオシ -->
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <span class="tag">イチオシ</span>
+      <h2>スキー・スノーボード<br>クリーニング</h2>
+      <p class="lead">新品を買ったときも、毎年のシーズン前も。機械任せにせず、ひとつひとつ手作業で仕上げます。お客様から「スキーが変わります」と声をいただいています。</p>
+      <img class="pick-img" src="images/ichioshi.jpg" alt="スキー・スノーボードクリーニングの仕上がり" width="1200" height="900" loading="lazy">
+      <ul>
+        <li>手作業・手仕上げだから、細かなところまで調整できる</li>
+        <li>量販店のスポーツショップより細やかな仕上がり</li>
+        <li>新品のスキー・スノーボードにもおすすめ</li>
+        <li>スキーのこと、気軽に相談できる</li>
+      </ul>
+      <div class="cta">
+        <a class="btn" href="tel:0220230061">電話で相談する 0220-23-0061</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section class="str" id="strength">
+    <div class="wrap">
+      <h2>プレチューンナップサービスが選ばれる理由</h2>
+      <div class="str-item">
+        <h3>機械が進歩しても、最後は人の手と目</h3>
+        <p>いつも手作業で対応しています。道具の状態を目で見て、手で確かめながら仕上げます。</p>
+      </div>
+      <div class="str-item">
+        <h3>県北で頼れる、スキーの専門店</h3>
+        <p>宮城県北にあって頼もしいと、地元のスキーヤーに親しまれています。</p>
+      </div>
+      <div class="str-item">
+        <h3>毎年お願いしたくなる、スキー談義</h3>
+        <p>仕上がりを待つあいだも、スキーの話で盛り上がれる雰囲気です。</p>
+      </div>
+      <img class="service-img" src="images/service.jpg" alt="店内での作業風景" width="1200" height="675" loading="lazy">
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="rev" id="review">
+    <div class="wrap">
+      <h2>お客様の声</h2>
+      <div class="rev-card">
+        <div class="stars" aria-label="星5つ">★★★★★</div>
+        <h3>県北に有って頼もしいです。</h3>
+        <p>いつも手作業でやって頂いているし、スキー談義も楽しいです。いくら機械が進歩していても、最後は人の手と目ですよね。新品を購入した際はもちろん、毎年、頼んでいます！手仕上げなので、量販店のスポーツショップよりも細やかに調整していただけます。スキーが変わります！全スキーヤーにおすすめします！</p>
+        <p class="src">Googleクチコミより</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="info" id="info">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <table>
+        <tr><th>店名</th><td>プレチューンナップサービス</td></tr>
+        <tr><th>代表者</th><td>高野 正義</td></tr>
+        <tr><th>住所</th><td>宮城県登米市迫町佐沼中江５丁目１０−２</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0220230061">0220-23-0061</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:pre@d3.dion.ne.jp">pre@d3.dion.ne.jp</a></td></tr>
+        <tr><th>公式HP</th><td><a href="https://pre-tune.com/" target="_blank" rel="noopener">https://pre-tune.com/</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://pre-tune.com/?page_id=20" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe title="プレチューンナップサービスの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E7%99%BB%E7%B1%B3%E5%B8%82%E8%BF%AB%E7%94%BA%E4%BD%90%E6%B2%BC%E4%B8%AD%E6%B1%9F5%E4%B8%81%E7%9B%AE10-2&output=embed&hl=ja"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="final" id="contact">
+    <div class="wrap">
+      <h2>スキーが変わる、<br>手仕上げのクリーニングを</h2>
+      <p>ご相談は、お電話またはフォームから。</p>
+      <a class="btn" href="tel:0220230061">電話する 0220-23-0061</a>
+      <a class="btn sub" href="https://pre-tune.com/?page_id=20" target="_blank" rel="noopener">お問い合わせフォーム</a>
+    </div>
+  </section>
+</main>
+
+<footer>© プレチューンナップサービス</footer>
+
+<nav class="nav" aria-label="ページ内メニュー">
+  <a href="#pick">イチオシ</a>
+  <a href="#review">お客様の声</a>
+  <a href="#info">店舗情報</a>
+  <a class="call" href="tel:0220230061">電話する</a>
+</nav>
+
+</body>
+</html>
