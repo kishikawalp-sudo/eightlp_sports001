@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>仙台スポーツ｜プロも訪れるシューズ・インソール専門店｜仙台市宮城野区</title>
+<meta name="description" content="仙台市宮城野区の仙台スポーツ。シューズのインソールを中心に、プロ選手も訪れる専門店。その場で調整、完全オーダーメイドで足にフィットする一足をご提案します。">
+<style>
+:root{
+  --navy:#0b2545;
+  --blue:#13438a;
+  --accent:#ff6a13;
+  --accent-dark:#e05500;
+  --bg:#f4f7fb;
+  --text:#1c2733;
+  --white:#fff;
+  --line:#d9e1ec;
+  --header-h:56px;
+  --nav-h:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h)}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.8;
+  font-size:16px;
+  padding-top:calc(var(--header-h) + env(safe-area-inset-top));
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom));
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;background:var(--white);box-shadow:0 0 24px rgba(11,37,69,.08)}
+section{padding:48px 20px}
+.sec-label{
+  display:block;text-align:center;color:var(--accent);
+  font-weight:700;letter-spacing:.2em;font-size:12px;margin-bottom:6px
+}
+h2{
+  text-align:center;color:var(--navy);font-size:24px;line-height:1.5;margin-bottom:28px;
+}
+h2::after{
+  content:"";display:block;width:48px;height:4px;background:var(--accent);
+  margin:12px auto 0;border-radius:2px
+}
+
+/* ---------- Header ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:var(--navy);color:var(--white);
+  height:calc(var(--header-h) + env(safe-area-inset-top));
+  padding-top:env(safe-area-inset-top);
+}
+.header-in{
+  max-width:720px;margin:0 auto;height:var(--header-h);
+  display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 16px;
+}
+.logo{font-weight:800;font-size:18px;letter-spacing:.05em}
+.logo small{display:block;font-size:10px;font-weight:400;opacity:.8;letter-spacing:.08em;line-height:1.2}
+.h-tel{
+  background:var(--accent);color:var(--white);font-weight:700;font-size:14px;
+  padding:8px 14px;border-radius:999px;white-space:nowrap
+}
+
+/* ---------- Hero ---------- */
+.hero{padding:0;position:relative;background:var(--navy)}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#1d3d6b;opacity:.55}
+.hero-copy{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  padding:20px;color:var(--white);
+}
+.hero-badge{
+  align-self:flex-start;background:var(--accent);font-size:12px;font-weight:700;
+  padding:4px 12px;border-radius:4px;margin-bottom:12px
+}
+.hero h1{font-size:28px;line-height:1.4;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:#ffd36b}
+.hero p{margin-top:12px;font-size:14px;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.hero-cta{padding:20px;background:var(--navy);text-align:center}
+
+.btn{
+  display:block;text-align:center;font-weight:700;border-radius:12px;
+  padding:16px 20px;font-size:17px;line-height:1.4;
+}
+.btn-tel{background:var(--accent);color:var(--white);box-shadow:0 4px 0 var(--accent-dark)}
+.btn-tel small{display:block;font-size:12px;font-weight:400;opacity:.95}
+.btn-sub{background:var(--white);color:var(--navy);border:2px solid var(--navy);margin-top:14px}
+
+/* ---------- Pickup ---------- */
+.pickup{background:var(--bg)}
+.pickup-card{background:var(--white);border:3px solid var(--accent);border-radius:16px;overflow:hidden}
+.pickup-tag{background:var(--accent);color:var(--white);text-align:center;font-weight:800;padding:8px;letter-spacing:.1em}
+.pickup-img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#dfe7f2}
+.pickup-body{padding:22px 18px}
+.pickup-body h3{font-size:22px;color:var(--navy);line-height:1.5;margin-bottom:12px}
+.pickup-body h3 span{color:var(--accent)}
+.pickup-body p{font-size:15px}
+.check{list-style:none;margin-top:16px}
+.check li{position:relative;padding:10px 0 10px 32px;border-bottom:1px dashed var(--line);font-weight:700;color:var(--navy);font-size:15px}
+.check li:last-child{border-bottom:none}
+.check li::before{
+  content:"✓";position:absolute;left:0;top:10px;width:22px;height:22px;border-radius:50%;
+  background:var(--accent);color:var(--white);font-size:13px;line-height:22px;text-align:center
+}
+
+/* ---------- Strengths ---------- */
+.strength-item{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
+.strength-item:last-child{margin-bottom:0}
+.num{
+  flex:0 0 44px;height:44px;border-radius:50%;background:var(--navy);color:var(--white);
+  font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center
+}
+.strength-item h3{font-size:17px;color:var(--navy);line-height:1.5;margin-bottom:4px}
+.strength-item p{font-size:14.5px}
+.service-img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;margin-top:28px;background:#dfe7f2}
+
+/* ---------- Voice ---------- */
+.voice{background:var(--bg)}
+.voice-card{background:var(--white);border-radius:16px;padding:22px 18px;border:1px solid var(--line);position:relative}
+.stars{color:#f5a300;font-size:22px;letter-spacing:.1em;text-align:center}
+.voice-lead{
+  text-align:center;font-weight:800;color:var(--navy);font-size:17px;line-height:1.6;margin:8px 0 16px
+}
+.voice-card p{font-size:14.5px;margin-bottom:12px}
+.voice-card p:last-child{margin-bottom:0}
+.voice-card .mark{background:linear-gradient(transparent 60%,#ffe2b8 60%);font-weight:700}
+.voice-src{text-align:right;font-size:12px;color:#6b7a8c}
+
+/* ---------- Info ---------- */
+.info-table{width:100%;border-collapse:collapse;font-size:14.5px}
+.info-table th,.info-table td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info-table th{width:92px;color:var(--navy);background:var(--bg);white-space:nowrap}
+.info-table a{color:var(--blue);text-decoration:underline;word-break:break-all}
+.map{margin-top:24px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{width:100%;height:300px;border:0;display:block}
+
+/* ---------- CTA ---------- */
+.cta{background:linear-gradient(160deg,var(--navy),var(--blue));color:var(--white);text-align:center}
+.cta h2{color:var(--white)}
+.cta p{font-size:14.5px;margin-bottom:22px}
+.cta .btn-sub{background:transparent;color:var(--white);border-color:var(--white)}
+
+footer{background:#06162b;color:#9fb0c6;text-align:center;font-size:12px;padding:20px 16px}
+
+/* ---------- Bottom nav ---------- */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:100;background:var(--white);
+  border-top:1px solid var(--line);box-shadow:0 -2px 10px rgba(0,0,0,.08);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.bottom-in{max-width:720px;margin:0 auto;display:flex;height:var(--nav-h)}
+.bottom-in a{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:var(--navy);gap:2px
+}
+.bottom-in a .ic{font-size:20px;line-height:1}
+.bottom-in a.main{background:var(--accent);color:var(--white);flex:1.4}
+
+@media (min-width:600px){
+  h2{font-size:28px}
+  .hero h1{font-size:38px}
+  .hero-copy{padding:40px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-in">
+    <div class="logo"><small>シューズ・インソール専門</small>仙台スポーツ</div>
+    <a class="h-tel" href="tel:0223962822">📞 電話する</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <img class="hero-img" src="images/hero.jpg" alt="仙台スポーツ 店内・シューズとインソール" width="800" height="600">
+    <div class="hero-copy">
+      <span class="hero-badge">プロ選手も訪れるお店</span>
+      <h1>あなたの足に、<br><em>ぴったりの一足</em>を。</h1>
+      <p>インソールを中心に、その場で調整。<br>仙台市宮城野区のシューズ専門店</p>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-tel" href="tel:0223962822"><small>ご相談・ご来店のご予約はお電話で</small>📞 022-396-2822</a>
+    </div>
+  </section>
+
+  <!-- Pickup -->
+  <section class="pickup" id="pickup">
+    <span class="sec-label">RECOMMEND</span>
+    <h2>イチオシ！<br>各種シューズ販売</h2>
+    <div class="pickup-card">
+      <div class="pickup-tag">★ 当店イチオシ ★</div>
+      <img class="pickup-img" src="images/ichioshi.jpg" alt="各種シューズ・インソールのフィッティング" width="800" height="600">
+      <div class="pickup-body">
+        <h3>インソールで選ぶ、<span>フィット感が違うシューズ</span></h3>
+        <p>仙台スポーツは、シューズのインソールを中心に扱うお店です。お客様の足と状況をじっくり伺い、一番フィットするインソールとシューズをご提案。パーツを付けたりアレンジしたりと、完全オーダーメイドで仕上げます。</p>
+        <ul class="check">
+          <li>その場で調整しながら履き比べOK</li>
+          <li>社長がお客様の状況をしっかりヒアリング</li>
+          <li>パーツ追加・アレンジの完全オーダーメイド</li>
+          <li>お子様から立ち仕事の方まで幅広く対応</li>
+        </ul>
+      </div>
+    </div>
+    <a class="btn btn-tel" href="tel:0223962822" style="margin-top:24px"><small>まずはお気軽にご相談ください</small>📞 022-396-2822</a>
+  </section>
+
+  <!-- Strengths -->
+  <section id="strength">
+    <span class="sec-label">STRENGTH</span>
+    <h2>仙台スポーツが<br>選ばれる理由</h2>
+
+    <div class="strength-item">
+      <div class="num">1</div>
+      <div>
+        <h3>インソールを中心に扱う専門性</h3>
+        <p>インソールの大切さを知り尽くしたお店。シューズ選びを「足元から」支えます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">2</div>
+      <div>
+        <h3>プロ選手も訪れる確かな実績</h3>
+        <p>店内には、トップ選手の足形やサインがズラリ。プロも頼る技術と信頼があります。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">3</div>
+      <div>
+        <h3>その場で調整、完全オーダーメイド</h3>
+        <p>トレーナーの方に調整してもらいながら試し履き。パーツを付けて、あなただけの一足に仕上げます。</p>
+      </div>
+    </div>
+    <div class="strength-item">
+      <div class="num">4</div>
+      <div>
+        <h3>社長もスタッフも、やさしい対応</h3>
+        <p>まずはお悩みをじっくりお聞きします。初めての方も安心してご来店ください。</p>
+      </div>
+    </div>
+
+    <img class="service-img" src="images/service.jpg" alt="インソール調整の様子" width="800" height="500">
+  </section>
+
+  <!-- Voice -->
+  <section class="voice" id="voice">
+    <span class="sec-label">VOICE</span>
+    <h2>お客様の声</h2>
+    <div class="voice-card">
+      <div class="stars">★★★★★</div>
+      <p class="voice-lead">「そのフィット感に感動していました」<br>「かかとの痛みが全くなくなりました」</p>
+      <p>シューズのインソールを中心に扱う店です。とある講演会でインソールの大切さを改めて知り、そこにはトップ選手の足形やサインがズラリ。プロも訪れる店とは聞いていましたが、これほどとは！</p>
+      <p>その場でトレーナーの方に調整してもらいながら履かせてもらった息子は、<span class="mark">そのフィット感に感動</span>していました。</p>
+      <p>社長もスタッフさんも優しい対応で、社長が相手の置かれた状況をよく伺った後に、一番フィットしたインソールをセレクトし、パーツを付けたりしてアレンジして、<span class="mark">完全オーダーメイド</span>です。</p>
+      <p>五時間以上立ち仕事して、昔はかかとが痛くて仕方なかったのですが、こちらのインソールをつけてから<span class="mark">全く痛くなくなりました</span>。10時間で少し疲れたかな？くらいです。本当に素晴らしい。</p>
+      <div class="voice-src">― Google口コミより</div>
+    </div>
+  </section>
+
+  <!-- Info -->
+  <section id="info">
+    <span class="sec-label">SHOP INFO</span>
+    <h2>店舗情報</h2>
+    <table class="info-table">
+      <tr><th>店名</th><td>仙台スポーツ</td></tr>
+      <tr><th>会社名</th><td>仙台スポーツ有限会社</td></tr>
+      <tr><th>代表者</th><td>永野 研也</td></tr>
+      <tr><th>住所</th><td>宮城県仙台市宮城野区岩切洞ノ口229-6</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0223962822">022-396-2822</a></td></tr>
+      <tr><th>公式HP</th><td><a href="https://www.sendai-sports.net/" target="_blank" rel="noopener">https://www.sendai-sports.net/</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://sendai-sports.net/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E5%AE%AE%E5%9F%8E%E9%87%8E%E5%8C%BA%E5%B2%A9%E5%88%87%E6%B4%9E%E3%83%8E%E5%8F%A3229-6&amp;output=embed" title="仙台スポーツの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <h2>足にフィットする一足を、<br>ぜひ体感してください</h2>
+    <p>お悩みやご要望をお聞きしながら、最適なインソール・シューズをご提案します。<br>お気軽にお電話ください。</p>
+    <a class="btn btn-tel" href="tel:0223962822"><small>お電話でのご相談</small>📞 022-396-2822</a>
+    <a class="btn btn-sub" href="https://sendai-sports.net/contact/" target="_blank" rel="noopener">✉ お問い合わせフォームはこちら</a>
+  </section>
+
+  <footer>© 仙台スポーツ有限会社</footer>
+</div>
+
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <div class="bottom-in">
+    <a class="main" href="tel:0223962822"><span class="ic">📞</span>電話する</a>
+    <a href="#info"><span class="ic">📍</span>アクセス</a>
+    <a href="https://sendai-sports.net/contact/" target="_blank" rel="noopener"><span class="ic">✉</span>お問い合わせ</a>
+  </div>
+</nav>
+
+</body>
+</html>
