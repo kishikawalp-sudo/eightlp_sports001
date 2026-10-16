@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MAMMUT（マムート）仙台｜一番町で出会う、他店にないスポーツウェア</title>
+<meta name="description" content="MAMMUT（マムート）仙台は仙台市青葉区一番町・電力ビル1Fのショップ。一般のスポーツ店にはない品揃えと質の高いスポーツウェアをご覧いただけます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16222d;
+  --snow:#f6f8f9;
+  --glacier:#dde6ec;
+  --granite:#5d6a75;
+  --red:#d6001c;
+  --red-dark:#a80016;
+  --white:#fff;
+  --font:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  --font-en:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--snow);line-height:1.8;font-size:16px;padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.35;margin:0}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+/* header */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:50;height:calc(56px + env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px);background:var(--ink);color:var(--white)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-family:var(--font-en);font-weight:700;font-size:24px;letter-spacing:.08em;text-decoration:none;line-height:1}
+.logo small{font-family:var(--font);font-weight:500;font-size:12px;letter-spacing:.05em;margin-left:8px;color:var(--glacier)}
+.tel-btn{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:var(--white);text-decoration:none;font-weight:700;font-size:14px;padding:8px 14px;border-radius:2px}
+.tel-btn:hover{background:var(--red-dark)}
+
+/* hero */
+.hero{position:relative;color:var(--white);background:var(--ink);min-height:calc(100svh - 56px);display:flex;align-items:flex-end;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,34,45,.15) 0%,rgba(22,34,45,.88) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-top:80px;padding-bottom:44px}
+.hero .en{font-family:var(--font-en);font-weight:700;font-size:clamp(64px,22vw,168px);line-height:.9;letter-spacing:.02em;margin:0 0 12px;color:var(--white)}
+.hero h1{font-weight:900;font-size:clamp(24px,6.4vw,42px);max-width:15em;margin-bottom:16px}
+.hero p.lead{max-width:34em;color:var(--glacier);font-size:15px;margin-bottom:24px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;font-weight:700;font-size:16px;text-decoration:none;border-radius:2px;border:2px solid var(--red);background:var(--red);color:var(--white)}
+.btn:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.btn.ghost{background:transparent;border-color:var(--white)}
+.btn.ghost:hover{background:var(--white);color:var(--ink)}
+
+/* featured */
+.pick{background:var(--red);color:var(--white);padding:56px 0 0;position:relative}
+.pick .tag{display:inline-block;background:var(--white);color:var(--red);font-weight:900;font-size:14px;padding:4px 14px;margin-bottom:16px}
+.pick h2{font-weight:900;font-size:clamp(30px,8.4vw,56px);margin-bottom:16px}
+.pick .copy{max-width:36em;font-size:16px}
+.pick figure{margin:32px 0 0}
+.pick figure img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--red-dark)}
+.pick-body{background:var(--ink);color:var(--white);padding:36px 0 48px}
+.pick-body h3{font-size:20px;font-weight:700;margin-bottom:20px}
+.facts{list-style:none;margin:0;padding:0}
+.facts li{padding:16px 0 16px 20px;border-left:4px solid var(--red);margin-bottom:12px;background:rgba(255,255,255,.05)}
+.facts b{display:block;font-size:17px;margin-bottom:2px}
+.facts span{color:var(--glacier);font-size:15px}
+.price-note{margin-top:20px;font-size:14px;color:var(--glacier)}
+
+/* sections */
+section{padding:64px 0}
+.sec-title{font-weight:900;font-size:clamp(24px,6vw,34px);margin-bottom:8px}
+.sec-sub{color:var(--granite);margin-bottom:32px;font-size:15px}
+.strength{display:grid;gap:28px}
+.strength article{border-top:3px solid var(--ink);padding-top:16px}
+.strength h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.strength p{margin:0;color:var(--granite);font-size:15px}
+.shop-photo{margin-top:36px}
+.shop-photo img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--glacier)}
+
+/* voice */
+.voice{background:var(--white)}
+.review{margin:0 0 28px;padding:4px 0 4px 20px;border-left:4px solid var(--glacier)}
+.review.main{border-left-color:var(--red)}
+.review .stars{color:var(--red);font-size:18px;letter-spacing:2px;margin-bottom:6px}
+.review p{margin:0;font-size:15px}
+.review .pull{font-weight:700;font-size:18px;line-height:1.6;margin-bottom:8px}
+
+/* info */
+.info table{width:100%;border-collapse:collapse;margin-bottom:28px;font-size:15px}
+.info th,.info td{text-align:left;padding:14px 8px;border-bottom:1px solid var(--glacier);vertical-align:top}
+.info th{width:7.5em;font-weight:700;white-space:nowrap}
+.info td a{color:var(--red-dark);word-break:break-all}
+.map{position:relative;width:100%;aspect-ratio:4/3;background:var(--glacier)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* cta */
+.cta{background:var(--red);color:var(--white);text-align:center;padding:56px 0}
+.cta h2{font-weight:900;font-size:clamp(24px,6vw,34px);margin-bottom:12px}
+.cta p{margin-bottom:24px}
+.cta .big-tel{display:block;font-family:var(--font-en);font-weight:700;font-size:clamp(40px,12vw,64px);line-height:1;text-decoration:none;margin-bottom:20px}
+.cta .btn{background:var(--white);color:var(--red);border-color:var(--white)}
+.cta .btn:hover{background:var(--ink);border-color:var(--ink);color:var(--white)}
+
+/* footer */
+footer{background:var(--ink);color:var(--glacier);padding:36px 0;font-size:13px}
+footer .links{display:flex;gap:20px;margin-bottom:16px}
+footer a{text-decoration:underline}
+
+/* bottom nav */
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);background:var(--white);border-top:1px solid var(--glacier);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bottom-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;height:64px;text-decoration:none;font-size:11px;font-weight:700;color:var(--ink)}
+.bottom-nav a svg{width:22px;height:22px}
+.bottom-nav a.call{background:var(--red);color:var(--white)}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  .strength{grid-template-columns:repeat(3,1fr);gap:32px}
+  .pick .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:end}
+  .pick figure{margin:0}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .facts li{margin:0}
+  .info .cols{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+  .info table{margin:0}
+  .map{aspect-ratio:auto;height:100%;min-height:360px}
+  .bottom-nav{display:none}
+  body{padding-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top">MAMMUT<small>仙台</small></a>
+    <a class="tel-btn" href="tel:0227964533" aria-label="電話をかける 022-796-4533">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      電話する
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ヒーロー -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="仙台・一番町のMAMMUT店内に並ぶスポーツウェア" width="1200" height="1600" fetchpriority="high">
+    <div class="wrap">
+      <p class="en">MAMMUT</p>
+      <h1>他のスポーツ店では出会えない一着が、仙台・一番町にある。</h1>
+      <p class="lead">一般のスポーツ店にはない品揃えと、目を引く服の柄。MAMMUT（マムート）仙台で、あなたのスポーツウェアを選びませんか。</p>
+      <div class="btns">
+        <a class="btn" href="#pick">イチオシのウェアを見る</a>
+        <a class="btn ghost" href="#info">店舗情報</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- イチオシ -->
+  <div class="pick" id="pick">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <span class="tag">イチオシ</span>
+          <h2>スポーツウェア</h2>
+          <p class="copy">一般のスポーツ店にはないようなものがそろい、服の模様もとても良い。クチコミで評価されているのは、そんなMAMMUTだけのウェアです。選ぶ時間そのものが、ちょっとした楽しみになります。</p>
+        </div>
+        <figure>
+          <img src="images/ichioshi.jpg" alt="MAMMUTのスポーツウェア" width="1200" height="900" loading="lazy">
+        </figure>
+      </div>
+    </div>
+    <div class="pick-body">
+      <div class="wrap">
+        <h3>お客様が選ぶ、3つの理由</h3>
+        <ul class="facts">
+          <li><b>他にはない品物がそろう</b><span>「一般のスポーツ店にはないようなものもある」とのクチコミ。</span></li>
+          <li><b>服の模様が、とても良い</b><span>デザインで選べるのも、MAMMUTのウェアの楽しさです。</span></li>
+          <li><b>製品の質がダントツ</b><span>某有名ブランドと迷った末に、こちらを選んだという声も。</span></li>
+        </ul>
+        <p class="price-note">クチコミには「値段もいい」との声もあります。それでも、質と柄に納得して選ぶ方に支持されています。</p>
+        <div class="btns" style="margin-top:24px">
+          <a class="btn" href="tel:0227964533">電話で在庫を問い合わせる</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 強み -->
+  <section id="strength">
+    <div class="wrap">
+      <h2 class="sec-title">MAMMUT仙台が選ばれる理由</h2>
+      <p class="sec-sub">クチコミから見えてきた、お店の魅力です。</p>
+      <div class="strength">
+        <article>
+          <h3>仙台の街中で、気軽に立ち寄れる</h3>
+          <p>仙台市青葉区一番町、電力ビル1Fのショップ。買い物や仕事の合間にも、ウェアを見に行けます。</p>
+        </article>
+        <article>
+          <h3>交換・サイズ変更にも、気持ちよく対応</h3>
+          <p>「嫌な顔せず、わざわざ来てくださりありがとうございますと言われた」と、サイズ変更で何度も訪れたお客様が語っています。</p>
+        </article>
+        <article>
+          <h3>スタッフの丁寧な説明</h3>
+          <p>ビジネス用リュックを探していたお客様は、女性スタッフの説明に「ステキ」と感謝。品質もダントツと評価しています。</p>
+        </article>
+      </div>
+      <div class="shop-photo">
+        <img src="images/store.jpg" alt="MAMMUT仙台の店内の様子" width="1200" height="675" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="voice" id="voice">
+    <div class="wrap">
+      <h2 class="sec-title">お客様のクチコミ</h2>
+      <p class="sec-sub">実際に来店されたお客様の声です。</p>
+
+      <blockquote class="review main" style="margin-left:0">
+        <div class="stars" aria-label="5つ星">★★★★★</div>
+        <p class="pull">某超有名アウトドアブランドと迷いましたが、こちらにして良かったです。</p>
+        <p>最初に買ったアウターより違う物が欲しくなり、交換に行って、またサイズを変更したくて次の日も行きました。それでも嫌な顔せず「わざわざ来て頂きありがとうございます」とまで言われ、すごく気持ち良かったです。男性の店員さん、ありがとうございました！</p>
+      </blockquote>
+
+      <blockquote class="review" style="margin-left:0">
+        <div class="stars" aria-label="5つ星">★★★★★</div>
+        <p class="pull">女性スタッフの説明がステキで、製品の質もダントツでした。</p>
+        <p>ビジネス用にリュックが欲しくて商品を見ていたところ、丁寧に説明して下さり大変ありがたかったです。他のブランドも見たかったので、こちらでは購入せずネットで注文しましたが、良い仕事をするスタッフさんに大感謝です。</p>
+      </blockquote>
+
+      <blockquote class="review" style="margin-left:0">
+        <div class="stars" aria-label="4つ星">★★★★</div>
+        <p class="pull">服の模様もとても良いので、一度来てみるのもいいかと思います。</p>
+        <p>店内は少し狭く女性物が多いように感じましたが、仙台の街中にあるので広さは仕方ないのかなと思います。品物は一般のスポーツ店にはないようなものもあります（値段もいい）。一般のスポーツ店でいい模様の物がなければ、一度来てみるのもいいかと思います。</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="info" id="info">
+    <div class="wrap">
+      <h2 class="sec-title">店舗情報</h2>
+      <p class="sec-sub">仙台市青葉区一番町・電力ビル1Fです。</p>
+      <div class="cols">
+        <table>
+          <tbody>
+            <tr><th>店名</th><td>MAMMUT（マムート）仙台</td></tr>
+            <tr><th>住所</th><td>宮城県仙台市青葉区一番町3-7-1 電力ビル 1F</td></tr>
+            <tr><th>電話番号</th><td><a href="tel:0227964533">022-796-4533</a></td></tr>
+            <tr><th>定休日</th><td>不定休</td></tr>
+            <tr><th>運営会社</th><td>マムート スポーツ グループ ジャパン株式会社</td></tr>
+            <tr><th>代表者</th><td>福田 太一</td></tr>
+            <tr><th>公式HP</th><td><a href="https://www.facebook.com/MammutJapan/" target="_blank" rel="noopener">https://www.facebook.com/MammutJapan/</a></td></tr>
+            <tr><th>お問い合わせ</th><td><a href="https://www.mammut.jp/guide/inquiry" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+          </tbody>
+        </table>
+        <div class="map">
+          <iframe title="MAMMUT仙台の地図" src="https://maps.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9D%92%E8%91%89%E5%8C%BA%E4%B8%80%E7%95%AA%E7%94%BA3-7-1%20%E9%9B%BB%E5%8A%9B%E3%83%93%E3%83%AB&hl=ja&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta" id="contact">
+    <div class="wrap">
+      <h2>気になるウェアは、お電話でもご確認ください</h2>
+      <p>お出かけ前に、まずはお気軽にお問い合わせください。</p>
+      <a class="big-tel" href="tel:0227964533">022-796-4533</a>
+      <a class="btn" href="https://www.mammut.jp/guide/inquiry" target="_blank" rel="noopener">お問い合わせフォームへ</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="https://www.facebook.com/MammutJapan/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.youtube.com/MammutJapan" target="_blank" rel="noopener">YouTube</a>
+    </div>
+    <p style="margin:0">マムート スポーツ グループ ジャパン株式会社<br>MAMMUT（マムート）仙台 ／ 宮城県仙台市青葉区一番町3-7-1 電力ビル 1F</p>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <a class="call" href="tel:0227964533">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    電話
+  </a>
+  <a href="#pick">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.2 6.4 20.2l1.1-6.2L3 9.6l6.2-.9z"/></svg>
+    イチオシ
+  </a>
+  <a href="#voice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>
+    クチコミ
+  </a>
+  <a href="#info">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    店舗情報
+  </a>
+</nav>
+
+</body>
+</html>
