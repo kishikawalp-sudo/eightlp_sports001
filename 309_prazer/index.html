@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PRAZER DIVE SERVICE（プラゼールダイブサービス）｜仙台の水族館ダイビング</title>
+<meta name="description" content="仙台の水族館でダイビング。世界でも珍しい体験を、初めてでも安心のサポートで。PRAZER DIVE SERVICE（プラゼールダイブサービス）。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#0A2B3E;
+  --sea:#127C94;
+  --foam:#E8F5F7;
+  --white:#FFFFFF;
+  --coral:#F2643F;
+  --coral-d:#D9502D;
+  --ink:#16313E;
+  --muted:#5B7480;
+  --line:#CFE3E8;
+  --header-h:56px;
+  --nav-h:60px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px);-webkit-text-size-adjust:100%}
+body{
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--white);line-height:1.8;font-size:16px;
+  padding-top:calc(var(--header-h) + env(safe-area-inset-top,0px));
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.55rem;line-height:1.45;font-weight:900;color:var(--deep);margin-bottom:20px}
+.lead{color:var(--muted);margin-bottom:24px}
+
+/* header */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:calc(var(--header-h) + env(safe-area-inset-top,0px));
+  padding-top:env(safe-area-inset-top,0px);
+  background:rgba(10,43,62,.96);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding-left:16px;padding-right:12px;
+}
+.header .logo{font-weight:900;font-size:.95rem;line-height:1.25;letter-spacing:.02em}
+.header .logo small{display:block;font-weight:500;font-size:.68rem;opacity:.75}
+.tel-btn{
+  background:var(--coral);color:#fff;text-decoration:none;font-weight:700;font-size:.88rem;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--deep);padding:0}
+.hero img{width:100%;height:78vh;min-height:460px;max-height:640px;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,43,62,.25) 0%,rgba(10,43,62,.2) 35%,rgba(10,43,62,.88) 100%)}
+.hero-copy{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:0 20px 36px;max-width:720px;margin:0 auto}
+.hero-copy .tag{display:inline-block;background:#fff;color:var(--deep);font-weight:700;font-size:.78rem;padding:4px 12px;border-radius:999px;margin-bottom:14px}
+.hero-copy h1{font-size:2.15rem;line-height:1.3;font-weight:900;margin-bottom:12px}
+.hero-copy p{font-size:.98rem;opacity:.95;margin-bottom:22px}
+
+.btn{display:block;text-align:center;text-decoration:none;font-weight:900;font-size:1.05rem;padding:16px 20px;border-radius:14px;background:var(--coral);color:#fff;box-shadow:0 6px 0 var(--coral-d)}
+.btn:active{transform:translateY(3px);box-shadow:0 3px 0 var(--coral-d)}
+.btn.sub{background:#fff;color:var(--deep);box-shadow:0 6px 0 var(--line);margin-top:16px}
+.btn small{display:block;font-weight:500;font-size:.76rem;opacity:.9}
+
+/* ichioshi */
+.pick{background:var(--foam)}
+.pick .badge{display:inline-block;background:var(--deep);color:#fff;font-weight:700;font-size:.8rem;padding:4px 14px;border-radius:6px;margin-bottom:14px}
+.pick h2{font-size:1.8rem}
+.pick-img{border-radius:20px;overflow:hidden;margin:24px 0}
+.pick-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick ul{list-style:none;display:grid;gap:12px;margin-bottom:28px}
+.pick li{background:#fff;border-radius:14px;padding:16px 18px;border-left:6px solid var(--sea)}
+.pick li strong{display:block;color:var(--deep);font-size:1.05rem}
+.pick li span{color:var(--muted);font-size:.92rem}
+
+/* strengths */
+.str-list{display:grid;gap:28px}
+.str h3{font-size:1.15rem;color:var(--sea);margin-bottom:6px;font-weight:900}
+.str p{color:var(--ink)}
+.str-img{border-radius:18px;overflow:hidden;margin-bottom:28px}
+.str-img img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* reviews */
+.voice{background:var(--deep);color:#fff}
+.voice h2{color:#fff}
+.stars{color:#FFC94A;letter-spacing:.12em;font-size:1.1rem}
+.review{background:rgba(255,255,255,.08);border-radius:16px;padding:20px;margin-bottom:16px}
+.review p{margin-top:6px;font-size:.97rem}
+
+/* info */
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:30%;color:var(--sea);font-weight:700;white-space:nowrap}
+td a{color:var(--sea);word-break:break-all}
+.map{margin-top:24px;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{width:100%;height:300px;border:0;display:block}
+
+/* cta */
+.cta{background:linear-gradient(180deg,var(--sea),var(--deep));color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{margin-bottom:24px;opacity:.95}
+.cta .tel-big{display:block;font-size:2rem;font-weight:900;color:#fff;text-decoration:none;margin-bottom:6px}
+
+footer{background:#06202E;color:#9FB6C0;text-align:center;font-size:.78rem;padding:24px 20px}
+
+/* bottom nav */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  height:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  background:#fff;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.bottom-nav a{display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.8rem;font-weight:700;color:var(--deep);text-align:center;line-height:1.3}
+.bottom-nav a.call{background:var(--coral);color:#fff}
+
+@media (min-width:768px){
+  .hero-copy h1{font-size:2.8rem}
+  h2{font-size:1.9rem}
+  .pick h2{font-size:2.2rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">PRAZER DIVE SERVICE<small>プラゼールダイブサービス</small></div>
+  <a class="tel-btn" href="tel:0227028046">電話する</a>
+</header>
+
+<main>
+  <!-- ヒーロー -->
+  <section class="hero" id="top">
+    <img src="images/hero.jpg" alt="水族館の大水槽でダイビングを楽しむダイバー">
+    <div class="hero-copy">
+      <span class="tag">仙台｜水族館ダイビング</span>
+      <h1>水族館の中で、<br>潜る。</h1>
+      <p>世界でも珍しい水族館ダイビング。人懐っこいスナメリに会える特別な体験を、初めての方にも安心のサポートで。</p>
+      <a class="btn" href="tel:0227028046">電話で相談・予約する<small>022-702-8046</small></a>
+    </div>
+  </section>
+
+  <!-- イチオシ -->
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <span class="badge">イチオシ ダイビングサービス</span>
+      <h2>世界でも珍しい<br>水族館ダイビング</h2>
+      <p class="lead">海に出なくても、水族館の水の中へ。魚たちと同じ視点で過ごす時間は、日常を忘れさせてくれます。</p>
+      <div class="pick-img">
+        <img src="images/ichioshi.jpg" alt="水族館ダイビングで魚たちに囲まれる体験">
+      </div>
+      <ul>
+        <li><strong>人懐っこいスナメリに会える</strong><span>お客様の声でも「とても癒やされた」と好評です。</span></li>
+        <li><strong>初めてでも安心</strong><span>スタッフが分かりやすく説明してから潜ります。</span></li>
+        <li><strong>リフレッシュしたい日にも</strong><span>非日常の水中で、心も体も軽くなる体験を。</span></li>
+      </ul>
+      <a class="btn" href="tel:0227028046">水族館ダイビングを予約する<small>電話 022-702-8046</small></a>
+      <a class="btn sub" href="mailto:pds@prazer-service.com">メールで問い合わせる</a>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section id="strength">
+    <div class="wrap">
+      <h2>PRAZER DIVE SERVICE が<br>選ばれる理由</h2>
+      <div class="str-img">
+        <img src="images/service.jpg" alt="ダイビングスタッフが器材を説明している様子">
+      </div>
+      <div class="str-list">
+        <div class="str">
+          <h3>親切で分かりやすいスタッフ</h3>
+          <p>明るく親切なスタッフが、手順をていねいに説明。ダイビングが初めての方も、落ち着いて水中に向かえます。</p>
+        </div>
+        <div class="str">
+          <h3>水族館と海、どちらも楽しめる</h3>
+          <p>水族館ダイビングに加えて、女川の夏浜でのビーチダイビングも体験できます。好みや経験に合わせて楽しめます。</p>
+        </div>
+        <div class="str">
+          <h3>ダイビング以外の時間も楽しい</h3>
+          <p>「ダイビングだけでなく色々楽しかった」というお客様の声も。スタッフとの時間も思い出になります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="voice" id="voice">
+    <div class="wrap">
+      <h2>お客様の声</h2>
+      <div class="review">
+        <div class="stars" aria-label="5つ星">★★★★★</div>
+        <p>世界でも珍しい水族館でのダイビングを体験しました。人懐っこいスナメリもいて、とても癒やされ、リフレッシュ出来ました😊 スタッフの方々も親切でわかりやすく説明をしてくれるので、初めてでも安心して潜る事が出来ます。</p>
+      </div>
+      <div class="review">
+        <div class="stars" aria-label="5つ星">★★★★★</div>
+        <p>初めての仙台でのダイビング！女川の夏浜でビーチダイビングと水族館ダイビング2本しましたが、どれも楽しかったです！スタッフの方も明るくて、ダイビングだけでなく色々楽しかったです(o^^o)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section id="info">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <table>
+        <tr><th>店名</th><td>PRAZER DIVE SERVICE（プラゼールダイブサービス）</td></tr>
+        <tr><th>会社名</th><td>株式会社プラゼール</td></tr>
+        <tr><th>代表者</th><td>小野　渉</td></tr>
+        <tr><th>住所</th><td>宮城県仙台市宮城野区燕沢東２丁目３−３０</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0227028046">022-702-8046</a></td></tr>
+        <tr><th>定休日</th><td>火曜日</td></tr>
+        <tr><th>メール</th><td><a href="mailto:pds@prazer-service.com">pds@prazer-service.com</a></td></tr>
+        <tr><th>公式HP</th><td><a href="http://www.prazer-service.com/pds" target="_blank" rel="noopener">http://www.prazer-service.com/pds</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe title="PRAZER DIVE SERVICE の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E5%AE%AE%E5%9F%8E%E9%87%8E%E5%8C%BA%E7%87%95%E6%B2%A2%E6%9D%B1%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93%EF%BC%90&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>まずはお気軽に<br>ご相談ください</h2>
+      <p>水族館ダイビングのご予約・ご質問は、お電話またはメールで。定休日は火曜日です。</p>
+      <a class="tel-big" href="tel:0227028046">022-702-8046</a>
+      <a class="btn" href="tel:0227028046">今すぐ電話する</a>
+      <a class="btn sub" href="mailto:pds@prazer-service.com">メールで問い合わせる</a>
+    </div>
+  </section>
+</main>
+
+<footer>© 株式会社プラゼール　PRAZER DIVE SERVICE</footer>
+
+<nav class="bottom-nav" aria-label="ページ内メニュー">
+  <a href="#pick">イチオシ</a>
+  <a href="#voice">お客様の声</a>
+  <a href="#info">店舗情報</a>
+  <a class="call" href="tel:0227028046">電話する</a>
+</nav>
+
+</body>
+</html>
