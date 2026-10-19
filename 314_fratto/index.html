@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ストリングファクトリーfratto｜仙台のソフトテニス用品・スポーツウェア・ガット張替え</title>
+<meta name="description" content="仙台市太白区のソフトテニス専門店 ストリングファクトリーfratto。カジュアルに選べるソフトテニス用品とスポーツウェア、ガットの張替えに対応。ネット注文は迅速発送。">
+<style>
+/* ===== 画像ファイル一覧（images フォルダ内）=====
+   images/hero.jpg      ... メインビジュアル（ソフトテニスラケットとウェアを並べたお店のイメージ／横長 3:2）
+   images/wear.jpg      ... イチオシ：スポーツウェアの陳列（正方形 or 4:3）
+   images/softtennis.jpg ... ソフトテニス用品・ガット張替えの様子（4:3）
+================================================== */
+:root{
+  --ink:#12263f;
+  --court:#1f64a8;
+  --court-deep:#173f6e;
+  --line:#ffffff;
+  --string:#f3d437;
+  --mist:#eef4fa;
+  --text:#1c2b3d;
+  --sub:#5a6b7f;
+  --safe-b:env(safe-area-inset-bottom,0px);
+  --safe-t:env(safe-area-inset-top,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + var(--safe-t))}
+body{
+  margin:0;
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.8;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+  padding-top:calc(56px + var(--safe-t));
+  padding-bottom:calc(64px + var(--safe-b));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.4;margin:0;font-weight:800;letter-spacing:.02em}
+p{margin:0}
+
+/* ===== ヘッダー ===== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding-top:var(--safe-t);
+  background:var(--ink);color:#fff;
+}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-size:15px;font-weight:800;letter-spacing:.03em;text-decoration:none;white-space:nowrap}
+.logo small{display:block;font-size:10px;font-weight:500;opacity:.75;letter-spacing:.06em}
+.head-tel{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--string);color:var(--ink);
+  font-weight:800;font-size:14px;text-decoration:none;
+  padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* ===== ヒーロー ===== */
+.hero{
+  background:var(--court);color:#fff;position:relative;overflow:hidden;
+  padding:36px 0 0;
+}
+/* コートのラインをモチーフにした装飾 */
+.hero::before{
+  content:"";position:absolute;inset:14px;
+  border:2px solid rgba(255,255,255,.35);border-radius:4px;pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;left:14px;right:14px;top:50%;height:2px;
+  background:rgba(255,255,255,.18);pointer-events:none;
+}
+.hero .wrap{position:relative;z-index:1}
+.hero-tag{
+  display:inline-block;background:#fff;color:var(--court-deep);
+  font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:14px;
+}
+.hero h1{font-size:clamp(28px,8vw,44px);font-weight:900;line-height:1.35}
+.hero-lead{margin-top:14px;font-size:15px;opacity:.95;max-width:34em}
+.hero-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:50px;padding:0 24px;border-radius:999px;
+  font-weight:800;font-size:16px;text-decoration:none;border:2px solid transparent;
+  transition:transform .15s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible,.nav a:focus-visible,.head-tel:focus-visible{outline:3px solid var(--string);outline-offset:3px}
+.btn-main{background:var(--string);color:var(--ink)}
+.btn-sub{background:transparent;color:#fff;border-color:#fff}
+.hero-img{margin-top:28px;border-radius:12px 12px 0 0;overflow:hidden;background:var(--court-deep);aspect-ratio:3/2}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+
+/* ===== 共通セクション ===== */
+section{padding:56px 0}
+.sec-title{font-size:clamp(22px,6vw,30px);margin-bottom:8px}
+.sec-sub{color:var(--sub);font-size:14px;margin-bottom:28px}
+
+/* ===== イチオシ ===== */
+.pick{background:var(--mist)}
+.pick-badge{
+  display:inline-block;background:var(--ink);color:var(--string);
+  font-weight:800;font-size:13px;padding:4px 14px;border-radius:4px;margin-bottom:12px;
+}
+.pick-grid{display:grid;gap:22px}
+.pick-card{background:#fff;border-radius:14px;overflow:hidden;border:2px solid var(--court)}
+.pick-card.is-main{border-width:3px;border-color:var(--ink)}
+.pick-card .ph{aspect-ratio:4/3;background:var(--mist)}
+.pick-card .ph img{width:100%;height:100%;object-fit:cover}
+.pick-card .body{padding:20px}
+.pick-card h3{font-size:21px;margin-bottom:8px}
+.pick-card p{font-size:15px;color:var(--text)}
+.pick-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.pick-list li{position:relative;padding-left:26px;font-size:15px}
+.pick-list li::before{
+  content:"";position:absolute;left:0;top:.5em;width:14px;height:14px;border-radius:50%;
+  background:var(--string);border:2px solid var(--ink);
+}
+.pick-cta{text-align:center;margin-top:28px}
+.pick-cta .btn{background:var(--ink);color:#fff;width:100%;max-width:420px}
+
+/* ===== 選ばれる理由 ===== */
+.reasons-grid{display:grid;gap:14px}
+.reason{padding:20px;border-left:6px solid var(--court);background:#fff;box-shadow:0 1px 0 #d7e2ee,0 0 0 1px #e6edf5}
+.reason h3{font-size:18px;margin-bottom:6px;color:var(--court-deep)}
+.reason p{font-size:15px}
+
+/* ===== クチコミ ===== */
+.voice{background:var(--court-deep);color:#fff}
+.voice .sec-sub{color:rgba(255,255,255,.75)}
+.voice-grid{display:grid;gap:16px}
+.voice-card{background:#fff;color:var(--text);border-radius:12px;padding:20px}
+.stars{color:#e0a800;font-size:20px;letter-spacing:2px;margin-bottom:6px}
+.stars .off{color:#cfd8e3}
+.voice-card p{font-size:15px}
+.voice-card .src{margin-top:10px;font-size:12px;color:var(--sub)}
+
+/* ===== 店舗情報 ===== */
+.info-table{width:100%;border-collapse:collapse;font-size:15px}
+.info-table th,.info-table td{padding:14px 10px;border-bottom:1px solid #d7e2ee;text-align:left;vertical-align:top}
+.info-table th{width:7.5em;color:var(--court-deep);font-weight:800;white-space:nowrap}
+.info-table a{color:var(--court);word-break:break-all}
+.map{margin-top:24px;border-radius:12px;overflow:hidden;background:var(--mist);aspect-ratio:4/3}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* ===== 最後のCTA ===== */
+.final{background:var(--court);color:#fff;text-align:center}
+.final h2{font-size:clamp(22px,6vw,30px)}
+.final p{margin-top:12px;font-size:15px}
+.final .btns{display:grid;gap:12px;max-width:420px;margin:24px auto 0}
+.final .tel-num{font-size:26px;font-weight:900;letter-spacing:.04em}
+.final .btn-sub{min-height:48px}
+.company{background:var(--ink);color:rgba(255,255,255,.75);text-align:center;font-size:12px;padding:22px 0}
+
+/* ===== 下部固定ナビ ===== */
+.nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:#fff;border-top:1px solid #d7e2ee;
+  padding-bottom:var(--safe-b);
+}
+.nav a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  min-height:60px;text-decoration:none;font-size:11px;font-weight:700;color:var(--ink);
+}
+.nav a svg{width:22px;height:22px}
+.nav a.tel{background:var(--string)}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  .hero{padding-top:56px}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:end}
+  .hero-img{margin-top:0}
+  .pick-grid{grid-template-columns:1.25fr 1fr}
+  .reasons-grid{grid-template-columns:repeat(3,1fr)}
+  .voice-grid{grid-template-columns:repeat(2,1fr)}
+  .info-wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+  .map{margin-top:0}
+  .nav{display:none}
+  body{padding-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="#top">ストリングファクトリーfratto<small>仙台市太白区｜ソフトテニス専門店</small></a>
+    <a class="head-tel" href="tel:0223065255" aria-label="電話で問い合わせる">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      電話する
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ヒーロー -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="hero-tag">仙台市太白区東中田</span>
+        <h1>ウェアも、ラケットも、ガット張替えも。<br>ソフトテニスのことなら fratto。</h1>
+        <p class="hero-lead">おしゃれで気軽に入れるソフトテニス用品のお店。スポーツウェアが充実していて、店員さんも親切。ネット注文もすぐ発送します。</p>
+        <div class="hero-btns">
+          <a class="btn btn-main" href="tel:0223065255">022-306-5255</a>
+          <a class="btn btn-sub" href="#pick">イチオシを見る</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="images/hero.jpg" alt="ストリングファクトリーfrattoの店内。ソフトテニスラケットとスポーツウェアが並ぶ様子" width="1200" height="800">
+      </div>
+    </div>
+  </div>
+
+  <!-- イチオシ -->
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <span class="pick-badge">イチオシ</span>
+      <h2 class="sec-title">スポーツウェアとソフトテニス用品が、ここで揃う。</h2>
+      <p class="sec-sub">練習着から試合まで。プレーも普段使いも楽しくなるラインナップです。</p>
+
+      <div class="pick-grid">
+        <article class="pick-card is-main">
+          <div class="ph"><img src="images/wear.jpg" alt="frattoのスポーツウェアの陳列" width="800" height="600" loading="lazy"></div>
+          <div class="body">
+            <h3>スポーツウェア</h3>
+            <p>ウェアの品数が多く、お気に入りの一着を探せます。「おしゃれ」と口コミでも評判です。</p>
+            <ul class="pick-list">
+              <li>種類が豊富で、見ているだけでも楽しい</li>
+              <li>店員さんに気軽に相談できる</li>
+              <li>ネット注文は発送連絡まで早い</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="pick-card">
+          <div class="ph"><img src="images/softtennis.jpg" alt="ソフトテニス用品とガット張替えの様子" width="800" height="600" loading="lazy"></div>
+          <div class="body">
+            <h3>ソフトテニス用品</h3>
+            <p>カジュアルに手に入るソフトテニス用品。ガットの張替えもお任せください。</p>
+            <ul class="pick-list">
+              <li>ガットの張替えに対応</li>
+              <li>初めての方も入りやすい雰囲気</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="pick-cta">
+        <a class="btn" href="#access">お店の場所を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 選ばれる理由 -->
+  <section id="reason">
+    <div class="wrap">
+      <h2 class="sec-title">frattoが選ばれる理由</h2>
+      <p class="sec-sub">口コミで多くいただく声をまとめました。</p>
+      <div class="reasons-grid">
+        <div class="reason">
+          <h3>おしゃれで入りやすい</h3>
+          <p>カジュアルな雰囲気で、ソフトテニスを始めたばかりの方も気軽に立ち寄れます。</p>
+        </div>
+        <div class="reason">
+          <h3>店員さんが親切</h3>
+          <p>道具やウェアの選び方を、わかりやすく教えます。気になることは何でも聞いてください。</p>
+        </div>
+        <div class="reason">
+          <h3>ネット注文も迅速</h3>
+          <p>注文後、すぐに発送のご連絡。お店に来られない方も安心してご利用いただけます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="voice" id="voice">
+    <div class="wrap">
+      <h2 class="sec-title">お客様の声</h2>
+      <p class="sec-sub">Googleのクチコミより</p>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+          <p>ネットで注文して、すぐに発送連絡が来ました。迅速に対応していただきありがたいです。カジュアルなソフトテニス用品が手に入る場所です。ウェアなどもたくさんありますし、ガットの張替えも出来ます。</p>
+          <p class="src">クチコミ</p>
+        </div>
+        <div class="voice-card">
+          <div class="stars" aria-label="5点満点中4点">★★★★<span class="off">★</span></div>
+          <p>おしゃれで、店員さんが親切でした。</p>
+          <p class="src">クチコミ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section id="access">
+    <div class="wrap">
+      <h2 class="sec-title">店舗情報</h2>
+      <p class="sec-sub">お越しの際は、定休日（水曜）にご注意ください。</p>
+      <div class="info-wrap">
+        <table class="info-table">
+          <tr><th>店名</th><td>ストリングファクトリーfratto</td></tr>
+          <tr><th>住所</th><td>宮城県仙台市太白区東中田６丁目３−３０</td></tr>
+          <tr><th>電話番号</th><td><a href="tel:0223065255">022-306-5255</a></td></tr>
+          <tr><th>定休日</th><td>毎週水曜日<br>（水曜日が祝日の場合は翌日休み）</td></tr>
+          <tr><th>会社名</th><td>株式会社fratto</td></tr>
+          <tr><th>代表者</th><td>宮原 孝次</td></tr>
+          <tr><th>ホームページ</th><td><a href="https://www.fratto-0919.co.jp/" target="_blank" rel="noopener">https://www.fratto-0919.co.jp/</a></td></tr>
+          <tr><th>Instagram</th><td><a href="https://www.instagram.com/fratto.sendai/" target="_blank" rel="noopener">@fratto.sendai</a></td></tr>
+        </table>
+        <div class="map">
+          <iframe title="ストリングファクトリーfrattoの地図" src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E5%A4%AA%E7%99%BD%E5%8C%BA%E6%9D%B1%E4%B8%AD%E7%94%B0%EF%BC%96%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%93%EF%BC%90&output=embed&hl=ja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最後のCTA -->
+  <section class="final" id="contact">
+    <div class="wrap">
+      <h2>ウェアもソフトテニス用品も、まずは見にきてください。</h2>
+      <p>ガット張替えのご相談、ネット注文のご質問もお気軽にどうぞ。</p>
+      <div class="btns">
+        <a class="btn btn-main tel-num" href="tel:0223065255">022-306-5255</a>
+        <a class="btn btn-sub" href="https://www.fratto-0919.co.jp/info/contact_us/" target="_blank" rel="noopener">お問い合わせフォーム</a>
+        <a class="btn btn-sub" href="https://www.fratto-0919.co.jp/" target="_blank" rel="noopener">ホームページを見る</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="company">
+  <div class="wrap">© 株式会社fratto ／ ストリングファクトリーfratto</div>
+</footer>
+
+<!-- スマホ用 下部固定ナビ -->
+<nav class="nav" aria-label="クイックメニュー">
+  <a class="tel" href="tel:0223065255">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    電話
+  </a>
+  <a href="#access">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+    地図
+  </a>
+  <a href="https://www.instagram.com/fratto.sendai/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+    Instagram
+  </a>
+  <a href="https://www.fratto-0919.co.jp/info/contact_us/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7L4 7.5V8l8 5 8-5v-.5L12 12z"/></svg>
+    問い合わせ
+  </a>
+</nav>
+
+</body>
+</html>
