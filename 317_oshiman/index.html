@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OSHMAN'S 仙台店｜仙台駅前・一番町でスポーツウェアを選ぶ</title>
+<meta name="description" content="仙台駅前のアーケード街『ぶらんど〜む一番町商店街』にある OSHMAN'S 仙台店。東北初出店のスポーツ・アウトドアセレクトショップで、スポーツウェアをはじめ様々なブランドが揃います。">
+<style>
+:root{
+  --ink:#12233a;
+  --ink-soft:#4a5a6e;
+  --paper:#f5f6f3;
+  --white:#ffffff;
+  --sig:#e4402a;
+  --sig-dark:#c42f1b;
+  --line:#d9dde2;
+  --pale:#e9eef4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  color:var(--ink);background:var(--paper);line-height:1.8;font-size:16px;
+  padding-top:calc(56px + env(safe-area-inset-top));
+  padding-bottom:calc(64px + env(safe-area-inset-bottom));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.6rem;line-height:1.4;font-weight:900;letter-spacing:.02em}
+.lead{color:var(--ink-soft);margin-top:12px}
+
+/* header */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--ink);color:#fff;
+  padding-top:env(safe-area-inset-top);}
+.hdr-in{max-width:720px;margin:0 auto;height:56px;padding:0 12px 0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:1.05rem;letter-spacing:.04em}
+.logo small{font-weight:500;font-size:.75rem;margin-left:6px;opacity:.8}
+.tel-btn{background:var(--sig);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:8px 16px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{padding:0;background:var(--ink);color:#fff}
+.hero-img{position:relative;background:#243a56}
+.hero-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.hero-body{padding:32px 20px 44px;max-width:720px;margin:0 auto}
+.hero-tag{display:inline-block;background:var(--sig);font-weight:700;font-size:.85rem;padding:4px 12px;border-radius:4px}
+.hero h1{font-size:clamp(1.9rem,8vw,2.8rem);line-height:1.3;font-weight:900;margin-top:16px;letter-spacing:.01em}
+.hero p{margin-top:16px;color:#d3dbe6}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:900;font-size:1.05rem;padding:16px 20px;border-radius:10px;margin-top:24px}
+.btn-sig{background:var(--sig);color:#fff}
+.btn-sig:active{background:var(--sig-dark)}
+.btn-line{border:2px solid #fff;color:#fff}
+.btn-dark{background:var(--ink);color:#fff}
+.hero-facts{display:flex;gap:0;margin-top:28px;border-top:1px solid rgba(255,255,255,.25)}
+.hero-facts div{flex:1;padding:14px 8px 0 0;font-size:.82rem;color:#d3dbe6;line-height:1.5}
+.hero-facts b{display:block;color:#fff;font-size:1rem}
+
+/* pick */
+.pick{background:var(--white)}
+.pick-badge{display:inline-block;border:2px solid var(--sig);color:var(--sig);font-weight:900;padding:2px 12px;border-radius:4px;font-size:.9rem}
+.pick h2{margin-top:12px}
+.pick-img{margin-top:24px;border-radius:12px;overflow:hidden;background:var(--pale)}
+.pick-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick-list{list-style:none;margin-top:24px}
+.pick-list li{padding:18px 0;border-top:1px solid var(--line)}
+.pick-list li:last-child{border-bottom:1px solid var(--line)}
+.pick-list h3{font-size:1.1rem;font-weight:900}
+.pick-list p{color:var(--ink-soft);font-size:.95rem;margin-top:4px}
+
+/* strengths */
+.str-grid{margin-top:28px;display:grid;gap:16px}
+.str{background:var(--white);border-left:6px solid var(--sig);padding:20px}
+.str h3{font-size:1.1rem;font-weight:900}
+.str p{margin-top:6px;color:var(--ink-soft);font-size:.95rem}
+.store-img{margin-top:28px;border-radius:12px;overflow:hidden;background:var(--pale)}
+.store-img img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* voice */
+.voice{background:var(--pale)}
+.vbox{background:var(--white);border-radius:12px;padding:22px;margin-top:20px}
+.stars{color:#f2a413;font-size:1.15rem;letter-spacing:2px}
+.vbox h3{font-size:1.05rem;font-weight:900;margin-top:6px;line-height:1.5}
+.vbox p{margin-top:10px;font-size:.95rem;color:#2c3c52}
+.vmeta{display:block;margin-top:10px;font-size:.8rem;color:var(--ink-soft)}
+.note{font-size:.78rem;color:var(--ink-soft);margin-top:16px}
+
+/* info */
+.info table{width:100%;border-collapse:collapse;margin-top:24px;background:var(--white)}
+.info th,.info td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.95rem}
+.info th{width:30%;background:#eef1f5;font-weight:700;white-space:nowrap}
+.info td a{color:var(--sig-dark);word-break:break-all}
+.map{margin-top:24px;border-radius:12px;overflow:hidden;background:var(--pale)}
+.map iframe{display:block;width:100%;height:320px;border:0}
+.sns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.sns a{flex:1 1 140px;text-align:center;text-decoration:none;font-weight:700;border:2px solid var(--ink);border-radius:10px;padding:12px 8px;font-size:.95rem}
+
+/* cta */
+.cta{background:var(--ink);color:#fff;text-align:center}
+.cta h2{font-size:1.5rem}
+.cta p{margin-top:12px;color:#d3dbe6}
+.cta .tel-big{display:block;font-size:2rem;font-weight:900;margin-top:20px;text-decoration:none;color:#fff;letter-spacing:.03em}
+.cta small{display:block;color:#aab7c8;margin-top:4px}
+
+footer{padding:24px 20px;text-align:center;font-size:.8rem;color:var(--ink-soft)}
+
+/* bottom nav */
+.bnav{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--white);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom);display:flex}
+.bnav a{flex:1;text-align:center;text-decoration:none;font-size:.78rem;font-weight:700;padding:10px 2px;line-height:1.3;color:var(--ink);border-right:1px solid var(--line)}
+.bnav a:last-child{border-right:0}
+.bnav a.call{background:var(--sig);color:#fff}
+.bnav i{display:block;font-style:normal;font-size:1.15rem;line-height:1.2}
+
+a:focus-visible{outline:3px solid #f2a413;outline-offset:2px}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  section{padding:80px 0}
+  .hero-img img{aspect-ratio:16/8}
+  .str-grid{grid-template-columns:1fr 1fr}
+  .str:last-child{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <div class="logo">OSHMAN'S<small>仙台店</small></div>
+    <a class="tel-btn" href="tel:0223996303">電話する</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-img">
+    <img src="images/hero.jpg" alt="OSHMAN'S 仙台店のスポーツウェア" width="1200" height="900">
+  </div>
+  <div class="hero-body">
+    <span class="hero-tag">東北初出店・仙台駅前</span>
+    <h1>スポーツウェアを、<br>仙台一番町で選ぶ。</h1>
+    <p>様々なブランドが揃う OSHMAN'S 仙台店。ウェアも、シューズも、ジャケットも。気になる一着を、実際に手に取って選べます。</p>
+    <a class="btn btn-sig" href="tel:0223996303">電話で問い合わせる</a>
+    <a class="btn btn-line" href="#info">お店の場所を見る</a>
+    <div class="hero-facts">
+      <div><b>東北初出店</b>2023年4月グランドオープン</div>
+      <div><b>駅前アーケード</b>ぶらんど〜む一番町商店街</div>
+      <div><b>1F・B1F</b>2フロアで展開</div>
+    </div>
+  </div>
+</section>
+
+<!-- PICK -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="pick-badge">イチオシ</span>
+    <h2>まずは見てほしい、<br>スポーツウェア。</h2>
+    <p class="lead">トレーニングから街着まで。ブランドを横断して、あなたに合う一着を探せるのが OSHMAN'S 仙台店のウェアコーナーです。</p>
+    <div class="pick-img">
+      <img src="images/wear.jpg" alt="OSHMAN'S 仙台店のイチオシ商品 スポーツウェア" width="1200" height="900">
+    </div>
+    <ul class="pick-list">
+      <li>
+        <h3>ブランドを見比べて選べる</h3>
+        <p>様々なブランドが一か所に。お客様の声でも「ついつい見入ってしまう」と好評の品揃えです。</p>
+      </li>
+      <li>
+        <h3>ジャケット・アウターも充実</h3>
+        <p>パタゴニアのジャケットを購入した方、シューズと一緒にジャケットも選んだ方の声が届いています。</p>
+      </li>
+      <li>
+        <h3>気になる点は、スタッフにそのまま相談</h3>
+        <p>サイズ交換の相談にもスムーズに対応してもらえたと、お客様から声をいただいています。</p>
+      </li>
+    </ul>
+    <a class="btn btn-sig" href="tel:0223996303">ウェアの在庫を電話で聞く</a>
+  </div>
+</section>
+
+<!-- STRENGTH -->
+<section id="strength">
+  <div class="wrap">
+    <h2>仙台駅前で、<br>通いやすい一軒。</h2>
+    <div class="str-grid">
+      <div class="str">
+        <h3>東北初出店の OSHMAN'S</h3>
+        <p>2023年4月22日（土）、「オッシュマンズ仙台店」が東北初出店としてグランドオープンしました。</p>
+      </div>
+      <div class="str">
+        <h3>仙台駅前の一大ショッピングストリート</h3>
+        <p>JR仙台駅前アーケード街『ぶらんど〜む一番町商店街』にあり、買い物のついでに立ち寄れます。</p>
+      </div>
+      <div class="str">
+        <h3>1Fと地下1Fの2フロア</h3>
+        <p>ウェアだけでなく、シューズなど幅広いアイテムをじっくり見て回れる売り場です。</p>
+      </div>
+    </div>
+    <div class="store-img">
+      <img src="images/store.jpg" alt="OSHMAN'S 仙台店の店内" width="1200" height="750">
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="voice" id="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <p class="lead">実際にご来店いただいたお客様からの口コミです。</p>
+
+    <div class="vbox">
+      <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+      <h3>返品・交換もスムーズ。親切なスタッフと、豊富なブランド。</h3>
+      <p>台湾出身です。11月28日に日本に行った際に、ONのスニーカーをこちらで購入しました。後からサイズが小さかったと感じたので、翌日に返品・交換しに行きました。とてもスムーズに対応していただき、気に入った新しい靴とジャケットも購入できました。このお店は本当におすすめです。スタッフの方々もとても親切でした！　様々なブランドが揃っているお店です。ONを見て、ついつい見入ってしまいました。スニーカーはアメリカよりも安く、平均3,500～4,000円くらいでした。台湾との価格差はもっと大きいかもしれません。結局、サイズ0のナイキの靴を半額以下で買ってしまいました。</p>
+      <span class="vmeta">口コミ投稿より</span>
+    </div>
+
+    <div class="vbox">
+      <div class="stars" aria-label="5点満点中4点">★★★★<span style="color:#cfd5dc">★</span></div>
+      <h3>パタゴニアのレトロXを購入。LINE友達追加でさらにお得に。</h3>
+      <p>パタゴニアのレトロXを購入しました。10%offで公式よりお得な上にラインの友達追加でさらに3000円offになり定価35200円が28600円になりました。有り難う御座いました。</p>
+      <span class="vmeta">2024/01/04 口コミ投稿より</span>
+    </div>
+    <p class="note">※口コミは投稿時点の内容です。割引・特典の内容や対象商品は時期により異なる場合があります。詳しくは店舗へお問い合わせください。</p>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info" id="info">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>OSHMAN'S 仙台店</td></tr>
+      <tr><th>住所</th><td>宮城県仙台市青葉区一番町3-9-18 1F、B1F</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0223996303">0223-99-6303</a></td></tr>
+      <tr><th>定休日</th><td>不定休</td></tr>
+      <tr><th>運営会社</th><td>株式会社オッシュマンズ・ジャパン</td></tr>
+      <tr><th>公式サイト</th><td><a href="https://www.oshmans.co.jp/shop/" target="_blank" rel="noopener">https://www.oshmans.co.jp/shop/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:contact@oshmans.net">contact@oshmans.net</a></td></tr>
+      <tr><th>問い合わせ</th><td><a href="https://www.oshmans.co.jp/shop/contact/contact.aspx" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="OSHMAN'S 仙台店の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9D%92%E8%91%89%E5%8C%BA%E4%B8%80%E7%95%AA%E7%94%BA3-9-18&output=embed&hl=ja"></iframe>
+    </div>
+    <div class="sns">
+      <a href="https://www.instagram.com/oshmans_japan/?hl=ja" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCGVy-gPrTRR3o2ukg8-YGMA" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>気になるウェアは、<br>お気軽にお問い合わせください。</h2>
+    <p>在庫・サイズ・ブランドのご相談は、お電話で承ります。</p>
+    <a class="tel-big" href="tel:0223996303">0223-99-6303</a>
+    <small>定休日：不定休</small>
+    <a class="btn btn-sig" href="tel:0223996303">電話をかける</a>
+    <a class="btn btn-line" href="https://www.oshmans.co.jp/shop/contact/contact.aspx" target="_blank" rel="noopener">フォームで問い合わせる</a>
+  </div>
+</section>
+
+</main>
+
+<footer>© 株式会社オッシュマンズ・ジャパン OSHMAN'S 仙台店</footer>
+
+<nav class="bnav" aria-label="固定メニュー">
+  <a class="call" href="tel:0223996303"><i>☎</i>電話</a>
+  <a href="#pick"><i>👕</i>イチオシ</a>
+  <a href="#voice"><i>★</i>口コミ</a>
+  <a href="#info"><i>📍</i>店舗情報</a>
+</nav>
+
+</body>
+</html>
