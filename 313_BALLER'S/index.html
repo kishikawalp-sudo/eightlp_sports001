@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BALLER'S SENDAI｜仙台のバスケットボール用品専門店</title>
+<meta name="description" content="仙台市青葉区のバスケットボール用品専門店 BALLER'S SENDAI。シューズ・ウェア・他店にないグッズまで、本物を選ぶ仲間のための品揃え。会員特典あり。">
+<style>
+:root{--black:#111;--dark:#1b1b1f;--orange:#ff6a00;--orange2:#ff8a2b;--cream:#fff7ef;--gray:#666;--line:#e8e2da;--hh:56px;--bh:60px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hh)}
+body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;color:var(--black);line-height:1.8;font-size:15px;background:#fff;padding-top:var(--hh);padding-bottom:calc(var(--bh) + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+section{padding:56px 0}
+.sec-en{font-size:12px;letter-spacing:.2em;color:var(--orange);font-weight:700;text-align:center}
+.sec-title{font-size:23px;line-height:1.45;text-align:center;font-weight:800;margin:4px 0 28px}
+.sec-title span{background:linear-gradient(transparent 65%,rgba(255,106,0,.35) 65%)}
+/* header */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--hh);background:rgba(17,17,17,.96);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 14px;padding-top:env(safe-area-inset-top,0px);box-sizing:content-box}
+.logo{font-weight:900;font-size:17px;letter-spacing:.04em}
+.logo b{color:var(--orange)}
+.tel-btn{background:var(--orange);color:#fff;font-weight:800;font-size:13px;padding:8px 14px;border-radius:999px;white-space:nowrap}
+/* hero */
+.hero{position:relative;color:#fff;background:var(--black);padding:0}
+.hero-img{width:100%;aspect-ratio:4/5;max-height:560px;object-fit:cover;opacity:.55}
+.hero-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px 20px 32px;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.85))}
+.hero-tag{display:inline-block;align-self:flex-start;background:var(--orange);font-weight:800;font-size:12px;padding:3px 12px;border-radius:3px;margin-bottom:12px}
+.hero h1{font-size:29px;line-height:1.35;font-weight:900;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--orange2)}
+.hero p{font-size:14px;margin-top:10px;opacity:.95}
+.hero-cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;text-align:center;font-weight:800;border-radius:999px;padding:14px 26px;font-size:15px}
+.btn-o{background:var(--orange);color:#fff;box-shadow:0 4px 0 #c24f00}
+.btn-w{background:#fff;color:var(--black)}
+.marquee{background:var(--orange);color:#fff;font-weight:800;text-align:center;font-size:13px;padding:8px 10px;letter-spacing:.05em}
+/* feature */
+.feature{background:var(--cream)}
+.badge{display:block;width:max-content;margin:0 auto 12px;background:var(--black);color:var(--orange2);font-weight:900;font-size:13px;padding:4px 16px;border-radius:999px;letter-spacing:.1em}
+.feat-img{border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.2);margin-bottom:22px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.feat-lead{font-size:16px;font-weight:700;text-align:center;margin-bottom:18px}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}
+.chip{background:#fff;border:2px solid var(--black);border-radius:10px;padding:14px 8px;text-align:center;font-weight:800;font-size:14px}
+.chip small{display:block;color:var(--gray);font-weight:500;font-size:11px}
+.point{background:var(--black);color:#fff;border-radius:14px;padding:20px;margin-top:8px}
+.point h3{color:var(--orange2);font-size:16px;margin-bottom:6px}
+.point ul{list-style:none}
+.point li{padding:6px 0 6px 26px;position:relative;font-size:14px}
+.point li::before{content:"🏀";position:absolute;left:0;top:6px;font-size:14px}
+/* strengths */
+.card{display:flex;gap:14px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:last-child{border:0}
+.num{flex:0 0 44px;height:44px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:18px}
+.card h3{font-size:16px;margin-bottom:4px}
+.card p{font-size:14px;color:#444}
+/* story */
+.story{background:var(--dark);color:#fff;text-align:center}
+.story .sec-title{color:#fff}
+.story img{border-radius:12px;margin-bottom:22px;width:100%;aspect-ratio:16/10;object-fit:cover}
+.story blockquote{font-size:15px;line-height:2.1;padding:0 4px}
+.story .year{font-size:44px;font-weight:900;color:var(--orange);line-height:1.1}
+.story .year small{font-size:15px;color:#fff}
+/* reviews */
+.rv{background:#fff;border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:10px;padding:16px;margin-bottom:14px;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+.stars{color:#f5a300;letter-spacing:2px;font-size:16px}
+.rv p{font-size:14px;margin-top:4px}
+.rv .src{font-size:11px;color:var(--gray);margin-top:6px}
+/* info */
+.info{background:var(--cream)}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;font-size:14px}
+th,td{padding:12px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:28%;background:#f3ece3;font-weight:700;font-size:13px}
+td a{color:#0a58ca;text-decoration:underline;word-break:break-all}
+.map{margin-top:18px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:280px;border:0}
+/* cta */
+.cta{background:linear-gradient(135deg,var(--orange),#e04e00);color:#fff;text-align:center}
+.cta h2{font-size:22px;line-height:1.5;font-weight:900}
+.cta p{margin:10px 0 22px;font-size:14px}
+.cta .btn{display:block;max-width:360px;margin:0 auto 12px}
+.cta .btn-o{background:#111;box-shadow:0 4px 0 #000}
+footer{background:#0b0b0b;color:#aaa;text-align:center;font-size:12px;padding:24px 16px}
+/* bottom nav */
+.bnav{position:fixed;left:0;right:0;bottom:0;z-index:100;display:flex;background:#111;padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:content-box;height:var(--bh)}
+.bnav a{flex:1;color:#fff;text-align:center;font-size:11px;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-right:1px solid #2a2a2a}
+.bnav a:last-child{border:0}
+.bnav a.main{background:var(--orange)}
+.bnav span{font-size:18px;line-height:1}
+@media(min-width:720px){.hero-img{aspect-ratio:16/9}.hero h1{font-size:40px}.sec-title{font-size:28px}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">BALLER'S <b>SENDAI</b></div>
+  <a class="tel-btn" href="tel:0227976533">📞 電話する</a>
+</header>
+
+<main>
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="images/hero.jpg" alt="BALLER'S SENDAI 店内・バスケットボール用品">
+  <div class="hero-in">
+    <span class="hero-tag">仙台・本町｜バスケ用品専門店</span>
+    <h1>本物を選ぶ仲間へ。<br><em>バスケ</em>だけを、<br>とことん。</h1>
+    <p>シューズ・ウェア・他店にないグッズまで。<br>バスケを愛する人のための専門店です。</p>
+    <div class="hero-cta">
+      <a class="btn btn-o" href="#feature">イチオシを見る</a>
+      <a class="btn btn-w" href="tel:0227976533">電話で問い合わせ</a>
+    </div>
+  </div>
+</div>
+<div class="marquee">🏀 会員特典でお得にお買い物 ／ 定休日：毎週水・木曜日 🏀</div>
+
+<!-- FEATURE -->
+<section class="feature" id="feature">
+  <div class="wrap">
+    <span class="badge">★ イチオシ ★</span>
+    <p class="sec-en">RECOMMENDED</p>
+    <h2 class="sec-title"><span>バスケ用品専門店</span>だから<br>出会える一品がある</h2>
+    <img class="feat-img" src="images/item.jpg" alt="バスケットボールシューズ・ウェア・グッズ">
+    <p class="feat-lead">一般のスポーツ店では見つからない、<br>バスケ好きのための本格ラインナップ。</p>
+    <div class="chips">
+      <div class="chip">シューズ<small>こだわりの一足を</small></div>
+      <div class="chip">ウェア<small>掘り出し物も</small></div>
+      <div class="chip">バスケグッズ<small>他店にないものも</small></div>
+      <div class="chip">指導者向け<small>チーム・指導に</small></div>
+    </div>
+    <div class="point">
+      <h3>こんな方におすすめ</h3>
+      <ul>
+        <li>自分に合うバスケシューズを探している</li>
+        <li>他の店にはないバスケグッズが見たい</li>
+        <li>チームや指導に使える用品を探している指導者の方</li>
+        <li>仙台でバスケの買い物を楽しみたい</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTH -->
+<section id="strength">
+  <div class="wrap">
+    <p class="sec-en">STRENGTHS</p>
+    <h2 class="sec-title">BALLER'S SENDAIが<br><span>選ばれる3つの理由</span></h2>
+    <div class="card"><div class="num">1</div><div><h3>バスケに特化した専門店</h3><p>バスケットボール一本。専門店ならではの品揃えで、探していた一品に出会えます。</p></div></div>
+    <div class="card"><div class="num">2</div><div><h3>会員特典でお得に購入</h3><p>会員になると特典でお得にお買い物。通うほどバスケライフが充実します。</p></div></div>
+    <div class="card"><div class="num">3</div><div><h3>親切なスタッフ対応</h3><p>バスケを知るスタッフが親切にご案内。選手はもちろん、指導者の方も安心してご来店ください。</p></div></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="wrap">
+    <p class="sec-en">OUR STORY</p>
+    <h2 class="sec-title">バスケへの愛と、<br>本物への責任</h2>
+    <img src="images/shop.jpg" alt="BALLER'S SENDAI 店舗の様子">
+    <p class="year">133<small> 年</small></p>
+    <blockquote>
+      バスケットボールの誕生から133年。<br>
+      今では世界最大の競技人口を誇ります。<br>
+      激しくも繊細、競争と友愛が生み出す熱気に魅せられたすべての人々が、より強く、速く、賢くあり続けるために。<br>
+      本当に良いものだけを届けたい。<br>
+      本物を選ぶ仲間への責任と、このゲームへの愛こそが、私たちの誇りです。
+    </blockquote>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="voice">
+  <div class="wrap">
+    <p class="sec-en">VOICE</p>
+    <h2 class="sec-title"><span>お客様の声</span></h2>
+    <div class="rv">
+      <div class="stars">★★★★★</div>
+      <p>他店では置いてないグッズなどもあり、指導者にもおすすめなお店です。いろんなのがあって、全部ほしくなりました。</p>
+      <div class="src">Google口コミより</div>
+    </div>
+    <div class="rv">
+      <div class="stars">★★★★☆</div>
+      <p>バスケグッズ専門店。会員特典でお得に購入出来ちゃいます。スタッフさんも親切です。シューズやウェアの掘り出し物もあります。</p>
+      <div class="src">Google口コミより</div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info" id="info">
+  <div class="wrap">
+    <p class="sec-en">SHOP INFO</p>
+    <h2 class="sec-title"><span>店舗情報</span></h2>
+    <table>
+      <tr><th>店名</th><td>BALLER'S SENDAI</td></tr>
+      <tr><th>運営会社</th><td>株式会社オンザコート</td></tr>
+      <tr><th>住所</th><td>〒980-0014<br>宮城県仙台市青葉区本町1丁目11-11<br>HANIX B.L.D 1F</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0227976533">022-797-6533</a></td></tr>
+      <tr><th>定休日</th><td>毎週水・木曜日</td></tr>
+      <tr><th>メール</th><td><a href="mailto:sendai@ballers-hf.com">sendai@ballers-hf.com</a></td></tr>
+      <tr><th>公式サイト</th><td><a href="https://www.ballers-hf.com/sendai.php" target="_blank" rel="noopener">https://www.ballers-hf.com/sendai.php</a></td></tr>
+      <tr><th>X（旧Twitter）</th><td><a href="https://x.com/BALLERSSENDAI" target="_blank" rel="noopener">@BALLERSSENDAI</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="BALLER'S SENDAI 地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9D%92%E8%91%89%E5%8C%BA%E6%9C%AC%E7%94%BA1%E4%B8%81%E7%9B%AE11-11%20HANIX&hl=ja&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>あなたのバスケを、<br>もっと楽しく。</h2>
+    <p>シューズ・ウェア・グッズ探しは<br>仙台のバスケ専門店 BALLER'S SENDAIへ。</p>
+    <a class="btn btn-o" href="tel:0227976533">📞 022-797-6533 に電話する</a>
+    <a class="btn btn-w" href="https://www.ballers-hf.com/sendai.php" target="_blank" rel="noopener">公式サイトを見る</a>
+    <a class="btn btn-w" href="https://x.com/BALLERSSENDAI" target="_blank" rel="noopener">Xで最新情報をチェック</a>
+  </div>
+</section>
+</main>
+
+<footer>© 株式会社オンザコート BALLER'S SENDAI</footer>
+
+<nav class="bnav" aria-label="固定メニュー">
+  <a href="tel:0227976533" class="main"><span>📞</span>電話</a>
+  <a href="#feature"><span>🏀</span>イチオシ</a>
+  <a href="#voice"><span>💬</span>口コミ</a>
+  <a href="#info"><span>📍</span>アクセス</a>
+</nav>
+
+</body>
+</html>
