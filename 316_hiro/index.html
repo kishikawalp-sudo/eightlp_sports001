@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ヒロスポーツ｜仙台の老舗サッカーショップ（宮城野区・名掛丁）</title>
+<meta name="description" content="仙台の老舗サッカープロスポーツ用品店ヒロスポーツ。スパイク・ユニフォーム（マーキング対応）・小物までサッカー用品が満載。年中無休、駅から近い。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --turf:#1d4a2c;
+  --turf-deep:#123420;
+  --chalk:#f6f5ee;
+  --line:#ffffff;
+  --card:#ffcc00;
+  --ink:#14241a;
+  --sub:#4d5f53;
+  --rule:#d9ddd2;
+  --display:"Dela Gothic One","Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font-family:var(--body);color:var(--ink);background:var(--chalk);line-height:1.8;font-size:16px;-webkit-text-size-adjust:100%;padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--card);outline-offset:2px}
+.wrap{width:100%;max-width:720px;margin:0 auto;padding:0 20px}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--turf-deep);color:var(--line);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;padding-top:env(safe-area-inset-top,0px);box-sizing:content-box}
+.hd__name{font-family:var(--display);font-size:18px;letter-spacing:.04em;text-decoration:none}
+.hd__tel{display:inline-flex;align-items:center;gap:6px;background:var(--card);color:var(--ink);font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;text-decoration:none}
+
+/* hero */
+.hero{position:relative;background:var(--turf);color:var(--line);overflow:hidden;padding:36px 0 0}
+.hero::before{content:"";position:absolute;left:50%;top:-120px;width:360px;height:360px;margin-left:-180px;border:3px solid rgba(255,255,255,.22);border-radius:50%;pointer-events:none}
+.hero::after{content:"";position:absolute;left:0;right:0;top:60px;height:3px;background:rgba(255,255,255,.22);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero__lead{margin:0 0 10px;font-size:14px;font-weight:500;opacity:.92}
+.hero h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(30px,9vw,46px);line-height:1.3;letter-spacing:.02em}
+.hero__sub{margin:16px 0 0;font-size:15px;opacity:.95}
+.hero__badges{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.hero__badges li{border:2px solid var(--line);padding:3px 12px;border-radius:4px;font-weight:700;font-size:13px}
+.hero__cta{display:flex;flex-direction:column;gap:10px;margin:24px 0 28px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:12px 18px;border-radius:8px;font-weight:700;font-size:17px;text-decoration:none;text-align:center}
+.btn--main{background:var(--card);color:var(--ink)}
+.btn--sub{border:2px solid var(--line);color:var(--line)}
+.hero__img{margin:0;position:relative;z-index:1}
+.hero__img img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--turf-deep)}
+
+/* sections */
+section{padding:56px 0}
+h2{margin:0 0 8px;font-family:var(--display);font-weight:400;font-size:clamp(24px,6.6vw,32px);line-height:1.4}
+.lead{margin:0 0 28px;color:var(--sub);font-size:15px}
+
+/* ichioshi */
+.pick{background:var(--chalk)}
+.pick__tag{display:inline-block;background:var(--card);color:var(--ink);font-weight:700;font-size:14px;padding:2px 12px;border-radius:4px;margin-bottom:12px}
+.pick__img{margin:0 0 24px;border:3px solid var(--turf)}
+.pick__img img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--rule)}
+.lineup{margin:0;padding:0;list-style:none;border-top:2px solid var(--turf)}
+.lineup li{padding:16px 0;border-bottom:1px solid var(--rule)}
+.lineup strong{display:block;font-size:18px;line-height:1.5}
+.lineup span{color:var(--sub);font-size:15px}
+.pick__note{margin:24px 0 0;padding:16px 18px;background:var(--turf);color:var(--line);border-radius:6px;font-size:15px}
+.pick__note b{color:var(--card)}
+
+/* strengths */
+.strong{background:#fff;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.strong__list{display:grid;gap:0}
+.strong__item{padding:20px 0 20px 18px;border-left:6px solid var(--turf)}
+.strong__item+.strong__item{margin-top:20px}
+.strong__item h3{margin:0 0 6px;font-size:19px;line-height:1.5}
+.strong__item p{margin:0;color:var(--sub);font-size:15px}
+.strong__img{margin:32px 0 0}
+.strong__img img{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--rule);border-radius:4px}
+
+/* reviews */
+.rev{display:grid;gap:16px}
+.rev__item{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:20px}
+.rev__star{margin:0 0 8px;color:#e0a800;font-size:20px;letter-spacing:.08em;line-height:1}
+.rev__star small{color:var(--sub);font-size:13px;letter-spacing:0;margin-left:6px}
+.rev__item p{margin:0;font-size:15px}
+
+/* info */
+.info{background:var(--turf-deep);color:var(--line)}
+.info h2{color:var(--line)}
+.tbl{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:15px}
+.tbl th,.tbl td{padding:14px 8px;border-bottom:1px solid rgba(255,255,255,.2);text-align:left;vertical-align:top}
+.tbl th{width:96px;font-weight:500;color:rgba(255,255,255,.7);white-space:nowrap}
+.tbl a{color:var(--card);word-break:break-all}
+.map{position:relative;width:100%;aspect-ratio:4/3;background:#0b2416;border-radius:6px;overflow:hidden}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* cta */
+.cta{background:var(--card);text-align:center}
+.cta h2{font-size:clamp(22px,6vw,28px)}
+.cta p{margin:0 0 24px}
+.cta .btn--main{background:var(--turf-deep);color:var(--line)}
+.cta .btn--sub{border-color:var(--turf-deep);color:var(--turf-deep);margin-top:10px}
+.cta__tel{font-family:var(--display);font-size:30px;line-height:1.2;margin:0 0 4px}
+
+footer{background:var(--ink);color:rgba(255,255,255,.75);text-align:center;font-size:12px;padding:20px 20px}
+
+/* bottom nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);background:var(--turf-deep);padding-bottom:env(safe-area-inset-bottom,0px);border-top:2px solid var(--card)}
+.nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:60px;color:var(--line);font-size:11px;font-weight:700;text-decoration:none}
+.nav a+a{border-left:1px solid rgba(255,255,255,.15)}
+.nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav a.is-main{background:var(--card);color:var(--ink)}
+
+@media (min-width:600px){
+  .hero__cta{flex-direction:row}
+  .hero__cta .btn{flex:1}
+  .rev{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <a class="hd__name" href="#top">ヒロスポーツ</a>
+  <a class="hd__tel" href="tel:0222570304" aria-label="電話をかける 022-257-0304">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    電話する
+  </a>
+</header>
+
+<main id="top">
+
+<!-- ヒーロー -->
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <p class="hero__lead">仙台・宮城野区の老舗サッカーショップ</p>
+    <h1>サッカーのことなら、<br>全部ヒロスポーツへ。</h1>
+    <p class="hero__sub">スパイクからユニフォーム、小物まで。迷ったら店員に相談してください。丁寧に選びます。</p>
+    <ul class="hero__badges">
+      <li>年中無休</li>
+      <li>駅から近い</li>
+      <li>マーキング対応</li>
+    </ul>
+    <div class="hero__cta">
+      <a class="btn btn--main" href="tel:0222570304">電話で相談する 022-257-0304</a>
+      <a class="btn btn--sub" href="#access">お店の場所を見る</a>
+    </div>
+  </div>
+  <figure class="hero__img">
+    <!-- 画像1：店舗外観またはサッカースパイクが並ぶ売場 -->
+    <img src="images/hero.jpg" alt="仙台の老舗サッカーショップ ヒロスポーツの店舗とサッカー用品" width="1200" height="900">
+  </figure>
+</section>
+
+<!-- イチオシ -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="pick__tag">イチオシ</span>
+    <h2>サッカーショップ</h2>
+    <p class="lead">サッカーに関する用品が、ここに揃っています。</p>
+    <figure class="pick__img">
+      <!-- 画像2：スパイク・ユニフォームなどサッカー用品 -->
+      <img src="images/soccer_items.jpg" alt="ヒロスポーツで取り扱うサッカースパイクとユニフォーム" width="1200" height="900" loading="lazy">
+    </figure>
+    <ul class="lineup">
+      <li>
+        <strong>サッカーシューズ（スパイク）</strong>
+        <span>足に合う一足を、店員と相談しながら選べます。旧モデルを安く買えるのも魅力です。</span>
+      </li>
+      <li>
+        <strong>ユニフォーム（マーキング対応）</strong>
+        <span>チームのユニフォームにも対応。背番号やネームなど、マーキングまでお任せください。</span>
+      </li>
+      <li>
+        <strong>各種サッカーグッズ・小物</strong>
+        <span>練習や試合で使う小物まで、数多く取り揃えています。</span>
+      </li>
+    </ul>
+    <p class="pick__note"><b>買い物に迷っても大丈夫。</b>お客様の声でも「丁寧にアドバイスしてくれる」と評判です。</p>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="strong" id="strength">
+  <div class="wrap">
+    <h2>ヒロスポーツが選ばれる理由</h2>
+    <p class="lead">地元仙台で長く愛されるサッカー専門のスポーツ用品店です。</p>
+    <div class="strong__list">
+      <div class="strong__item">
+        <h3>仙台の老舗。長く通えるお店</h3>
+        <p>40年以上利用しているお客様もいる老舗です。親子で通う方もいます。</p>
+      </div>
+      <div class="strong__item">
+        <h3>サッカー用品が満載</h3>
+        <p>ユニフォームからシューズ、小物まで。サッカーのことなら、すべてお任せください。</p>
+      </div>
+      <div class="strong__item">
+        <h3>チームでの買い物にも、個人にも</h3>
+        <p>チーム単位の買い物にも、個人の買い物にも、親切に対応します。</p>
+      </div>
+      <div class="strong__item">
+        <h3>駅から近く、年中無休</h3>
+        <p>通いやすい立地です。休みは12月31日だけ、元旦から営業しています。</p>
+      </div>
+    </div>
+    <figure class="strong__img">
+      <!-- 画像3：店内の様子・スタッフ接客 -->
+      <img src="images/shop_inside.jpg" alt="ヒロスポーツの店内とスタッフの接客の様子" width="1200" height="750" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section id="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <p class="lead">実際にご来店いただいた方のクチコミです。</p>
+    <div class="rev">
+      <article class="rev__item">
+        <p class="rev__star" aria-label="5段階中4">★★★★<small>4.0</small></p>
+        <p>息子のスパイクを決めかねていたところ、店員の説明に納得。旧モデルは安く購入出来ます。お金出すならおすすめです。老舗サッカーショップです。チームでの買い物が良いと思います。スタッフさんも親切なので、個人での買い物も良いと思います。４０年以上世話になっています。子供も、利用者になるとは。</p>
+      </article>
+      <article class="rev__item">
+        <p class="rev__star" aria-label="5段階中5">★★★★★<small>5.0</small></p>
+        <p>買い物に迷っても、丁寧にアドバイスしてくれますよ！駅から近いので、お薦めです！仙台育英OBの方がオーナーです。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="info" id="access">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table class="tbl">
+      <tr><th scope="row">店名</th><td>ヒロスポーツ</td></tr>
+      <tr><th scope="row">会社名</th><td>有限会社ヒロスポーツ</td></tr>
+      <tr><th scope="row">代表者</th><td>福田 博</td></tr>
+      <tr><th scope="row">住所</th><td>宮城県仙台市宮城野区名掛丁119-7</td></tr>
+      <tr><th scope="row">電話番号</th><td><a href="tel:0222570304">022-257-0304</a></td></tr>
+      <tr><th scope="row">定休日</th><td>年中無休<br>（12月31日のみお休み、元旦より営業）</td></tr>
+      <tr><th scope="row">メール</th><td><a href="mailto:order@hirosports.com">order@hirosports.com</a></td></tr>
+      <tr><th scope="row">HP</th><td><a href="http://www.hirosports.com/top.html" target="_blank" rel="noopener">http://www.hirosports.com/top.html</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="ヒロスポーツの地図" src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E5%AE%AE%E5%9F%8E%E9%87%8E%E5%8C%BA%E5%90%8D%E6%8E%9B%E4%B8%81119-7&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>スパイク選びも、ユニフォームも。<br>まずはご相談ください。</h2>
+    <p>お電話でもメールでも、お気軽にどうぞ。</p>
+    <p class="cta__tel">022-257-0304</p>
+    <p style="font-size:14px;margin-bottom:20px">年中無休（12月31日のみお休み）</p>
+    <a class="btn btn--main" href="tel:0222570304">電話をかける</a>
+    <a class="btn btn--sub" href="mailto:order@hirosports.com">メールで問い合わせる</a>
+  </div>
+</section>
+
+</main>
+
+<footer>&copy; 有限会社ヒロスポーツ</footer>
+
+<!-- 固定ボトムナビ -->
+<nav class="nav" aria-label="クイックメニュー">
+  <a class="is-main" href="tel:0222570304">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    電話
+  </a>
+  <a href="mailto:order@hirosports.com">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+    メール
+  </a>
+  <a href="#access">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+    アクセス
+  </a>
+  <a href="#voice">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>
+    口コミ
+  </a>
+</nav>
+
+</body>
+</html>
