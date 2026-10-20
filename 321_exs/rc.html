@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>スタッフ募集｜エクストリーム（仙台）｜スノーボード・スケートボード好きの販売スタッフ</title>
+<meta name="description" content="仙台のスノーボードショップ エクストリームで販売スタッフ募集。未経験歓迎・週1日〜OK・Wワーク可・正社員登用制度あり。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --snow:#F2F6F8;
+  --ink:#13222C;
+  --glacier:#2B7BA6;
+  --ice:#D7E8F1;
+  --signal:#E5472A;
+  --line:#C9D6DD;
+  --display:"Dela Gothic One","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font-family:var(--body);color:var(--ink);background:var(--snow);line-height:1.85;font-size:16px;padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:760px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.35;margin:0}
+h2{font-size:clamp(22px,6vw,30px);margin-bottom:20px}
+section{padding:56px 0}
+
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;padding-top:env(safe-area-inset-top,0px);background:var(--ink);color:#fff}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;max-width:960px}
+.logo{font-family:var(--display);font-size:16px;text-decoration:none;letter-spacing:.04em}
+.hd-tel{display:flex;align-items:center;gap:6px;background:var(--signal);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px}
+
+.hero{padding:0;background:var(--ink);color:#fff}
+.hero-img{position:relative}
+.hero-img img{width:100%;aspect-ratio:4/5;object-fit:cover;opacity:.8}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,34,44,0) 30%,rgba(19,34,44,.95) 100%)}
+.hero-copy{position:relative;margin-top:-230px;z-index:2;padding-bottom:44px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.badges span{background:rgba(255,255,255,.14);padding:4px 12px;border-radius:999px;font-size:13px;font-weight:700}
+.hero h1{font-size:clamp(26px,7.8vw,42px);margin-bottom:14px}
+.hero p{margin:0 0 22px;font-size:15px;color:#DCE8EE}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:16px 20px;border-radius:10px;font-size:17px}
+.btn-main{background:var(--signal);color:#fff;box-shadow:0 6px 0 #A92F18}
+.btn-main:active{transform:translateY(3px);box-shadow:0 3px 0 #A92F18}
+.btn-sub{background:transparent;border:2px solid currentColor;margin-top:16px}
+
+/* 募集職種 */
+.pos{background:var(--snow)}
+.pos-card{background:#fff;border-left:6px solid var(--signal);padding:20px 18px;border-radius:0 10px 10px 0}
+.pos-card h3{font-size:22px;margin-bottom:8px}
+.pos-card p{margin:0}
+.pos-card .ok{display:inline-block;margin-top:12px;background:var(--ice);font-weight:700;padding:4px 12px;border-radius:6px;font-size:15px}
+
+/* 仕事内容 */
+.job{background:var(--ice)}
+.job-box{background:#fff;border-radius:12px;padding:22px 18px}
+.job-box+.job-box{margin-top:16px}
+.job-box h3{font-size:19px;margin-bottom:10px;color:var(--glacier)}
+.job-box ul{margin:0;padding-left:1.2em}
+.job-box li{margin-bottom:4px}
+.job-box .note{margin:12px 0 0;font-size:14px;font-weight:700;color:var(--signal)}
+.job-photo{margin-top:24px;border-radius:12px;overflow:hidden}
+.job-photo img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* 勤務条件 */
+.cond-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.cond-list li{background:#fff;border-left:6px solid var(--glacier);padding:14px 16px;border-radius:0 8px 8px 0;font-weight:500}
+.cond-list strong{display:block;font-size:17px}
+.cond-list span{font-size:14px;color:#3F5563}
+.pay{margin-top:28px;background:var(--ink);color:#fff;border-radius:12px;padding:22px 18px}
+.pay h3{font-size:18px;margin-bottom:8px}
+.pay p{margin:0 0 6px;font-size:15px;color:#DCE8EE}
+
+/* 応募 */
+.apply{background:var(--signal);color:#fff;text-align:center}
+.apply h2{font-size:clamp(22px,6.4vw,32px)}
+.apply p{margin:0 0 22px}
+.apply .btn-main{background:#fff;color:var(--signal);box-shadow:0 6px 0 rgba(0,0,0,.25)}
+.apply .btn-sub{color:#fff}
+.apply small{display:block;margin-top:18px;font-size:14px}
+
+.co{padding:40px 0}
+.co table{width:100%;border-collapse:collapse;background:#fff;font-size:15px}
+.co th,.co td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.co th{width:28%;background:#EAF1F5;font-size:14px}
+.co a{color:var(--glacier);word-break:break-all}
+footer{background:var(--ink);color:#9FB2BE;text-align:center;font-size:12px;padding:20px 16px}
+
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+.bn a{display:flex;flex-direction:column;align-items:center;justify-content:center;height:64px;text-decoration:none;font-size:11px;font-weight:700;gap:2px}
+.bn a.call{background:var(--signal);color:#fff}
+.bn svg{width:22px;height:22px}
+
+a:focus-visible{outline:3px solid #FFC23D;outline-offset:2px}
+@media (min-width:768px){
+  body{padding-bottom:0}
+  .bn{display:none}
+  .hero-img img{aspect-ratio:21/9}
+  .hero-copy{margin-top:-200px}
+  .btn{display:inline-block;min-width:320px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn-main:active{transform:none}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="#top">EXTREME スタッフ募集</a>
+    <a class="hd-tel" href="tel:0223911245" aria-label="電話をかける">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.250.2 2.450.6 3.600a1 1 0 0 1-.25 1z"/></svg>
+      022-391-1245
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-img">
+    <img src="images/rc_hero.jpg" alt="スノーボードやスケートボードが並ぶエクストリームの店内" width="800" height="1000">
+  </div>
+  <div class="wrap hero-copy">
+    <div class="badges"><span>未経験歓迎</span><span>週1日〜OK</span><span>Wワーク可</span><span>正社員登用あり</span></div>
+    <h1>アクションスポーツが好きなあなた、EXTREMEで一緒に働きませんか？</h1>
+    <p>スノーボード・スケートボード・サーフィン・SUPなど、“好き”があふれる環境で、楽しく働ける仲間を募集しています。</p>
+    <a class="btn btn-main" href="https://www.ex-inc.co.jp/recruit/index.html" target="_blank" rel="noopener">エントリーフォームへ</a>
+    <a class="btn btn-sub" href="tel:0223911245">まずは電話で話を聞く</a>
+  </div>
+</section>
+
+<section class="pos" id="position">
+  <div class="wrap">
+    <h2>こんな方を歓迎します</h2>
+    <p style="margin:0 0 24px">元気で明るく、お店やEC業務に前向きに取り組んでくれる方を歓迎します。</p>
+    <div class="pos-card">
+      <h3>小売事業部　販売スタッフ</h3>
+      <p>スノーボードやアクションスポーツ用品を扱うお店で、接客からネットショップのサポートまで担当します。</p>
+      <span class="ok">未経験者も歓迎！（正社員登用制度あり）</span>
+    </div>
+  </div>
+</section>
+
+<section class="job" id="job">
+  <div class="wrap">
+    <h2>お仕事の内容</h2>
+    <div class="job-box">
+      <h3>① 店舗業務</h3>
+      <ul>
+        <li>接客・販売対応</li>
+        <li>商品管理やディスプレイのお手伝い</li>
+        <li>スノーボードのメンテナンス作業 など</li>
+      </ul>
+    </div>
+    <div class="job-box">
+      <h3>② ECサイト運営サポート</h3>
+      <ul>
+        <li>オンラインショップの商品登録＆更新</li>
+        <li>注文処理や梱包・発送作業</li>
+        <li>在庫チェック、簡単な画像加工、SNSの投稿補助 など</li>
+      </ul>
+      <p class="note">PCの基本操作ができればOKです！</p>
+    </div>
+    <div class="job-photo">
+      <img src="images/rc_work.jpg" alt="スノーボードのメンテナンス作業をするスタッフ" width="800" height="500">
+    </div>
+  </div>
+</section>
+
+<section class="cond" id="cond">
+  <div class="wrap">
+    <h2>勤務条件</h2>
+    <ul class="cond-list">
+      <li><strong>週1日〜OK！</strong><span>平日のみのシフトも応相談です。</span></li>
+      <li><strong>土日祝働ける方は大歓迎！</strong></li>
+      <li><strong>対象：19歳〜35歳くらいまで</strong></li>
+      <li><strong>Wワーク／副業もOK！</strong></li>
+    </ul>
+    <div class="pay">
+      <h3>時給やシフトについて</h3>
+      <p>時給や勤務時間、雇用形態などは、面接時に詳しくご説明します。</p>
+      <p>働き方については、希望や経験を考慮して柔軟に対応します。</p>
+    </div>
+  </div>
+</section>
+
+<section class="apply" id="apply">
+  <div class="wrap">
+    <h2>「ちょっと気になるな」<br>それだけで大丈夫です</h2>
+    <p>お電話かDMで、お気軽にご連絡ください。面接日程は個別にご案内します。</p>
+    <a class="btn btn-main" href="tel:0223911245">電話する 022-391-1245</a>
+    <a class="btn btn-sub" href="https://www.instagram.com/extreme_sendai/" target="_blank" rel="noopener">InstagramのDMで連絡する</a>
+    <a class="btn btn-sub" href="https://www.ex-inc.co.jp/recruit/index.html" target="_blank" rel="noopener">エントリーフォームへ</a>
+  </div>
+</section>
+
+<section class="co">
+  <div class="wrap">
+    <table>
+      <tr><th>店名</th><td>エクストリーム</td></tr>
+      <tr><th>会社名</th><td>株式会社イーエックス</td></tr>
+      <tr><th>住所</th><td>宮城県仙台市青葉区栗生７丁目１０−５</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0223911245">022-391-1245</a></td></tr>
+      <tr><th>HP</th><td><a href="https://www.extreme-jp.net/" target="_blank" rel="noopener">https://www.extreme-jp.net/</a></td></tr>
+    </table>
+  </div>
+</section>
+
+</main>
+
+<footer>© 株式会社イーエックス エクストリーム</footer>
+
+<nav class="bn" aria-label="クイックメニュー">
+  <ul>
+    <li><a class="call" href="tel:0223911245"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.250.2 2.450.6 3.600a1 1 0 0 1-.25 1z"/></svg>電話</a></li>
+    <li><a href="#job"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16v4H4zm0 6h16v10H4zm4 3v2h8v-2z"/></svg>仕事内容</a></li>
+    <li><a href="#cond"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.200L4.800 12l-1.400 1.400L9 19 21 7l-1.400-1.400z"/></svg>勤務条件</a></li>
+    <li><a href="https://www.ex-inc.co.jp/recruit/index.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18v14H3zm9 7l8-5H4zm0 2L4 9v8h16V9z"/></svg>応募</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
