@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>タスクサーフボード仙台店｜国際資格を持つオーナーが教えるサーフショップ（仙台市若林区）</title>
+<meta name="description" content="仙台市若林区のサーフショップ。国際的なインストラクター資格を持つオーナーの指導で、わかりやすく、スピーディーに上達。おしゃれなウェアも揃います。">
+<style>
+:root{--navy:#0d2a3a;--sea:#1a7f8e;--foam:#e6f3f1;--sand:#f6efe3;--coral:#e8603c;--ink:#1c2b33;--gray:#5c6b73;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Noto Sans JP",Meiryo,sans-serif;color:var(--ink);line-height:1.8;background:#fff;padding-top:56px;padding-bottom:64px;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.6rem;line-height:1.4;margin-bottom:20px;letter-spacing:.02em}
+p+p{margin-top:1em}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 14px}
+.hd .logo{font-weight:700;font-size:.95rem;text-decoration:none;line-height:1.3}
+.hd .tel{background:var(--coral);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--navy);padding:0}
+.hero img{width:100%;height:min(78vh,520px);object-fit:cover;opacity:.62}
+.hero .cp{position:absolute;inset:auto 0 0 0;padding:0 20px 32px;max-width:720px;margin:0 auto}
+.hero small{display:block;font-size:.85rem;margin-bottom:8px}
+.hero h1{font-size:clamp(1.7rem,7.2vw,2.5rem);line-height:1.35;margin-bottom:12px}
+.hero p{font-size:.95rem;margin-bottom:18px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:15px 18px;border-radius:10px;font-size:1rem}
+.btn.main{background:var(--coral);color:#fff}
+.btn.sub{background:#fff;color:var(--navy);border:2px solid var(--navy);margin-top:12px}
+
+/* featured */
+.pick{background:var(--sand)}
+.badge{display:inline-block;background:var(--navy);color:#fff;font-size:.8rem;padding:3px 12px;border-radius:4px;margin-bottom:12px}
+.pick .photo{border-radius:14px;overflow:hidden;margin:22px 0}
+.pick .photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick ul{list-style:none;display:grid;gap:12px}
+.pick li{background:#fff;border-left:5px solid var(--sea);padding:14px 16px;border-radius:0 10px 10px 0}
+.pick li b{display:block;font-size:1.05rem;margin-bottom:2px}
+
+/* strengths */
+.str{display:grid;gap:14px;margin-top:8px}
+.str div{background:var(--foam);padding:18px;border-radius:12px}
+.str h3{font-size:1.05rem;color:var(--sea);margin-bottom:4px}
+
+/* review */
+.rv{background:var(--navy);color:#fff}
+.rv .stars{color:#ffc94d;font-size:1.4rem;letter-spacing:.1em}
+.rv blockquote{margin-top:10px;font-size:1.05rem;line-height:1.9}
+
+/* story */
+.story .photo{border-radius:14px;overflow:hidden;margin-bottom:22px}
+.story .photo img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.story .sign{margin-top:18px;font-weight:700;text-align:right}
+.story .motto{margin-top:6px;text-align:right;color:var(--sea);font-weight:700}
+
+/* info */
+.info{background:var(--sand)}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}
+th,td{padding:13px 14px;text-align:left;vertical-align:top;border-bottom:1px solid #e8e1d3;font-size:.95rem}
+th{width:5.5em;background:var(--foam);white-space:nowrap}
+td a{color:var(--sea);word-break:break-all}
+.map{margin-top:20px;border-radius:12px;overflow:hidden;position:relative;padding-top:75%}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* cta */
+.cta{background:var(--sea);color:#fff;text-align:center}
+.cta .btn.main{background:var(--coral)}
+.cta .btn.sub{background:#fff;border-color:#fff}
+.cta p{margin-bottom:18px}
+footer{background:var(--navy);color:#cfe0e6;text-align:center;font-size:.8rem;padding:20px}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-top:1px solid #d5dde0;padding-bottom:env(safe-area-inset-bottom)}
+.bn a{text-align:center;text-decoration:none;padding:12px 4px;font-size:.85rem;font-weight:700;color:var(--navy)}
+.bn a.t{background:var(--coral);color:#fff}
+
+@media(min-width:720px){
+ .str{grid-template-columns:1fr 1fr}
+ .btn{max-width:360px}.hero .btn,.cta .btn{margin-left:0}.cta .btn{margin:0 auto}.cta .btn.sub{margin:12px auto 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <a class="logo" href="#top">TUSK SURFBOARDS<br>SENDAI</a>
+  <a class="tel" href="tel:0223907855">電話する</a>
+</header>
+
+<main id="top">
+
+<!-- ヒーロー：images/hero.jpg（海とサーファーの写真） -->
+<section class="hero">
+  <img src="images/hero.jpg" alt="仙台の海でサーフィンを楽しむ人">
+  <div class="cp">
+    <small>仙台市若林区｜タスクサーフボード仙台店</small>
+    <h1>サーフィンを、<br>人生の楽しみに。</h1>
+    <p>国際資格を持つオーナーが、あなたの「乗りたい」に寄り添います。</p>
+    <a class="btn main" href="tel:0223907855">022-390-7855 に電話する</a>
+  </div>
+</section>
+
+<!-- イチオシ -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="badge">イチオシ</span>
+    <h2>サーフショップ<br>道具も、教えも、ここで。</h2>
+    <p>はじめての一本から、さらに上を目指す一本まで。サーフィンに必要なものと、上達するための指導がひとつの店に揃います。</p>
+    <!-- images/lesson.jpg（オーナーの指導風景・商品の写真） -->
+    <div class="photo"><img src="images/lesson.jpg" alt="オーナーによるサーフィン指導の様子"></div>
+    <ul>
+      <li><b>国際資格のオーナーが指導</b>わかりやすい説明で、最短で波に乗れる感覚をつかめます。</li>
+      <li><b>サーフィンを始めたい方も、上達したい方も</b>初心者からプロまで、楽しみ方は人それぞれ。レベルに合わせて相談できます。</li>
+      <li><b>おしゃれなウェアも並ぶ</b>サーフショップなのに、普段着にも使えるお洒落な服が見つかります。</li>
+    </ul>
+    <a class="btn main" style="margin-top:24px" href="https://tusksurfboards-sendai.com/contact-us/" target="_blank" rel="noopener">お問い合わせフォームへ</a>
+  </div>
+</section>
+
+<!-- 強み -->
+<section>
+  <div class="wrap">
+    <h2>選ばれる理由</h2>
+    <div class="str">
+      <div><h3>国際的なインストラクター資格</h3><p>資格を持つショップオーナーから、直接指導が受けられます。</p></div>
+      <div><h3>わかりやすく、スピーディー</h3><p>「早く上達したい」方におすすめの指導だと口コミでも評判です。</p></div>
+      <div><h3>通いたくなる品揃え</h3><p>お洒落な服があるため、リピートで通うお客様もいます。</p></div>
+      <div><h3>仲間と出会えるお店</h3><p>同じ海を楽しむ仲間と、サーフィンライフを共有できます。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="rv">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+    <blockquote>サーフショップですがお洒落な服があるのでよく通ってます。国際的なインストラクター資格を持ったショップオーナーの指導が受けられます。<br><br>指導がわかりやすく、スピーディーに上達したい方はおすすめです！</blockquote>
+  </div>
+</section>
+
+<!-- 創業者ストーリー -->
+<section class="story">
+  <div class="wrap">
+    <h2>オーナーの想い</h2>
+    <!-- images/owner.jpg（オーナー・店内の写真） -->
+    <div class="photo"><img src="images/owner.jpg" alt="代表 佐藤 弘一朗"></div>
+    <p>サーフィンって難しいスポーツと言われていますが、そんなことは全くありません！と言うのは簡単です。</p>
+    <p>当店のお客様もみんなそれぞれ、サーフィンへの思いは違います。僕が一番難しいと思うのは、本当に楽しいサーフィンを、毎日どう楽しむか、ということです。</p>
+    <p>初心者の方からプロフェッショナルの方まで、みんなそれぞれ無限大の楽しみ方ができるのがサーフィンというスポーツです。それをいち早く見つけられた幸せな方は、きっと自然にライフスタイルの一部になるでしょう。</p>
+    <p>TUSK SURFBOARDS SENDAIは、そんな充実したサーフィンライフを、これから出会う仲間と共有できればと思っています。</p>
+    <p class="sign">代表　佐藤 弘一朗</p>
+    <p class="motto">Ride on Life</p>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="info" id="info">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>タスクサーフボード仙台店</td></tr>
+      <tr><th>代表者</th><td>佐藤 弘一朗</td></tr>
+      <tr><th>住所</th><td>宮城県仙台市若林区六丁の目南町1-16</td></tr>
+      <tr><th>電話</th><td><a href="tel:0223907855">022-390-7855</a></td></tr>
+      <tr><th>HP</th><td><a href="https://tusksurfboards-sendai.com/" target="_blank" rel="noopener">tusksurfboards-sendai.com</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.instagram.com/tusksurfboards_sendai" target="_blank" rel="noopener">Instagram</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="タスクサーフボード仙台店の地図" src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E8%8B%A5%E6%9E%97%E5%8C%BA%E5%85%AD%E4%B8%81%E3%81%AE%E7%9B%AE%E5%8D%97%E7%94%BA1-16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>まずは気軽にご相談ください</h2>
+    <p>サーフィンを始めたい方、もっと上達したい方、お待ちしています。</p>
+    <a class="btn main" href="tel:0223907855">022-390-7855 に電話する</a>
+    <a class="btn sub" href="https://tusksurfboards-sendai.com/contact-us/" target="_blank" rel="noopener">お問い合わせフォーム</a>
+  </div>
+</section>
+
+</main>
+
+<footer>© タスクサーフボード仙台店</footer>
+
+<nav class="bn" aria-label="固定メニュー">
+  <a class="t" href="tel:0223907855">電話する</a>
+  <a href="#pick">イチオシ</a>
+  <a href="#info">アクセス</a>
+</nav>
+
+</body>
+</html>
