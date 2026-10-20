@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KEIスポーツ｜石巻のテニス専門店｜ソフトテニスの情報・ガット張り・オリジナルウェア</title>
+<meta name="description" content="宮城県石巻市のテニス専門店KEIスポーツ。ソフトテニス界の有名人・石森さんが営むショップ。ガット張り、セール、オリジナルTシャツ・スエットセットアップ。">
+<style>
+:root{--navy:#0f2a4a;--green:#1f7a4d;--ball:#d6f23a;--bg:#f6f9f4;--text:#222;--muted:#667}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;color:var(--text);background:#fff;line-height:1.8;padding:56px 0 64px;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+section{padding:44px 0}
+h2{font-size:1.4rem;line-height:1.4;text-align:center;color:var(--navy);margin-bottom:26px}
+h2 small{display:block;font-size:.72rem;letter-spacing:.2em;color:var(--green);margin-bottom:4px}
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 16px}
+.hd b{font-size:1.05rem;letter-spacing:.05em}
+.hd a.tel{background:var(--ball);color:var(--navy);text-decoration:none;font-weight:700;font-size:.9rem;padding:8px 14px;border-radius:999px}
+/* hero */
+.hero{position:relative;color:#fff;background:var(--navy);padding:0}
+.hero img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.55}
+.hero .copy{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 22px}
+.hero .tag{display:inline-block;align-self:flex-start;background:var(--ball);color:var(--navy);font-weight:700;font-size:.78rem;padding:3px 12px;border-radius:999px;margin-bottom:10px}
+.hero h1{font-size:1.65rem;line-height:1.4;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--ball)}
+.hero p{font-size:.88rem;margin-top:8px;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.stars{background:var(--navy);color:#fff;text-align:center;padding:12px;font-size:.9rem}
+.stars span{color:var(--ball);letter-spacing:.15em;font-size:1.05rem}
+/* ichioshi */
+.ichi{background:var(--bg)}
+.ichi .badge{display:block;width:max-content;margin:0 auto 12px;background:var(--green);color:#fff;font-weight:700;padding:4px 18px;border-radius:999px;font-size:.85rem}
+.ichi .card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 22px rgba(15,42,74,.12)}
+.ichi .card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.ichi .body{padding:22px 20px 26px}
+.ichi h3{font-size:1.25rem;line-height:1.5;color:var(--navy);margin-bottom:10px}
+.ichi h3 mark{background:linear-gradient(transparent 60%,var(--ball) 60%)}
+.ichi ul{list-style:none;margin:16px 0}
+.ichi li{padding:10px 0 10px 32px;border-bottom:1px dashed #ccd;position:relative;font-size:.95rem}
+.ichi li::before{content:"✔";position:absolute;left:4px;color:var(--green);font-weight:700}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:15px;border-radius:999px;font-size:1rem}
+.btn.p{background:var(--green);color:#fff;box-shadow:0 4px 0 #14573a}
+.btn.s{background:#fff;color:var(--navy);border:2px solid var(--navy);margin-top:12px}
+/* strengths */
+.st{display:grid;gap:14px}
+.st div{display:flex;gap:14px;background:var(--bg);border-radius:12px;padding:16px}
+.st .n{flex:none;width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--ball);font-weight:700;display:flex;align-items:center;justify-content:center}
+.st h3{font-size:1rem;color:var(--navy);margin-bottom:2px}
+.st p{font-size:.88rem;color:#444}
+/* shop photo */
+.shop-img img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px}
+/* reviews */
+.rv{background:var(--bg)}
+.rv .box{background:#fff;border-radius:14px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.rv .box .s{color:#f2a900;letter-spacing:.1em;margin-bottom:6px}
+.rv .box p{font-size:.92rem;margin-bottom:10px}
+.rv .box p:last-child{margin:0}
+.rv small{display:block;text-align:right;color:var(--muted);margin-top:8px}
+/* info */
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{padding:12px 10px;border-bottom:1px solid #dde;text-align:left;vertical-align:top}
+th{width:28%;background:var(--bg);color:var(--navy);white-space:nowrap}
+td{word-break:break-all}
+.map{margin-top:22px;border-radius:12px;overflow:hidden;line-height:0}
+.map iframe{width:100%;height:280px;border:0}
+/* cta */
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta h2 small{color:var(--ball)}
+.cta p{font-size:.9rem;margin-bottom:20px}
+.cta .btn.p{background:var(--ball);color:var(--navy);box-shadow:0 4px 0 #9bb11a;font-size:1.1rem}
+.cta .btn.s{background:transparent;color:#fff;border-color:#fff}
+footer{background:#0a1c33;color:#9ab;text-align:center;font-size:.75rem;padding:20px 12px}
+/* bottom nav */
+.nav{position:fixed;bottom:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid #ccd;padding-bottom:env(safe-area-inset-bottom)}
+.nav a{text-align:center;text-decoration:none;font-size:.72rem;font-weight:700;color:var(--navy);padding:9px 2px 8px;line-height:1.3}
+.nav a i{display:block;font-style:normal;font-size:1.15rem}
+.nav a.call{background:var(--green);color:#fff}
+@media(min-width:720px){.hero img{aspect-ratio:16/8}.hero h1{font-size:2.2rem}.wrap{padding:0 24px}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <b>KEIスポーツ</b>
+  <a class="tel" href="tel:0225226566">📞 電話する</a>
+</header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="KEIスポーツ 店舗・テニス用品のイメージ">
+  <div class="copy">
+    <span class="tag">石巻のテニス専門店</span>
+    <h1>ソフトテニスの<br><em>「聞ける・選べる」</em>お店</h1>
+    <p>有名人・石森さんが営む、東北のソフトテニス情報が集まるショップ</p>
+  </div>
+</div>
+<div class="stars">クチコミ <span>★★★★★</span></div>
+
+<section class="ichi" id="ichioshi">
+  <div class="wrap">
+    <h2><small>RECOMMEND</small>当店のイチオシ</h2>
+    <span class="badge">イチオシ</span>
+    <div class="card">
+      <img src="images/product.jpg" alt="テニス専門店のラケット・ガット・ウェア">
+      <div class="body">
+        <h3><mark>テニス専門店</mark>だからできる、<br>道具選びからガット張りまで</h3>
+        <p>ソフトテニスを知り尽くしたオーナーが営む専門店。ラケットやウェア選びの相談から、ガット張りまでまるごとお任せください。</p>
+        <ul>
+          <li>ソフトテニス界の有名人・石森さんが営むショップ</li>
+          <li>東北のソフトテニス情報がたくさん聞ける</li>
+          <li>随時セール開催でお買い得</li>
+          <li>オリジナルブランドのTシャツ・スエットセットアップ</li>
+        </ul>
+        <a class="btn p" href="tel:0225226566">📞 0225-226-566 に電話で相談</a>
+        <a class="btn s" href="https://keisports.ocnk.net/" target="_blank" rel="noopener">公式ショップサイトを見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="strength">
+  <div class="wrap">
+    <h2><small>STRENGTHS</small>KEIスポーツが選ばれる理由</h2>
+    <div class="st">
+      <div><span class="n">1</span><span><h3>東北のソフトテニス情報が集まる</h3><p>ソフトテニスYouTuberのあゆタロウさんも訪れるお店。大会・用具の情報をお気軽にどうぞ。</p></span></div>
+      <div><span class="n">2</span><span><h3>急ぎのガット張りも相談OK</h3><p>お急ぎの際は、事前に電話で相談してからのご来店がおすすめです。</p></span></div>
+      <div><span class="n">3</span><span><h3>着心地のよいオリジナルウェア</h3><p>オリジナルブランドのTシャツやスエットセットアップをご用意。普段使いにも好評です。</p></span></div>
+      <div><span class="n">4</span><span><h3>やさしいスタッフがお出迎え</h3><p>社長・奥さまをはじめ、スタッフ全員が親切で温かい接客です。</p></span></div>
+    </div>
+    <div class="shop-img" style="margin-top:26px">
+      <img src="images/shop.jpg" alt="KEIスポーツ 店内の様子">
+    </div>
+  </div>
+</section>
+
+<section class="rv" id="voice">
+  <div class="wrap">
+    <h2><small>VOICE</small>お客様の声</h2>
+    <div class="box">
+      <div class="s">★★★★★</div>
+      <p>ソフトテニス界の有名人・石森さんが営むテニスショップ。ソフトテニスYouTuberのあゆタロウさんも訪れるお店です。</p>
+      <p>随時セールもやっていて、東北のソフトテニスの情報がたくさん聞けます。オリジナルTシャツやスエットセットアップは着心地が良く、重宝しています。</p>
+      <p>ガット張りは、急ぎのときは電話で相談してから来店するとよいようです。社長さんや奥さんをはじめ、スタッフさん皆さん優しい方ばかりでした！</p>
+      <small>※ テニスはしませんが…と来店された方のクチコミ</small>
+    </div>
+  </div>
+</section>
+
+<section id="info">
+  <div class="wrap">
+    <h2><small>SHOP INFO</small>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>KEIスポーツ</td></tr>
+      <tr><th>住所</th><td>宮城県石巻市門脇町5丁目11−1</td></tr>
+      <tr><th>電話</th><td><a href="tel:0225226566">0225-226-566</a></td></tr>
+      <tr><th>定休日</th><td>水曜日</td></tr>
+      <tr><th>HP</th><td><a href="https://keisports.ocnk.net/" target="_blank" rel="noopener">keisports.ocnk.net</a></td></tr>
+      <tr><th>問い合わせ</th><td><a href="https://keisports.ocnk.net/contact" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:keisports0923@keisports.ocnk.net">keisports0923@keisports.ocnk.net</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://x.com/keisportskeiya" target="_blank" rel="noopener">X（旧Twitter）</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe src="https://maps.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E7%9F%B3%E5%8D%B0%E5%B8%82%E9%96%80%E8%84%87%E7%94%BA5%E4%B8%81%E7%9B%AE11-1&amp;output=embed&amp;hl=ja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="KEIスポーツ 地図" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2><small>CONTACT</small>まずはお気軽にご相談ください</h2>
+    <p>ラケット・ガット張り・ウェアのご相談は、お電話またはフォームから。<br>定休日は水曜日です。</p>
+    <a class="btn p" href="tel:0225226566">📞 0225-226-566</a>
+    <a class="btn s" href="https://keisports.ocnk.net/contact" target="_blank" rel="noopener">お問い合わせフォーム</a>
+  </div>
+</section>
+
+<footer>© KEIスポーツ ／ 宮城県石巻市門脇町5丁目11−1</footer>
+
+<nav class="nav">
+  <a href="#ichioshi"><i>🎾</i>イチオシ</a>
+  <a href="#voice"><i>⭐</i>口コミ</a>
+  <a href="#info"><i>📍</i>アクセス</a>
+  <a class="call" href="tel:0225226566"><i>📞</i>電話</a>
+</nav>
+
+</body>
+</html>
