@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>エクストリーム｜仙台のスノーボードショップ｜ボード・ブーツ選びとメンテナンス</title>
+<meta name="description" content="仙台市青葉区のスノーボードショップ エクストリーム。初心者の質問にも丁寧に答える接客、豊富な品揃え、メンテナンス対応、広い駐車場。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --snow:#F2F6F8;
+  --ink:#13222C;
+  --glacier:#2B7BA6;
+  --ice:#D7E8F1;
+  --signal:#E5472A;
+  --line:#C9D6DD;
+  --display:"Dela Gothic One","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font-family:var(--body);color:var(--ink);background:var(--snow);line-height:1.85;font-size:16px;padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:760px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.35;margin:0}
+h2{font-size:clamp(22px,6vw,30px);margin-bottom:20px}
+section{padding:56px 0}
+
+/* 固定ヘッダー */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;padding-top:env(safe-area-inset-top,0px);background:var(--ink);color:#fff}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;max-width:960px}
+.logo{font-family:var(--display);font-size:18px;text-decoration:none;letter-spacing:.04em}
+.hd-tel{display:flex;align-items:center;gap:6px;background:var(--signal);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px}
+
+/* ヒーロー */
+.hero{padding:0;background:var(--ink);color:#fff}
+.hero-img{position:relative}
+.hero-img img{width:100%;aspect-ratio:4/5;object-fit:cover;opacity:.82}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,34,44,0) 35%,rgba(19,34,44,.94) 100%)}
+.hero-copy{position:relative;margin-top:-190px;z-index:2;padding-bottom:44px}
+.hero h1{font-size:clamp(28px,8.4vw,46px);margin-bottom:14px}
+.hero p{margin:0 0 22px;font-size:15px;color:#DCE8EE}
+.stars{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);padding:6px 12px;border-radius:999px;font-size:13px;margin-bottom:16px}
+.stars b{color:#FFC23D;letter-spacing:2px;font-size:15px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:16px 20px;border-radius:10px;font-size:17px}
+.btn-main{background:var(--signal);color:#fff;box-shadow:0 6px 0 #A92F18}
+.btn-main:active{transform:translateY(3px);box-shadow:0 3px 0 #A92F18}
+.btn-sub{background:transparent;border:2px solid currentColor;margin-top:16px}
+
+/* イチオシ */
+.pick{background:var(--snow)}
+.pick-tag{display:inline-block;background:var(--signal);color:#fff;font-weight:700;font-size:13px;padding:2px 12px;border-radius:4px;margin-bottom:12px}
+.pick h2{font-size:clamp(26px,7.4vw,38px)}
+.pick .lead{font-size:16px;margin:0 0 24px}
+.pick-photo{margin:0 -20px 24px}
+.pick-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.pick-list li{background:#fff;border-left:6px solid var(--glacier);padding:14px 16px;border-radius:0 8px 8px 0}
+.pick-list strong{display:block;font-size:17px;margin-bottom:2px}
+.pick-list span{font-size:14px;color:#3F5563}
+
+/* 強み */
+.str{background:var(--ice)}
+.str-grid{display:grid;gap:28px}
+.str-item h3{font-size:19px;margin-bottom:6px;color:var(--ink)}
+.str-item p{margin:0;font-size:15px}
+.str-item+.str-item{border-top:1px solid #9FBCCB;padding-top:24px}
+.str-photo{margin-top:32px;border-radius:12px;overflow:hidden}
+.str-photo img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* 口コミ */
+.voice{background:var(--ink);color:#fff}
+.voice h2{color:#fff}
+.voice-head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.voice-head b{color:#FFC23D;font-size:22px;letter-spacing:3px}
+.voice blockquote{margin:0;padding:0}
+.voice-lead{font-family:var(--display);font-size:clamp(20px,5.6vw,26px);line-height:1.5;margin:0 0 20px;color:#fff}
+.voice blockquote p{margin:0 0 14px;font-size:15px;color:#DCE8EE}
+.voice-end{border-top:1px solid #3C5160;padding-top:16px;margin-top:20px}
+
+/* 店舗情報 */
+.info table{width:100%;border-collapse:collapse;background:#fff;font-size:15px}
+.info th,.info td{padding:14px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info th{width:30%;background:#EAF1F5;font-weight:700;font-size:14px}
+.info td a{color:var(--glacier);word-break:break-all}
+.map{margin-top:20px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* 最終CTA */
+.cta{background:var(--signal);color:#fff;text-align:center}
+.cta h2{font-size:clamp(22px,6.4vw,32px)}
+.cta p{margin:0 0 24px}
+.cta .btn-main{background:#fff;color:var(--signal);box-shadow:0 6px 0 rgba(0,0,0,.25)}
+.cta .btn-sub{color:#fff}
+.sns{display:flex;justify-content:center;gap:20px;margin-top:24px;font-size:14px}
+footer{background:var(--ink);color:#9FB2BE;text-align:center;font-size:12px;padding:20px 16px}
+
+/* 固定ボトムナビ */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+.bn a{display:flex;flex-direction:column;align-items:center;justify-content:center;height:64px;text-decoration:none;font-size:11px;font-weight:700;gap:2px}
+.bn a.call{background:var(--signal);color:#fff}
+.bn svg{width:22px;height:22px}
+
+a:focus-visible{outline:3px solid #FFC23D;outline-offset:2px}
+@media (min-width:768px){
+  body{padding-bottom:0}
+  .bn{display:none}
+  .hero-img img{aspect-ratio:21/9}
+  .hero-copy{margin-top:-170px}
+  .pick-photo{margin:0 0 24px;border-radius:12px;overflow:hidden}
+  .btn{display:inline-block;min-width:320px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn-main:active{transform:none}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="#top">エクストリーム</a>
+    <a class="hd-tel" href="tel:0223911245" aria-label="電話をかける">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.250.2 2.450.6 3.600a1 1 0 0 1-.25 1z"/></svg>
+      022-391-1245
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="hero-img">
+    <img src="images/hero.jpg" alt="エクストリームの店内に並ぶスノーボードとブーツ" width="800" height="1000">
+  </div>
+  <div class="wrap hero-copy">
+    <div class="stars"><b>★★★★★</b>お客様の口コミ</div>
+    <h1>はじめてのボードも、<br>ブーツも、ここで。</h1>
+    <p>仙台市青葉区のスノーボードショップ。素人の質問にも分かりやすく答える接客で、あなたの足に合う一本を一緒に探します。</p>
+    <a class="btn btn-main" href="tel:0223911245">電話で相談する 022-391-1245</a>
+    <a class="btn btn-sub" href="#pick">スノーボードショップの魅力を見る</a>
+  </div>
+</section>
+
+<!-- イチオシ -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="pick-tag">イチオシ</span>
+    <h2>スノーボードを始めるなら、エクストリーム</h2>
+    <p class="lead">ボード、ブーツ、ウエア、そしてメンテナンスまで。スノーボードに必要なことを、一軒でまとめて相談できます。</p>
+    <figure class="pick-photo" style="margin-bottom:24px">
+      <img src="images/item01.jpg" alt="スノーボードブーツのフィッティングの様子" width="800" height="600">
+    </figure>
+    <ul class="pick-list">
+      <li><strong>店頭にないサイズも、取り寄せて合わせてくれる</strong><span>お客様の口コミより：ヒアリングして足に合いそうなサイズを取り寄せ、結果ぴったりだったそうです。</span></li>
+      <li><strong>ブーツごとの締め方まで教えてくれる</strong><span>BOAタイプなど、ブーツの特性に合った締め方を丁寧にレクチャー。</span></li>
+      <li><strong>板のメンテナンスも任せられる</strong><span>初歩的な質問にも、分かりやすく答えてくれると好評です。</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="str" id="strength">
+  <div class="wrap">
+    <h2>エクストリームが選ばれる理由</h2>
+    <div class="str-grid">
+      <div class="str-item">
+        <h3>商品の取扱いが多い</h3>
+        <p>スノーボードを中心に、マリンスポーツ、スケートボード用品まで。スポーツ用品の小売を専門に扱っています。ファッションも楽しめる品揃えです。</p>
+      </div>
+      <div class="str-item">
+        <h3>店員さんの知識が豊富</h3>
+        <p>初心者の質問にも、専門知識をもとに分かりやすく回答。ヒアリングを重ねて、一人ひとりに合う道具を提案します。</p>
+      </div>
+      <div class="str-item">
+        <h3>丁寧な接客と、広い駐車場</h3>
+        <p>道具が多くなる季節でも、車で気軽に来店できます。メンテナンスの持ち込みにも便利です。</p>
+      </div>
+    </div>
+    <div class="str-photo">
+      <img src="images/item02.jpg" alt="スノーボードのメンテナンス用品と作業の様子" width="800" height="500">
+    </div>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="voice" id="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="voice-head"><b>★★★★★</b><span>とても良いお店でした。</span></div>
+    <blockquote>
+      <p class="voice-lead">このお店で購入できて良かったです。ありがとうございました。</p>
+      <p>スノーボードのメンテナンスとブーツの購入でお世話になりました。メンテナンスについての説明や素人の質問にも分かりやすく回答していただき、とても丁寧な接客でした。</p>
+      <p>欲しいブーツのサイズが店頭にありませんでしたが、色々ヒアリングしていただき、私の足に合いそうなサイズを取寄せていただきました。結果、取寄せいただいたサイズでピッタリでした。</p>
+      <p>初めてBOAタイプのブーツを購入した為、好きなインフルエンサーの締め方を参考に締めてみましたが、その締め方だとブーツの特性に合っていなかったようで、締め方について色々教えてもらいました。ブーツによって特性が異なるので、ブーツに合った締め方が必要なことに気づけました。</p>
+      <div class="voice-end">
+        <p>スノーボードを始められる方はこちらのお店がオススメです。商品の取扱いも多いですし、店員さんの知識は豊富、用具のメンテナンスをお願いするのにも良い。駐車場も広い。</p>
+        <p>スノボ引退しスキー再デビューの身ですが、やはりスノーボードはカッコいいです。ファッションも楽しめます。無理なく、怪我なく、楽しむことが一番です。</p>
+      </div>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="info" id="access">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>エクストリーム</td></tr>
+      <tr><th>住所</th><td>宮城県仙台市青葉区栗生７丁目１０−５</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0223911245">022-391-1245</a></td></tr>
+      <tr><th>会社名</th><td>株式会社イーエックス</td></tr>
+      <tr><th>代表者</th><td>井上　豊</td></tr>
+      <tr><th>取扱い</th><td>スノーボード、マリンスポーツ、スケートボード用品</td></tr>
+      <tr><th>ホームページ</th><td><a href="https://www.extreme-jp.net/" target="_blank" rel="noopener">https://www.extreme-jp.net/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:ayashi@extreme-jp.net">ayashi@extreme-jp.net</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.instagram.com/extreme_sendai/" target="_blank" rel="noopener">Instagram</a>／<a href="https://www.youtube.com/channel/UCYA_j_8e1mVKXmkE5T4eQIg" target="_blank" rel="noopener">YouTube</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="エクストリームの地図" src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9D%92%E8%91%89%E5%8C%BA%E6%A0%97%E7%94%9F%EF%BC%97%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%90%E2%88%92%EF%BC%95&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>ボード選びから、<br>まず相談してみませんか</h2>
+    <p>サイズ選びやメンテナンスのご相談は、お電話かフォームからどうぞ。</p>
+    <a class="btn btn-main" href="tel:0223911245">電話する 022-391-1245</a>
+    <a class="btn btn-sub" href="https://www.ex-inc.co.jp/inquiry.html" target="_blank" rel="noopener">問い合わせフォームへ</a>
+    <div class="sns">
+      <a href="https://www.instagram.com/extreme_sendai/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCYA_j_8e1mVKXmkE5T4eQIg" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© 株式会社イーエックス エクストリーム</footer>
+
+<!-- 固定ボトムナビ -->
+<nav class="bn" aria-label="クイックメニュー">
+  <ul>
+    <li><a class="call" href="tel:0223911245"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.250.2 2.450.6 3.600a1 1 0 0 1-.25 1z"/></svg>電話</a></li>
+    <li><a href="#voice"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.500 7 .8-5.200 4.800 1.400 7L12 17.500 5.800 21l1.400-7L2 9.300l7-.8z"/></svg>口コミ</a></li>
+    <li><a href="#access"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.500A2.500 2.500 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z"/></svg>アクセス</a></li>
+    <li><a href="https://www.ex-inc.co.jp/inquiry.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18v14H3zm9 7l8-5H4zm0 2L4 9v8h16V9z"/></svg>問合せ</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
