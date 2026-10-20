@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>チャコット 仙台PARCO2店｜バレエ用品専門店</title>
+<meta name="description" content="仙台駅近く・仙台PARCO2 3Fのバレエ用品専門店。創業75年のチャコットが、初めての練習着から本格的なバレエ用品まで丁寧にご案内します。">
+<style>
+:root{--rose:#c2577a;--rose-d:#9e3f5f;--pink:#fdf0f4;--ink:#3a2f33;--gray:#7a6f73;--line:#ead9df;--gold:#b8924f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;color:var(--ink);line-height:1.8;background:#fff;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:1.5rem;text-align:center;line-height:1.5;margin-bottom:28px}
+h2 small{display:block;font-size:.72rem;letter-spacing:.25em;color:var(--rose);font-family:sans-serif;margin-bottom:6px}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header .in{max-width:720px;margin:0 auto;height:52px;padding:0 14px 0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:serif;font-weight:700;letter-spacing:.12em;font-size:1.05rem;color:var(--rose-d)}
+.tel-s{background:var(--rose);color:#fff;text-decoration:none;font-size:.85rem;font-weight:700;padding:8px 14px;border-radius:20px}
+/* hero */
+.hero{position:relative;margin-top:calc(52px + env(safe-area-inset-top,0px));color:#fff;text-align:center}
+.hero img{width:100%;height:440px;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(60,20,35,.25),rgba(60,20,35,.62))}
+.hero .copy{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:0 20px 36px}
+.hero .tag{display:inline-block;border:1px solid #fff;font-size:.75rem;letter-spacing:.15em;padding:2px 12px;margin-bottom:14px}
+.hero h1{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:1.65rem;line-height:1.55;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.hero p{font-size:.88rem;margin-top:10px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:15px 10px;border-radius:40px;background:var(--rose);color:#fff;box-shadow:0 4px 12px rgba(194,87,122,.35);font-size:1rem}
+.btn.sub{background:#fff;color:var(--rose-d);border:2px solid var(--rose);box-shadow:none}
+.hero .btn{max-width:300px;margin:20px auto 0}
+/* main */
+.pickup{background:var(--pink)}
+.badge{display:table;margin:0 auto 14px;background:var(--gold);color:#fff;font-size:.8rem;font-weight:700;letter-spacing:.15em;padding:4px 18px;border-radius:20px}
+.pickup .lead{text-align:center;margin-bottom:24px;font-size:.95rem}
+.pickup img{border-radius:12px;width:100%;height:280px;object-fit:cover;box-shadow:0 6px 18px rgba(0,0,0,.12);margin-bottom:24px}
+.points{list-style:none;display:grid;gap:12px}
+.points li{background:#fff;border-radius:10px;padding:16px 16px 16px 52px;position:relative;border:1px solid var(--line);font-size:.92rem}
+.points li b{display:block;color:var(--rose-d);font-size:1rem}
+.points li::before{content:"✓";position:absolute;left:16px;top:16px;width:24px;height:24px;border-radius:50%;background:var(--rose);color:#fff;text-align:center;line-height:24px;font-size:.8rem}
+.pickup .btn{margin-top:28px}
+/* strengths */
+.cards{display:grid;gap:14px}
+.card{border:1px solid var(--line);border-radius:12px;padding:20px}
+.card .n{font-family:serif;color:var(--gold);font-size:1.5rem;line-height:1}
+.card h3{font-size:1.05rem;margin:6px 0;color:var(--rose-d)}
+.card p{font-size:.9rem;color:var(--gray)}
+/* story */
+.story{background:#3a2a31;color:#fff}
+.story h2 small{color:#e9b8c9}
+.story p{font-size:.92rem;margin-bottom:14px;color:#f3e8ec}
+.story .catch{font-family:serif;font-size:1.15rem;text-align:center;margin-top:24px;color:#fff;line-height:1.9}
+.story .ceo{text-align:right;font-size:.8rem;color:#cdb9c0}
+/* reviews */
+.rev{background:var(--pink);border-radius:12px;padding:18px;margin-bottom:14px}
+.rev .st{color:#e6a21f;letter-spacing:2px}
+.rev p{font-size:.9rem;margin-top:6px}
+/* info */
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:30%;background:var(--pink);color:var(--rose-d);font-weight:700}
+.map{margin-top:22px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:280px;border:0}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.links a{flex:1 1 140px;text-align:center;font-size:.85rem;padding:10px;border:1px solid var(--rose);color:var(--rose-d);border-radius:8px;text-decoration:none}
+/* cta */
+.cta{background:linear-gradient(135deg,var(--rose),var(--rose-d));color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta .btn{background:#fff;color:var(--rose-d);max-width:340px;margin:0 auto}
+.cta p{font-size:.9rem;margin-bottom:20px}
+footer{text-align:center;font-size:.75rem;color:var(--gray);padding:22px 20px}
+/* bottom nav */
+nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav a{text-align:center;text-decoration:none;font-size:.72rem;font-weight:700;padding:10px 4px;color:var(--ink)}
+nav a.tel{background:var(--rose);color:#fff}
+nav a span{display:block;font-size:1.1rem;line-height:1.2}
+@media(min-width:720px){.hero img{height:520px}.hero h1{font-size:2.1rem}.cards{grid-template-columns:repeat(3,1fr)}nav{display:none}body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<header><div class="in"><span class="logo">Chacott 仙台</span><a class="tel-s" href="tel:0222257441">📞 電話する</a></div></header>
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="チャコット 仙台PARCO2店のバレエ用品">
+  <div class="copy">
+    <span class="tag">仙台駅近く／仙台PARCO2 3F</span>
+    <h1>バレエのこと、<br>専門店に聞こう。</h1>
+    <p>創業75年のチャコットが、はじめの一歩から丁寧にご案内</p>
+    <a class="btn" href="#info">お店の情報を見る</a>
+  </div>
+</div>
+
+<section class="pickup" id="pickup">
+  <div class="wrap">
+    <span class="badge">イチオシ</span>
+    <h2><small>BALLET SPECIALTY STORE</small>バレエ用品専門店</h2>
+    <p class="lead">練習着・シューズからメイク用品まで。<br>「何を選べばいいか分からない」も、まずご相談ください。</p>
+    <img src="images/product.jpg" alt="バレエ用品専門店 チャコットの店内・商品">
+    <ul class="points">
+      <li><b>専門スタッフが、あなたに合う一品を提案</b>わからないことは質問すると、いろいろ教えてもらえると口コミでも好評です。</li>
+      <li><b>バレエ経験がなくても大丈夫</b>「カバー力のあるパウダーが欲しい」というご要望から、ぴったりの商品をご提案した実績があります。</li>
+      <li><b>初めての練習着から舞台まで</b>お子さまの練習着から、一流のアーティストの衣装まで。75年の経験が詰まっています。</li>
+    </ul>
+    <a class="btn" href="tel:0222257441">📞 022-225-7441 に電話で相談</a>
+  </div>
+</section>
+
+<section id="strength">
+  <div class="wrap">
+    <h2><small>STRENGTHS</small>チャコットが選ばれる理由</h2>
+    <div class="cards">
+      <div class="card"><div class="n">01</div><h3>創業75年の専門性</h3><p>バレエ・ダンス用品を中心に、長年培ってきた知識と実績があります。</p></div>
+      <div class="card"><div class="n">02</div><h3>行き届いた接客</h3><p>スタッフの教育が行き届いていて親切、と口コミでも高い評価をいただいています。</p></div>
+      <div class="card"><div class="n">03</div><h3>仙台駅近くで通いやすい</h3><p>仙台PARCO2の3F。清潔感のある店内で、ゆっくりお選びいただけます。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <h2><small>OUR STORY</small>75年培った資産をもとに、<br>新たなステージへ</h2>
+    <p>わたしたちチャコットは75年にわたり、バレエやダンス用品を中心とした多彩なサービスや商品を手がけてきました。</p>
+    <p>お子さまの初めての練習着から、一流のアーティストの衣装まで、芸術を愛する世界中の人々と伴走できたことは、わたしたちの誇りです。</p>
+    <p>そしていま「クローズからオープンへ」というテーマを掲げ、“美しくありたい”と願う多くの生活者にむけて、さらなる一歩を踏み出しました。</p>
+    <p class="catch">毎日のすべての瞬間を、美しくする。<br>すべての人の一生を、美しくする。<br>人生を、芯から美しく。</p>
+    <p class="ceo" style="margin-top:18px">チャコット株式会社　代表　馬場 昭典</p>
+  </div>
+</section>
+
+<section id="review">
+  <div class="wrap">
+    <h2><small>VOICE</small>お客様の声</h2>
+    <div class="rev"><div class="st">★★★★★</div><p>旅行で訪れた仙台で、欲しかったお粉を購入。要望を伝えるとパウダーファンデーションの方が合うと分かり、気になっていた毛穴もカバーできました。専門の人に聞いてよかったです。バレエ用品がメインなので最初は場違いかなと思いましたが、店員さんがとても親切でした。</p></div>
+    <div class="rev"><div class="st">★★★★☆</div><p>スタッフさんは教育が行き届いている感じ。店舗も仙台駅近くで清潔感があり、とても良いです。わからないことは質問するといろいろ教えてくれます。</p></div>
+  </div>
+</section>
+
+<section id="info" style="background:#fff;padding-top:0">
+  <div class="wrap">
+    <h2><small>SHOP INFO</small>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>チャコット 仙台PARCO2店</td></tr>
+      <tr><th>住所</th><td>〒980-0021<br>宮城県仙台市青葉区中央3丁目7−5 仙台PARCO2 3F</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0222257441">022-225-7441</a></td></tr>
+      <tr><th>年末年始</th><td>12/31（水）18:00閉店<br>1/1（木）休業<br>1/2（金）8:00～19:00 営業</td></tr>
+      <tr><th>会社名</th><td>チャコット株式会社</td></tr>
+      <tr><th>代表者</th><td>馬場 昭典</td></tr>
+    </table>
+    <div class="map"><iframe src="https://www.google.com/maps?q=%E4%BB%99%E5%8F%B0PARCO2&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="チャコット 仙台PARCO2店の地図"></iframe></div>
+    <div class="links">
+      <a href="https://www.chacott-jp.com/shop/sendai/?utm_source=google&utm_medium=GBP&utm_campaign=website" target="_blank" rel="noopener">公式ホームページ</a>
+      <a href="https://www.chacott-jp.com/faq/" target="_blank" rel="noopener">お問い合わせ</a>
+      <a href="https://www.instagram.com/chacott_jp/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>まずはお気軽に<br>ご相談ください</h2>
+    <p>商品の選び方からお気軽に。<br>スタッフがていねいにお答えします。</p>
+    <a class="btn" href="tel:0222257441">📞 022-225-7441</a>
+  </div>
+</section>
+
+<footer>&copy; Chacott Co., Ltd. チャコット 仙台PARCO2店</footer>
+
+<nav>
+  <a href="#pickup"><span>🩰</span>イチオシ</a>
+  <a href="#info"><span>📍</span>店舗情報</a>
+  <a class="tel" href="tel:0222257441"><span>📞</span>電話する</a>
+</nav>
+
+</body>
+</html>
