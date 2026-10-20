@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLUE GROUND（ブルーグラウンド）｜大崎市古川のアウトドア用品店</title>
+<meta name="description" content="宮城県大崎市古川の登山系アウトドア専門ショップ BLUE GROUND。登山・アウトドア用品から日常に使えるカジュアルウェアまで。商品知識豊富な店主が相談に応じます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10202e;
+  --deep:#16324a;
+  --blue:#2a6f9e;
+  --mist:#e8eef2;
+  --paper:#f7f8f6;
+  --rock:#5d6b74;
+  --signal:#e0702b;
+  --white:#fff;
+  --radius:6px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{
+  margin:0;
+  padding-bottom:68px;
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.wrap{width:100%;max-width:880px;margin:0 auto;padding:0 20px}
+
+/* header */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:56px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 14px 0 18px;background:rgba(16,32,46,.96);color:var(--white);
+}
+.header .logo{font-weight:900;font-size:17px;letter-spacing:.06em;text-decoration:none}
+.header .tel{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--signal);color:var(--white);text-decoration:none;
+  font-weight:700;font-size:14px;padding:8px 14px;border-radius:var(--radius);
+}
+
+/* hero */
+.hero{
+  position:relative;margin-top:56px;color:var(--white);
+  background:var(--ink);overflow:hidden;
+}
+.hero img{width:100%;height:min(88vw,520px);object-fit:cover;opacity:.55}
+.hero-body{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:24px 20px 28px;
+  background:linear-gradient(to top,rgba(16,32,46,.92) 8%,rgba(16,32,46,0) 70%);
+}
+.hero .area{font-size:13px;letter-spacing:.08em;margin:0 0 8px;color:#cfe0ec}
+.hero h1{
+  margin:0 0 12px;font-weight:900;line-height:1.35;
+  font-size:clamp(28px,8vw,46px);letter-spacing:.02em;
+}
+.hero p.lead{margin:0 0 18px;font-size:15px;max-width:30em;color:#e4edf3}
+.btn{
+  display:inline-block;text-align:center;text-decoration:none;font-weight:700;
+  padding:14px 24px;border-radius:var(--radius);font-size:16px;
+}
+.btn-primary{background:var(--signal);color:var(--white)}
+.btn-line{border:2px solid var(--white);color:var(--white)}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px}
+
+/* sections */
+section{padding:56px 0}
+h2{
+  margin:0 0 20px;font-size:clamp(22px,6vw,30px);font-weight:900;line-height:1.5;
+  color:var(--deep);
+}
+.sub{margin:0 0 28px;color:var(--rock)}
+
+/* featured */
+.feature{background:var(--deep);color:var(--white)}
+.feature h2{color:var(--white)}
+.feature .sub{color:#b9ccdb}
+.feature-img{border-radius:var(--radius);overflow:hidden;margin-bottom:24px}
+.feature-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.feature ul{list-style:none;margin:0 0 28px;padding:0}
+.feature li{
+  padding:14px 0 14px 18px;border-left:4px solid var(--signal);margin-bottom:12px;
+  background:rgba(255,255,255,.06);padding-right:14px;
+}
+.feature li strong{display:block;font-size:17px}
+.feature li span{font-size:14px;color:#c9d9e5}
+
+/* strengths */
+.points{display:grid;gap:14px}
+.point{background:var(--white);border:1px solid #d5dde2;border-radius:var(--radius);padding:20px}
+.point h3{margin:0 0 6px;font-size:18px;color:var(--deep)}
+.point p{margin:0;font-size:15px;color:var(--rock)}
+.gallery{margin-top:28px;border-radius:var(--radius);overflow:hidden}
+.gallery img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* reviews */
+.reviews{background:var(--mist)}
+.review{background:var(--white);border-radius:var(--radius);padding:20px;margin-bottom:14px}
+.review .stars{color:var(--signal);font-size:18px;letter-spacing:.1em;margin:0 0 6px}
+.review p{margin:0;font-size:15px}
+.review .who{margin-top:8px;font-size:13px;color:var(--rock)}
+
+/* info */
+table{width:100%;border-collapse:collapse;background:var(--white);border:1px solid #d5dde2}
+th,td{padding:14px;text-align:left;font-size:15px;border-bottom:1px solid #e3e8eb;vertical-align:top}
+th{width:30%;background:var(--mist);color:var(--deep);font-weight:700}
+tr:last-child th,tr:last-child td{border-bottom:0}
+td a{color:var(--blue);word-break:break-all}
+.map{margin-top:24px;border-radius:var(--radius);overflow:hidden;border:1px solid #d5dde2}
+.map iframe{display:block;width:100%;height:320px;border:0}
+
+/* cta */
+.cta{background:var(--ink);color:var(--white);text-align:center}
+.cta h2{color:var(--white)}
+.cta p{color:#c9d9e5;margin:0 0 24px}
+.cta .btn{display:block;max-width:420px;margin:0 auto 12px}
+.cta .btn-line{border-color:#6f8ba0}
+footer{background:#0b1621;color:#8ea3b3;text-align:center;font-size:12px;padding:18px 20px}
+
+/* bottom nav */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:var(--white);border-top:1px solid #cdd6dc;
+  padding-bottom:env(safe-area-inset-bottom,0);
+}
+.bottom-nav a{
+  text-align:center;text-decoration:none;font-size:13px;font-weight:700;
+  padding:12px 4px;color:var(--deep);
+}
+.bottom-nav a.call{background:var(--signal);color:var(--white)}
+
+@media (min-width:720px){
+  body{padding-bottom:0}
+  .bottom-nav{display:none}
+  .points{grid-template-columns:repeat(3,1fr)}
+  .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+  .feature-img{margin-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="#top">BLUE GROUND</a>
+  <a class="tel" href="tel:0229299070" aria-label="電話をかける">📞 0229-29-9070</a>
+</header>
+
+<main id="top">
+
+  <!-- ヒーロー -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="BLUE GROUNDの店内に並ぶアウトドア用品" width="1200" height="800">
+    <div class="hero-body">
+      <p class="area">宮城県大崎市古川｜登山系アウトドア専門ショップ</p>
+      <h1>山へ行く日も、<br>街で過ごす日も。<br>道具から選べる店。</h1>
+      <p class="lead">登山・アウトドア用品を中心に、普段使いのジャケットやジーンズ、帽子、ベルトまで。商品知識豊富な店主が選び方から相談に乗ります。</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:0229299070">電話で相談する</a>
+        <a class="btn btn-line" href="#outdoor">アウトドア用品を見る</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- イチオシ：アウトドア用品 -->
+  <section class="feature" id="outdoor">
+    <div class="wrap">
+      <h2>イチオシは、アウトドア用品</h2>
+      <p class="sub">登山系の専門ショップだからできる、実際に手に取って選ぶ道具選び。</p>
+      <div class="feature-grid">
+        <div class="feature-img">
+          <img src="images/outdoor.jpg" alt="BLUE GROUNDで取り扱うアウトドア用品" width="1200" height="900">
+        </div>
+        <div>
+          <ul>
+            <li><strong>登山・アウトドアのウェアとギア</strong><span>フィールドで使える機能を、店主の知識をもとにご案内します。</span></li>
+            <li><strong>街でも着られるカジュアルウェア</strong><span>ジャケット、ジーンズ、帽子、ベルトなど。若い方から大人の方まで幅広く揃います。</span></li>
+            <li><strong>ちょうどいい距離感の接客</strong><span>じっくり見たい方はゆっくりと。聞きたいときはいつでも声をかけてください。</span></li>
+          </ul>
+          <a class="btn btn-primary" href="tel:0229299070">在庫・選び方を電話で聞く</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section id="strength">
+    <div class="wrap">
+      <h2>BLUE GROUNDが選ばれる理由</h2>
+      <div class="points">
+        <div class="point">
+          <h3>店主の商品知識が豊富</h3>
+          <p>この業界に精通した店主が、使う場面や好みに合わせて話を聞きながら提案します。</p>
+        </div>
+        <div class="point">
+          <h3>専門店らしい品揃え</h3>
+          <p>アウトドア用品を軸に、普段使いできる服や小物まで一度に見て回れます。</p>
+        </div>
+        <div class="point">
+          <h3>居心地のよい、おしゃれな店内</h3>
+          <p>ゆっくり商品を見られる雰囲気で、初めての方も入りやすいお店です。</p>
+        </div>
+      </div>
+      <div class="gallery">
+        <img src="images/store.jpg" alt="BLUE GROUNDの店内の様子" width="1200" height="750">
+      </div>
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <h2>お客様の声</h2>
+      <div class="review">
+        <p class="stars" aria-label="5つ星">★★★★★</p>
+        <p>店主さんが商品知識豊富で、話をしていて大変楽しかったです。居心地のよいお店でした。また訪問したいと思います。</p>
+        <p class="who">Google口コミより</p>
+      </div>
+      <div class="review">
+        <p class="stars" aria-label="4つ星">★★★★</p>
+        <p>登山系の専門ショップらしい雰囲気で、ちょうど良い距離感で店内の商品を見ることができました。カジュアルな服からジャケット、ジーンズ、帽子やベルトまで幅広く、お店もおしゃれです。必要なときはここを利用しようと思います。</p>
+        <p class="who">Google口コミより</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section id="info">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <table>
+        <tr><th>店名</th><td>BLUE GROUND（ブルーグラウンド）</td></tr>
+        <tr><th>住所</th><td>宮城県大崎市古川幸町1-5-37-101</td></tr>
+        <tr><th>電話</th><td><a href="tel:0229299070">0229-29-9070</a></td></tr>
+        <tr><th>定休日</th><td>水曜日</td></tr>
+        <tr><th>メール</th><td><a href="mailto:office@blueground.jp">office@blueground.jp</a></td></tr>
+        <tr><th>公式サイト</th><td><a href="https://www.blueground.jp/" target="_blank" rel="noopener">https://www.blueground.jp/</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe title="BLUE GROUNDの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E5%A4%A7%E5%B4%8E%E5%B8%82%E5%8F%A4%E5%B7%9D%E5%B9%B8%E7%94%BA1-5-37&output=embed&hl=ja"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>道具選びの相談は、お気軽に</h2>
+      <p>「こんな山に行きたい」「普段着も探している」など、どんなことでもどうぞ。</p>
+      <a class="btn btn-primary" href="tel:0229299070">0229-29-9070 に電話する</a>
+      <a class="btn btn-line" href="https://www.blueground.jp/ssl/contact/" target="_blank" rel="noopener">問い合わせフォームを開く</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>&copy; BLUE GROUND（ブルーグラウンド）</footer>
+
+<nav class="bottom-nav" aria-label="固定メニュー">
+  <a class="call" href="tel:0229299070">電話する</a>
+  <a href="#info">店舗情報</a>
+  <a href="https://www.blueground.jp/ssl/contact/" target="_blank" rel="noopener">問い合わせ</a>
+</nav>
+
+</body>
+</html>
