@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ogawa GRAND lodge 仙台｜ogawaの全ラインナップを見て・触れて・体験できるテント専門コンセプトストア</title>
+<meta name="description" content="仙台・泉中央駅徒歩6分。ogawaの全ラインナップを実際に見て触って確かめられるコンセプトストア。専門スタッフが購入前から購入後までアウトドアをサポートします。">
+<style>
+:root{
+  --green:#2f5d3a;
+  --green-dark:#1f3f28;
+  --orange:#e8742a;
+  --orange-dark:#c85d17;
+  --sand:#f6f1e7;
+  --text:#2b2b2b;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--text);background:var(--white);line-height:1.8;font-size:16px;
+  padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.5rem;line-height:1.4;text-align:center;margin-bottom:8px;color:var(--green-dark)}
+.sub{text-align:center;color:var(--orange-dark);font-weight:700;font-size:.8rem;letter-spacing:.15em;margin-bottom:28px}
+
+/* header */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;height:56px;
+  background:var(--green-dark);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:env(safe-area-inset-top,0px) 12px 0 16px;
+  height:calc(56px + env(safe-area-inset-top,0px));
+}
+body{padding-top:calc(56px + env(safe-area-inset-top,0px))}
+.header .logo{font-weight:800;font-size:.95rem;line-height:1.2}
+.header .logo small{display:block;font-size:.65rem;font-weight:500;opacity:.85}
+.header .tel{
+  background:var(--orange);color:#fff;text-decoration:none;font-weight:700;
+  font-size:.85rem;padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* hero */
+.hero{position:relative;color:#fff;padding:0;background:var(--green-dark)}
+.hero img{width:100%;height:340px;object-fit:cover;opacity:.55}
+.hero .copy{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;padding:20px;
+}
+.hero .badge{
+  background:var(--orange);font-size:.8rem;font-weight:700;padding:4px 14px;
+  border-radius:999px;margin-bottom:14px;
+}
+.hero h1{font-size:1.65rem;line-height:1.5;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.hero h1 em{font-style:normal;color:#ffd27a}
+.hero p{margin-top:12px;font-size:.9rem;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.hero-meta{background:var(--green);color:#fff;text-align:center;padding:14px 16px;font-size:.85rem}
+.hero-meta strong{color:#ffd27a}
+
+/* buttons */
+.btn{
+  display:block;text-align:center;text-decoration:none;font-weight:800;
+  padding:16px 20px;border-radius:12px;font-size:1.05rem;
+}
+.btn-tel{background:var(--orange);color:#fff;box-shadow:0 4px 0 var(--orange-dark)}
+.btn-sub{background:#fff;color:var(--green-dark);border:2px solid var(--green-dark);margin-top:14px}
+
+/* featured */
+.pick{background:var(--sand)}
+.pick-label{
+  display:inline-block;background:var(--orange);color:#fff;font-weight:800;
+  padding:4px 16px;border-radius:4px;font-size:.85rem;margin-bottom:12px
+}
+.pick .head{text-align:center}
+.pick-img{border-radius:16px;overflow:hidden;margin:24px 0;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.pick-img img{width:100%;height:260px;object-fit:cover}
+.pick-lead{font-size:1.1rem;font-weight:700;text-align:center;line-height:1.7;margin-bottom:20px}
+.pick-lead span{background:linear-gradient(transparent 60%,#ffd27a 60%)}
+.points{list-style:none}
+.points li{
+  background:#fff;border-radius:12px;padding:16px 16px 16px 60px;margin-bottom:12px;
+  position:relative;box-shadow:0 2px 8px rgba(0,0,0,.06)
+}
+.points li::before{
+  content:counter(n);counter-increment:n;position:absolute;left:14px;top:14px;
+  width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;
+  font-weight:800;display:flex;align-items:center;justify-content:center
+}
+.points{counter-reset:n}
+.points b{display:block;color:var(--green-dark);margin-bottom:2px}
+.points span{font-size:.9rem}
+
+/* strengths */
+.strength{background:#fff;border:2px solid var(--green);border-radius:16px;padding:22px;margin-top:8px}
+.strength p+p{margin-top:12px}
+.strength p{font-size:.95rem}
+.store-img{border-radius:16px;overflow:hidden;margin-top:24px}
+.store-img img{width:100%;height:220px;object-fit:cover}
+.store-note{font-size:.8rem;color:#666;margin-top:8px;text-align:center}
+.flow{display:flex;gap:8px;margin-top:24px;text-align:center;font-size:.8rem;font-weight:700}
+.flow div{flex:1;background:var(--green);color:#fff;border-radius:10px;padding:12px 4px}
+.flow small{display:block;font-weight:500;opacity:.85}
+
+/* reviews */
+.reviews{background:var(--sand)}
+.review{background:#fff;border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.stars{color:#f5a623;letter-spacing:.1em;font-size:1.1rem}
+.review p{font-size:.92rem;margin-top:4px}
+
+/* info */
+.info table{width:100%;border-collapse:collapse;font-size:.92rem}
+.info th,.info td{padding:14px 10px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}
+.info th{width:28%;color:var(--green-dark);white-space:nowrap}
+.info td a{color:var(--orange-dark);word-break:break-all}
+.map{margin-top:24px;border-radius:12px;overflow:hidden;border:1px solid #ddd}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{background:var(--green-dark);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{font-size:.92rem;margin-bottom:22px}
+.cta .tel-big{font-size:1.8rem;font-weight:800;color:#ffd27a;text-decoration:none;display:block;margin-bottom:4px}
+.cta small{display:block;margin-bottom:20px;opacity:.85;font-size:.8rem}
+.cta .btn-sub{background:transparent;color:#fff;border-color:#fff}
+
+footer{background:#111;color:#aaa;text-align:center;font-size:.75rem;padding:20px 16px}
+
+/* bottom nav */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:100;display:flex;background:#fff;
+  border-top:1px solid #ddd;padding-bottom:env(safe-area-inset-bottom,0px);
+  box-shadow:0 -2px 10px rgba(0,0,0,.08)
+}
+.bottom-nav a{
+  flex:1;text-align:center;text-decoration:none;font-size:.7rem;font-weight:700;
+  padding:9px 2px;color:var(--green-dark);line-height:1.3
+}
+.bottom-nav a span{display:block;font-size:1.2rem}
+.bottom-nav a.main{background:var(--orange);color:#fff}
+
+@media(min-width:768px){
+  .hero img{height:460px}
+  .hero h1{font-size:2.3rem}
+  h2{font-size:1.9rem}
+  .pick-img img{height:380px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">ogawa GRAND lodge 仙台<small>泉中央駅 徒歩6分</small></div>
+  <a class="tel" href="tel:0223027080">📞 電話する</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="ogawa GRAND lodge 仙台 店内に並ぶogawaのテント">
+  <div class="copy">
+    <span class="badge">東北最大の都市・仙台のogawaコンセプトストア</span>
+    <h1>テントは、<br><em>張って、触って、</em><br>選ぶ時代へ。</h1>
+    <p>ogawaの全ラインナップを、実物で。</p>
+  </div>
+</div>
+<div class="hero-meta">営業時間・定休日：<strong>火曜日・水曜日</strong>／年末年始　｜　仙台市営地下鉄南北線 <strong>泉中央駅 徒歩6分</strong></div>
+
+<!-- PICK -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <div class="head">
+      <span class="pick-label">イチオシ</span>
+      <h2>ogawaのテント・アウトドア用品</h2>
+      <p class="sub">PICK UP OUTDOOR GEAR</p>
+    </div>
+    <div class="pick-img">
+      <img src="images/ogawa-tent.jpg" alt="ogawaのテント展示・設営イメージ">
+    </div>
+    <p class="pick-lead">カタログでは分からない<br><span>「大きさ」「質感」「使い勝手」</span>を<br>実物で確かめられます。</p>
+    <ol class="points">
+      <li><b>ogawaの全ラインナップを体験</b><span>高い品質と機能を、直接見て・触って感じていただけるコンセプトストアです。</span></li>
+      <li><b>見たいテントを張ってもらえる</b><span>口コミでも「見てみたいテントをわざわざ張ってくれた」と好評。ご希望の機種はぜひご相談ください。</span></li>
+      <li><b>色違いも見比べて選べる</b><span>スタッフが色違いをお持ちするなど、納得いくまで比較検討できます。</span></li>
+    </ol>
+    <div style="margin-top:28px">
+      <a class="btn btn-tel" href="tel:0223027080">📞 022-302-7080 に電話する</a>
+      <a class="btn btn-sub" href="https://www.campal.co.jp/contact/" target="_blank" rel="noopener">メールで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTH -->
+<section id="strength">
+  <div class="wrap">
+    <h2>GRAND lodgeが選ばれる理由</h2>
+    <p class="sub">OUR STRENGTH</p>
+    <div class="strength">
+      <p><b>日常の中のアウトドア、そしてフィールドでのアウトドアの楽しさを、多くの方に知ってほしい。</b></p>
+      <p>そして“ogawa”製品の高い品質と機能を直接感じてほしい。そんな想いから生まれたのが、ogawaの全ラインナップをご覧いただけるコンセプトストア「ogawa GRAND lodge」です。</p>
+      <p>ストア内ではコンセプトに基づいた展示・販売を行い、専門スタッフがハードからソフトまで、ご購入前からご購入後まで、アウトドアに関する様々な「モノ、コト」をご提案します。</p>
+    </div>
+    <div class="flow">
+      <div>購入前<small>相談・比較</small></div>
+      <div>ご購入<small>実物で確認</small></div>
+      <div>購入後<small>使い方も提案</small></div>
+    </div>
+    <div class="store-img">
+      <img src="images/store.jpg" alt="ogawa GRAND lodge 仙台 店舗外観・店内">
+    </div>
+    <p class="store-note">2023年7月21日、仙台パルコより移転オープン</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <p class="sub">CUSTOMER REVIEWS</p>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>オガワのテントを実際に見て触って確かめられる。スタッフさんも詳しくて、色々な質問にもすぐに答えてくれたし、色違いを持ってきてくれたり参考になりました。</p>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>店員さんマジで親身に相談にのってくれる！見てみたいテントを、わざわざ張ってくれた。ヴィカス2！</p>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>接客素晴らしい。忖度なし。</p>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info" id="access">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <p class="sub">SHOP INFORMATION</p>
+    <table>
+      <tr><th>店名</th><td>GRAND lodge 仙台</td></tr>
+      <tr><th>住所</th><td>〒981-3133<br>宮城県仙台市泉区泉中央3丁目2−1 ルーセント21ビル 1F</td></tr>
+      <tr><th>アクセス</th><td>仙台市営地下鉄南北線 泉中央駅 徒歩6分</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0223027080">022-302-7080</a></td></tr>
+      <tr><th>定休日</th><td>火曜日・水曜日、年末年始</td></tr>
+      <tr><th>公式HP</th><td><a href="https://www.grand-lodge.jp/grand-lodge-sendai" target="_blank" rel="noopener">grand-lodge.jp/grand-lodge-sendai</a></td></tr>
+      <tr><th>Instagram</th><td><a href="https://www.instagram.com/grandlodge_sendai/" target="_blank" rel="noopener">@grandlodge_sendai</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://www.campal.co.jp/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E6%B3%89%E5%8C%BA%E6%B3%89%E4%B8%AD%E5%A4%AE3%E4%B8%81%E7%9B%AE2-1+%E3%83%AB%E3%83%BC%E3%82%BB%E3%83%B3%E3%83%8821%E3%83%93%E3%83%AB&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="GRAND lodge 仙台 地図"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>まずは、実物を見に来てください。</h2>
+    <p>見てみたいテントがあれば、お気軽にご相談ください。<br>スタッフ一同、心よりお待ちしております。</p>
+    <a class="tel-big" href="tel:0223027080">022-302-7080</a>
+    <small>定休日：火曜日・水曜日、年末年始</small>
+    <a class="btn btn-tel" href="tel:0223027080">📞 電話で問い合わせる</a>
+    <a class="btn btn-sub" href="https://www.campal.co.jp/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a>
+  </div>
+</section>
+
+<footer>© ogawa GRAND lodge 仙台</footer>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <a href="#pick"><span>⛺</span>イチオシ</a>
+  <a href="#voice"><span>⭐</span>口コミ</a>
+  <a href="#access"><span>📍</span>アクセス</a>
+  <a class="main" href="tel:0223027080"><span>📞</span>電話</a>
+</nav>
+
+</body>
+</html>
