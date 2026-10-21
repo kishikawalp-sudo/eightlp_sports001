@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>テンフィート/TENFEET・バスケットウエア｜仙台のバスケ用品専門店</title>
+<meta name="description" content="仙台市青葉区のバスケ用品専門店 テンフィート/TENFEET。バスケットウエアの品揃え、ユニフォーム・チームTシャツのご注文もお任せください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#10203a;
+  --navy-deep:#0a1426;
+  --orange:#e8571f;
+  --orange-dark:#c3430f;
+  --maple:#ecd2a6;
+  --chalk:#fbf8f2;
+  --line:#d9cdb8;
+  --text:#1c2433;
+  --sub:#5b6577;
+  --font-body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+  --font-display:"Dela Gothic One","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--text);
+  background:var(--chalk);
+  line-height:1.8;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+  padding-bottom:calc(68px + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+
+/* ---------- header ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(16,32,58,.96);
+  color:#fff;
+  padding-top:env(safe-area-inset-top,0px);
+}
+.header-in{
+  max-width:960px;margin:0 auto;height:56px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 16px;
+}
+.logo{font-family:var(--font-display);font-size:18px;letter-spacing:.04em;text-decoration:none}
+.logo small{display:block;font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:.08em;opacity:.75;line-height:1.2}
+.tel-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--orange);color:#fff;text-decoration:none;
+  font-weight:900;font-size:14px;
+  padding:8px 14px;border-radius:999px;
+  white-space:nowrap;
+}
+.tel-btn svg{width:16px;height:16px;fill:currentColor}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  margin-top:calc(56px + env(safe-area-inset-top,0px));
+  background:var(--navy-deep);
+  color:#fff;
+  overflow:hidden;
+}
+.hero-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:.55;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,20,38,.35) 0%,rgba(10,20,38,.85) 100%);
+}
+.hero-in{
+  position:relative;z-index:2;
+  max-width:960px;margin:0 auto;
+  padding:44px 20px 40px 64px;
+  min-height:520px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+/* 10 feet ruler */
+.ruler{
+  position:absolute;z-index:2;left:20px;top:28px;bottom:28px;width:32px;
+  border-left:3px solid var(--orange);
+}
+.ruler span{
+  position:absolute;left:0;display:block;
+  border-top:2px solid rgba(255,255,255,.7);width:14px;
+}
+.ruler span:nth-child(1){top:0;width:30px;border-color:var(--orange)}
+.ruler span:nth-child(2){top:20%}
+.ruler span:nth-child(3){top:40%}
+.ruler span:nth-child(4){top:60%}
+.ruler span:nth-child(5){top:80%}
+.ruler span:nth-child(6){bottom:0;width:30px}
+.ruler em{
+  position:absolute;left:38px;top:-10px;
+  font-style:normal;font-family:var(--font-display);font-size:13px;color:var(--orange);white-space:nowrap;
+}
+.hero-tag{
+  display:inline-block;align-self:flex-start;
+  background:var(--maple);color:var(--navy);
+  font-weight:900;font-size:13px;
+  padding:4px 12px;border-radius:4px;margin-bottom:16px;
+}
+.hero h1{
+  margin:0 0 14px;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(34px,9.5vw,60px);
+  line-height:1.25;
+  letter-spacing:.02em;
+}
+.hero-lead{margin:0 0 26px;font-size:15px;max-width:30em;color:#e9edf5}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:52px;padding:12px 26px;border-radius:999px;
+  font-weight:900;font-size:16px;text-decoration:none;
+  border:2px solid transparent;
+  transition:background .2s,color .2s,transform .1s;
+}
+.btn:active{transform:scale(.98)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-primary:hover{background:var(--orange-dark)}
+.btn-ghost{border-color:#fff;color:#fff;background:transparent}
+.btn-ghost:hover{background:#fff;color:var(--navy)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-dark:hover{background:var(--navy-deep)}
+
+/* ---------- sections ---------- */
+section{padding:64px 0}
+.sec-title{
+  margin:0 0 8px;
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(26px,6.8vw,38px);line-height:1.35;color:var(--navy);
+}
+.sec-lead{margin:0 0 28px;color:var(--sub);font-size:15px}
+
+/* featured */
+.feature{background:var(--maple);position:relative}
+.feature::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:10px;
+  background:repeating-linear-gradient(90deg,var(--navy) 0 28px,var(--orange) 28px 56px);
+}
+.badge{
+  display:inline-block;background:var(--orange);color:#fff;
+  font-weight:900;font-size:13px;padding:4px 14px;border-radius:4px;margin-bottom:12px;
+}
+.feature-grid{display:grid;gap:28px}
+.feature-img{
+  border-radius:14px;overflow:hidden;background:var(--navy);
+  aspect-ratio:4/3;box-shadow:8px 8px 0 var(--navy);
+}
+.feature-img img{width:100%;height:100%;object-fit:cover}
+.check{list-style:none;margin:0 0 24px;padding:0}
+.check li{
+  position:relative;padding:10px 0 10px 34px;
+  border-bottom:1px dashed rgba(16,32,58,.3);font-weight:700;
+}
+.check li::before{
+  content:"";position:absolute;left:0;top:14px;width:22px;height:22px;border-radius:50%;
+  background:var(--navy) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/14px no-repeat;
+}
+
+/* strengths */
+.points{display:grid;gap:16px;margin-top:8px}
+.point{
+  background:#fff;border:2px solid var(--navy);border-radius:12px;padding:22px 20px;
+}
+.point h3{margin:0 0 6px;font-size:18px;color:var(--navy);line-height:1.5}
+.point p{margin:0;font-size:15px;color:var(--sub)}
+
+/* uniform */
+.uniform{background:var(--navy);color:#fff}
+.uniform .sec-title{color:#fff}
+.uniform .sec-lead{color:#c9d2e3}
+.uniform-grid{display:grid;gap:24px;align-items:center}
+.uniform-img{border-radius:14px;overflow:hidden;background:var(--navy-deep);aspect-ratio:4/3}
+.uniform-img img{width:100%;height:100%;object-fit:cover}
+
+/* reviews */
+.reviews{display:grid;gap:16px}
+.review{background:#fff;border-radius:12px;padding:22px 20px;border:1px solid var(--line)}
+.stars{color:var(--orange);font-size:20px;letter-spacing:2px;margin-bottom:6px;line-height:1.2}
+.stars i{font-style:normal;color:#d9d3c6}
+.review p{margin:0;font-size:15px}
+
+/* info */
+.info{background:#fff}
+.info-table{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:15px}
+.info-table th,.info-table td{padding:14px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+.info-table th{width:7.5em;color:var(--navy);font-weight:900;white-space:nowrap}
+.info-table a{color:var(--orange-dark);font-weight:700;word-break:break-all}
+.map{border-radius:12px;overflow:hidden;border:2px solid var(--navy);aspect-ratio:4/3;background:#e6e1d6}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* CTA */
+.cta{background:var(--orange);color:#fff;text-align:center}
+.cta .sec-title{color:#fff}
+.cta p{margin:0 0 24px}
+.cta-tel{
+  display:block;font-family:var(--font-display);font-size:clamp(30px,9vw,46px);
+  color:#fff;text-decoration:none;margin-bottom:6px;line-height:1.3;
+}
+.cta-sub{font-size:13px;margin-bottom:24px!important}
+.cta-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta .btn-light{background:#fff;color:var(--navy)}
+.cta .btn-light:hover{background:var(--navy);color:#fff}
+
+footer{background:var(--navy-deep);color:#aab4c8;text-align:center;font-size:12px;padding:24px 20px}
+
+/* bottom nav */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:var(--navy);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  border-top:2px solid var(--orange);
+}
+.bottom-nav a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  min-height:60px;color:#fff;text-decoration:none;font-size:12px;font-weight:700;
+}
+.bottom-nav a:first-child{background:var(--orange)}
+.bottom-nav svg{width:22px;height:22px;fill:currentColor}
+
+/* ---------- wider screens ---------- */
+@media (min-width:768px){
+  body{padding-bottom:0}
+  .bottom-nav{display:none}
+  .hero-in{padding-left:88px;min-height:600px}
+  .ruler{left:32px}
+  .feature-grid,.uniform-grid{grid-template-columns:1fr 1fr;gap:48px}
+  .points{grid-template-columns:repeat(3,1fr)}
+  .reviews{grid-template-columns:1fr 1fr}
+  .uniform-grid .uniform-img{order:2}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-in">
+    <a class="logo" href="#top">TENFEET<small>テンフィート・バスケットウエア</small></a>
+    <a class="tel-btn" href="tel:0223984517" aria-label="電話をかける">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>
+      電話する
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img class="hero-img" src="images/hero_basketball.jpg" alt="テンフィート店内のバスケットボール用品" width="1200" height="800">
+    <div class="ruler" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <em>10 FEET</em>
+    </div>
+    <div class="hero-in">
+      <span class="hero-tag">仙台市青葉区・バスケ用品専門店</span>
+      <h1>バスケの道具は、<br>ここで選ぶ。</h1>
+      <p class="hero-lead">リングの高さは10フィート。そこへ挑むプレーヤーのために、バスケットウエアとチームの注文まで、バスケだけに絞ってご用意しています。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="tel:0223984517">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>
+          022-398-4517
+        </a>
+        <a class="btn btn-ghost" href="#access">店舗情報を見る</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- イチオシ -->
+  <section class="feature" id="feature">
+    <div class="wrap">
+      <div class="feature-grid">
+        <div>
+          <span class="badge">イチオシ</span>
+          <h2 class="sec-title">バスケ用品専門店だから、<br>選べる・頼れる。</h2>
+          <p class="sec-lead">店舗は小さくても、品揃えはバスケ一筋。「困ったときはここ」と通うお客様がいる専門店です。</p>
+          <ul class="check">
+            <li>バスケットウエアを中心にした専門の品揃え</li>
+            <li>ユニフォームのご注文にも対応</li>
+            <li>チームTシャツのご注文にも対応</li>
+            <li>仙台市内で、バスケに特化した専門店</li>
+          </ul>
+          <a class="btn btn-dark" href="https://10feet.net/contact/" target="_blank" rel="noopener">在庫・注文を問い合わせる</a>
+        </div>
+        <div class="feature-img">
+          <img src="images/store_items.jpg" alt="バスケットウエアが並ぶテンフィートの売場" width="800" height="600" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section id="strength">
+    <div class="wrap">
+      <h2 class="sec-title">テンフィートが選ばれる理由</h2>
+      <p class="sec-lead">バスケだけを扱うから、できること。</p>
+      <div class="points">
+        <div class="point">
+          <h3>バスケに絞った専門の品揃え</h3>
+          <p>幅広く浅くではなく、バスケ用品に絞って揃えています。探している物が見つかりやすい店です。</p>
+        </div>
+        <div class="point">
+          <h3>チームの注文もまとめて相談</h3>
+          <p>ユニフォームやチームTシャツも注文できます。チームで揃えたいときは、お気軽にご相談ください。</p>
+        </div>
+        <div class="point">
+          <h3>困ったときに頼れる一軒</h3>
+          <p>急に必要になった、何を選べばいいか分からない。そんなときに利用しているというお声をいただいています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ユニフォーム -->
+  <section class="uniform" id="uniform">
+    <div class="wrap">
+      <div class="uniform-grid">
+        <div>
+          <h2 class="sec-title">ユニフォーム・<br>チームTシャツも注文OK</h2>
+          <p class="sec-lead">チームの一体感は、揃いのウエアから。部活動やクラブチームの注文のご相談をお受けしています。</p>
+          <a class="btn btn-primary" href="tel:0223984517">電話で相談する</a>
+        </div>
+        <div class="uniform-img">
+          <img src="images/team_uniform.jpg" alt="チームで揃えるバスケットボールのユニフォーム" width="800" height="600" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section id="voice">
+    <div class="wrap">
+      <h2 class="sec-title">お客様のクチコミ</h2>
+      <p class="sec-lead">ご利用いただいたお客様の声です。</p>
+      <div class="reviews">
+        <div class="review">
+          <div class="stars" aria-label="5点中4点">★★★★<i>★</i></div>
+          <p>店舗は小さいですが、品揃えはありますので、困ったときは利用しています。</p>
+        </div>
+        <div class="review">
+          <div class="stars" aria-label="5点中5点">★★★★★</div>
+          <p>仙台市内のバスケット用品専門店。ユニフォームやチームTシャツなども注文出来ます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="info" id="access">
+    <div class="wrap">
+      <h2 class="sec-title">店舗情報</h2>
+      <p class="sec-lead">ご来店前に、お電話でのご確認もおすすめです。</p>
+      <table class="info-table">
+        <tr><th>店名</th><td>テンフィート/TENFEET・バスケットウエア</td></tr>
+        <tr><th>住所</th><td>〒980-0866<br>宮城県仙台市青葉区川内澱橋通12-47 ロイヤルヒルズ広瀬川201</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0223984517">022-398-4517</a></td></tr>
+        <tr><th>定休日</th><td>月曜日（祝日の場合は翌日）、夏季休暇、冬期休暇</td></tr>
+        <tr><th>公式サイト</th><td><a href="http://www.10feet.net/" target="_blank" rel="noopener">http://www.10feet.net/</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://10feet.net/contact/" target="_blank" rel="noopener">https://10feet.net/contact/</a></td></tr>
+        <tr><th>Facebook</th><td><a href="https://www.facebook.com/10feetnet/" target="_blank" rel="noopener">https://www.facebook.com/10feetnet/</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9D%92%E8%91%89%E5%8C%BA%E5%B7%9D%E5%86%85%E6%BE%B1%E6%A9%8B%E9%80%9A12-47&output=embed&hl=ja"
+          title="テンフィートの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2 class="sec-title">まずはお電話ください</h2>
+      <p>探している商品や、チームの注文について、お気軽にどうぞ。</p>
+      <a class="cta-tel" href="tel:0223984517">022-398-4517</a>
+      <p class="cta-sub">定休日：月曜日（祝日の場合は翌日）、夏季・冬期休暇</p>
+      <div class="cta-links">
+        <a class="btn btn-light" href="https://10feet.net/contact/" target="_blank" rel="noopener">メールで問い合わせる</a>
+        <a class="btn btn-dark" href="https://www.facebook.com/10feetnet/" target="_blank" rel="noopener">Facebookを見る</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; テンフィート/TENFEET・バスケットウエア
+</footer>
+
+<nav class="bottom-nav" aria-label="固定メニュー">
+  <a href="tel:0223984517">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>
+    電話する
+  </a>
+  <a href="https://10feet.net/contact/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.5 7v.1L12 12.4 19.5 7.1V7L12 12.2z"/></svg>
+    問い合わせ
+  </a>
+  <a href="#access">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+    アクセス
+  </a>
+</nav>
+
+</body>
+</html>
