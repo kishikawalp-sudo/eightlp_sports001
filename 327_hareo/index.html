@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HALEO仙台店｜仙台のプロテイン専門店｜試飲して選べる</title>
+<meta name="description" content="仙台市宮城野区のプロテイン専門店 HALEO仙台店（ハレオ仙台店）。プロテインを試飲して、栄養に詳しいスタッフと自分に合う1つを選べます。カフェスタンド併設・定休日なし。">
+<style>
+:root{
+  --ink:#10231d;
+  --green:#14694c;
+  --green-dark:#0c4a35;
+  --mint:#e8f3ed;
+  --lemon:#f5c518;
+  --white:#fff;
+  --gray:#5b6b65;
+  --line:#d3e2da;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+  color:var(--ink);background:var(--white);line-height:1.8;font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--lemon);outline-offset:3px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+
+/* HERO */
+.hero{background:var(--green-dark);color:var(--white);padding:0}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.hero-body{padding:32px 20px 44px;max-width:720px;margin:0 auto}
+.shop{font-size:14px;letter-spacing:.08em;color:#bfe0d1;margin-bottom:12px}
+.hero h1{font-size:clamp(28px,8vw,44px);line-height:1.35;font-weight:800;letter-spacing:.02em}
+.hero p.lead{margin-top:16px;color:#e3f1ea;font-size:16px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;list-style:none}
+.badges li{background:var(--lemon);color:var(--ink);font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px}
+
+/* BUTTONS */
+.btn{display:block;text-align:center;text-decoration:none;font-weight:800;border-radius:12px;padding:16px 20px;font-size:17px;line-height:1.4}
+.btn-tel{background:var(--lemon);color:var(--ink);margin-top:28px}
+.btn-sub{border:2px solid var(--white);color:var(--white);margin-top:12px;font-size:15px}
+.btn small{display:block;font-size:12px;font-weight:600;opacity:.8}
+
+/* HEADINGS */
+h2{font-size:clamp(22px,6vw,30px);line-height:1.45;font-weight:800;margin-bottom:20px}
+.sec-mint{background:var(--mint)}
+
+/* POINTS */
+.points{list-style:none;display:grid;gap:14px;margin-top:8px}
+.points li{background:var(--white);border-left:6px solid var(--green);padding:18px 18px 18px 20px;border-radius:0 12px 12px 0}
+.points strong{display:block;font-size:18px;margin-bottom:4px}
+.points span{color:var(--gray);font-size:15px}
+
+/* STORE */
+.fig{border-radius:16px;overflow:hidden;margin:24px 0}
+.fig img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fig figcaption{background:var(--white);font-size:13px;color:var(--gray);padding:10px 14px}
+.cafe{display:grid;gap:20px}
+
+/* VOICE */
+.voice{background:var(--white);border:2px solid var(--line);border-radius:16px;padding:24px 20px}
+.stars{color:#e0a800;font-size:22px;letter-spacing:.1em}
+.voice p{margin-top:12px;font-size:15px}
+.voice p+p{margin-top:10px}
+
+/* INFO */
+dl.info{border-top:1px solid var(--line)}
+dl.info div{display:grid;grid-template-columns:6.5em 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+dl.info dt{font-weight:700;color:var(--green)}
+dl.info dd{word-break:break-all}
+dl.info a{color:var(--green);text-underline-offset:3px}
+
+/* FOOTER CTA */
+.cta{background:var(--green-dark);color:var(--white);text-align:center}
+.cta h2{margin-bottom:8px}
+.cta p{color:#cfe6db;font-size:15px}
+.cta .btn-tel{margin-top:24px}
+.cta .btn-sub{margin-top:12px}
+footer{background:#0a2a1f;color:#9fc4b4;text-align:center;font-size:12px;padding:20px}
+
+/* floating call bar (mobile) */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--lemon);text-align:center;padding:12px 16px calc(12px + env(safe-area-inset-bottom));box-shadow:0 -2px 12px rgba(0,0,0,.18)}
+.callbar a{display:block;text-decoration:none;font-weight:800;font-size:17px;color:var(--ink)}
+body{padding-bottom:64px}
+
+@media (min-width:720px){
+  .cafe{grid-template-columns:1fr 1fr;align-items:center}
+  .cafe .fig{margin:0}
+  .callbar{display:none}
+  body{padding-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <!-- 画像1：プロテイン商品が並ぶ棚・店頭の様子 -->
+  <img class="hero-img" src="images/hero_protein.jpg" alt="HALEO仙台店のプロテインが並ぶ売り場" width="1200" height="900">
+  <div class="hero-body">
+    <p class="shop">宮城県仙台市宮城野区｜HALEO仙台店</p>
+    <h1>プロテイン、<br>飲んでから選ぼう。</h1>
+    <p class="lead">味も飲みやすさも、試飲すればすぐわかる。栄養に詳しいスタッフが、あなたの生活に合う1つを一緒に探します。</p>
+    <ul class="badges">
+      <li>プロテイン専門店</li>
+      <li>試飲OK</li>
+      <li>定休日なし</li>
+    </ul>
+    <a class="btn btn-tel" href="tel:0227921755">電話で相談する<small>022-792-1755</small></a>
+    <a class="btn btn-sub" href="#access">店舗情報を見る</a>
+  </div>
+</header>
+
+<section id="reason">
+  <div class="wrap">
+    <h2>失敗しないプロテイン選びは、<br>専門店でできます。</h2>
+    <p>プロテインは味も種類もさまざま。パッケージだけでは、自分に合うかどうか分かりません。HALEO仙台店は、プロテインを中心にサプリメントやアパレルまで揃う専門店です。</p>
+    <ul class="points" style="margin-top:28px">
+      <li><strong>その場で試飲できる</strong><span>人気のバニラフレーバーのホエイプロテインも、買う前に味を確かめられます。</span></li>
+      <li><strong>専門知識のあるスタッフに相談できる</strong><span>栄養や身体のことに詳しいスタッフが、今のライフスタイルやコンディションに合わせて提案します。</span></li>
+      <li><strong>HALEO／バルクスポーツの商品を取り扱い</strong><span>プロテインからグッズまで、店頭で実際に見て選べます。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec-mint">
+  <div class="wrap">
+    <h2>明るくて入りやすい、<br>洗練された店内。</h2>
+    <p>スタイリッシュな店内に、サプリ・プロテイン関連の商品とアパレルがそろいます。初めてでも気軽に立ち寄れる雰囲気です。</p>
+    <figure class="fig">
+      <!-- 画像2：明るい店内の全体像 -->
+      <img src="images/store_inside.jpg" alt="明るくスタイリッシュなHALEO仙台店の店内" width="1200" height="900" loading="lazy">
+      <figcaption>プロテイン・サプリ・アパレルが並ぶ店内</figcaption>
+    </figure>
+
+    <div class="cafe">
+      <figure class="fig">
+        <!-- 画像3：カフェスタンドのプロテインスムージー -->
+        <img src="images/cafe_smoothie.jpg" alt="カフェスタンドの無添加プロテインスムージー" width="1200" height="900" loading="lazy">
+        <figcaption>カフェスタンドのプロテインスムージー</figcaption>
+      </figure>
+      <div>
+        <h2 style="font-size:clamp(20px,5.5vw,26px)">カフェスタンドで、<br>無添加スムージーも。</h2>
+        <p>店内にはカフェスタンドを併設。無添加のプロテインスムージーは、買い物のついでにも楽しめます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="voice">
+      <div class="stars" aria-label="5つ星">★★★★★</div>
+      <p>今日初めて行ってみましたが、明るい店づくりでスタッフの方々も素敵な方々でプロテインを試飲させて頂き、飲みやすくバニラフレーバーのホエイプロテインを購入して来ました！ またお邪魔します！定期的にサプリを購入しに伺っています。</p>
+      <p>スタイリッシュで洗練された店内には、サプリやプロテイン関連の商品、アパレルなどが充実しています。</p>
+      <p>スタッフさん達は明るく、栄養や身体の知識も豊富で、自分の今のライフスタイルやコンディションに合ったサプリをチョイスしてもらえるのがありがたいです。</p>
+      <p>店内にはカフェスタンドも併設されていて、無添加のプロテインスムージーが美味しいのでおすすめです！</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec-mint" id="access">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <dl class="info">
+      <div><dt>店名</dt><dd>HALEO仙台店（ハレオ仙台店）</dd></div>
+      <div><dt>住所</dt><dd>宮城県仙台市宮城野区小田原弓ノ町101−10 アセンドビル 1F<br><a href="https://www.google.com/maps/search/?api=1&query=宮城県仙台市宮城野区小田原弓ノ町101-10" target="_blank" rel="noopener">地図を開く</a></dd></div>
+      <div><dt>電話</dt><dd><a href="tel:0227921755">022-792-1755</a></dd></div>
+      <div><dt>定休日</dt><dd>定休日なし</dd></div>
+      <div><dt>メール</dt><dd><a href="mailto:info@haleosendai.com">info@haleosendai.com</a></dd></div>
+      <div><dt>公式サイト</dt><dd><a href="https://www.haleosendai.com/" target="_blank" rel="noopener">https://www.haleosendai.com/</a></dd></div>
+      <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/haleo_sendai/" target="_blank" rel="noopener">@haleo_sendai</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>まずは一杯、試飲しに来てください。</h2>
+    <p>定休日なし。ご相談だけでもお気軽にどうぞ。</p>
+    <a class="btn btn-tel" href="tel:0227921755">電話をかける<small>022-792-1755</small></a>
+    <a class="btn btn-sub" href="https://www.instagram.com/haleo_sendai/" target="_blank" rel="noopener">Instagramを見る</a>
+  </div>
+</section>
+
+<footer>&copy; HALEO仙台店</footer>
+
+<div class="callbar"><a href="tel:0227921755">電話で相談する　022-792-1755</a></div>
+
+</body>
+</html>
