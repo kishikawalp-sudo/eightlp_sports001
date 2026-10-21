@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>アウトドア＆フライフィッシングショップ ストーク｜仙台のフライ専門店</title>
+<meta name="description" content="仙台市宮城野区のフライフィッシング専門店。渓流から本流・ソルトまで、マテリアル・タックルを幅広く取り揃え。初心者の方もお気軽にご相談ください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --spruce:#14352f;
+  --river:#3e6b7a;
+  --mist:#eef3f2;
+  --paper:#ffffff;
+  --ink:#1c2826;
+  --amber:#c98a2b;
+  --line:#cfdcd9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--mist);line-height:1.85;font-size:16px;padding-bottom:calc(72px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;line-height:1.45}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--spruce);overflow:hidden}
+.hero img{width:100%;height:68vh;min-height:380px;max-height:560px;object-fit:cover;opacity:.55}
+.hero-copy{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 20px 36px;max-width:720px;margin:0 auto}
+.hero .shop{font-size:13px;letter-spacing:.08em;margin-bottom:10px}
+.hero h1{font-size:clamp(28px,8vw,44px);font-weight:800;letter-spacing:.02em}
+.hero p{margin-top:14px;font-size:15px;max-width:30em}
+.btn{display:inline-block;text-align:center;text-decoration:none;font-weight:700;padding:15px 26px;border-radius:999px;min-height:48px}
+.btn-main{background:var(--amber);color:#1c1405;margin-top:22px}
+.btn-main:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+/* sections */
+section{padding:56px 0}
+h2{font-size:clamp(23px,6vw,30px);font-weight:800;color:var(--spruce);margin-bottom:18px}
+.lead{margin-bottom:12px}
+
+/* main feature */
+.feature{background:var(--paper)}
+.feature figure{margin:26px 0 0}
+.feature figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+.feature figcaption{font-size:13px;color:var(--river);margin-top:8px}
+.waters{list-style:none;margin-top:26px;border-top:2px solid var(--spruce)}
+.waters li{padding:16px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:5.5em 1fr;gap:12px}
+.waters b{font-family:"Shippori Mincho",serif;font-size:19px;color:var(--river)}
+.waters span{font-size:15px}
+
+/* reason */
+.reasons h3{font-size:19px;color:var(--spruce);margin:26px 0 6px;padding-left:12px;border-left:4px solid var(--amber)}
+
+/* voice */
+.voice{background:var(--spruce);color:#fff}
+.voice h2{color:#fff}
+.voice blockquote{background:rgba(255,255,255,.08);border-radius:6px;padding:22px 20px;font-size:15px}
+.voice .stars{color:var(--amber);font-size:20px;letter-spacing:2px;margin-bottom:8px}
+.voice .who{font-size:13px;opacity:.8;margin-top:12px}
+
+/* info */
+.info dl{border-top:2px solid var(--spruce)}
+.info .row{display:grid;grid-template-columns:5em 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.info dt{font-weight:700;color:var(--river)}
+.info dd{word-break:break-all}
+.cta{background:var(--paper);text-align:center}
+.cta p{margin-bottom:20px}
+.cta .btn{display:block;max-width:380px;margin:12px auto 0}
+.btn-tel{background:var(--spruce);color:#fff}
+.btn-sub{border:2px solid var(--spruce);color:var(--spruce)}
+footer{background:var(--spruce);color:#fff;text-align:center;font-size:12px;padding:22px 20px}
+
+/* fixed call bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--spruce);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;justify-content:center}
+.bar a{flex:1;max-width:260px;text-decoration:none;text-align:center;font-weight:700;font-size:14px;padding:12px 8px;border-radius:999px;min-height:46px}
+.bar .t{background:var(--amber);color:#1c1405}
+.bar .w{background:#fff;color:var(--spruce)}
+
+@media(min-width:768px){
+  body{font-size:17px}
+  section{padding:80px 0}
+  .bar{display:none}
+  body{padding-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="images/hero.jpg" alt="渓流でフライフィッシングを楽しむ釣り人" width="1200" height="800">
+  <div class="hero-copy">
+    <p class="shop">仙台・宮城野区｜アウトドア＆フライフィッシングショップ ストーク</p>
+    <h1>宮城で数少ない、<br>フライフィッシング専門店。</h1>
+    <p>渓流から本流、ソルトまで。マテリアルもタックルも、フライ一筋の品揃えでお待ちしています。</p>
+    <a class="btn btn-main" href="tel:0222529588">022-252-9588 に電話する</a>
+  </div>
+</header>
+
+<section class="feature">
+  <div class="wrap">
+    <h2>フライのことなら、<br>まずストークへ。</h2>
+    <p class="lead">当店はフライ専門ショップです。釣り場に合わせたタックルから、フライを巻くためのマテリアルまで、フィールドの数だけ選択肢を取り揃えています。</p>
+    <figure>
+      <img src="images/flies.jpg" alt="フライパターンとフライマテリアル" width="800" height="600" loading="lazy">
+      <figcaption>フライ・マテリアル・タックルを幅広く</figcaption>
+    </figure>
+    <ul class="waters">
+      <li><b>渓流</b><span>山あいの小さな流れで楽しむ、繊細なタックルとフライ</span></li>
+      <li><b>本流</b><span>大きな流れを攻めるロッド・ラインのご相談</span></li>
+      <li><b>ソルト</b><span>海のフライフィッシングに必要な道具をご用意</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="reasons">
+  <div class="wrap">
+    <h2>ストークが選ばれる理由</h2>
+    <h3>店長の知識と経験に基づくアドバイス</h3>
+    <p>これからフライフィッシングを始めたい方に、必要なものと順番をていねいにお伝えします。</p>
+    <h3>ネットショップにない商品もご相談ください</h3>
+    <p>探している商品がネットショップに載っていなくても、お気軽にお問い合わせください。</p>
+    <h3>タックルもマテリアルも、その他もろもろ</h3>
+    <p>ひとつの店で、釣りに行く準備と、フライを巻く準備がそろいます。</p>
+  </div>
+</section>
+
+<section class="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <blockquote>
+      <p class="stars" aria-label="5点満点中5点">★★★★★</p>
+      <p>フライフィッシングをやっていた1992〜2010年頃まで大変お世話になりました。タックル、マテリアルその他モロモロ、色々融通利かせて頂きました。</p>
+      <p style="margin-top:12px">宮城県で数少ないフライフィッシング専門店。店長の豊富な知識と経験に裏打ちされたアドバイスは、これからフライフィッシングを始めたい方の参考となること間違いなし！僕の中ではナンバーワンのお店です！</p>
+      <p class="who">Google口コミより</p>
+    </blockquote>
+  </div>
+</section>
+
+<section class="info" id="info">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <img src="images/shop.jpg" alt="ストークの店内・外観" width="800" height="500" loading="lazy" style="border-radius:6px;margin-bottom:24px;width:100%;aspect-ratio:16/10;object-fit:cover">
+    <dl>
+      <div class="row"><dt>店名</dt><dd>アウトドア＆フライフィッシングショップ ストーク</dd></div>
+      <div class="row"><dt>住所</dt><dd>宮城県仙台市宮城野区小鶴2丁目1−6</dd></div>
+      <div class="row"><dt>電話</dt><dd><a href="tel:0222529588">022-252-9588</a></dd></div>
+      <div class="row"><dt>メール</dt><dd><a href="mailto:stork@nyc.odn.ne.jp">stork@nyc.odn.ne.jp</a></dd></div>
+      <div class="row"><dt>通販</dt><dd><a href="https://proshopstork.shop-pro.jp/" target="_blank" rel="noopener">proshopstork.shop-pro.jp</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>気になる商品は、<br>お気軽にご相談ください</h2>
+    <p>ネットショップに載っていない商品も、お問い合わせください。</p>
+    <a class="btn btn-tel" href="tel:0222529588">電話で問い合わせる</a>
+    <a class="btn btn-sub" href="https://proshopstork.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener">フォームで問い合わせる</a>
+    <a class="btn btn-sub" href="https://proshopstork.shop-pro.jp/" target="_blank" rel="noopener">ネットショップを見る</a>
+  </div>
+</section>
+
+<footer>© アウトドア＆フライフィッシングショップ ストーク</footer>
+
+<nav class="bar" aria-label="お問い合わせ">
+  <a class="t" href="tel:0222529588">電話する</a>
+  <a class="w" href="https://proshopstork.shop-pro.jp/customer/inquiries/new" target="_blank" rel="noopener">問い合わせ</a>
+</nav>
+
+</body>
+</html>
