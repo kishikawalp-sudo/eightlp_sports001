@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GENEガリウムジャパン｜仙台・泉区のスキー・スノーボード チューンナップ専門店</title>
+<meta name="description" content="ガリウムワックス直営店。プロ・トップレーサーも手掛けるスタッフが、スキー・スノーボードのチューンナップ＆メンテナンスを承ります。宮城県仙台市泉区。">
+<style>
+:root{
+  --navy:#0b2545;
+  --blue:#1d6fd6;
+  --ice:#eaf4ff;
+  --accent:#ff6a1a;
+  --text:#1c2733;
+  --gray:#6b7785;
+  --line:#d8e3ef;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--text);background:#fff;line-height:1.8;font-size:16px;
+  padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+.sec-label{font-size:12px;letter-spacing:.2em;color:var(--blue);font-weight:700;text-align:center}
+.sec-title{font-size:24px;line-height:1.5;text-align:center;font-weight:800;color:var(--navy);margin:4px 0 28px}
+.sec-title em{font-style:normal;color:var(--accent)}
+
+/* header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,37,69,.97);
+  height:56px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px 0 16px;padding-top:env(safe-area-inset-top,0px);box-sizing:content-box;
+}
+header .logo{color:#fff;font-weight:800;font-size:15px;letter-spacing:.02em}
+header .logo small{display:block;font-size:10px;font-weight:500;color:#9fc2ee;letter-spacing:.1em}
+header .tel{background:var(--accent);color:#fff;font-weight:700;font-size:13px;padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--navy);padding:0}
+.hero picture,.hero .hero-img{display:block}
+.hero-img{width:100%;height:300px;object-fit:cover;opacity:.55}
+.hero-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 20px;background:linear-gradient(180deg,rgba(11,37,69,.35),rgba(11,37,69,.85))}
+.hero .badge{align-self:flex-start;background:var(--accent);font-size:12px;font-weight:700;padding:3px 12px;border-radius:4px;margin-bottom:12px}
+.hero h1{font-size:27px;line-height:1.45;font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.hero h1 span{color:#ffd24d}
+.hero p{font-size:13px;margin-top:10px;color:#dbe9fb}
+.hero-cta{padding:20px;background:var(--navy);text-align:center}
+.btn{display:block;max-width:420px;margin:0 auto;padding:16px;border-radius:999px;font-weight:800;font-size:17px;text-align:center}
+.btn-main{background:var(--accent);color:#fff;box-shadow:0 4px 0 #c24a08}
+.btn-sub{background:#fff;color:var(--navy);border:2px solid var(--navy);margin-top:12px}
+.hero-cta small{display:block;color:#9fc2ee;font-size:12px;margin-top:10px}
+
+/* oshi */
+.oshi{background:var(--ice)}
+.oshi-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(11,37,69,.12)}
+.oshi-card img{width:100%;height:240px;object-fit:cover}
+.oshi-body{padding:24px 20px 28px}
+.ribbon{display:inline-block;background:var(--accent);color:#fff;font-size:13px;font-weight:800;padding:4px 14px;border-radius:4px;margin-bottom:10px}
+.oshi-body h3{font-size:22px;line-height:1.5;color:var(--navy);font-weight:800}
+.oshi-body p{margin-top:12px;font-size:15px}
+.points{list-style:none;margin-top:18px}
+.points li{position:relative;padding:12px 12px 12px 44px;border-bottom:1px dashed var(--line);font-weight:700;font-size:15px}
+.points li:last-child{border-bottom:none}
+.points li::before{content:"✔";position:absolute;left:8px;top:11px;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-size:14px;text-align:center;line-height:26px}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.menu div{background:var(--ice);border-radius:10px;padding:14px 8px;text-align:center;font-weight:800;color:var(--navy);font-size:14px;line-height:1.5}
+.menu div span{display:block;font-size:11px;font-weight:500;color:var(--gray)}
+.deal{margin-top:22px;background:linear-gradient(135deg,#fff3ea,#ffe3cf);border:2px solid var(--accent);border-radius:12px;padding:16px;text-align:center}
+.deal b{color:var(--accent);font-size:19px}
+.deal p{font-size:13px;margin-top:4px;color:var(--text)}
+
+/* strength */
+.str-list{display:grid;gap:16px}
+.str{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 16px}
+.str .no{flex:none;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:16px}
+.str h3{font-size:17px;color:var(--navy);line-height:1.5}
+.str p{font-size:14px;color:var(--gray);margin-top:4px}
+.shop-photo{margin-top:24px;border-radius:12px;overflow:hidden}
+.shop-photo img{width:100%;height:210px;object-fit:cover}
+
+/* voice */
+.voice{background:var(--navy)}
+.voice .sec-label{color:#9fc2ee}
+.voice .sec-title{color:#fff}
+.voice-card{background:#fff;border-radius:14px;padding:22px 20px;position:relative}
+.stars{color:#ffb400;font-size:22px;letter-spacing:2px}
+.voice-card p{font-size:15px;margin-top:8px}
+.voice-card .who{font-size:12px;color:var(--gray);margin-top:10px}
+
+/* info */
+table{width:100%;border-collapse:collapse;font-size:14px;border-top:2px solid var(--navy)}
+th,td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.7}
+th{width:30%;background:var(--ice);color:var(--navy);font-weight:700;white-space:nowrap}
+td a{color:var(--blue);text-decoration:underline;word-break:break-all}
+.map{margin-top:24px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:280px;border:0}
+
+/* cta */
+.cta{background:linear-gradient(160deg,var(--blue),var(--navy));color:#fff;text-align:center}
+.cta h2{font-size:23px;line-height:1.55;font-weight:800}
+.cta p{font-size:14px;margin:12px 0 24px;color:#dbe9fb}
+.cta .tel-big{display:block;font-size:30px;font-weight:800;margin-top:18px;letter-spacing:.03em}
+.cta small{color:#bcd6f5;font-size:12px}
+
+footer{background:#06162b;color:#9fb3cc;text-align:center;font-size:12px;padding:28px 20px}
+
+/* bottom nav */
+.bnav{
+  position:fixed;left:0;right:0;bottom:0;z-index:100;display:flex;background:#fff;
+  border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(0,0,0,.08);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.bnav a{flex:1;text-align:center;padding:9px 4px 8px;font-size:11px;font-weight:700;color:var(--navy);line-height:1.3}
+.bnav a b{display:block;font-size:19px;line-height:1.2}
+.bnav a.tel{background:var(--accent);color:#fff}
+
+@media(min-width:768px){
+  .hero-img{height:420px}
+  .hero-body{padding:0 max(20px,calc(50% - 340px))}
+  .hero h1{font-size:36px}
+  .menu{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">GENE<small>GALLIUM JAPAN｜仙台</small></div>
+  <a class="tel" href="tel:0227796670">📞 電話で相談</a>
+</header>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <img class="hero-img" src="images/hero_ski.jpg" alt="雪山を滑るスキー・スノーボード" width="750" height="500">
+  <div class="hero-body">
+    <span class="badge">ガリウムワックス直営店</span>
+    <h1>滑りが変わる。<br><span>プロの技術</span>で、<br>あなたのギアを最高の状態に。</h1>
+    <p>スキー・スノーボード用品／チューンナップ＆メンテナンス</p>
+  </div>
+</div>
+<div class="hero-cta">
+  <a class="btn btn-main" href="tel:0227796670">📞 022-779-6670 に電話する</a>
+  <a class="btn btn-sub" href="#info">ご来店・アクセスはこちら</a>
+  <small>定休日：土・日・祝　／　宮城県仙台市泉区</small>
+</div>
+
+<!-- イチオシ -->
+<section class="oshi" id="oshi">
+  <div class="wrap">
+    <p class="sec-label">RECOMMEND</p>
+    <h2 class="sec-title">GENEの<em>イチオシ</em><br>スキー・スノーボード用品</h2>
+    <div class="oshi-card">
+      <img src="images/tuneup.jpg" alt="スキー・スノーボードのチューンナップ作業の様子" width="750" height="500">
+      <div class="oshi-body">
+        <span class="ribbon">NO.1 おすすめ</span>
+        <h3>道具選びから、滑りを支える<br>メンテナンスまで、ここで完結。</h3>
+        <p>ゴーグル・ウェア・ギアなどスキー／スノーボード用品を取り揃え。さらに、ガリウムワックス直営店ならではの本格チューンナップで、板のポテンシャルを引き出します。</p>
+        <ul class="points">
+          <li>スキー・スノーボード用品をワンストップで</li>
+          <li>ガリウムワックス直営店の本格ワックス</li>
+          <li>プロ・トップレーサーも手掛ける技術</li>
+        </ul>
+        <div class="menu">
+          <div>用品販売<span>ゴーグル・ギアほか</span></div>
+          <div>チューンナップ<span>板の性能を最大化</span></div>
+          <div>メンテナンス<span>シーズン通して安心</span></div>
+          <div>ワックス<span>ガリウム直営</span></div>
+        </div>
+        <div class="deal">
+          <b>🎿 ゴーグル半額</b>
+          <p>「ゴーグル半額はお得でした！」とお客様の声でも大好評。お得な情報は店頭・お電話でご確認ください。</p>
+        </div>
+      </div>
+    </div>
+    <a class="btn btn-main" style="margin-top:28px" href="tel:0227796670">📞 まずは電話で相談する</a>
+  </div>
+</section>
+
+<!-- 強み -->
+<section id="strength">
+  <div class="wrap">
+    <p class="sec-label">STRENGTH</p>
+    <h2 class="sec-title">選ばれる<em>3つ</em>の理由</h2>
+    <div class="str-list">
+      <div class="str"><div class="no">01</div><div><h3>ガリウムワックス直営店</h3><p>ワックスを知り尽くした直営店だからできる、本物のチューンナップ＆メンテナンスをご提供します。</p></div></div>
+      <div class="str"><div class="no">02</div><div><h3>プロ・トップレーサーも手掛ける実績</h3><p>豊富な経験と知識をもつスタッフが、皆さんに代わってスキー・スノーボードの整備を行います。</p></div></div>
+      <div class="str"><div class="no">03</div><div><h3>接客・商品・価格、どれも安心</h3><p>初心者から競技者まで、気軽にご相談いただける店づくり。口コミでも高評価をいただいています。</p></div></div>
+    </div>
+    <div class="shop-photo">
+      <img src="images/shop.jpg" alt="GENEガリウムジャパンの店内" width="750" height="450" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- お客様の声 -->
+<section class="voice" id="voice">
+  <div class="wrap">
+    <p class="sec-label">VOICE</p>
+    <h2 class="sec-title">お客様の声</h2>
+    <div class="voice-card">
+      <div class="stars">★★★★★</div>
+      <p>接客、商品、どれも素晴らしい！またお邪魔させて頂きます！ゴーグル半額はお得でした！いつもスキーやスノボでお世話になっています。<br>北京オリンピックでの縁の下の力持ち。頑張れ！</p>
+      <p class="who">― Googleクチコミより</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section id="info">
+  <div class="wrap">
+    <p class="sec-label">SHOP INFO</p>
+    <h2 class="sec-title">店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>GENEガリウムジャパン</td></tr>
+      <tr><th>住所</th><td>宮城県仙台市泉区根白石下町6-5</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0227796670">022-779-6670</a></td></tr>
+      <tr><th>定休日</th><td>土・日・祝</td></tr>
+      <tr><th>会社名</th><td>GENEガリウムジャパン株式会社</td></tr>
+      <tr><th>代表者</th><td>結城 谷行</td></tr>
+      <tr><th>HP</th><td><a href="http://2011gene.com/" target="_blank" rel="noopener">http://2011gene.com/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@2011gene.com">info@2011gene.com</a></td></tr>
+      <tr><th>SNS</th><td><a href="https://www.instagram.com/gene_galliumofficialshop/#" target="_blank" rel="noopener">Instagram</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E6%B3%89%E5%8C%BA%E6%A0%B9%E7%99%BD%E7%9F%B3%E4%B8%8B%E7%94%BA6-5&output=embed&hl=ja" title="GENEガリウムジャパンの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>今シーズンの滑りを、<br>GENEで変えませんか？</h2>
+    <p>スキー・スノーボードのことなら、お気軽にご相談ください。</p>
+    <a class="btn btn-main" href="tel:0227796670">📞 電話で問い合わせる</a>
+    <a class="btn btn-sub" href="mailto:info@2011gene.com">✉ メールで問い合わせる</a>
+    <span class="tel-big">022-779-6670</span>
+    <small>定休日：土・日・祝</small>
+  </div>
+</section>
+
+<footer>© GENEガリウムジャパン株式会社 All Rights Reserved.</footer>
+
+<nav class="bnav">
+  <a class="tel" href="tel:0227796670"><b>📞</b>電話</a>
+  <a href="mailto:info@2011gene.com"><b>✉</b>メール</a>
+  <a href="#oshi"><b>🎿</b>イチオシ</a>
+  <a href="#info"><b>📍</b>アクセス</a>
+</nav>
+
+</body>
+</html>
