@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>シルビア仙台（営業所）｜バレエ用品専門店</title>
+<meta name="description" content="仙台でバレエ用品をお探しならシルビア仙台。海外製トウシューズ・レオタード・衣裳が豊富。ポワントフィッティングのご相談もお気軽に。">
+<style>
+:root{
+  --rose:#c2577b;
+  --rose-dark:#9c3d5e;
+  --blush:#fdf1f4;
+  --pink:#f7d9e1;
+  --ink:#3b2a30;
+  --sub:#7a666c;
+  --gold:#b89155;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--white);line-height:1.8;font-size:15px;
+  padding-top:56px;padding-bottom:64px;-webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.serif{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+
+/* header */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--pink);display:flex;align-items:center;justify-content:space-between;padding:0 14px}
+.logo{font-size:16px;font-weight:700;color:var(--rose-dark);letter-spacing:.06em;line-height:1.2}
+.logo small{display:block;font-size:10px;font-weight:400;color:var(--sub);letter-spacing:.1em}
+.tel-btn{background:var(--rose);color:#fff;font-weight:700;font-size:13px;padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;padding:0;background:var(--blush)}
+.hero img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.hero-copy{position:absolute;left:0;right:0;bottom:0;padding:90px 20px 28px;
+  background:linear-gradient(to top,rgba(59,26,40,.78),rgba(59,26,40,0));color:#fff}
+.hero-copy .label{display:inline-block;font-size:12px;letter-spacing:.2em;border:1px solid rgba(255,255,255,.8);padding:2px 12px;margin-bottom:12px}
+.hero-copy h1{font-size:26px;line-height:1.5;letter-spacing:.04em;font-weight:700}
+.hero-copy p{font-size:13px;margin-top:8px;opacity:.95}
+@media(min-width:720px){.hero img{aspect-ratio:16/9}.hero-copy h1{font-size:34px}}
+
+/* headings */
+.sec-title{text-align:center;margin-bottom:32px}
+.sec-title .en{display:block;font-size:12px;letter-spacing:.3em;color:var(--gold)}
+.sec-title h2{font-size:23px;line-height:1.5;color:var(--rose-dark);margin-top:4px}
+.sec-title h2::after{content:"";display:block;width:36px;height:2px;background:var(--rose);margin:12px auto 0}
+
+/* intro / featured */
+.featured{background:var(--blush)}
+.feature-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 22px rgba(194,87,123,.14)}
+.feature-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.feature-body{padding:24px 20px 28px}
+.badge{display:inline-block;background:var(--rose);color:#fff;font-size:12px;font-weight:700;letter-spacing:.12em;padding:3px 14px;border-radius:999px;margin-bottom:12px}
+.feature-body h3{font-size:21px;line-height:1.5;color:var(--rose-dark);margin-bottom:12px}
+.feature-body p{color:var(--ink)}
+.check{list-style:none;margin-top:18px}
+.check li{position:relative;padding:10px 0 10px 30px;border-top:1px dashed var(--pink);font-weight:600}
+.check li::before{content:"";position:absolute;left:4px;top:17px;width:12px;height:7px;border-left:3px solid var(--rose);border-bottom:3px solid var(--rose);transform:rotate(-45deg)}
+
+/* lineup */
+.lineup{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.lineup div{background:#fff;border:1px solid var(--pink);border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;color:var(--rose-dark);font-size:14px}
+.lineup div span{display:block;font-size:11px;font-weight:400;color:var(--sub);margin-top:2px}
+
+/* strength */
+.strength-box{display:flex;flex-direction:column;gap:20px}
+.strength-img img{border-radius:14px;aspect-ratio:16/10;object-fit:cover;width:100%}
+.strength-text blockquote{font-size:16px;line-height:2;border-left:3px solid var(--gold);padding-left:16px;color:var(--ink)}
+.points{display:grid;gap:14px;margin-top:8px}
+.point{display:flex;gap:14px;align-items:flex-start;background:var(--blush);border-radius:12px;padding:16px}
+.point .num{flex:0 0 36px;height:36px;border-radius:50%;background:var(--rose);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.point h4{font-size:15px;color:var(--rose-dark);line-height:1.5}
+.point p{font-size:13.5px;color:var(--sub);margin-top:2px}
+@media(min-width:720px){.strength-box{flex-direction:row;align-items:center}.strength-box>*{flex:1}}
+
+/* reviews */
+.reviews{background:var(--blush)}
+.review{background:#fff;border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 4px 14px rgba(194,87,123,.1)}
+.stars{color:#e0a73a;font-size:18px;letter-spacing:.1em}
+.stars .off{color:#e6d9dc}
+.review p{margin-top:8px}
+.review .by{font-size:12px;color:var(--sub);margin-top:8px}
+
+/* info */
+.info-table{width:100%;border-collapse:collapse;font-size:14px}
+.info-table th,.info-table td{padding:14px 10px;border-bottom:1px solid var(--pink);text-align:left;vertical-align:top}
+.info-table th{width:28%;color:var(--rose-dark);font-weight:700;white-space:nowrap}
+.info-table a{color:var(--rose-dark);text-decoration:underline;word-break:break-all}
+.map{margin-top:24px;border-radius:12px;overflow:hidden;border:1px solid var(--pink)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:#fff;text-align:center}
+.cta h2{font-size:22px;line-height:1.6}
+.cta p{margin:12px 0 24px;font-size:14px;opacity:.95}
+.btn{display:block;max-width:360px;margin:0 auto 12px;padding:16px;border-radius:999px;font-weight:700;font-size:16px}
+.btn.tel{background:#fff;color:var(--rose-dark)}
+.btn.mail{background:transparent;border:2px solid #fff;color:#fff}
+.btn small{display:block;font-size:11px;font-weight:400}
+.cta .note{font-size:12px;margin-top:16px;opacity:.9}
+
+/* footer */
+footer{text-align:center;padding:24px 20px;font-size:12px;color:var(--sub);background:#fff}
+
+/* bottom nav */
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:100;height:60px;background:#fff;border-top:1px solid var(--pink);
+  display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom)}
+.bottom-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--rose-dark)}
+.bottom-nav a.main{background:var(--rose);color:#fff}
+.bottom-nav .ic{font-size:18px;line-height:1.2}
+@media(min-width:900px){.bottom-nav{display:none}body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo serif">シルビア仙台<small>SYLVIA SENDAI</small></div>
+  <a class="tel-btn" href="tel:0227257602">📞 電話する</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="images/hero_ballet.jpg" alt="バレエを踊る女の子とバレエシューズ">
+  <div class="hero-copy">
+    <span class="label">仙台のバレエ用品専門店</span>
+    <h1 class="serif">踊ることは、<br>世界共通の喜び。</h1>
+    <p>トウシューズ・レオタード・衣裳まで、<br>バレエ用品をまるごとご相談ください。</p>
+  </div>
+</div>
+
+<!-- 一押し -->
+<section class="featured" id="osusume">
+  <div class="wrap">
+    <div class="sec-title">
+      <span class="en">RECOMMEND</span>
+      <h2 class="serif">シルビア仙台のイチオシ</h2>
+    </div>
+    <div class="feature-card">
+      <img src="images/pointe_shoes.jpg" alt="海外製のトウシューズ">
+      <div class="feature-body">
+        <span class="badge">イチオシ</span>
+        <h3 class="serif">バレエ用品専門店ならではの、<br>品揃えと安心のご相談</h3>
+        <p>シューズ類・レオタード・衣裳など、バレエに必要なものをトータルでご用意。とくに海外製シューズが豊富で、お子さまの初めてのトウシューズ選びから、こだわり派の方まで頼りにされています。</p>
+        <ul class="check">
+          <li>海外製シューズが豊富</li>
+          <li>ポワントフィッティングのご相談OK</li>
+          <li>レオタード・衣裳までまとめて揃う</li>
+        </ul>
+      </div>
+    </div>
+    <div class="lineup">
+      <div>シューズ類<span>バレエシューズ・トウシューズ</span></div>
+      <div>レオタード<span>レッスン用・発表会用</span></div>
+      <div>衣裳<span>舞台・発表会に</span></div>
+      <div>ダンス用品<span>ダンス全般のアイテム</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section id="strength">
+  <div class="wrap">
+    <div class="sec-title">
+      <span class="en">STRENGTH</span>
+      <h2 class="serif">私たちの想い</h2>
+    </div>
+    <div class="strength-box">
+      <div class="strength-img">
+        <img src="images/store_dance.jpg" alt="ダンス用品が並ぶ店内">
+      </div>
+      <div class="strength-text">
+        <blockquote class="serif">どんな国の人々にとっても、踊ることは世界中に共通する喜びのひとつです。</blockquote>
+        <p style="margin-top:16px">シルビアは設立以来、ダンス用品（シューズ類、レオタード、衣裳）を中心に販売を続けております。ダンスという素晴らしい文化の担い手として、これからも常に皆様に喜ばれる多様な商品を展開し、ご提供してゆきたいと思っております。</p>
+      </div>
+    </div>
+    <div class="points" style="margin-top:28px">
+      <div class="point"><div class="num">1</div><div><h4>バレエ・ダンス用品を専門に</h4><p>設立以来ダンス用品を中心に販売。専門店ならではの商品知識で選べます。</p></div></div>
+      <div class="point"><div class="num">2</div><div><h4>多様な商品展開</h4><p>シューズ、レオタード、衣裳まで、皆様に喜ばれるラインナップを。</p></div></div>
+      <div class="point"><div class="num">3</div><div><h4>ご相談しながら選べる</h4><p>トウシューズのフィッティングなど、気になることはお気軽にご相談ください。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- クチコミ -->
+<section class="reviews" id="voice">
+  <div class="wrap">
+    <div class="sec-title">
+      <span class="en">VOICE</span>
+      <h2 class="serif">お客様の声</h2>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★<span class="off">★</span></div>
+      <p>シルビアさんは対応も良いし商品も良く愛用しています。</p>
+      <div class="by">Google口コミより</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>娘のトウシューズを買いに行きました。海外製のシューズが豊富です。ポワントフィッティングの相談ができます。</p>
+      <div class="by">Google口コミより</div>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section id="access">
+  <div class="wrap">
+    <div class="sec-title">
+      <span class="en">SHOP INFO</span>
+      <h2 class="serif">店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>シルビア仙台（営業所）</td></tr>
+      <tr><th>会社名</th><td>株式会社シルビア</td></tr>
+      <tr><th>住所</th><td>〒980-0801<br>宮城県仙台市青葉区堤町１丁目９−２４<br>トレモワーユ北仙台 102号</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0227257602">022-725-7602</a></td></tr>
+      <tr><th>定休日</th><td>日曜・祝日</td></tr>
+      <tr><th>メール</th><td><a href="mailto:sendai@sylvia.co.jp">sendai@sylvia.co.jp</a></td></tr>
+      <tr><th>公式サイト</th><td><a href="https://www.sylvia.co.jp/" target="_blank" rel="noopener">https://www.sylvia.co.jp/</a></td></tr>
+      <tr><th>Instagram</th><td><a href="https://www.instagram.com/sylvia_sendai/" target="_blank" rel="noopener">@sylvia_sendai</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9D%92%E8%91%89%E5%8C%BA%E5%A0%A4%E7%94%BA%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%99%E2%88%92%EF%BC%92%EF%BC%94&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="シルビア仙台の地図"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2 class="serif">バレエ用品のご相談は<br>シルビア仙台へ</h2>
+    <p>シューズ選びのご相談など、お気軽にお問い合わせください。<br>※定休日：日曜・祝日</p>
+    <a class="btn tel" href="tel:0227257602">📞 022-725-7602<small>タップして電話をかける</small></a>
+    <a class="btn mail" href="mailto:sendai@sylvia.co.jp">✉ メールで問い合わせる</a>
+    <p class="note">お電話がつながりにくい場合は、メール・Instagramからもご連絡いただけます。</p>
+  </div>
+</section>
+
+<footer>© 株式会社シルビア シルビア仙台（営業所）</footer>
+
+<!-- 固定ナビ -->
+<nav class="bottom-nav">
+  <a class="main" href="tel:0227257602"><span class="ic">📞</span>電話</a>
+  <a href="mailto:sendai@sylvia.co.jp"><span class="ic">✉</span>メール</a>
+  <a href="https://www.instagram.com/sylvia_sendai/" target="_blank" rel="noopener"><span class="ic">📷</span>Instagram</a>
+  <a href="#access"><span class="ic">📍</span>アクセス</a>
+</nav>
+
+</body>
+</html>
