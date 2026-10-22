@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ラケットショップ広瀬｜仙台・立町のバドミントン専門店</title>
+<meta name="description" content="仙台市青葉区立町のバドミントン専門店「ラケットショップ広瀬」。経験者スタッフが、ラケットもシューズも手に取って選べるよう丁寧にご案内します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --court:#0f5b46;
+  --court-dark:#093d2f;
+  --paper:#f6f7f2;
+  --white:#ffffff;
+  --line:#f1d230;
+  --ink:#1b2622;
+  --sub:#58665f;
+  --rule:#d9dfd6;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+  padding-bottom:76px;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:100%;max-width:720px;margin:0 auto;padding:0 20px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:var(--court-dark);color:var(--white);overflow:hidden}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.92}
+.hero-body{padding:28px 20px 40px;max-width:720px;margin:0 auto}
+.shop-name{margin:0 0 14px;font-size:14px;font-weight:500;letter-spacing:.08em}
+.hero h1{margin:0 0 18px;font-size:clamp(28px,8.2vw,44px);line-height:1.35;font-weight:900;letter-spacing:.01em}
+.hero p{margin:0 0 26px;font-size:15px;color:#dbe8e2}
+.btn{
+  display:flex;align-items:center;justify-content:center;
+  min-height:56px;padding:12px 22px;border-radius:999px;
+  font-weight:700;font-size:17px;text-decoration:none;text-align:center;
+  background:var(--line);color:var(--court-dark);
+  border:2px solid var(--line);
+}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--line);outline-offset:3px}
+.btn.ghost{background:transparent;color:var(--white);border-color:var(--white)}
+.btn.ghost.dark{color:var(--court-dark);border-color:var(--court-dark)}
+.btn-row{display:grid;gap:12px}
+.hero small{display:block;margin-top:14px;font-size:13px;color:#bcd2c9}
+
+/* ---------- Sections ---------- */
+section{padding:56px 0}
+h2{margin:0 0 20px;font-size:clamp(23px,6.2vw,32px);line-height:1.45;font-weight:900;color:var(--court-dark)}
+.lead{margin:0 0 28px;color:var(--sub)}
+
+/* Concept */
+.concept{background:var(--white)}
+.concept img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px;margin-top:28px}
+
+/* Reasons */
+.reasons{background:var(--paper)}
+.reason{display:grid;gap:4px;padding:22px 0;border-top:3px solid var(--court)}
+.reason:last-child{border-bottom:1px solid var(--rule)}
+.reason h3{margin:0;font-size:19px;font-weight:700;color:var(--court-dark)}
+.reason p{margin:0;color:var(--sub);font-size:15px}
+
+/* Voice */
+.voice{background:var(--court);color:var(--white)}
+.voice h2{color:var(--white)}
+.stars{color:var(--line);font-size:22px;letter-spacing:.12em;margin:0 0 10px}
+blockquote{margin:0;padding:0 0 0 18px;border-left:4px solid var(--line);font-size:16px;line-height:1.95}
+blockquote p{margin:0 0 14px}
+.voice cite{display:block;font-style:normal;font-size:13px;color:#c5dbd2;margin-top:6px}
+.voice-img{margin-top:32px}
+.voice-img img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px}
+
+/* Info */
+.info{background:var(--white)}
+dl{margin:0;border-top:1px solid var(--rule)}
+.row{display:grid;grid-template-columns:6.2em 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--rule)}
+dt{font-weight:700;color:var(--court-dark);font-size:15px}
+dd{margin:0;font-size:15px;word-break:break-word}
+dd a{color:var(--court);font-weight:500}
+.tel-big{font-size:22px;font-weight:900;text-decoration:none}
+
+/* Final CTA */
+.cta{background:var(--court-dark);color:var(--white);text-align:center}
+.cta h2{color:var(--white)}
+.cta p{margin:0 0 24px;color:#cfe0d8}
+.cta .btn-row{max-width:420px;margin:0 auto}
+.sns{display:inline-block;margin-top:22px;font-size:14px;color:#cfe0d8}
+
+footer{background:#06281f;color:#a9c2b8;text-align:center;font-size:12px;padding:20px}
+
+/* Sticky call bar (mobile) */
+.callbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.96);border-top:1px solid var(--rule);
+}
+.callbar a{
+  display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:999px;
+  font-weight:700;text-decoration:none;font-size:15px;
+}
+.callbar .tel{background:var(--court);color:var(--white)}
+.callbar .form{background:var(--line);color:var(--court-dark)}
+
+/* ---------- Wider screens ---------- */
+@media (min-width:768px){
+  body{font-size:17px;padding-bottom:0}
+  .callbar{display:none}
+  .hero{display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch}
+  .hero-img{height:100%;aspect-ratio:auto;min-height:520px}
+  .hero-body{align-self:center;padding:48px 40px}
+  .btn-row{grid-template-columns:1fr}
+  section{padding:80px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="hero-img" src="images/hero.jpg" alt="ラケットショップ広瀬の店内に並ぶバドミントンラケット">
+  <div class="hero-body">
+    <p class="shop-name">仙台・立町｜バドミントン専門店 ラケットショップ広瀬</p>
+    <h1>バドミントン用品は、<br>手に取って選びたい。</h1>
+    <p>経験者のスタッフが、ラケットもシューズも、あなたに合う一本・一足を一緒に探します。</p>
+    <div class="btn-row">
+      <a class="btn" href="tel:0222650778">電話で相談する 022-265-0778</a>
+      <a class="btn ghost" href="#info">お店の場所・定休日を見る</a>
+    </div>
+    <small>定休日：木曜日</small>
+  </div>
+</header>
+
+<section class="concept">
+  <div class="wrap">
+    <h2>通販では分からない、<br>握った感触と履き心地。</h2>
+    <p class="lead">バドミントン用品は、実際に触れてみて初めて分かることが多い道具です。ラケットショップ広瀬は、手に取って確かめながら選べるバドミントン専門店です。初心者の方も、競技を続けている方も、お気軽にお立ち寄りください。</p>
+    <img src="images/store.jpg" alt="仙台市青葉区立町の路面店、ラケットショップ広瀬の外観" loading="lazy">
+  </div>
+</section>
+
+<section class="reasons">
+  <div class="wrap">
+    <h2>広瀬が選ばれる3つの理由</h2>
+    <div class="reason">
+      <h3>専門店だから、手に取って比べられる</h3>
+      <p>バドミントンを専門に扱うお店です。通販では不安な用品も、実物を触って納得してから選べます。</p>
+    </div>
+    <div class="reason">
+      <h3>経験者スタッフが細かく教えてくれる</h3>
+      <p>商品に詳しく、競技経験のあるスタッフが多数。選び方のポイントまで、やさしく丁寧にご案内します。</p>
+    </div>
+    <div class="reason">
+      <h3>足に悩みがあっても、親身に対応</h3>
+      <p>幅広・甲高の方には、サイズ違いを取り寄せて試着する提案も。毎回親身に向き合う接客です。</p>
+    </div>
+  </div>
+</section>
+
+<section class="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <p class="stars" aria-label="5つ星のうち5">★★★★★</p>
+    <blockquote>
+      <p>近所なので日頃からお世話になっているお店です。路面店なので非常に入りやすいです。商品に詳しいスタッフさんが多いのも魅力のひとつですね。</p>
+      <p>私事なのですが靴のサイズが幅広甲高4E、28.5cmなのですが、何個か取り寄せて履いてみますか？と言ってくれたり毎回親身に対応してくれます。</p>
+      <p>バドミントン用品は一回触ってから買いたくて、通販だと怖いのでこの店で決まりですね。従業員が経験者の方で、色々と細かく教えてくれるので、とっても助かりました！</p>
+      <cite>Googleクチコミより</cite>
+    </blockquote>
+    <div class="voice-img">
+      <img src="images/staff.jpg" alt="バドミントン用品を丁寧に案内するスタッフ" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="info" id="info">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <dl>
+      <div class="row"><dt>店名</dt><dd>ラケットショップ広瀬</dd></div>
+      <div class="row"><dt>住所</dt><dd>宮城県仙台市青葉区立町１番２号<br><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9D%92%E8%91%89%E5%8C%BA%E7%AB%8B%E7%94%BA%EF%BC%91%E7%95%AA%EF%BC%92%E5%8F%B7%20%E3%83%A9%E3%82%B1%E3%83%83%E3%83%88%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E5%BA%83%E7%80%AC" target="_blank" rel="noopener">地図を開く</a></dd></div>
+      <div class="row"><dt>定休日</dt><dd>木曜日</dd></div>
+      <div class="row"><dt>電話</dt><dd><a class="tel-big" href="tel:0222650778">022-265-0778</a></dd></div>
+      <div class="row"><dt>メール</dt><dd><a href="mailto:racketshop-hirose@nifty.com">racketshop-hirose@nifty.com</a></dd></div>
+      <div class="row"><dt>公式サイト</dt><dd><a href="https://racketshop-hirose.co.jp/" target="_blank" rel="noopener">racketshop-hirose.co.jp</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>まずは気軽に、<br>お電話ください。</h2>
+    <p>ラケット選びやシューズのサイズなど、ご相談だけでも大歓迎です。</p>
+    <div class="btn-row">
+      <a class="btn" href="tel:0222650778">電話する 022-265-0778</a>
+      <a class="btn ghost" href="https://racketshop-hirose.co.jp/contact/" target="_blank" rel="noopener">問い合わせフォーム</a>
+    </div>
+    <a class="sns" href="https://www.facebook.com/RShirose/?locale=ja_JP" target="_blank" rel="noopener">Facebookで最新情報をチェック</a>
+  </div>
+</section>
+
+<footer>&copy; ラケットショップ広瀬</footer>
+
+<nav class="callbar" aria-label="お問い合わせ">
+  <a class="tel" href="tel:0222650778">電話する</a>
+  <a class="form" href="https://racketshop-hirose.co.jp/contact/" target="_blank" rel="noopener">お問い合わせ</a>
+</nav>
+
+</body>
+</html>
