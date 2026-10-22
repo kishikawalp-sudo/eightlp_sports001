@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>野球グローブ修理専門店 半ざわスポーツ工房｜宮城県気仙沼市</title>
+<meta name="description" content="宮城県気仙沼市の野球グローブ修理専門店。スポーツ店勤務20年以上の店主が、大切なグローブを一つひとつ丁寧に修理します。ヒモ切れ・使いづらいなどお気軽にご相談ください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#22292c;
+  --leather:#7a3f22;
+  --leather-d:#4b2514;
+  --thread:#e9b44c;
+  --paper:#f3f4f2;
+  --white:#fff;
+  --line:#d9dcd8;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.85;font-size:16px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h1,h2,h3{font-family:var(--serif);line-height:1.5;margin:0}
+h2{font-size:1.65rem;font-weight:800;text-align:center;margin-bottom:12px}
+.stitch{height:0;border:0;border-top:3px dashed var(--thread);width:84px;margin:0 auto 28px}
+.lead{text-align:center;margin:0 0 28px;color:#4a5256}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--leather-d);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 14px;padding-top:calc(8px + env(safe-area-inset-top,0px))}
+.hd-name{font-family:var(--serif);font-weight:800;font-size:.95rem;line-height:1.3}
+.hd-tel{flex:none;background:var(--thread);color:var(--leather-d);font-weight:700;text-decoration:none;padding:8px 14px;border-radius:999px;font-size:.9rem}
+
+/* hero */
+.hero{position:relative;color:#fff;padding:0;margin-top:56px;background:var(--leather-d)}
+.hero img{width:100%;aspect-ratio:4/5;object-fit:cover;opacity:.55;max-height:640px}
+.hero-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 20px 36px;max-width:720px;margin:0 auto}
+.hero small{display:inline-block;align-self:flex-start;border:1px dashed var(--thread);color:var(--thread);padding:2px 12px;font-size:.8rem;margin-bottom:14px}
+.hero h1{font-size:clamp(1.9rem,8.4vw,3rem);font-weight:800;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.hero p{margin:14px 0 22px;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:15px 20px;border-radius:8px;font-size:1.05rem}
+.btn-tel{background:var(--thread);color:var(--leather-d)}
+.btn-sub{border:2px solid currentColor;margin-top:12px;background:rgba(0,0,0,.25);color:#fff}
+
+/* problems */
+.worry{background:var(--white)}
+.worry ul{list-style:none;margin:0 0 24px;padding:0}
+.worry li{padding:14px 16px 14px 44px;border-bottom:1px dashed var(--line);position:relative}
+.worry li::before{content:"✕";position:absolute;left:14px;color:var(--leather);font-weight:700}
+.worry p{margin:0;text-align:center;font-family:var(--serif);font-weight:800;font-size:1.2rem}
+
+/* featured */
+.pick{background:var(--leather-d);color:#fff}
+.pick h2{color:#fff}
+.badge{display:block;width:max-content;margin:0 auto 14px;background:var(--thread);color:var(--leather-d);font-weight:700;padding:4px 18px;border-radius:999px;font-size:.9rem}
+.pick .lead{color:#e8d9cf}
+.pick-img{border:3px dashed var(--thread);padding:6px;border-radius:6px;margin-bottom:24px}
+.pick-img img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px}
+.pick-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.pick-list li{background:rgba(255,255,255,.08);border-left:4px solid var(--thread);padding:14px 16px}
+.pick-list b{display:block;font-family:var(--serif);font-size:1.1rem;margin-bottom:2px}
+.pick-cta{margin-top:28px}
+
+/* strengths */
+.str{display:grid;gap:16px}
+.str article{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:20px}
+.str h3{font-size:1.15rem;color:var(--leather);margin-bottom:6px}
+.str p{margin:0;font-size:.97rem}
+
+/* voice */
+.voice{background:var(--white)}
+.voice blockquote{margin:0;padding:24px 20px;background:var(--paper);border-top:3px dashed var(--thread);border-bottom:3px dashed var(--thread)}
+.voice .star{color:var(--thread);font-size:1.4rem;letter-spacing:2px;text-shadow:0 0 1px var(--leather)}
+.voice blockquote p{margin:8px 0 0}
+
+/* story */
+.story .owner{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+.story .owner img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--thread);flex:none}
+.story .owner p{margin:0;font-family:var(--serif);font-weight:800;font-size:1.1rem}
+.story p{margin:0 0 1em}
+.story .msg{font-family:var(--serif);font-weight:800;font-size:1.15rem;text-align:center;margin-top:24px;color:var(--leather)}
+
+/* info */
+.info{background:var(--white)}
+table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:.95rem}
+th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:6.5em;color:var(--leather);white-space:nowrap}
+td a{word-break:break-all}
+.map{border:0;width:100%;height:300px;border-radius:8px;background:var(--line)}
+
+/* cta */
+.cta{background:var(--leather);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta .btn{max-width:420px;margin:12px auto 0}
+.btn-mail{background:#fff;color:var(--leather-d)}
+.cta .btn-sub{background:transparent}
+footer{background:var(--ink);color:#aeb6b3;text-align:center;font-size:.8rem;padding:20px}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(3,1fr);background:var(--white);border-top:2px solid var(--thread);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn a{text-align:center;text-decoration:none;font-weight:700;font-size:.85rem;padding:12px 4px;color:var(--leather-d)}
+.bn a:first-child{background:var(--leather-d);color:var(--thread)}
+a:focus-visible{outline:3px solid var(--thread);outline-offset:2px}
+
+@media(min-width:720px){
+  .str{grid-template-columns:repeat(3,1fr)}
+  .hero img{aspect-ratio:16/9}
+  .bn{display:none}
+  body{padding-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hd-name">半ざわスポーツ工房</div>
+  <a class="hd-tel" href="tel:09010610094">電話する</a>
+</header>
+
+<main>
+<!-- hero -->
+<section class="hero" id="top">
+  <img src="images/hero_glove.jpg" alt="修理された野球グローブ" width="800" height="1000">
+  <div class="hero-body">
+    <small>宮城県気仙沼市｜グローブ修理専門店</small>
+    <h1>大切なグローブを、<br>もう一度戦える状態に。</h1>
+    <p>スポーツ店勤務20年以上の店主が、<br>一つひとつ心を込めて修理します。</p>
+    <a class="btn btn-tel" href="tel:09010610094">090-1061-0094 に電話する</a>
+    <a class="btn btn-sub" href="https://hanzawa-spk.com/contact" target="_blank" rel="noopener">フォームで相談する</a>
+  </div>
+</section>
+
+<!-- worry -->
+<section class="worry">
+  <div class="wrap">
+    <h2>こんなお困りごとはありませんか？</h2>
+    <hr class="stitch">
+    <ul>
+      <li>今度の試合があるのに、ヒモが切れてしまった</li>
+      <li>グラブが使いづらくて、プレーに集中できない</li>
+      <li>子どもの大事なグローブを、安心して預けられる店がない</li>
+    </ul>
+    <p>その悩み、半ざわスポーツ工房にお任せください。</p>
+  </div>
+</section>
+
+<!-- featured -->
+<section class="pick" id="repair">
+  <div class="wrap">
+    <span class="badge">イチオシ</span>
+    <h2>グローブ修理専門店</h2>
+    <hr class="stitch">
+    <p class="lead">野球・ソフトボールをがんばる人の<br>「グラブの困りごと」をなくすために。</p>
+    <div class="pick-img">
+      <img src="images/repair_work.jpg" alt="グローブを修理する作業風景" width="800" height="600" loading="lazy">
+    </div>
+    <ul class="pick-list">
+      <li><b>数えきれないほどの修理実績</b>十数年にわたり、さまざまなグラブの修理を手がけてきました。</li>
+      <li><b>プレーする人のための修理</b>自己満足ではなく、使うお客様のためになる仕上がりを目指します。</li>
+      <li><b>どんな小さな困りごとでも</b>グローブのことで分からないことがあれば、いつでもお気軽にご連絡ください。</li>
+    </ul>
+    <div class="pick-cta">
+      <a class="btn btn-tel" href="tel:09010610094">まずは電話で相談する</a>
+      <a class="btn btn-sub" href="mailto:hanzawa.spk@gmail.com">メールで相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- strengths -->
+<section>
+  <div class="wrap">
+    <h2>選ばれる3つの理由</h2>
+    <hr class="stitch">
+    <div class="str">
+      <article>
+        <h3>スポーツ店勤務20年以上</h3>
+        <p>学生時代のアルバイトから20年以上、スポーツ店で道具と向き合ってきた経験があります。</p>
+      </article>
+      <article>
+        <h3>メーカー研修で磨いた技術</h3>
+        <p>野球メーカー主催の「グラブ修理の研修」に2年連続で参加し、修理の道を究めてきました。</p>
+      </article>
+      <article>
+        <h3>道具と選手を想う姿勢</h3>
+        <p>接客やメールのやりとりからも、道具を大切にする気持ちが伝わると評判です。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <hr class="stitch">
+    <blockquote>
+      <div class="star" aria-label="5つ星">★★★★★</div>
+      <p>修理が丁寧な上、接客やメールのやりとりからも道具を大切にする気持ちを感じるお店です。特に野球を頑張る子ども達を応援する思いやりがあります。我が子のグローブを預けるならここ一択です。</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- story -->
+<section class="story">
+  <div class="wrap">
+    <h2>店主のストーリー</h2>
+    <hr class="stitch">
+    <div class="owner">
+      <img src="images/owner.jpg" alt="店主 半澤さん" width="192" height="192" loading="lazy">
+      <p>店主 半澤</p>
+    </div>
+    <p>半ざわスポーツ工房は2017年7月に開店した、まだ若いお店です。私は学生の頃のアルバイトから含めて20年以上スポーツ店で働いてきました。</p>
+    <p>スポーツ店時代に、野球メーカー主催の「グラブ修理の研修」に2年連続で参加したのをきっかけに、グラブ修理にのめり込みました。最初の頃は修理に自己満足を求めている自分がいましたが、やがて「プレーするお客様のためにやるのだ」と気付き、自分のお店を始めてからその思いはより強くなりました。</p>
+    <p>気仙沼は以前、とても野球が盛んな街でした。震災後は草野球チームも子どもも減りましたが、それでも夢や目標に向かって野球やソフトボールをがんばる人たちがいます。</p>
+    <p>「試合前にヒモが切れた」「グラブが使いづらい」――そんな困りごとを無くせる存在であり続けたい。気仙沼の、そして野球・ソフトボールをがんばる全ての人のために。</p>
+    <p class="msg">いっしょに大切なグローブを守っていきましょう！</p>
+  </div>
+</section>
+
+<!-- info -->
+<section class="info" id="access">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <hr class="stitch">
+    <table>
+      <tr><th>店名</th><td>野球グローブ修理専門店<br>半ざわスポーツ工房</td></tr>
+      <tr><th>住所</th><td>宮城県気仙沼市中みなと町２−２５</td></tr>
+      <tr><th>電話</th><td><a href="tel:09010610094">090-1061-0094</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:hanzawa.spk@gmail.com">hanzawa.spk@gmail.com</a></td></tr>
+      <tr><th>公式HP</th><td><a href="http://hanzawa-spk.com/" target="_blank" rel="noopener">http://hanzawa-spk.com/</a></td></tr>
+      <tr><th>Instagram</th><td><a href="https://www.instagram.com/hansports_koubou/" target="_blank" rel="noopener">@hansports_koubou</a></td></tr>
+    </table>
+    <iframe class="map" title="半ざわスポーツ工房の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E6%B0%97%E4%BB%99%E6%B2%BC%E5%B8%82%E4%B8%AD%E3%81%BF%E3%81%AA%E3%81%A8%E7%94%BA%EF%BC%92%E2%88%92%EF%BC%92%EF%BC%95&output=embed"></iframe>
+  </div>
+</section>
+
+<!-- cta -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>グローブのお悩み、<br>まずはご相談ください</h2>
+    <hr class="stitch">
+    <a class="btn btn-tel" href="tel:09010610094">電話：090-1061-0094</a>
+    <a class="btn btn-mail" href="https://hanzawa-spk.com/contact" target="_blank" rel="noopener">お問い合わせフォーム</a>
+    <a class="btn btn-sub" href="https://www.instagram.com/hansports_koubou/" target="_blank" rel="noopener">Instagramを見る</a>
+  </div>
+</section>
+</main>
+
+<footer>© 半ざわスポーツ工房</footer>
+
+<nav class="bn" aria-label="固定メニュー">
+  <a href="tel:09010610094">電話する</a>
+  <a href="#repair">修理について</a>
+  <a href="#access">アクセス</a>
+</nav>
+
+</body>
+</html>
