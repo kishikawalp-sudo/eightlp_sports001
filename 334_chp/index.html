@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>サーフィン体験なら サーフショップ CHP仙台｜仙台市若林区</title>
+<meta name="description" content="仙台市若林区のサーフショップ CHP仙台。はじめてのサーフィン体験から、スクール・コーチングまでオーナーが丁寧にサポート。初心者でも一人で不安にならない、あったかいショップです。">
+<style>
+:root{
+  --navy:#0e2b3b;
+  --sea:#1b7f93;
+  --sea-dark:#12606f;
+  --foam:#f5f9f9;
+  --sand:#efe6d6;
+  --wax:#f3b22f;
+  --ink:#16252d;
+  --muted:#58696f;
+  --line:#d9e3e5;
+  --header-h:56px;
+  --nav-h:64px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px)}
+body{
+  margin:0;
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Meiryo",sans-serif;
+  color:var(--ink);
+  background:var(--foam);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+  padding-top:calc(var(--header-h) + env(safe-area-inset-top,0px));
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--wax);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+h1,h2,h3,p{margin:0}
+
+/* ---------- header ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:var(--navy);color:#fff;
+  padding-top:env(safe-area-inset-top,0px);
+}
+.header-in{
+  height:var(--header-h);max-width:960px;margin:0 auto;padding:0 14px 0 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.logo{font-weight:700;font-size:15px;letter-spacing:.04em;line-height:1.3;text-decoration:none}
+.logo small{display:block;font-size:10px;font-weight:400;opacity:.75;letter-spacing:.08em}
+.header-tel{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--wax);color:var(--navy);font-weight:700;font-size:14px;
+  text-decoration:none;padding:9px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;color:#fff;background:var(--navy);
+  min-height:calc(100svh - var(--header-h) - var(--nav-h));
+  min-height:min(640px,calc(100vh - var(--header-h) - var(--nav-h)));
+  display:flex;align-items:flex-end;overflow:hidden;
+}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(14,43,59,.25) 0%,rgba(14,43,59,.55) 45%,rgba(14,43,59,.92) 100%);
+}
+.hero-body{position:relative;z-index:2;width:100%;max-width:720px;margin:0 auto;padding:40px 20px 72px}
+.hero-shop{font-size:14px;letter-spacing:.08em;margin-bottom:14px;opacity:.92}
+.hero h1{
+  font-size:clamp(34px,10vw,54px);line-height:1.28;font-weight:800;letter-spacing:.02em;
+}
+.hero-lead{margin-top:18px;font-size:16px;max-width:30em}
+.hero-cta{margin-top:26px;display:flex;flex-direction:column;gap:12px;max-width:360px}
+.wave{position:absolute;left:0;right:0;bottom:-1px;z-index:3;width:100%;height:44px;display:block}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:54px;padding:12px 20px;border-radius:999px;
+  font-weight:700;font-size:17px;text-decoration:none;text-align:center;
+}
+.btn-main{background:var(--wax);color:var(--navy);box-shadow:0 6px 0 #c58a0d}
+.btn-main:active{transform:translateY(3px);box-shadow:0 3px 0 #c58a0d}
+.btn-sub{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.85)}
+.btn-dark{background:var(--navy);color:#fff}
+
+/* ---------- sections ---------- */
+section{padding:60px 0}
+.sec-title{font-size:clamp(24px,6.6vw,32px);line-height:1.45;font-weight:800;color:var(--navy);margin-bottom:22px}
+.sec-sub{color:var(--muted);margin-bottom:28px}
+
+/* ---------- featured: experience ---------- */
+.feature{background:var(--foam);padding-top:48px}
+.feature-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(14,43,59,.10)}
+.feature-photo{aspect-ratio:4/3;background:var(--sea);overflow:hidden}
+.feature-photo img{width:100%;height:100%;object-fit:cover}
+.feature-body{padding:26px 22px 28px}
+.badge{
+  display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;
+  padding:4px 12px;border-radius:6px;margin-bottom:12px;
+}
+.feature-body h2{font-size:clamp(26px,7.4vw,34px);line-height:1.35;color:var(--navy);margin-bottom:14px}
+.points{list-style:none;margin:20px 0 24px;padding:0;display:grid;gap:12px}
+.points li{
+  position:relative;padding:14px 16px 14px 48px;background:var(--foam);border-radius:12px;font-weight:600;
+}
+.points li::before{
+  content:"";position:absolute;left:16px;top:18px;width:20px;height:20px;border-radius:50%;
+  background:var(--sea);
+}
+.points li::after{
+  content:"";position:absolute;left:23px;top:23px;width:5px;height:9px;
+  border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg);
+}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+
+/* ---------- strengths ---------- */
+.strengths{background:var(--sand)}
+.s-list{display:grid;gap:16px}
+.s-item{background:#fff;border-radius:14px;padding:22px 20px;border-left:6px solid var(--sea)}
+.s-item h3{font-size:19px;line-height:1.5;color:var(--navy);margin-bottom:8px}
+.s-item p{font-size:15px;color:#33454c}
+.s-photo{margin-top:26px;border-radius:16px;overflow:hidden;aspect-ratio:16/10;background:var(--sea)}
+.s-photo img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- reviews ---------- */
+.reviews{background:var(--navy);color:#fff}
+.reviews .sec-title{color:#fff}
+.rv-list{display:grid;gap:18px}
+.rv{background:#fff;color:var(--ink);border-radius:14px;padding:22px 20px}
+.stars{color:#e59b00;font-size:20px;letter-spacing:.1em;line-height:1}
+.stars i{font-style:normal;color:#c9d2d4}
+.rv h3{font-size:17px;line-height:1.55;color:var(--navy);margin:10px 0 10px}
+.rv p{font-size:15px;color:#33454c}
+.rv p + p{margin-top:10px}
+.rv-note{margin-top:12px;font-size:13px;color:var(--muted)}
+
+/* ---------- info ---------- */
+.info{background:var(--foam)}
+.info-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;font-size:15px}
+.info-table th,.info-table td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.info-table tr:last-child th,.info-table tr:last-child td{border-bottom:0}
+.info-table th{width:7.5em;background:#e8f1f2;color:var(--navy);font-weight:700;white-space:nowrap}
+.info-table a{color:var(--sea-dark);font-weight:600;word-break:break-all}
+.map{margin-top:22px;border-radius:14px;overflow:hidden;background:#dfe9ea;aspect-ratio:4/3}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* ---------- final cta ---------- */
+.cta{background:var(--sea);color:#fff;text-align:center}
+.cta h2{font-size:clamp(24px,6.6vw,32px);line-height:1.5;margin-bottom:14px}
+.cta p{margin-bottom:26px}
+.cta .btns{display:grid;gap:12px;max-width:360px;margin:0 auto}
+.cta .btn-sub{border-color:#fff}
+
+footer{background:var(--navy);color:#cfdadd;text-align:center;font-size:12px;padding:26px 20px}
+
+/* ---------- bottom nav ---------- */
+.nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:#fff;border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.nav ul{list-style:none;margin:0 auto;padding:0;max-width:720px;height:var(--nav-h);display:grid;grid-template-columns:repeat(4,1fr)}
+.nav a{
+  height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  font-size:11px;font-weight:700;color:var(--navy);text-decoration:none;
+}
+.nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nav .nav-tel{background:var(--wax)}
+
+@media (min-width:720px){
+  .hero-cta{flex-direction:row;max-width:none}
+  .hero-cta .btn{min-width:240px}
+  .s-list{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn-main:active{transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- 固定ヘッダー -->
+<header class="header">
+  <div class="header-in">
+    <a class="logo" href="#top">サーフショップ CHP仙台<small>宮城県仙台市若林区</small></a>
+    <a class="header-tel" href="tel:0227826777" aria-label="電話 022-782-6777">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      電話する
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ヒーロー -->
+  <div class="hero">
+    <img class="hero-img" src="images/hero_surf.jpg" alt="仙台の海でサーフィンを楽しむ人たち" width="800" height="1000">
+    <div class="hero-body">
+      <p class="hero-shop">サーフショップ CHP仙台</p>
+      <h1>はじめての波を、<br>一人で迎えない。</h1>
+      <p class="hero-lead">オーナーが一緒に海に入る、仙台のサーフィン体験。初心者でも安心して、最初の一本をめざせます。</p>
+      <div class="hero-cta">
+        <a class="btn btn-main" href="https://chp-northpoint.com/otoiawase/" target="_blank" rel="noopener">サーフィン体験を問い合わせる</a>
+        <a class="btn btn-sub" href="tel:0227826777">022-782-6777</a>
+      </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 44" preserveAspectRatio="none" aria-hidden="true"><path fill="#f5f9f9" d="M0 24c120 20 240 20 360 0s240-20 360 0 240 20 360 0 240-20 360 0v20H0z"/></svg>
+  </div>
+
+  <!-- イチオシ：サーフィン体験 -->
+  <section class="feature" id="experience">
+    <div class="wrap">
+      <div class="feature-card">
+        <div class="feature-photo">
+          <img src="images/experience_lesson.jpg" alt="ショップのオーナーと一緒に海で行うサーフィン体験の様子" width="800" height="600" loading="lazy">
+        </div>
+        <div class="feature-body">
+          <span class="badge">イチオシ</span>
+          <h2>サーフィン体験</h2>
+          <p>「サーフィンを始めてみたいけれど、何から揃えればいいかわからない」「一人だと続くか不安」。そんな方こそ、まず体験へ。経験豊富なオーナーが、あなたのレベルと目標に合わせて、基礎から丁寧に教えます。</p>
+          <ul class="points">
+            <li>オーナーが一緒に海に入って教えてくれる</li>
+            <li>波・パドリング・テイクオフの基礎を、テキストで学べる</li>
+            <li>始めるときに必要な道具も、予算に合わせて相談できる</li>
+          </ul>
+          <a class="btn btn-main" href="https://chp-northpoint.com/otoiawase/" target="_blank" rel="noopener">体験について問い合わせる</a>
+          <p class="note">体験の内容・日程・料金は、お電話またはお問い合わせフォームからご確認ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 選ばれる理由 -->
+  <section class="strengths" id="strengths">
+    <div class="wrap">
+      <h2 class="sec-title">CHP仙台が、<br>初心者に選ばれる理由</h2>
+      <div class="s-list">
+        <div class="s-item">
+          <h3>経験豊富なオーナーが、一人ひとりに合わせて指導</h3>
+          <p>レベルや課題に合ったアドバイスで、毎回の練習が実りあるものに。どんな質問にも快く答えてくれます。</p>
+        </div>
+        <div class="s-item">
+          <h3>ショップ2階で、基礎をしっかり学べる</h3>
+          <p>テキストを使い、パドリングやテイクオフ、波の基礎を勉強会のように教えてもらえます。</p>
+        </div>
+        <div class="s-item">
+          <h3>海でも、大会前も。段階に合わせたコーチング</h3>
+          <p>海での初心者・中級者コーチングや、大会前の模擬ヒートまで。成長に合わせて続けられます。</p>
+        </div>
+        <div class="s-item">
+          <h3>道具は、良心的な価格で相談できる</h3>
+          <p>必要な道具を予算内でそろえるアドバイスがもらえます。無理なくスタートできます。</p>
+        </div>
+        <div class="s-item">
+          <h3>一緒に海へ、トリップへ、大会へ</h3>
+          <p>ビジネス感のない「あったかいショップ」。仲間ができて、サーフィンが続きます。</p>
+        </div>
+      </div>
+      <div class="s-photo">
+        <img src="images/shop_inside.jpg" alt="サーフショップ CHP仙台の店内" width="800" height="500" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- お客様の声 -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <h2 class="sec-title">お客様の声</h2>
+      <div class="rv-list">
+
+        <article class="rv">
+          <div class="stars" aria-label="評価 5 点中 4 点">★★★★<i>★</i></div>
+          <h3>一人で不安だったのに、スクールで友達がたくさんできました</h3>
+          <p>はじめは1人で不安でしたがスクールで初心者の友達がたくさんできました。必要な道具も良心的な値段で買えるものを教えていただき、予算内でスタートすることができました🙌</p>
+          <p>ネットで揃えて1人で始めていたらとても続かなかったので、chpに行ってよかったなと思います。おすすめです。</p>
+          <p class="rv-note">※駐車場が狭くて出入りがしにくいので☆4とのことです。</p>
+        </article>
+
+        <article class="rv">
+          <div class="stars" aria-label="評価 5 点中 5 点">★★★★★</div>
+          <h3>1年間で、確実に成長できていると感じます</h3>
+          <p>5月でサーフィンを始めて1年。オーナーの丁寧で親切、そして的確なご指導のおかげで、少しずつですが確実に成長できています。</p>
+          <p>指導経験が豊富で、その人それぞれのレベルや課題にあったアドバイスをくださるので、毎回の練習がとても実りあるものになっています。人柄も素晴らしく、どんな質問にも快く答えてくださいます。</p>
+          <p>サーフィンを始めるなら、CHP仙台は間違いないですよ！！</p>
+        </article>
+
+        <article class="rv">
+          <div class="stars" aria-label="評価 5 点中 5 点">★★★★★</div>
+          <h3>独学だった私が、正しい基礎を学べました</h3>
+          <p>40代後半になり「正しい基礎でサーフィンできてるんだろうか？」と思うようになり、Instagramでつながっている方の紹介でchp仙台へ。</p>
+          <p>ショップ2階でテキストを使ってパドリングやテイクオフ、波の基礎を教えていただきました。海での初心者・中級者コーチング、大会前の模擬ヒートまで、親切丁寧に教えてくれるオーナーさんです。</p>
+          <p>「一緒に海に入ってくれる」「一緒に一泊でトリップに行ってくれる」「一緒に大会に参加してくれる」。あまりビジネス感のない、あったかいショップだと思いました。これからサーフィンを始めたい方も、どこのショップがいいか迷っている方も、CHP仙台絶対おすすめです！</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ショップ情報 -->
+  <section class="info" id="access">
+    <div class="wrap">
+      <h2 class="sec-title">ショップ情報</h2>
+      <table class="info-table">
+        <tr><th scope="row">店名</th><td>サーフショップ CHP仙台</td></tr>
+        <tr><th scope="row">住所</th><td>宮城県仙台市若林区大和町４丁目１０−５</td></tr>
+        <tr><th scope="row">電話番号</th><td><a href="tel:0227826777">022-782-6777</a></td></tr>
+        <tr><th scope="row">定休日</th><td>毎週水曜日・第3木曜日</td></tr>
+        <tr><th scope="row">公式サイト</th><td><a href="http://chp-northpoint.com/" target="_blank" rel="noopener">http://chp-northpoint.com/</a></td></tr>
+        <tr><th scope="row">お問い合わせ</th><td><a href="https://chp-northpoint.com/otoiawase/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+        <tr><th scope="row">Instagram</th><td><a href="https://www.instagram.com/chp_sendai/" target="_blank" rel="noopener">@chp_sendai</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe title="サーフショップ CHP仙台の地図" src="https://www.google.com/maps?q=宮城県仙台市若林区大和町4丁目10-5&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>最初の一歩は、<br>ここから始めませんか。</h2>
+      <p>サーフィン体験のご相談は、お電話かお問い合わせフォームから。</p>
+      <div class="btns">
+        <a class="btn btn-main" href="tel:0227826777">022-782-6777 に電話する</a>
+        <a class="btn btn-sub" href="https://chp-northpoint.com/otoiawase/" target="_blank" rel="noopener">お問い合わせフォーム</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; サーフショップ CHP仙台</p>
+</footer>
+
+<!-- 固定ボトムナビ -->
+<nav class="nav" aria-label="クイックメニュー">
+  <ul>
+    <li><a class="nav-tel" href="tel:0227826777">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      電話</a></li>
+    <li><a href="#experience">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 15c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"/><path d="M2 20c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"/><circle cx="12" cy="7" r="3"/></svg>
+      体験</a></li>
+    <li><a href="#reviews">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>
+      口コミ</a></li>
+    <li><a href="#access">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      アクセス</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
