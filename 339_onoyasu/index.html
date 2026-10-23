@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>修理工房｜オノヤスポーツ MAX店（福島市曽根田町）</title>
+<meta name="description" content="福島市のオノヤスポーツ MAX店。何でも揃う品揃えと、大切な道具を直す「修理工房」。まずはお電話かお問い合わせフォームからご相談ください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14283c;
+  --ink-soft:#3b4c5e;
+  --bg:#edf1f4;
+  --white:#fff;
+  --tag:#f2b705;
+  --line:#c9d3db;
+  --font:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.8;font-size:16px;padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:1.5rem;line-height:1.45;font-weight:900;margin-bottom:20px}
+:focus-visible{outline:3px solid var(--tag);outline-offset:2px}
+
+/* header */
+.head{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--ink);color:var(--white);height:calc(56px + env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px)}
+.head .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;max-width:960px}
+.head .shop{font-weight:700;font-size:.95rem;line-height:1.3}
+.head .tel{background:var(--tag);color:var(--ink);text-decoration:none;font-weight:900;font-size:.95rem;padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{padding:0;background:var(--ink);color:var(--white)}
+.hero-img{aspect-ratio:4/3;width:100%;object-fit:cover;background:#2a3f55}
+.hero-body{padding:28px 20px 40px;max-width:720px;margin:0 auto}
+.hero .tag{display:inline-block;background:var(--tag);color:var(--ink);font-weight:900;font-size:.85rem;padding:2px 12px;border-radius:4px 14px 14px 4px;margin-bottom:14px}
+.hero h1{font-size:clamp(1.9rem,8.4vw,2.8rem);line-height:1.3;font-weight:900;letter-spacing:.02em}
+.hero p{margin-top:14px;color:#d6e0e8}
+.btns{display:grid;gap:12px;margin-top:26px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:900;font-size:1.05rem;text-align:center}
+.btn-main{background:var(--tag);color:var(--ink)}
+.btn-sub{background:transparent;color:inherit;border:2px solid currentColor}
+.btn small{display:block;font-weight:500;font-size:.78rem}
+
+/* featured: stitched panel */
+.feature{background:var(--white)}
+.stitch{border:3px dashed var(--ink);border-radius:16px;padding:6px;margin-top:8px}
+.stitch-in{background:var(--bg);border-radius:10px;overflow:hidden}
+.stitch-in img{width:100%;aspect-ratio:3/2;object-fit:cover;background:#cfd8df}
+.stitch-in .txt{padding:20px}
+.stitch-in h3{font-size:1.2rem;font-weight:900;margin-bottom:8px}
+.check{list-style:none;margin-top:14px}
+.check li{padding-left:28px;position:relative;margin-bottom:8px;font-weight:500}
+.check li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;height:8px;border-left:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(-45deg)}
+.lead{color:var(--ink-soft)}
+
+/* strengths */
+.str{display:grid;gap:14px;margin-top:8px}
+.str div{background:var(--white);border-left:6px solid var(--tag);padding:18px 18px 16px;border-radius:0 10px 10px 0}
+.str h3{font-size:1.08rem;font-weight:900;margin-bottom:4px}
+.str p{color:var(--ink-soft);font-size:.95rem}
+.store-img{margin-top:24px;border-radius:12px;overflow:hidden}
+.store-img img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#cfd8df}
+
+/* reviews */
+.reviews{background:var(--white)}
+.rv{border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px;background:var(--bg)}
+.stars{color:#c98f00;font-size:1.1rem;letter-spacing:2px;margin-bottom:6px}
+.rv p{font-size:.95rem}
+.rv cite{display:block;margin-top:8px;font-size:.8rem;color:var(--ink-soft);font-style:normal}
+
+/* info */
+table{width:100%;border-collapse:collapse;background:var(--white);border-radius:10px;overflow:hidden}
+th,td{padding:14px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:.95rem}
+th{width:7.5em;background:#dde5ea;font-weight:700}
+td a{color:var(--ink);font-weight:700;word-break:break-all}
+.map{margin-top:20px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{background:var(--ink);color:var(--white);text-align:center}
+.cta h2{margin-bottom:12px}
+.cta p{color:#d6e0e8}
+.cta .tel-big{display:block;margin:22px 0 6px;font-size:clamp(1.9rem,9vw,2.6rem);font-weight:900;color:var(--tag);text-decoration:none;letter-spacing:.03em}
+footer{background:#0d1c2b;color:#9fb0bf;text-align:center;font-size:.8rem;padding:20px 20px 28px}
+
+/* bottom nav */
+.nav{position:fixed;bottom:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);background:var(--white);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;text-decoration:none;font-size:.72rem;font-weight:700;gap:2px;color:var(--ink)}
+.nav a svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav a.hot{background:var(--tag)}
+
+@media (min-width:720px){
+  body{font-size:17px}
+  .hero{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+  .hero-img{aspect-ratio:auto;height:100%;min-height:480px}
+  .hero-body{align-self:center;padding:40px 36px}
+  .str{grid-template-columns:repeat(3,1fr)}
+  .stitch-in{display:grid;grid-template-columns:1fr 1fr}
+  .stitch-in img{aspect-ratio:auto;height:100%}
+  .btns{grid-template-columns:1fr 1fr}
+  .nav{display:none}
+  body{padding-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="wrap">
+    <div class="shop">オノヤスポーツ MAX店</div>
+    <a class="tel" href="tel:0245738607" aria-label="電話をかける 024-573-8607">電話する</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <!-- 画像1：修理工房の作業風景（職人の手元など） -->
+  <img class="hero-img" src="images/hero_repair.jpg" alt="オノヤスポーツ MAX店 修理工房の作業風景" width="800" height="600">
+  <div class="hero-body">
+    <span class="tag">福島市曽根田町｜修理工房</span>
+    <h1>使い込んだ道具、<br>もう一度使える。</h1>
+    <p>何でも揃うスポーツ専門店・オノヤスポーツ MAX店の「修理工房」。大切にしてきた道具のご相談をお待ちしています。</p>
+    <div class="btns">
+      <a class="btn btn-main" href="tel:0245738607"><span>電話で相談する<small>024-573-8607</small></span></a>
+      <a class="btn btn-sub" href="https://onoya-sports.com/contact/" target="_blank" rel="noopener">フォームで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE -->
+<section class="feature" id="repair">
+  <div class="wrap">
+    <h2>修理工房</h2>
+    <p class="lead">買って終わりではなく、直して使い続けたい。そんな道具のご相談を、店頭でもお電話でもお受けしています。</p>
+    <div class="stitch">
+      <div class="stitch-in">
+        <!-- 画像2：修理中の道具のアップ -->
+        <img src="images/repair_work.jpg" alt="修理工房で道具を修理している様子" width="800" height="533" loading="lazy">
+        <div class="txt">
+          <h3>まずは見せてください</h3>
+          <p>状態を見たうえで、直せるかどうか・どう進めるかをご説明します。</p>
+          <ul class="check">
+            <li>修理が必要か、まず相談したい</li>
+            <li>愛用の道具を長く使い続けたい</li>
+            <li>どこに頼めばいいかわからない</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="btns">
+      <a class="btn btn-main" href="tel:0245738607"><span>修理の相談をする<small>024-573-8607</small></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section id="strength">
+  <div class="wrap">
+    <h2>お店の3つの魅力</h2>
+    <div class="str">
+      <div>
+        <h3>何でも陳列している専門店</h3>
+        <p>幅広く揃う売り場は、眺めているだけでも楽しい。掘り出し物に出会えるとお客様にも好評です。</p>
+      </div>
+      <div>
+        <h3>サイズ選びに親身</h3>
+        <p>迷っていると、もう少し大きめのものをすぐにお持ちします。お子さまの運動着選びも安心です。</p>
+      </div>
+      <div>
+        <h3>お支払い・納品まで丁寧</h3>
+        <p>お支払い方法や納品日まで、詳しくご説明。最後までスムーズにお買い物いただけます。</p>
+      </div>
+    </div>
+    <div class="store-img">
+      <!-- 画像3：店内の様子 -->
+      <img src="images/store_inside.jpg" alt="オノヤスポーツ MAX店の店内" width="800" height="450" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="rv">
+      <div class="stars" aria-label="5つ星">★★★★★</div>
+      <p>子どもの運動着購入のため利用しました。服のサイズに悩んでいると『もう少し大きめのものお持ちしますね。』とすぐに持ってきてくれました。また支払いや納品日も詳しく説明してくれスムーズに終了することができました。ありがとうございました。</p>
+      <cite>Googleクチコミより</cite>
+    </div>
+    <div class="rv">
+      <div class="stars" aria-label="4つ星">★★★★<span style="color:#c9d3db">★</span></div>
+      <p>何でも陳列している専門店は少なくなりました。たまに眺めに行って掘り出し物を手に入れています。自分の好きなスポーツ店です！色々買ってます。無くてはならないですね！</p>
+      <cite>Googleクチコミより</cite>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="access">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>オノヤスポーツ MAX店</td></tr>
+      <tr><th>住所</th><td>福島県福島市曽根田町１−１８</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0245738607">024-573-8607</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@onoya-sports.com">info@onoya-sports.com</a></td></tr>
+      <tr><th>ホームページ</th><td><a href="http://onoya-sports.com/" target="_blank" rel="noopener">onoya-sports.com</a></td></tr>
+      <tr><th>お問い合わせ</th><td><a href="https://onoya-sports.com/contact/" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      <tr><th>会社名</th><td>株式会社 オノヤスポーツ</td></tr>
+      <tr><th>代表者</th><td>五十嵐俊道</td></tr>
+    </table>
+    <div class="map">
+      <iframe title="オノヤスポーツ MAX店の地図" src="https://www.google.com/maps?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%E7%A6%8F%E5%B3%B6%E5%B8%82%E6%9B%BD%E6%A0%B9%E7%94%B0%E7%94%BA1-18&amp;output=embed&amp;hl=ja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>道具の修理は、<br>修理工房へご相談ください</h2>
+    <p>お電話でもフォームでも、お気軽にどうぞ。</p>
+    <a class="tel-big" href="tel:0245738607">024-573-8607</a>
+    <div class="btns">
+      <a class="btn btn-main" href="tel:0245738607">電話で相談する</a>
+      <a class="btn btn-sub" href="https://onoya-sports.com/contact/" target="_blank" rel="noopener">フォームで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© 株式会社 オノヤスポーツ</footer>
+
+<nav class="nav" aria-label="クイックメニュー">
+  <a class="hot" href="tel:0245738607">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>電話
+  </a>
+  <a href="#repair">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5 5L3 18l3 3 6.7-6.7a4 4 0 0 0 5-5l-2.4 2.4-2.6-.6-.6-2.6z"/></svg>修理工房
+  </a>
+  <a href="#voice">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>口コミ
+  </a>
+  <a href="#access">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>アクセス
+  </a>
+</nav>
+
+</body>
+</html>
