@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スケートボードスクール｜オザワ商店（宮城県大河原町）</title>
+<meta name="description" content="宮城県柴田郡大河原町のオザワ商店が開くスケートボードスクール。はじめての一歩から、お気軽にご相談ください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1d2023;
+  --ink-soft: #4a5057;
+  --concrete: #dfe2e4;
+  --paper: #f3f4f5;
+  --white: #ffffff;
+  --yellow: #ffd21f;
+  --line: #c4c9cd;
+  --head-h: 56px;
+  --nav-h: 64px;
+  --font-display: "Dela Gothic One", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  --font-body: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--head-h) + 8px); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  padding-top: var(--head-h);
+  padding-bottom: var(--nav-h);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--ink);
+  background: var(--paper);
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3, p, ul, dl, dd { margin: 0; padding: 0; }
+ul { list-style: none; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+.wrap { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 56px 0; }
+.section--concrete { background: var(--concrete); }
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  margin-bottom: 28px;
+}
+
+/* 縁石の黄色ラインを区切りとして使う */
+.curb {
+  height: 14px;
+  background: repeating-linear-gradient(-45deg, var(--yellow) 0 16px, var(--ink) 16px 32px);
+}
+
+/* ---------- ヘッダー ---------- */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  height: var(--head-h);
+  background: var(--ink);
+  color: var(--white);
+}
+.site-header .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { font-family: var(--font-display); font-size: 18px; text-decoration: none; letter-spacing: 0.04em; }
+.head-tel {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  background: var(--yellow); color: var(--ink);
+  font-weight: 700; font-size: 15px; line-height: 1;
+  text-decoration: none; border-radius: 999px;
+  white-space: nowrap;
+}
+.head-tel svg { width: 16px; height: 16px; flex: none; }
+
+/* ---------- ヒーロー ---------- */
+.hero { position: relative; background: var(--ink); color: var(--white); overflow: hidden; }
+.hero-img { width: 100%; height: 320px; object-fit: cover; background: #343a40; }
+.hero-body { padding: 32px 0 44px; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(30px, 8.6vw, 52px);
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+.hero-lead { margin-top: 20px; font-size: 16px; color: #e3e6e8; max-width: 34em; }
+.hero-actions { margin-top: 28px; display: grid; gap: 12px; max-width: 420px; }
+
+.btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px; padding: 12px 20px;
+  font-family: var(--font-body); font-weight: 700; font-size: 17px; line-height: 1.3;
+  text-decoration: none; border-radius: 10px;
+  border: 2px solid var(--ink);
+}
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn--primary { background: var(--yellow); color: var(--ink); border-color: var(--yellow); }
+.btn--line { background: transparent; color: var(--white); border-color: var(--white); }
+.btn--dark { background: var(--ink); color: var(--white); }
+.btn--outline { background: var(--white); color: var(--ink); }
+.btn:active { transform: translateY(1px); }
+
+/* ---------- イチオシ ---------- */
+.pick-fig { margin: 0 -20px 28px; }
+.pick-fig img { width: 100%; height: 260px; object-fit: cover; background: #b9bfc4; }
+.pick-lead { font-size: 17px; margin-bottom: 28px; max-width: 34em; }
+.points { display: grid; gap: 14px; }
+.point { background: var(--white); border-left: 8px solid var(--yellow); padding: 18px 18px 18px 20px; }
+.point h3 { font-size: 18px; line-height: 1.5; margin-bottom: 4px; }
+.point p { font-size: 15px; color: var(--ink-soft); }
+.pick-cta { margin-top: 32px; display: grid; gap: 12px; max-width: 420px; }
+
+/* ---------- 流れ ---------- */
+.steps { display: grid; gap: 0; counter-reset: step; }
+.step { position: relative; padding: 0 0 28px 64px; counter-increment: step; }
+.step:last-child { padding-bottom: 0; }
+.step::before {
+  content: counter(step);
+  position: absolute; left: 0; top: 0;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--ink); color: var(--yellow);
+  font-family: var(--font-display); font-size: 20px; line-height: 44px; text-align: center;
+}
+.step::after {
+  content: ""; position: absolute; left: 21px; top: 48px; bottom: 4px; width: 2px; background: var(--ink);
+}
+.step:last-child::after { display: none; }
+.step h3 { font-size: 18px; line-height: 1.5; padding-top: 8px; }
+.step p { font-size: 15px; color: var(--ink-soft); margin-top: 2px; }
+
+/* ---------- 店舗情報 ---------- */
+.info { background: var(--white); border: 2px solid var(--ink); }
+.info-row { display: grid; grid-template-columns: 6.5em 1fr; border-top: 1px solid var(--line); }
+.info-row:first-child { border-top: 0; }
+.info dt { padding: 14px 12px 14px 16px; background: var(--ink); color: var(--white); font-weight: 700; font-size: 14px; }
+.info dd { padding: 14px 16px; font-size: 15px; line-height: 1.7; word-break: break-all; }
+.info dd a { font-weight: 700; }
+.map { margin-top: 24px; border: 2px solid var(--ink); background: #cfd3d6; }
+.map iframe { display: block; width: 100%; height: 300px; border: 0; }
+
+/* ---------- 最終CTA ---------- */
+.final { background: var(--ink); color: var(--white); text-align: center; }
+.final .section-title { margin-bottom: 14px; }
+.final p { color: #e3e6e8; }
+.final-actions { margin: 28px auto 0; display: grid; gap: 12px; max-width: 420px; }
+.final-tel { margin-top: 20px; font-size: 14px; }
+.final-tel strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: 30px; line-height: 1.4; letter-spacing: 0.03em; }
+.final-tel strong a { text-decoration: none; }
+
+.site-footer { padding: 20px 0 28px; font-size: 12px; text-align: center; color: var(--ink-soft); }
+
+/* ---------- 固定ボトムナビ（スマホ） ---------- */
+.bottom-nav {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  height: var(--nav-h);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: var(--ink);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 3px solid var(--yellow);
+}
+.bottom-nav a {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  color: var(--white); text-decoration: none; font-size: 11px; font-weight: 700; line-height: 1.2;
+}
+.bottom-nav a + a { border-left: 1px solid #3b4147; }
+.bottom-nav svg { width: 22px; height: 22px; }
+.bottom-nav a.is-main { background: var(--yellow); color: var(--ink); }
+
+/* ---------- 広い画面 ---------- */
+@media (min-width: 768px) {
+  body { padding-bottom: 0; font-size: 17px; }
+  .bottom-nav { display: none; }
+  .section { padding: 84px 0; }
+  .section-title { font-size: 34px; }
+  .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
+  .hero-img { height: 100%; min-height: 520px; order: 2; }
+  .hero-body { order: 1; padding: 64px 40px 64px max(20px, calc((100vw - 960px) / 2 + 20px)); align-self: center; }
+  .hero-actions { grid-template-columns: 1fr; }
+  .pick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .pick-fig { margin: 0; }
+  .pick-fig img { height: 420px; }
+  .final-actions { grid-template-columns: 1fr 1fr; max-width: 640px; }
+  .info-row { grid-template-columns: 9em 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn:active { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- 固定ヘッダー（電話CTA） -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">オザワ商店</a>
+    <a class="head-tel" href="tel:0222465657" aria-label="電話 022-246-5657">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      022-246-5657
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <!-- 画像1：images/hero_skate.jpg（スケートボードで走る・トリックの写真） -->
+    <img class="hero-img" src="images/hero_skate.jpg" alt="スケートボードに乗る様子" width="1200" height="800">
+    <div class="hero-body">
+      <div class="wrap">
+        <h1>ボードに乗る、<br>はじめの一歩を<br>オザワ商店で。</h1>
+        <p class="hero-lead">宮城県大河原町のオザワ商店が開く、スケートボードスクール。気になることは、まずお気軽にご相談ください。</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="tel:0222465657">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            電話で相談する
+          </a>
+          <a class="btn btn--line" href="http://www.ozawa-store.com/contact_mail/contact.html" target="_blank" rel="noopener">フォームで問い合わせる</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="curb" aria-hidden="true"></div>
+
+  <!-- イチオシ：スケートボードスクール -->
+  <section class="section" id="school">
+    <div class="wrap">
+      <h2 class="section-title">スケートボードスクール</h2>
+      <div class="pick-grid">
+        <figure class="pick-fig">
+          <!-- 画像2：images/school_lesson.jpg（スクールでの練習風景の写真） -->
+          <img src="images/school_lesson.jpg" alt="スケートボードスクールで練習する様子" width="1200" height="800" loading="lazy">
+        </figure>
+        <div>
+          <p class="pick-lead">ボードの上に立つところから、一歩ずつ。大河原町のオザワ商店が、スケートボードをはじめたい方をお待ちしています。</p>
+          <ul class="points">
+            <li class="point">
+              <h3>はじめてでも相談しやすい</h3>
+              <p>「自分でもできるかな」という段階から、お気軽にお問い合わせください。</p>
+            </li>
+            <li class="point">
+              <h3>地元・大河原町で通いやすい</h3>
+              <p>柴田郡大河原町のお店が運営。身近な場所ではじめられます。</p>
+            </li>
+            <li class="point">
+              <h3>お店で直接たずねられる</h3>
+              <p>電話・フォーム・ご来店、どの方法でも気になることを確認できます。</p>
+            </li>
+          </ul>
+          <div class="pick-cta">
+            <a class="btn btn--dark" href="tel:0222465657">電話で申し込み・相談</a>
+            <a class="btn btn--outline" href="http://www.ozawa-store.com/contact_mail/contact.html" target="_blank" rel="noopener">問い合わせフォームへ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ご利用の流れ -->
+  <section class="section section--concrete" id="flow">
+    <div class="wrap">
+      <h2 class="section-title">はじめるまでの流れ</h2>
+      <ol class="steps" style="list-style:none;margin:0;padding:0;">
+        <li class="step">
+          <h3>電話かフォームで連絡する</h3>
+          <p>スクールについて知りたいことを、お気軽にお伝えください。</p>
+        </li>
+        <li class="step">
+          <h3>内容を確認する</h3>
+          <p>スクールの内容や日程などを、お店からご案内します。</p>
+        </li>
+        <li class="step">
+          <h3>スクールに参加する</h3>
+          <p>ご案内に沿って、スケートボードの第一歩を踏み出しましょう。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="section" id="access">
+    <div class="wrap">
+      <h2 class="section-title">店舗情報</h2>
+      <dl class="info">
+        <div class="info-row"><dt>店名</dt><dd>オザワ商店</dd></div>
+        <div class="info-row"><dt>住所</dt><dd>宮城県柴田郡大河原町町１５９−４</dd></div>
+        <div class="info-row"><dt>電話番号</dt><dd><a href="tel:0222465657">022-246-5657</a></dd></div>
+        <div class="info-row"><dt>定休日</dt><dd>毎週火曜日</dd></div>
+        <div class="info-row"><dt>ホームページ</dt><dd><a href="http://www.ozawa-store.com/" target="_blank" rel="noopener">http://www.ozawa-store.com/</a></dd></div>
+        <div class="info-row"><dt>お問い合わせ</dt><dd><a href="http://www.ozawa-store.com/contact_mail/contact.html" target="_blank" rel="noopener">お問い合わせフォーム</a></dd></div>
+      </dl>
+      <div class="map">
+        <iframe
+          title="オザワ商店の地図"
+          src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E6%9F%B4%E7%94%B0%E9%83%A1%E5%A4%A7%E6%B2%B3%E5%8E%9F%E7%94%BA%E7%94%BA%EF%BC%91%EF%BC%95%EF%BC%99%E2%88%92%EF%BC%94&output=embed&hl=ja"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="section final" id="contact">
+    <div class="wrap">
+      <h2 class="section-title">スケートボードを、はじめよう。</h2>
+      <p>スクールについてのご質問は、電話またはフォームから。</p>
+      <div class="final-actions">
+        <a class="btn btn--primary" href="tel:0222465657">電話をかける</a>
+        <a class="btn btn--line" href="http://www.ozawa-store.com/contact_mail/contact.html" target="_blank" rel="noopener">フォームで問い合わせる</a>
+      </div>
+      <p class="final-tel">お電話はこちら（定休日：毎週火曜日）<strong><a href="tel:0222465657">022-246-5657</a></strong></p>
+    </div>
+  </section>
+
+  <!-- 画像3：images/shop_front.jpg（お店の外観・店内の写真）。店舗情報の下に入れる場合は下記を使用 -->
+  <!--
+  <img src="images/shop_front.jpg" alt="オザワ商店の外観" width="1200" height="800" loading="lazy">
+  -->
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">&copy; オザワ商店</div>
+</footer>
+
+<!-- 固定ボトムナビ（スマホ） -->
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <a class="is-main" href="tel:0222465657">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    電話
+  </a>
+  <a href="http://www.ozawa-store.com/contact_mail/contact.html" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.5 7v10.5h15V7z"/></svg>
+    問い合わせ
+  </a>
+  <a href="http://www.ozawa-store.com/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 2 11h3v9h5v-6h4v6h5v-9h3z"/></svg>
+    ホームページ
+  </a>
+  <a href="#access">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+    アクセス
+  </a>
+</nav>
+
+</body>
+</html>
