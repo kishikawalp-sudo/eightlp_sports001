@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE STRIKE skate and tackle shop｜仙台・大町の釣具店</title>
+<meta name="description" content="仙台市青葉区大町のスケートとタックルのお店 THE STRIKE。センスの良い釣具が揃い、初心者の質問にも店主が丁寧に答えます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#0e2c3b;
+  --deep2:#16405a;
+  --foam:#eaf0f2;
+  --white:#ffffff;
+  --strike:#ff5a1f;
+  --ink:#14232c;
+  --mute:#5d717c;
+  --line:#cdd9de;
+  --head:"Dela Gothic One","Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  --body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.8;font-size:16px;padding-top:56px;padding-bottom:64px;-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-family:var(--head);font-weight:400;font-size:26px;line-height:1.4;letter-spacing:.02em;margin-bottom:20px}
+:focus-visible{outline:3px solid var(--strike);outline-offset:2px}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;height:56px;background:var(--deep);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 16px}
+.hd .logo{font-family:var(--head);font-size:15px;letter-spacing:.04em;line-height:1.2;text-decoration:none}
+.hd .logo small{display:block;font-family:var(--body);font-size:10px;font-weight:500;opacity:.75;letter-spacing:.08em}
+.hd .tel{background:var(--strike);color:#fff;text-decoration:none;font-weight:900;font-size:14px;padding:9px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;background:var(--deep);color:#fff;padding:0}
+.hero .photo{position:relative}
+.hero .photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.hero .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,44,59,.15) 0%,rgba(14,44,59,.95) 100%)}
+.hero .copy{position:relative;margin-top:-96px;z-index:2;padding:0 20px 44px;max-width:760px;margin-left:auto;margin-right:auto}
+.hero .area{display:inline-block;background:var(--strike);font-weight:900;font-size:13px;padding:3px 12px;margin-bottom:14px}
+.hero h1{font-family:var(--head);font-weight:400;font-size:clamp(30px,9vw,48px);line-height:1.25;letter-spacing:.01em}
+.hero p{margin-top:16px;font-size:15px;opacity:.92}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:900;font-size:17px;padding:16px 20px;border-radius:6px;margin-top:22px}
+.btn.main{background:var(--strike);color:#fff}
+.btn.sub{background:transparent;border:2px solid #fff;color:#fff;margin-top:12px}
+
+/* featured */
+.pick{background:var(--foam)}
+.pick .tag{display:inline-block;background:var(--deep);color:#fff;font-weight:900;font-size:13px;padding:3px 12px;margin-bottom:12px}
+.pick .lead{font-size:16px;margin-bottom:24px}
+.pick .shot{margin:0 -20px 24px}
+.pick .shot img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.pick ul{list-style:none;border-top:2px solid var(--deep)}
+.pick li{padding:16px 0;border-bottom:1px solid var(--line)}
+.pick li b{display:block;font-size:17px;font-weight:900;color:var(--deep)}
+.pick li span{font-size:14.5px;color:var(--mute)}
+
+/* strengths */
+.str{background:var(--white)}
+.str .item{display:grid;grid-template-columns:6px 1fr;gap:16px;margin-bottom:26px}
+.str .item::before{content:"";background:var(--strike);border-radius:3px}
+.str h3{font-size:18px;font-weight:900;line-height:1.5;margin-bottom:4px;color:var(--deep)}
+.str p{font-size:15px;color:var(--mute)}
+.str .shop{margin:32px -20px 0}
+.str .shop img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* reviews */
+.rev{background:var(--deep);color:#fff}
+.rev h2{color:#fff}
+.rev .card{background:var(--deep2);border-radius:8px;padding:24px 20px}
+.rev .stars{color:#ffb020;font-size:22px;letter-spacing:3px;margin-bottom:10px}
+.rev .txt{font-size:15.5px;line-height:1.95}
+.rev .txt p+p{margin-top:12px}
+.rev .from{margin-top:14px;font-size:13px;opacity:.7}
+
+/* info */
+.info table{width:100%;border-collapse:collapse;font-size:15px}
+.info th,.info td{text-align:left;vertical-align:top;padding:14px 8px;border-bottom:1px solid var(--line)}
+.info th{width:6.5em;font-weight:900;color:var(--deep);white-space:nowrap}
+.info td a{color:var(--deep2);font-weight:700;word-break:break-all}
+.map{margin-top:24px;border-radius:8px;overflow:hidden;background:var(--foam)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{background:var(--strike);color:#fff;text-align:center}
+.cta h2{font-size:24px}
+.cta p{font-size:15px;margin-bottom:6px}
+.cta .tel-big{display:block;background:#fff;color:var(--strike);text-decoration:none;font-family:var(--head);font-size:26px;padding:16px;border-radius:6px;margin-top:20px}
+.cta .row{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+.cta .row a{display:block;border:2px solid #fff;color:#fff;text-decoration:none;font-weight:900;padding:13px;border-radius:6px}
+
+footer{background:var(--ink);color:#b8c6cd;text-align:center;font-size:12px;padding:26px 20px}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;height:60px;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom,0)}
+.bn a{display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:13px;font-weight:900;color:var(--deep)}
+.bn a+a{border-left:1px solid var(--line)}
+.bn a.call{background:var(--strike);color:#fff}
+
+@media(min-width:768px){
+  body{padding-bottom:0}
+  .bn{display:none}
+  .hero .photo img{aspect-ratio:21/9}
+  .btn{display:inline-block;margin-right:12px}
+  .btn.sub{margin-top:22px}
+  .pick .shot,.str .shop{margin-left:0;margin-right:0;border-radius:8px;overflow:hidden}
+  .cta .row{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <a class="logo" href="#top">THE STRIKE<small>skate and tackle shop</small></a>
+  <a class="tel" href="tel:0227978804" aria-label="電話をかける">電話する</a>
+</header>
+
+<main id="top">
+
+<!-- ヒーロー -->
+<div class="hero">
+  <div class="photo">
+    <img src="images/hero_tackle.jpg" alt="THE STRIKE 店内に並ぶ釣具">
+  </div>
+  <div class="copy">
+    <span class="area">仙台・大町</span>
+    <h1>センスで選ぶ、<br>釣具のセレクト。</h1>
+    <p>スケートとタックルのお店 THE STRIKE。トップページを見ただけで「趣味が合う」と感じてもらえる、こだわりの品揃えです。</p>
+    <a class="btn main" href="tel:0227978804">022-797-8804 に電話する</a>
+    <a class="btn sub" href="#info">場所・営業日を見る</a>
+  </div>
+</div>
+
+<!-- イチオシ -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <span class="tag">イチオシ</span>
+    <h2>目移りするほど、<br>良い釣具ばかり。</h2>
+    <p class="lead">THE STRIKEのイチオシは釣具です。お客様からは「商品も良い物ばかりで目移りしてしまう」という声が届いています。</p>
+    <div class="shot">
+      <img src="images/lure_closeup.jpg" alt="THE STRIKEで扱う釣具のアップ">
+    </div>
+    <ul>
+      <li><b>見ただけで伝わるセンス</b><span>お店の世界観に共感して選ぶ人が多い、趣味の合う品揃えです。</span></li>
+      <li><b>初心者の「わからない」も歓迎</b><span>何から揃えればいいか迷ったら、店主に聞いてください。</span></li>
+      <li><b>質問に丁寧に答えてくれる店主</b><span>道具のことも、釣りのことも、ひとつずつ丁寧にお答えします。</span></li>
+    </ul>
+    <a class="btn main" href="https://thestrike.base.shop/" target="_blank" rel="noopener">ネットショップで商品を見る</a>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="str" id="strength">
+  <div class="wrap">
+    <h2>THE STRIKEが<br>選ばれる理由</h2>
+    <div class="item">
+      <div>
+        <h3>店主がとにかく親切</h3>
+        <p>質問にも丁寧に答えてくれる、と口コミでも評判です。釣りを始めたばかりの方も、気軽に相談できます。</p>
+      </div>
+    </div>
+    <div class="item">
+      <div>
+        <h3>スケートとタックルの店</h3>
+        <p>店名のとおり、スケートの空気をまとった釣具店。ほかではあまり見ない雰囲気が、趣味の合う人を引きつけます。</p>
+      </div>
+    </div>
+    <div class="item">
+      <div>
+        <h3>仙台に来たら立ち寄りたくなる</h3>
+        <p>遠方のお客様からも「仙台に行った時は必ず立ち寄る」と言われるお店です。</p>
+      </div>
+    </div>
+    <div class="shop">
+      <img src="images/shop_inside.jpg" alt="THE STRIKE 店内の様子">
+    </div>
+  </div>
+</section>
+
+<!-- 口コミ -->
+<section class="rev" id="review">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="card">
+      <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+      <div class="txt">
+        <p>トップページを見ただけでセンスの良さがわかります！趣味が合います！</p>
+        <p>私の代わりに関東から仙台に越した釣り初心者の若い衆を使いにやります。色々教えてやってください。</p>
+        <p>仙台に行った時は必ず立ち寄らせていただきます。店主も凄く親切で質問にも丁寧に答えてくれます。商品も良い物ばかりで目移りしてしまいます。</p>
+      </div>
+      <p class="from">Googleマップの口コミより</p>
+    </div>
+  </div>
+</section>
+
+<!-- 店舗情報 -->
+<section class="info" id="info">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>THE STRIKE skate and tackle shop</td></tr>
+      <tr><th>代表者</th><td>末谷 惣一</td></tr>
+      <tr><th>住所</th><td>宮城県仙台市青葉区大町2丁目14-11-2F</td></tr>
+      <tr><th>電話</th><td><a href="tel:0227978804">022-797-8804</a></td></tr>
+      <tr><th>定休日</th><td>毎週月曜日<br>イベント等で臨時休業する場合があります。</td></tr>
+      <tr><th>ネットショップ</th><td><a href="https://thestrike.base.shop/" target="_blank" rel="noopener">thestrike.base.shop</a></td></tr>
+      <tr><th>Instagram</th><td><a href="https://www.instagram.com/thestrikeskateandtackleshop/" target="_blank" rel="noopener">@thestrikeskateandtackleshop</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="THE STRIKE の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9D%92%E8%91%89%E5%8C%BA%E5%A4%A7%E7%94%BA2%E4%B8%81%E7%9B%AE14-11&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>気になる釣具は、<br>まず電話で聞いてみてください。</h2>
+    <p>在庫やおすすめも、店主が丁寧にお答えします。<br>（毎週月曜は定休日です）</p>
+    <a class="tel-big" href="tel:0227978804">022-797-8804</a>
+    <div class="row">
+      <a href="https://thebase.com/inquiry/thestrike-base-shop?_gl=1*dmjbfn*_gcl_au*NzM2OTI3MzYwLjE3NjU4NTAxNjA.*_ga*MTE2OTI3MjExNi4xNzY1ODUwMTYw*_ga_574HL6KGKQ*czE3NjU4NTAxNjAkbzEkZzEkdDE3NjU4NTAyMjYkajU5JGwwJGgw" target="_blank" rel="noopener">問い合わせフォーム</a>
+      <a href="https://www.instagram.com/thestrikeskateandtackleshop/" target="_blank" rel="noopener">Instagramを見る</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>&copy; THE STRIKE skate and tackle shop</footer>
+
+<nav class="bn" aria-label="固定メニュー">
+  <a class="call" href="tel:0227978804">電話する</a>
+  <a href="#pick">イチオシ</a>
+  <a href="#info">アクセス</a>
+  <a href="https://thestrike.base.shop/" target="_blank" rel="noopener">ショップ</a>
+</nav>
+
+</body>
+</html>
