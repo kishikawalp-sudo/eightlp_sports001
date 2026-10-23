@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>にしむら運動具店｜気仙沼のテニス・バドミントン・卓球専門店｜ガット張り替え</title>
+<meta name="description" content="気仙沼市田中前のテニス・ソフトテニス・バドミントン・卓球専門店。ストリング歴40年のJINが、あなたのプレーに合わせてガットを張り替えます。">
+<style>
+:root{
+  --ink:#14263b;
+  --paper:#f6f7f2;
+  --ball:#d8e44a;
+  --teal:#1d7a6c;
+  --line:#d9ddd3;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+  --sans:"Hiragino Sans","Yu Gothic","Noto Sans JP",Meiryo,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.85;font-size:16px;padding-bottom:calc(68px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:100%;max-width:720px;margin:0 auto;padding:0 20px}
+h1,h2{font-family:var(--serif);font-weight:700;line-height:1.45}
+h2{font-size:1.5rem;margin-bottom:20px}
+section{padding:56px 0}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+/* ヒーロー：ラケットのガット目をイメージした格子 */
+.hero{background:
+  repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 1px,transparent 1px 22px),
+  repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 1px,transparent 1px 22px),
+  var(--ink);
+  color:#fff;padding:calc(36px + env(safe-area-inset-top,0px)) 0 0}
+.shop{font-size:.9rem;letter-spacing:.08em;margin-bottom:28px;opacity:.9}
+.hero h1{font-size:clamp(1.9rem,8vw,2.8rem);margin-bottom:16px}
+.hero h1 span{display:block}
+.hero p.lead{font-size:1rem;max-width:30em;opacity:.95}
+.hero .badge{display:inline-block;margin-top:20px;background:var(--ball);color:var(--ink);font-weight:700;padding:6px 14px;border-radius:999px;font-size:.9rem}
+.hero figure{margin-top:32px}
+.hero img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+.btns{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:16px;border-radius:8px;border:2px solid var(--ink)}
+.btn.main{background:var(--ball);color:var(--ink);border-color:var(--ball);font-size:1.1rem}
+.btn.sub{background:#fff;color:var(--ink)}
+
+/* イチオシ */
+.pick{background:#fff;border-top:6px solid var(--ball)}
+.pick .tag{display:inline-block;background:var(--ink);color:#fff;font-size:.85rem;padding:2px 12px;border-radius:4px;margin-bottom:12px}
+.pick img{width:100%;aspect-ratio:3/2;object-fit:cover;margin:20px 0;border-radius:6px}
+.sports{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;list-style:none}
+.sports li{border:2px solid var(--ink);border-radius:8px;padding:12px;font-weight:700;text-align:center}
+.sports li:first-child{grid-column:1/-1}
+
+/* 強み */
+.points{list-style:none;display:grid;gap:14px}
+.points li{padding:16px 18px;border-left:5px solid var(--teal);background:#fff}
+.points b{display:block;font-size:1.05rem;margin-bottom:2px}
+
+/* クチコミ */
+.voice{background:var(--ink);color:#fff}
+.voice .stars{color:var(--ball);font-size:1.3rem;letter-spacing:.1em}
+.voice blockquote{font-family:var(--serif);font-size:1.15rem;margin-top:8px}
+.voice small{display:block;margin-top:12px;opacity:.75}
+
+/* 店舗情報 */
+dl{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:6.5em 1fr;gap:8px;padding:14px 0;border-bottom:1px solid var(--line)}
+dt{font-weight:700}
+dd{word-break:break-all}
+.cta{text-align:center;background:#fff}
+.cta h2{margin-bottom:8px}
+
+footer{text-align:center;font-size:.8rem;padding:24px 20px;opacity:.7}
+
+/* 固定CTA（スマホ） */
+.bar{position:fixed;left:0;right:0;bottom:0;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid var(--line);z-index:10}
+.bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:12px 8px;border-radius:8px}
+.bar .tel{background:var(--ball)}
+.bar .mail{background:var(--ink);color:#fff}
+
+@media (min-width:720px){
+  body{font-size:17px}
+  .btns{flex-direction:row}.btn{flex:1}
+  .hero img{aspect-ratio:16/9}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="shop">気仙沼市田中前　にしむら運動具店</p>
+    <h1><span>ストリング歴40年。</span><span>あなたのプレーに合わせて、</span><span>ガットを張る。</span></h1>
+    <p class="lead">テニス・ソフトテニス・バドミントン・卓球に特化した専門スポーツ店。プレイヤーの特徴とスタイルに合わせたガット張り替えをご提供します。</p>
+    <span class="badge">GOSEN認定ストリンガー「張人」在籍</span>
+    <div class="btns">
+      <a class="btn main" href="tel:0226221355">電話で相談する　0226-22-1355</a>
+      <a class="btn sub" href="https://strings-jin.mystrikingly.com/" target="_blank" rel="noopener">公式サイトを見る</a>
+    </div>
+  </div>
+  <figure class="wrap">
+    <img src="images/hero_stringing.jpg" alt="ガットを張るストリンガーのJINさんの手元" width="800" height="600">
+  </figure>
+</header>
+
+<main>
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <span class="tag">イチオシ</span>
+      <h2>ラケット競技に、ここまで特化した店。</h2>
+      <p>気仙沼市田中前の「にしむら運動具店」は、テニス・ソフトテニス、バドミントン、卓球に特化した専門スポーツ店です。競技を知り尽くした店だからできる、一人ひとりに合わせた道具選びとガット張り替えで、あなたのプレーを支えます。</p>
+      <img src="images/gut_stringing.jpg" alt="ガット張り替えの様子" width="600" height="400">
+      <ul class="sports">
+        <li>テニス・ソフトテニス</li>
+        <li>バドミントン</li>
+        <li>卓球</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="strength">
+    <div class="wrap">
+      <h2>選ばれる、3つの理由</h2>
+      <ul class="points">
+        <li><b>ストリング歴40年のJIN</b>長年の経験で、プレイヤーの特徴とスタイルを見極めます。</li>
+        <li><b>GOSEN認定ストリンガー「張人」</b>ガットメーカーGOSEN（ゴーセン）の認定を受けた張り手が対応します。</li>
+        <li><b>3競技に特化した専門店</b>テニス・ソフトテニス、バドミントン、卓球。学校用品のご相談もできます。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="voice" id="voice">
+    <div class="wrap">
+      <h2>お客様の声</h2>
+      <p class="stars" aria-label="5段階中4">★★★★</p>
+      <blockquote>場所を探して迷いました。店主さんはじめ親切です。学校用品はお世話になっています。</blockquote>
+      <small>Google口コミより</small>
+    </div>
+  </section>
+
+  <section id="info">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <img src="images/shop_exterior.jpg" alt="にしむら運動具店の外観" width="600" height="400" style="margin-bottom:20px;border-radius:6px">
+      <dl>
+        <div class="row"><dt>店名</dt><dd>にしむら運動具店</dd></div>
+        <div class="row"><dt>住所</dt><dd>宮城県気仙沼市田中前３丁目５−１３<br><a href="https://www.google.com/maps/search/?api=1&query=宮城県気仙沼市田中前3丁目5-13+にしむら運動具店" target="_blank" rel="noopener">地図を開く</a></dd></div>
+        <div class="row"><dt>電話</dt><dd><a href="tel:0226221355">0226-22-1355</a></dd></div>
+        <div class="row"><dt>定休日</dt><dd>毎週火曜</dd></div>
+        <div class="row"><dt>メール</dt><dd><a href="mailto:wvsp@movie.ocn.ne.jp">wvsp@movie.ocn.ne.jp</a></dd></div>
+        <div class="row"><dt>公式サイト</dt><dd><a href="https://strings-jin.mystrikingly.com/" target="_blank" rel="noopener">strings-jin.mystrikingly.com</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>ガットの張り替え、まずはご相談ください。</h2>
+      <p>お店は少し分かりにくい場所にあります。迷ったらお電話ください。</p>
+      <div class="btns">
+        <a class="btn main" href="tel:0226221355">電話する</a>
+        <a class="btn sub" href="mailto:wvsp@movie.ocn.ne.jp">メールで問い合わせる</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© にしむら運動具店</footer>
+
+<nav class="bar" aria-label="お問い合わせ">
+  <a class="tel" href="tel:0226221355">電話する</a>
+  <a class="mail" href="mailto:wvsp@movie.ocn.ne.jp">メール</a>
+</nav>
+
+</body>
+</html>
