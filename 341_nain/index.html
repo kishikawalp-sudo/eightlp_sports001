@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>スポーツショップナイン 郡山店｜クボタスラッガー・グラブの湯もみ型付け｜野球用品専門店</title>
+<meta name="description" content="郡山の野球用品専門店。1999年創業。クボタスラッガーに重点を置き、ご注文後に独自の湯もみ・型付けを行って納品。スパイク修理・ネーム刺繍も対応。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#10203a; --navy2:#1b2f52; --leather:#8a4b25; --leather-d:#5e3015;
+  --stitch:#c8312b; --chalk:#f7f6f2; --line:#e3ded3; --text:#1d1d1f; --muted:#5f6068;
+  --serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:var(--sans);color:var(--text);background:var(--chalk);line-height:1.8;font-size:16px;
+  padding-top:calc(56px + env(safe-area-inset-top,0px));padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--stitch);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-family:var(--serif);font-weight:900;font-size:clamp(24px,6.6vw,32px);line-height:1.4;margin:0 0 20px;letter-spacing:.02em}
+p{margin:0 0 1em}
+.ph{background:linear-gradient(135deg,#d9cdbb,#b9a58a);aspect-ratio:4/3;overflow:hidden;border-radius:6px}
+.ph img{width:100%;height:100%;object-fit:cover}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--navy);color:#fff;
+  padding:env(safe-area-inset-top,0px) 16px 0;box-shadow:0 2px 0 var(--stitch)}
+.hd .in{height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:960px;margin:0 auto}
+.hd .nm{font-family:var(--serif);font-weight:900;font-size:15px;line-height:1.25}
+.hd .nm small{display:block;font-family:var(--sans);font-weight:400;font-size:11px;opacity:.75}
+.tel-btn{background:var(--stitch);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:9px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:0}
+.hero .ph{border-radius:0;aspect-ratio:4/3;max-height:56vh;width:100%}
+.hero .copy{padding:28px 20px 44px;max-width:720px;margin:0 auto}
+.hero .since{display:inline-block;border:1px solid rgba(255,255,255,.5);padding:2px 12px;font-size:13px;margin-bottom:14px}
+.hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(28px,8.4vw,44px);line-height:1.35;margin:0 0 16px;letter-spacing:.02em}
+.hero p{opacity:.92;margin-bottom:24px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:16px 20px;border-radius:8px;font-size:17px}
+.btn.red{background:var(--stitch);color:#fff}
+.btn.ghost{border:2px solid #fff;color:#fff;margin-top:12px}
+.btn.navy{background:var(--navy);color:#fff}
+
+/* ichioshi */
+.ichi{background:var(--chalk)}
+.badge{display:inline-block;background:var(--leather);color:#fff;font-weight:700;font-size:14px;padding:3px 14px;margin-bottom:12px;border-radius:2px}
+.ichi .ph{margin:0 0 24px}
+.steps{list-style:none;margin:24px 0;padding:0;border-left:3px solid var(--stitch)}
+.steps li{padding:2px 0 18px 18px;position:relative}
+.steps li::before{content:"";position:absolute;left:-8px;top:10px;width:13px;height:13px;border-radius:50%;background:var(--chalk);border:3px solid var(--stitch)}
+.steps b{display:block;font-family:var(--serif);font-size:18px}
+.note{background:#fff;border:1px dashed var(--leather);padding:16px 18px;border-radius:6px;font-size:15px}
+
+/* strengths */
+.str{background:var(--leather-d);color:#fff}
+.str h2{color:#fff}
+.str .item{padding:20px 0;border-top:1px solid rgba(255,255,255,.25)}
+.str .item h3{font-family:var(--serif);font-size:19px;margin:0 0 6px}
+.str .item p{margin:0;opacity:.92;font-size:15px}
+
+/* story */
+.story .ph{margin-top:24px}
+.story blockquote{margin:0 0 1em;padding-left:16px;border-left:3px solid var(--leather);font-family:var(--serif);font-size:18px;line-height:1.9}
+
+/* reviews */
+.rev{background:#fff}
+.card{background:var(--chalk);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:14px}
+.stars{color:var(--stitch);letter-spacing:.12em;font-size:18px}
+.card p{margin:6px 0 0}
+
+/* info */
+table{width:100%;border-collapse:collapse;font-size:15px;background:#fff;border:1px solid var(--line)}
+th,td{padding:14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:30%;background:#efebe2;font-weight:700}
+td a{color:var(--navy);word-break:break-all}
+.map{margin-top:20px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta .tel{display:block;font-family:var(--serif);font-weight:900;font-size:clamp(30px,9vw,42px);color:#fff;text-decoration:none;margin:10px 0 4px}
+.cta small{opacity:.8;display:block;margin-bottom:20px}
+footer{background:#0a1425;color:#aab2c2;text-align:center;font-size:12px;padding:20px 20px 24px}
+
+/* bottom nav */
+.bn{position:fixed;bottom:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;
+  border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn a{text-decoration:none;text-align:center;font-size:12px;font-weight:700;padding:10px 4px;min-height:56px;color:var(--navy)}
+.bn a:first-child{background:var(--stitch);color:#fff}
+.bn span{display:block;font-size:18px;line-height:1.2}
+
+@media (min-width:768px){
+  .bn{display:none}body{padding-bottom:0}
+  .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center}
+  .hero .ph{max-height:none;height:100%;aspect-ratio:auto;min-height:480px}
+  .hero .copy{padding:40px}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="in">
+    <div class="nm">スポーツショップナイン<small>郡山店｜野球用品専門店</small></div>
+    <a class="tel-btn" href="tel:0249830809" aria-label="電話をかける">電話する</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="ph"><img src="images/hero.jpg" alt="スポーツショップナイン 郡山店 店内に並ぶクボタスラッガーのグラブ" width="1200" height="900"></div>
+  <div class="copy">
+    <span class="since">1999年6月9日 OPEN</span>
+    <h1>野球用品のことなら、<br>なんでも相談できる店。</h1>
+    <p>取扱いメーカーはあえて少数。作りに自信のある商品だけを、郡山の野球人にお届けします。</p>
+    <a class="btn red" href="tel:0249830809">電話で相談する　024-983-0809</a>
+    <a class="btn ghost" href="#ichioshi">イチオシのグラブを見る</a>
+  </div>
+</section>
+
+<!-- ICHIOSHI -->
+<section class="ichi" id="ichioshi">
+  <div class="wrap">
+    <span class="badge">イチオシ</span>
+    <h2>注文を受けてから仕上げる、<br>クボタスラッガーのグラブ。</h2>
+    <div class="ph"><img src="images/ichioshi.jpg" alt="湯もみ・型付けを施したクボタスラッガーのグラブ" width="1200" height="900" loading="lazy"></div>
+    <p>当店が絶大な信頼を寄せる野球用品専門ブランド「クボタスラッガー」。メーカーのコンセプトと同じく、ご注文をいただいてから少し時間をかけ、当店独自の「湯もみ」と「型付け」を丁寧に行ってお渡しします。</p>
+    <ol class="steps">
+      <li><b>ご注文・ご相談</b>ポジション、手の大きさ、好みの握り心地をお聞かせください。</li>
+      <li><b>湯もみ</b>革をほぐし、手になじみやすい状態に整えます。</li>
+      <li><b>型付け</b>一つひとつ手をかけて形を作り、納品します。</li>
+    </ol>
+    <p class="note">グラブへのネーム刺繍は無料です。バッティンググローブやリストバンドなどのアクセサリーにも、ネーム刺繍サービス（有料）を行っています。</p>
+    <p style="margin-top:20px"><a class="btn red" href="tel:0249830809">グラブについて電話で聞く</a></p>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section class="str" id="strength">
+  <div class="wrap">
+    <h2>ナインが選ばれる理由</h2>
+    <div class="item"><h3>作りに自信のある商品だけ</h3><p>大型運動具店とは違い、取扱いメーカーは極少数。よく見かけるメーカーの商品も、厳選に厳選を重ね、本当に良いものだけを販売しています。</p></div>
+    <div class="item"><h3>末永く使えることを一番に</h3><p>良い商品を長く使っていただくことが一番。作りに自信のない商品はおすすめしません。</p></div>
+    <div class="item"><h3>スパイクの修理などにも対応</h3><p>「スパイクの修理等もやってくれる」とお客様からもご紹介いただいています。気軽にご相談ください。</p></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="wrap">
+    <h2>1999年、野球用品専門店として<br>オープンしました。</h2>
+    <blockquote>良い商品を末永く使っていただくことが一番。</blockquote>
+    <p>店内には、プロの選手が実際に試合で使用した、グラウンドの土が付着したスパイクや、汗の染み込んだバッティング手袋などが展示してあります。</p>
+    <p>実際にプレーをしない方も、ご覧になるだけで結構です。お気軽にご来店ください。</p>
+    <div class="ph"><img src="images/shop.jpg" alt="店内に展示されたプロ選手使用のスパイクとバッティング手袋" width="1200" height="900" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="rev" id="review">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="card"><div class="stars" aria-label="5点満点中5点">★★★★★</div><p>野球用品のこと、なんでも相談にのって頂いてます。スパイクの修理等やってくれるそうですよ！</p></div>
+    <div class="card"><div class="stars" aria-label="5点満点中4点">★★★★<span style="color:#ccc">★</span></div><p>お店の方が大変親切でした。</p></div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="access">
+  <div class="wrap">
+    <h2>店舗情報</h2>
+    <table>
+      <tr><th>店名</th><td>スポーツショップナイン 郡山店</td></tr>
+      <tr><th>住所</th><td>福島県郡山市桑野3丁目14-18<br>クローネ郡山If 1-C号</td></tr>
+      <tr><th>電話</th><td><a href="tel:0249830809">024-983-0809</a></td></tr>
+      <tr><th>定休日</th><td>毎週火曜日・水曜日</td></tr>
+      <tr><th>HP</th><td><a href="http://www.sports-nine.com/" target="_blank" rel="noopener">http://www.sports-nine.com/</a></td></tr>
+      <tr><th>メール</th><td><a href="mailto:info@sports-nine.com">info@sports-nine.com</a></td></tr>
+    </table>
+    <div class="map">
+      <iframe title="スポーツショップナイン 郡山店の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%E9%83%A1%E5%B1%B1%E5%B8%82%E6%A1%91%E9%87%8E3%E4%B8%81%E7%9B%AE14-18&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>まずは気軽に、<br>ご相談ください。</h2>
+    <a class="tel" href="tel:0249830809">024-983-0809</a>
+    <small>定休日：毎週火曜日・水曜日</small>
+    <a class="btn red" href="tel:0249830809">電話をかける</a>
+    <a class="btn ghost" href="mailto:info@sports-nine.com">メールで問い合わせる</a>
+  </div>
+</section>
+</main>
+
+<footer>© スポーツショップナイン 郡山店</footer>
+
+<nav class="bn" aria-label="固定メニュー">
+  <a href="tel:0249830809"><span>📞</span>電話</a>
+  <a href="mailto:info@sports-nine.com"><span>✉️</span>メール</a>
+  <a href="#access"><span>📍</span>アクセス</a>
+  <a href="http://www.sports-nine.com/" target="_blank" rel="noopener"><span>🌐</span>HP</a>
+</nav>
+
+</body>
+</html>
