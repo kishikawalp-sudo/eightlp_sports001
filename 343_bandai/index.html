@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>バンダイスポーツ｜会津坂下町｜グラウンドゴルフ・ゲートボール用品は地域1の品揃え</title>
+<meta name="description" content="福島県会津坂下町のスポーツ店 バンダイスポーツ。グラウンドゴルフ・ゲートボール用品を地域1の品揃え。1階のマーキング工房でネーム刺繍・昇華プリントにも対応。">
+<meta property="og:title" content="バンダイスポーツ｜地域1の品揃え">
+<meta property="og:description" content="グラウンドゴルフ・ゲートボール用品は地域1の品揃え。マーキング工房・WEB通販も。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1d6b3a;
+  --green-dark:#0f3d22;
+  --lawn:#e8f2e3;
+  --ball:#f4b400;
+  --red:#c8321e;
+  --ink:#14231a;
+  --sub:#4b5b50;
+  --line:#d5e2d0;
+  --bg:#f7faf5;
+  --white:#fff;
+  --header-h:56px;
+  --nav-h:62px;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + env(safe-area-inset-top,0px) + 8px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.85;
+  font-size:16px;
+  padding-top:calc(var(--header-h) + env(safe-area-inset-top,0px));
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+.wrap{width:100%;max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+
+/* header */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:var(--green-dark);color:var(--white);
+  padding-top:env(safe-area-inset-top,0px);
+}
+.header-in{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:960px;margin:0 auto;padding:0 16px}
+.logo{font-weight:900;font-size:18px;letter-spacing:.04em;text-decoration:none}
+.logo small{display:block;font-weight:500;font-size:10px;opacity:.75;letter-spacing:.06em;line-height:1.2}
+.tel-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--ball);color:var(--ink);font-weight:900;text-decoration:none;
+  padding:8px 14px;border-radius:999px;font-size:14px;white-space:nowrap;
+}
+.tel-btn:focus-visible,.btn:focus-visible,.nav a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+
+/* hero */
+.hero{position:relative;padding:0;background:var(--green-dark);color:var(--white);overflow:hidden}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.55}
+.hero-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 20px 28px;max-width:760px;margin:0 auto;background:linear-gradient(to top,rgba(15,61,34,.95) 0%,rgba(15,61,34,.35) 55%,rgba(15,61,34,0) 100%)}
+.hero-kicker{font-size:13px;font-weight:700;margin-bottom:6px;color:var(--ball)}
+.hero h1{font-size:clamp(40px,13vw,76px);line-height:1.1;font-weight:900;letter-spacing:.02em}
+.hero h1 span{display:block;font-size:.38em;letter-spacing:.06em;margin-bottom:.2em}
+.hero-lead{margin-top:12px;font-size:14px;line-height:1.7;max-width:30em}
+@media (min-width:768px){
+  .hero-img{aspect-ratio:16/8}
+  .hero-body{padding-bottom:44px}
+}
+
+/* headings */
+.sec-title{font-size:clamp(24px,6.4vw,34px);font-weight:900;line-height:1.4;margin-bottom:12px}
+.sec-lead{color:var(--sub);margin-bottom:28px}
+
+/* featured */
+.pick{background:var(--green);color:var(--white)}
+.pick .sec-lead{color:#d9ecd3}
+.pick-badge{display:inline-block;background:var(--ball);color:var(--ink);font-weight:900;font-size:14px;padding:4px 14px;border-radius:999px;margin-bottom:14px}
+.pick-img{border-radius:14px;margin:24px 0;width:100%;aspect-ratio:3/2;object-fit:cover}
+.chips{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chips li{background:var(--white);color:var(--ink);font-weight:700;text-align:center;padding:14px 8px;border-radius:10px;line-height:1.4}
+.chips li small{display:block;font-weight:500;color:var(--sub);font-size:12px;margin-top:2px}
+.pick-note{margin-top:20px;font-size:15px;color:#d9ecd3}
+
+/* strengths */
+.strengths{background:var(--white)}
+.str-list{display:grid;gap:18px}
+.str{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:20px;border:2px solid var(--line);border-radius:14px;background:var(--bg)}
+.str-mark{width:44px;height:44px;border-radius:50%;background:var(--green);color:var(--white);display:grid;place-items:center;font-weight:900;font-size:20px}
+.str h3{font-size:18px;line-height:1.5;margin-bottom:4px}
+.str p{font-size:15px;color:var(--sub)}
+.mark-img{border-radius:14px;margin-top:24px;width:100%;aspect-ratio:3/2;object-fit:cover}
+
+/* reviews */
+.reviews{background:var(--lawn)}
+.rev-list{display:grid;gap:16px}
+.rev{background:var(--white);border-radius:14px;padding:20px;border-left:6px solid var(--ball)}
+.stars{color:#e59a00;font-size:20px;letter-spacing:.1em;margin-bottom:6px;font-weight:700}
+.stars span{font-size:13px;color:var(--sub);letter-spacing:0;margin-left:6px}
+.rev p{font-size:15px}
+
+/* info */
+.info{background:var(--white)}
+.info-table{width:100%;border-collapse:collapse;font-size:15px;margin-bottom:24px}
+.info-table th,.info-table td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info-table th{width:7em;white-space:nowrap;color:var(--green);font-weight:700}
+.info-table a{color:var(--green);font-weight:700;word-break:break-all}
+.map{position:relative;width:100%;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:2px solid var(--line)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.sns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.sns a{flex:1 1 140px;text-align:center;text-decoration:none;font-weight:700;padding:12px;border:2px solid var(--green);border-radius:10px;color:var(--green)}
+
+/* cta */
+.cta{background:var(--green-dark);color:var(--white);text-align:center}
+.cta .sec-lead{color:#cfe3c9}
+.btn-col{display:grid;gap:12px;max-width:420px;margin:0 auto}
+.btn{display:block;padding:16px;border-radius:12px;font-weight:900;font-size:18px;text-decoration:none}
+.btn-tel{background:var(--ball);color:var(--ink)}
+.btn-sub{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.7);font-size:16px}
+.tel-num{display:block;font-size:13px;font-weight:500}
+
+footer{background:#0a2616;color:#b8cfb0;text-align:center;font-size:12px;padding:20px 20px 28px}
+
+/* bottom nav */
+.nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--white);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.nav ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,1fr);max-width:760px}
+.nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;height:var(--nav-h);font-size:12px;font-weight:700;text-decoration:none;color:var(--green-dark);gap:2px}
+.nav a .ic{font-size:20px;line-height:1}
+.nav .nav-tel{background:var(--ball)}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (min-width:768px){
+  section{padding:80px 0}
+  .chips{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-in">
+    <a class="logo" href="#top">バンダイスポーツ<small>福島県会津坂下町</small></a>
+    <a class="tel-btn" href="tel:0242834706" aria-label="電話をかける 0242-83-4706">📞 電話する</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-img" src="images/hero.jpg" alt="バンダイスポーツ店内のグラウンドゴルフ・ゲートボール用品の売り場">
+    <div class="hero-body">
+      <p class="hero-kicker">会津坂下町のスポーツ店 バンダイスポーツ</p>
+      <h1><span>グラウンドゴルフ・ゲートボールなら</span>地域1の品揃え</h1>
+      <p class="hero-lead">大型量販店にはなかなか並ばない用品まで。探していた一品が、きっと見つかります。</p>
+    </div>
+  </section>
+
+  <!-- イチオシ -->
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <span class="pick-badge">イチオシ</span>
+      <h2 class="sec-title">地域1の品揃えで、<br>道具選びがぐっと楽になる</h2>
+      <p class="sec-lead">グラウンドゴルフ、ゲートボールなど、大型量販店ではあまり陳列していない商品を、地域一番の品揃えでご用意しています。</p>
+      <img class="pick-img" src="images/products.jpg" alt="バンダイスポーツのグラウンドゴルフ用品・ゲートボール用品の陳列">
+      <ul class="chips">
+        <li>グラウンドゴルフ<small>用品</small></li>
+        <li>ゲートボール<small>用品</small></li>
+        <li>野球グッズ<small>身近な品揃え</small></li>
+        <li>ジャージ<small>刺繍・マーク加工も</small></li>
+      </ul>
+      <p class="pick-note">「こんなものはありますか？」とお気軽にお声がけください。</p>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section class="strengths" id="strength">
+    <div class="wrap">
+      <h2 class="sec-title">バンダイスポーツの3つの強み</h2>
+      <p class="sec-lead">買うだけでなく、仕上げも、ネット注文も。一軒でまとめて相談できます。</p>
+      <div class="str-list">
+        <div class="str">
+          <div class="str-mark">1</div>
+          <div>
+            <h3>専門的な用品が地域一番の品揃え</h3>
+            <p>グラウンドゴルフ・ゲートボールなど、大型量販店ではあまり見かけない商品を豊富に取り揃えています。</p>
+          </div>
+        </div>
+        <div class="str">
+          <div class="str-mark">2</div>
+          <div>
+            <h3>1階のマーキング工房</h3>
+            <p>ネーム刺繍、マーク加工、昇華プリント、転写プリントなど、お客様のニーズに合わせたマーク加工をご提案します。</p>
+          </div>
+        </div>
+        <div class="str">
+          <div class="str-mark">3</div>
+          <div>
+            <h3>オンラインショッピングの管理店</h3>
+            <p>楽天、Yahoo!ショッピングなどへの掲載、受注、発送業務を行っています。</p>
+          </div>
+        </div>
+      </div>
+      <img class="mark-img" src="images/marking.jpg" alt="マーキング工房でのネーム刺繍・マーク加工の様子">
+    </div>
+  </section>
+
+  <!-- 口コミ -->
+  <section class="reviews" id="review">
+    <div class="wrap">
+      <h2 class="sec-title">お客様の声</h2>
+      <p class="sec-lead">Googleマップに寄せられた口コミより</p>
+      <div class="rev-list">
+        <div class="rev">
+          <div class="stars">★★★★<span>4.0</span></div>
+          <p>高校ジャージの刺繍もお願いできて、店員さんも親切です。初めて寄りました。店員さんがすぐお声がけいただけたため、早く買い物を済ませることができました！<br>駐車場🅿が店の前で、出入りするには大変でした。</p>
+        </div>
+        <div class="rev">
+          <div class="stars">★★★★★<span>5.0</span></div>
+          <p>身近なスポーツ店です。店員さんも親切でまた来ようという気になります。野球グッズをよく買っています。親切丁寧！</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="info" id="info">
+    <div class="wrap">
+      <h2 class="sec-title">店舗情報</h2>
+      <table class="info-table">
+        <tr><th>店名</th><td>バンダイスポーツ</td></tr>
+        <tr><th>住所</th><td>福島県河沼郡会津坂下町五反田１３１４−１</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0242834706">0242-83-4706</a></td></tr>
+        <tr><th>定休日</th><td>毎週日曜日</td></tr>
+        <tr><th>メール</th><td><a href="mailto:yumi@bandai-sp.com">yumi@bandai-sp.com</a></td></tr>
+        <tr><th>公式HP</th><td><a href="https://bandai8.wixsite.com/bandaisports/blank-1" target="_blank" rel="noopener">bandai8.wixsite.com/bandaisports</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe title="バンダイスポーツの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%E6%B2%B3%E6%B2%BC%E9%83%A1%E4%BC%9A%E6%B4%A5%E5%9D%82%E4%B8%8B%E7%94%BA%E4%BA%94%E5%8F%8D%E7%94%B0%EF%BC%91%EF%BC%93%EF%BC%91%EF%BC%94%E2%88%92%EF%BC%91&output=embed"></iframe>
+      </div>
+      <div class="sns">
+        <a href="https://www.instagram.com/bandai_sports.kobayashi/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/channel/UCvLMCFJACIBpZsA7igyKbUw" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://bandai8.wixsite.com/bandaisports/blank-1" target="_blank" rel="noopener">公式HP</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2 class="sec-title">探している用品、<br>まずはお電話ください</h2>
+      <p class="sec-lead">在庫のご確認、マーク加工のご相談もお気軽にどうぞ。<br>定休日は毎週日曜日です。</p>
+      <div class="btn-col">
+        <a class="btn btn-tel" href="tel:0242834706"><span class="tel-num">タップして電話する</span>📞 0242-83-4706</a>
+        <a class="btn btn-sub" href="mailto:yumi@bandai-sp.com">メールで問い合わせる</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© バンダイスポーツ</footer>
+
+<nav class="nav" aria-label="固定メニュー">
+  <ul>
+    <li><a class="nav-tel" href="tel:0242834706"><span class="ic">📞</span>電話</a></li>
+    <li><a href="#strength"><span class="ic">🏷️</span>強み</a></li>
+    <li><a href="#info"><span class="ic">📍</span>店舗・地図</a></li>
+    <li><a href="mailto:yumi@bandai-sp.com"><span class="ic">✉️</span>メール</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
