@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>遠藤スポーツ｜いわき市の老舗スポーツ店・MIZUNO BSS SHOP｜ネットで購入、店舗受け取り</title>
+<meta name="description" content="福島県いわき市の老舗スポーツ用品店「遠藤スポーツ」。ミズノBSSショップとして野球用品の専門スタッフが相談に対応。ネットで購入、店舗受け取りができます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b2a6b;
+  --blue:#1650b8;
+  --ink:#16202e;
+  --muted:#5a6676;
+  --line:#dde3ec;
+  --bg:#f3f6fa;
+  --white:#ffffff;
+  --stitch:#d3202f;
+  --header-h:56px;
+  --bar-h:64px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px)}
+body{
+  margin:0;
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.8;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+  padding-top:calc(var(--header-h) + env(safe-area-inset-top, 0px));
+  padding-bottom:calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{
+  margin:0 0 24px;
+  font-size:clamp(22px,6vw,30px);
+  line-height:1.4;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:.02em;
+}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--stitch);outline-offset:2px}
+
+/* ヘッダー */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:calc(var(--header-h) + env(safe-area-inset-top, 0px));
+  padding-top:env(safe-area-inset-top, 0px);
+  background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding-left:16px;padding-right:12px;
+}
+.header .name{font-weight:900;font-size:18px;letter-spacing:.04em;text-decoration:none}
+.header .tel{
+  background:var(--stitch);color:#fff;text-decoration:none;
+  font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+
+/* ヒーロー */
+.hero{position:relative;padding:0;background:var(--navy);color:#fff}
+.hero img{width:100%;height:min(78vw,420px);object-fit:cover;opacity:.55}
+.hero .copy{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:24px 20px;max-width:720px;margin:0 auto;
+  background:linear-gradient(to top,rgba(11,42,107,.95) 0%,rgba(11,42,107,.2) 70%,rgba(11,42,107,0) 100%);
+}
+.hero .badge{
+  align-self:flex-start;
+  background:#fff;color:var(--navy);font-weight:900;font-size:13px;
+  padding:4px 12px;border-radius:4px;margin-bottom:12px;
+}
+.hero h1{margin:0 0 8px;font-size:clamp(26px,7.4vw,40px);line-height:1.3;font-weight:900}
+.hero p{margin:0;font-size:15px;opacity:.95}
+.hero-wrap{max-width:none}
+
+/* ボタン */
+.btn{
+  display:block;text-align:center;text-decoration:none;
+  font-weight:900;font-size:17px;
+  padding:16px 20px;border-radius:8px;
+  background:var(--stitch);color:#fff;
+  box-shadow:0 4px 0 #9b1520;
+}
+.btn.sub{background:#fff;color:var(--navy);border:2px solid var(--navy);box-shadow:none}
+.btn-row{display:grid;gap:14px;margin-top:24px}
+
+/* イチオシ */
+.pick{background:var(--bg)}
+.pick .lead{font-size:17px;font-weight:700;line-height:1.7}
+.pick .photo{margin:24px 0;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.pick .photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{
+  counter-increment:s;position:relative;
+  background:#fff;border:1px solid var(--line);border-left:6px solid var(--blue);
+  border-radius:8px;padding:16px 16px 16px 60px;margin-bottom:12px;font-weight:700;
+}
+.steps li::before{
+  content:counter(s);position:absolute;left:16px;top:50%;transform:translateY(-50%);
+  width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;
+  display:grid;place-items:center;font-weight:900;
+}
+.steps li small{display:block;font-weight:400;color:var(--muted);font-size:14px;margin-top:2px}
+
+/* BSS */
+.bss .box{
+  border:2px solid var(--navy);border-radius:10px;padding:24px 20px;
+}
+.bss .box h3{margin:0 0 12px;font-size:20px;color:var(--navy);font-weight:900;line-height:1.5}
+.bss .note{font-size:13px;color:var(--muted);margin:12px 0 0}
+.who{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.who li{padding-left:22px;position:relative}
+.who li::before{content:"";position:absolute;left:0;top:.7em;width:12px;height:2px;background:var(--stitch)}
+
+/* 強み */
+.strength{background:var(--navy);color:#fff}
+.strength h2{color:#fff}
+.strength .item{border-top:1px solid rgba(255,255,255,.3);padding:18px 0}
+.strength .item:last-child{border-bottom:1px solid rgba(255,255,255,.3)}
+.strength .item h3{margin:0 0 4px;font-size:18px;font-weight:900}
+.strength .item p{margin:0;opacity:.92}
+
+/* クチコミ */
+.review{background:var(--bg);border-radius:10px;padding:20px;margin-bottom:16px;border:1px solid var(--line)}
+.review .stars{color:#f0a400;font-size:20px;letter-spacing:2px;margin-bottom:6px}
+.review .stars span{color:#c9cfd9}
+.review p{margin:0}
+
+/* 店舗画像 */
+.shopimg{border-radius:10px;overflow:hidden;margin-bottom:24px}
+.shopimg img{width:100%;aspect-ratio:16/9;object-fit:cover}
+
+/* 店舗情報 */
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:6.5em;color:var(--navy);font-weight:700;white-space:nowrap}
+td{word-break:break-all}
+td a{color:var(--blue)}
+.map{margin-top:24px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* CTA */
+.cta{background:linear-gradient(160deg,var(--navy),var(--blue));color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta .btn.sub{border-color:#fff;background:transparent;color:#fff}
+.cta .tel-big{display:block;font-size:30px;font-weight:900;text-decoration:none;margin:8px 0 4px}
+
+footer{background:#0a1d4a;color:#c6d0e6;text-align:center;padding:24px 20px;font-size:13px}
+
+/* 下部固定ナビ */
+.bottom-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  height:calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
+  padding-bottom:env(safe-area-inset-bottom, 0px);
+  background:#fff;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:1fr 1.3fr 1fr;
+  box-shadow:0 -2px 10px rgba(0,0,0,.06);
+}
+.bottom-bar a{
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  text-decoration:none;font-weight:700;font-size:13px;color:var(--navy);line-height:1.3;
+}
+.bottom-bar a.main{background:var(--stitch);color:#fff;font-size:14px;font-weight:900}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  section{padding:72px 0}
+  .btn-row{grid-template-columns:1fr 1fr}
+  .hero img{height:460px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="name" href="#top">遠藤スポーツ</a>
+  <a class="tel" href="tel:0246238134" aria-label="電話をかける">TEL 024-623-8134</a>
+</header>
+
+<main id="top">
+
+  <!-- ヒーロー -->
+  <div class="hero hero-wrap">
+    <img src="images/hero_mizuno_bss.jpg" alt="MIZUNO BSS SHOP 遠藤スポーツの野球用品売場" width="1200" height="800">
+    <div class="copy">
+      <span class="badge">MIZUNO BSS SHOP</span>
+      <h1>ネットで購入、<br>店舗受け取り。</h1>
+      <p>いわき市の老舗スポーツ店で、野球用品の専門スタッフが選び方まで相談に乗ります。</p>
+    </div>
+  </div>
+
+  <!-- イチオシ -->
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <h2>ネットで購入、店舗受け取り</h2>
+      <p class="lead">野球用品は、手にとって確かめてから使い始めたい。だから「ネットで買って、お店で受け取る」を選べます。</p>
+      <figure class="photo" style="margin:24px 0">
+        <img src="images/pickup_service.jpg" alt="ネットで購入した商品を遠藤スポーツ店頭で受け取る様子" width="1200" height="900" loading="lazy">
+      </figure>
+      <ol class="steps">
+        <li>ネットで商品を選んで購入<small>公式サイトから、気になる用品をじっくり比較できます。</small></li>
+        <li>お店で受け取り<small>いわき市平中町の店頭でお渡しします。</small></li>
+        <li>その場で相談<small>使い方や手入れのこと、専門スタッフにそのまま聞けます。</small></li>
+      </ol>
+      <div class="btn-row">
+        <a class="btn" href="https://www.enspo.jp/" target="_blank" rel="noopener">ネットで購入する</a>
+        <a class="btn sub" href="tel:0246238134">受け取りについて電話で相談</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BSS -->
+  <section class="bss" id="bss">
+    <div class="wrap">
+      <h2>当店は「MIZUNO BSS SHOP」です</h2>
+      <div class="box">
+        <h3>道具としての野球用品を知り尽くした専門家が、ここにいます。</h3>
+        <p>野球をはじめる子どもたちから、グラウンドで汗を流す学生、家族や仲間との週末を楽しみたい大人まで。一人ひとりの目的や個性にあわせて、用品の選び方・使い方・手入れをアドバイスします。</p>
+        <p class="note">※BSSショップとは、Mizuno Baseball ＆ Softball Specialty Shop の略称です。</p>
+      </div>
+      <ul class="who">
+        <li>はじめて野球をする子どもたち</li>
+        <li>上達をめざす学生プレーヤー</li>
+        <li>週末を楽しみたい大人のプレーヤー</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section class="strength" id="strength">
+    <div class="wrap">
+      <h2>遠藤スポーツが選ばれる理由</h2>
+      <div class="item">
+        <h3>いわき市随一の品揃え</h3>
+        <p>各種競技の商品を数多く取り揃えています。</p>
+      </div>
+      <div class="item">
+        <h3>新しいモノを、どこよりも早く</h3>
+        <p>それが当店のモットーです。</p>
+      </div>
+      <div class="item">
+        <h3>修理・メンテナンスも万全</h3>
+        <p>購入後のアフターケアまでお任せください。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section id="voice">
+    <div class="wrap">
+      <h2>お客様の声</h2>
+      <div class="review">
+        <div class="stars" aria-label="5段階中4">★★★★<span>★</span></div>
+        <p>いわき市内では老舗のスポーツ用品店です。何事にも親切丁寧な対応なので、安心して相談出来ます。シーズン毎にイベント(安売りや限定販売)セールを行うので、青少年のスポーツマンにはありがたいです。</p>
+      </div>
+      <div class="review">
+        <div class="stars" aria-label="5段階中5">★★★★★</div>
+        <p>最近はバレーシューズをこちらで購入しています。店員さんが親切丁寧に一緒に探してくれて、割引もしてくれて、いつも大満足のお買い物ができます！　地元密着のスポーツ用品店。商品の価格は適切で、モデルチェンジの時期には特価品で良い品を安く買えることもあります。用具のメンテ等サービスの腕も確かで、対応も素早いです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section id="access" style="background:var(--bg)">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <div class="shopimg">
+        <img src="images/shop_front.jpg" alt="遠藤スポーツ 店舗外観" width="1200" height="675" loading="lazy">
+      </div>
+      <table>
+        <tr><th>店名</th><td>遠藤スポーツ（MIZUNO BSS SHOP）</td></tr>
+        <tr><th>住所</th><td>福島県いわき市平中町7−4</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0246238134">024-623-8134</a></td></tr>
+        <tr><th>定休日</th><td>毎月第2・第4水曜日</td></tr>
+        <tr><th>HP</th><td><a href="https://www.enspo.jp/" target="_blank" rel="noopener">https://www.enspo.jp/</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:endosp@mvi.biglobe.ne.jp">endosp@mvi.biglobe.ne.jp</a></td></tr>
+        <tr><th>SNS</th><td><a href="https://www.facebook.com/people/%E9%81%A0%E8%97%A4%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84/100075637944782/" target="_blank" rel="noopener">Facebook</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe title="遠藤スポーツの地図" src="https://maps.google.com/maps?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%E3%81%84%E3%82%8F%E3%81%8D%E5%B8%82%E5%B9%B3%E4%B8%AD%E7%94%BA7-4&output=embed&z=16" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>ネットで買って、<br>お店で受け取ろう。</h2>
+      <p>受け取りや商品のご相談は、お気軽にお電話ください。</p>
+      <a class="tel-big" href="tel:0246238134">024-623-8134</a>
+      <p style="font-size:14px;opacity:.9">定休日：毎月第2・第4水曜日</p>
+      <div class="btn-row">
+        <a class="btn" href="https://www.enspo.jp/" target="_blank" rel="noopener">ネットで購入する</a>
+        <a class="btn sub" href="mailto:endosp@mvi.biglobe.ne.jp">メールで問い合わせる</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="margin:0">© 遠藤スポーツ　福島県いわき市平中町7−4</p>
+</footer>
+
+<nav class="bottom-bar" aria-label="固定メニュー">
+  <a href="tel:0246238134">電話する</a>
+  <a class="main" href="https://www.enspo.jp/" target="_blank" rel="noopener">ネットで購入</a>
+  <a href="#access">店舗・地図</a>
+</nav>
+
+</body>
+</html>
