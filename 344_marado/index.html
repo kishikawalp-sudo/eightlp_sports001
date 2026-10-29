@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>マラード郡山本店｜郡山の老舗スノーボードSHOP｜年中無休</title>
+<meta name="description" content="福島県郡山市の老舗スノーボードショップ「マラード郡山本店」。豊富な品揃えと親切丁寧な接客、万全のアフターケアで、初めての一枚から安心。年中無休。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0e2233;
+  --ink-soft:#35505f;
+  --snow:#f4f8fa;
+  --ice:#dcebf2;
+  --line:#c9dbe4;
+  --board:#ff5a1f;
+  --board-dark:#d94510;
+  --white:#fff;
+  --header-h:56px;
+  --nav-h:60px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--snow);
+  line-height:1.8;
+  font-size:16px;
+  padding-top:var(--header-h);
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{
+  margin:0 0 28px;
+  font-size:26px;
+  line-height:1.4;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+p{margin:0 0 1em}
+
+/* ===== Header ===== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:calc(var(--header-h) + env(safe-area-inset-top,0px));
+  padding-top:env(safe-area-inset-top,0px);
+  background:var(--ink);
+  color:var(--white);
+}
+.header .in{
+  max-width:720px;height:var(--header-h);margin:0 auto;padding:0 14px 0 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.logo{font-weight:900;font-size:17px;letter-spacing:.04em;text-decoration:none;white-space:nowrap}
+.header .tel{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--board);color:var(--white);text-decoration:none;
+  font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+.header .tel svg{width:16px;height:16px;fill:currentColor}
+
+/* ===== Hero ===== */
+.hero{position:relative;padding:0;background:var(--ink);color:var(--white);overflow:hidden}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.72}
+.hero-body{padding:28px 20px 44px;max-width:720px;margin:0 auto}
+.hero h1{
+  margin:0 0 16px;
+  font-size:clamp(30px,8.6vw,46px);
+  line-height:1.25;
+  font-weight:900;
+  letter-spacing:.01em;
+}
+.hero p.lead{font-size:16px;color:#dbe9f0;margin-bottom:22px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
+.badges li{
+  border:1px solid rgba(255,255,255,.45);border-radius:6px;
+  padding:4px 12px;font-size:13px;font-weight:700;
+}
+.btn{
+  display:block;text-align:center;text-decoration:none;font-weight:900;font-size:18px;
+  padding:16px 20px;border-radius:10px;background:var(--board);color:var(--white);
+  box-shadow:0 4px 0 var(--board-dark);
+}
+.btn small{display:block;font-size:12px;font-weight:500;opacity:.92;margin-top:2px}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--board-dark)}
+.btn.sub{background:var(--white);color:var(--ink);box-shadow:0 4px 0 var(--line);margin-top:14px}
+
+/* ===== Feature (イチオシ) ===== */
+.feature{background:var(--snow)}
+.feature .tag{
+  display:inline-block;background:var(--board);color:var(--white);
+  font-weight:900;font-size:14px;padding:3px 14px;border-radius:4px;margin-bottom:14px;
+}
+.feature h2{font-size:28px}
+.feature-img{border-radius:14px;margin:0 0 24px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.feature .points{margin:0 0 24px;padding:0;list-style:none;display:grid;gap:12px}
+.feature .points li{
+  background:var(--white);border-left:6px solid var(--board);
+  border-radius:0 10px 10px 0;padding:14px 16px;font-weight:500;
+}
+.feature .points b{display:block;font-size:17px;font-weight:900;margin-bottom:2px}
+.feature .points span{font-size:14.5px;color:var(--ink-soft)}
+
+/* ===== Strengths ===== */
+.strengths{background:var(--ice)}
+.strength{display:grid;gap:4px;padding:22px 0;border-top:2px solid var(--ink)}
+.strength:last-child{border-bottom:2px solid var(--ink)}
+.strength h3{margin:0;font-size:19px;font-weight:900;line-height:1.5}
+.strength p{margin:0;color:var(--ink-soft);font-size:15px}
+
+/* ===== Reviews ===== */
+.review{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+.review .stars{color:var(--board);font-size:20px;letter-spacing:2px;margin-bottom:6px}
+.review .stars span{color:var(--line)}
+.review p{margin:0;font-size:15.5px}
+.review .src{display:block;margin-top:10px;font-size:12.5px;color:var(--ink-soft)}
+.review.big{background:var(--ink);color:var(--white);border:none}
+.review.big .stars span{color:#4d6677}
+.review.big .src{color:#a9c1cf}
+
+/* ===== Shop info ===== */
+.info{background:var(--ice)}
+table{width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;margin-bottom:24px}
+th,td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:15px}
+tr:last-child th,tr:last-child td{border-bottom:none}
+th{width:30%;background:#eef5f9;font-weight:700;white-space:nowrap}
+td a{color:var(--board-dark);font-weight:700;word-break:break-all}
+.map{border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:var(--line)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* ===== Final CTA ===== */
+.cta{background:var(--ink);color:var(--white);text-align:center}
+.cta h2{margin-bottom:12px}
+.cta p{color:#dbe9f0;margin-bottom:26px}
+.cta .btn.sub{background:transparent;color:var(--white);box-shadow:none;border:2px solid rgba(255,255,255,.6)}
+footer{background:#08161f;color:#8fa8b6;text-align:center;font-size:12.5px;padding:22px 20px}
+
+/* ===== Bottom nav ===== */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--white);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.bottom-nav ul{max-width:720px;margin:0 auto;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,1fr)}
+.bottom-nav a{
+  height:var(--nav-h);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  text-decoration:none;font-size:11.5px;font-weight:700;color:var(--ink);
+}
+.bottom-nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bottom-nav li:first-child a{background:var(--board);color:var(--white)}
+
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--board);outline-offset:2px}
+
+@media (min-width:768px){
+  body{font-size:17px}
+  section{padding:80px 0}
+  h2{font-size:32px}
+  .hero{display:grid}
+  .hero-img{aspect-ratio:16/8}
+  .hero h1{font-size:50px}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="in">
+    <a class="logo" href="#top">マラード郡山本店</a>
+    <a class="tel" href="tel:0249223330" aria-label="電話をかける">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      024-922-3330
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <div class="hero">
+    <img class="hero-img" src="images/hero_snowboard.jpg" alt="雪山を滑り降りるスノーボーダー">
+    <div class="hero-body">
+      <h1>はじめての一枚も、<br>買い替えも。<br>郡山で、板を選ぶ。</h1>
+      <p class="lead">郡山市の老舗スノーボードSHOP。品揃えの多さと、買ったあとまで任せられるアフターケアで、福島のライダーに選ばれています。</p>
+      <ul class="badges">
+        <li>老舗スノーボードSHOP</li>
+        <li>年中無休</li>
+        <li>アフターケア万全</li>
+      </ul>
+      <a class="btn" href="tel:0249223330">電話で相談する<small>024-922-3330（年中無休）</small></a>
+    </div>
+  </div>
+
+  <!-- Feature -->
+  <section class="feature" id="product">
+    <div class="wrap">
+      <span class="tag">イチオシ</span>
+      <h2>スノーボード用品を、<br>ひと通り見比べて選べる。</h2>
+      <img class="feature-img" src="images/snowboard_lineup.jpg" alt="店内に並ぶスノーボード用品" loading="lazy">
+      <p>板、バインディング、ブーツ、ウェア。スノーボードに必要なものを一か所で見比べられるのが、マラード郡山本店の一番の魅力です。口コミでも「商品も多くお勧め」と評価をいただいています。</p>
+      <ul class="points">
+        <li><b>板を選ぶ</b><span>国産板をはじめ、豊富なラインナップから選べます。</span></li>
+        <li><b>相談して決める</b><span>店員さんが親切丁寧に対応。楽しく買い物ができたとの声も。</span></li>
+        <li><b>買ったあとも安心</b><span>購入後のアフターケアまで、しっかりサポートします。</span></li>
+      </ul>
+      <a class="btn" href="tel:0249223330">在庫・おすすめを電話で聞く<small>タップで発信できます</small></a>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section class="strengths" id="strength">
+    <div class="wrap">
+      <h2>マラードが選ばれる<br>3つの理由</h2>
+      <div class="strength">
+        <h3>郡山の老舗だから、商品が多い</h3>
+        <p>長く地元で愛されてきたスノーボードSHOP。選べる商品の数に、リピーターの方も満足されています。</p>
+      </div>
+      <div class="strength">
+        <h3>親切、丁寧な店員さん</h3>
+        <p>初めての方にも、わからないことを一つずつ。楽しく買い物できる接客を大切にしています。</p>
+      </div>
+      <div class="strength">
+        <h3>買ったあとのアフターケア</h3>
+        <p>板やバインディングを購入したお客様から、アフターケアの手厚さに高いご評価をいただいています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="review">
+    <div class="wrap">
+      <h2>お客様の声</h2>
+
+      <div class="review big">
+        <div class="stars" aria-label="5つ星">★★★★★</div>
+        <p>皆さん、安心してご購入下さい😊<br>親切、丁寧な店員さんに感謝！<br>近くのプロショップでも国産板やバインを購入したことあるけど…😵<br>マラードさんは違って、アフターケアが万全で間違いなく福島で一番だと思います！<br>スノーボードの板を購入しました。店員さんが親切で楽しく買い物が出来ました。</p>
+        <span class="src">Google口コミより</span>
+      </div>
+
+      <div class="review">
+        <div class="stars" aria-label="5つ星のうち4つ">★★★★<span>★</span></div>
+        <p>郡山市の老舗のスノーボードSHOPです。商品も多くお勧めです。</p>
+        <span class="src">Google口コミより</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop info -->
+  <section class="info" id="access">
+    <div class="wrap">
+      <h2>店舗情報・アクセス</h2>
+      <table>
+        <tr><th>店名</th><td>マラード郡山本店</td></tr>
+        <tr><th>住所</th><td>福島県郡山市菜根5丁目2−1 Lタウン</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0249223330">024-922-3330</a></td></tr>
+        <tr><th>定休日</th><td>年中無休</td></tr>
+        <tr><th>公式HP</th><td><a href="http://www.mallard.jp/" target="_blank" rel="noopener">http://www.mallard.jp/</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://mallard.jp/contact/" target="_blank" rel="noopener">https://mallard.jp/contact/</a></td></tr>
+        <tr><th>Instagram</th><td><a href="https://www.instagram.com/snowboardshop_mallard/" target="_blank" rel="noopener">@snowboardshop_mallard</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe src="https://www.google.com/maps?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%E9%83%A1%E5%B1%B1%E5%B8%82%E8%8F%9C%E6%A0%B9%EF%BC%95%E4%B8%81%E7%9B%AE%EF%BC%92%E2%88%92%EF%BC%91+L%E3%82%BF%E3%82%A6%E3%83%B3&output=embed" title="マラード郡山本店の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>次のシーズンの一枚を、<br>一緒に選びましょう。</h2>
+      <p>ご相談だけでもお気軽にどうぞ。年中無休でお待ちしています。</p>
+      <a class="btn" href="tel:0249223330">024-922-3330に電話する<small>年中無休</small></a>
+      <a class="btn sub" href="https://mallard.jp/contact/" target="_blank" rel="noopener">お問い合わせフォームへ</a>
+      <a class="btn sub" href="https://www.instagram.com/snowboardshop_mallard/" target="_blank" rel="noopener">Instagramを見る</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>© マラード郡山本店</footer>
+
+<!-- Bottom nav -->
+<nav class="bottom-nav" aria-label="クイックメニュー">
+  <ul>
+    <li><a href="tel:0249223330">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>電話</a></li>
+    <li><a href="#product">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18L18 4a3 3 0 0 1 2 2L6 20a3 3 0 0 1-2-2z"/><circle cx="9" cy="15" r=".6"/><circle cx="15" cy="9" r=".6"/></svg>イチオシ</a></li>
+    <li><a href="#review">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>口コミ</a></li>
+    <li><a href="#access">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.800-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>アクセス</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
