@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>奈良スポーツ｜大田原市のオリジナルウェア・グッズ作成／スポーツ用品／自転車販売・修理</title>
+<meta name="description" content="栃木県大田原市の町のスポーツ用品店「奈良スポーツ」。オリジナルウェア・グッズ作成、スポーツ用品販売、自転車販売・修理まで、親切なスタッフが何でも相談に乗ります。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#13264a;
+  --navy-deep:#0c1830;
+  --red:#d8281f;
+  --red-dark:#b01e17;
+  --chalk:#f6f4ef;
+  --paper:#ffffff;
+  --ink:#1b2233;
+  --mute:#5d6678;
+  --line:#dcd8cd;
+  --header-h:56px;
+  --nav-h:62px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px)}
+body{
+  margin:0;
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--chalk);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+  padding-top:calc(var(--header-h) + env(safe-area-inset-top, 0px));
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom, 0px));
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h1,h2,h3,p{margin:0}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+/* ---------- Header ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:var(--navy);color:#fff;
+  padding-top:env(safe-area-inset-top, 0px);
+}
+.header-in{
+  height:var(--header-h);
+  max-width:760px;margin:0 auto;padding:0 12px 0 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.logo{font-weight:900;font-size:18px;letter-spacing:.06em;text-decoration:none;white-space:nowrap}
+.header-tel{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--red);color:#fff;text-decoration:none;
+  font-weight:700;font-size:14px;line-height:1;
+  padding:11px 14px;border-radius:999px;white-space:nowrap;
+}
+.header-tel svg{width:16px;height:16px;fill:currentColor}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;background:var(--navy-deep);color:#fff;
+  padding:0;overflow:hidden;
+}
+.hero-img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  background:linear-gradient(135deg,#1c3a73,#0c1830);
+  opacity:.55;
+}
+.hero-body{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:24px 20px 28px;
+  background:linear-gradient(180deg,rgba(12,24,48,0) 15%,rgba(12,24,48,.92) 100%);
+}
+.hero-inner{width:100%;max-width:760px;margin:0 auto}
+.hero-tag{
+  display:inline-block;align-self:flex-start;
+  background:var(--red);color:#fff;font-weight:700;font-size:13px;
+  padding:4px 12px;margin-bottom:12px;
+}
+.hero h1{font-size:clamp(26px,7.4vw,40px);line-height:1.35;font-weight:900;letter-spacing:.02em}
+.hero p.lead{margin-top:10px;font-size:14px;color:#dfe5f2;line-height:1.7}
+.hero-note{
+  background:var(--navy-deep);color:#cfd7ea;font-size:13px;
+  padding:12px 20px;text-align:center;border-top:1px solid rgba(255,255,255,.12)
+}
+@media(min-width:640px){.hero-img{aspect-ratio:16/8}}
+
+/* ---------- Section heading ---------- */
+.sec-head{margin-bottom:28px}
+.sec-head h2{
+  font-size:clamp(22px,6vw,30px);font-weight:900;line-height:1.45;color:var(--navy);
+  padding-left:14px;border-left:6px solid var(--red);
+}
+.sec-head p{margin-top:10px;color:var(--mute);font-size:15px}
+
+/* ---------- Featured (イチオシ) ---------- */
+.feature{background:var(--paper);padding-top:0}
+.feature .ribbon{
+  background:var(--red);color:#fff;text-align:center;
+  font-weight:900;font-size:15px;letter-spacing:.12em;padding:10px 0;
+}
+.feature .lead-block{padding-top:44px}
+.feature-title{
+  font-size:clamp(28px,8vw,42px);font-weight:900;line-height:1.3;color:var(--navy);
+}
+.feature-title span{display:block;font-size:.6em;color:var(--red);margin-top:6px}
+.feature-img{
+  margin:28px -20px 0;
+  aspect-ratio:4/3;width:calc(100% + 40px);max-width:none;object-fit:cover;
+  background:linear-gradient(135deg,#dfe5f2,#b9c4de);
+}
+@media(min-width:760px){.feature-img{margin:28px 0 0;width:100%}}
+.feature-text{margin-top:24px;font-size:16px}
+.feature-text strong{background:linear-gradient(transparent 62%,#ffd9d6 62%)}
+.use-list{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.use-list li{
+  background:var(--chalk);border:1px solid var(--line);
+  padding:14px 12px;font-weight:700;font-size:14px;text-align:center;line-height:1.5;
+}
+.feature-points{margin:32px 0 0;padding:0;list-style:none;border-top:2px solid var(--navy)}
+.feature-points li{padding:18px 0;border-bottom:1px solid var(--line);display:flex;gap:14px}
+.feature-points .tick{
+  flex:none;width:26px;height:26px;border-radius:50%;background:var(--red);
+  display:flex;align-items:center;justify-content:center;margin-top:3px
+}
+.feature-points .tick svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.feature-points b{display:block;font-size:17px;color:var(--navy);line-height:1.5}
+.feature-points span.s{font-size:14px;color:var(--mute);line-height:1.7;display:block;margin-top:2px}
+
+/* ---------- Buttons ---------- */
+.btn-row{display:grid;gap:12px;margin-top:32px}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:56px;padding:12px 20px;border-radius:6px;
+  font-weight:900;font-size:17px;text-decoration:none;text-align:center;line-height:1.3;
+  border:2px solid transparent;
+}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 3px 0 var(--red-dark)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-line{background:#fff;color:var(--navy);border-color:var(--navy)}
+.btn svg{width:20px;height:20px;fill:currentColor;flex:none}
+@media(min-width:640px){.btn-row{grid-template-columns:1fr 1fr}}
+
+/* ---------- Services ---------- */
+.services-grid{display:grid;gap:16px}
+.svc{background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.svc-img{
+  width:100%;aspect-ratio:16/9;object-fit:cover;
+  background:linear-gradient(135deg,#e7e3d8,#cfc9b8)
+}
+.svc-body{padding:20px}
+.svc h3{font-size:20px;font-weight:900;color:var(--navy);line-height:1.5}
+.svc p{margin-top:8px;font-size:15px;color:var(--ink)}
+.svc.noimg{border-left:6px solid var(--navy)}
+.svc.noimg .svc-body{padding:20px 20px 22px}
+
+/* ---------- Strengths ---------- */
+.strengths{background:var(--navy);color:#fff}
+.strengths .sec-head h2{color:#fff}
+.strengths .sec-head p{color:#c5cee3}
+.st-list{display:grid;gap:14px}
+.st{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+  padding:20px;
+}
+.st h3{font-size:18px;font-weight:900;line-height:1.5}
+.st p{margin-top:6px;font-size:15px;color:#dbe2f2}
+
+/* ---------- Reviews ---------- */
+.review{
+  background:var(--paper);border:1px solid var(--line);
+  padding:22px 20px;margin-bottom:16px;position:relative
+}
+.review .stars{color:#f0a500;font-size:20px;letter-spacing:.1em;line-height:1}
+.review .stars i{font-style:normal;color:#d9d4c6}
+.review p{margin-top:10px;font-size:15px}
+.review .who{margin-top:12px;font-size:13px;color:var(--mute)}
+.rating-bar{
+  display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  font-size:14px;color:var(--mute)
+}
+
+/* ---------- Shop info ---------- */
+.shop{background:var(--paper)}
+.info{width:100%;border-collapse:collapse;font-size:15px}
+.info th,.info td{padding:14px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.7}
+.info th{width:30%;color:var(--navy);font-weight:700;white-space:nowrap}
+.info a{color:var(--navy);word-break:break-all}
+.map{margin-top:24px;border:1px solid var(--line);aspect-ratio:4/3;background:#e7e3d8}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* ---------- Final CTA ---------- */
+.cta{
+  background:var(--red);color:#fff;text-align:center;padding:52px 0 56px;
+}
+.cta h2{font-size:clamp(22px,6.2vw,30px);font-weight:900;line-height:1.5}
+.cta p{margin-top:12px;font-size:15px;color:#ffe9e7}
+.cta .tel-big{
+  display:block;margin-top:24px;
+  font-size:clamp(30px,9vw,44px);font-weight:900;letter-spacing:.03em;text-decoration:none;line-height:1.2
+}
+.cta .btn-white{
+  margin-top:20px;background:#fff;color:var(--red-dark);box-shadow:0 3px 0 rgba(0,0,0,.25)
+}
+.cta .sub-links{margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.cta .sub-links a{
+  color:#fff;border:1px solid rgba(255,255,255,.7);padding:10px 16px;border-radius:999px;
+  font-size:14px;font-weight:700;text-decoration:none
+}
+
+footer{background:var(--navy-deep);color:#aab4cc;text-align:center;font-size:12px;padding:22px 20px}
+
+/* ---------- Bottom nav ---------- */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:var(--paper);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom, 0px);
+}
+.bottom-nav ul{
+  list-style:none;margin:0 auto;padding:0;max-width:760px;
+  display:grid;grid-template-columns:repeat(4,1fr);height:var(--nav-h)
+}
+.bottom-nav a{
+  height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  text-decoration:none;font-size:11px;font-weight:700;color:var(--navy)
+}
+.bottom-nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bottom-nav .main{background:var(--red);color:#fff}
+
+@media(min-width:760px){
+  body{font-size:17px}
+  section{padding:72px 0}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .services-grid .svc.wide{grid-column:1 / -1}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- 固定ヘッダー -->
+<header class="header">
+  <div class="header-in">
+    <a class="logo" href="#top">奈良スポーツ</a>
+    <a class="header-tel" href="tel:0287222670" aria-label="電話をかける 028-722-2670">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      電話で相談
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ヒーロー -->
+  <div class="hero">
+    <img class="hero-img" src="images/hero_wear.jpg" alt="奈良スポーツで作成したチームのオリジナルウェア" width="1200" height="900">
+    <div class="hero-body">
+      <div class="hero-inner">
+        <span class="hero-tag">栃木県大田原市の町のスポーツ店</span>
+        <h1>チームの一着を、<br>自分たちだけの一着に。</h1>
+        <p class="lead">オリジナルウェア・グッズ作成なら奈良スポーツへ。<br>小さな疑問から、親身にご相談ください。</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-note">口コミ ★4・★5｜「スタッフさんがとても良い人ばかり」</div>
+
+  <!-- イチオシ -->
+  <section class="feature" id="ichioshi">
+    <div class="ribbon">店のイチオシ</div>
+    <div class="wrap lead-block">
+      <h2 class="feature-title">オリジナルウェア・<br>グッズ作成<span>世界に一つの、私たちのデザインを。</span></h2>
+
+      <img class="feature-img" src="images/original_wear.jpg" alt="オリジナルウェア・グッズの制作イメージ" width="1200" height="900" loading="lazy">
+
+      <p class="feature-text">
+        部活動、クラブチーム、サークル、イベントの記念に。<strong>「うちのチームだけのウェアがほしい」</strong>という想いを、奈良スポーツがかたちにします。
+        どんなデザインにしたいか、どんなシーンで使うか。まずはざっくりしたイメージのままで大丈夫です。
+      </p>
+
+      <ul class="use-list">
+        <li>チーム・クラブの<br>ユニフォーム</li>
+        <li>オリジナル<br>Ｔシャツ</li>
+        <li>記念・イベント<br>グッズ</li>
+        <li>応援・サークル<br>ウェア</li>
+      </ul>
+
+      <ul class="feature-points">
+        <li>
+          <span class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <div><b>相談から、スタッフが一緒に考えます</b><span class="s">口コミでも評判の親身な対応。「ちょっとした疑問」も遠慮なくどうぞ。</span></div>
+        </li>
+        <li>
+          <span class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <div><b>スポーツ用品店だから、使う場面が分かる</b><span class="s">動きやすさや着心地など、競技を知るお店ならではの目線でご提案します。</span></div>
+        </li>
+        <li>
+          <span class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <div><b>用具選びも、ウェアづくりも、ひとつの店で</b><span class="s">シューズや用品の購入とあわせて、お近くのお店で相談できます。</span></div>
+        </li>
+      </ul>
+
+      <div class="btn-row">
+        <a class="btn btn-red" href="tel:0287222670">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          電話で作成を相談する
+        </a>
+        <a class="btn btn-navy" href="mailto:narasp@mwe.biglobe.ne.jp?subject=オリジナルウェア・グッズ作成のご相談">メールで相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- その他のサービス -->
+  <section id="service">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>スポーツ用品も、自転車も。</h2>
+        <p>毎日の「ちょっと困った」を、まるごとサポートします。</p>
+      </div>
+      <div class="services-grid">
+        <article class="svc noimg">
+          <div class="svc-body">
+            <h3>スポーツ用品販売</h3>
+            <p>店内は広くて見やすく、ゆっくり選べます。選び方に迷ったら、スタッフにお声がけください。</p>
+          </div>
+        </article>
+        <article class="svc">
+          <img class="svc-img" src="images/bicycle.jpg" alt="奈良スポーツの自転車販売・修理" width="960" height="540" loading="lazy">
+          <div class="svc-body">
+            <h3>自転車販売・修理</h3>
+            <p>通学・通勤・おでかけの自転車の購入から、日々の修理・メンテナンスまで。気になることは何でもご相談ください。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 選ばれる理由 -->
+  <section class="strengths" id="strength">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>地元で選ばれる理由</h2>
+        <p>お客様の口コミから見えた、奈良スポーツの良さです。</p>
+      </div>
+      <div class="st-list">
+        <div class="st">
+          <h3>スタッフがみんな親切</h3>
+          <p>「何度お世話になったことか」と言っていただける、親身な接客。</p>
+        </div>
+        <div class="st">
+          <h3>ちょっとした質問にも相談OK</h3>
+          <p>細かな疑問でも、やさしく教えてくれると好評です。</p>
+        </div>
+        <div class="st">
+          <h3>店内が広くて見やすい</h3>
+          <p>気軽に立ち寄れる、町のスポーツ用品店です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口コミ -->
+  <section id="voice">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>お客様の声</h2>
+      </div>
+
+      <div class="review">
+        <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+        <p>店員さんが皆さん親切で、ちょっとした疑問や質問にも親身になって相談に乗っていただけます。もう何度お世話になったことか……。いつもお世話になっております！<br>
+        ここで販売しているレギュラーという洗剤は高いが、子供の靴、上履き、泥々の靴下等、この世の物とは思えないぐらい汚い物も綺麗に！何回もリピート買い。<br>
+        スタッフ達は皆さん優しく教えて下さいます。店内広いし見やすいです。</p>
+        <div class="who">Google口コミより</div>
+      </div>
+
+      <div class="review">
+        <div class="stars" aria-label="5点満点中4点">★★★★<i>★</i></div>
+        <p>スタッフさんがとても良い人ばかりです！町のスポーツ用品店って感じです！</p>
+        <div class="who">Google口コミより</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="shop" id="shop">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>店舗情報</h2>
+      </div>
+      <table class="info">
+        <tr><th>店名</th><td>奈良スポーツ</td></tr>
+        <tr><th>住所</th><td>栃木県大田原市紫塚２丁目２６０９−９７</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0287222670">028-722-2670</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:narasp@mwe.biglobe.ne.jp">narasp@mwe.biglobe.ne.jp</a></td></tr>
+        <tr><th>ホームページ</th><td><a href="http://www.narasp.com/" target="_blank" rel="noopener">http://www.narasp.com/</a></td></tr>
+        <tr><th>Instagram</th><td><a href="https://www.instagram.com/naraspo/" target="_blank" rel="noopener">@naraspo</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe
+          title="奈良スポーツの地図"
+          src="https://maps.google.com/maps?q=%E6%A0%83%E6%9C%A8%E7%9C%8C%E5%A4%A7%E7%94%B0%E5%8E%9F%E5%B8%82%E7%B4%AB%E5%A1%9A%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%96%EF%BC%90%EF%BC%99%E2%88%92%EF%BC%99%EF%BC%97&hl=ja&z=16&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>オリジナルウェアのご相談、<br>お待ちしています。</h2>
+      <p>「こんなものは作れる？」から、お気軽にどうぞ。</p>
+      <a class="tel-big" href="tel:0287222670">028-722-2670</a>
+      <a class="btn btn-white" href="tel:0287222670">タップして電話をかける</a>
+      <div class="sub-links">
+        <a href="mailto:narasp@mwe.biglobe.ne.jp">メールで問い合わせ</a>
+        <a href="https://www.instagram.com/naraspo/" target="_blank" rel="noopener">Instagram</a>
+        <a href="http://www.narasp.com/" target="_blank" rel="noopener">公式サイト</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; 奈良スポーツ</footer>
+
+<!-- 固定ボトムナビ -->
+<nav class="bottom-nav" aria-label="スマートフォン用ナビゲーション">
+  <ul>
+    <li><a class="main" href="tel:0287222670">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>電話</a></li>
+    <li><a href="#ichioshi">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l4-3 3 2h4l3-2 4 3-2 4-2-1v10H7V10l-2 1z"/></svg>ウェア作成</a></li>
+    <li><a href="#voice">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>口コミ</a></li>
+    <li><a href="#shop">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>アクセス</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
