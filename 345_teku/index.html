@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>登山用品teku_teku｜福島市の登山用品店｜一歩ずつ、山道具選びから</title>
+<meta name="description" content="福島県福島市の登山用品店teku_teku（てくてく）。熊避けスプレー・虫除けハッカ・登山用ストックなど、気さくなオーナーが丁寧にご案内。店頭にない商品もお取り寄せ可能です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1f4a3a;
+  --forest-dk:#14332a;
+  --moss:#e6eee8;
+  --paper:#f5f7f4;
+  --ink:#1c2824;
+  --sub:#58665f;
+  --signal:#e8731f;
+  --signal-dk:#c95d10;
+  --line:#d3ddd6;
+  --white:#fff;
+  --serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--paper);
+  line-height:1.85;font-size:16px;
+  padding-top:calc(56px + env(safe-area-inset-top,0px));
+  padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-family:var(--serif);font-weight:800;font-size:1.65rem;line-height:1.45;color:var(--forest-dk);margin-bottom:20px}
+h3{font-family:var(--serif);font-weight:800;font-size:1.2rem;line-height:1.5;color:var(--forest-dk)}
+p+p{margin-top:1em}
+:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+
+/* header */
+.hd{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:var(--forest-dk);color:var(--white);
+  padding-top:env(safe-area-inset-top,0px);
+}
+.hd-in{
+  max-width:720px;margin:0 auto;height:56px;padding:0 14px 0 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.hd-name{font-family:var(--serif);font-weight:800;font-size:1.05rem;text-decoration:none;letter-spacing:.02em}
+.hd-tel{
+  background:var(--signal);color:var(--white);text-decoration:none;font-weight:700;
+  font-size:.9rem;padding:8px 16px;border-radius:999px;white-space:nowrap;
+}
+
+/* hero */
+.hero{padding:0;background:var(--forest-dk);color:var(--white)}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.hero-body{padding:32px 20px 44px;max-width:720px;margin:0 auto}
+.hero-tag{display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:2px 14px;font-size:.82rem;margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:2rem;line-height:1.45;margin-bottom:16px}
+.hero p{font-size:.98rem;color:#dbe7df}
+.btns{display:grid;gap:12px;margin-top:28px}
+.btn{
+  display:block;text-align:center;text-decoration:none;font-weight:700;
+  padding:16px 20px;border-radius:10px;font-size:1.05rem;line-height:1.4;
+}
+.btn-tel{background:var(--signal);color:var(--white);box-shadow:0 3px 0 var(--signal-dk)}
+.btn-sub{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.7)}
+.btn small{display:block;font-weight:400;font-size:.8rem;opacity:.92}
+
+/* trail motif (footsteps) */
+.steps{display:flex;gap:10px;justify-content:center;margin:0 0 8px}
+.steps i{width:9px;height:9px;border-radius:50%;background:var(--signal);opacity:.35}
+.steps i:nth-child(2){opacity:.55}.steps i:nth-child(3){opacity:.75}.steps i:nth-child(4){opacity:1}
+
+/* ichioshi */
+.pick{background:var(--white)}
+.pick-lead{font-size:1.02rem}
+.pick-img{border-radius:12px;margin:28px 0;width:100%;aspect-ratio:3/2;object-fit:cover}
+.pick-list{list-style:none;display:grid;gap:14px}
+.pick-list li{
+  border-left:5px solid var(--signal);background:var(--moss);
+  padding:14px 16px;border-radius:0 10px 10px 0;
+}
+.pick-list strong{display:block;font-size:1.05rem;color:var(--forest-dk)}
+.pick-list span{font-size:.92rem;color:var(--sub)}
+
+/* strengths */
+.str-item{padding:24px 0;border-top:1px solid var(--line)}
+.str-item:first-of-type{border-top:0;padding-top:4px}
+.str-item p{margin-top:8px;color:var(--sub);font-size:.98rem}
+
+/* story */
+.story{background:var(--forest);color:var(--white)}
+.story h2{color:var(--white)}
+.story-img{border-radius:12px;margin-bottom:24px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.story p{color:#e3eee7}
+.story .quote{
+  font-family:var(--serif);font-weight:800;font-size:1.25rem;line-height:1.6;
+  margin:20px 0;padding-left:16px;border-left:4px solid var(--signal);color:var(--white)
+}
+.sign{margin-top:20px;font-size:.92rem;color:#c5d6cb}
+
+/* reviews */
+.rv{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px;margin-top:16px}
+.rv-star{color:var(--signal);font-size:1.1rem;letter-spacing:.1em}
+.rv-star span{color:#cfd8d2}
+.rv p{font-size:.96rem;margin-top:8px}
+
+/* info */
+.info{background:var(--white)}
+table{width:100%;border-collapse:collapse;font-size:.96rem}
+th,td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:7.5em;color:var(--forest-dk);font-weight:700;white-space:nowrap}
+td a{color:var(--forest);word-break:break-all}
+.note{margin-top:20px;background:var(--moss);border-radius:10px;padding:14px 16px;font-size:.92rem}
+.note b{color:var(--forest-dk)}
+.map{margin-top:20px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* cta */
+.cta{background:var(--forest-dk);color:var(--white);text-align:center}
+.cta h2{color:var(--white)}
+.cta p{color:#dbe7df}
+.cta .btns{margin-top:24px}
+footer{background:#0f241d;color:#a9bbb1;text-align:center;font-size:.8rem;padding:24px 20px}
+
+/* bottom nav */
+.bn{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--white);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.bn-in{max-width:720px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.bn a{
+  text-decoration:none;text-align:center;padding:10px 2px 9px;
+  font-size:.74rem;font-weight:700;color:var(--forest-dk);line-height:1.3;
+}
+.bn a b{display:block;font-size:1.15rem;line-height:1.2}
+.bn a.tel{background:var(--signal);color:var(--white)}
+
+@media (min-width:768px){
+  .hero h1{font-size:2.6rem}
+  .btns{grid-template-columns:1fr 1fr}
+  h2{font-size:1.9rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hd-in">
+    <a class="hd-name" href="#top">登山用品teku_teku</a>
+    <a class="hd-tel" href="tel:0245731175">電話する</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="images/hero_shop.jpg" alt="登山用品teku_tekuの店内。登山用品が並ぶ福島市の登山用品店" width="1200" height="900">
+  <div class="hero-body">
+    <span class="hero-tag">福島市の登山用品店</span>
+    <h1>山道具は、<br>人に相談して選ぶ。</h1>
+    <p>熊避けスプレー、虫除けハッカ、登山用ストック。目当ての一品が見つかり、使い方まで丁寧に教えてもらえる小さな登山用品店です。</p>
+    <div class="btns">
+      <a class="btn btn-tel" href="tel:0245731175">電話で相談する<small>024-573-1175（日曜定休）</small></a>
+      <a class="btn btn-sub" href="#access">お店の場所を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ICHIOSHI -->
+<section class="pick" id="pick">
+  <div class="wrap">
+    <div class="steps" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <h2>登山用品を、<br>買う前から買った後まで。</h2>
+    <p class="pick-lead">teku_tekuのイチオシは、登山用品そのものと、それを自分の山に合わせる「ひと手間」です。登山が初めての方にも、通い続けている方にも、同じ丁寧さで向き合います。</p>
+    <img class="pick-img" src="images/pick_gear.jpg" alt="熊避けスプレーや登山用ストックなどの登山用品" width="1200" height="800" loading="lazy">
+    <ul class="pick-list">
+      <li><strong>熊避けスプレー・虫除けハッカ</strong><span>山に入る前に揃えたい小物まで、目当ての商品が置いてあります。</span></li>
+      <li><strong>登山用ストックの選び方と微調整</strong><span>初めての方にも分かりやすくアドバイス。その場で微調整もしてもらえます。</span></li>
+      <li><strong>購入後の修理・メンテナンスの相談</strong><span>修理が必要になったときの対処まで、親身に案内します。</span></li>
+      <li><strong>店頭にない商品のお取り寄せ</strong><span>製造元や輸入元に在庫があれば取り寄せ可能。まずはお問い合わせください。</span></li>
+    </ul>
+    <div class="btns">
+      <a class="btn btn-tel" href="tel:0245731175">探している商品を問い合わせる<small>024-573-1175</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section id="strength">
+  <div class="wrap">
+    <h2>小さな店だから、<br>できること。</h2>
+    <div class="str-item">
+      <h3>気さくで、説明が丁寧</h3>
+      <p>お客様からは「気さくでいて、丁寧な説明をしてくれる」と評判です。素人の質問にも、一つひとつ答えます。</p>
+    </div>
+    <div class="str-item">
+      <h3>職人のように、長くお付き合い</h3>
+      <p>店舗は15坪ほど。物量では大型量販店に及びませんが、熟練の職人のようにお客様と付き合える店を目指しています。</p>
+    </div>
+    <div class="str-item">
+      <h3>品揃えが充実、取り寄せにも対応</h3>
+      <p>ようやく品揃えが充実してきました。店頭に在庫がなくても、製造元や輸入元に在庫があればお取り寄せできます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="wrap">
+    <h2>てくてく、一歩ずつ。<br>店名に込めた思い。</h2>
+    <img class="story-img" src="images/owner.jpg" alt="teku_tekuの代表 堀 茂記" width="1200" height="900" loading="lazy">
+    <p>teku_teku（てくてく）は、地道に一歩ずつ歩いていこうという思いから名付けました。登山と一緒で、一歩一歩です。</p>
+    <p class="quote">山は、技術（テク）も大切です。</p>
+    <p>登山そのものにも、山道具を扱うにも、スキーのセッティングにも、技術が必要です。山をてくてく歩いて、技術（テク）も確かに。そんな思いがteku_tekuには込められています。</p>
+    <p class="sign">代表　堀 茂記</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="voice">
+  <div class="wrap">
+    <h2>お客様の声</h2>
+    <div class="rv">
+      <div class="rv-star">★★★★★</div>
+      <p>登山用のストックを買うために訪れました。素人の私に大変親切にアドバイスくださり、信頼できると感じ購入しました。微調整をその場でしてくださり、今後修理が必要になった際の対処まで重ねて親切にしてくださいました。強くお勧めできるお店です。</p>
+    </div>
+    <div class="rv">
+      <div class="rv-star">★★★★<span>★</span></div>
+      <p>熊避けスプレー、虫除けハッカ等、目当ての商品が置いてあり助かりました。御店の方は気さくでいて、丁寧な説明をしてくれる方でした。</p>
+    </div>
+    <div class="rv">
+      <div class="rv-star">★★★★★</div>
+      <p>オーナーの人柄が良く、長年お世話になっているショップです。オーナーとのトークだけで終わってしまうこともありますが、結果的に何か欲しくなってしまいます(笑)</p>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info" id="access">
+  <div class="wrap">
+    <h2>店舗情報・アクセス</h2>
+    <table>
+      <tr><th>店名</th><td>登山用品teku_teku</td></tr>
+      <tr><th>代表者</th><td>堀 茂記</td></tr>
+      <tr><th>住所</th><td>福島県福島市笹谷出水上24-8<br>ロイヤルガーデン2 308</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0245731175">024-573-1175</a></td></tr>
+      <tr><th>定休日</th><td>日曜定休／その他不定休あり</td></tr>
+      <tr><th>メール</th><td><a href="mailto:teku_teku@sea.plala.or.jp">teku_teku@sea.plala.or.jp</a></td></tr>
+      <tr><th>ホームページ</th><td><a href="https://tozanteku.jp/" target="_blank" rel="noopener">https://tozanteku.jp/</a></td></tr>
+    </table>
+    <div class="note"><b>道に迷ったときは：</b>ナビでは店の裏側に案内されることがあります。裏手は普通のアパートに見えますが、表通りから来ると分かりやすいです。</div>
+    <div class="map">
+      <iframe title="登山用品teku_tekuの地図" src="https://www.google.com/maps?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%E7%A6%8F%E5%B3%B6%E5%B8%82%E7%AC%B9%E8%B0%B7%E5%87%BA%E6%B0%B4%E4%B8%8A24-8&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>まずは、気軽に<br>声をかけてください。</h2>
+    <p>探している山道具、ストックの調整、修理のご相談など、お電話・メールでお気軽にどうぞ。店頭にない商品もお取り寄せできる場合があります。</p>
+    <div class="btns">
+      <a class="btn btn-tel" href="tel:0245731175">電話をかける<small>024-573-1175（日曜定休）</small></a>
+      <a class="btn btn-sub" href="mailto:teku_teku@sea.plala.or.jp">メールで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>&copy; 登山用品teku_teku</footer>
+
+<nav class="bn" aria-label="固定メニュー">
+  <div class="bn-in">
+    <a class="tel" href="tel:0245731175"><b>☎</b>電話</a>
+    <a href="mailto:teku_teku@sea.plala.or.jp"><b>✉</b>メール</a>
+    <a href="#access"><b>⌖</b>アクセス</a>
+    <a href="https://tozanteku.jp/" target="_blank" rel="noopener"><b>⌂</b>公式HP</a>
+  </div>
+</nav>
+
+</body>
+</html>
