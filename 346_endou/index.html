@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>エンドウスポーツ｜福島県棚倉町のスポーツ店｜ユニフォーム制作</title>
+<meta name="description" content="福島県東白川郡棚倉町のエンドウスポーツ。チームの想いを形にするユニフォーム制作が自慢です。学生割引でラケットがお得、ガット張替えも無料。">
+<style>
+:root{
+  --navy:#12233f;
+  --navy-deep:#0b1628;
+  --red:#d93a2b;
+  --ice:#eef2f8;
+  --white:#ffffff;
+  --ink:#1b2433;
+  --gray:#5b6678;
+  --line:#d5dbe6;
+  --gold:#f2b705;
+  --hdr:56px;
+  --nav:62px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 8px)}
+body{
+  margin:0;
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.8;
+  font-size:16px;
+  padding-top:calc(var(--hdr) + env(safe-area-inset-top,0px));
+  padding-bottom:calc(var(--nav) + env(safe-area-inset-bottom,0px));
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+/* ---------- fixed header ---------- */
+.hdr{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  height:calc(var(--hdr) + env(safe-area-inset-top,0px));
+  padding-top:env(safe-area-inset-top,0px);
+  background:var(--navy-deep);
+  color:var(--white);
+}
+.hdr-in{
+  max-width:720px;margin:0 auto;height:var(--hdr);
+  display:flex;align-items:center;justify-content:space-between;padding:0 14px 0 20px;
+}
+.logo{font-weight:800;font-size:17px;letter-spacing:.06em;text-decoration:none}
+.hdr-tel{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--red);color:var(--white);text-decoration:none;
+  font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;color:var(--white);
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 2px,transparent 2px 22px),
+    var(--navy);
+  overflow:hidden;
+}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.hero-body{padding:28px 20px 40px;max-width:720px;margin:0 auto}
+.hero-pill{
+  display:inline-block;background:var(--gold);color:var(--navy-deep);
+  font-weight:800;font-size:13px;padding:4px 12px;border-radius:4px;margin:0 0 14px;
+}
+.hero h1{
+  margin:0 0 14px;font-size:clamp(28px,8.2vw,42px);line-height:1.35;font-weight:900;letter-spacing:.02em;
+}
+.hero h1 span{display:block}
+.hero-lead{margin:0 0 24px;font-size:15px;color:#d7e0ef}
+.btn-row{display:flex;flex-direction:column;gap:12px}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:54px;padding:12px 18px;border-radius:10px;
+  font-weight:800;font-size:17px;text-decoration:none;text-align:center;
+}
+.btn-red{background:var(--red);color:var(--white);box-shadow:0 4px 0 #a82a1e}
+.btn-ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.7)}
+.btn-navy{background:var(--navy);color:var(--white);box-shadow:0 4px 0 var(--navy-deep)}
+.btn:focus-visible,.hdr-tel:focus-visible,.nav a:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* ---------- review strip ---------- */
+.voice-strip{background:var(--gold);color:var(--navy-deep)}
+.voice-strip .wrap{padding:14px 20px;display:flex;gap:12px;align-items:center}
+.stars{font-size:20px;letter-spacing:2px;color:var(--navy-deep);white-space:nowrap}
+.voice-strip p{margin:0;font-weight:800;font-size:14px;line-height:1.5}
+
+/* ---------- common section ---------- */
+section{padding:56px 0}
+h2{margin:0 0 8px;font-size:clamp(24px,6.6vw,32px);line-height:1.4;font-weight:900;color:var(--navy)}
+.sub{margin:0 0 28px;color:var(--gray);font-size:15px}
+
+/* ---------- main product ---------- */
+.pick{background:var(--ice)}
+.pick-badge{
+  display:inline-block;background:var(--red);color:var(--white);
+  font-weight:800;font-size:14px;padding:4px 14px;border-radius:999px;margin-bottom:12px;
+}
+.pick-photo{border-radius:14px;overflow:hidden;margin:0 0 24px;border:4px solid var(--white);box-shadow:0 8px 24px rgba(18,35,63,.18)}
+.pick-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pick-box{background:var(--white);border-left:8px solid var(--red);border-radius:6px;padding:20px 20px 16px;margin-bottom:24px}
+.pick-box h3{margin:0 0 8px;font-size:20px;color:var(--navy)}
+.pick-box p{margin:0;font-size:15px}
+.points{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:12px}
+.points li{
+  background:var(--white);border-radius:10px;padding:14px 16px 14px 52px;position:relative;font-weight:700;
+  box-shadow:0 1px 0 var(--line);
+}
+.points li::before{
+  content:"✔";position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--white);
+  display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+.points small{display:block;font-weight:400;color:var(--gray);font-size:13px;line-height:1.6}
+
+/* ---------- strengths ---------- */
+.str-list{display:grid;gap:16px}
+.str{border:2px solid var(--line);border-radius:12px;padding:20px}
+.str h3{margin:0 0 6px;font-size:18px;color:var(--navy)}
+.str p{margin:0;font-size:15px;color:var(--ink)}
+.str.hot{border-color:var(--red);background:#fff7f6}
+.tag{display:inline-block;background:var(--navy);color:var(--white);font-size:12px;font-weight:700;padding:2px 10px;border-radius:4px;margin-bottom:8px}
+
+/* ---------- voice ---------- */
+.voice{background:var(--navy);color:var(--white)}
+.voice h2{color:var(--white)}
+.voice .sub{color:#b9c6dc}
+.review{background:var(--white);color:var(--ink);border-radius:14px;padding:22px 20px}
+.review .stars{display:block;margin-bottom:8px;color:#e6a800}
+.review p{margin:0;font-size:18px;font-weight:800;line-height:1.6;color:var(--navy)}
+.review cite{display:block;margin-top:10px;font-style:normal;font-size:13px;color:var(--gray)}
+.shop-photo{margin-top:24px;border-radius:12px;overflow:hidden}
+.shop-photo img{width:100%;aspect-ratio:16/9;object-fit:cover}
+
+/* ---------- shop info ---------- */
+table{width:100%;border-collapse:collapse;font-size:15px;margin-bottom:24px}
+th,td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{width:30%;color:var(--navy);font-weight:800;white-space:nowrap}
+td a{color:var(--navy);font-weight:700;word-break:break-all}
+.map{border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-bottom:8px}
+.map iframe{display:block;width:100%;height:300px;border:0}
+
+/* ---------- final CTA ---------- */
+.cta{
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 2px,transparent 2px 22px),
+    var(--navy-deep);
+  color:var(--white);text-align:center;
+}
+.cta h2{color:var(--white)}
+.cta .sub{color:#c3cee2}
+.cta .tel-big{
+  display:block;font-size:clamp(30px,9vw,42px);font-weight:900;letter-spacing:.04em;text-decoration:none;color:var(--gold);margin:6px 0 20px;
+}
+.cta .btn-row{max-width:420px;margin:0 auto}
+.cta .btn-light{background:var(--white);color:var(--navy)}
+footer{background:#070f1d;color:#9fb0cc;text-align:center;font-size:12px;padding:22px 20px}
+
+/* ---------- fixed bottom nav ---------- */
+.nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--white);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.nav-in{max-width:720px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.nav a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  min-height:var(--nav);font-size:11px;font-weight:700;text-decoration:none;color:var(--navy);
+}
+.nav a .ic{font-size:20px;line-height:1}
+.nav a.tel{background:var(--red);color:var(--white)}
+
+@media (min-width:600px){
+  .btn-row{flex-direction:row}
+  .btn-row .btn{flex:1}
+  .hero-img{aspect-ratio:16/9}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="logo" href="#top">エンドウスポーツ</a>
+    <a class="hdr-tel" href="tel:0247332813" aria-label="電話をかける">☎ 0247-33-2813</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img class="hero-img" src="images/hero_uniform.jpg" alt="エンドウスポーツで制作したチームユニフォーム">
+    <div class="hero-body">
+      <p class="hero-pill">福島県棚倉町 ／ ユニフォーム制作</p>
+      <h1><span>チームの想いを、</span><span>1枚のユニフォームに。</span></h1>
+      <p class="hero-lead">部活・クラブ・サークルのユニフォーム制作は、棚倉町のエンドウスポーツへ。まずはお気軽にご相談ください。</p>
+      <div class="btn-row">
+        <a class="btn btn-red" href="tel:0247332813">☎ 電話でユニフォームを相談する</a>
+        <a class="btn btn-ghost" href="https://www.endo-suports.com/contact.html" target="_blank" rel="noopener">お問い合わせフォーム</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- review strip -->
+  <div class="voice-strip">
+    <div class="wrap">
+      <span class="stars" aria-label="口コミ評価 星5つ">★★★★★</span>
+      <p>口コミ高評価！学生割りでラケットが安くなってガットの張替えが無料！</p>
+    </div>
+  </div>
+
+  <!-- IICHIOSHI -->
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <span class="pick-badge">イチオシ</span>
+      <h2>ユニフォーム制作</h2>
+      <p class="sub">チームで着る1枚は、選手の気持ちをひとつにするもの。</p>
+
+      <figure class="pick-photo">
+        <img src="images/uniform_team.jpg" alt="ユニフォームを着たチームのイメージ" loading="lazy">
+      </figure>
+
+      <div class="pick-box">
+        <h3>「このチームらしさ」をカタチにします</h3>
+        <p>チームの人数や用途、デザインのご希望をお聞きして、ご要望に合わせたユニフォームをご提案します。はじめての方も、まずは相談だけでも大丈夫です。</p>
+      </div>
+
+      <ul class="points">
+        <li>部活・クラブ・サークルのユニフォームに対応<small>競技やチームの雰囲気に合わせてご相談ください</small></li>
+        <li>デザインや仕様の相談ができる<small>イメージが固まっていなくてもOK</small></li>
+        <li>地元・棚倉町のお店だから相談しやすい<small>お店に直接来て、顔を見て話せます</small></li>
+      </ul>
+
+      <div class="btn-row">
+        <a class="btn btn-red" href="tel:0247332813">☎ 0247-33-2813 に電話する</a>
+        <a class="btn btn-navy" href="https://www.endo-suports.com/contact.html" target="_blank" rel="noopener">フォームから相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section id="strengths">
+    <div class="wrap">
+      <h2>エンドウスポーツが選ばれる理由</h2>
+      <p class="sub">ユニフォームだけじゃない。学生にうれしいサービスも。</p>
+      <div class="str-list">
+        <div class="str hot">
+          <span class="tag">イチオシ</span>
+          <h3>ユニフォーム制作でチームがひとつに</h3>
+          <p>チームにぴったりの1枚を一緒に考えます。新しいシーズンの前に、ぜひご相談ください。</p>
+        </div>
+        <div class="str">
+          <span class="tag">学生にうれしい</span>
+          <h3>学生割引でラケットがお得</h3>
+          <p>学生の方はラケットが安くなります。新しいラケットを探している学生さんにおすすめです。</p>
+        </div>
+        <div class="str">
+          <span class="tag">うれしい特典</span>
+          <h3>ガットの張替えが無料</h3>
+          <p>学生割引でラケットを購入すると、ガットの張替えが無料になります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE -->
+  <section class="voice" id="voice">
+    <div class="wrap">
+      <h2>お客様の声</h2>
+      <p class="sub">口コミでも高く評価いただいています。</p>
+      <div class="review">
+        <span class="stars" aria-label="星5つ">★★★★★</span>
+        <p>学生割りでラケットが安くなってガットの張替えが無料！</p>
+        <cite>— 口コミより</cite>
+      </div>
+      <div class="shop-photo">
+        <img src="images/shop.jpg" alt="エンドウスポーツの店舗外観" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP INFO -->
+  <section id="access">
+    <div class="wrap">
+      <h2>店舗情報</h2>
+      <p class="sub">棚倉町でお待ちしています。</p>
+      <table>
+        <tr><th>店名</th><td>エンドウスポーツ</td></tr>
+        <tr><th>代表者</th><td>遠藤 哲雄</td></tr>
+        <tr><th>住所</th><td>福島県東白川郡棚倉町棚倉新町６</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0247332813">0247-33-2813</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:info@endo-suports.com">info@endo-suports.com</a></td></tr>
+        <tr><th>公式HP</th><td><a href="https://www.endo-suports.com/" target="_blank" rel="noopener">https://www.endo-suports.com/</a></td></tr>
+        <tr><th>お問い合わせ</th><td><a href="https://www.endo-suports.com/contact.html" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe
+          title="エンドウスポーツの地図"
+          src="https://www.google.com/maps?q=%E7%A6%8F%E5%B3%B6%E7%9C%8C%E6%9D%B1%E7%99%BD%E5%B7%9D%E9%83%A1%E6%A3%9A%E5%80%89%E7%94%BA%E6%A3%9A%E5%80%89%E6%96%B0%E7%94%BA%EF%BC%96&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>ユニフォームのご相談は<br>お気軽に</h2>
+      <p class="sub">お電話・メール・フォームで受け付けています。</p>
+      <a class="tel-big" href="tel:0247332813">☎ 0247-33-2813</a>
+      <div class="btn-row">
+        <a class="btn btn-red" href="tel:0247332813">今すぐ電話する</a>
+        <a class="btn btn-light" href="https://www.endo-suports.com/contact.html" target="_blank" rel="noopener">お問い合わせフォーム</a>
+        <a class="btn btn-ghost" href="mailto:info@endo-suports.com">メールで問い合わせる</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="margin:0">© エンドウスポーツ　福島県東白川郡棚倉町棚倉新町６</p>
+</footer>
+
+<nav class="nav" aria-label="固定メニュー">
+  <div class="nav-in">
+    <a class="tel" href="tel:0247332813"><span class="ic">☎</span>電話</a>
+    <a href="mailto:info@endo-suports.com"><span class="ic">✉</span>メール</a>
+    <a href="https://www.endo-suports.com/contact.html" target="_blank" rel="noopener"><span class="ic">✎</span>フォーム</a>
+    <a href="#access"><span class="ic">⌖</span>アクセス</a>
+  </div>
+</nav>
+
+</body>
+</html>
