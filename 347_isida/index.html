@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>石田スポーツ｜栃木市片柳町の地域密着スポーツ用品店</title>
+<meta name="description" content="栃木市片柳町の石田スポーツ。初心者から上級者まで、用具選び・メンテナンス・チームオーダーまで地域密着でサポートします。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1b2a38;
+  --ink-soft:#4a5966;
+  --field:#2c7a4b;
+  --field-deep:#1f5a37;
+  --ball:#f4c430;
+  --chalk:#f6f7f2;
+  --line:#dfe3d8;
+  --white:#fff;
+  --danger:#d8452f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--chalk);line-height:1.8;font-size:16px;
+  padding-top:56px;padding-bottom:calc(64px + env(safe-area-inset-bottom,0px));
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.4;font-weight:900}
+:focus-visible{outline:3px solid var(--ball);outline-offset:2px}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--ink);color:var(--white);
+  display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 14px;
+  padding-top:env(safe-area-inset-top,0px);box-sizing:content-box}
+.hd .logo{font-weight:900;font-size:17px;letter-spacing:.04em;text-decoration:none}
+.hd .tel{background:var(--ball);color:var(--ink);font-weight:900;font-size:14px;text-decoration:none;
+  padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{position:relative;color:var(--white);background:var(--field-deep)}
+.hero img{width:100%;height:340px;object-fit:cover;opacity:.55}
+.hero .in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 20px 28px;max-width:720px;margin:0 auto}
+.hero .badge{align-self:flex-start;background:var(--ball);color:var(--ink);font-weight:900;font-size:13px;padding:3px 12px;border-radius:4px;margin-bottom:12px}
+.hero h1{font-size:clamp(27px,8vw,40px);text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.hero p{margin-top:10px;font-size:15px;font-weight:500}
+.hero-cta{background:var(--field-deep);padding:18px 20px 22px}
+.hero-cta .row{max-width:720px;margin:0 auto;display:flex;gap:10px}
+.btn{flex:1;display:block;text-align:center;text-decoration:none;font-weight:900;font-size:16px;padding:14px 10px;border-radius:10px}
+.btn.call{background:var(--ball);color:var(--ink)}
+.btn.mail{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.7)}
+
+/* sections */
+section{padding:56px 0}
+.sec-title{font-size:clamp(22px,6vw,30px);margin-bottom:10px}
+.lead{color:var(--ink-soft);font-size:15px}
+
+/* イチオシ */
+.pick{background:var(--white);border-top:6px solid var(--field)}
+.pick .tag{display:inline-block;background:var(--field);color:var(--white);font-weight:900;font-size:13px;padding:2px 12px;border-radius:4px;margin-bottom:12px}
+.pick .photo{margin:22px -20px;}
+.pick .photo img{width:100%;height:240px;object-fit:cover}
+.pick ul{list-style:none;margin-top:8px}
+.pick li{padding:14px 0 14px 34px;border-bottom:1px solid var(--line);position:relative;font-weight:500}
+.pick li:last-child{border-bottom:0}
+.pick li::before{content:"";position:absolute;left:4px;top:22px;width:16px;height:9px;border-left:4px solid var(--field);border-bottom:4px solid var(--field);transform:rotate(-45deg)}
+.pick li b{display:block;font-weight:900}
+
+/* strengths */
+.str-list{margin-top:24px;display:grid;gap:18px}
+.str{background:var(--white);border-left:6px solid var(--ball);padding:18px 18px 18px 20px;border-radius:0 10px 10px 0}
+.str h3{font-size:18px;margin-bottom:4px}
+.str p{font-size:15px;color:var(--ink-soft)}
+.team img{width:100%;height:200px;object-fit:cover;border-radius:10px;margin-top:22px}
+
+/* review */
+.review{background:var(--ink);color:var(--white)}
+.review .stars{color:var(--ball);font-size:26px;letter-spacing:4px}
+.review .stars span{color:rgba(255,255,255,.28)}
+.review blockquote{margin-top:10px;font-size:clamp(20px,5.6vw,26px);font-weight:900;line-height:1.6}
+.review small{display:block;margin-top:10px;color:rgba(255,255,255,.7);font-size:13px}
+
+/* info */
+.info table{width:100%;border-collapse:collapse;margin-top:18px;background:var(--white);border-radius:10px;overflow:hidden}
+.info th,.info td{padding:14px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:15px}
+.info th{width:92px;background:#eef1e8;font-weight:700;white-space:nowrap}
+.info tr:last-child th,.info tr:last-child td{border-bottom:0}
+.info td a{word-break:break-all}
+.map{margin-top:20px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:320px;border:0}
+
+/* CTA */
+.cta{background:var(--field);color:var(--white);text-align:center}
+.cta h2{font-size:clamp(22px,6vw,30px)}
+.cta p{margin:10px 0 22px;font-size:15px}
+.cta .btn{margin:0 auto 12px;max-width:420px}
+.cta .btn.call{font-size:20px;padding:18px 10px}
+.cta .btn.mail{border-color:rgba(255,255,255,.8)}
+.cta small{display:block;font-size:13px;opacity:.85}
+
+footer{background:var(--ink);color:rgba(255,255,255,.7);text-align:center;font-size:12px;padding:22px 20px}
+
+/* bottom nav */
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--white);border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn a{display:flex;flex-direction:column;align-items:center;justify-content:center;height:60px;text-decoration:none;font-size:11px;font-weight:700;color:var(--ink)}
+.bn a svg{width:22px;height:22px;margin-bottom:2px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bn a.main{background:var(--ball)}
+
+@media (min-width:768px){
+  .hero img{height:460px}
+  .pick .photo{margin:26px 0}
+  .pick .photo img{border-radius:10px}
+  .bn{display:none}
+  body{padding-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <a class="logo" href="#top">石田スポーツ</a>
+  <a class="tel" href="tel:0282221416">電話する 0282-22-1416</a>
+</header>
+
+<main id="top">
+
+  <!-- ヒーロー -->
+  <div class="hero">
+    <img src="images/hero_shop.jpg" alt="石田スポーツの店舗と店内の様子">
+    <div class="in">
+      <span class="badge">栃木市片柳町・地域密着</span>
+      <h1>スポーツのこと、<br>地元のお店に<br>気軽に相談を。</h1>
+      <p>初心者の方から上級者の方まで、石田スポーツがお応えします。</p>
+    </div>
+  </div>
+  <div class="hero-cta">
+    <div class="row">
+      <a class="btn call" href="tel:0282221416">電話で相談する</a>
+      <a class="btn mail" href="mailto:info@ishida-sports.jp">メールで問い合わせ</a>
+    </div>
+  </div>
+
+  <!-- イチオシ -->
+  <section class="pick" id="pick">
+    <div class="wrap">
+      <span class="tag">イチオシ</span>
+      <h2 class="sec-title">地域密着だから、<br>顔が見える安心があります。</h2>
+      <p class="lead">スポーツを愛する皆さまの用具選びやメンテナンスなど、スポーツのさまざまなシーンを、同じ地域に暮らす店として応援しています。</p>
+      <div class="photo"><img src="images/local_support.jpg" alt="スタッフがお客様の相談に対応している様子"></div>
+      <ul>
+        <li><b>用具の選択をお手伝い</b>競技や経験に合わせて、ぴったりの用具をご相談いただけます。</li>
+        <li><b>メンテナンスもお任せください</b>大切な用具を長く使うためのお手入れも承ります。</li>
+        <li><b>チームオーダーも承ります</b>部活動・クラブ・サークルなど、チームでのご相談もお気軽にどうぞ。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 強み -->
+  <section id="strength">
+    <div class="wrap">
+      <h2 class="sec-title">スポーツ用品のことなら<br>お任せください</h2>
+      <p class="lead">スポーツを始めたばかりの方も、経験豊富な方も。どんなご相談でも歓迎です。</p>
+      <div class="str-list">
+        <div class="str">
+          <h3>初心者から上級者まで</h3>
+          <p>はじめての一品選びから、こだわりの一本まで。レベルを問わずご相談いただけます。</p>
+        </div>
+        <div class="str">
+          <h3>さまざまなシーンを応援</h3>
+          <p>用具の選択やメンテナンスなど、スポーツに関わる場面を幅広くサポートします。</p>
+        </div>
+        <div class="str">
+          <h3>チームオーダー対応</h3>
+          <p>チームでそろえたい用品のご要望も承ります。まずはお気軽にお問い合わせください。</p>
+        </div>
+      </div>
+      <div class="team"><img src="images/team_order.jpg" alt="チームで揃えたスポーツウェアと用具"></div>
+    </div>
+  </section>
+
+  <!-- クチコミ -->
+  <section class="review" id="review">
+    <div class="wrap">
+      <div class="stars" aria-label="5段階中4の評価">★★★★<span>★</span></div>
+      <blockquote>「丁寧な対応大変助かりました」</blockquote>
+      <small>お客様のクチコミより</small>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="info" id="info">
+    <div class="wrap">
+      <h2 class="sec-title">店舗情報</h2>
+      <table>
+        <tr><th>店名</th><td>石田スポーツ</td></tr>
+        <tr><th>住所</th><td>栃木県栃木市片柳町２丁目１２−２５</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0282221416">0282-22-1416</a></td></tr>
+        <tr><th>定休日</th><td>水曜日</td></tr>
+        <tr><th>メール</th><td><a href="mailto:info@ishida-sports.jp">info@ishida-sports.jp</a></td></tr>
+        <tr><th>HP</th><td><a href="https://www.tochinavi.net/spot/home/?id=10656" target="_blank" rel="noopener">https://www.tochinavi.net/spot/home/?id=10656</a></td></tr>
+      </table>
+      <div class="map">
+        <iframe title="石田スポーツの地図" src="https://www.google.com/maps?q=%E6%A0%83%E6%9C%A8%E7%9C%8C%E6%A0%83%E6%9C%A8%E5%B8%82%E7%89%87%E6%9F%B3%E7%94%BA%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%92%E2%88%92%EF%BC%92%EF%BC%95&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <h2>まずはお気軽に、<br>ご相談ください。</h2>
+      <p>用具選び・メンテナンス・チームオーダーなど、<br>スポーツ用品のことなら石田スポーツへ。</p>
+      <a class="btn call" href="tel:0282221416">0282-22-1416 に電話する</a>
+      <a class="btn mail" href="mailto:info@ishida-sports.jp">メールで問い合わせる</a>
+      <small>定休日：水曜日</small>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 石田スポーツ　栃木県栃木市片柳町２丁目１２−２５</footer>
+
+<nav class="bn" aria-label="スマートフォン用メニュー">
+  <a class="main" href="tel:0282221416">
+    <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>電話
+  </a>
+  <a href="mailto:info@ishida-sports.jp">
+    <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>メール
+  </a>
+  <a href="#pick">
+    <svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>イチオシ
+  </a>
+  <a href="#info">
+    <svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>店舗情報
+  </a>
+</nav>
+
+</body>
+</html>
